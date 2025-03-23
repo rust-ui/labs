@@ -1,0 +1,275 @@
+.mainDiv {
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #fff;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #e4e4e7;
+  view-transition-name: grid;
+}
+
+.grid-item {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e4e4e7;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  .item {
+    display: flex;
+    gap: 8px;
+
+    .chevron {
+      display: none;
+    }
+  }
+
+  .item-content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    overflow: clip;
+
+    .item-title {
+      font-weight: bold;
+    }
+  }
+}
+
+
+.grid-item.expanded {
+  flex-direction: column;
+
+  & > .chevron {
+    display: none;
+  }
+
+  .content {
+    order: 0;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .close-icon {
+      display: flex;
+    }
+  }
+
+  .icon-grid {
+    order: 1;
+  }
+
+  .item-content {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .item {
+    width: 100%;
+
+    .chevron {
+      display: block;
+    }
+  }
+
+  .icon {
+    background: #000000;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .displayNoneWhenExpanded {
+    display: none;
+  }
+}
+
+
+
+
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 90px;
+  .item {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.expanded .icon-grid {
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+
+.icon {
+  width: 32px;
+  height: 32px;
+  background: #f4f4f5;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.chevron {
+  align-self: center;
+  color: #71717a;
+}
+
+.expanded .chevron {
+  display: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    margin-top: -30px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+::view-transition-group(*) {
+  pointer-events: none !important;
+  animation-duration: 0.6s;
+  animation-timing-function: linear(0, 0.186 3.5%, 0.352 7.1%, 0.496 10.8%, 0.623 14.7%, 0.679 16.7%, 0.732 18.8%, 0.78 20.9%, 0.821 23%, 0.86 25.2%, 0.895 27.5%, 0.925 29.8%, 0.951 32.2%, 0.97 34.2%, 0.986 36.3%, 1 38.5%, 1.012 40.7%, 1.021 43%, 1.028 45.4%, 1.033 48%, 1.036 50.7%, 1.037 54.8%, 1.034 59.6%, 1.012 76.6%, 1.004 84.2%, 1.001 91.3%, 1);
+}
+
+::view-transition-old(*),
+::view-transition-new(*) {
+  height: 100%;
+}
+
+html:active-view-transition-type(expand) {
+  .grid-item:nth-child(2).active {   
+    .item-title {
+      view-transition-class: item-title-expand;
+    }
+
+    .item-price {
+      view-transition-class: item-price-expand;
+    }
+  }
+
+  .grid-item:nth-child(3).active {
+    .item-title {
+      view-transition-class: item-title-expand-slide-down;
+    }
+
+    .item-price {
+      view-transition-class: item-price-expand-slide-down;
+    }
+  }
+
+  &::view-transition-group(item-title-6),
+  &::view-transition-group(item-price-6) {
+    animation-duration: 1s !important;
+  }
+
+  &::view-transition-group(item-title-7),
+  &::view-transition-group(item-price-7) {
+    animation-duration: 1.2s !important;
+  }
+
+  &::view-transition-group(item-title-9),
+  &::view-transition-group(item-price-9) {
+    animation-duration: 1s !important;
+  }
+
+  &::view-transition-group(item-title-10),
+  &::view-transition-group(item-price-10) {
+    animation-duration: 1.2s !important;
+  }
+
+  &::view-transition-group(item-title-11),
+  &::view-transition-group(item-price-11) {
+    animation-duration: 1.4s !important;
+  }
+}
+
+html:active-view-transition-type(collapse) {
+  .grid-item.active {
+    .item-title {
+      view-transition-class: item-title-collapse;
+    }
+
+    .item-price {
+      view-transition-class: item-price-collapse;
+    }
+  }
+}
+
+::view-transition-group(.item-title-collapse),
+::view-transition-group(.item-price-collapse) {
+  animation-name: fade-out;
+}
+
+::view-transition-group(.item-title-expand),
+::view-transition-group(.item-price-expand) {
+  animation-name: fade-in;
+  animation-delay: 0.2s;
+  animation-duration: 0.6s;
+}
+
+::view-transition-group(.item-title-expand-slide-down),
+::view-transition-group(.item-price-expand-slide-down) {
+  animation-name: slide-down;
+  animation-delay: 0.2s;
+  animation-duration: 0.6s;
+}

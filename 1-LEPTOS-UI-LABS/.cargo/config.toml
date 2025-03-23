@@ -1,0 +1,7 @@
+
+[target.aarch64-apple-darwin]
+linker = "clang"
+rustflags = [
+  "-C", "link-arg=-fuse-ld=lld", # Needed for Apple Silicon
+  "--cfg", "erase_components"
+]

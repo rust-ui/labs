@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"tailwindcss": "3.4.14",
+		"tailwindcss-animate": "1.0.7",
+		"@tailwindcss/container-queries": "0.1.1"
+	}
+}
