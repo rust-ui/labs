@@ -11,32 +11,41 @@ It's only a temporary repository to test and develop components. Once they are r
 
 # Components
 
-**Legend** :
+**Legend**:
 - ✅ : Completed
 - 💪 : Works but needs improvements
 - 🚧 : In Progress
 - ➡️ : Todo
 
 
-## 1. Core Components
 
-
+## 1. Core Component
 
 | Component         | Contributor(s)        | Leptos | Dioxus |
 |-------------------|-----------------------|--------|--------|
-| Card              | Max Wells             | ✅     |        |
+| --- TEMPLATE ---  |                       |        |        |
+| Alert             | Max Wells             | ✅     |        |
+| Animate           | Max Wells             | ✅     |        |
+| Badge             | Max Wells             | ✅     |        |
+| Breadcrumb        | Max Wells             | 💪     |        |
 | Button            | Max Wells             | ✅     |        |
-| Input             | Max Wells             | ✅     |        |
-| Select            | Max Wells             | 👉     |        |
+| Card              | Max Wells             | ✅     |        |
+| Carousel          | Max Wells             | ➡️     |        |
 | Checkbox          | Max Wells             | 💪     |        |
-| Radio             | Max Wells             | 💪     |        |
-| Switch            | Max Wells             | 💪     |        |
-| Slider            | Max Wells             | 💪     |        |
 | Dialog            | Max Wells             | 💪     |        |
-| Tooltip           | Max Wells             | 💪     |        |
-| Popover           | Max Wells             | 💪     |        |
 | Drawer (JS)       | Max Wells             | 💪     |        |
-
+| Input             | Max Wells             | ✅     |        |
+| Popover           | Max Wells             | 💪     |        |
+| Radio             | Max Wells             | 💪     |        |
+| Select            | Max Wells             | ➡️     |        |
+| Sidenav           | Max Wells             | ✅     |        |
+| Slider            | Max Wells             | 💪     |        |
+| Switch            | Max Wells             | 💪     |        |
+| Tabs              | Max Wells             | ✅     |        |
+| Table             | Max Wells             | ✅     |        |
+| Text Area         | Max Wells             | ✅     |        |
+| Toast             | Max Wells             | 💪     |        |
+| Tooltip           | Max Wells             | ➡️     |        |
 
 
 
@@ -72,3 +81,11 @@ Soon.
 # Contact
 
 If you have any questions, please contact on Linkedin [Max Wells](https://www.linkedin.com/in/maxime-montfort/).
+
+
+
+
+
+
+
+
