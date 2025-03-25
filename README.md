@@ -8,7 +8,6 @@ It's only a temporary repository to test and develop components. Once they are r
 
 
 
-
 # Components
 
 **Legend**:
@@ -54,6 +53,7 @@ It's only a temporary repository to test and develop components. Once they are r
 
 | Component                  | Contributor(s)            | Leptos | Dioxus |
 |----------------------------|---------------------------|--------|--------|
+| ------- TEMPLATE -------   |                           |        |        |
 | Always Great Grid          |                           |        |        |
 | Blurry Blob                |                           |        |        |
 | Blockquote                 |                           |        |        |
@@ -106,6 +106,7 @@ It's only a temporary repository to test and develop components. Once they are r
 
 | Component                  | Contributor(s)            | Leptos | Dioxus |
 |----------------------------|---------------------------|--------|--------|
+| ------- TEMPLATE -------   |                           |        |        |
 | Slot Picker                | Max Wells                 | 💪     |        |
 
 
@@ -124,11 +125,6 @@ Soon.
 # Contact
 
 If you have any questions, please contact on Linkedin [Max Wells](https://www.linkedin.com/in/maxime-montfort/).
-
-
-
-
-
 
 
 
