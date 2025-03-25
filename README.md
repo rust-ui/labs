@@ -54,51 +54,45 @@ It's only a temporary repository to test and develop components. Once they are r
 | Component                  | Contributor(s)            | Leptos | Dioxus |
 |----------------------------|---------------------------|--------|--------|
 | ------- TEMPLATE -------   |                           |        |        |
-| Always Great Grid          |                           |        |        |
-| Blurry Blob                |                           |        |        |
-| Blockquote                 |                           |        |        |
-| Card 3D Flip Rotation      |                           |        |        |
-| Card 3D Hover              |                           |        |        |
-| Card Focus                 |                           |        |        |
-| Card Tilting               |                           |        |        |
-| Card Wobble                |                           |        |        |
-| Carousel 3D Rotating       |                           |        |        |
-| Carousel Snap Scroll       |                           |        |        |
-| CSS Pill Lighthouse        |                           |        |        |
-| CSS Pill Mountain          |                           |        |        |
-| CSS Pill Ocean             |                           |        |        |
+| Always Great Grid          | Max Wells                 | ✅     |        |
+| Blurry Blob                | Max Wells                 | ✅     |        |
+| Blockquote                 | Max Wells                 | ✅     |        |
+| Card 3D Flip Rotation      | Max Wells                 | ✅     |        |
+| Card 3D Hover              | Max Wells                 | ✅     |        |
+| Card Focus                 | Max Wells                 | ✅     |        |
+| Card Tilting               | Max Wells                 | ✅     |        |
+| Card Wobble                | Max Wells                 | ✅     |        |
+| Carousel 3D Rotating       | Max Wells                 | ✅     |        |
+| Carousel Snap Scroll       | Max Wells                 | ✅     |        |
 | CSS Pills                  | Max Wells                 | ✅     |        |
-| CTA Animation on Hover     |                           |        |        |
-| Docker                     |                           |        |        |
-| Ferris Animate             |                           |        |        |
-| Floating Button Menu       |                           |        |        |
-| Gallery Clickable          |                           |        |        |
-| Gallery Zoom               |                           |        |        |
-| Gradient                   |                           |        |        |
-| Hamburger Menu             |                           |        |        |
-| Hamburger Menus            |                           |        |        |
-| Marquee                    |                           |        |        |
-| Mask                       |                           |        |        |
-| Mask Color                 |                           |        |        |
-| Mask Vertical              |                           |        |        |
-| Masonry                    |                           |        |        |
-| Meteor Effect              |                           |        |        |
-| Orbiting Circles           |                           |        |        |
-| Parallax 1                 |                           |        |        |
-| Parallax Simple            |                           |        |        |
-| Parallax Zoom Words        |                           |        |        |
-| Particles Vercel           |                           |        |        |
-| Radar                      |                           |        |        |
-| Radar Mini                 |                           |        |        |
-| Rain Letters               |                           |        |        |
-| Select Price Table         |                           |        |        |
-| Slider Hover               |                           |        |        |
-| Steps Indicator            |                           |        |        |
-| Sticky Cursor Links        |                           |        |        |
-| Text Swiping               |                           |        |        |
-| Triggered Highlight        |                           |        |        |
-| Typing Effect              |                           |        |        |
-| Universe Rotating          |                           |        |        |
+| CTA Animation on Hover     | Max Wells                 | ✅     |        |
+| Docker                     | Max Wells                 | 💪     |        |
+| Ferris Animate             | Max Wells                 | 💪     |        |
+| Floating Button Menu       | Max Wells                 | ✅     |        |
+| Gallery Clickable          | Max Wells                 | 💪     |        |
+| Gallery Zoom               | Max Wells                 | ✅     |        |
+| Gradient                   | Max Wells                 | ✅     |        |
+| Hamburger Menus            | Max Wells                 | ✅     |        |
+| Marquee                    | Max Wells                 | ✅     |        |
+| Mask                       | Max Wells                 | ✅     |        |
+| Masonry                    | Max Wells                 | ✅     |        |
+| Meteor Effect              | Max Wells                 | ✅     |        |
+| Orbiting Circles           | Max Wells                 | ✅     |        |
+| (Parallax 1)               | Max Wells                 | ✅     |        |
+| (Parallax Simple)          | Max Wells                 | ✅     |        |
+| Parallax Zoom Words        | Max Wells                 | 💪     |        |
+| Particles Vercel           | Max Wells                 | ?      |        |
+| Radar                      | Max Wells                 | ✅     |        |
+| Radar Mini                 | Max Wells                 | ✅     |        |
+| Rain Letters               | Max Wells                 | ➡️     |        |
+| Select Price Table         | Max Wells                 | 💪     |        |
+| Slider Hover               | Max Wells                 | ✅     |        |
+| Steps Indicator            | Max Wells                 | ?      |        |
+| Sticky Cursor Links        | Max Wells                 | ✅     |        |
+| Text Swiping               | Max Wells                 | ✅     |        |
+| Triggered Highlight        | Max Wells                 | ?      |        |
+| Typing Effect              | Max Wells                 | ✅     |        |
+| Universe Rotating          | Max Wells                 | ✅     |        |
 
 
 
