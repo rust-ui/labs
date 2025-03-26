@@ -11,11 +11,46 @@ pub fn PageTestGeneral() -> impl IntoView {
         <div>
             <h1>Page Test General</h1>
             <DemoOtp />
+            <SearchInputDynamic />
             <DemoRangeSlider />
             <MultiRangeSlider />
             <DemoTest />
             <DemoCarousel />
             <DemoChartJs />
+        </div>
+    }
+}
+
+#[component]
+pub fn SearchInputDynamic() -> impl IntoView {
+    view! {
+        <script src="/components/search_input_dynamic.js" />
+
+        <div class="flex items-center justify-center h-[300px] bg-white">
+            <div class="relative w-32 transition-all">
+                <input
+                    type="text"
+                    placeholder="Arama.."
+                    id="searchInput"
+                    class="w-full py-2 pl-10 pr-4 text-gray-700 transition-all bg-white border border-gray-300 rounded-full outline-none"
+                />
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-400 transition-all"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                    </svg>
+                </div>
+            </div>
         </div>
     }
 }
