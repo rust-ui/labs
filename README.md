@@ -23,28 +23,28 @@ It's only a temporary repository to test and develop components. Once they are r
 | Component                  | Contributor(s)            | Leptos | Dioxus |
 |----------------------------|---------------------------|--------|--------|
 | ------- TEMPLATE -------   |                           |        |        |
-| Alert                      | Max Wells                 | ✅     |        |
-| Animate                    | Max Wells                 | ✅     |        |
-| Badge                      | Max Wells                 | ✅     |        |
-| Breadcrumb                 | Max Wells                 | 💪     |        |
-| Button                     | Max Wells                 | ✅     |        |
-| Card                       | Max Wells                 | ✅     |        |
-| Carousel                   | Max Wells                 | ➡️     |        |
-| Checkbox                   | Max Wells                 | 💪     |        |
-| Dialog                     | Max Wells                 | 💪     |        |
-| Drawer (JS)                | Max Wells                 | 💪     |        |
-| Input                      | Max Wells                 | ✅     |        |
-| Popover                    | Max Wells                 | 💪     |        |
-| Radio                      | Max Wells                 | 💪     |        |
-| Select                     | Max Wells                 | ➡️     |        |
-| Sidenav                    | Max Wells                 | ✅     |        |
-| Slider                     | Max Wells                 | 💪     |        |
-| Switch                     | Max Wells                 | 💪     |        |
-| Tabs                       | Max Wells                 | ✅     |        |
-| Table                      | Max Wells                 | ✅     |        |
-| Text Area                  | Max Wells                 | ✅     |        |
-| Toast                      | Max Wells                 | 💪     |        |
-| Tooltip                    | Max Wells                 | ➡️     |        |
+| Alert                      | @max-wells                | ✅     |        |
+| Animate                    | @max-wells                | ✅     |        |
+| Badge                      | @max-wells                | ✅     |        |
+| Breadcrumb                 | @max-wells                | 💪     |        |
+| Button                     | @max-wells                | ✅     |        |
+| Card                       | @max-wells                | ✅     |        |
+| Carousel                   | @max-wells                | ➡️     |        |
+| Checkbox                   | @max-wells                | 💪     |        |
+| Dialog                     | @max-wells                | 💪     |        |
+| Drawer (JS)                | @max-wells                | 💪     |        |
+| Input                      | @max-wells                | ✅     |        |
+| Popover                    | @max-wells                | 💪     |        |
+| Radio                      | @max-wells                | 💪     |        |
+| Select                     | @max-wells                | ➡️     |        |
+| Sidenav                    | @max-wells                | ✅     |        |
+| Slider                     | @max-wells                | 💪     |        |
+| Switch                     | @max-wells                | 💪     |        |
+| Tabs                       | @max-wells                | ✅     |        |
+| Table                      | @max-wells                | ✅     |        |
+| Text Area                  | @max-wells                | ✅     |        |
+| Toast                      | @max-wells                | 💪     |        |
+| Tooltip                    | @max-wells                | ➡️     |        |
 
 
 
@@ -54,45 +54,45 @@ It's only a temporary repository to test and develop components. Once they are r
 | Component                  | Contributor(s)            | Leptos | Dioxus |
 |----------------------------|---------------------------|--------|--------|
 | ------- TEMPLATE -------   |                           |        |        |
-| Always Great Grid          | Max Wells                 | ✅     |        |
-| Blurry Blob                | Max Wells                 | ✅     |        |
-| Blockquote                 | Max Wells                 | ✅     |        |
-| Card 3D Flip Rotation      | Max Wells                 | ✅     |        |
-| Card 3D Hover              | Max Wells                 | ✅     |        |
-| Card Focus                 | Max Wells                 | ✅     |        |
-| Card Tilting               | Max Wells                 | ✅     |        |
-| Card Wobble                | Max Wells                 | ✅     |        |
-| Carousel 3D Rotating       | Max Wells                 | ✅     |        |
-| Carousel Snap Scroll       | Max Wells                 | ✅     |        |
-| CSS Pills                  | Max Wells                 | ✅     |        |
-| CTA Animation on Hover     | Max Wells                 | ✅     |        |
-| Docker                     | Max Wells                 | 💪     |        |
-| Ferris Animate             | Max Wells                 | 💪     |        |
-| Floating Button Menu       | Max Wells                 | ✅     |        |
-| Gallery Clickable          | Max Wells                 | 💪     |        |
-| Gallery Zoom               | Max Wells                 | ✅     |        |
-| Gradient                   | Max Wells                 | ✅     |        |
-| Hamburger Menus            | Max Wells                 | ✅     |        |
-| Marquee                    | Max Wells                 | ✅     |        |
-| Mask                       | Max Wells                 | ✅     |        |
-| Masonry                    | Max Wells                 | ✅     |        |
-| Meteor Effect              | Max Wells                 | ✅     |        |
-| Orbiting Circles           | Max Wells                 | ✅     |        |
-| (Parallax 1)               | Max Wells                 | ✅     |        |
-| (Parallax Simple)          | Max Wells                 | ✅     |        |
-| Parallax Zoom Words        | Max Wells                 | 💪     |        |
-| Particles Vercel           | Max Wells                 | ?      |        |
-| Radar                      | Max Wells                 | ✅     |        |
-| Radar Mini                 | Max Wells                 | ✅     |        |
-| Rain Letters               | Max Wells                 | ➡️     |        |
-| Select Price Table         | Max Wells                 | 💪     |        |
-| Slider Hover               | Max Wells                 | ✅     |        |
-| Steps Indicator            | Max Wells                 | ?      |        |
-| Sticky Cursor Links        | Max Wells                 | ✅     |        |
-| Text Swiping               | Max Wells                 | ✅     |        |
-| Triggered Highlight        | Max Wells                 | ?      |        |
-| Typing Effect              | Max Wells                 | ✅     |        |
-| Universe Rotating          | Max Wells                 | ✅     |        |
+| Always Great Grid          | @max-wells                | ✅     |        |
+| Blurry Blob                | @max-wells                | ✅     |        |
+| Blockquote                 | @max-wells                | ✅     |        |
+| Card 3D Flip Rotation      | @max-wells                | ✅     |        |
+| Card 3D Hover              | @max-wells                | ✅     |        |
+| Card Focus                 | @max-wells                | ✅     |        |
+| Card Tilting               | @max-wells                | ✅     |        |
+| Card Wobble                | @max-wells                | ✅     |        |
+| Carousel 3D Rotating       | @max-wells                | ✅     |        |
+| Carousel Snap Scroll       | @max-wells                | ✅     |        |
+| CSS Pills                  | @max-wells                | ✅     |        |
+| CTA Animation on Hover     | @max-wells                | ✅     |        |
+| Docker                     | @max-wells                | 💪     |        |
+| Ferris Animate             | @max-wells                | 💪     |        |
+| Floating Button Menu       | @max-wells                | ✅     |        |
+| Gallery Clickable          | @max-wells                | 💪     |        |
+| Gallery Zoom               | @max-wells                | ✅     |        |
+| Gradient                   | @max-wells                | ✅     |        |
+| Hamburger Menus            | @max-wells                | ✅     |        |
+| Marquee                    | @max-wells                | ✅     |        |
+| Mask                       | @max-wells                | ✅     |        |
+| Masonry                    | @max-wells                | ✅     |        |
+| Meteor Effect              | @max-wells                | ✅     |        |
+| Orbiting Circles           | @max-wells                | ✅     |        |
+| (Parallax 1)               | @max-wells                | ✅     |        |
+| (Parallax Simple)          | @max-wells                | ✅     |        |
+| Parallax Zoom Words        | @max-wells                | 💪     |        |
+| Particles Vercel           | @max-wells                | ?      |        |
+| Radar                      | @max-wells                | ✅     |        |
+| Radar Mini                 | @max-wells                | ✅     |        |
+| Rain Letters               | @max-wells                | ➡️     |        |
+| Select Price Table         | @max-wells                | 💪     |        |
+| Slider Hover               | @max-wells                | ✅     |        |
+| Steps Indicator            | @max-wells                | ?      |        |
+| Sticky Cursor Links        | @max-wells                | ✅     |        |
+| Text Swiping               | @max-wells                | ✅     |        |
+| Triggered Highlight        | @max-wells                | ?      |        |
+| Typing Effect              | @max-wells                | ✅     |        |
+| Universe Rotating          | @max-wells                | ✅     |        |
 
 
 
@@ -101,7 +101,7 @@ It's only a temporary repository to test and develop components. Once they are r
 | Component                  | Contributor(s)            | Leptos | Dioxus |
 |----------------------------|---------------------------|--------|--------|
 | ------- TEMPLATE -------   |                           |        |        |
-| Slot Picker                | Max Wells                 | 💪     |        |
+| Slot Picker                | @max-wells                | 💪     |        |
 
 
 
@@ -118,7 +118,7 @@ Soon.
 
 # Contact
 
-If you have any questions, please contact on Linkedin [Max Wells](https://www.linkedin.com/in/maxime-montfort/).
+If you have any questions, please contact on Linkedin [@max-wells]https://www.linkedin.com/in/maxime-montfort/).
 
 
 

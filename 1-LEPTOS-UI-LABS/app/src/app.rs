@@ -9,7 +9,8 @@ use crate::{
     routing::{
         layout_test::LayoutTest, page_home::PageHome, page_js_drawer::PageJsDrawer,
         page_js_grid_collection::PageJsGridCollection, page_js_need_help::PageJsNeedHelp,
-        page_payment_method::PagePaymentMethod, page_tabs_animated::PageTabsAnimated,
+        page_payment_method::PagePaymentMethod, page_scroll_top_button::PageScrollTopButton,
+        page_scroll_view_progress::PageScrollViewProgress, page_tabs_animated::PageTabsAnimated,
         page_tailwind_tabs::PageTailwindTabs, page_test_general::PageTestGeneral,
         page_vercel_interaction::PageVercelInteraction,
     },
@@ -45,8 +46,12 @@ pub fn App() -> impl IntoView {
                         />
                         <Route path=StaticSegment("/js-drawer") view=PageJsDrawer />
                         <Route path=StaticSegment("/tailwind-tabs") view=PageTailwindTabs />
+                        <Route
+                            path=StaticSegment("/scroll-view-progress")
+                            view=PageScrollViewProgress
+                        />
+                        <Route path=StaticSegment("/scroll-top-button") view=PageScrollTopButton />
                     </ParentRoute>
-
                 </Routes>
             </div>
         </Router>

@@ -1,32 +1,51 @@
 use leptos::prelude::*;
+use leptos_meta::Stylesheet;
 use leptos_ui::clx;
 use tw_merge::*;
+
+use crate::components::demos::demo_otp::DemoOtp;
 
 #[component]
 pub fn PageTestGeneral() -> impl IntoView {
     view! {
         <div>
             <h1>Page Test General</h1>
-            <DemoButtonWithClx />
+            <DemoOtp />
+            <MultiRangeSlider />
             <DemoTest />
         </div>
     }
 }
 
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                     ✨ FUNCTIONS ✨                        */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
 #[component]
-pub fn DemoButtonWithClx() -> impl IntoView {
-    clx! {MyButton, button, "px-4 py-2 bg-blue-500 text-white rounded"}
-
-    let count = RwSignal::new(0);
-    let on_click = move |_| *count.write() += 1;
-
+pub fn MultiRangeSlider() -> impl IntoView {
     view! {
-        <div>
-            <MyButton on:click=on_click>"Click Me: " {count}</MyButton>
+        <Stylesheet href="/components/multi-range-slider.css" />
+        <script src="/components/multi-range-slider.js" />
+
+        <div class="flex items-center justify-center min-h-screen bg-gray-100">
+            <div class="w-[400px] bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-lg font-bold">PRICE RANGE</h2>
+
+                <div class="relative mt-4 slider-container">
+
+                    <input type="range" id="minRange" min="0" max="400" value="0" />
+                    <input type="range" id="maxRange" min="0" max="400" value="400" />
+
+                    <div class="relative w-full h-2 bg-gray-200 rounded-md">
+                        <div
+                            id="rangeTrack"
+                            class="absolute h-2 rounded-md bg-gradient-to-r from-blue-900 to-blue-400"
+                        ></div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-3 text-gray-600">
+                    <span>Min Price: $<span id="minValue">0</span></span>
+                    <span>Max Price: $<span id="maxValue">400</span></span>
+                </div>
+            </div>
+
         </div>
     }
 }
