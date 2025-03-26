@@ -1,6 +1,4 @@
 use leptos::prelude::*;
-use leptos_ui::clx;
-use tw_merge::*;
 
 #[component]
 pub fn DemoOtp() -> impl IntoView {

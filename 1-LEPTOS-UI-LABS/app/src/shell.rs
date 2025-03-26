@@ -11,6 +11,10 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <script src="https://cdn.tailwindcss.com"></script>
+
+                // ------- DEMO CHART JS -------
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
                 <script>
                     "tailwind.config = {
                         darkMode: 'class'

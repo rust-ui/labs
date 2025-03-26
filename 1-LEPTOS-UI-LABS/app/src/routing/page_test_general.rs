@@ -11,8 +11,146 @@ pub fn PageTestGeneral() -> impl IntoView {
         <div>
             <h1>Page Test General</h1>
             <DemoOtp />
+            <DemoRangeSlider />
             <MultiRangeSlider />
             <DemoTest />
+            <DemoCarousel />
+            <DemoChartJs />
+        </div>
+    }
+}
+
+#[component]
+pub fn DemoChartJs() -> impl IntoView {
+    view! {
+        <script src="/components/chart_js.js" />
+
+        <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <h1 class="text-xl font-semibold text-gray-800">Order Report</h1>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-600">12, Mar 24 - 31, Mar 24</span>
+                    <button class="px-2 py-1 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-5 h-5"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M16.5 9.5L12 14l-4.5-4.5"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <canvas id="orderReportChart" class="w-full h-80"></canvas>
+        </div>
+    }
+}
+
+#[component]
+pub fn DemoCarousel() -> impl IntoView {
+    view! {
+        // * https://tailwindflex.com/@nikolai-petrovich/image-carousel-2
+        <script src="/components/carousel.js" />
+
+        <div class="relative">
+            <div class="flex max-w-xl carousel">
+
+                <div class="carousel-item">
+                    <img
+                        src="https://source.unsplash.com/random/800x600"
+                        alt="Carousel Image 1"
+                        class="object-cover w-full h-96"
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="https://source.unsplash.com/random/800x600?2"
+                        alt="Carousel Image 2"
+                        class="object-cover w-full h-96"
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="https://source.unsplash.com/random/800x600?3"
+                        alt="Carousel Image 3"
+                        class="object-cover w-full h-96"
+                    />
+                </div>
+            </div>
+
+            // CAROUSEL CONTROLS
+            <div class="absolute inset-y-0 left-0 flex items-center justify-start pl-4">
+                <button class="p-2 text-white bg-gray-800 rounded-full carousel-control-prev hover:bg-gray-700 focus:outline-none">
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 19l-7-7 7-7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center justify-end pr-4">
+                <button class="p-2 text-white bg-gray-800 rounded-full carousel-control-next hover:bg-gray-700 focus:outline-none">
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    }
+}
+
+#[component]
+pub fn DemoRangeSlider() -> impl IntoView {
+    view! {
+        <script src="/components/range_slider.js" />
+
+        <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+            <h2 class="mb-4 text-2xl font-bold">Range Slider</h2>
+            <div class="mb-4">
+                <label for="price-range" class="block mb-2 font-bold text-gray-700">
+                    Price Range
+                </label>
+                <input
+                    type="range"
+                    id="price-range"
+                    class="w-full accent-indigo-600"
+                    min="0"
+                    max="1000"
+                    value="500"
+                    oninput="updatePrice(this.value)"
+                />
+            </div>
+            <div class="flex justify-between text-gray-500">
+                <span id="minPrice">$0</span>
+                <span id="maxPrice">$1000</span>
+            </div>
         </div>
     }
 }
