@@ -6,7 +6,6 @@ use tw_merge::*;
 pub fn DemoJsTabsAnimated() -> impl IntoView {
     view! {
         <Stylesheet id="tabs-animated" href="/components/tabs_animated.css" />
-        <script src="/components/tabs_animated.js" />
 
         <Tabs>
             <TabButton class="active" transition_index=1>
@@ -53,7 +52,14 @@ pub fn TabButton(
         move || format!("view-transition-name: tab-{}", transition_index);
 
     view! {
-        <button class=class style=formatted_transition_name>
+        <button
+            class=class
+            style=formatted_transition_name
+            onclick="document.startViewTransition(() => {
+            document.querySelector('.tab.active').classList.remove('active');
+            this.classList.add('active');
+            })"
+        >
             {children()}
         </button>
     }
