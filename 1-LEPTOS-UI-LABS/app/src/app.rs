@@ -10,9 +10,8 @@ use crate::{
         layout_test::LayoutTest, page_home::PageHome, page_js_drawer::PageJsDrawer,
         page_js_grid_collection::PageJsGridCollection, page_js_need_help::PageJsNeedHelp,
         page_payment_method::PagePaymentMethod, page_scroll_top_button::PageScrollTopButton,
-        page_scroll_view_progress::PageScrollViewProgress, page_tabs_animated::PageTabsAnimated,
-        page_tailwind_tabs::PageTailwindTabs, page_test_general::PageTestGeneral,
-        page_vercel_interaction::PageVercelInteraction,
+        page_scroll_view_progress::PageScrollViewProgress, page_tailwind_tabs::PageTailwindTabs,
+        page_test_general::PageTestGeneral, page_vercel_interaction::PageVercelInteraction,
     },
     shared::components::navbar::Navbar,
 };
@@ -39,7 +38,6 @@ pub fn App() -> impl IntoView {
                             view=PageJsGridCollection
                         />
                         <Route path=StaticSegment("/payment-method") view=PagePaymentMethod />
-                        <Route path=StaticSegment("/tabs-animated") view=PageTabsAnimated />
                         <Route
                             path=StaticSegment("/vercel-interaction")
                             view=PageVercelInteraction
