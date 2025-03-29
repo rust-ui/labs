@@ -15,6 +15,7 @@ pub fn LayoutTest() -> impl IntoView {
                 <a href="/test/tailwind-tabs">"Tailwind Tabs"</a>
                 <a href="/test/scroll-view-progress">"Scroll View Progress"</a>
                 <a href="/test/scroll-top-button">"Scroll Top Button"</a>
+                <a href="/test/demo-tailwind">"Demo Tailwind"</a>
             </div>
 
             <div class="w-full">

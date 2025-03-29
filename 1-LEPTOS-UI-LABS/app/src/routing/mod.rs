@@ -1,3 +1,4 @@
+pub mod page_demo_tailwind;
 pub mod page_home;
 pub mod page_js_drawer;
 pub mod page_js_grid_collection;
