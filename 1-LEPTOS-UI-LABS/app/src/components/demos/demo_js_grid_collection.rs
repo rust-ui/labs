@@ -6,11 +6,11 @@ struct GridItem {
     title: String,
     subtitle: String,
     transition_index: i32,
-    items: Vec<SharedItemData>,
+    items: Vec<Item>,
 }
 
 #[derive(Clone)]
-struct SharedItemData {
+struct Item {
     title: String,
     price: String,
     transition_index: i32,
@@ -25,25 +25,25 @@ pub fn DemoJsGridCollection() -> impl IntoView {
             subtitle: "4 items".to_string(),
             transition_index: 1,
             items: vec![
-                SharedItemData {
+                Item {
                     title: "Groceries".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 1,
                     chevron_index: 1,
                 },
-                SharedItemData {
+                Item {
                     title: "Groceries".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 2,
                     chevron_index: 5,
                 },
-                SharedItemData {
+                Item {
                     title: "Groceries".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 3,
                     chevron_index: 6,
                 },
-                SharedItemData {
+                Item {
                     title: "Groceries".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 4,
@@ -56,19 +56,19 @@ pub fn DemoJsGridCollection() -> impl IntoView {
             subtitle: "3 items".to_string(),
             transition_index: 2,
             items: vec![
-                SharedItemData {
+                Item {
                     title: "Electricity".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 5,
                     chevron_index: 2,
                 },
-                SharedItemData {
+                Item {
                     title: "Water".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 6,
                     chevron_index: 9,
                 },
-                SharedItemData {
+                Item {
                     title: "Internet".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 7,
@@ -81,25 +81,25 @@ pub fn DemoJsGridCollection() -> impl IntoView {
             subtitle: "4 items".to_string(),
             transition_index: 3,
             items: vec![
-                SharedItemData {
+                Item {
                     title: "Streaming".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 8,
                     chevron_index: 3,
                 },
-                SharedItemData {
+                Item {
                     title: "Courses".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 9,
                     chevron_index: 12,
                 },
-                SharedItemData {
+                Item {
                     title: "Software".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 10,
                     chevron_index: 13,
                 },
-                SharedItemData {
+                Item {
                     title: "Streaming".to_string(),
                     price: "$80.00".to_string(),
                     transition_index: 11,
