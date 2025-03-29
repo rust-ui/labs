@@ -19,7 +19,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <TimeSlots />
+                        <TimeSlots>""</TimeSlots>
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
@@ -33,7 +33,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <TimeSlots />
+                        <TimeSlots>""</TimeSlots>
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
@@ -47,7 +47,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <TimeSlots />
+                        <TimeSlots>""</TimeSlots>
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
@@ -61,7 +61,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <TimeSlots />
+                        <TimeSlots>""</TimeSlots>
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
@@ -75,7 +75,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <TimeSlots />
+                        <TimeSlots>""</TimeSlots>
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
