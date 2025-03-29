@@ -16,9 +16,9 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <span class="day-title">Monday</span>
                         <input type="checkbox" switch />
                     </div>
-                    <DayContainer style="view-transition-name: day-container-1;">
+                    <DayContainer>
                         <div class="time-slots" style="view-transition-name: time-slots-1;"></div>
-                        <ButtonAdd style="view-transition-name: add-btn-1;">
+                        <ButtonAdd>
                             <SvgIconPlus />
                             Add More
                         </ButtonAdd>
@@ -30,9 +30,9 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <span class="day-title">Tuesday</span>
                         <input type="checkbox" switch />
                     </div>
-                    <DayContainer style="view-transition-name: day-container-2;">
+                    <DayContainer>
                         <div class="time-slots" style="view-transition-name: time-slots-2;"></div>
-                        <ButtonAdd style="view-transition-name: add-btn-2;">
+                        <ButtonAdd>
                             <SvgIconPlus />
                             Add More
                         </ButtonAdd>
@@ -44,9 +44,9 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <span class="day-title">Wednesday</span>
                         <input type="checkbox" switch />
                     </div>
-                    <DayContainer style="view-transition-name: day-container-3;">
+                    <DayContainer>
                         <div class="time-slots" style="view-transition-name: time-slots-3;"></div>
-                        <ButtonAdd style="view-transition-name: add-btn-3;">
+                        <ButtonAdd>
                             <SvgIconPlus />
                             Add More
                         </ButtonAdd>
@@ -58,9 +58,9 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <span class="day-title">Thursday</span>
                         <input type="checkbox" switch />
                     </div>
-                    <DayContainer style="view-transition-name: day-container-4;">
+                    <DayContainer>
                         <div class="time-slots"></div>
-                        <ButtonAdd style="view-transition-name: add-btn-4;">
+                        <ButtonAdd>
                             <SvgIconPlus />
                             Add More
                         </ButtonAdd>
@@ -72,9 +72,9 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <span class="day-title">Friday</span>
                         <input type="checkbox" switch />
                     </div>
-                    <DayContainer style="view-transition-name: day-container-5;">
+                    <DayContainer>
                         <div class="time-slots"></div>
-                        <ButtonAdd style="view-transition-name: add-btn-5;">
+                        <ButtonAdd>
                             <SvgIconPlus />
                             Add More
                         </ButtonAdd>
