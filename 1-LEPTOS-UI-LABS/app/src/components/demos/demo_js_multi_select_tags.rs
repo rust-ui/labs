@@ -12,21 +12,29 @@ pub fn DemoJsMultiSelectTags() -> impl IntoView {
         <MultiSelectTagsSearch />
 
         <MultiSelectTags>
-            <TagItem>Docker</TagItem>
-            <TagItem>Kubernetes</TagItem>
-            <TagItem>AWS</TagItem>
-            <TagItem>GraphQL</TagItem>
-            <TagItem>MongoDB</TagItem>
-            <TagItem>PostgreSQL</TagItem>
-            <TagItem>Redis</TagItem>
-            <TagItem>Git</TagItem>
-            <TagItem>Webpack</TagItem>
-            <TagItem>Vite</TagItem>
-            <TagItem>Cypress</TagItem>
-            <TagItem>Storybook</TagItem>
-            <TagItem>Tailwind</TagItem>
-            <TagItem>Prisma</TagItem>
-            <TagItem>Nginx</TagItem>
+            {TAGS.iter().map(|&tag| view! { <TagItem>{tag}</TagItem> }).collect::<Vec<_>>()}
         </MultiSelectTags>
     }
 }
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                      ✨ CONSTANTS ✨                       */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+const TAGS: [&str; 15] = [
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "GraphQL",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "Git",
+    "Webpack",
+    "Vite",
+    "Cypress",
+    "Storybook",
+    "Tailwind",
+    "Prisma",
+    "Nginx",
+];
