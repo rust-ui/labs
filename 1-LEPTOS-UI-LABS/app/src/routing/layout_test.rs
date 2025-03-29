@@ -10,7 +10,6 @@ pub fn LayoutTest() -> impl IntoView {
                 <a href="/test/js-need-help">"JS Need Help"</a>
                 <a href="/test/js-grid-collection">"JS Grid Collection"</a>
                 <a href="/test/payment-method">"Payment Method"</a>
-                <a href="/test/tabs-animated">"Tabs Animated"</a>
                 <a href="/test/vercel-interaction">"Vercel Interaction"</a>
                 <a href="/test/js-drawer">"JS Drawer"</a>
                 <a href="/test/tailwind-tabs">"Tailwind Tabs"</a>

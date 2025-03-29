@@ -8,7 +8,7 @@ pub fn Navbar() -> impl IntoView {
         <div class="flex justify-between p-4">
             <div class="flex gap-4">
                 <a href="/">"HOME"</a>
-                <a href="/test/general">"Test"</a>
+                <a href="/test/general">"Test 🧪"</a>
             </div>
 
             <div class="flex items-center gap-2">
