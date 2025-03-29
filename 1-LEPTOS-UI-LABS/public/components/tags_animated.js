@@ -1,11 +1,5 @@
 const search = document.querySelector('.search');
 
-const tags = document.querySelectorAll('button');
-tags.forEach((tag, index) => {
-  tag.style.viewTransitionName = `tag-${index}`;
-  tag.style.order = index;
-});
-
 const tagsContainer = document.querySelector('.tags');
 
 tagsContainer.addEventListener('click', (e) => {

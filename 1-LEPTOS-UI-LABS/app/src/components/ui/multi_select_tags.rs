@@ -14,7 +14,14 @@ pub use components::*;
 
 #[component]
 pub fn TagItem(children: Children) -> impl IntoView {
-    let random_name = Utils::use_random_transition_name();
+    let random_id = Utils::use_random_id();
 
-    view! { <RootItem>{children()} <span class="display-none">X</span></RootItem> }
+    let transition_name = format!(
+        "view-transition-name: tag-{}; order: {}",
+        random_id, random_id
+    );
+
+    view! {
+        <RootItem style=transition_name>{children()} <span class="display-none">X</span></RootItem>
+    }
 }

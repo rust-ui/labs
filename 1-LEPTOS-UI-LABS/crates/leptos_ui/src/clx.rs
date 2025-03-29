@@ -26,7 +26,7 @@ macro_rules! clx {
         #[component]
         pub fn $name(
             #[prop(into, optional)] class: Signal<String>,
-            #[prop(optional)] style: Option<&'static str>,
+            #[prop(into, optional)] style: Option<String>,
             #[prop(optional)] role: Option<&'static str>,
             #[prop(optional)] onclick: Option<&'static str>,
             #[prop(optional)] onclose: Option<&'static str>,
