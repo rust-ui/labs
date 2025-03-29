@@ -1,7 +1,9 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-use crate::components::ui::multi_select_tags::{MultiSelectTags, MultiSelectTagsSearch, TagItem};
+use crate::components::ui::multi_select_tags::{
+    MultiSelectTags, MultiSelectTagsSearch, TagItemRoot,
+};
 
 #[component]
 pub fn DemoJsMultiSelectTags() -> impl IntoView {
@@ -12,8 +14,8 @@ pub fn DemoJsMultiSelectTags() -> impl IntoView {
         <MultiSelectTagsSearch />
 
         <MultiSelectTags>
-            // <TagItem>Docker</TagItem>
-            // <TagItem>Kubernetes</TagItem>
+            <TagItem>Docker</TagItem>
+            <TagItem>Kubernetes</TagItem>
             <TagItem>AWS<span>X</span></TagItem>
             <TagItem>GraphQL<span>X</span></TagItem>
             <TagItem>MongoDB<span>X</span></TagItem>
@@ -34,3 +36,8 @@ pub fn DemoJsMultiSelectTags() -> impl IntoView {
 /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 /*                     ✨ FUNCTIONS ✨                        */
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+#[component]
+pub fn TagItem(children: Children) -> impl IntoView {
+    view! { <TagItemRoot>{children()} <span class="display-none">X</span></TagItemRoot> }
+}

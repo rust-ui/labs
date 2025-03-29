@@ -5,7 +5,7 @@ mod components {
     use super::*;
     div! {MultiSelectTagsSearch, "search flex flex-wrap gap-3 w-[400px] min-h-[48px] p-3 border border-gray-300 rounded-lg text-base"}
     clx! {MultiSelectTags, div, "tags flex flex-wrap gap-3 p-3 bg-white rounded-2xl border border-gray-300 w-[400px]"}
-    clx! {TagItem, button, "p-2 bg-gray-200 rounded-lg text-base text-gray-800 cursor-pointer border-none font-medium flex items-center gap-2"}
+    clx! {TagItemRoot, button, "p-2 bg-gray-200 rounded-lg text-base text-gray-800 cursor-pointer border-none font-medium flex items-center gap-2"}
 }
 
 pub use components::*;
