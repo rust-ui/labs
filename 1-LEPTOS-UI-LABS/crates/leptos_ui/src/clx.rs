@@ -100,7 +100,7 @@ macro_rules! div {
         #[component]
         pub fn $name(
             #[prop(into, optional)] class: Signal<String>,
-            #[prop(optional)] style: Option<&'static str>,
+            #[prop(into, optional)] style: Option<String>,
             #[prop(optional)] onclick: Option<&'static str>,
         ) -> impl IntoView {
             let merged_classes = Memo::new(move |_| {

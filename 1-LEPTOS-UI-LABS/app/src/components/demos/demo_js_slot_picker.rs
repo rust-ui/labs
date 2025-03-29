@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-use crate::components::ui::slot_picker::{ButtonAdd, DayContainer};
+use crate::components::ui::slot_picker::{ButtonAdd, DayContainer, TimeSlots};
 
 #[component]
 pub fn DemoJsSlotPicker() -> impl IntoView {
@@ -59,7 +59,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <div class="time-slots"></div>
+                        <TimeSlots />
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
@@ -73,7 +73,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
-                        <div class="time-slots"></div>
+                        <TimeSlots />
                         <ButtonAdd>
                             <SvgIconPlus />
                             Add More
