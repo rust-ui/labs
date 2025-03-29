@@ -7,7 +7,6 @@ use crate::components::ui::multi_select_tags::{MultiSelectTags, MultiSelectTagsS
 pub fn DemoJsMultiSelectTags() -> impl IntoView {
     view! {
         <Stylesheet id="tags-animated" href="/components/tags_animated.css" />
-        <script src="/components/tags_animated.js" />
 
         <MultiSelectTagsSearch />
 

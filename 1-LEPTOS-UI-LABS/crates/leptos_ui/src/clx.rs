@@ -101,6 +101,7 @@ macro_rules! div {
         pub fn $name(
             #[prop(into, optional)] class: Signal<String>,
             #[prop(optional)] style: Option<&'static str>,
+            #[prop(optional)] onclick: Option<&'static str>,
         ) -> impl IntoView {
             let merged_classes = Memo::new(move |_| {
                 tw_merge::tw_merge!(tw_merge::tw_join!($($base_class),+), class())
@@ -110,6 +111,7 @@ macro_rules! div {
                 <div
                     class=merged_classes
                     style=style
+                    onclick=onclick
                 />
             }
         }
