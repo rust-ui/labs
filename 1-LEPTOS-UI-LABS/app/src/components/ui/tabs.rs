@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use leptos_ui::clx;
 use tw_merge::*;
 
-use crate::utils::random_id::generate_random_id;
+use crate::utils::utils::Utils;
 
 mod components {
     use super::*;
@@ -19,7 +19,7 @@ pub fn TabsTrigger(
     #[prop(into, optional)] name: Option<String>,
     children: Children,
 ) -> impl IntoView {
-    let random_id = generate_random_id();
+    let random_id = Utils::use_random_id();
 
     let class_label = Memo::new(move |_| {
         tw_merge!(
