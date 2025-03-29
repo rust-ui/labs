@@ -30,6 +30,7 @@
   }
 }
 
+/**  flex flex-wrap gap-3 p-3 bg-white rounded-2xl border border-gray-300 w-100 */
 .tags {
   display: flex;
   flex-wrap: wrap;
