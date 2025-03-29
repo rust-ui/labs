@@ -1,18 +1,19 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
+use crate::components::ui::multi_select_tags::{MultiSelectTags, MultiSelectTagsSearch};
+
 #[component]
-pub fn DemoJsTagsAnimated() -> impl IntoView {
+pub fn DemoJsMultiSelectTags() -> impl IntoView {
     view! {
         <Stylesheet id="tags-animated" href="/components/tags_animated.css" />
         <script src="/components/tags_animated.js" />
 
-        <h1>TAGS</h1>
-        <div class="search"></div>
+        <MultiSelectTagsSearch />
 
-        <div class="tags">
-            <button>Docker<span>X</span></button>
-            <button>Kubernetes<span>X</span></button>
+        <MultiSelectTags>
+            // <TagItem>Docker</TagItem>
+            // <TagItem>Kubernetes</TagItem>
             <button>AWS<span>X</span></button>
             <button>GraphQL<span>X</span></button>
             <button>MongoDB<span>X</span></button>
@@ -26,6 +27,15 @@ pub fn DemoJsTagsAnimated() -> impl IntoView {
             <button>Tailwind<span>X</span></button>
             <button>Prisma<span>X</span></button>
             <button>Nginx<span>X</span></button>
-        </div>
+        </MultiSelectTags>
     }
+}
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ FUNCTIONS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+#[component]
+pub fn TagItem(children: Children) -> impl IntoView {
+    view! { <button>{children()} <span>"X"</span></button> }
 }

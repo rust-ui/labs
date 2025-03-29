@@ -5,5 +5,6 @@ pub mod card;
 pub mod dialog_tailwind;
 pub mod form;
 pub mod input;
+pub mod multi_select_tags;
 pub mod tabs;
 pub mod tailwind_tabs;

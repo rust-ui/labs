@@ -92,3 +92,26 @@ macro_rules! input {
         }
     };
 }
+
+// * Special macro for div that don't accept children.
+#[macro_export]
+macro_rules! div {
+    ($name:ident, $($base_class:expr),+ $(,)?) => {
+        #[component]
+        pub fn $name(
+            #[prop(into, optional)] class: Signal<String>,
+            #[prop(optional)] style: Option<&'static str>,
+        ) -> impl IntoView {
+            let merged_classes = Memo::new(move |_| {
+                tw_merge::tw_merge!(tw_merge::tw_join!($($base_class),+), class())
+            });
+
+            view! {
+                <div
+                    class=merged_classes
+                    style=style
+                />
+            }
+        }
+    };
+}
