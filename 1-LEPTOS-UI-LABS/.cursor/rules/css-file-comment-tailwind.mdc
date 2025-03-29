@@ -1,7 +1,7 @@
 ---
 description: 
-globs: 
-alwaysApply: true
+globs: *.css
+alwaysApply: false
 ---
 # Fill CSS files with Tailwind Comments
 
