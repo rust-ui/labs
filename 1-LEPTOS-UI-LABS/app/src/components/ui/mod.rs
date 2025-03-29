@@ -6,5 +6,6 @@ pub mod dialog_tailwind;
 pub mod form;
 pub mod input;
 pub mod multi_select_tags;
+pub mod slot_picker;
 pub mod tabs;
 pub mod tailwind_tabs;
