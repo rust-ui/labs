@@ -1,0 +1,78 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Use inline JS in `rsx!` components
+
+## Goal
+
+The goal is to replace the `.js` file and use **inline JS** instead.
+
+
+## Example
+
+### The `clx!` component using **inline JS**
+
+Here is an example:
+
+
+```rs
+use leptos::prelude::*;
+use leptos_ui::{button, clx};
+
+use crate::registry::ui::input::Input;
+
+mod components {
+    use super::*;
+    clx! {ExpandableSearch, div, "relative"}
+    button! {ExpandableSearchButton, "absolute top-0 right-0 mt-3 mr-4"}
+}
+
+pub use components::*;
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ FUNCTIONS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+#[component]
+pub fn ExpandableSearchInput(#[prop(optional, into)] placeholder: &'static str) -> impl IntoView {
+    view! {
+        <Input
+            class="w-12 px-5 pr-10 transition-all duration-300 ease-in-out rounded-full focus:w-64 focus:outline-none"
+            placeholder=placeholder
+            onfocus="this.classList.remove('w-12'); this.classList.add('w-64');"
+            onblur="if(this.value === '') { this.classList.remove('w-64'); this.classList.add('w-12'); }"
+        />
+    }
+}
+```
+
+### 2. The demo using the `clx` component
+
+Here is how we use it, see this Demo: 
+
+```rs
+use leptos::prelude::*;
+
+use crate::registry::ui::expandable::{ExpandableContent, ExpandableTransition, ExpandableTrigger};
+
+#[component]
+pub fn DemoExpandable() -> impl IntoView {
+    view! {
+        <ExpandableTrigger class="mx-auto">
+            <ExpandableTransition>
+                <p>Mikael Ainalem</p>
+            </ExpandableTransition>
+
+            <ExpandableContent class="bg-pink-200">
+                <p>"This is a dummy content"</p>
+            </ExpandableContent>
+        </ExpandableTrigger>
+    }
+}
+```
+
+
+
