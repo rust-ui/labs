@@ -11,8 +11,9 @@ use crate::{
         page_js_drawer::PageJsDrawer, page_js_grid_collection::PageJsGridCollection,
         page_js_need_help::PageJsNeedHelp, page_multi_select_tags::PageMultiSelectTags,
         page_payment_method::PagePaymentMethod, page_scroll_top_button::PageScrollTopButton,
-        page_scroll_view_progress::PageScrollViewProgress, page_tailwind_tabs::PageTailwindTabs,
-        page_test_general::PageTestGeneral, page_vercel_interaction::PageVercelInteraction,
+        page_scroll_view_progress::PageScrollViewProgress, page_slot_picker::PageSlotPicker,
+        page_tailwind_tabs::PageTailwindTabs, page_test_general::PageTestGeneral,
+        page_vercel_interaction::PageVercelInteraction,
     },
     shared::components::navbar::Navbar,
 };
@@ -52,6 +53,7 @@ pub fn App() -> impl IntoView {
                         <Route path=StaticSegment("/scroll-top-button") view=PageScrollTopButton />
                         <Route path=StaticSegment("/demo-tailwind") view=PageDemoTailwind />
                         <Route path=StaticSegment("/multi-select-tags") view=PageMultiSelectTags />
+                        <Route path=StaticSegment("/slot-picker") view=PageSlotPicker />
                     </ParentRoute>
                 </Routes>
             </div>
