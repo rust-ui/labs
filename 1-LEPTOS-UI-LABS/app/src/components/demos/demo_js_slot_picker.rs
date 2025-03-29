@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-use crate::components::ui::slot_picker::{ButtonAdd, DayContainer, TimeSlots};
+use crate::components::ui::slot_picker::{ButtonAdd, DayContainer, DayTitle, TimeSlots};
 
 #[component]
 pub fn DemoJsSlotPicker() -> impl IntoView {
@@ -13,7 +13,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
             <div class="days">
                 <div class="day" style="view-transition-name: day-1;">
                     <div class="day-header" style="view-transition-name: day-header-1;">
-                        <span class="day-title">Monday</span>
+                        <DayTitle>Monday</DayTitle>
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
@@ -27,7 +27,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
 
                 <div class="day" style="view-transition-name: day-2;">
                     <div class="day-header" style="view-transition-name: day-header-2;">
-                        <span class="day-title">Tuesday</span>
+                        <DayTitle>Tuesday</DayTitle>
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
@@ -41,7 +41,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
 
                 <div class="day" style="view-transition-name: day-3;">
                     <div class="day-header" style="view-transition-name: day-header-3;">
-                        <span class="day-title">Wednesday</span>
+                        <DayTitle>Wednesday</DayTitle>
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
@@ -55,7 +55,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
 
                 <div class="day" style="view-transition-name: day-4;">
                     <div class="day-header" style="view-transition-name: day-header-4;">
-                        <span class="day-title">Thursday</span>
+                        <DayTitle>Thursday</DayTitle>
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>
@@ -69,7 +69,7 @@ pub fn DemoJsSlotPicker() -> impl IntoView {
 
                 <div class="day" style="view-transition-name: day-5;">
                     <div class="day-header" style="view-transition-name: day-header-5;">
-                        <span class="day-title">Friday</span>
+                        <DayTitle>Friday</DayTitle>
                         <input type="checkbox" switch />
                     </div>
                     <DayContainer>

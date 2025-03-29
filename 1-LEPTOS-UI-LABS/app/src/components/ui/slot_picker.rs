@@ -5,6 +5,7 @@ use crate::utils::utils::Utils;
 
 mod components {
     use super::*;
+    clx! {DayTitle, span, "day-title"}
     clx! {RootDay, div, "day-container"}
     clx! {RootAddBtn, button, "add-btn"}
     div! {RootTimeSlots, "time-slots"}
