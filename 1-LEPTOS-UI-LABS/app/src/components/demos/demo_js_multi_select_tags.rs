@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-use crate::components::ui::multi_select_tags::{MultiSelectTags, MultiSelectTagsSearch};
+use crate::components::ui::multi_select_tags::{MultiSelectTags, MultiSelectTagsSearch, TagItem};
 
 #[component]
 pub fn DemoJsMultiSelectTags() -> impl IntoView {
@@ -14,19 +14,19 @@ pub fn DemoJsMultiSelectTags() -> impl IntoView {
         <MultiSelectTags>
             // <TagItem>Docker</TagItem>
             // <TagItem>Kubernetes</TagItem>
-            <button>AWS<span>X</span></button>
-            <button>GraphQL<span>X</span></button>
-            <button>MongoDB<span>X</span></button>
-            <button>PostgreSQL<span>X</span></button>
-            <button>Redis<span>X</span></button>
-            <button>Git<span>X</span></button>
-            <button>Webpack<span>X</span></button>
-            <button>Vite<span>X</span></button>
-            <button>Cypress<span>X</span></button>
-            <button>Storybook<span>X</span></button>
-            <button>Tailwind<span>X</span></button>
-            <button>Prisma<span>X</span></button>
-            <button>Nginx<span>X</span></button>
+            <TagItem>AWS<span>X</span></TagItem>
+            <TagItem>GraphQL<span>X</span></TagItem>
+            <TagItem>MongoDB<span>X</span></TagItem>
+            <TagItem>PostgreSQL<span>X</span></TagItem>
+            <TagItem>Redis<span>X</span></TagItem>
+            <TagItem>Git<span>X</span></TagItem>
+            <TagItem>Webpack<span>X</span></TagItem>
+            <TagItem>Vite<span>X</span></TagItem>
+            <TagItem>Cypress<span>X</span></TagItem>
+            <TagItem>Storybook<span>X</span></TagItem>
+            <TagItem>Tailwind<span>X</span></TagItem>
+            <TagItem>Prisma<span>X</span></TagItem>
+            <TagItem>Nginx<span>X</span></TagItem>
         </MultiSelectTags>
     }
 }
@@ -34,8 +34,3 @@ pub fn DemoJsMultiSelectTags() -> impl IntoView {
 /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 /*                     ✨ FUNCTIONS ✨                        */
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-#[component]
-pub fn TagItem(children: Children) -> impl IntoView {
-    view! { <button>{children()} <span>"X"</span></button> }
-}
