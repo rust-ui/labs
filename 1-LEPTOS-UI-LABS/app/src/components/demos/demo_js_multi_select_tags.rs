@@ -1,9 +1,7 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-use crate::components::ui::multi_select_tags::{
-    MultiSelectTags, MultiSelectTagsSearch, TagItemRoot,
-};
+use crate::components::ui::multi_select_tags::{MultiSelectTags, MultiSelectTagsSearch, TagItem};
 
 #[component]
 pub fn DemoJsMultiSelectTags() -> impl IntoView {
@@ -16,28 +14,19 @@ pub fn DemoJsMultiSelectTags() -> impl IntoView {
         <MultiSelectTags>
             <TagItem>Docker</TagItem>
             <TagItem>Kubernetes</TagItem>
-            <TagItem>AWS<span>X</span></TagItem>
-            <TagItem>GraphQL<span>X</span></TagItem>
-            <TagItem>MongoDB<span>X</span></TagItem>
-            <TagItem>PostgreSQL<span>X</span></TagItem>
-            <TagItem>Redis<span>X</span></TagItem>
-            <TagItem>Git<span>X</span></TagItem>
-            <TagItem>Webpack<span>X</span></TagItem>
-            <TagItem>Vite<span>X</span></TagItem>
-            <TagItem>Cypress<span>X</span></TagItem>
-            <TagItem>Storybook<span>X</span></TagItem>
-            <TagItem>Tailwind<span>X</span></TagItem>
-            <TagItem>Prisma<span>X</span></TagItem>
-            <TagItem>Nginx<span>X</span></TagItem>
+            <TagItem>AWS</TagItem>
+            <TagItem>GraphQL</TagItem>
+            <TagItem>MongoDB</TagItem>
+            <TagItem>PostgreSQL</TagItem>
+            <TagItem>Redis</TagItem>
+            <TagItem>Git</TagItem>
+            <TagItem>Webpack</TagItem>
+            <TagItem>Vite</TagItem>
+            <TagItem>Cypress</TagItem>
+            <TagItem>Storybook</TagItem>
+            <TagItem>Tailwind</TagItem>
+            <TagItem>Prisma</TagItem>
+            <TagItem>Nginx</TagItem>
         </MultiSelectTags>
     }
-}
-
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                     ✨ FUNCTIONS ✨                        */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-#[component]
-pub fn TagItem(children: Children) -> impl IntoView {
-    view! { <TagItemRoot>{children()} <span class="display-none">X</span></TagItemRoot> }
 }
