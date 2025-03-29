@@ -1,3 +1,9 @@
+use std::{
+    collections::hash_map::DefaultHasher,
+    hash::{Hash, Hasher},
+    sync::atomic::{AtomicUsize, Ordering},
+};
+
 pub use leptos::prelude::*;
 pub use tw_merge::*;
 
@@ -113,6 +119,57 @@ macro_rules! div {
                     style=style
                     onclick=onclick
                 />
+            }
+        }
+    };
+}
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ FUNCTIONS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+pub struct Utils;
+
+impl Utils {
+    pub fn use_random_id() -> String {
+        let mut hasher = DefaultHasher::new();
+
+        static COUNTER: AtomicUsize = AtomicUsize::new(1);
+        let counter = COUNTER.fetch_add(1, Ordering::SeqCst);
+        counter.hash(&mut hasher);
+
+        format!("_gen_id_{}", hasher.finish())
+    }
+
+    pub fn use_random_transition_name() -> String {
+        let random_id = Utils::use_random_id();
+        format!("view-transition-name: {}", random_id)
+    }
+}
+
+#[macro_export]
+macro_rules! transition {
+    ($name:ident, $element:ident, $($base_class:expr),+ $(,)?) => {
+        #[component]
+        pub fn $name(
+            #[prop(into, optional)] class: Signal<String>,
+            #[prop(optional)] role: Option<&'static str>,
+            #[prop(optional)] onclick: Option<&'static str>,
+            #[prop(optional)] onclose: Option<&'static str>,
+            #[prop(optional)] id: Option<&'static str>,
+            #[prop(optional)] tabindex: Option<&'static str>,
+            children: Children,
+        ) -> impl IntoView {
+            let merged_classes = Memo::new(move |_| {
+                tw_merge::tw_merge!(tw_merge::tw_join!($($base_class),+), class())
+            });
+
+            let random_name = Utils::use_random_transition_name();
+
+            view! {
+                <$element class=merged_classes style=random_name role=role onclick=onclick onclose=onclose id=id tabindex=tabindex>
+                    {children()}
+                </$element>
             }
         }
     };

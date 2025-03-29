@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_ui::{clx, div};
+use leptos_ui::{clx, div, transition};
 
 use crate::utils::utils::Utils;
 
@@ -7,34 +7,13 @@ mod components {
     use super::*;
     clx! {SlotDaysWrapper, div, "days"}
     clx! {SlotTitle, span, "day-title"}
-    clx! {RootDay, div, "day"}
-    clx! {RootDayContainer, div, "day-container"}
-    clx! {RootAddBtn, button, "add-btn"}
+    transition! {SlotDay, div, "day"}
+    transition! {DayContainer, div, "day-container"}
+    transition! {ButtonAdd, button, "add-btn"}
     div! {RootTimeSlots, "time-slots"}
 }
 
 pub use components::*;
-
-#[component]
-pub fn SlotDay(children: Children) -> impl IntoView {
-    let random_name = Utils::use_random_transition_name();
-
-    view! { <RootDay style=random_name>{children()}</RootDay> }
-}
-
-#[component]
-pub fn DayContainer(children: Children) -> impl IntoView {
-    let random_name = Utils::use_random_transition_name();
-
-    view! { <RootDayContainer style=random_name>{children()}</RootDayContainer> }
-}
-
-#[component]
-pub fn ButtonAdd(children: Children) -> impl IntoView {
-    let random_name = Utils::use_random_transition_name();
-
-    view! { <RootAddBtn style=random_name>{children()}</RootAddBtn> }
-}
 
 #[component]
 pub fn TimeSlots() -> impl IntoView {
