@@ -1,7 +1,15 @@
 use leptos::prelude::*;
+use leptos_ui::clx;
 use tw_merge::*;
 
 use crate::components::ui::button::{Button, ButtonVariant};
+
+mod components {
+    use super::*;
+    clx! {DialogTitle, h3, "font-bold text-2xl"}
+    clx! {DialogFooter, div, "flex justify-end gap-2"}
+}
+pub use components::*;
 
 #[component]
 pub fn DialogTrigger(
@@ -9,8 +17,6 @@ pub fn DialogTrigger(
     #[prop(into, optional)] variant: Signal<ButtonVariant>,
     children: Children,
 ) -> impl IntoView {
-    let class = Memo::new(move |_| tw_merge!("", class()));
-
     view! {
         <Button onclick_string="modal.showModal()" class=class variant=variant>
             {children()}
@@ -44,33 +50,11 @@ pub fn Dialog(#[prop(into, optional)] class: Signal<String>, children: Children)
 }
 
 #[component]
-pub fn DialogTitle(
-    #[prop(into, optional)] class: Signal<String>,
-    children: Children,
-) -> impl IntoView {
-    let class = Memo::new(move |_| tw_merge!("font-bold text-2xl", class()));
-
-    view! { <div class=class>{children()}</div> }
-}
-
-#[component]
-pub fn DialogFooter(
-    #[prop(into, optional)] class: Signal<String>,
-    children: Children,
-) -> impl IntoView {
-    let class = Memo::new(move |_| tw_merge!("flex justify-end gap-2", class()));
-
-    view! { <div class=class>{children()}</div> }
-}
-
-#[component]
 pub fn DialogClose(
     #[prop(into, optional)] class: Signal<String>,
     #[prop(into, optional)] variant: Signal<ButtonVariant>,
     children: Children,
 ) -> impl IntoView {
-    let class = Memo::new(move |_| tw_merge!("", class()));
-
     view! {
         <Button onclick_string="modal.close()" class=class variant=variant>
             {children()}
