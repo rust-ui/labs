@@ -7,6 +7,7 @@ mod components {
     use super::*;
     clx! {DialogTitle, h3, "font-bold text-2xl"}
     clx! {DialogFooter, div, "flex justify-end gap-2"}
+    clx! {RootCloseButton, button, "absolute top-4 right-4"}
     clx! {RootDialog, dialog,
         "p-4 rounded-md w-full max-w-[600px]",
         "backdrop:bg-gray-400 backdrop:bg-opacity-50",
@@ -31,13 +32,9 @@ pub fn DialogTrigger(
 
 #[component]
 pub fn Dialog(#[prop(into, optional)] class: Signal<String>, children: Children) -> impl IntoView {
-    const CLASS_BUTTON_CLOSE: &str = "absolute top-4 right-4";
-
     view! {
         <RootDialog class=class onclose="modalForm.reset()" id="modal" tabindex="-1">
-            <button class=CLASS_BUTTON_CLOSE onclick="modal.close()">
-                "X"
-            </button>
+            <RootCloseButton onclick="modal.close()">"X"</RootCloseButton>
 
             {children()}
         </RootDialog>
