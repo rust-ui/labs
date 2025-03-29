@@ -28,6 +28,9 @@ macro_rules! clx {
             #[prop(into, optional)] class: Signal<String>,
             #[prop(optional)] style: Option<&'static str>,
             #[prop(optional)] role: Option<&'static str>,
+            #[prop(optional)] onclose: Option<&'static str>,
+            #[prop(optional)] id: Option<&'static str>,
+            #[prop(optional)] tabindex: Option<&'static str>,
             children: Children,
         ) -> impl IntoView {
             let merged_classes = Memo::new(move |_| {
@@ -35,7 +38,7 @@ macro_rules! clx {
             });
 
             view! {
-                <$element class=merged_classes style=style role=role>
+                <$element class=merged_classes style=style role=role onclose=onclose id=id tabindex=tabindex>
                     {children()}
                 </$element>
             }
