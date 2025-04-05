@@ -1,0 +1,645 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, demo, scroll;
+
+@layer popover {
+  :root {
+    --bottom: 2rem;
+    --speed: 0.3s;
+    --power-in: linear(
+      0 0%,
+      0.0039 6.25%,
+      0.0156 12.5%,
+      0.0352 18.75%,
+      0.0625 25%,
+      0.0977 31.25%,
+      0.1407 37.5%,
+      0.1914 43.74%,
+      0.2499 49.99%,
+      0.3164 56.25%,
+      0.3906 62.5%,
+      0.5625 75%,
+      0.7656 87.5%,
+      1 100%
+    );
+    --power-in-out: linear(
+      0 0%,
+      0.0012 14.95%,
+      0.0089 22.36%,
+      0.0297 28.43%,
+      0.0668 33.43%,
+      0.0979 36.08%,
+      0.1363 38.55%,
+      0.2373 43.07%,
+      0.3675 47.01%,
+      0.5984 52.15%,
+      0.7121 55.23%,
+      0.8192 59.21%,
+      0.898 63.62%,
+      0.9297 66.23%,
+      0.9546 69.06%,
+      0.9733 72.17%,
+      0.9864 75.67%,
+      0.9982 83.73%,
+      1 100%
+    );
+    --power-out: linear(
+      0 0%,
+      0.2342 12.49%,
+      0.4374 24.99%,
+      0.6093 37.49%,
+      0.6835 43.74%,
+      0.7499 49.99%,
+      0.8086 56.25%,
+      0.8593 62.5%,
+      0.9023 68.75%,
+      0.9375 75%,
+      0.9648 81.25%,
+      0.9844 87.5%,
+      0.9961 93.75%,
+      1 100%
+    );
+    --ease: var(--power-in);
+    --trigger-width: 190px;
+    --trigger-height: 44px;
+  }
+
+  :root:has(:popover-open) {
+    --ease: var(--power-out);
+  }
+
+  [popover]:popover-open .backdrop-blur {
+    scale: 1;
+    opacity: 1;
+  }
+
+  @starting-style {
+    [popover]:popover-open .backdrop-blur {
+      scale: 0;
+      opacity: 0;
+    }
+  }
+
+  .trigger {
+    width: var(--trigger-width);
+    height: var(--trigger-height);
+    border-radius: 22px;
+    color: light-dark(canvas, canvasText);
+    border: 0;
+    outline-color: white;
+  }
+
+  :root:has(.trigger:focus-visible) [popover] {
+    outline: 2px solid white;
+  }
+
+  .trigger,
+  .contents {
+    background: light-dark(hsl(0 0% 8%), hsl(0 0% 14%));
+  }
+
+  .contents {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 22px;
+    padding: 0 6px;
+    transition: padding var(--speed);
+    transform: translate3d(0, 0, 0);
+    @starting-style {
+      padding: 1rem;
+    }
+  }
+
+  @starting-style {
+    [popover]:popover-open .contents {
+      padding: 0 6px;
+    }
+  }
+
+  [popover] {
+    border: 0px;
+    border-radius: 22px;
+    background: transparent;
+    padding-block: 0;
+    overflow: visible;
+  }
+
+  [popover] .trigger__details {
+    min-height: 44px;
+    flex-basis: 44px;
+  }
+
+  .trigger__details {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.25rem;
+    width: 100%;
+  }
+
+  .trigger__details svg {
+    width: 24px;
+  }
+
+  .trigger__details .lines {
+    animation: draw both linear;
+    animation-timeline: --content;
+  }
+
+  .trigger__details > span:first-of-type {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 0.25rem;
+
+    svg {
+      width: 18px;
+    }
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  [popovertargetaction] {
+    anchor-name: --opener;
+  }
+
+  [popover]:popover-open {
+    display: flex;
+  }
+
+  [popover]:popover-open .contents {
+    padding: 1rem;
+  }
+  @starting-style {
+    [popover]:popover-open .contents {
+      padding: 0 6px;
+    }
+  }
+
+  [data-alignment='left'] .trigger,
+  [data-alignment='left'] [popover] {
+    left: 1rem;
+  }
+
+  [data-alignment='right'] .trigger,
+  [data-alignment='right'] [popover] {
+    right: 1rem;
+  }
+
+  [data-alignment='center'] .trigger,
+  [data-alignment='center'] [popover] {
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  [popover] {
+    flex-direction: column-reverse;
+    position-anchor: --opener;
+    transition-property: display, overlay, width, height;
+    transition-duration: var(--speed);
+    transition-behavior: allow-discrete;
+    transition-timing-function: var(--ease);
+    color: white;
+    margin: unset;
+    inset: unset;
+    bottom: var(--bottom);
+    width: var(--trigger-width);
+    height: var(--trigger-height);
+    z-index: 99999999;
+    padding: 0;
+    interpolate-size: allow-keywords;
+
+    @starting-style {
+      width: var(--trigger-width);
+      height: var(--trigger-height);
+    }
+  }
+
+  [popover] ol {
+    padding-inline: 0.5rem;
+    padding-left: 2.5rem;
+    list-style: pad-it;
+    display: flex;
+    width: max-content;
+    margin: 0;
+    flex-direction: column;
+    filter: blur(4px);
+    opacity: 0;
+    transition: filter var(--speed), opacity var(--speed);
+    transition-timing-function: var(--ease);
+  }
+
+  [popover]:popover-open ol {
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+  @starting-style {
+    [popover]:popover-open ol {
+      filter: blur(4px);
+      opacity: 0;
+    }
+  }
+
+  [popover]:popover-open {
+    width: var(--content-width, fit-content);
+    height: var(--content-height, fit-content);
+  }
+
+  li::marker {
+    color: #999;
+  }
+
+  li:has(a:is(:hover, :focus-visible))::marker {
+    color: #fff;
+  }
+
+  ol li a {
+    color: inherit;
+    white-space: nowrap;
+    padding-block: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #999;
+    flex: 1;
+    width: 100%;
+
+    &:is(:hover, :focus-visible) {
+      color: #fff;
+    }
+  }
+
+  @starting-style {
+    [popover]:popover-open {
+      width: var(--trigger-width);
+      height: var(--trigger-height);
+    }
+  }
+
+  [popover]::backdrop {
+    transition-property: overlay, display, opacity;
+    transition-duration: var(--speed);
+    transition-behavior: allow-discrete;
+    transition-timing-function: var(--ease);
+    background: hsl(0 0% 0% / 0.25);
+    opacity: 0;
+    backdrop-filter: blur(8px);
+  }
+
+  [popover] button {
+    background: #0000;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  [data-alignment='right'] [popover]::backdrop {
+    mask: linear-gradient(135deg, #0000 0%, #fff 100%);
+  }
+  [data-alignment='center'] [popover]::backdrop {
+    mask: linear-gradient(180deg, #0000 0%, #fff 100%);
+  }
+  [data-alignment='left'] [popover]::backdrop {
+    mask: linear-gradient(225deg, #0000 0%, #fff 100%);
+  }
+
+  [popover]:popover-open::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    [popover]:popover-open::backdrop {
+      opacity: 0;
+    }
+  }
+}
+
+@layer scroll {
+  :root {
+    timeline-scope: --content;
+  }
+
+  @property --progress {
+    initial-value: 0;
+    syntax: '<integer>';
+    inherits: true;
+  }
+
+  .trigger {
+    anchor-name: --opener;
+    position: fixed;
+    bottom: var(--bottom);
+    z-index: 9999999;
+    view-transition-name: trigger;
+    cursor: pointer;
+  }
+
+  :root {
+    animation: scroll-progress both linear;
+    animation-timeline: --content;
+  }
+
+  .content {
+    scroll-timeline: --content;
+  }
+
+  @keyframes scroll-progress {
+    to {
+      --progress: 100;
+    }
+  }
+
+:root {
+    counter-reset: progress var(--progress);
+  }
+
+  .progress {
+    border-radius: 100px;
+    background: light-dark(hsl(0 0% 35%), hsl(0 0% 0%));
+    padding: 0.25rem 0.5rem;
+  }
+
+  .progress::before {
+    font-variant-numeric: tabular-nums;
+    content: counter(progress) '%';
+  }
+}
+
+@layer demo {
+  @media (prefers-reduced-motion: no-preference) {
+    .content {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  @counter-style pad-it {
+    system: extends decimal;
+    pad: 2 '0';
+  }
+
+  .content {
+    width: 100vw;
+    height: 100svh;
+    overflow: auto;
+    padding-block: 80px;
+    mask: linear-gradient(#0000, #fff 80px calc(100% - 80px), #0000);
+    @media (max-width: 680px) {
+      mask: linear-gradient(#0000 60px, #fff 80px calc(100% - 80px), #0000);
+    }
+    scrollbar-color: hsl(0 100% 40%) #0000;
+    scrollbar-width: thin;
+  }
+
+  body {
+    --font-level: 0;
+  }
+
+  h1 {
+    --font-level: 4;
+    text-wrap: balance;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 2rem;
+
+    span {
+      font-size: 0.35em;
+    }
+  }
+
+  header,
+  main {
+    width: 60ch;
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+  }
+  footer {
+    padding: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.875;
+    text-align: center;
+  }
+
+  main {
+    counter-reset: section;
+  }
+
+  section {
+    counter-increment: section 1;
+  }
+
+  h2::before {
+    content: counter(section, pad-it) '. ';
+  }
+
+  header p {
+    font-size: 1.125rem;
+  }
+
+  section:not(:last-of-type) {
+    margin-bottom: 6rem;
+  }
+
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  p {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+    text-wrap: balance;
+  }
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+  p:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  main p {
+    color: color-mix(in hsl, canvasText, canvas 10%);
+    font-weight: 300;
+  }
+
+  hr {
+    opacity: 0.5;
+  }
+
+  hr,
+  header,
+  main {
+    margin-bottom: 6rem;
+  }
+
+  .heading {
+    position: relative;
+    display: flex;
+
+    &:is(:hover, :focus-within) a {
+      opacity: 1;
+    }
+
+    a {
+      opacity: 0;
+      width: 24px;
+      aspect-ratio: 1;
+      position: absolute;
+      color: inherit;
+      right: calc(100% + 0.5rem);
+      top: 0;
+      display: grid;
+      place-items: center;
+      transition: opacity 0.2s;
+      outline-color: transparent;
+      border-radius: 6px;
+
+      &:focus-visible {
+        background: color-mix(in hsl, canvasText, #0000 75%);
+      }
+
+      svg {
+        width: 20px;
+      }
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 14;
+    --font-size-max: 16;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1280;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: light-dark(white, black);
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in lch, canvasText, transparent 70%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+
+  .bear-link svg {
+    width: 75%;
+  }
+
+  /* Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+div.tp-dfwv {
+  position: fixed;
+}
+
+@counter-style pad-example {
+  system: extends decimal;
+  suffix: ' ';
+  pad: 2 ' ';
+}

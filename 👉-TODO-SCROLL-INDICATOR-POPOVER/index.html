@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  
+
+  <!-- * https://codepen.io/jh3y/pen/NWQYPvy -->
+
+
+  <button class="trigger" popovertarget="index" popovertargetaction="toggle">
+    <div class="trigger__details">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          id="mask0_3000_5"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="2"
+          width="24"
+          height="20"
+        >
+          <path
+            d="M3 6.75L19.0541 6.75L21.027 6.75H23.0135L23 3.5L1 3.5L1 12L23 12L23.0135 21L1 21L1 17.25L13 17.25"
+            stroke-width="2.5"
+            stroke="gray"
+          />
+        </mask>
+        <g mask="url(#mask0_3000_5)">
+          <rect x="3" y="6" width="18" height="12" fill="gray" />
+        </g>
+        <mask
+          id="mask1_3000_5"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="2"
+          width="24"
+          height="20"
+        >
+          <path
+            class="lines"
+            d="M3 6.75L19.0541 6.75L21.027 6.75H23.0135L23 3.5L1 3.5L1 12L23 12L23.0135 21L1 21L1 17.25L13 17.25"
+            stroke="white"
+            stroke-width="2.5"
+            pathLength="1.025"
+            stroke-dasharray="1.025"
+            stroke-dashoffset="1.025"
+          />
+        </mask>
+        <g mask="url(#mask1_3000_5)">
+          <rect x="3" y="6" width="18" height="12" fill="white" />
+        </g>
+      </svg>
+
+      <span>
+        <span>Index</span
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+          />
+        </svg>
+      </span>
+      <span class="progress"></span>
+    </div>
+  </button>
+  <div popover="auto" id="index">
+    <div class="contents">
+      <button popovertarget="index" popovertargetaction="hide">
+        <div class="trigger__details">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <mask
+              id="mask0_3000_5"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="2"
+              width="24"
+              height="20"
+            >
+              <path
+                d="M3 6.75L19.0541 6.75L21.027 6.75H23.0135L23 3.5L1 3.5L1 12L23 12L23.0135 21L1 21L1 17.25L13 17.25"
+                stroke-width="2.5"
+                stroke="gray"
+              />
+            </mask>
+            <g mask="url(#mask0_3000_5)">
+              <rect x="3" y="6" width="18" height="12" fill="gray" />
+            </g>
+            <mask
+              id="mask1_3000_5"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="2"
+              width="24"
+              height="20"
+            >
+              <path
+                class="lines"
+                d="M3 6.75L19.0541 6.75L21.027 6.75H23.0135L23 3.5L1 3.5L1 12L23 12L23.0135 21L1 21L1 17.25L13 17.25"
+                stroke="white"
+                stroke-width="2.5"
+                pathLength="1.025"
+                stroke-dasharray="1.025"
+                stroke-dashoffset="1.025"
+              />
+            </mask>
+            <g mask="url(#mask1_3000_5)">
+              <rect x="3" y="6" width="18" height="12" fill="white" />
+            </g>
+          </svg>
+
+          <span>
+            <span>Index</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+              />
+            </svg>
+          </span>
+          <span class="progress"></span>
+        </div>
+      </button>
+      <ol>
+        <li><a href="#user-centered-design">User-Centered Design</a></li>
+        <li>
+          <a href="#responsive-layouts"
+            >Responsive Layouts and Visual Hierarchy</a
+          >
+        </li>
+        <li>
+          <a
+            popovertarget="index"
+            popovertargetaction="hide"
+            href="#typography"
+            >Typography for Readability</a
+          >
+        </li>
+        <li>
+          <a
+            popovertarget="index"
+            popovertargetaction="hide"
+            href="#color-contrast"
+            >Color, Contrast, and Branding</a
+          >
+        </li>
+        <li>
+          <a
+            popovertarget="index"
+            popovertargetaction="hide"
+            href="#motion-design"
+            >Adding Motion with Animations</a
+          >
+        </li>
+        <li>
+          <a
+            popovertarget="index"
+            popovertargetaction="hide"
+            href="#accessibility"
+            >Accessibility and Inclusivity</a
+          >
+        </li>
+        <li>
+          <a
+            popovertarget="index"
+            popovertargetaction="hide"
+            href="#conclusion"
+            >Conclusion</a
+          >
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="content">
+    <header>
+      <h1 class="fluid">Craft of UI</h1>
+      <p>
+        A well-crafted UI can turn a simple webpage into an interactive
+        journey, guiding users and creating memorable impressions through
+        thoughtful design and seamless motion. In web development, creating a
+        UI that’s visually appealing, responsive, and motion-driven requires a
+        blend of creativity, coding skills, and a deep understanding of user
+        needs.
+      </p>
+    </header>
+    <main>
+      <section id="user-centered-design" style="view-timeline: --one">
+        <div class="heading">
+          <h2>User-Centered Design</h2>
+          <a href="#user-centered-design">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only">Section: User-Centered Design</span>
+          </a>
+        </div>
+        <p>
+          User-centered design (UCD) is the backbone of effective UI in web
+          development. Every decision in the design process should revolve
+          around the user’s needs, behavior, and preferences. Conducting user
+          research, analyzing browsing habits, and testing prototypes are
+          essential steps for developing a web UI that’s intuitive and
+          enjoyable.
+        </p>
+        <p>
+          Understanding the end-user’s journey on the website can help
+          designers pinpoint where users might encounter difficulties or
+          confusion. Techniques like journey mapping and persona creation
+          enable designers to simulate the user's interactions, focusing
+          design improvements where they are most needed. Ultimately, a
+          user-centered approach leads to a more engaging and efficient
+          experience.
+        </p>
+        <p>
+          Additionally, iterative feedback loops involving user testing allow
+          designers to refine features, identify pain points, and ensure that
+          any updates align with user needs. This continuous improvement cycle
+          keeps the design relevant and responsive, adapting to changes in
+          user behavior and technological advancements.
+        </p>
+      </section>
+
+      <section id="responsive-layouts" style="view-timeline: --two">
+        <div class="heading">
+          <h2>Responsive Layouts and Visual Hierarchy</h2>
+          <a href="#responsive-layouts">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only"
+              >Section: Responsive Layouts and Visual Hierarchy</span
+            >
+          </a>
+        </div>
+        <p>
+          In web design, layouts need to be responsive and visually coherent
+          across devices of all screen sizes. By utilizing CSS Flexbox, Grid
+          layouts, and media queries, designers can create adaptable UIs that
+          maintain visual integrity and usability on any screen. Effective
+          layouts employ a clear visual hierarchy, often leveraging grids,
+          whitespace, and alignment to make essential information easy to
+          locate.
+        </p>
+        <p>
+          With the rise of mobile browsing, a responsive layout is now a
+          standard requirement. Implementing fluid grids and scalable images
+          ensures that content looks great and is easy to navigate on screens
+          of any size. A well-designed layout optimizes for accessibility and
+          interaction, adapting seamlessly to user input methods, whether by
+          mouse, touch, or keyboard.
+        </p>
+        <p>
+          Using visual hierarchy principles such as size, color, and placement
+          further guides users to essential actions and information. For
+          example, call-to-action buttons should be easily noticeable,
+          encouraging engagement. Strategic spacing and alignment enhance
+          readability, making the layout feel organized and intuitive.
+        </p>
+      </section>
+
+      <section id="typography" style="view-timeline: --three">
+        <div class="heading">
+          <h2>Typography for Readability</h2>
+          <a href="#typography">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only">Section: Typography for Readability</span>
+          </a>
+        </div>
+        <p>
+          Typography in web UI design is more than just font choice—it’s about
+          creating a hierarchy and rhythm that guides readers naturally
+          through content. Selecting web-safe fonts or using modern,
+          browser-compatible font libraries can improve loading times and
+          accessibility.
+        </p>
+        <p>
+          Consistent typography establishes a brand’s tone and personality.
+          For example, sans-serif fonts lend a modern, clean look, while serif
+          fonts are often associated with sophistication and tradition.
+          Pairing fonts effectively—using one font for headings and another
+          for body text—can improve readability and make the interface
+          visually appealing.
+        </p>
+        <p>
+          Accessibility is another key consideration. Ensuring sufficient
+          contrast between text and background, appropriate font sizes, and
+          comfortable line spacing helps prevent eye strain. The right
+          typography settings contribute to an inclusive user experience,
+          allowing everyone to interact with and enjoy the content.
+        </p>
+      </section>
+
+      <section id="color-contrast" style="view-timeline: --four">
+        <div class="heading">
+          <h2>Color, Contrast, and Branding</h2>
+          <a href="#color-contrast">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only"
+              >Section: Color, Contrast, and Branding</span
+            >
+          </a>
+        </div>
+        <p>
+          In web UI, color and contrast play a powerful role in branding and
+          functionality. Selecting a cohesive color palette that aligns with a
+          brand’s identity can create emotional resonance with users, while
+          also ensuring functional clarity. High contrast between text and
+          background elements enhances readability and is crucial for web
+          accessibility standards.
+        </p>
+        <p>
+          Colors can evoke emotions and build connections with users. For
+          instance, blue often conveys trustworthiness and reliability, making
+          it a popular choice for finance and technology brands. Contrasting
+          colors highlight interactive elements, helping users quickly
+          identify buttons, links, and navigation.
+        </p>
+        <p>
+          Beyond aesthetics, color choices should accommodate visual
+          impairments such as color blindness. By incorporating patterns or
+          symbols alongside color cues, designers can ensure everyone has a
+          smooth and understandable experience. Considerations like these make
+          interfaces not only more beautiful but also more usable.
+        </p>
+      </section>
+
+      <section id="motion-design" style="view-timeline: --five">
+        <div class="heading">
+          <h2>Adding Motion with Animations</h2>
+          <a href="#motion-design">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only"
+              >Section: Adding Motion with Animations</span
+            >
+          </a>
+        </div>
+        <p>
+          Motion design is where UI truly comes to life on the web.
+          Micro-interactions, such as button hover effects, loading
+          animations, and scroll-triggered transitions, can make a page feel
+          responsive and engaging. Using CSS transitions, keyframes, and
+          JavaScript libraries like GSAP or anime.js, developers can create
+          smooth animations that enhance usability and draw attention to key
+          actions.
+        </p>
+        <p>
+          Animations can subtly guide users and emphasize functionality. For
+          example, a small bounce effect on a button hover gives a cue that
+          the button is interactive. Similarly, a progress spinner or loading
+          animation during load times can reduce user frustration, offering
+          feedback that the interface is responding.
+        </p>
+        <p>
+          However, animation should be used mindfully. Excessive motion can be
+          distracting or even overwhelming. When applied thoughtfully, motion
+          can enhance storytelling, create a more intuitive experience, and
+          help users understand the website’s flow and functionality.
+        </p>
+      </section>
+
+      <section id="accessibility" style="view-timeline: --six">
+        <div class="heading">
+          <h2>Accessibility and Inclusivity</h2>
+          <a href="#accessibility">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only"
+              >Section: Accessibility and Inclusivity</span
+            >
+          </a>
+        </div>
+        <p>
+          Web accessibility is fundamental to UI, ensuring that the internet
+          is usable for all people, regardless of ability. Accessible UI
+          design means making websites navigable with screen readers, enabling
+          keyboard-friendly navigation, and using semantic HTML elements for
+          structure.
+        </p>
+        <p>
+          Accessibility in UI often involves creating designs that accommodate
+          a variety of users. This includes adding ARIA labels to non-text
+          elements, optimizing contrast ratios, and ensuring that text
+          alternatives are available for non-visual users. Accessibility
+          considerations make web interfaces inclusive and user-friendly for
+          people of all abilities.
+        </p>
+        <p>
+          Inclusive design also means considering language and cultural
+          differences. Offering multiple language options and designing for
+          cultural adaptability helps broaden accessibility and global reach.
+          Making the effort to design inclusively not only complies with
+          standards but also reflects a commitment to an accessible,
+          user-friendly internet.
+        </p>
+      </section>
+
+      <hr />
+      <section id="conclusion" style="view-timeline: --seven">
+        <div class="sr-only heading">
+          <h2>Conclusion</h2>
+          <a href="#conclusion">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13"
+              />
+            </svg>
+            <span class="sr-only">Section: Conclusion</span>
+          </a>
+        </div>
+        <p>
+          The craft of web UI design lies in harmonizing aesthetics,
+          functionality, and motion to create intuitive digital experiences.
+          From typography and color to responsive layouts and interactive
+          motion, every element should serve a purpose and enhance the user
+          journey.
+        </p>
+        <p>
+          For developers, mastering UI is about combining creative techniques
+          with coding expertise, delivering interfaces that look incredible
+          and feel effortless. An emphasis on motion, accessibility, and
+          user-centered design will shape how users experience and interact
+          with the web in meaningful ways.
+        </p>
+        <p>
+          As technology evolves, so will the craft of UI design, and those who
+          adapt will continue to elevate web experiences, creating seamless,
+          inclusive interfaces that everyone can enjoy.
+        </p>
+      </section>
+    </main>
+    <footer>ʕ◕ᴥ◕ʔ &copy; jhey '24</footer>
+  </div>
+  <a
+    class="bear-link"
+    href="https://twitter.com/intent/follow?screen_name=jh3yy"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <svg
+      class="w-9"
+      viewBox="0 0 969 955"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="161.191"
+        cy="320.191"
+        r="133.191"
+        stroke="currentColor"
+        stroke-width="20"
+      ></circle>
+      <circle
+        cx="806.809"
+        cy="320.191"
+        r="133.191"
+        stroke="currentColor"
+        stroke-width="20"
+      ></circle>
+      <circle
+        cx="695.019"
+        cy="587.733"
+        r="31.4016"
+        fill="currentColor"
+      ></circle>
+      <circle
+        cx="272.981"
+        cy="587.733"
+        r="31.4016"
+        fill="currentColor"
+      ></circle>
+      <path
+        d="M564.388 712.083C564.388 743.994 526.035 779.911 483.372 779.911C440.709 779.911 402.356 743.994 402.356 712.083C402.356 680.173 440.709 664.353 483.372 664.353C526.035 664.353 564.388 680.173 564.388 712.083Z"
+        fill="currentColor"
+      ></path>
+      <rect
+        x="310.42"
+        y="448.31"
+        width="343.468"
+        height="51.4986"
+        fill="#FF1E1E"
+      ></rect>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M745.643 288.24C815.368 344.185 854.539 432.623 854.539 511.741H614.938V454.652C614.938 433.113 597.477 415.652 575.938 415.652H388.37C366.831 415.652 349.37 433.113 349.37 454.652V511.741L110.949 511.741C110.949 432.623 150.12 344.185 219.845 288.24C289.57 232.295 384.138 200.865 482.744 200.865C581.35 200.865 675.918 232.295 745.643 288.24Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </a>
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

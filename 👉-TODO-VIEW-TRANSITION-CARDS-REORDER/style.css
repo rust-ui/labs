@@ -1,0 +1,89 @@
+@layer view-transitions {
+	
+	@supports (x: attr(x type(*))) {
+		.warning {
+			display: none;
+		}
+	}
+
+	.card[id] {
+    view-transition-name: attr(id type(<custom-ident>), none); /* card-1, card-2, card-3, etc. */
+    view-transition-class: card;
+  }
+	
+	:root {
+		view-transition-name: none;
+	}
+	::view-transition {
+		pointer-events: none;
+	}
+}
+
+@layer layout {
+	.cards {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		padding: 1em;
+	}
+
+	.card {
+		border-radius: 0.25em;
+		width: 20vw;
+		max-width: 5em;
+		aspect-ratio: 1 / 1.6;
+		background: lightgrey;
+
+		display: grid;
+		place-content: center;
+		font-size: 2em;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		min-height: 100svh;
+		display: grid;
+		place-content: center;
+	}
+
+	button {
+		justify-self: center;
+	}
+}
+
+@layer warning {
+	.warning {
+		padding: 1em;
+		margin: 1em 0;
+		border: 1px solid #ccc;
+		background: rgba(255 255 205 / 0.8);
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		left: 1em;
+		right: 1em;
+	}
+
+	.warning > :first-child {
+		margin-top: 0;
+	}
+
+	.warning > :last-child {
+		margin-bottom: 0;
+	}
+
+	.warning a {
+		color: blue;
+	}
+	.warning--info {
+		border: 1px solid #123456;
+		background: rgb(205 230 255 / 0.8);
+	}
+	.warning--alarm {
+		border: 1px solid red;
+		background: #ff000010;
+	}
+}
