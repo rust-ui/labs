@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 document.addEventListener("DOMContentLoaded", function() {
-  const contentHolderHeight = document.querySelector('.content-holder').offsetHeight;
+  const contentHolderHeight = document.querySelector('.content__holder').offsetHeight;
   const imgHolderHeight = window.innerHeight;
   const additionalScrollHeight = window.innerHeight;
 
@@ -22,7 +22,7 @@ ScrollTrigger.create({
     }
 });
 
-gsap.to(".header .letters:first-child", {
+gsap.to(".header__scroll .letters:first-child", {
     x: () => -innerWidth * 3,
     scale: 10,
     ease: "power2.inOut",
@@ -33,7 +33,7 @@ gsap.to(".header .letters:first-child", {
     }
 });
 
-gsap.to(".header .letters:last-child", {
+gsap.to(".header__scroll .letters:last-child", {
     x: () => innerWidth * 3,
     scale: 10,
     ease: "power2.inOut",
@@ -44,7 +44,7 @@ gsap.to(".header .letters:last-child", {
     }
 });
 
-gsap.to(".img-holder", {
+gsap.to(".img__holder", {
     rotation: 0,
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     ease: "power2.inOut",
@@ -55,7 +55,7 @@ gsap.to(".img-holder", {
     }
 });
 
-gsap.to(".img-holder img", {
+gsap.to(".img__holder img", {
     scale: 1,
     ease: "power2.inOut",
     scrollTrigger: {
