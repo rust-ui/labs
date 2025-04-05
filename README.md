@@ -8,6 +8,8 @@ It's only a temporary repository to test and develop components. Once they are r
 
 # 👉 Process to Follow
 
+You have all the infos with the video, but you can also refer to this 👇
+
 ## 1. In `👉-TODO-*` folder
 
 1. Go to any folder with `👉-TODO-*`.
