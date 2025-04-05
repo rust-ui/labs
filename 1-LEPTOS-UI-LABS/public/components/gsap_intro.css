@@ -1,0 +1,51 @@
+
+
+
+/**  hidden */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.mainDiv {
+  font-family: "Inte";
+}
+
+
+
+
+
+
+/**  flex-1 text-2xl font-normal text-black text-center */
+.letters > div {
+  flex: 1;
+  font-size: 18vw;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+}
+
+
+
+/**  relative top-0 w-full h-screen bg-white clip-path-polygon transform rotate-30 */
+.img__holder {
+  clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+  transform: rotate(30deg);
+}
+
+/**  relative transform scale-200 */
+.img__holder img {
+  position: relative;
+  transform: scale(2);
+}
+
+/**   */
+.content__holder {
+  top: -5px;
+}
+
+/**  my-8 mx-4 */
+.row {
+  margin: 2em 1em;
+}
+
+
