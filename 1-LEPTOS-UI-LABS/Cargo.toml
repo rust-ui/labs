@@ -1,0 +1,55 @@
+[workspace]
+resolver = "2"
+members = ["app", "frontend", "server"]
+
+# need to be applied only to wasm build
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 'z'
+
+
+[workspace.dependencies]
+leptos_ui = { path = "crates/leptos_ui" }
+
+axum = "0.8"
+cfg-if = "1"
+console_error_panic_hook = "0.1"
+console_log = "1"
+http = "1"
+leptos = { version = "0.8.0-alpha", features = ["nightly"] }
+leptos_axum = { version = "0.8.0-alpha" }
+leptos_meta = { version = "0.8.0-alpha" }
+leptos_router = { version = "0.8.0-alpha", features = ["nightly"] }
+log = "0.4"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tower = { version = "0.5", features = ["full"] }
+tower-http = { version = "0.6", features = ["full"] }
+tw_merge = { version = "0.1", features = ["variant", "debug"] }
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["Document", "Window", "Element", "Storage"] }
+
+js-sys = "0.3"
+
+
+# serde = { version = "1.0", features = ["derive"] }
+
+
+[[workspace.metadata.leptos]]
+name = "start-axum-workspace"
+bin-package = "server"
+lib-package = "frontend"
+site-root = "target/site"
+site-pkg-dir = "pkg"
+tailwind-input-file = "style/tailwind.css"
+assets-dir = "public"
+site-addr = "127.0.0.1:3000"
+reload-port = 3001
+browserquery = "defaults"
+watch = false
+env = "DEV"
+bin-features = []
+bin-default-features = false
+lib-features = []
+lib-default-features = false

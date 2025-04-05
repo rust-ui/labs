@@ -1,0 +1,38 @@
+body {
+  transition: all 0.4s ease; /* Used for ThemeToggleTransition */
+}
+
+
+.appearance {
+  -webkit-tap-highlight-color: transparent;
+  
+  svg path {
+    transform-origin: center;
+    transition: all .6s ease;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+    
+    &.sun {
+      transform: scale(.4) rotate(60deg);
+      opacity: 0;
+    }
+    
+    &.moon {
+      opacity: 1;
+    }
+  }
+  
+  &.switch {
+    svg path {
+      &.sun {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+      }
+      
+      &.moon {
+        transform: scale(.4) rotate(-60deg);
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# General context for clx! macro
+
+- I use clx for building my components. You can have an explanation in [card.rs](mdc:src/registry/ui/card.rs).
+- The macro of clx can be found in [clx.rs](mdc:crates/leptos_ui/src/clx.rs).
+
+For the moment, the clx macro is this, but it is subsecptible to change so if you are not sure, ask me.
+
+```rust
+#[macro_export]
+macro_rules! clx {
+    ($name:ident, $element:ident, $($base_class:expr),+ $(,)?) => {
+        #[component]
+        pub fn $name(
+            #[prop(into, optional)] class: Signal<String>,
+            children: Children,
+        ) -> impl IntoView {
+            let merged_classes = Memo::new(move |_| {
+                tw_merge::tw_merge!(tw_merge::tw_join!($($base_class),+), class())
+            });
+
+            view! {
+                <$element class=merged_classes>
+                    {children()}
+                </$element>
+            }
+        }
+    };
+}
+```
+
+
+
+
+# Creating components and exporting them.
+
+This is how I create components and export them: 
+
+
+```rust
+use leptos::prelude::*;
+use leptos_ui::clx;
+
+mod components {
+    use super::*;
+    clx! {Card, div, "rounded-lg border bg-card shadow p-4 w-full"}
+    clx! {CardHeader, div, "flex flex-col space-y-1.5"}
+    clx! {CardTitle, h3, "text-2xl font-semibold leading-none tracking-tight"}
+    clx! {CardDescription, p, "text-sm", "text-muted-foreground"}
+    clx! {CardContent, div, "pt-4"}
+    clx! {CardFooter, div, "mt-4", "flex items-center justify-end"}
+}
+
+pub use components::*;
+```
+
+
+NOTE: For HTML that is just like `<div class="flex flex-col gap-4"></div>`, no need to create component, unless it helps to understand the Component. For instance, `clx! {CardHeader, div, "flex flex-col gap-2"}`.
+
+
+
+
+

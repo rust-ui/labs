@@ -1,0 +1,100 @@
+
+:root {
+  --base-duration: 600ms;
+  --duration-diff: 75ms;
+}
+
+
+/* container-flex-transition styles when justify-content is animated */
+body:has([value="justify-content"]:checked) {
+  .container-flex-transition {
+    width: 1000px;
+    justify-content: flex-start;
+  }
+}
+
+/* toggle flex direction */
+body:has([value="flex-direction"]:checked) .toggle {
+  flex-direction: column;
+}
+
+/* toggle justify-content */
+body:has([value="justify-content"]:checked) .toggle {
+  justify-content: flex-end;
+}
+
+
+/* animation delays when flex-direction is animated */
+html:has([value="flex-direction"]:checked):has(#delay:checked) {
+  &::view-transition-group(item1) {
+    animation-duration: var(--base-duration);
+    animation-delay: 75ms;
+  }
+  &::view-transition-group(item2) {
+    animation-duration: var(--base-duration);
+    animation-delay: 100ms;
+  }
+  &::view-transition-group(item3) {
+    animation-duration: var(--base-duration);
+    animation-delay: 150ms;
+  }
+  &::view-transition-group(item4) {
+    animation-duration: var(--base-duration);
+    animation-delay: 225ms;
+  }
+  &::view-transition-group(item5) {
+    animation-duration: var(--base-duration);
+    animation-delay: 300ms;
+  }
+}
+
+html:has([value="justify-content"]:checked) {
+  --base-duration: 600ms;
+
+  /* animation delays when justify-content is animated from flex-end to flex-start */
+  &:not(:has(.toggle)):has(#delay:checked) {
+    &::view-transition-group(item1) {
+      animation-duration: var(--base-duration);
+    }
+    &::view-transition-group(item2) {
+      animation-duration: var(--base-duration);
+      animation-delay: var(--duration-diff);
+    }
+    &::view-transition-group(item3) {
+      animation-duration: var(--base-duration);
+      animation-delay: calc(2 * var(--duration-diff));
+    }
+    &::view-transition-group(item4) {
+      animation-duration: var(--base-duration);
+      animation-delay: calc(3 * var(--duration-diff));
+    }
+    &::view-transition-group(item5) {
+      animation-duration: var(--base-duration);
+      animation-delay: calc(4 * var(--duration-diff));
+    }
+  }
+
+  /* animation delays when justify-content is animated from flex-start to flex-end */
+  &:has(.toggle):has(#delay:checked) {
+    &::view-transition-group(item1) {
+      animation-duration: var(--base-duration);
+      animation-delay: calc(4 * var(--duration-diff));
+    }
+    &::view-transition-group(item2) {
+      animation-duration: var(--base-duration);
+      animation-delay: calc(3 * var(--duration-diff));
+    }
+    &::view-transition-group(item3) {
+      animation-duration: var(--base-duration);
+      animation-delay: calc(2 * var(--duration-diff));
+    }
+    &::view-transition-group(item4) {
+      animation-duration: var(--base-duration);
+      animation-delay: var(--duration-diff);
+    }
+    &::view-transition-group(item5) {
+      animation-duration: var(--base-duration);
+    }
+  }
+}
+

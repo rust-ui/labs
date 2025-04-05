@@ -1,0 +1,74 @@
+---
+description: 
+globs: *.css,*.rs
+alwaysApply: false
+---
+
+# Fill clx! components with Tailwind classes
+
+
+## Description
+I want to use the comments in the CSS file and to use the Tailwind classes in comment to fill the components that have a `clx!` macro rule.
+
+
+
+## Conversion Process
+
+1. **Identify CSS Comments in the .css file**: Review the existing the Tailwind classes in comment in the CSS file.
+
+2. **Map to Tailwind Classes**: For each CSS class with tailwind comment, find the corresponding component using `clx!` macro.
+
+3. **Create the Comment**: Fill the component using the Tailwind classes.
+
+
+
+### Example: Adding the Tailwind classes for `MultiSelectTags` using `.tags` with the commments
+
+#### 1. In the CSS file
+```css
+/**  flex flex-wrap gap-3 p-3 bg-white rounded-2xl border border-gray-300 w-[400px] */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e4e4e7;
+  width: 400px;
+}
+```
+
+#### 2. In the .rs file (BEFORE THE CHANGES)
+
+```rs
+use leptos::prelude::*;
+use leptos_ui::{clx, div};
+
+mod components {
+    use super::*;
+    div! {MultiSelectTagsSearch, "search"}
+    clx! {MultiSelectTags, div, "tags flex flex-wrap gap-3 p-3 bg-white rounded-2xl border border-gray-300 w-[400px]"}
+}
+
+pub use components::*;
+```
+
+
+#### 3. In the .rs file (AFTER THE CHANGES)
+
+```rs
+use leptos::prelude::*;
+use leptos_ui::{clx, div};
+
+mod components {
+    use super::*;
+    div! {MultiSelectTagsSearch, "search"}
+    clx! {MultiSelectTags, div, "tags"}
+}
+
+pub use components::*;
+```
+
+
+

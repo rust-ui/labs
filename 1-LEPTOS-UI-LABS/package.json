@@ -1,0 +1,8 @@
+{
+	"type": "module",
+	"dependencies": {
+		"@tailwindcss/cli": "^4.0.17",
+		"tailwindcss": "^4.0.17",
+		"tw-animate-css": "^1.2.5"
+	}
+}

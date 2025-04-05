@@ -1,0 +1,62 @@
+---
+description: 
+globs: *.css
+alwaysApply: false
+---
+# Fill CSS files with Tailwind Comments
+
+
+## Description
+I want to create comment in my CSS files to help me convert CSS classes in Tailwind. The goal is just to create the comment. Each comment is related to a single class.
+
+Each comment must be as follow :
+
+```css
+/** XXXXXXX */
+```
+
+
+## Conversion Process
+
+1. **Identify CSS Properties**: Review the existing CSS class and identify the properties that need to be converted.
+
+2. **Map to Tailwind Classes**: For each CSS property, find the corresponding Tailwind CSS utility class.
+
+3. **Create the Comment**: Create a comment ahead of the CSS class without touching the CSS class. Just create the comment ahread.
+
+
+
+### Example: Converting the `.tags` Class
+
+#### 1. BEFORE
+```css
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e4e4e7;
+  width: 400px;
+}
+```
+
+#### 2. AFTER: ADDING THE COMMENT
+```css
+/**  flex flex-wrap gap-3 p-3 bg-white rounded-2xl border border-gray-300 w-[400px] */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e4e4e7;
+  width: 400px;
+}
+```
+
+
+
+

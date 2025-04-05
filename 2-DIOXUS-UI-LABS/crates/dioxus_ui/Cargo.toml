@@ -1,0 +1,13 @@
+[package]
+name = "dioxus_ui"
+version = "0.1.1"
+edition = "2024"
+authors = ["Everlabs"]
+description = "Build modular UI components in just 1 line. Tailored for the Dioxus framework."
+keywords = ["dioxus", "ui", "tailwind", "css", "clx"]
+license = "MIT"
+readme = "./README.md"
+
+[dependencies]
+dioxus = { version = "0.6" }
+tw_merge = { version = "0.1.5" }
