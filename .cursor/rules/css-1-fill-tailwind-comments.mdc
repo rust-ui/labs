@@ -5,6 +5,8 @@ alwaysApply: false
 ---
 # Fill CSS files with Tailwind Comments
 
+Note: We are using Tailwind V4.
+
 
 ## Description
 I want to create comment in my CSS files to help me convert CSS classes in Tailwind. The goal is just to create the comment. Each comment is related to a single class.
