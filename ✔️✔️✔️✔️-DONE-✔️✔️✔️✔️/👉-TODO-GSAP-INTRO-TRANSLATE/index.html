@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  
+  <div class="h-full mainDiv overscroll-none">
+
+
+
+    <div class="fixed flex flex-row w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 header__scroll z-2">
+      <div class="flex flex-1 uppercase letters">
+        <div>a</div>
+        <div>r</div>
+        <div>t</div>
+        <div>w</div>
+      </div>
+      <div class="flex flex-1 uppercase letters">
+        <div>o</div>
+        <div>r</div>
+        <div>k</div>
+        <div>s</div>
+      </div>
+    </div>
+    <div class="fixed top-0 w-full min-h-screen website-content">
+      <div class="img__holder relative w-full h-[100vh] top-0 bg-white">
+        <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1700403322391-f1cd144394cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+      </div>
+  
+      <div class="relative p-1 text-white bg-black -w-full content__holder">
+        <div class="row">
+          <h1 class="font-normal tracking-tight uppercase text-8xl">History</h1>
+        </div>
+        <div class="row">
+          <div class=" w-[200px] h-[275px]">
+          "Text"
+          </div>
+        </div>
+ 
+
+        <div class="row">
+          <p class="w-1/2 text-base font-normal leading-relaxed ">
+            In the age of knights and castles, master sculptors skillfully
+            carved stones and marbles with great artistry. From mountains and
+            forests, the raw materials arose to be shaped according to their
+            vision.
+          </p>
+          <p>
+            In the age of knights and castles, master sculptors skillfully
+            carved stones and marbles with great artistry. From mountains and
+            forests, the raw materials arose to be shaped according to their
+            vision.
+          </p>
+          <p>
+            In the age of knights and castles, master sculptors skillfully
+            carved stones and marbles with great artistry. From mountains and
+            forests, the raw materials arose to be shaped according to their
+            vision.
+          </p>
+          <p>
+            In the age of knights and castles, master sculptors skillfully
+            carved stones and marbles with great artistry. From mountains and
+            forests, the raw materials arose to be shaped according to their
+            vision.
+          </p>
+          <p>
+            In the age of knights and castles, master sculptors skillfully
+            carved stones and marbles with great artistry. From mountains and
+            forests, the raw materials arose to be shaped according to their
+            vision.
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            These artisans, wielding hammers and chisels, brought to life the
+            mysteries of faith and ancient tales in stone. Every stroke, with
+            precision and reverence, narrated stories of virtues, triumphs, and
+            sometimes tragic human tales.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
