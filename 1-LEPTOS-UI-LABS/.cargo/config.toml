@@ -5,3 +5,10 @@ rustflags = [
   "-C", "link-arg=-fuse-ld=lld", # Needed for Apple Silicon
   "--cfg", "erase_components"
 ]
+
+[target.x86_64-unknown-linux-musl]
+linker = "musl-gcc"
+rustflags = [
+    "-C", "target-feature=+crt-static",
+    "-C", "link-arg=-v"
+]
