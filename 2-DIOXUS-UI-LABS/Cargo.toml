@@ -1,5 +1,5 @@
 [package]
-name = "dioxus_ui"
+name = "dioxus_ui_labs"
 version = "0.1.0"
 authors = ["Max Wells <maxwells.pro@proton.me>"]
 edition = "2024"
