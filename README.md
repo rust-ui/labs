@@ -2,7 +2,7 @@
 
 This repository is designed to be a collaborative working space for creating components for Leptos and Dioxus.
 
-It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui-platform-app-pycog.ondigitalocean.app/) (temporary URL).
+It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui-jp7dt.ondigitalocean.app/) (temporary URL).
 
 
 
