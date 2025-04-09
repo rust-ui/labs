@@ -13,6 +13,8 @@ Please refer to [Leptos](https://github.com/leptos-rs/leptos?tab=readme-ov-file#
 Don't forget to :
 - `rustup update`
 - `cargo install-update -a`
+- `cargo update`
+  
 - `git pull`
 
 
