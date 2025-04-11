@@ -13,6 +13,12 @@ end2end/playwright-report/
 playwright/.cache/
 
 
+# Tailwind
+# 🔸 Seems to not apply...
+**/output.css
+**/style/output.css
+
+
 # Apple
 **/.DS_Store
 **/.Icon?
