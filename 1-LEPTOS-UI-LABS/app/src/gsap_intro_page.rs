@@ -1,8 +1,39 @@
 use leptos::prelude::*;
+use leptos_ui::{clx, img};
 
 #[component]
 pub fn GsapIntroPage() -> impl IntoView {
     view! {
+        <GsapIntro>
+            <HeaderScroll>
+                <Letters>
+                    <Letter>"T"</Letter>
+                    <Letter>"A"</Letter>
+                    <Letter>"I"</Letter>
+                    <Letter>"L"</Letter>
+                </Letters>
+                <Letters>
+                    <Letter>"W"</Letter>
+                    <Letter>"I"</Letter>
+                    <Letter>"N"</Letter>
+                    <Letter>"D"</Letter>
+                </Letters>
+            </HeaderScroll>
+
+            <FixedContent>
+                <ImageHolder>
+                    <Image
+                        src="https://images.unsplash.com/photo-1700403322391-f1cd144394cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                    />
+                </ImageHolder>
+
+                <ContentHolder class="grid place-content-center">
+                    <h2 class="font-bold text-4xl">"Your content goes here 😄"</h2>
+                </ContentHolder>
+            </FixedContent>
+        </GsapIntro>
+
         <style>
             {"::-webkit-scrollbar {
             display: none;
@@ -14,38 +45,26 @@ pub fn GsapIntroPage() -> impl IntoView {
             "}
         </style>
 
-        <div class="h-full mainDiv overscroll-none font-inte">
-
-            <div class="fixed flex flex-row w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 header__scroll z-2">
-                <div class="flex flex-1 letters">
-                    <div class="flex-1 text-center text-[18vw]">"T"</div>
-                    <div class="flex-1 text-center text-[18vw]">"A"</div>
-                    <div class="flex-1 text-center text-[18vw]">"I"</div>
-                    <div class="flex-1 text-center text-[18vw]">"L"</div>
-                </div>
-                <div class="flex flex-1 text-center text-[18vw] letters">
-                    <div class="flex-1 text-center text-[18vw]">"W"</div>
-                    <div class="flex-1 text-center text-[18vw]">"I"</div>
-                    <div class="flex-1 text-center text-[18vw]">"N"</div>
-                    <div class="flex-1 text-center text-[18vw]">"D"</div>
-                </div>
-            </div>
-            <div class="fixed top-0 w-full min-h-screen website-content">
-                <div class="img__holder relative w-full h-[100vh] top-0 bg-white rotate-[30deg]">
-                    <img
-                        class="object-cover w-full h-full relative scale-[2]"
-                        src="https://images.unsplash.com/photo-1700403322391-f1cd144394cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt=""
-                    />
-                </div>
-
-                <div class="relative bg-muted/60 p-1 -w-full content__holder min-h-[100vh] grid place-content-center">
-                    <h2 class="font-bold text-4xl">"Your content goes here 😄"</h2>
-                </div>
-            </div>
-
-        </div>
-
+        // * ----- SCRIPT -----
         <script src="/components/gsap_intro.js" />
     }
 }
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ COMPONENTS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+mod components {
+    use super::*;
+    clx! {GsapIntro, div, "h-full mainDiv overscroll-none font-inte"}
+    clx! {HeaderScroll, div, "fixed flex flex-row w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 header__scroll z-2"}
+    clx! {Letters, div, "flex flex-1 letters"}
+    clx! {Letter, div, "flex-1 text-center text-[18vw]"}
+    clx! {FixedContent, div, "fixed top-0 w-full min-h-screen website-content"}
+    clx! {ImageHolder, div, "img__holder relative w-full h-[100vh] top-0 bg-white rotate-[30deg]"}
+    clx! {ContentHolder, div, "relative bg-muted/60 p-1 -w-full content__holder min-h-[100vh]"}
+
+    img! {Image, "object-cover w-full h-full relative scale-[2]"}
+}
+
+pub use components::*;

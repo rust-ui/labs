@@ -152,3 +152,28 @@ macro_rules! transition {
         }
     };
 }
+
+// * Special macro since img doesn't accept children.
+#[macro_export]
+macro_rules! img {
+    ($name:ident, $($base_class:expr),+ $(,)?) => {
+        #[component]
+        pub fn $name(
+            #[prop(into, optional)] class: Signal<String>,
+            #[prop(optional)] src: Option<&'static str>,
+            #[prop(optional)] alt: Option<&'static str>,
+        ) -> impl IntoView {
+            let merged_classes = Memo::new(move |_| {
+                tw_merge::tw_merge!(tw_merge::tw_join!($($base_class),+), class())
+            });
+
+            view! {
+                <img
+                    class=merged_classes
+                    src=src
+                    alt=alt
+                />
+            }
+        }
+    };
+}
