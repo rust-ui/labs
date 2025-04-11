@@ -10,4 +10,4 @@ readme = "./README.md"
 
 [dependencies]
 leptos = { version = "0.7", features = ["nightly"] }
-tw_merge = { version = "0.1.5" }
+tw_merge = { version = "0.1" }
