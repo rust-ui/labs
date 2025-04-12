@@ -120,3 +120,6 @@ view! {
 You can check the examples in the repo to see how it's used 😄
 
 
+# License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
