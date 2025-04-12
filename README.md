@@ -83,10 +83,7 @@ PS: This is not mandatory, just a nice to have 😄
 
 # 👾 Discord
 
-I'll soon create a Discord server to discuss about the components and the project, and Rust over all (job opportunities, etc).
-
-When it's ready I'll share the link here.
-
+You can join the [Discord server](https://discord.gg/mbszS27TqA) to discuss about the components and the project, and Rust over all (job opportunities, etc).
 
 
 
