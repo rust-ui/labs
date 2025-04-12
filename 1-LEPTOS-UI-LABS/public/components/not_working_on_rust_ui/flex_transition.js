@@ -1,8 +1,8 @@
-const button = document.querySelector('button');
-const container = document.querySelector('.container-flex-transition');
+const button = document.querySelector("button");
+const container = document.querySelector(".container-flex-transition");
 
-button.addEventListener('click', () => {
+button.addEventListener("click", () => {
   document.startViewTransition(() => {
-    container.classList.toggle('toggle');
-  })
+    container.classList.toggle("toggle");
+  });
 });

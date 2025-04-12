@@ -1,34 +1,34 @@
 const cards = [
   {
-    name: 'Leonel Ngoya',
-    number: '5211300256188330',
-    expiry: '12/22',
-    cvv: '123',
-    logo: 'https://payment-method-lndev.vercel.app/visa.png'
+    name: "Leonel Ngoya",
+    number: "5211300256188330",
+    expiry: "12/22",
+    cvv: "123",
+    logo: "https://payment-method-lndev.vercel.app/visa.png",
   },
   {
-    name: 'Leonel Ngoya',
-    number: '5211300256183941',
-    expiry: '10/27',
-    cvv: '123',
-    logo: 'https://payment-method-lndev.vercel.app/mastercard.png'
+    name: "Leonel Ngoya",
+    number: "5211300256183941",
+    expiry: "10/27",
+    cvv: "123",
+    logo: "https://payment-method-lndev.vercel.app/mastercard.png",
   },
   {
-    name: 'Leonel Ngoya',
-    number: '5211300256188330',
-    expiry: '06/25',
-    cvv: '123',
-    logo: 'https://payment-method-lndev.vercel.app/visa.png'
+    name: "Leonel Ngoya",
+    number: "5211300256188330",
+    expiry: "06/25",
+    cvv: "123",
+    logo: "https://payment-method-lndev.vercel.app/visa.png",
   },
 ];
 
-const buttonContainer = document.querySelector('.button-container');
+const buttonContainer = document.querySelector(".button-container");
 
 const showCardItem = (cardItem) => {
   const index = cardItem.dataset.index;
-  const newCardLogo = cardItem.querySelector('.card-logo');
-  const newCardNumber = cardItem.querySelector('.card-number-input');
-  const newCardExpiry = cardItem.querySelector('.card-expiry-input');
+  const newCardLogo = cardItem.querySelector(".card-logo");
+  const newCardNumber = cardItem.querySelector(".card-number-input");
+  const newCardExpiry = cardItem.querySelector(".card-expiry-input");
 
   cardItem.innerHTML = `
     <div class="card-item-content">
@@ -45,7 +45,9 @@ const showCardItem = (cardItem) => {
 };
 
 const showCardList = (cardList) => {
-  cardList.innerHTML = cards.map((card, index) => `
+  cardList.innerHTML = cards
+    .map(
+      (card, index) => `
       <div class="card-item" data-index="${index + 1}" style="view-transition-name: card-item-edit${index + 1};">
         <div class="card-item-content">
           <div class="card-info">
@@ -70,16 +72,18 @@ const showCardList = (cardList) => {
           <button class="edit-btn" type="button" style="view-transition-name: edit-btn${index + 1};">Edit</button>
         </div>
       </div>
-    `).join('');
+    `,
+    )
+    .join("");
 };
 
 const showEditForm = (cardItem) => {
   const index = cardItem.dataset.index;
-  const newCardLogo = cardItem.querySelector('.card-logo');
-  const newCardNumber = cardItem.querySelector('.card-number');
-  const newCardExpiry = cardItem.querySelector('.card-expiry');
+  const newCardLogo = cardItem.querySelector(".card-logo");
+  const newCardNumber = cardItem.querySelector(".card-number");
+  const newCardExpiry = cardItem.querySelector(".card-expiry");
 
-  const editForm = /*html*/`
+  const editForm = /*html*/ `
     <form class="edit-form">
       <label>Name on card</label>
       <div class="form-group">
@@ -114,7 +118,7 @@ const showEditForm = (cardItem) => {
   cardItem.innerHTML = editForm;
 };
 
-const addCardForm = (item) => /*html*/`
+const addCardForm = (item) => /*html*/ `
   <form class="add-form" id="add-form">
     <div class="add-form-header">
       <span>Credit card</span>
@@ -137,7 +141,7 @@ const addCardForm = (item) => /*html*/`
 `;
 
 const addSaveCardButton = (buttonContainer) => {
-  buttonContainer.innerHTML = /*html*/`
+  buttonContainer.innerHTML = /*html*/ `
     <button class="save-card-btn in">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -145,10 +149,10 @@ const addSaveCardButton = (buttonContainer) => {
       <span>Save</span>
     </button>
   `;
-}
+};
 
 const addAddCardButton = (buttonContainer) => {
-  buttonContainer.innerHTML = /*html*/` 
+  buttonContainer.innerHTML = /*html*/ ` 
     <button class="add-card-btn in">
       <svg width="16" height="16" viewBox="0 0 16 16">
         <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -156,71 +160,75 @@ const addAddCardButton = (buttonContainer) => {
       <span>Add card</span>
     </button>
   `;
-}
+};
 
-const paymentContainer = document.querySelector('.payment-container');
-const cardList = document.querySelector('.card-list');
+const paymentContainer = document.querySelector(".payment-container");
+const cardList = document.querySelector(".card-list");
 
-paymentContainer.addEventListener('click', async(e) => {
+paymentContainer.addEventListener("click", async (e) => {
   const path = e.composedPath();
-  const btn = path.find(item => item.tagName && item.tagName.toLowerCase() === 'button');
+  const btn = path.find(
+    (item) => item.tagName && item.tagName.toLowerCase() === "button",
+  );
 
-  if(!btn) return;
+  if (!btn) return;
 
-  if (btn.classList.contains('edit-btn')) {
-    const cardItems = [...cardList.querySelectorAll('.card-item')];
-    const currentEdit = cardItems.find(item => item.classList.contains('edit'));
-    const currentCardItem = btn.closest('.card-item');
+  if (btn.classList.contains("edit-btn")) {
+    const cardItems = [...cardList.querySelectorAll(".card-item")];
+    const currentEdit = cardItems.find((item) => item.classList.contains("edit"));
+    const currentCardItem = btn.closest(".card-item");
 
-    if(currentEdit) {
-      const currentCardItemContent = currentCardItem.querySelector('.card-item-content');
-      const editForm = currentEdit.querySelector('.edit-form');
+    if (currentEdit) {
+      const currentCardItemContent = currentCardItem.querySelector(".card-item-content");
+      const editForm = currentEdit.querySelector(".edit-form");
 
       document.startViewTransition({
         update: () => {
-          currentEdit.classList.remove('edit');
-          currentCardItem.classList.add('edit');
+          currentEdit.classList.remove("edit");
+          currentCardItem.classList.add("edit");
 
           showEditForm(currentCardItem);
           showCardItem(currentEdit);
         },
-        types: ['swap-edit']
+        types: ["swap-edit"],
       });
 
       return;
-    }
-    else {
-      currentCardItem.classList.add('edit');
+    } else {
+      currentCardItem.classList.add("edit");
     }
 
     document.startViewTransition({
       update: () => showEditForm(currentCardItem),
-      types: ['regular']
+      types: ["regular"],
     });
   }
 
-  if(btn.classList.contains('save-btn')) {
-    const cardItem = btn.closest('.card-item');
+  if (btn.classList.contains("save-btn")) {
+    const cardItem = btn.closest(".card-item");
     const transition = document.startViewTransition({
       update: () => showCardItem(cardItem),
-      types: ['regular']
+      types: ["regular"],
     });
 
     await transition.finished;
 
-    cardItem.classList.remove('edit');
+    cardItem.classList.remove("edit");
   }
 
-  if(btn.classList.contains('add-card-btn')) {
-    const cardItem = cardList.querySelector('.card-item');
+  if (btn.classList.contains("add-card-btn")) {
+    const cardItem = cardList.querySelector(".card-item");
     const index = cards.length % 2;
 
-    btn.classList.add('clicked');
+    btn.classList.add("clicked");
 
     let transition = document.startViewTransition(() => {
       cardList.innerHTML = addCardForm(cards[index]);
 
-      cardList.insertAdjacentHTML('afterend', '<button type="button" class="cancel-btn" form="add-form">Cancel</button>');
+      cardList.insertAdjacentHTML(
+        "afterend",
+        '<button type="button" class="cancel-btn" form="add-form">Cancel</button>',
+      );
     });
 
     await transition.finished;
@@ -230,13 +238,13 @@ paymentContainer.addEventListener('click', async(e) => {
     await transition.finished;
   }
 
-  if(btn.classList.contains('save-card-btn')) {
-    const cancelBtn = document.querySelector('.cancel-btn');
+  if (btn.classList.contains("save-card-btn")) {
+    const cancelBtn = document.querySelector(".cancel-btn");
 
     const index = cards.length % 2;
     cards.push(cards[index]);
 
-    btn.classList.add('clicked');
+    btn.classList.add("clicked");
 
     const transition = document.startViewTransition({
       update: () => {
@@ -244,7 +252,7 @@ paymentContainer.addEventListener('click', async(e) => {
         showCardList(cardList);
         addAddCardButton(buttonContainer);
       },
-      types: ['add']
+      types: ["add"],
     });
 
     await transition.finished;
@@ -252,7 +260,7 @@ paymentContainer.addEventListener('click', async(e) => {
     showCardList(cardList);
   }
 
-  if(btn.classList.contains('cancel-btn')) {
+  if (btn.classList.contains("cancel-btn")) {
     document.startViewTransition(() => {
       btn.remove();
       showCardList(cardList);

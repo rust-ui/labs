@@ -1,6 +1,6 @@
-const container = document.querySelector('.container');
-    
-const createButton = /*html*/`
+const container = document.querySelector(".container");
+
+const createButton = /*html*/ `
 <button class="help-btn">
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <path d="M3 17c0-5.6 4.4-10 10-10s10 4.4 10 10m-18 0v6c0 1.2.8 2 2 2h4v-8h-4m14 0v6c0 1.2-.8 2-2 2h-4v-8h4" 
@@ -13,7 +13,7 @@ const createButton = /*html*/`
 </button>
 `;
 
-const createCard = /*html*/`
+const createCard = /*html*/ `
 <div class="card">
   <div class="card-header">
     <span class="card-label">Need Help?</span>
@@ -63,7 +63,7 @@ const createCard = /*html*/`
 </div>
 `;
 
-const ticketForm = /*html*/`
+const ticketForm = /*html*/ `
 <div class="card">
   <div class="card-header">
     <button class="back-btn">
@@ -90,46 +90,46 @@ const ticketForm = /*html*/`
 </div>
 `;
 
-container.addEventListener('click', (e) => {
-  const btn = e.target.closest('button');
-  const gridItem = e.target.closest('.grid-item');
+container.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  const gridItem = e.target.closest(".grid-item");
   if (!btn && !gridItem) return;
 
-  if (btn?.classList.contains('help-btn')) {
+  if (btn?.classList.contains("help-btn")) {
     document.startViewTransition?.({
       update: () => {
         container.innerHTML = createCard;
       },
-      types: ['to-card']
+      types: ["to-card"],
     });
   }
 
-  if (btn?.classList.contains('close-btn')) {
+  if (btn?.classList.contains("close-btn")) {
     document.startViewTransition?.({
       update: () => {
         container.innerHTML = createButton;
       },
-      types: ['back-to-button']
+      types: ["back-to-button"],
     });
   }
 
-  if (btn?.classList.contains('back-btn')) {
+  if (btn?.classList.contains("back-btn")) {
     document.startViewTransition?.({
       update: () => {
         container.innerHTML = createCard;
       },
-      types: ['back-to-card']
+      types: ["back-to-card"],
     });
   }
 
-  if (gridItem?.querySelector('span')?.textContent === 'Raise a ticket') {
-    gridItem.classList.add('active');
+  if (gridItem?.querySelector("span")?.textContent === "Raise a ticket") {
+    gridItem.classList.add("active");
 
     document.startViewTransition?.({
       update: () => {
         container.innerHTML = ticketForm;
       },
-      types: ['to-ticket-form']
+      types: ["to-ticket-form"],
     });
   }
 });
