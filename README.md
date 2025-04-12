@@ -10,6 +10,11 @@ It's only a temporary repository to test and develop components. Once they are r
 Please refer to [Leptos](https://github.com/leptos-rs/leptos?tab=readme-ov-file#nightly-note/) or [Dioxus](https://github.com/DioxusLabs/dioxus?tab=readme-ov-file#running-the-examples) documentation.
 
 
+You will need these VSCode extensions:
+- [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [Biome JS](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
+
+
 Don't forget to :
 - `rustup update`
 - `cargo install-update -a`
