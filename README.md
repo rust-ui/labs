@@ -15,7 +15,9 @@ You can join the [Discord server](https://discord.gg/mbszS27TqA) to ask question
 
 
 
-# Installation
+# Setup
+
+## Installation
 
 Please refer to [Leptos](https://github.com/leptos-rs/leptos?tab=readme-ov-file#nightly-note/) or [Dioxus](https://github.com/DioxusLabs/dioxus?tab=readme-ov-file#running-the-examples) documentation.
 
@@ -34,73 +36,11 @@ Don't forget to :
 
 
 
-# 👉 TODOS
+## Run the project
 
-You'll find the todos in the **Issues** tab. Thanks Florian for the idea :)
-
-
-
-# CSS
+Please go inside 1-LEPTOS-UI-LABS or 2-DIOXUS-UI-LABS to see how to run the project.
 
 
-In the head of the index.html, make sure there is Tailwind CDN:
-
-```html
-<head>
-  <!-- ... -->
-  <!-- * TAILWIND CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-```
-
-
-
-If possible, try to use `this__pattern` for custom CSS classes that you didn't manage to convert to Tailwind.
-This way, we can distinguish them easily.
-
-Example:
-
-```css
-.img__holder {
-    clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
-    transform: rotate(30deg);
-}
-```
-
-
-
-# JS
-
-At the moment, it's probably better to **keep the JS as it is** and not use Rust for interacting with the DOM.
-While using wasm-bindgen or web_sys is possible, it seems overkill for the moment.
-
-The main goal here is to convert index.html into reusable components in Rust.
-
-If possible, you can try to use **inline JS** to avoid having a `script.js` file to manage.
-
-Example:
-
-Instead of having this:
-
-```html
-<button id="my__button">Show an alert</button>
-
-<script>
-  document.getElementById('my__button').addEventListener('click', () => {
-    alert('Hello from JS!');
-  });
-</script>
-```
-
-Prefer to have this:
-
-```html
-<button onclick="alert('Hello from JS!');">
-  "Show an alert"
-</button>
-```
-
-PS: This is not mandatory, just a nice to have 😄
 
 
 
@@ -135,6 +75,71 @@ view! {
 
 
 You can check the examples in the repo to see how it's used 😄
+
+
+## CSS
+
+
+In the head of the index.html, make sure there is Tailwind CDN:
+
+```html
+<head>
+  <!-- ... -->
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+```
+
+
+
+If possible, try to use `this__pattern` for custom CSS classes that you didn't manage to convert to Tailwind.
+This way, we can distinguish them easily.
+
+Example:
+
+```css
+.img__holder {
+    clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+    transform: rotate(30deg);
+}
+```
+
+
+
+## JS
+
+At the moment, it's probably better to **keep the JS as it is** and not use Rust for interacting with the DOM.
+While using wasm-bindgen or web_sys is possible, it seems overkill for the moment.
+
+The main goal here is to convert index.html into reusable components in Rust.
+
+If possible, you can try to use **inline JS** to avoid having a `script.js` file to manage.
+
+Example:
+
+Instead of having this:
+
+```html
+<button id="my__button">Show an alert</button>
+
+<script>
+  document.getElementById('my__button').addEventListener('click', () => {
+    alert('Hello from JS!');
+  });
+</script>
+```
+
+Prefer to have this:
+
+```html
+<button onclick="alert('Hello from JS!');">
+  "Show an alert"
+</button>
+```
+
+PS: This is not mandatory, just a nice to have 😄
+
+
 
 
 # License
