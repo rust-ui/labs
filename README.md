@@ -5,6 +5,10 @@ This repository is designed to be a collaborative working space for creating com
 It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui.com/).
 
 
+![Process to follow](./assets/process_to_follow.png)
+
+
+
 # 👾 Discord
 
 You can join the [Discord server](https://discord.gg/mbszS27TqA) to ask questions, discuss the project, and chat about Rust in general — including job opportunities and more.
