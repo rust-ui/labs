@@ -21,35 +21,33 @@ ScrollTrigger.create({
   },
 });
 
-const SHARED_TRIGGER = {
-  start: "top top",
-  end: "+=200%",
-  scrub: 1,
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ FUNCTIONS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+const animateLetters = (selector, options = {}) => {
+  const { scale = 1, xOffset = 0, customProps = {} } = options;
+
+  gsap.to(selector, {
+    ...(xOffset && { x: () => xOffset * innerWidth }),
+    scale,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      start: "top top",
+      end: "+=200%",
+      scrub: 1,
+    },
+    ...customProps,
+  });
 };
 
-gsap.to(".header__scroll .letters:first-child", {
-  x: () => -innerWidth * 3,
-  scale: 10,
-  ease: "power2.inOut",
-  scrollTrigger: SHARED_TRIGGER,
-});
-
-gsap.to(".header__scroll .letters:last-child", {
-  x: () => innerWidth * 3,
-  scale: 10,
-  ease: "power2.inOut",
-  scrollTrigger: SHARED_TRIGGER,
-});
-
-gsap.to(".img__holder", {
-  rotation: 0,
-  clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-  ease: "power2.inOut",
-  scrollTrigger: SHARED_TRIGGER,
-});
-
-gsap.to(".img__holder img", {
-  scale: 1,
-  ease: "power2.inOut",
-  scrollTrigger: SHARED_TRIGGER,
+// Options pattern
+animateLetters(".header__scroll .letters:first-child", { scale: 10, xOffset: -3 });
+animateLetters(".header__scroll .letters:last-child", { scale: 10, xOffset: 3 });
+animateLetters(".img__holder img", { scale: 1 });
+animateLetters(".img__holder", {
+  customProps: {
+    rotation: 0,
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+  },
 });
