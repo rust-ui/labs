@@ -56,13 +56,13 @@ pub fn GsapIntroPage() -> impl IntoView {
 
 mod components {
     use super::*;
-    clx! {GsapIntro, div, "h-full mainDiv overscroll-none font-inte"}
-    clx! {HeaderScroll, div, "fixed flex flex-row w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 header__scroll z-2"}
-    clx! {Letters, div, "flex flex-1 letters"}
+    clx! {GsapIntro, div, "h-full overscroll-none font-inte"}
+    clx! {HeaderScroll, div, "header__scroll", "fixed flex flex-row w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-2"}
+    clx! {Letters, div, "letters", "flex flex-1"}
     clx! {Letter, div, "flex-1 text-center text-[18vw]"}
-    clx! {FixedContent, div, "fixed top-0 w-full min-h-screen website-content"}
-    clx! {ImageHolder, div, "img__holder relative w-full h-[100vh] top-0 bg-white rotate-[30deg]"}
-    clx! {ContentHolder, div, "relative bg-muted/60 p-1 -w-full content__holder min-h-[100vh]"}
+    clx! {FixedContent, div, "fixed__content", "fixed top-0 w-full min-h-screen"}
+    clx! {ImageHolder, div, "img__holder", "relative w-full h-[100vh] top-0 bg-white rotate-[30deg]"}
+    clx! {ContentHolder, div, "content__holder", "relative bg-muted/60 p-1 -w-full min-h-[100vh]"}
 
     img! {Image, "object-cover w-full h-full relative scale-[2]"}
 }
