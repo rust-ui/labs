@@ -4,13 +4,13 @@
     "enabled": false
   },
   "files": {
-    "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    "include": ["**/*.js"],
     "ignore": [
-      "*/target/*",
-      "*/node_modules/*",
-      "*/crates/*",
-      "*/server/*",
-      "*/frontend/*",
+      "**/target/**",
+      "**/node_modules/**",
+      "**/crates/**",
+      "**/server/**",
+      "**/frontend/**",
       "*.css",
       "*.rs"
     ]
