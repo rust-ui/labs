@@ -179,8 +179,8 @@ paymentContainer.addEventListener("click", async (e) => {
     const currentCardItem = btn.closest(".card-item");
 
     if (currentEdit) {
-      const currentCardItemContent = currentCardItem.querySelector(".card-item-content");
-      const editForm = currentEdit.querySelector(".edit-form");
+      // const currentCardItemContent = currentCardItem.querySelector(".card-item-content");
+      // const editForm = currentEdit.querySelector(".edit-form");
 
       document.startViewTransition({
         update: () => {
@@ -194,9 +194,8 @@ paymentContainer.addEventListener("click", async (e) => {
       });
 
       return;
-    } else {
-      currentCardItem.classList.add("edit");
     }
+    currentCardItem.classList.add("edit");
 
     document.startViewTransition({
       update: () => showEditForm(currentCardItem),
@@ -217,7 +216,7 @@ paymentContainer.addEventListener("click", async (e) => {
   }
 
   if (btn.classList.contains("add-card-btn")) {
-    const cardItem = cardList.querySelector(".card-item");
+    // const cardItem = cardList.querySelector(".card-item");
     const index = cards.length % 2;
 
     btn.classList.add("clicked");

@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.style.height = `${totalBodyHeight}px`;
 });
 
-const endValue = document.querySelector(".website-content").offsetHeight * 0.75;
-
 ScrollTrigger.create({
   trigger: ".website-content",
   start: "-0.1% top",
@@ -29,7 +27,7 @@ gsap.to(".header__scroll .letters:first-child", {
   ease: "power2.inOut",
   scrollTrigger: {
     start: "top top",
-    end: `+=200%`,
+    end: "+=200%",
     scrub: 1,
   },
 });
@@ -40,7 +38,7 @@ gsap.to(".header__scroll .letters:last-child", {
   ease: "power2.inOut",
   scrollTrigger: {
     start: "top top",
-    end: `+=200%`,
+    end: "+=200%",
     scrub: 1,
   },
 });
