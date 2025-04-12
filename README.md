@@ -38,6 +38,19 @@ You'll find the todos in the **Issues** tab. Thanks Florian for the idea :)
 
 # CSS
 
+
+In the head of the index.html, make sure there is Tailwind CDN:
+
+```html
+<head>
+  <!-- ... -->
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+```
+
+
+
 If possible, try to use `this__pattern` for custom CSS classes that you didn't manage to convert to Tailwind.
 This way, we can distinguish them easily.
 
