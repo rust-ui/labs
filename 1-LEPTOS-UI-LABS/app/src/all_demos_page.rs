@@ -1,13 +1,14 @@
 use leptos::prelude::*;
 
 use crate::__demos__::{
-    _process_to_follow::ProcessToFollow, demo_carousel::DemoCarousel, demo_drawer::DemoDrawer,
+    _process_to_follow::ProcessToFollow, demo_carousel::DemoCarousel, demo_drawer::DemoDrawer,demo_cards_gradient::DemoCardsGradient,
 };
 
 // * 1️⃣ ---------- Put the name of your demo here 👇 ----------
 const DEMO_1: &str = "--- Process to Follow ---";
 const DEMO_2: &str = "Carousel";
 const DEMO_3: &str = "Drawer";
+const DEMO_4: &str = "Gradient Card";
 
 // * 2️⃣ ---------- Put the name of your demo here 👆 ----------
 
@@ -24,6 +25,7 @@ pub fn AllDemosPage() -> impl IntoView {
         DEMO_1 => view! { <ProcessToFollow /> }.into_any(),
         DEMO_2 => view! { <DemoCarousel /> }.into_any(),
         DEMO_3 => view! { <DemoDrawer /> }.into_any(),
+        DEMO_4 => view! { <DemoCardsGradient /> }.into_any(),
         _ => view! {}.into_any(),
     };
     // *  ------------------ 2️⃣ Put your Component here 👆 ------------------
@@ -35,6 +37,7 @@ pub fn AllDemosPage() -> impl IntoView {
                 <button on:click=move |_| { demo.set(DEMO_1.into()) }>{DEMO_1}</button>
                 <button on:click=move |_| { demo.set(DEMO_2.into()) }>{DEMO_2}</button>
                 <button on:click=move |_| { demo.set(DEMO_3.into()) }>{DEMO_3}</button>
+                <button on:click=move |_| { demo.set(DEMO_4.into()) }>{DEMO_4}</button>
 
             // * 3️⃣ ---------- Put the name of your demo here 👆 ----------
             </div>
