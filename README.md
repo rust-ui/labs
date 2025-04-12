@@ -5,6 +5,12 @@ This repository is designed to be a collaborative working space for creating com
 It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui.com/).
 
 
+# 👾 Discord
+
+You can join the [Discord server](https://discord.gg/mbszS27TqA) to ask questions, discuss the project, and chat about Rust in general — including job opportunities and more.
+
+
+
 # Installation
 
 Please refer to [Leptos](https://github.com/leptos-rs/leptos?tab=readme-ov-file#nightly-note/) or [Dioxus](https://github.com/DioxusLabs/dioxus?tab=readme-ov-file#running-the-examples) documentation.
@@ -81,15 +87,36 @@ PS: This is not mandatory, just a nice to have 😄
 
 
 
-# 👾 Discord
+# 💡 Tips
 
-You can join the [Discord server](https://discord.gg/mbszS27TqA) to discuss about the components and the project, and Rust over all (job opportunities, etc).
+When porting to Rust, don't forget to use the `Stylesheet` component to load the CSS.
+
+Example:
+
+```rs
+view! {
+    <Stylesheet href="/path/to/your/css/file.css" />
+    // The rest of your component goes after 
+    // ...
+    // ...
+}
+```
 
 
+If you need JS, in your component, don't forget to add the `script` tag. Usually, it's better to add it at the very end of the view macro to make sure the DOM is fully loaded.
 
-# Contact
+Example:
 
-If you have any questions, please contact on Linkedin [@max-wells](https://www.linkedin.com/in/maxime-montfort/).
+```rs
+view! {
+  // ...
+  // ...
+  // The script goes at the end of the view macro
+    <script src="/path/to/your/js/file.js"></script>
+}
+```
 
+
+You can check the examples in the repo to see how it's used 😄
 
 
