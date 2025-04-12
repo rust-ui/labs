@@ -1,13 +1,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const contentHolderHeight =
-    document.querySelector(".content__holder").offsetHeight;
+document.addEventListener("DOMContentLoaded", () => {
+  const contentHolderHeight = document.querySelector(".content__holder").offsetHeight;
   const imgHolderHeight = window.innerHeight;
   const additionalScrollHeight = window.innerHeight;
 
-  const totalBodyHeight =
-    contentHolderHeight + imgHolderHeight + additionalScrollHeight;
+  const totalBodyHeight = contentHolderHeight + imgHolderHeight + additionalScrollHeight;
   document.body.style.height = `${totalBodyHeight}px`;
 });
 

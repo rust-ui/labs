@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.querySelector(".appearance");
   const body = document.body;
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
