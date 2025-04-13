@@ -16,13 +16,18 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Stylesheet id="leptos" href="/pkg/start-axum-workspace.css" />
-        <Title text="Welcome to Leptos" />
+        <Title text="Lepos UI Labs" />
 
         <Router>
             <Navbar />
             <div class="min-h-screen">
                 <Routes fallback=|| "Page not found.".into_view()>
-                    <Route path=StaticSegment("/") view=AllDemosPage />
+                    <Route
+                        path=StaticSegment("")
+                        view=move || {
+                            view! { <AllDemosPage /> }
+                        }
+                    />
                     <Route path=StaticSegment("/gsap-intro") view=GsapIntroPage />
                 </Routes>
             </div>
