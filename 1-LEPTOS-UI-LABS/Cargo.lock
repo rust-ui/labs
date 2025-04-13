@@ -510,9 +510,9 @@ dependencies = [
 
 [[package]]
 name = "data-encoding"
-version = "2.8.0"
+version = "2.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "575f75dfd25738df5b91b8e43e14d44bda14637a58fae779fd2b064f8bf3e010"
+checksum = "2a2330da5de22e8a3cb63252ce2abb30116bf5265e89c0e01bc17015ce30a476"
 
 [[package]]
 name = "derive-where"
@@ -1540,9 +1540,9 @@ dependencies = [
 
 [[package]]
 name = "leptos_ui"
-version = "0.1.8"
+version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21fabad0967ac72722867fc527c5a48e4cc3cb3309be6170d429a66a77529556"
+checksum = "d0d562b039250c020f212edbde8c11d795d54f68356b701088d53d855f880666"
 dependencies = [
  "leptos 0.7.8",
  "tw_merge",
