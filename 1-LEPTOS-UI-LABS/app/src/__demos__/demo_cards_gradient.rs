@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
-use leptos_ui::clx;
+use leptos_ui::{a, clx};
 
 // Type for pricing tier data
 #[derive(Clone)]
@@ -98,31 +98,12 @@ mod components {
     clx! {Main, div, "main max-w-[75rem] p-[3em_1.5em]"}
     clx! {MainHeading, h1, "text-[2.25em] font-semibold mb-[0.75em] text-center text-[#eceff1]"}
     clx! {Cards, div, "flex flex-wrap gap-10"}
-    clx! {Card, div, "card flex-1 basis-[14rem] p-[1.5em_2em] grid grid-rows-[auto_auto_auto_1fr] items-start gap-5 text-[#eceff1] bg-[#2b2b2b] rounded-[15px]"}
+    clx! {Card, div, "card flex-1 basis-[14rem] p-[1.5em_2em] grid grid-rows-[auto_auto_auto_1fr] items-start gap-5 text-[#eceff1] bg-[#2b2b2b] rounded-[15px] relative overflow-hidden border border-[#2b2b2b]"}
     clx! {CardHeading, h2, "text-[1.05em] font-semibold"}
     clx! {CardPrice, p, "text-[1.75em] font-bold"}
     clx! {CardBullets, ul, "card__bullets flow list-none leading-[1.4]"}
 
-    // Custom component for CardCta with href attribute
-    #[component]
-    pub fn CardCta(
-        #[prop(into, optional)] class: Signal<String>,
-        #[prop(optional)] href: &'static str,
-        children: Children,
-    ) -> impl IntoView {
-        let merged_classes = Memo::new(move |_| {
-            tw_merge::tw_merge!(
-                "cta block self-end mt-4 mb-2 text-center no-underline p-[0.7em] rounded-[10px] text-base font-semibold",
-                class()
-            )
-        });
-
-        view! {
-            <a class=merged_classes href=href>
-                {children()}
-            </a>
-        }
-    }
+    a! {CardCta, "cta", "block self-end mt-4 mb-2 text-center no-underline p-[0.7em] rounded-[10px] text-base font-semibold"}
 }
 
 pub use components::*;
