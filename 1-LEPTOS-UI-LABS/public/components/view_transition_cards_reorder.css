@@ -1,0 +1,86 @@
+@layer view-transitions {
+
+	/* Hide warning if view transitions are supported */
+	@supports (view-transition-name: none) {
+		.warning {
+			display: none;
+		}
+	}
+
+	/* Apply view transition names to cards */
+	.card[id] {
+		view-transition-name: var(--card-id, none);
+		place-content: center;
+	}
+
+	/* Root view transition settings */
+	:root {
+		view-transition-name: none;
+	}
+
+	/* Global view transition settings */
+	::view-transition {
+		pointer-events: none;
+	}
+}
+
+@layer layout {
+	.cards {
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
+		padding: 1em;
+	}
+
+	.card {
+		border-radius: 0.25em;
+		width: 20vw;
+		max-width: 5em;
+		aspect-ratio: 1 / 1.6;
+		background: lightgrey;
+
+		display: grid;
+		place-content: center;
+		font-size: 2em;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+}
+
+@layer warning {
+	.warning {
+		padding: 1em;
+		margin: 1em 0;
+		border: 1px solid #ccc;
+		background: rgba(255, 0, 0, 0.8);
+		text-align: center;
+		position: fixed;
+		bottom: 0;
+		left: 1em;
+		right: 1em;
+	}
+
+	.warning> :first-child {
+		margin-top: 0;
+	}
+
+	.warning> :last-child {
+		margin-bottom: 0;
+	}
+
+	.warning a {
+		color: blue;
+	}
+
+	.warning--info {
+		border: 1px solid #123456;
+		background: rgb(255 0 0 / 0.8);
+	}
+
+	.warning--alarm {
+		border: 1px solid red;
+		background: #ff000010;
+	}
+}

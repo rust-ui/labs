@@ -75,12 +75,14 @@ name = "app"
 version = "0.1.0"
 dependencies = [
  "cfg-if",
+ "getrandom 0.2.15",
  "http",
  "leptos 0.8.0-rc1",
  "leptos_axum",
  "leptos_meta",
  "leptos_router",
  "leptos_ui",
+ "rand 0.8.5",
  "thiserror 2.0.12",
  "tw_merge",
  "wasm-bindgen",
