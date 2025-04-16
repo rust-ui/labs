@@ -13,14 +13,13 @@ leptos_meta.workspace = true
 leptos_router.workspace = true
 leptos_axum = { workspace = true, optional = true }
 leptos_ui.workspace = true
-rand = "0.8"
 thiserror.workspace = true
 tw_merge.workspace = true
 wasm-bindgen.workspace = true
 
-[dependencies.getrandom]
-version = "0.2"
-features = ["js"]
+
+
+
 
 [features]
 default = []

@@ -1,24 +1,21 @@
 @layer view-transitions {
 
-	/* Hide warning if view transitions are supported */
-	@supports (view-transition-name: none) {
+	@supports (x: attr(x type(*))) {
 		.warning {
 			display: none;
 		}
 	}
 
-	/* Apply view transition names to cards */
 	.card[id] {
-		view-transition-name: var(--card-id, none);
-		place-content: center;
+		view-transition-name: attr(id type(<custom-ident>), none);
+		/* card-1, card-2, card-3, etc. */
+		view-transition-class: card;
 	}
 
-	/* Root view transition settings */
 	:root {
 		view-transition-name: none;
 	}
 
-	/* Global view transition settings */
 	::view-transition {
 		pointer-events: none;
 	}
@@ -44,9 +41,6 @@
 		font-size: 2em;
 	}
 
-	* {
-		box-sizing: border-box;
-	}
 }
 
 @layer warning {
@@ -54,7 +48,7 @@
 		padding: 1em;
 		margin: 1em 0;
 		border: 1px solid #ccc;
-		background: rgba(255, 0, 0, 0.8);
+		background: rgba(255 0 0 / 0.8);
 		text-align: center;
 		position: fixed;
 		bottom: 0;
