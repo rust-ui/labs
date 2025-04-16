@@ -5,6 +5,7 @@ use crate::__demos__::_process_to_follow::ProcessToFollow;
 use crate::__demos__::demo_cards_gradient::DemoCardsGradient;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_drawer::DemoDrawer;
+use crate::__demos__::demo_view_transition_cards_reorder::DemoViewTransitionCardsReorder;
 use crate::shared::utils::params::QueryUtils;
 
 // * 1️⃣ Add the name of your demo here
@@ -12,7 +13,7 @@ const DEMO_1: &str = "Process to follow";
 const DEMO_2: &str = "Carousel";
 const DEMO_3: &str = "Drawer";
 const DEMO_4: &str = "Gradient Card";
-const DEMO_5: &str = "Slot_5";
+const DEMO_5: &str = "View transition cards reorder";
 const DEMO_6: &str = "Slot_6";
 const DEMO_7: &str = "Slot_7";
 const DEMO_8: &str = "Slot_8";
@@ -74,7 +75,7 @@ pub fn RenderComponentFromQuery() -> impl IntoView {
                         DEMO_2 => view! { <DemoCarousel /> }.into_any(),
                         DEMO_3 => view! { <DemoDrawer /> }.into_any(),
                         DEMO_4 => view! { <DemoCardsGradient /> }.into_any(),
-                        DEMO_5 => view! { "SLOT_5" }.into_any(),
+                        DEMO_5 => view! { <DemoViewTransitionCardsReorder /> }.into_any(),
                         DEMO_6 => view! { "SLOT_6" }.into_any(),
                         DEMO_7 => view! { "SLOT_7" }.into_any(),
                         DEMO_8 => view! { "SLOT_8" }.into_any(),

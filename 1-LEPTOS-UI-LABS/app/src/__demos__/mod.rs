@@ -5,6 +5,7 @@ pub mod demo_carousel;
 pub mod demo_drawer;
 pub mod demo_sheet_css;
 pub mod demo_cards_gradient;
+pub mod demo_view_transition_cards_reorder;
 
 // * Not working with Rust UI.
 // pub mod demo_js_need_help;
