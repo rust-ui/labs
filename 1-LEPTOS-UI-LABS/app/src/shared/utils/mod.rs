@@ -1,6 +1,3 @@
-// Utility modules
-pub mod browser;
-pub mod create_greeting;
-pub mod utils;
-
 pub mod icons;
+pub mod params;
+pub mod utils;

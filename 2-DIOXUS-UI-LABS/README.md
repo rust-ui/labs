@@ -1,19 +1,14 @@
-# Development
+# Run the project
 
-Your new bare-bones project includes minimal organization with a single `main.rs` file and a few assets.
-
-### Tailwind
-1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
-3. Run the following command in the root of the project to start the Tailwind CSS compiler:
+## 1. Run Tailwind
 
 ```bash
-npx tailwindcss -i ./input.css -o ./assets/tailwind.css --watch
+pnpm install
+
+npx @tailwindcss/cli -i ./style/input.css -o ./style/output.css --watch
 ```
 
-### Serving Your App
-
-Run the following command in the root of your project to start developing with the default platform:
+## 2. Run Dioxus
 
 ```bash
 dx serve

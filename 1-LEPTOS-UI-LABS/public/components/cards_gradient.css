@@ -1,0 +1,80 @@
+
+/* Only essential custom CSS that can't be done with Tailwind */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
+
+/* Card base styles */
+.card {
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  --x: 50%;
+  --y: 50%;
+  isolation: isolate;
+}
+
+/* Gradient hover effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    hsla(var(--hsl), 0.25) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  z-index: -1;
+}
+
+.card:hover {
+  border-color: hsla(var(--hsl), 0.3);
+  box-shadow: 0 0 0 1px hsla(var(--hsl), 0.2);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Checkbox item styling */
+.card__bullets li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.card__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* CTA button styling */
+.cta {
+  background-color: #0d0d0d;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background-color: hsl(var(--hsl));
+}
+
+/* Remove automatic button glow when hovering card */
+.card:hover .cta {
+  background-color: #0d0d0d; /* Keep default until directly hovered */
+}
+
+/* Ensure direct hover takes precedence */
+.card:hover .cta:hover {
+  background-color: hsl(var(--hsl));
+}
+
+/* Flow utility for spacing */
+.flow > * + * {
+  margin-top: 0.5em;
+}

@@ -1,184 +1,183 @@
 // Remove Pane import and replace with drawer initialization
-const drawer = document.querySelector('.drawer')
-const scroller = drawer.querySelector('.drawer__scroller')
-const slide = drawer.querySelector('.drawer__slide')
+const drawer = document.querySelector(".drawer");
+const scroller = drawer.querySelector(".drawer__scroller");
+const slide = drawer.querySelector(".drawer__slide");
 
 // Set default theme and behavior
-document.documentElement.dataset.theme = 'light'
-document.documentElement.dataset.debug = false
-document.documentElement.dataset.css = false
-document.documentElement.dataset.snap = true
-document.documentElement.dataset.meta = true
-document.documentElement.dataset.content = true
+document.documentElement.dataset.theme = "light";
+document.documentElement.dataset.debug = false;
+document.documentElement.dataset.css = false;
+document.documentElement.dataset.snap = true;
+document.documentElement.dataset.meta = true;
+document.documentElement.dataset.content = true;
 
 // Set viewport meta tag
-const viewportTag = document.querySelector('meta[name="viewport"]')
-viewportTag.content = 'width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0, interactive-widget=resizes-content'
+const viewportTag = document.querySelector('meta[name="viewport"]');
+viewportTag.content =
+  "width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0, interactive-widget=resizes-content";
 
 // Drawer mechanics
 // THIS IS ALL THE PARTS FOR THE DRAWER THAT WE COVER
 // close the drawer on snap change if === 0
-const scrollSnapChangeSupport = 'onscrollsnapchange' in window
-const scrollAnimationSupport = CSS.supports('animation-timeline: scroll()')
+const scrollSnapChangeSupport = "onscrollsnapchange" in window;
+const scrollAnimationSupport = CSS.supports("animation-timeline: scroll()");
 if (scrollSnapChangeSupport) {
-  scroller.addEventListener('scrollsnapchange', () => {
+  scroller.addEventListener("scrollsnapchange", () => {
     if (scroller.scrollTop === 0) {
-      drawer.dataset.snapped = true
-      drawer.hidePopover()
+      drawer.dataset.snapped = true;
+      drawer.hidePopover();
     }
-  })
+  });
 }
 
 // ... existing code ...
-const anchor = drawer.querySelector('.drawer__anchor')
+const anchor = drawer.querySelector(".drawer__anchor");
 const options = {
   root: drawer,
-  rootMargin: '0px 0px -1px 0px',
+  rootMargin: "0px 0px -1px 0px",
   threshold: 1.0,
-}
-let observer
+};
+let observer;
 
-let syncer
-let syncs = new Array(10) // Fixed-size array
-let index = 0 // Tracks the current position in the array
+let syncer;
+let syncs = new Array(10); // Fixed-size array
+let index = 0; // Tracks the current position in the array
 
 function addNumber(num) {
-  syncs[index] = num // Place the new number at the current index
-  index = (index + 1) % syncs.length // Move index forward, wrapping around if necessary
+  syncs[index] = num; // Place the new number at the current index
+  index = (index + 1) % syncs.length; // Move index forward, wrapping around if necessary
 }
 
-let frame = 0
+let frame = 0;
 const syncDrawer = () => {
   syncer = requestAnimationFrame(() => {
     document.documentElement.style.setProperty(
-      '--closed',
-      1 - scroller.scrollTop / slide.offsetHeight
-    )
+      "--closed",
+      1 - scroller.scrollTop / slide.offsetHeight,
+    );
 
     if (new Set(syncs).size === 1 && syncs[0] === slide.offsetHeight) {
-      frame++
+      frame++;
     }
     if (frame >= 10) {
-      frame = 0
-      syncs = new Array(10)
-      scroller.addEventListener('scroll', scrollDriver, { once: true })
+      frame = 0;
+      syncs = new Array(10);
+      scroller.addEventListener("scroll", scrollDriver, { once: true });
     } else {
-      addNumber(scroller.scrollTop)
-      syncDrawer()
+      addNumber(scroller.scrollTop);
+      syncDrawer();
     }
-  })
-}
+  });
+};
 
 const scrollDriver = () => {
-  syncDrawer()
-}
+  syncDrawer();
+};
 
 const callback = (entries) => {
-  const { isIntersecting, intersectionRatio } = entries[0]
-  const isVisible = intersectionRatio === 1
+  const { isIntersecting, intersectionRatio } = entries[0];
+  const isVisible = intersectionRatio === 1;
 
   if (
     !isVisible &&
     !isIntersecting &&
-    scroller.scrollTop - window.visualViewport.offsetTop <
-      slide.offsetHeight * 0.5
+    scroller.scrollTop - window.visualViewport.offsetTop < slide.offsetHeight * 0.5
   ) {
-    drawer.dataset.snapped = true
-    drawer.hidePopover()
-    observer.disconnect()
+    drawer.dataset.snapped = true;
+    drawer.hidePopover();
+    observer.disconnect();
   }
-}
+};
 
 const handleOut = (event) => {
   if (!drawer.contains(event.target) || !event.target) {
-    window.removeEventListener('focus', handleOut, true)
-    drawer.hidePopover()
+    window.removeEventListener("focus", handleOut, true);
+    drawer.hidePopover();
   }
-}
+};
 
 // reset the drawer once closed
-drawer.addEventListener('toggle', (event) => {
-  if (document.documentElement.dataset.css === 'true') return
-  if (event.newState === 'closed') {
-    drawer.dataset.snapped = false
-    scroller.removeEventListener('scroll', scrollDriver)
-    if (syncer) cancelAnimationFrame(syncer)
-    document.documentElement.style.removeProperty('--closed')
-    window.removeEventListener('focus', handleOut, true)
+drawer.addEventListener("toggle", (event) => {
+  if (document.documentElement.dataset.css === "true") return;
+  if (event.newState === "closed") {
+    drawer.dataset.snapped = false;
+    scroller.removeEventListener("scroll", scrollDriver);
+    if (syncer) cancelAnimationFrame(syncer);
+    document.documentElement.style.removeProperty("--closed");
+    window.removeEventListener("focus", handleOut, true);
   }
-  if (event.newState === 'open' && !scrollSnapChangeSupport) {
-    if (!observer) observer = new IntersectionObserver(callback, options)
-    observer.observe(anchor)
+  if (event.newState === "open" && !scrollSnapChangeSupport) {
+    if (!observer) observer = new IntersectionObserver(callback, options);
+    observer.observe(anchor);
   }
-  if (event.newState === 'open' && !scrollAnimationSupport) {
-    scroller.addEventListener('scroll', scrollDriver, { once: true })
+  if (event.newState === "open" && !scrollAnimationSupport) {
+    scroller.addEventListener("scroll", scrollDriver, { once: true });
   }
-  if (event.newState === 'open') {
-    window.addEventListener('focus', handleOut, true)
+  if (event.newState === "open") {
+    window.addEventListener("focus", handleOut, true);
   }
-})
+});
 
 const attachDrag = (element) => {
-  let startY = 0
-  let drag = 0
-  let scrollStart
+  let startY = 0;
+  let drag = 0;
+  let scrollStart;
 
   const reset = () => {
-    startY = drag = 0
-    const top = scroller.scrollTop < scrollStart * 0.5 ? 0 : scrollStart
+    startY = drag = 0;
+    const top = scroller.scrollTop < scrollStart * 0.5 ? 0 : scrollStart;
 
     const handleScroll = () => {
       if (scroller.scrollTop === top) {
-        document.documentElement.dataset.dragging = false
-        scroller.removeEventListener('scroll', handleScroll)
+        document.documentElement.dataset.dragging = false;
+        scroller.removeEventListener("scroll", handleScroll);
       }
-    }
-    scroller.addEventListener('scroll', handleScroll)
+    };
+    scroller.addEventListener("scroll", handleScroll);
 
     scroller.scrollTo({
       top,
-      behavior: 'smooth',
-    })
-    handleScroll()
-  }
+      behavior: "smooth",
+    });
+    handleScroll();
+  };
 
   const handle = ({ y }) => {
-    drag += Math.abs(y - startY)
+    drag += Math.abs(y - startY);
     scroller.scrollTo({
       top: scrollStart - (y - startY),
-      behavior: 'instant',
-    })
-  }
+      behavior: "instant",
+    });
+  };
   const teardown = (event) => {
-    if (event.target.tagName !== 'BUTTON') {
-      reset()
+    if (event.target.tagName !== "BUTTON") {
+      reset();
     }
-    document.removeEventListener('mousemove', handle)
-    document.removeEventListener('mouseup', teardown)
-  }
+    document.removeEventListener("mousemove", handle);
+    document.removeEventListener("mouseup", teardown);
+  };
   const activate = ({ y }) => {
-    startY = y
-    scrollStart = scroller.scrollTop
-    document.documentElement.dataset.dragging = true
-    document.addEventListener('mousemove', handle)
-    document.addEventListener('mouseup', teardown)
-  }
-  element.addEventListener('click', (event) => {
-    if (drag > 5) event.preventDefault()
-    reset()
-  })
-  element.addEventListener('mousedown', activate)
-}
+    startY = y;
+    scrollStart = scroller.scrollTop;
+    document.documentElement.dataset.dragging = true;
+    document.addEventListener("mousemove", handle);
+    document.addEventListener("mouseup", teardown);
+  };
+  element.addEventListener("click", (event) => {
+    if (drag > 5) event.preventDefault();
+    reset();
+  });
+  element.addEventListener("mousedown", activate);
+};
 // Only happens on mousemove so we are only affecting the scroll position
-attachDrag(drawer)
+attachDrag(drawer);
 
 // Handle VisualViewport changes for iOS
 const handleResize = () => {
   document.documentElement.style.setProperty(
-    '--sw-keyboard-height',
-    window.visualViewport.offsetTop
-  )
-}
-window.visualViewport?.addEventListener('resize', handleResize)
+    "--sw-keyboard-height",
+    window.visualViewport.offsetTop,
+  );
+};
+window.visualViewport?.addEventListener("resize", handleResize);
 // THERE REALLY ISN'T THAT MUCH TO BE HONEST
-
