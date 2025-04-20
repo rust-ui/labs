@@ -5,8 +5,6 @@ alwaysApply: false
 ---
 # Fill CSS files with Tailwind Comments
 
-Note: We are using Tailwind V4.
-
 
 ## Description
 I want to create comment in my CSS files to help me convert CSS classes in Tailwind. The goal is just to create the comment. Each comment is related to a single class.
@@ -28,37 +26,35 @@ Each comment must be as follow :
 
 
 
-### Example: Converting the `.tags` Class
+### Example: Converting the `.md__checkbox label` classes
 
 #### 1. BEFORE
 ```css
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 12px;
-  background: white;
-  border-radius: 16px;
-  border: 1px solid #e4e4e7;
-  width: 400px;
+ .md__checkbox label {
+	 cursor: pointer;
+	 display: inline;
+	 line-height: 1.25em;
+	 vertical-align: top;
+	 clear: both;
+	 padding-left: 1px;
 }
 ```
 
 #### 2. AFTER: ADDING THE COMMENT
 ```css
-/**  flex flex-wrap gap-3 p-3 bg-white rounded-2xl border border-gray-300 w-[400px] */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 12px;
-  background: white;
-  border-radius: 16px;
-  border: 1px solid #e4e4e7;
-  width: 400px;
+/** cursor-pointer inline leading-tight align-top clear-both pl-[1px]
+   Example:
+   <label class="cursor-pointer inline leading-tight align-top clear-both pl-[1px]">
+     Label text
+   </label>
+ */
+ .md__checkbox label {
+	 cursor: pointer;
+	 display: inline;
+	 line-height: 1.25em;
+	 vertical-align: top;
+	 clear: both;
+	 padding-left: 1px;
 }
 ```
-
-
-
 
