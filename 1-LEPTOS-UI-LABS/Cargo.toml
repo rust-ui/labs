@@ -12,10 +12,10 @@ cfg-if = "1"
 console_error_panic_hook = "0.1"
 console_log = "1"
 http = "1"
-leptos = { version = "0.8.0-alpha", features = ["nightly"] }
-leptos_axum = { version = "0.8.0-alpha" }
-leptos_meta = { version = "0.8.0-alpha" }
-leptos_router = { version = "0.8.0-alpha", features = ["nightly"] }
+leptos = { version = "0.8.0-rc-2", features = ["nightly"] }
+leptos_axum = { version = "0.8.0-rc-2" }
+leptos_meta = { version = "0.8.0-rc-2" }
+leptos_router = { version = "0.8.0-rc-2", features = ["nightly"] }
 leptos_ui = "0.1"
 log = "0.4"
 thiserror = "2"
