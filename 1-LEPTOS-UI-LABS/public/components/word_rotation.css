@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
-/** box-border */
-* {
-    box-sizing: border-box;
-}
 
 /** py-4 px-0 */
 span {
@@ -11,41 +7,11 @@ span {
 }
 
 
-/** m-0 grid  content-center pl-4 min-h-screen */
-/*body {*/
-/*    font-family: "Roboto Slab", sans-serif;*/
-/*    background: hsl(0 0% 0%);*/
-/*    color: hsl(0 0% 98%);*/
-/*}*/
-
-/** my-0 mx-auto py-8 px-4 w-[800px] resize text-[2.5rem] overflow-hidden */
-/*main {*/
-/*  font-size: 2.5rem;*/
-/*  resize: both;*/
-/*  margin: 0 auto;*/
-/*  width: 800px;*/
-/*  overflow: hidden;*/
-/*  padding: 2rem 1rem;*/
-/*}*/
-
-/** flex flex-wrap m-0 gap-[0.5ch] leading-[0.9] */
-/*p {*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*  margin: 0;*/
-/*  gap: 0.5ch;*/
-/*  line-height: 0.9;*/
-/*}*/
 
 /** */
 span:nth-of-type(2) {
-    view-transition-name: swap;
     color: hsl(64, 100%, 50%);
 }
-
-/* span:first-of-type {
-  view-transition-name: first;
-} */
 
 /** */
 span:last-of-type {
