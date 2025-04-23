@@ -1,0 +1,116 @@
+/* ------- Osmo [https://osmo.supply/] ------- */
+/*  Osmo UI: https://slater.app/10324/23333.css 
+ */
+
+:root {
+  /* Colors */
+  --color-light: #ffffff;
+  --color-primary: #007bff;
+  --color-dark: #333333;
+
+  /* Neutral colors */
+  --color-neutral-200: #e9ecef;
+  --color-neutral-300: #dee2e6;
+  --color-neutral-700: #495057;
+  --color-neutral-800: #343a40;
+
+  /* Other variables */
+  --size-font: 16px;
+  --container-padding: 1rem;
+  --cubic-default: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ... existing code ... */
+
+@font-face {
+  font-family: "PP Neue Corp";
+  src: url("https://cdn.prod.website-files.com/673af51dea86ab95d124c3ee/673b0f5784f7060c0ac05534_PPNeueCorp-TightUltrabold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.MainDiv {
+  background-color: var(--color-neutral-300);
+  color: var(--color-dark);
+  font-size: var(--size-font);
+  font-family: Arial, sans-serif;
+}
+
+.cloneable {
+  padding: var(--container-padding);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.cursor {
+  z-index: 1000;
+  background-color: var(--color-primary);
+  opacity: 0;
+  pointer-events: none;
+  color: var(--color-light);
+  border-radius: 0.25em;
+  padding: 0.3em 0.75em 0.4em;
+  font-size: 1.15em;
+  line-height: 1.5;
+  transition: opacity 0.2s;
+  position: fixed;
+  inset: 0% auto auto 0%;
+}
+
+.cursor p {
+  margin: 0px;
+}
+
+.button-row {
+  grid-column-gap: 0.75em;
+  grid-row-gap: 0.75em;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+.button {
+  text-transform: uppercase;
+  color: var(--button-text-color, var(--color-neutral-800));
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 6em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  font-family: "PP Neue Corp", Arial, sans-serif;
+  font-size: 3vw;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+}
+
+.button-bg {
+  z-index: 0;
+  background-color: var(--button-bg-color, var(--color-light));
+  border-radius: 0.5em;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+  transition: transform 0.5s var(--cubic-default);
+}
+
+.button:hover .button-bg {
+  transform: scale(0.95);
+}
+
+.button-text {
+  z-index: 1;
+  position: relative;
+}
+
+body:has([data-cursor]:hover) .cursor {
+  opacity: 1;
+}
