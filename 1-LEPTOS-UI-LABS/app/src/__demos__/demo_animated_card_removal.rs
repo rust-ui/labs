@@ -1,5 +1,6 @@
 use leptos::prelude::*;
-use leptos_ui::clx;
+use leptos_ui::utils::Utils;
+use leptos_ui::{clx, transition};
 
 #[component]
 fn DeleteButton() -> impl IntoView {
@@ -19,7 +20,6 @@ fn DeleteButton() -> impl IntoView {
 
 struct ItemData {
     color: String,
-    class: String,
 }
 
 #[component]
@@ -27,23 +27,18 @@ pub fn DemoAnimatedCardRemoval() -> impl IntoView {
     let items = vec![
         ItemData {
             color: "bg-[tan]".to_string(),
-            class: "[view-transition-name:card-1]".to_string(),
         },
         ItemData {
             color: "bg-[khaki]".to_string(),
-            class: "[view-transition-name:card-2]".to_string(),
         },
         ItemData {
             color: "bg-[thistle]".to_string(),
-            class: "[view-transition-name:card-3]".to_string(),
         },
         ItemData {
             color: "bg-[lightblue]".to_string(),
-            class: "[view-transition-name:card-4]".to_string(),
         },
         ItemData {
             color: "bg-[lightgreen]".to_string(),
-            class: "[view-transition-name:card-5]".to_string(),
         },
     ];
 
@@ -52,7 +47,7 @@ pub fn DemoAnimatedCardRemoval() -> impl IntoView {
             {
                 items.into_iter().map(|item| {
                     view! {
-                        <Item class=format!("{} {}", item.class, item.color)>
+                        <Item class=format!("{}", item.color)>
                             <DeleteButton />
                         </Item>
                     }
@@ -68,7 +63,7 @@ mod components {
     use super::*;
 
     clx! {Container, div, "flex justify-center w-full gap-8 max-w-[1000px]"}
-    clx! {Item, li, "w-full aspect-[2/3] block relative rounded-xl max-w-[220px]"}
+    transition! {Item, li, "w-full aspect-[2/3] block relative rounded-xl max-w-[220px]"}
     clx! {DeleteButtonWrapper, button, "absolute -bottom-3 -right-3 w-12 h-12 p-2 border-4 rounded-full bg-[steelblue] text-white"}
 }
 
