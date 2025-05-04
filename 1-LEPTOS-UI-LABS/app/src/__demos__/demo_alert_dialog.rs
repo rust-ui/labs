@@ -1,54 +1,53 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
+use leptos_ui::clx;
+
+mod components {
+    use super::*;
+    clx! {Wrapper, div, "wrapper"}
+    clx! {Button, button, "button"}
+    clx! {NotifyWrapper, div, "notify-wrapper"}
+    clx! {Notify, div, "notify"}
+    clx! {NotifyContent, div, "notify-content"}
+    clx! {NotifyHeader, div, "notify-header"}
+    clx! {NotifyMain, div, "notify-main"}
+    clx! {NotifyFooter, div, "notify-footer"}
+    clx! {NotifyButtonConfirm, button, "notify-button notify-button__confirm"}
+    clx! {NotifyButtonCancel, button, "notify-button notify-button__cancel"}
+}
+
+pub use components::*;
 
 #[component]
 pub fn DemoAlertDialog() -> impl IntoView {
-    let (is_open, set_is_open) = signal(false);
-    
-    let show_dialog = move |_| {
-        set_is_open(true);
-    };
-    
-    let hide_dialog = move |_| {
-        set_is_open(false);
-    };
-    
-    let confirm_dialog = move |_| {
-        set_is_open(false);
-    };
-
     view! {
         <Stylesheet href="/components/alert_dialog.css" />
         
-        <div class="wrapper">
-            <button class="button" type="button" on:click=show_dialog>
+        <Wrapper>
+            <Button attr:notify-toggler>
                 "Notify me"
-            </button>
+            </Button>
             
-            <div class=move || {
-                let mut classes = "notify-wrapper".to_string();
-                if is_open() {
-                    classes += " active";
-                }
-                classes
-            }>
-                <div class="notify">
-                    <div class="notify-content">
-                        <div class="notify-header">"How to do"</div>
-                        <div class="notify-main">
+            <NotifyWrapper attr:notify-wrapper>
+                <Notify>
+                    <NotifyContent>
+                        <NotifyHeader>"How to do"</NotifyHeader>
+                        <NotifyMain>
                             "This is a notification"
-                        </div>
-                    </div>
-                    <div class="notify-footer">
-                        <button class="notify-button notify-button__confirm" type="button" on:click=confirm_dialog>
+                        </NotifyMain>
+                    </NotifyContent>
+                    <NotifyFooter>
+                        <NotifyButtonConfirm>
                             "Ok"
-                        </button>
-                        <button class="notify-button notify-button__cancel" type="button" on:click=hide_dialog>
+                        </NotifyButtonConfirm>
+                        <NotifyButtonCancel attr:notify-cancel>
                             "Cancel"
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </NotifyButtonCancel>
+                    </NotifyFooter>
+                </Notify>
+            </NotifyWrapper>
+        </Wrapper>
+
+        <script src="/components/alert_dialog.js"></script>
     }
 }
