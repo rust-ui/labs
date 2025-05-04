@@ -1,0 +1,103 @@
+@import "https://unpkg.com/open-props" layer(support.design-system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(support.demo);
+@import "https://unpkg.com/open-props/buttons.min.css" layer(support.demo);
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" layer(support.demo);
+
+dialog.slide-out {
+  --_duration: .5s;
+	--_card-inset: var(--size-5);
+	
+	/* inner card can query the dialog for h/w */
+	container: dialog-panel / size;
+  
+  transition: 
+    display var(--_duration) allow-discrete, 
+    overlay var(--_duration) allow-discrete;
+	
+	padding: 0;
+	background: none;
+	box-shadow: none;
+	
+	block-size: 100dvh;
+	max-block-size: 100%;
+	inline-size: min(var(--size-content-2), 80vw);
+
+	margin: 0;
+	margin-inline-end: auto;
+	overflow-y: hidden;
+	top: 0; /* safari bug fix */
+  
+  &::backdrop {
+    transition: opacity var(--_duration) var(--ease-4);
+		opacity: 0;
+		background-color: light-dark(#0003, #0008);
+  }
+  
+  > section {
+		@media (prefers-reduced-motion: reduce) {
+			transition: opacity var(--_duration) var(--ease-2);
+			opacity: 0;
+		}
+		
+		@media (prefers-reduced-motion: no-preference) {
+			transition: translate var(--_duration) var(--ease-in-out-5);
+			translate: calc((100% + var(--_card-inset)) * -1) 0;
+		}
+		
+		block-size: calc(100% - (var(--_card-inset) * 2));
+    margin-block: var(--_card-inset);
+    margin-inline-start: var(--_card-inset);
+		
+		border-radius: var(--radius-3);
+		background: light-dark(white, var(--surface-2));
+		
+		> header {
+			display: flex;
+			place-content: end;
+			padding: var(--size-3);
+
+			> button {
+				--_bg: none;
+				--_border: none;
+
+				padding: var(--size-1);
+				aspect-ratio: var(--ratio-square);
+				border-radius: var(--radius-round);
+				box-shadow: 0 0 0 var(--_highlight-size) var(--_highlight);
+			}
+		}
+  }
+
+  &[open] {
+    &, &::backdrop {
+      opacity: 1;
+    }
+    
+    & > section {
+			opacity: 1;
+      translate: 0;
+    }
+  }
+
+  @starting-style {
+    &[open],
+    &[open]::backdrop {
+      opacity: 0;
+    }
+    &[open] > section {
+			opacity: 0;
+      translate: calc((100% + var(--_card-inset)) * -1) 0;
+    }
+  }
+}
+
+
+
+@layer support.demo {
+  body {
+    display: grid;
+    place-content: center;
+    padding: var(--size-5);
+    gap: var(--size-5);
+  }
+}

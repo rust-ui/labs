@@ -1,7 +1,6 @@
 
 
-/* font-family: "Inte"; */
-
 @theme {
-  --font-inte: "Inte", "sans-serif"; 
+  --font-inte: "Inte", "sans-serif";
+  --font-roboto-slab: "Roboto Slab", serif;
 }

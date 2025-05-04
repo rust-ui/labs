@@ -1,51 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Slider</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Slider</title>
+
     <!-- * TAILWIND CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
+  </head>
+  <body class="grid h-[90dvh] place-items-center p-8">
+    <ul class="flex justify-center w-full gap-8 max-w-[1000px]">
+      <li
+        class="w-full aspect-[2/3] block relative rounded-xl max-w-[220px] [view-transition-name:card-1] bg-[tan]"
+      >
+        <button
+          class="delete-btn absolute -bottom-3 -right-3 w-12 h-12 p-2 border-4 rounded-full bg-[steelblue] text-white"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg"
+            alt="close button"
+          />
+          <span
+            class="border-0 clip-[rect(1px,1px,1px,1px)] clip-path-[inset(50%)] h-px -m-px overflow-hidden p-0 absolute w-px whitespace-nowrap"
+            >Delete</span
+          >
+        </button>
+      </li>
+      <li
+        class="w-full aspect-[2/3] block relative rounded-xl max-w-[220px] [view-transition-name:card-2] bg-[khaki]"
+      >
+        <button
+          class="delete-btn absolute -bottom-3 -right-3 w-12 h-12 p-2 border-4 rounded-full bg-[steelblue] text-white"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg"
+            alt="close button"
+          />
+          <span
+            class="border-0 clip-[rect(1px,1px,1px,1px)] clip-path-[inset(50%)] h-px -m-px overflow-hidden p-0 absolute w-px whitespace-nowrap"
+            >Delete</span
+          >
+        </button>
+      </li>
+      <li
+        class="w-full aspect-[2/3] block relative rounded-xl max-w-[220px] [view-transition-name:card-3] bg-[thistle]"
+      >
+        <button
+          class="delete-btn absolute -bottom-3 -right-3 w-12 h-12 p-2 border-4 rounded-full bg-[steelblue] text-white"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg"
+            alt="close button"
+          />
+          <span
+            class="border-0 clip-[rect(1px,1px,1px,1px)] clip-path-[inset(50%)] h-px -m-px overflow-hidden p-0 absolute w-px whitespace-nowrap"
+            >Delete</span
+          >
+        </button>
+      </li>
+      <li
+        class="w-full aspect-[2/3] block relative rounded-xl max-w-[220px] [view-transition-name:card-4] bg-[wheat]"
+      >
+        <button
+          class="delete-btn absolute -bottom-3 -right-3 w-12 h-12 p-2 border-4 rounded-full bg-[steelblue] text-white"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg"
+            alt="close button"
+          />
+          <span
+            class="border-0 clip-[rect(1px,1px,1px,1px)] clip-path-[inset(50%)] h-px -m-px overflow-hidden p-0 absolute w-px whitespace-nowrap"
+            >Delete</span
+          >
+        </button>
+      </li>
+    </ul>
 
-
-
-  <ul class="cards">
-    <li class="card card-1">
-      <button class="delete-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg" alt="close button">
-        <span class="sr-only">Delete</span>
-      </button>
-    </li>
-    <li class="card card-2">
-      <button class="delete-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg" alt="close button">
-        <span class="sr-only">Delete</span>
-      </button>
-    </li>
-    <li class="card card-3">
-      <button class="delete-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg" alt="close button">
-        <span class="sr-only">Delete</span>
-      </button>
-    </li>
-    <li class="card card-4">
-      <button class="delete-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Trash_font_awesome.svg" alt="close button">
-        <span class="sr-only">Delete</span>
-      </button>
-    </li>
-  </ul>
-
-
-  
-
-
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
