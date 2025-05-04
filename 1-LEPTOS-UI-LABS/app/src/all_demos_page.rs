@@ -5,6 +5,7 @@ use crate::__demos__::_process_to_follow::ProcessToFollow;
 use crate::__demos__::demo_cards_gradient::DemoCardsGradient;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_drawer::DemoDrawer;
+use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_word_rotation::DemoWordRotation;
 use crate::__demos__::demo_animated_card_removal::DemoAnimatedCardRemoval;
 use crate::shared::utils::params::QueryUtils;
@@ -25,7 +26,7 @@ const DEMO_12: &str = "Slot_12";
 const DEMO_13: &str = "Slot_13";
 const DEMO_14: &str = "Slot_14";
 const DEMO_15: &str = "Slot_15";
-
+const DEMO_16: &str = "Alert Dialog";
 #[component]
 pub fn AllDemosPage() -> impl IntoView {
     clx! {Sidenav, div, "flex flex-col h-full gap-1 bg-neutral-500 w-[300px]"}
@@ -49,6 +50,7 @@ pub fn AllDemosPage() -> impl IntoView {
                 <SidenavLink href=format!("?demo={}", DEMO_13)>{DEMO_13}</SidenavLink>
                 <SidenavLink href=format!("?demo={}", DEMO_14)>{DEMO_14}</SidenavLink>
                 <SidenavLink href=format!("?demo={}", DEMO_15)>{DEMO_15}</SidenavLink>
+                <SidenavLink href=format!("?demo={}", DEMO_16)>{DEMO_16}</SidenavLink>
             </Sidenav>
 
             <RenderComponentFromQuery />
@@ -87,6 +89,7 @@ pub fn RenderComponentFromQuery() -> impl IntoView {
                         DEMO_13 => view! { "SLOT_13" }.into_any(),
                         DEMO_14 => view! { "SLOT_14" }.into_any(),
                         DEMO_15 => view! { "SLOT_15" }.into_any(),
+                        DEMO_16 => view! { <DemoAlertDialog /> }.into_any(),
                         _ => view! { <p>"Select a component to display"</p> }.into_any(),
                     }
                 }}
