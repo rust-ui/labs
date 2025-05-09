@@ -1,5 +1,5 @@
 const draggables = document.querySelectorAll(".draggable");
-const containers = document.querySelectorAll(".container");
+const containers = document.querySelectorAll(".dragabble__container");
 
 for (const draggable of draggables) {
   draggable.addEventListener("dragstart", () => {

@@ -4,7 +4,7 @@ use leptos_ui::clx;
 
 mod components {
     use super::*;
-    clx! {Container, div, "container bg-[#333] p-4 mt-4"}
+    clx! {Draggable, div, "dragabble__container", "bg-[#333] p-4 mt-4"}
 }
 
 pub use components::*;
@@ -26,14 +26,14 @@ pub fn DemoDragAndDrop() -> impl IntoView {
 
         <div class="relative gap-8">
             <div class="m-0">
-                <Container>
+                <Draggable>
                     <DraggableItem text="1" />
                     <DraggableItem text="2" />
-                </Container>
-                <Container>
+                </Draggable>
+                <Draggable>
                     <DraggableItem text="3" />
                     <DraggableItem text="4" />
-                </Container>
+                </Draggable>
             </div>
         </div>
         <script src="/components/drag_and_drop.js"></script>
