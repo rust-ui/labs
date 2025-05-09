@@ -25,16 +25,14 @@ pub fn DemoDragAndDrop() -> impl IntoView {
         <Stylesheet href="/components/drag_and_drop.css" />
 
         <div class="relative gap-8">
-            <div class="m-0">
-                <Draggable>
-                    <DraggableItem text="1" />
-                    <DraggableItem text="2" />
-                </Draggable>
-                <Draggable>
-                    <DraggableItem text="3" />
-                    <DraggableItem text="4" />
-                </Draggable>
-            </div>
+            <Draggable>
+                <DraggableItem text="1" />
+                <DraggableItem text="2" />
+            </Draggable>
+            <Draggable>
+                <DraggableItem text="3" />
+                <DraggableItem text="4" />
+            </Draggable>
         </div>
         <script src="/components/drag_and_drop.js"></script>
     }
