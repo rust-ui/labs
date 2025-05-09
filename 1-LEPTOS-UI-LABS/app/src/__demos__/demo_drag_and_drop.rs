@@ -14,7 +14,7 @@ pub use components::*;
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 #[component]
-pub fn DraggableItem(text: String) -> impl IntoView {
+pub fn DraggableItem(#[prop(into)] text: String) -> impl IntoView {
     view! {
         <p class="p-4 bg-white border border-black cursor-move draggable" draggable="true">{text}</p>
     }
@@ -27,12 +27,12 @@ pub fn DemoDragAndDrop() -> impl IntoView {
         <div class="relative gap-8">
             <div class="m-0">
                 <Container>
-                    <DraggableItem text="1".into() />
-                    <DraggableItem text="2".into() />
+                    <DraggableItem text="1" />
+                    <DraggableItem text="2" />
                 </Container>
                 <Container>
-                    <DraggableItem text="3".into() />
-                    <DraggableItem text="4".into() />
+                    <DraggableItem text="3" />
+                    <DraggableItem text="4" />
                 </Container>
             </div>
         </div>
