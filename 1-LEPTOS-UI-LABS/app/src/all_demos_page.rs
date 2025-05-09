@@ -2,11 +2,12 @@ use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
 use crate::__demos__::_process_to_follow::ProcessToFollow;
+use crate::__demos__::demo_animated_card_removal::DemoAnimatedCardRemoval;
 use crate::__demos__::demo_cards_gradient::DemoCardsGradient;
 use crate::__demos__::demo_carousel::DemoCarousel;
+use crate::__demos__::demo_drag_and_drop::DemoDragAndDrop;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_word_rotation::DemoWordRotation;
-use crate::__demos__::demo_animated_card_removal::DemoAnimatedCardRemoval;
 use crate::shared::utils::params::QueryUtils;
 
 // * 1️⃣ Add the name of your demo here
@@ -16,7 +17,7 @@ const DEMO_3: &str = "Drawer";
 const DEMO_4: &str = "Gradient Card";
 const DEMO_5: &str = "Word Rotation";
 const DEMO_6: &str = "Animated Card Removal";
-const DEMO_7: &str = "Slot_7";
+const DEMO_7: &str = "Drag and Drop";
 const DEMO_8: &str = "Slot_8";
 const DEMO_9: &str = "Slot_9";
 const DEMO_10: &str = "Slot_10";
@@ -78,7 +79,7 @@ pub fn RenderComponentFromQuery() -> impl IntoView {
                         DEMO_4 => view! { <DemoCardsGradient /> }.into_any(),
                         DEMO_5 => view! { <DemoWordRotation /> }.into_any(),
                         DEMO_6 => view! { <DemoAnimatedCardRemoval /> }.into_any(),
-                        DEMO_7 => view! { "SLOT_7" }.into_any(),
+                        DEMO_7 => view! { <DemoDragAndDrop /> }.into_any(),
                         DEMO_8 => view! { "SLOT_8" }.into_any(),
                         DEMO_9 => view! { "SLOT_9" }.into_any(),
                         DEMO_10 => view! { "SLOT_10" }.into_any(),
