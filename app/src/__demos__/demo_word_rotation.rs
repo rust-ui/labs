@@ -28,13 +28,8 @@ pub fn DemoWordRotation() -> impl IntoView {
 
 mod components {
     use super::*;
-    clx! {WordRotationWrapper, main, "my-0 mx-auto py-8 px-4 w-[800px] resize text-[2.5rem] overflow-hidden"}
+    clx! {WordRotationWrapper, div, "my-0 mx-auto py-8 px-4 w-[800px] resize text-[2.5rem] overflow-hidden"}
     clx! {WordRotation, p, "flex flex-wrap m-0 gap-[0.5ch] leading-[0.9]"}
 }
 
 pub use components::*;
-
-// TODO. Add this to the WordRotation component.
-// span:nth-of-type(2) {
-//     color: hsl(64, 100%, 50%);
-// }
