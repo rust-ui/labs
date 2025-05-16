@@ -1,8 +1,8 @@
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Stylesheet, Title};
+use leptos_meta::{Stylesheet, Title, provide_meta_context};
 use leptos_router::{
-    components::{Route, Router, Routes},
     StaticSegment,
+    components::{Route, Router, Routes},
 };
 
 use crate::{
@@ -15,7 +15,7 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-        <Stylesheet id="leptos" href="/pkg/start-axum-workspace.css" />
+        <Stylesheet id="leptos" href="/pkg/rust_ui_labs.css" />
         <Title text="Lepos UI Labs" />
 
         <Router>

@@ -38,7 +38,7 @@ opt-level = 'z'
 
 
 [[workspace.metadata.leptos]]
-name = "start-axum-workspace"
+name = "rust_ui_labs"
 bin-package = "server"
 lib-package = "frontend"
 site-root = "target/site"
