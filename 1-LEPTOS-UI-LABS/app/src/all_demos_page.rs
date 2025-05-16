@@ -9,6 +9,7 @@ use crate::__demos__::demo_cards_gradient::DemoCardsGradient;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_drag_and_drop::DemoDragAndDrop;
 use crate::__demos__::demo_drawer::DemoDrawer;
+use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::__demos__::demo_word_rotation::DemoWordRotation;
 use crate::shared::utils::params::QueryUtils;
 
@@ -22,7 +23,7 @@ const DEMO_6: &str = "Animated Card Removal";
 const DEMO_7: &str = "Drag and Drop";
 const DEMO_8: &str = "Alert Dialog";
 const DEMO_9: &str = "Card Reorder";
-const DEMO_10: &str = "Slot_10";
+const DEMO_10: &str = "Demo Gsap Dynamic Cursor";
 const DEMO_11: &str = "Slot_11";
 const DEMO_12: &str = "Slot_12";
 const DEMO_13: &str = "Slot_13";
@@ -84,7 +85,7 @@ pub fn RenderComponentFromQuery() -> impl IntoView {
                         DEMO_7 => view! { <DemoDragAndDrop /> }.into_any(),
                         DEMO_8 => view! { <DemoAlertDialog /> }.into_any(),
                         DEMO_9 => view! { <DemoCardReorder /> }.into_any(),
-                        DEMO_10 => view! { "SLOT_10" }.into_any(),
+                        DEMO_10 => view! { <DemoGsapDynamicCursor /> }.into_any(),
                         DEMO_11 => view! { "SLOT_11" }.into_any(),
                         DEMO_12 => view! { "SLOT_12" }.into_any(),
                         DEMO_13 => view! { "SLOT_13" }.into_any(),
