@@ -8,7 +8,7 @@ use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_drag_and_drop::DemoDragAndDrop;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
-use crate::shared::utils::params::QueryUtils;
+use crate::shared::utils::query::QueryUtils;
 
 // * 1️⃣ Add the name of your demo here
 const DEMO_1: &str = "Process to follow";
