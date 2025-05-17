@@ -10,7 +10,6 @@ pub mod demo_drag_and_drop;
 pub mod demo_drawer;
 pub mod demo_gsap_dynamic_cursor;
 pub mod demo_sheet_css;
-pub mod demo_word_rotation;
 // * Not working with Rust UI.
 // pub mod demo_js_need_help;
 // pub mod demo_js_payment_method;
