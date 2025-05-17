@@ -3,7 +3,6 @@ pub mod _process_to_follow;
 pub mod _template_demo;
 pub mod demo_alert_dialog;
 pub mod demo_card_reorder;
-pub mod demo_cards_gradient;
 pub mod demo_carousel;
 pub mod demo_drag_and_drop;
 pub mod demo_drawer;
