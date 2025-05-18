@@ -18,63 +18,23 @@ pub struct DemoItem {
 
 pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
-        name: "Slot_1",
-        render_fn: || view! { "SLOT_1" }.into_any(),
+        name: "👉 TODO: Gsap Dynamic Cursor",
+        render_fn: || view! { <DemoGsapDynamicCursor />  }.into_any(),
     },
     DemoItem {
-        name: "Carousel",
+        name: "👉 TODO: Carousel",
         render_fn: || view! { <DemoCarousel /> }.into_any(),
     },
     DemoItem {
-        name: "Drawer",
+        name: "👉 TODO: Drawer",
         render_fn: || view! { <DemoDrawer /> }.into_any(),
     },
     DemoItem {
-        name: "Slot_4",
-        render_fn: || view! { "SLOT_4" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_5",
-        render_fn: || view! { "SLOT_5" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_6",
-        render_fn: || view! { "SLOT_6" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_7",
-        render_fn: || view! { "SLOT_7" }.into_any(),
-    },
-    DemoItem {
-        name: "Alert Dialog",
+        name: "👉 TODO: Alert Dialog",
         render_fn: || view! { <DemoAlertDialog /> }.into_any(),
     },
     DemoItem {
-        name: "Card Reorder",
+        name: "👉 TODO: Card Reorder",
         render_fn: || view! { <DemoCardReorder /> }.into_any(),
-    },
-    DemoItem {
-        name: "Demo Gsap Dynamic Cursor",
-        render_fn: || view! { <DemoGsapDynamicCursor /> }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_11",
-        render_fn: || view! { "SLOT_11" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_12",
-        render_fn: || view! { "SLOT_12" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_13",
-        render_fn: || view! { "SLOT_13" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_14",
-        render_fn: || view! { "SLOT_14" }.into_any(),
-    },
-    DemoItem {
-        name: "Slot_15",
-        render_fn: || view! { "SLOT_15" }.into_any(),
     },
 ];
