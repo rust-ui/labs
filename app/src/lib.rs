@@ -1,3 +1,6 @@
+#![warn(clippy::all)]
+#![deny(clippy::unwrap_used)]
+
 pub mod __demos__;
 pub mod all_demos;
 pub mod all_demos_page;
