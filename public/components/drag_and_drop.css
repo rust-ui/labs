@@ -1,9 +1,0 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
-
-* {
-  font-family: Raleway;
-}
-
-.draggable.dragging {
-  opacity: 0.5;
-}

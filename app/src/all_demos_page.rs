@@ -5,7 +5,6 @@ use crate::__demos__::_process_to_follow::ProcessToFollow;
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
-use crate::__demos__::demo_drag_and_drop::DemoDragAndDrop;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::shared::utils::query::QueryUtils;
@@ -17,7 +16,7 @@ const DEMO_3: &str = "Drawer";
 const DEMO_4: &str = "Slot_4";
 const DEMO_5: &str = "Slot_5";
 const DEMO_6: &str = "Slot_6";
-const DEMO_7: &str = "Drag and Drop";
+const DEMO_7: &str = "Slot_7";
 const DEMO_8: &str = "Alert Dialog";
 const DEMO_9: &str = "Card Reorder";
 const DEMO_10: &str = "Demo Gsap Dynamic Cursor";
@@ -79,7 +78,7 @@ pub fn RenderComponentFromQuery() -> impl IntoView {
                         DEMO_4 => view! { "SLOT_4" }.into_any(),
                         DEMO_5 => view! { "SLOT_5" }.into_any(),
                         DEMO_6 => view! { "SLOT_6" }.into_any(),
-                        DEMO_7 => view! { <DemoDragAndDrop /> }.into_any(),
+                        DEMO_7 => view! { "SLOT_7" }.into_any(),
                         DEMO_8 => view! { <DemoAlertDialog /> }.into_any(),
                         DEMO_9 => view! { <DemoCardReorder /> }.into_any(),
                         DEMO_10 => view! { <DemoGsapDynamicCursor /> }.into_any(),
