@@ -1,51 +1,27 @@
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
-use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
-use crate::__demos__::demo_card_reorder::DemoCardReorder;
-use crate::__demos__::demo_carousel::DemoCarousel;
-use crate::__demos__::demo_drawer::DemoDrawer;
-use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
+use crate::all_demos::{ALL_DEMOS, DemoItem};
 use crate::shared::utils::query::QueryUtils;
-
-// * 1️⃣ Add the name of your demo here
-const DEMO_1: &str = "Slot_1";
-const DEMO_2: &str = "Carousel";
-const DEMO_3: &str = "Drawer";
-const DEMO_4: &str = "Slot_4";
-const DEMO_5: &str = "Slot_5";
-const DEMO_6: &str = "Slot_6";
-const DEMO_7: &str = "Slot_7";
-const DEMO_8: &str = "Alert Dialog";
-const DEMO_9: &str = "Card Reorder";
-const DEMO_10: &str = "Demo Gsap Dynamic Cursor";
-const DEMO_11: &str = "Slot_11";
-const DEMO_12: &str = "Slot_12";
-const DEMO_13: &str = "Slot_13";
-const DEMO_14: &str = "Slot_14";
-const DEMO_15: &str = "Slot_15";
 
 #[component]
 pub fn AllDemosPage() -> impl IntoView {
     clx! {Sidenav, div, "flex flex-col h-full gap-1 bg-neutral-500 w-[300px]"}
     a! {SidenavLink, "px-4 py-2 hover:bg-neutral-600"}
 
-    let demo_names = [
-        DEMO_1, DEMO_2, DEMO_3, DEMO_4, DEMO_5, DEMO_6, DEMO_7, DEMO_8, DEMO_9, DEMO_10, DEMO_11,
-        DEMO_12, DEMO_13, DEMO_14, DEMO_15,
-    ];
+    let all_demos: Vec<&str> = ALL_DEMOS.iter().map(|demo| demo.name).collect();
 
     view! {
         <div class="flex gap-4 p-2 mx-4">
             <Sidenav>
-                {demo_names.into_iter().map(|demo| {
+                {all_demos.into_iter().map(|demo| {
                     view! {
                         <SidenavLink href=format!("?demo={}", demo)>{demo}</SidenavLink>
                     }
                 }).collect_view()}
             </Sidenav>
 
-            <RenderComponentFromQuery />
+            <RenderComponentFromQuery demos=ALL_DEMOS.to_vec() />
         </div>
     }
 }
@@ -55,33 +31,19 @@ pub fn AllDemosPage() -> impl IntoView {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 #[component]
-pub fn RenderComponentFromQuery() -> impl IntoView {
+pub fn RenderComponentFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
     let demo_query = QueryUtils::extract_demo();
 
     view! {
         <div class="flex flex-col w-full gap-4">
             <div class="w-full">
-                // * 2️⃣ Add your demo Component here
-
                 {move || {
-                    let demo = demo_query();
-                    match demo.as_str() {
-                        DEMO_1 => view! { "SLOT_1" }.into_any(),
-                        DEMO_2 => view! { <DemoCarousel /> }.into_any(),
-                        DEMO_3 => view! { <DemoDrawer /> }.into_any(),
-                        DEMO_4 => view! { "SLOT_4" }.into_any(),
-                        DEMO_5 => view! { "SLOT_5" }.into_any(),
-                        DEMO_6 => view! { "SLOT_6" }.into_any(),
-                        DEMO_7 => view! { "SLOT_7" }.into_any(),
-                        DEMO_8 => view! { <DemoAlertDialog /> }.into_any(),
-                        DEMO_9 => view! { <DemoCardReorder /> }.into_any(),
-                        DEMO_10 => view! { <DemoGsapDynamicCursor /> }.into_any(),
-                        DEMO_11 => view! { "SLOT_11" }.into_any(),
-                        DEMO_12 => view! { "SLOT_12" }.into_any(),
-                        DEMO_13 => view! { "SLOT_13" }.into_any(),
-                        DEMO_14 => view! { "SLOT_14" }.into_any(),
-                        DEMO_15 => view! { "SLOT_15" }.into_any(),
-                        _ => view! { <p>"Select a component to display"</p> }.into_any(),
+                    let current_demo = demo_query();
+
+                    if let Some(demo) = demos.iter().find(|d| d.name == current_demo) {
+                        (demo.render_fn)()
+                    } else {
+                        view! { <p>"Select a component to display"</p> }.into_any()
                     }
                 }}
             </div>
