@@ -1,3 +1,6 @@
+#[allow(non_snake_case)]
+pub mod _todo__use_tailwind_css;
+
 pub mod demo_alert_dialog;
 pub mod demo_card_reorder;
 pub mod demo_carousel;
