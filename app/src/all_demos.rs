@@ -4,6 +4,7 @@ use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_bottom_bar_awwards::DemoBottomBarAwwwards;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
+use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 
@@ -41,5 +42,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Bottom Bar Awwwards",
         render_fn: || view! { <DemoBottomBarAwwwards /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Carousel Hover Smooth",
+        render_fn: || view! { <DemoCarouselHoverSmooth /> }.into_any(),
     },
 ];
