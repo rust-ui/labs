@@ -19,7 +19,7 @@ pub struct DemoItem {
 pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Gsap Dynamic Cursor",
-        render_fn: || view! { <DemoGsapDynamicCursor />  }.into_any(),
+        render_fn: || view! { <DemoGsapDynamicCursor /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Carousel",

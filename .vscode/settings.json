@@ -1,3 +1,24 @@
 {
-  "liveServer.settings.port": 5501
+	"[rust]": {
+		"editor.tabSize": 4,
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+		"editor.formatOnSave": true
+	},
+
+	"rust-analyzer": {
+		"rustfmt": {
+			"overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"]
+		}
+	},
+	"rust-analyzer.check.command": "clippy",
+
+	"tailwindCSS.includeLanguages": {
+		"rust": "html"
+	},
+	"tailwindCSS.emmetCompletions": true,
+
+	"tailwindCSS.experimental.classRegex": [
+		["tw_merge!\\(([^)]*)\\)"],
+		["#[tw\\\\([^\\]]*class\\s*=\\s*\"([^\"]*)\"\\)]", "\"([^\"]*)\""]
+	]
 }

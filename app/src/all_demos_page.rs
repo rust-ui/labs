@@ -2,7 +2,7 @@ use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
 use crate::__demos__::_todo__use_tailwind_css::Todo__UseTailwindCss;
-use crate::all_demos::{ALL_DEMOS, DemoItem};
+use crate::all_demos::{DemoItem, ALL_DEMOS};
 use crate::shared::utils::query::QueryUtils;
 
 #[component]
@@ -15,11 +15,12 @@ pub fn AllDemosPage() -> impl IntoView {
     view! {
         <div class="flex gap-4 p-2 mx-4">
             <Sidenav>
-                {all_demos.into_iter().map(|demo| {
-                    view! {
-                        <SidenavLink href=format!("?demo={}", demo)>{demo}</SidenavLink>
-                    }
-                }).collect_view()}
+                {all_demos
+                    .into_iter()
+                    .map(|demo| {
+                        view! { <SidenavLink href=format!("?demo={}", demo)>{demo}</SidenavLink> }
+                    })
+                    .collect_view()}
             </Sidenav>
 
             <RenderComponentFromQuery demos=ALL_DEMOS.to_vec() />
@@ -42,13 +43,16 @@ pub fn RenderComponentFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
             <div class="w-full">
                 {move || {
                     let current_demo = demo_query();
-
                     if let Some(demo) = demos.iter().find(|d| d.name == current_demo) {
                         (demo.render_fn)()
                     } else {
-                        view! { <p class="text-2xl font-bold text-center text-orange-500">
-                            "<---- Select a component to display from the Sidenav 😄"
-                        </p> }.into_any()
+
+                        view! {
+                            <p class="text-2xl font-bold text-center text-orange-500">
+                                "<---- Select a component to display from the Sidenav 😄"
+                            </p>
+                        }
+                            .into_any()
                     }
                 }}
             </div>
