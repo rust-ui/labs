@@ -8,3 +8,4 @@ pub mod demo_carousel;
 pub mod demo_carousel_hover_smooth;
 pub mod demo_drawer;
 pub mod demo_gsap_dynamic_cursor;
+pub mod demo_gsap_looping_words;
