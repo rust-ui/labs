@@ -13,6 +13,7 @@ use crate::__demos__::demo_inline_picker::DemoInlinePicker;
 use crate::__demos__::demo_menu_bar_interaction::DemoMenuBarInteraction;
 use crate::__demos__::demo_menu_grid_transition::DemoMenuGridTransition;
 use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
+use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 use crate::__demos__::demo_slider_point::DemoSliderPoint;
 
 #[derive(Clone)]
@@ -81,5 +82,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Button Multi State",
         render_fn: || view! { <DemoButtonMultiState /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Mobile Stack",
+        render_fn: || view! { <DemoMobileStack /> }.into_any(),
     },
 ];
