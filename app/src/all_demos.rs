@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
+use crate::__demos__::demo_bottom_bar_awwards::DemoBottomBarAwwwards;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_drawer::DemoDrawer;
@@ -36,5 +37,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Card Reorder",
         render_fn: || view! { <DemoCardReorder /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Bottom Bar Awwwards",
+        render_fn: || view! { <DemoBottomBarAwwwards /> }.into_any(),
     },
 ];

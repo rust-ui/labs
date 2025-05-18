@@ -2,12 +2,8 @@
 pub mod _todo__use_tailwind_css;
 
 pub mod demo_alert_dialog;
+pub mod demo_bottom_bar_awwards;
 pub mod demo_card_reorder;
 pub mod demo_carousel;
 pub mod demo_drawer;
 pub mod demo_gsap_dynamic_cursor;
-// * Not working with Rust UI.
-// pub mod demo_js_need_help;
-// pub mod demo_js_payment_method;
-// pub mod demo_js_multi_select_tags;
-// pub mod demo_flex_transition;
