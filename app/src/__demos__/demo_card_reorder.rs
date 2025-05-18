@@ -1,14 +1,10 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-use crate::__demos__::_todo__use_tailwind_css::Todo__UseTailwindCss;
-
 #[component]
 pub fn DemoCardReorder() -> impl IntoView {
     view! {
         <Stylesheet href="/components/card_reorder.css" />
-
-        <Todo__UseTailwindCss />
 
         <div class="flex justify-center cards">
             <div class="card" id="card-1">

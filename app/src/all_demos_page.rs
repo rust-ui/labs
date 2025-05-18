@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
+use crate::__demos__::_todo__use_tailwind_css::Todo__UseTailwindCss;
 use crate::all_demos::{ALL_DEMOS, DemoItem};
 use crate::shared::utils::query::QueryUtils;
 
@@ -36,6 +37,8 @@ pub fn RenderComponentFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
 
     view! {
         <div class="flex flex-col w-full gap-4">
+            <Todo__UseTailwindCss />
+
             <div class="w-full">
                 {move || {
                     let current_demo = demo_query();
