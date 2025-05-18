@@ -30,24 +30,19 @@ pub fn AllDemosPage() -> impl IntoView {
     clx! {Sidenav, div, "flex flex-col h-full gap-1 bg-neutral-500 w-[300px]"}
     a! {SidenavLink, "px-4 py-2 hover:bg-neutral-600"}
 
+    let demo_names = [
+        DEMO_1, DEMO_2, DEMO_3, DEMO_4, DEMO_5, DEMO_6, DEMO_7, DEMO_8, DEMO_9, DEMO_10, DEMO_11,
+        DEMO_12, DEMO_13, DEMO_14, DEMO_15,
+    ];
+
     view! {
         <div class="flex gap-4 p-2 mx-4">
             <Sidenav>
-                <SidenavLink href=format!("?demo={}", DEMO_1)>{DEMO_1}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_2)>{DEMO_2}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_3)>{DEMO_3}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_4)>{DEMO_4}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_5)>{DEMO_5}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_6)>{DEMO_6}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_7)>{DEMO_7}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_8)>{DEMO_8}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_9)>{DEMO_9}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_10)>{DEMO_10}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_11)>{DEMO_11}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_12)>{DEMO_12}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_13)>{DEMO_13}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_14)>{DEMO_14}</SidenavLink>
-                <SidenavLink href=format!("?demo={}", DEMO_15)>{DEMO_15}</SidenavLink>
+                {demo_names.into_iter().map(|demo| {
+                    view! {
+                        <SidenavLink href=format!("?demo={}", demo)>{demo}</SidenavLink>
+                    }
+                }).collect_view()}
             </Sidenav>
 
             <RenderComponentFromQuery />
