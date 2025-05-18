@@ -8,6 +8,7 @@ use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::__demos__::demo_gsap_looping_words::DemoGsapLoopingWords;
+use crate::__demos__::demo_inline_picker::DemoInlinePicker;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -51,5 +52,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Gsap Looping Words",
         render_fn: || view! { <DemoGsapLoopingWords /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Inline Picker",
+        render_fn: || view! { <DemoInlinePicker /> }.into_any(),
     },
 ];
