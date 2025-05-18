@@ -12,7 +12,7 @@
   --blending: hard-light;
 }
 
-* {
+.mainHtml {
   margin: 0;
   padding: 0;
   outline: none;
@@ -36,11 +36,6 @@
   background: #FFF;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;
-}
-
-h1, h2, h3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
 }
 
 .card {
@@ -87,14 +82,6 @@ h1, h2, h3 {
   text-shadow: -3px 0px 2px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 16px;
-}
-
-p {
-  line-height: 1.6;
-}
 
 @keyframes moveInCircle {
   0% {
