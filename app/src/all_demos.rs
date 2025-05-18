@@ -9,6 +9,7 @@ use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::__demos__::demo_gsap_looping_words::DemoGsapLoopingWords;
 use crate::__demos__::demo_inline_picker::DemoInlinePicker;
+use crate::__demos__::demo_menu_bar_interaction::DemoMenuBarInteraction;
 use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 
 #[derive(Clone)]
@@ -61,5 +62,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Menu Interaction",
         render_fn: || view! { <DemoMenuInteraction /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Menu Bar Interaction",
+        render_fn: || view! { <DemoMenuBarInteraction /> }.into_any(),
     },
 ];
