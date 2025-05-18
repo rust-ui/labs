@@ -2,6 +2,7 @@ use leptos::prelude::*;
 
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_bottom_bar_awwards::DemoBottomBarAwwwards;
+use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
@@ -76,5 +77,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Slider Point",
         render_fn: || view! { <DemoSliderPoint /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Button Multi State",
+        render_fn: || view! { <DemoButtonMultiState /> }.into_any(),
     },
 ];
