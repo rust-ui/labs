@@ -27,6 +27,9 @@ pub fn DemoGsapDynamicCursor() -> impl IntoView {
             </section>
         </div>
 
+        // TODO. Harmonize all the scripts for gsap. Better to have in shell but probably in conflict with other Components so I keep it there for the moment.
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
         <script src="/components/dynamic_cursor.js"></script>
     }
 }
