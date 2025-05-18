@@ -1,0 +1,39 @@
+@layer basic {
+    .mainDiv {
+      min-height: 100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      background: #222;
+   }
+  }
+  
+  @layer points {
+    .points {
+      /* to change apperance use the custom props */
+      --std-dim: 40px;
+      --active-dim: 200px;
+      --color-point: #ccc;
+      
+      display: flex;
+      gap: calc(var( --std-dim ) / 4 );
+  
+  
+      .point {
+        background: var(--color-point);
+        height: var(--std-dim);
+        width:  var(--std-dim);
+       border-radius: calc( var( --std-dim ) / 2 );
+        border 5px solid green;
+        transition: width .4s linear;
+      }
+  
+      .point input {
+        display: none;
+      }
+      .point:has(:checked) {
+        width: var(--active-dim);
+      }
+    }
+  }
+  

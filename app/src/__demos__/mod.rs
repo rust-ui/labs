@@ -13,3 +13,4 @@ pub mod demo_inline_picker;
 pub mod demo_menu_bar_interaction;
 pub mod demo_menu_grid_transition;
 pub mod demo_menu_interaction;
+pub mod demo_slider_point;
