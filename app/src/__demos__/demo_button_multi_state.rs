@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_meta::Stylesheet;
 
-// TODO. Add Button
+use crate::shared::components::button::Button;
 
 #[component]
 pub fn DemoButtonMultiState() -> impl IntoView {
@@ -9,7 +9,7 @@ pub fn DemoButtonMultiState() -> impl IntoView {
         <Stylesheet href="/components/button_multi_state.css" />
 
         <div class="mainDiv">
-            <button id="demo">Do some hard work</button>
+            <Button id="demo">Do some hard work</Button>
         </div>
 
         <script src="/components/button_multi_state.js"></script>
