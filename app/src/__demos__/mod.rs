@@ -2,6 +2,7 @@
 pub mod _todo__use_tailwind_css;
 
 pub mod demo_alert_dialog;
+pub mod demo_bento_3_transition;
 pub mod demo_bg_gradient_interactive;
 pub mod demo_bottom_bar_awwards;
 pub mod demo_button_multi_state;

@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
+use crate::__demos__::demo_bento_3_transition::DemoBento3Transition;
 use crate::__demos__::demo_bg_gradient_interactive::DemoBgGradientInteractive;
 use crate::__demos__::demo_bottom_bar_awwards::DemoBottomBarAwwwards;
 use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
@@ -91,5 +92,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Bg Gradient Interactive",
         render_fn: || view! { <DemoBgGradientInteractive /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Bento 3 Transition",
+        render_fn: || view! { <DemoBento3Transition /> }.into_any(),
     },
 ];
