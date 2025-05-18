@@ -24,7 +24,7 @@
   border: none;
 }
 
-html, body {
+.mainDiv {
   font-family: "Dongle", sans-serif;
   margin: 0;
   padding: 0;
@@ -32,7 +32,7 @@ html, body {
   width: 100%;
 }
 
-body {
+.mainDiv {
   background: #FFF;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;

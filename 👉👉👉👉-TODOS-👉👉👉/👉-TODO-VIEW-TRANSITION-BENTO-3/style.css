@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
-* {
+
+
+.mainDivParent {
+  font-size: 6.25vmax;
   box-sizing: border-box;
 }
-
-html {
-  font-size: 6.25vmax;
-}
 @media (max-width: 992px) {
-  html {
+  .mainDivParent {
     font-size: 60px;
   }
 }
 
-body {
+.mainDiv {
+  font-size: 6.25vmax;
   min-height: 100vh;
   display: flex;
   justify-content: center;

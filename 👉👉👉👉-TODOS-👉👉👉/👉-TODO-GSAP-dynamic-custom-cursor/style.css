@@ -20,19 +20,9 @@
   --cubic-default: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ... existing code ... */
 
 
- @font-face {
-  font-family: 'PP Neue Corp';
-  src: url('https://cdn.prod.website-files.com/673af51dea86ab95d124c3ee/673b0f5784f7060c0ac05534_PPNeueCorp-TightUltrabold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-
-body {
+.mainDiv {
   background-color: var(--color-neutral-300);
   color: var(--color-dark);
   font-size: var(--size-font);

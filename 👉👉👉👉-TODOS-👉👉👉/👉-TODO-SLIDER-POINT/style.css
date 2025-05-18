@@ -1,5 +1,5 @@
 @layer basic {
-  body {
+  .mainDiv {
     min-height: 100vh;
     display:flex;
     justify-content: center;

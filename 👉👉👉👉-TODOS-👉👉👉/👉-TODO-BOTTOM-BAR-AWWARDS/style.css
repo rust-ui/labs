@@ -1,5 +1,4 @@
-html,
-body {
+.mainDiv {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	padding: 0;
@@ -9,7 +8,7 @@ body {
 	background-color: #e1dcdc;
 }
 
-body {
+.mainDiv {
 	width: 100vw;
 	height: 100vh;
 	display: flex;

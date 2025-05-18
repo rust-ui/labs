@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 
-body {
+.mainDiv {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,9 +13,6 @@ body {
   text-size-adjust: 100%;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 .inpTime {
   position: relative;

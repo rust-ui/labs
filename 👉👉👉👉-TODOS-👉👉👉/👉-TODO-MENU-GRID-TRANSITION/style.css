@@ -1,9 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
+
+.mainDivParent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +7,7 @@ body {
   background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
  background-image: radial-gradient(circle at 1% 52%, rgba(139, 139, 139,0.05) 0%, rgba(139, 139, 139,0.05) 50%,rgba(21, 21, 21,0.05) 50%, rgba(21, 21, 21,0.05) 100%),radial-gradient(circle at 41% 28%, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),radial-gradient(circle at 48% 1%, rgba(93, 93, 93,0.05) 0%, rgba(93, 93, 93,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),linear-gradient(255deg, rgb(156, 41, 132),rgb(47, 14, 122));
 }
-.main {
+.mainDiv {
   position: relative;
   display: flex;
   justify-content: center;
@@ -24,7 +20,7 @@ body {
     border: 1px solid rgb(255 255 255 / 18%);
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-.main .navigation {
+.mainDiv .navigation {
   position: relative;
   width: 40px;
   height: 40px;
@@ -34,7 +30,7 @@ body {
   align-items: center;
   transition: 0.5s;
 }
-.main .navigation span {
+.mainDiv .navigation span {
   position: absolute;
   width: 7px;
   height: 7px;
@@ -46,7 +42,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.main .navigation.active span {
+.mainDiv .navigation.active span {
       width: 45px;
     height: 45px;
     background: rgb(9 14 22 / 83%);
@@ -55,15 +51,15 @@ body {
     border: 1px solid #ffffff7d;
 }
 
-.main .navigation span ion-icon {
+.mainDiv .navigation span ion-icon {
   transition: 0.5s;
   font-size: 0em;
   color: #fff;
 }
-.main .navigation.active span ion-icon {
+.mainDiv .navigation.active span ion-icon {
   font-size: 1.35em;
 }
-.main .navigation.active span:hover ion-icon {
+.mainDiv .navigation.active span:hover ion-icon {
   color: #2dfc52;
   filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
     drop-shadow(0 0 15px #2dfc52);
@@ -81,7 +77,7 @@ body {
   align-items: center;
 }
 
-.main .navigation.active ~ .close {
+.mainDiv .navigation.active ~ .close {
   width: 40px;
   height: 40px;
   pointer-events: initial;
@@ -89,13 +85,13 @@ body {
   background: #2dfc52;
   border-radius: 8px;
 }
-.main .navigation ~ .close ion-icon {
+.mainDiv .navigation ~ .close ion-icon {
   font-size: 2em;
   scale: 0;
   color: #10131c;
   transition: 0.5s;
 }
-.main .navigation.active ~ .close ion-icon {
+.mainDiv .navigation.active ~ .close ion-icon {
   scale: 1;
   transition-delay: 1s;
 }

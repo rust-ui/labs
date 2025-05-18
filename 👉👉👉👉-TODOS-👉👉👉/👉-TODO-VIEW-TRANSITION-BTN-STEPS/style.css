@@ -20,7 +20,7 @@
 }
 
 @layer demo.support {
-  body {
+  .mainDiv {
     display: grid;
     place-content: center;
     padding: var(--size-5);

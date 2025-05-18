@@ -1,19 +1,11 @@
- 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-
-html,
-body {
+.mainDiv {
     width: 100vw;
     height: 200vh;
     background: black;
 }
   
-  .container {
+  .my__container {
     position: absolute;
     top: 50%;
     left: 50%;

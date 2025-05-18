@@ -1,5 +1,4 @@
-/* ------- Osmo [https://osmo.supply/] ------- */
-/* Osmo UI: https://slater.app/10324/23333.css */
+
 
 :root {
   /* Define your color variables */
@@ -14,7 +13,7 @@
   --container-padding: 1rem;
 }
 
-body {
+.mainDiv {
   background-color: var(--color-neutral-300);
   color: var(--color-dark);
   font-size: var(--size-font);
@@ -124,12 +123,4 @@ body {
 
 .looping-words__p {
   margin: 0;
-}
-
-@font-face {
-  font-family: 'PP Neue Corp';
-  src: url('https://cdn.prod.website-files.com/6717aac16c9ea22eeef1e79e/6717de2d56e40b921572d2d9_PPNeueCorp-TightUltrabold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
