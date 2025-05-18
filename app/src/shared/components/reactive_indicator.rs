@@ -23,7 +23,7 @@ pub fn ReactiveIndicator() -> impl IntoView {
         } else {
             "bg-orange-500"
         };
-        format!("{} {}", base_class, color_class)
+        format!("{base_class} {color_class}")
     };
 
     view! { <div class=class></div> }
