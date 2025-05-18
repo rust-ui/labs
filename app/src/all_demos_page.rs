@@ -46,7 +46,9 @@ pub fn RenderComponentFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
                     if let Some(demo) = demos.iter().find(|d| d.name == current_demo) {
                         (demo.render_fn)()
                     } else {
-                        view! { <p>"Select a component to display"</p> }.into_any()
+                        view! { <p class="text-2xl font-bold text-center text-orange-500">
+                            "<---- Select a component to display from the Sidenav 😄"
+                        </p> }.into_any()
                     }
                 }}
             </div>
