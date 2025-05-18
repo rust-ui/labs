@@ -1,30 +1,30 @@
 use leptos::prelude::*;
+use leptos_ui::div;
+
+const TIMEOUT_MS: u64 = 100;
 
 #[component]
 pub fn ReactiveIndicator() -> impl IntoView {
-    let (is_ready, set_is_ready) = signal(false);
+    let is_reactive = RwSignal::new(false);
 
-    const TODO_TIMEOUT_MS: u64 = 500; // TODO. Maybe reduce this
+    div! {Indicator, "size-3 rounded-full transition-colors duration-300 ease-in-out"}
+
+    let class = Signal::derive(move || {
+        if is_reactive.get() {
+            "bg-green-500".to_string()
+        } else {
+            "bg-orange-500".to_string()
+        }
+    });
 
     Effect::new(move |_| {
-        // This effect will run once when the component mounts
         set_timeout(
             move || {
-                set_is_ready.set(true);
+                is_reactive.set(true);
             },
-            std::time::Duration::from_millis(TODO_TIMEOUT_MS),
+            std::time::Duration::from_millis(TIMEOUT_MS),
         );
     });
 
-    let class = move || {
-        let base_class = "size-3 rounded-full transition-colors duration-300 ease-in-out";
-        let color_class = if is_ready.get() {
-            "bg-green-500"
-        } else {
-            "bg-orange-500"
-        };
-        format!("{base_class} {color_class}")
-    };
-
-    view! { <div class=class></div> }
+    view! { <Indicator class=class /> }
 }
