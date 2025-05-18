@@ -1,7 +1,6 @@
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
-use crate::__demos__::_process_to_follow::ProcessToFollow;
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
@@ -10,7 +9,7 @@ use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::shared::utils::query::QueryUtils;
 
 // * 1️⃣ Add the name of your demo here
-const DEMO_1: &str = "Process to follow";
+const DEMO_1: &str = "Slot_1";
 const DEMO_2: &str = "Carousel";
 const DEMO_3: &str = "Drawer";
 const DEMO_4: &str = "Slot_4";
@@ -72,7 +71,7 @@ pub fn RenderComponentFromQuery() -> impl IntoView {
                 {move || {
                     let demo = demo_query();
                     match demo.as_str() {
-                        DEMO_1 => view! { <ProcessToFollow /> }.into_any(),
+                        DEMO_1 => view! { "SLOT_1" }.into_any(),
                         DEMO_2 => view! { <DemoCarousel /> }.into_any(),
                         DEMO_3 => view! { <DemoDrawer /> }.into_any(),
                         DEMO_4 => view! { "SLOT_4" }.into_any(),
