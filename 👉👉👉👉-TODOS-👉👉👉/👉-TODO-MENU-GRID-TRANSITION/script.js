@@ -1,8 +1,8 @@
-let navigation = document.querySelector(".navigation");
-let close = document.querySelector(".close");
-navigation.onclick = function () {
+const navigation = document.querySelector(".navigation");
+const close = document.querySelector(".close");
+navigation.onclick = () => {
   navigation.classList.add("active");
 };
-close.onclick = function () {
+close.onclick = () => {
   navigation.classList.remove("active");
 };

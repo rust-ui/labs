@@ -1,12 +1,9 @@
-@@ -0,0 +1,85 @@
-// ------- Osmo [https://osmo.supply/] ------- //
-
 document.addEventListener("DOMContentLoaded", () => {
-  let cursorItem = document.querySelector(".cursor");
-  let cursorParagraph = cursorItem.querySelector("p");
-  let targets = document.querySelectorAll("[data-cursor]");
-  let xOffset = 6;
-  let yOffset = 50;
+  const cursorItem = document.querySelector(".cursor");
+  const cursorParagraph = cursorItem.querySelector("p");
+  const targets = document.querySelectorAll("[data-cursor]");
+  const xOffset = 6;
+  const yOffset = 50;
   let cursorIsOnRight = false;
   let currentTarget = null;
   let lastText = "";
@@ -15,16 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.set(cursorItem, { xPercent: xOffset, yPercent: yOffset });
 
   // Use GSAP quick.to for a more performative tween on the cursor
-  let xTo = gsap.quickTo(cursorItem, "x", { ease: "power3" });
-  let yTo = gsap.quickTo(cursorItem, "y", { ease: "power3" });
+  const xTo = gsap.quickTo(cursorItem, "x", { ease: "power3" });
+  const yTo = gsap.quickTo(cursorItem, "y", { ease: "power3" });
 
   // On mousemove, call the quickTo functions to the actual cursor position
   window.addEventListener("mousemove", (e) => {
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
-    let scrollY = window.scrollY;
-    let cursorX = e.clientX;
-    let cursorY = e.clientY + scrollY; // Adjust cursorY to account for scroll
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    const cursorX = e.clientX;
+    const cursorY = e.clientY + scrollY; // Adjust cursorY to account for scroll
 
     // Default offsets
     let xPercent = xOffset;
@@ -72,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentTarget = target; // Set the current target
 
       // If element has data-easteregg attribute, load different text
-      let newText = target.hasAttribute("data-easteregg")
+      const newText = target.hasAttribute("data-easteregg")
         ? target.getAttribute("data-easteregg")
         : target.getAttribute("data-cursor");
 

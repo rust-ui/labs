@@ -6,15 +6,15 @@ const defaultItemFlex = "0 1 20px";
 const hoverItemFlex = "1 1 400px";
 
 const updateGalleryItems = () => {
-galleryItems.forEach((item) => {
-let flex = defaultItemFlex;
+  galleryItems.forEach((item) => {
+    let flex = defaultItemFlex;
 
-if (item.isHovered) {
-  flex = hoverItemFlex;
-}
+    if (item.isHovered) {
+      flex = hoverItemFlex;
+    }
 
-item.style.flex = flex;
-});
+    item.style.flex = flex;
+  });
 };
 
 // Initialize the first item as hovered
@@ -23,19 +23,16 @@ updateGalleryItems();
 
 // Add hover event listeners
 galleryItems.forEach((item) => {
-item.addEventListener("mouseenter", () => {
-galleryItems.forEach((otheritem) => {
-  otheritem.isHovered = otheritem === item;
-});
+  item.addEventListener("mouseenter", () => {
+    galleryItems.forEach((otheritem) => {
+      otheritem.isHovered = otheritem === item;
+    });
 
-updateGalleryItems();
-});
+    updateGalleryItems();
+  });
 });
 
 // Move indicator with mouse
 galleryContainer.addEventListener("mousemove", (e) => {
-indicator.style.left = `${
-e.clientX - galleryContainer.getBoundingClientRect().left
-}px`;
-});    
-
+  indicator.style.left = `${e.clientX - galleryContainer.getBoundingClientRect().left}px`;
+});

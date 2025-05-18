@@ -1,11 +1,11 @@
 // ------- Osmo [https://osmo.supply/] ------- //
 
-document.addEventListener('DOMContentLoaded', function() {
-  const wordList = document.querySelector('[data-looping-words-list]');
+document.addEventListener("DOMContentLoaded", () => {
+  const wordList = document.querySelector("[data-looping-words-list]");
   const words = Array.from(wordList.children);
   const totalWords = words.length;
   const wordHeight = 100 / totalWords; // Offset as a percentage
-  const edgeElement = document.querySelector('[data-looping-words-selector]');
+  const edgeElement = document.querySelector("[data-looping-words-selector]");
   let currentIndex = 0;
   function updateEdgeWidth() {
     const centerIndex = (currentIndex + 1) % totalWords;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.to(edgeElement, {
       width: `${percentageWidth}%`,
       duration: 0.5,
-      ease: 'Expo.easeOut',
+      ease: "Expo.easeOut",
     });
   }
   function moveWords() {
@@ -24,20 +24,21 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.to(wordList, {
       yPercent: -wordHeight * currentIndex,
       duration: 1.2,
-      ease: 'elastic.out(1, 0.85)',
+      ease: "elastic.out(1, 0.85)",
       onStart: updateEdgeWidth,
-      onComplete: function() {
+      onComplete: () => {
         if (currentIndex >= totalWords - 3) {
           wordList.appendChild(wordList.children[0]);
           currentIndex--;
           gsap.set(wordList, { yPercent: -wordHeight * currentIndex });
           words.push(words.shift());
         }
-      }
+      },
     });
   }
   updateEdgeWidth();
-  gsap.timeline({ repeat: -1, delay: 1 })
+  gsap
+    .timeline({ repeat: -1, delay: 1 })
     .call(moveWords)
     .to({}, { duration: 2 })
     .repeat(-1);
