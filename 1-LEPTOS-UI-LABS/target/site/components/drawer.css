@@ -1,0 +1,329 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+@layer normalize, base, demo, animation, aesthetic;
+
+
+@layer aesthetic {
+  /* according to Chat GPT */
+  :root {
+    --duration: 0.5s;
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
+    --drag-bar: 44px;
+    --border: color-mix(in hsl, canvas, canvasText 10%);
+    --highlight: color-mix(in hsl, canvas, canvasText 10%);
+    --drawer: canvas;
+    --color: light-dark(
+      color-mix(in hsl, canvasText, canvas 25%),
+      color-mix(in hsl, canvasText, canvas 5%)
+    );
+  }
+
+  @supports (light-dark(red, blue)) {
+    :root {
+      --drawer: light-dark(#111, #000);
+    }
+  }
+
+
+
+  .drawer__content {
+    border: 1px solid var(--border);
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
+    color: var(--color);
+  }
+
+  .drawer__content {
+    background: var(--drawer);
+  }
+
+  .drawer__drag span:first-of-type {
+    width: 8ch;
+    height: 6px;
+    border-radius: 10px;
+    background: color-mix(in hsl, canvasText, canvas 75%);
+  }
+
+  /* This provides you the sticky effect on the bottom */
+  .drawer__drag {
+    height: var(--drag-bar);
+    border: 0;
+  }
+  .drawer__content {
+    padding-top: var(--drag-bar);
+  }
+}
+
+@layer animation {
+  :root {
+    timeline-scope: --drawer;
+  }
+
+  .drawer__slide {
+    view-timeline: --drawer;
+  }
+
+  .drawer:not([data-snapped='true']) {
+    /* This acts like a holding animation */
+    transition-property: display, overlay;
+    transition-behavior: allow-discrete;
+    transition-duration: var(--duration);
+  }
+
+  .drawer__content {
+    transition-property: translate;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--ease);
+    translate: 0 100%;
+  }
+
+  .drawer:popover-open .drawer__content {
+    translate: 0 0;
+    @starting-style {
+      translate: 0 100%;
+    }
+  }
+
+  /* transition this one */
+  @property --opened {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+
+  /* don't transition this one */
+  @property --closed {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+  }
+
+  .mainDivDrawer {
+    /* only transition the opener */
+    transition-property: --opened, --closed;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--ease);
+    transform-origin: 50% 0%;
+  }
+
+  :root:has(.drawer:popover-open) .mainDivDrawer {
+    transition-property: --opened;
+  }
+
+  /* Safari has a bug when transition the popover back from the :top-layer */
+  /* This would work on body in Chromium which would make the effect better */
+  
+  .mainDivDrawer{
+    --diff: calc(var(--opened) * var(--closed));
+    --scale-down: 0.04;
+    --rad: 12px;
+    --ty: calc(env(safe-area-inset-top) + var(--rad));
+    scale: calc(
+      1 -
+        (
+          (var(--opened) * var(--scale-down)) -
+            (var(--diff) * var(--scale-down))
+        )
+    );
+    border-radius: calc(
+      (var(--opened) * var(--rad)) - (var(--diff) * var(--rad))
+    );
+    translate: 0 calc((var(--opened) * var(--ty)) - (var(--diff) * var(--ty)));
+  }
+
+  :root:has(.drawer:popover-open) .mainDivDrawer {
+    overflow: hidden;
+    --opened: 1;
+  }
+
+  :root:has(.drawer:popover-open) {
+    --closed: 0;
+  }
+
+  @supports (animation-timeline: scroll()) {
+    :root:has(.drawer:popover-open) {
+      --closed: 1;
+      animation: open both linear reverse;
+      animation-timeline: --drawer;
+      animation-range: entry;
+    }
+    @keyframes open {
+      0% {
+        --closed: 0;
+      }
+    }
+  }
+
+  :root:has(.drawer:popover-open),
+  :root:has(.drawer:popover-open) .mainDivDrawer,
+  .drawer:popover-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .drawer::backdrop {
+    transition-property: display, --opened, --closed, overlay;
+    transition-behavior: allow-discrete;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--ease);
+    opacity: calc(var(--opened) - (var(--opened) * var(--closed)));
+  }
+  .drawer:popover-open::backdrop {
+    --opened: 1;
+  }
+  @starting-style {
+    .drawer:popover-open::backdrop {
+      --opened: 0;
+    }
+  }
+}
+
+@layer demo {
+  .drawer {
+    inset: 0 0 0 0;
+    width: unset;
+    height: unset;
+    transition: inset var(--duration) var(--ease);
+  }
+
+  /* software keyboard handling */
+  /* this is akin to using interactive-widget=resizes-content */
+  /* .drawer {
+    inset: 0 0 calc(var(--sw-keyboard-height, 0) * 1px) 0;
+  } */
+
+
+  [data-dragging='true'] .drawer__scroller {
+    scroll-snap-type: none;
+  }
+
+  /* Add a little rubber banding cover (Simulator showed some) */
+  @media (hover: none) and (pointer: coarse) {
+    .drawer__slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: light-dark(#fff, #000);
+      translate: 0 100%;
+    }
+  }
+
+  .drawer__scroller {
+    scroll-snap-type: y mandatory;
+
+    /* Acts as a buffer */
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100svh;
+      order: -999999;
+      flex: 1 0 100svh;
+    }
+  }
+
+  [data-meta='true'] .drawer__slide {
+    max-height: calc(95% - (var(--sw-keyboard-height, 0) * 1px));
+  }
+
+  .drawer__slide {
+    --size: 600px;
+    height: var(--size);
+    flex: 1 0 var(--size);
+    /* transition: height var(--duration) var(--ease); */
+  }
+
+
+  .drawer__anchor {
+    &:first-of-type {
+      translate: 0 -100%;
+    }
+  }
+
+ /* Sticky pieces */
+
+  :root {
+    --size: 45px;
+    --line: color-mix(in lch, white, transparent 85%);
+    background: black;
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  .mainDivDrawer {
+    background: canvas;
+  }
+
+  .mainDivDrawer::before {
+    --size: 45px;
+    --line: color-mix(in lch, canvasText, transparent 70%);
+    content: '';
+    height: 100svh;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+}
+
+div.tp-dfwv {
+  width: 280px;
+}

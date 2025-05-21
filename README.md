@@ -5,7 +5,7 @@ This repository is designed to be a collaborative working space for creating com
 It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui.com/).
 
 
-![Process to follow](./assets/process_to_follow.png)
+![Process to follow](./public/assets/process_to_follow.png)
 
 
 
@@ -38,8 +38,9 @@ Don't forget to :
 
 ## Run the project
 
-Please go inside 1-LEPTOS-UI-LABS or 2-DIOXUS-UI-LABS to see how to run the project.
-
+```bash
+cargo leptos watch
+```
 
 
 
@@ -78,19 +79,6 @@ You can check the examples in the repo to see how it's used 😄
 
 
 ## CSS
-
-
-In the head of the index.html, make sure there is Tailwind CDN:
-
-```html
-<head>
-  <!-- ... -->
-  <!-- * TAILWIND CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-```
-
-
 
 If possible, try to use `this__pattern` for custom CSS classes that you didn't manage to convert to Tailwind.
 This way, we can distinguish them easily.

@@ -1,0 +1,180 @@
+@import url(//fonts.googleapis.com/icon?family=Material+Icons);
+.mainDiv {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-bar {
+  background: #714efc;
+  box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 36px;
+  padding: 1em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transform-origin: calc(0.5em + 18px) 50%;
+}
+.chat-bar__toggle {
+  height: 36px;
+  width: 36px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+.chat-bar__toggle .material-icons {
+  font-size: 24px;
+}
+.chat-bar__message, .chat-bar__buttons {
+  transform-origin: calc(-1em - 18px) 50%;
+  width: 190px;
+  transition: 0.2s ease-out;
+  position: relative;
+  padding-left: 1em;
+}
+.chat-bar__input {
+  background: rgba(255, 255, 255, 0.3);
+  height: 36px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  width: 100%;
+  border: 0;
+  padding: 1em;
+  color: white;
+}
+.chat-bar__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.chat-bar__buttons {
+  position: absolute;
+  display: flex;
+  left: calc(36px + 1em);
+  justify-content: space-between;
+  width: 190px;
+  transform: rotate(90deg);
+}
+.chat-bar.--is-active .chat-bar__toggle {
+  transform: rotateZ(-135deg);
+}
+.chat-bar.--is-active .chat-bar__message {
+  transform: rotate(-90deg);
+}
+.chat-bar.--is-active .chat-bar__buttons {
+  transform: rotate(0);
+}
+.chat-bar.--is-active .chat-bar__buttons .button {
+  animation-name: lift;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.25s;
+}
+.chat-bar.--bop {
+  animation: bop 0.6s forwards;
+}
+.chat-bar.--drop {
+  animation: drop 0.6s forwards;
+}
+
+.button {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  transform: translateY(50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.b-1 {
+  animation-delay: 0.075s;
+}
+
+.b-2 {
+  animation-delay: 0.15s;
+}
+
+.b-3 {
+  animation-delay: 0.225s;
+}
+
+.b-4 {
+  animation-delay: 0.3s;
+}
+
+@keyframes bop {
+  0%, 100% {
+    transform: rotateZ(0);
+  }
+  66% {
+    transform: rotateZ(-10deg);
+  }
+}
+@keyframes drop {
+  0%, 100% {
+    transform: rotateZ(0);
+  }
+  66% {
+    transform: rotateZ(10deg);
+  }
+}
+@keyframes lift {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.material-icons {
+  color: white;
+}
+
+.sidenote {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-family: arial;
+  color: #714efc;
+  font-size: 1em;
+  text-decoration: none;
+}
+.sidenote:hover {
+  text-decoration: underline;
+}
+.sidenote i {
+  color: #714efc;
+  font-size: 1em;
+  line-height: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,56 @@
+[workspace]
+resolver = "2"
+members = ["app", "frontend", "server"]
+
+# * 💁 Don't forget to run `cargo update` ! 😄
+# * └──> This is why we only specify "0.6" instead of "0.6.XXX"
+
+
+[workspace.dependencies]
+axum = "0.8"
+cfg-if = "1"
+console_error_panic_hook = "0.1"
+console_log = "1"
+http = "1"
+leptos = { version = "0.8", features = ["nightly"] }
+leptos_axum = "0.8"
+leptos_meta = "0.8"
+leptos_router = { version = "0.8", features = ["nightly"] }
+leptos_ui = "0.1"
+log = "0.4"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tower = { version = "0.5", features = ["full"] }
+tower-http = { version = "0.6", features = ["full"] }
+tw_merge = { version = "0.1", features = ["variant", "debug"] }
+wasm-bindgen = "0.2"
+
+
+
+[profile.dev]
+debug = false
+panic = "abort"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 'z'
+
+
+[[workspace.metadata.leptos]]
+name = "rust_ui_labs"
+bin-package = "server"
+lib-package = "frontend"
+site-root = "target/site"
+site-pkg-dir = "pkg"
+tailwind-input-file = "style/tailwind.css"
+assets-dir = "public"
+site-addr = "127.0.0.1:3000"
+reload-port = 3001
+browserquery = "defaults"
+watch = false
+env = "DEV"
+bin-features = []
+bin-default-features = false
+lib-features = []
+lib-default-features = false

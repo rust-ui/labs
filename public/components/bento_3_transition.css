@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+
+
+.mainDivParent {
+  font-size: 6.25vmax;
+  box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  .mainDivParent {
+    font-size: 60px;
+  }
+}
+
+.mainDiv {
+  font-size: 6.25vmax;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  background-color: #fff6de;
+  font-size: 0.3rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.wrapper {
+  width: 8rem;
+  aspect-ratio: 16/9;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+}
+
+input {
+  display: none;
+}
+input:checked + .box {
+  grid-row: 1/-1;
+  grid-column: 1;
+}
+
+::view-transition-group(*) {
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.3333333333);
+  border-radius: 0.2rem;
+  cursor: pointer;
+  background: no-repeat center/cover;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3333333333);
+}
+.box[data-index="1"] {
+  view-transition-name: box-1;
+}
+.box[data-index="2"] {
+  view-transition-name: box-2;
+}
+.box[data-index="3"] {
+  view-transition-name: box-3;
+}
+
+/*# sourceMappingURL=style.css.map */

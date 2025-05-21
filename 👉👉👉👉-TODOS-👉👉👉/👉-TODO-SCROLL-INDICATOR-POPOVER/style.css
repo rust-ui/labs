@@ -382,7 +382,7 @@
     }
   }
 
-  body {
+  .mainDiv {
     height: 100svh;
     overflow: hidden;
   }
@@ -405,7 +405,7 @@
     scrollbar-width: thin;
   }
 
-  body {
+  .mainDiv {
     --font-level: 0;
   }
 
@@ -569,7 +569,7 @@
     box-sizing: border-box;
   }
 
-  body {
+  .mainDiv {
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -578,7 +578,7 @@
       Helvetica, Arial, sans-serif, system-ui;
   }
 
-  body::before {
+  .mainDiv::before {
     --size: 45px;
     --line: color-mix(in lch, canvasText, transparent 70%);
     content: '';
