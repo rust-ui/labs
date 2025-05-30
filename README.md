@@ -55,6 +55,7 @@ This way, we can distinguish them easily.
 Example:
 
 ```css
+/* For styles you don't know how to convert in Tailwind */
 .img__holder {
     clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
     transform: rotate(30deg);
@@ -68,27 +69,22 @@ Example:
 At the moment, it's probably better to **keep the JS as it is** and not use Rust for interacting with the DOM.
 While using wasm-bindgen or web_sys is possible, it seems overkill for the moment.
 
-The main goal here is to convert index.html into reusable components in Rust.
+The main goal here is to convert the CSS, **NOT the JS**.
 
-If possible, you can try to use **inline JS** to avoid having a `script.js` file to manage.
+If you still want to modify the JS and only for simple scripts, you can try to use **inline JS** to avoid having a `script.js` file to manage.
 
-Example:
-
-Instead of having this:
+**Example**:
 
 ```html
+<!-- ❌ NO -->
 <button id="my__button">Show an alert</button>
-
 <script>
   document.getElementById('my__button').addEventListener('click', () => {
     alert('Hello from JS!');
   });
 </script>
-```
 
-Prefer to have this:
-
-```html
+<!-- ✅ YES -->
 <button onclick="alert('Hello from JS!');">
   "Show an alert"
 </button>
