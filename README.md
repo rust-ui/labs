@@ -5,7 +5,7 @@ This repository is designed to be a collaborative working space for creating com
 It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui.com/).
 
 
-![Process to follow](./public/assets/process_to_follow.png)
+![Process to follow](./public/assets/steps_to_follow.png)
 
 
 
@@ -32,7 +32,7 @@ Don't forget to :
 - `cargo install-update -a`
 - `cargo update`
   
-- `git pull`
+- `git pull origin master --rebase`
 
 
 
@@ -46,37 +46,6 @@ cargo leptos watch
 
 
 # 💡 Tips
-
-When porting to Rust, don't forget to use the `Stylesheet` component to load the CSS.
-
-Example:
-
-```rs
-view! {
-    <Stylesheet href="/path/to/your/css/file.css" />
-    // The rest of your component goes after 
-    // ...
-    // ...
-}
-```
-
-
-If you need JS, in your component, don't forget to add the `script` tag. Usually, it's better to add it at the very end of the view macro to make sure the DOM is fully loaded.
-
-Example:
-
-```rs
-view! {
-  // ...
-  // ...
-  // The script goes at the end of the view macro
-    <script src="/path/to/your/js/file.js"></script>
-}
-```
-
-
-You can check the examples in the repo to see how it's used 😄
-
 
 ## CSS
 
