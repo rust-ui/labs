@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_ui::{a, clx};
+use leptos_ui::clx;
 
 use crate::__demos__::_todo__use_tailwind_css::Todo__UseTailwindCss;
 use crate::all_demos::{DemoItem, ALL_DEMOS};
@@ -8,7 +8,7 @@ use crate::shared::utils::query::QueryUtils;
 #[component]
 pub fn AllDemosPage() -> impl IntoView {
     clx! {Sidenav, div, "flex flex-col h-full gap-1 bg-neutral-500 w-[300px]"}
-    a! {SidenavLink, "px-4 py-2 hover:bg-neutral-600"}
+    clx! {SidenavLink, a, "px-4 py-2 hover:bg-neutral-600"}
 
     let all_demos: Vec<&str> = ALL_DEMOS.iter().map(|demo| demo.name).collect();
 
@@ -18,7 +18,13 @@ pub fn AllDemosPage() -> impl IntoView {
                 {all_demos
                     .into_iter()
                     .map(|demo| {
-                        view! { <SidenavLink href=format!("?demo={}", demo)>{demo}</SidenavLink> }
+                        view! {
+                            // href=format!("?demo={}", demo). // Force the reload of the page
+                            <SidenavLink onclick=format!(
+                                "window.location.href='?demo={}'; return false;",
+                                demo,
+                            )>{demo}</SidenavLink>
+                        }
                     })
                     .collect_view()}
             </Sidenav>
