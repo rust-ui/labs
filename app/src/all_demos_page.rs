@@ -2,8 +2,8 @@ use leptos::prelude::*;
 use leptos_ui::clx;
 
 use crate::__demos__::_todo__use_tailwind_css::Todo__UseTailwindCss;
-use crate::all_demos::{DemoItem, ALL_DEMOS};
-use crate::shared::utils::query::{QueryUtils, QUERY};
+use crate::all_demos::{ALL_DEMOS, DemoItem};
+use crate::shared::utils::query::{QUERY, QueryUtils};
 
 #[component]
 pub fn AllDemosPage() -> impl IntoView {
@@ -43,7 +43,7 @@ pub fn RenderComponentFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
     let demo_query = QueryUtils::extract(QUERY::DEMO.to_string());
 
     view! {
-        <div class="flex flex-col w-full gap-4">
+        <div class="flex flex-col gap-4 w-full">
             <Todo__UseTailwindCss />
 
             <div class="w-full">

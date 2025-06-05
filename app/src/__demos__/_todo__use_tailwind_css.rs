@@ -8,7 +8,7 @@ pub fn Todo__UseTailwindCss() -> impl IntoView {
         <Card class="flex flex-col gap-4 pb-6 mx-auto bg-orange-50 w-fit">
             <h1 class="text-2xl font-bold text-center">"👉 TODO"</h1>
 
-            <div class="flex items-center gap-6">
+            <div class="flex gap-6 items-center">
                 <div class="flex flex-col gap-2">
                     <p>"1. Use Tailwind CSS instead of plain CSS (see Stylesheet `src`)."</p>
                     <p>"2. Use `clx!` macro to create components."</p>
@@ -16,7 +16,7 @@ pub fn Todo__UseTailwindCss() -> impl IntoView {
                     <p>"4. Create the [`PR`] on Github. Thanks! 😄"</p>
                 </div>
 
-                <Card class="max-w-[400px] bg-green-50 p-2">
+                <Card class="p-2 bg-green-50 max-w-[400px]">
                     <CardContent>
                         <CardHeader>
                             <CardTitle>"TIPS 💡"</CardTitle>
