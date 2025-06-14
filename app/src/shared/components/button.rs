@@ -31,7 +31,7 @@ pub fn Button(
 
     view! {
         <button
-            //
+            // 
             class=class
             disabled=disabled
             id=id

@@ -8,7 +8,7 @@ pub fn DemoMobileStack() -> impl IntoView {
 
         <div class="mainHtml">
 
-            <div class="grid m-0 mainDiv place-content-center">
+            <div class="grid place-content-center m-0 mainDiv">
 
                 <div id="grid">
                     {(0..10)

@@ -5,17 +5,18 @@ use crate::shared::components::card::{Card, CardContent, CardDescription, CardHe
 #[component]
 pub fn Todo__UseTailwindCss() -> impl IntoView {
     view! {
-        <Card class="gap-6 pb-8 mx-auto bg-orange-50 w-fit">
+        <Card class="flex flex-col gap-4 pb-6 mx-auto bg-orange-50 w-fit">
             <h1 class="text-2xl font-bold text-center">"👉 TODO"</h1>
 
-            <div class="flex items-center gap-6">
+            <div class="flex gap-6 items-center">
                 <div class="flex flex-col gap-2">
                     <p>"1. Use Tailwind CSS instead of plain CSS (see Stylesheet `src`)."</p>
                     <p>"2. Use `clx!` macro to create components."</p>
                     <p>"3. When it's done, replace '👉' by '✔️' in `all_demos.rs`."</p>
+                    <p>"4. Create the [`PR`] on Github. Thanks! 😄"</p>
                 </div>
 
-                <Card class="max-w-[400px] bg-green-50 p-2">
+                <Card class="p-2 bg-green-50 max-w-[400px]">
                     <CardContent>
                         <CardHeader>
                             <CardTitle>"TIPS 💡"</CardTitle>
@@ -26,8 +27,9 @@ pub fn Todo__UseTailwindCss() -> impl IntoView {
                                 "2. If you don't find the equivalent in Tailwind, leave as it is."
                             </CardDescription>
                             <CardDescription>
-                                "3. Use `clx!` ONLY if it's relevant to the component itself.."
+                                "3. Use `clx!` ONLY if it's relevant to the component itself."
                             </CardDescription>
+                            <CardDescription>"└─> Thanks! 🙏"</CardDescription>
                         </CardHeader>
                     </CardContent>
                 </Card>

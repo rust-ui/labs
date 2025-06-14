@@ -33,8 +33,8 @@ pub fn DemoCarousel() -> impl IntoView {
             </div>
 
             // CAROUSEL CONTROLS
-            <div class="absolute inset-y-0 left-0 flex items-center justify-start pl-4">
-                <button class="p-2 text-white bg-gray-800 rounded-full carousel-control-prev hover:bg-gray-700 focus:outline-none">
+            <div class="flex absolute inset-y-0 left-0 justify-start items-center pl-4">
+                <button class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none carousel-control-prev">
                     <svg
                         class="w-6 h-6"
                         fill="none"
@@ -51,8 +51,8 @@ pub fn DemoCarousel() -> impl IntoView {
                     </svg>
                 </button>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center justify-end pr-4">
-                <button class="p-2 text-white bg-gray-800 rounded-full carousel-control-next hover:bg-gray-700 focus:outline-none">
+            <div class="flex absolute inset-y-0 right-0 justify-end items-center pr-4">
+                <button class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none carousel-control-next">
                     <svg
                         class="w-6 h-6"
                         fill="none"

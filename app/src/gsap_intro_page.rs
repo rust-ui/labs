@@ -29,7 +29,7 @@ pub fn GsapIntroPage() -> impl IntoView {
                 </ImageHolder>
 
                 <ContentHolder class="grid place-content-center">
-                    <h2 class="font-bold text-4xl">"Your content goes here 😄"</h2>
+                    <h2 class="text-4xl font-bold">"Your content goes here 😄"</h2>
                 </ContentHolder>
             </FixedContent>
         </GsapIntro>
