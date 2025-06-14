@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
+use crate::__demos__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
 use crate::__demos__::demo_bento_3_transition::DemoBento3Transition;
 use crate::__demos__::demo_bg_gradient_interactive::DemoBgGradientInteractive;
 use crate::__demos__::demo_bottom_bar_awwards::DemoBottomBarAwwwards;
@@ -29,6 +30,10 @@ pub struct DemoItem {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 pub const ALL_DEMOS: &[DemoItem] = &[
+    DemoItem {
+        name: "👉 TODO: Apple Liquid Glass UI",
+        render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
+    },
     DemoItem {
         name: "👉 TODO: Gsap Dynamic Cursor",
         render_fn: || view! { <DemoGsapDynamicCursor /> }.into_any(),
