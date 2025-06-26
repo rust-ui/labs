@@ -1,0 +1,253 @@
+::view-transition-group(*) {
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(.3,0,0,1);
+}
+
+::view-transition-old(icon),
+::view-transition-new(icon),
+::view-transition-old(label),
+::view-transition-new(label) {
+  opacity: 1;
+}
+.help-btn,
+.card {
+  view-transition-name: help-btn-and-card;
+}
+html:active-view-transition-type(to-card) {
+  .button-label,
+  .card-label {
+    view-transition-name: label;
+  }
+
+  .help-btn svg,
+  .close-btn svg {
+    view-transition-name: icon;
+  }
+}
+
+html:active-view-transition-type(back-to-button) {
+  .button-label,
+  .card-label {
+    view-transition-name: label;
+  }
+
+  .help-btn svg,
+  .close-btn svg {
+    view-transition-name: icon;
+  }
+}
+
+html:active-view-transition-type(back-to-card) {
+  .grid-item:first-of-type svg:last-of-type,
+  .back-btn svg {
+    view-transition-name: icon;
+  }
+
+  .grid-item:first-of-type span:first-of-type,
+  .back-btn span {
+    view-transition-name: label2;
+  }
+}
+
+html:active-view-transition-type(to-ticket-form) {
+  .grid-item.active svg:last-of-type,
+  .back-btn svg {
+    view-transition-name: icon;
+  }
+  .card-subtitle {
+    view-transition-name: card-subtitle;
+  }
+  &::view-transition-old(card-subtitle) {
+    opacity: 0;
+  }
+
+  .grid-item.active {
+    view-transition-name: active-grid-item;
+  }
+  &::view-transition-old(active-grid-item) {
+    opacity: 0;
+  }
+
+  .grid-item.active span:first-of-type,
+  .back-btn span {
+    view-transition-name: label;
+  }
+}
+
+
+.help-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+}
+
+.card {
+  background: white;
+  width: 500px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  color: #27272a;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.card-subtitle {
+  color: #71717a;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #27272a;
+  cursor: pointer;
+  padding: 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.grid-item:hover {
+  background: #fafafa;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: #666;
+}
+
+.hidden {
+  display: none;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #71717a;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+
+  span {
+    font-size: 1.2rem;
+    display: block;
+  }
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  color: #71717a;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 200px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@keyframes fade-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+.grid-item,
+.form-group,
+.submit-btn {
+  opacity: 0;
+  transform-origin: top center;
+  animation-name: fade-in;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.3,0,0,1);
+}
+
+:is(.grid-item, .form-group, .submit-btn):nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+:is(.grid-item, .form-group, .submit-btn):nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+:is(.grid-item, .form-group, .submit-btn):nth-child(3) {
+  animation-delay: 0.35s;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: system-ui;
+  background: #f5f5f5;
+}

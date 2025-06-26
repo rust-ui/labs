@@ -1,0 +1,492 @@
+/* view transitions CSS */
+::view-transition-group(*) {
+  animation-duration: 0.4s;
+}
+
+::view-transition-old(*),
+::view-transition-new(*) {
+  height: 100%;
+}
+
+::view-transition-old(edit-btn) {
+  opacity: 0;
+}
+
+::view-transition-new(edit-btn) {
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.88, 0.02);
+}
+
+.header {
+  view-transition-name: header;
+}
+
+.payment-container {
+  view-transition-name: payment-container;
+}
+
+.card-list {
+  view-transition-name: card-list;
+}
+
+.card-item.edit {
+  view-transition-name: card-item-edit;
+
+  .card-item-content,
+  .edit-form,
+  .add-form {
+    view-transition-name: card-item;
+  }
+
+  .card-logo {
+    view-transition-name: card-logo;
+    view-transition-class: card-logo;
+  }
+
+  .card-number,
+  .card-number-input {
+    view-transition-name: card-number;
+    view-transition-class: card-number;
+  }
+
+  .card-expiry,
+  .card-expiry-input {
+    view-transition-name: card-expiry;
+    view-transition-class: card-expiry;
+  }
+
+  .edit-btn {
+    view-transition-name: edit-btn;
+  }
+}
+
+/* makes sure that when the form shift up to another item, any other items that are not edited will slide under it and not over it */
+::view-transition-group(.card-logo),
+::view-transition-group(.card-number),
+::view-transition-group(.card-expiry) {
+  z-index: 1;
+}
+
+html:active-view-transition-type(add) {
+  .card-list .card-item:last-of-type,
+  .add-form {
+    .card-logo {
+      view-transition-name: card-logo-new !important;
+    }
+
+    .card-number,
+    .card-number-input {
+      view-transition-name: card-number-new !important;
+    }
+
+    .card-expiry,
+    .card-expiry-input {
+      view-transition-name: card-expiry-new !important;
+    }
+  }
+
+  .add-form-footer div:first-child:has(.card-number-input) label,
+  .card-number-input {
+    opacity: 0;
+  }
+
+  &::view-transition-group(card-logo-new),
+  &::view-transition-group(card-number-new),
+  &::view-transition-group(card-expiry-new) {
+    z-index: 1;
+  }
+}
+/* end view transitions CSS */
+
+
+input {
+  background-color: transparent;
+}
+
+main {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 2px;
+  margin-block-end: 2px;
+  view-transition-name: container;
+}
+
+.payment-container {
+  width: 500px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 16px;
+  padding-bottom: 1px;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-block: 20px;
+  padding-inline: 32px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #888;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+@keyframes rotate-out {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes shift-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes shift-in {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes expand-input {
+  from {
+    width: 35px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.add-card-btn {
+  height: 40px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  view-transition-name: add-save-card-btn;
+}
+
+.save-card-btn {
+  height: 40px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  view-transition-name: add-save-card-btn;
+}
+
+.in {
+  svg {
+    animation-name: rotate-in;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  span {
+    animation-name: shift-in;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+.clicked {
+  svg {
+    animation-name: rotate-out;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  span {
+    animation-name: shift-out;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+.card-list {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #fff;
+  row-gap: 12px;
+  padding-block: 20px;
+  padding-inline: 32px;
+}
+
+.container:has(.add-form) {
+  margin-inline: 32px;
+  margin-block-end: 32px;
+}
+
+.card-list:has(.add-form) {
+  padding: 12px;
+}
+
+.card-item {
+  display: flex;
+  height: 100%;
+}
+
+.card-item-content, 
+.edit-form,
+.add-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.edit-form {
+  display: block;
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card-logo {
+  width: 40px;
+}
+
+.card-number {
+  font-size: 15px;
+  color: #000;
+  width: fit-content;
+}
+
+
+.card-expiry,
+.card-expiry-input {
+  width: 100px;
+}
+
+.add-form .card-number-input {
+  width: auto;
+}
+
+.card-expiry {
+  color: #666;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.edit-btn {
+  color: #666;
+  background: none;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &:has(img) {
+    padding-inline-start: 12px;
+  }
+}
+
+label {
+  display: block;
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+input {
+  width: fit-content;
+  padding: 4px 12px;
+  border: none;
+  font-size: 16px;
+}
+
+.form-group:has(input) {
+  padding-block: 12px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card-item-content,
+.edit-form {
+  width: fit-content;
+  flex: 1;
+  contain: layout;
+}
+
+.add-form {
+  border: none;
+  flex-direction: column;
+  align-items: normal;
+  padding: 0;
+  height: 200px;
+
+  .add-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  img {
+    width: 40px;
+  }
+
+  .card-number-input {
+    width: 35px;
+    animation-name: expand-input;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .add-form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+
+      &:first-of-type {
+        width: 178px;
+      }
+    }
+
+    label {
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    input {
+      padding-inline-start: 0;
+    }
+
+    input[type="password"] {
+      max-width: 125px;
+    }
+  }
+
+}
+.cancel-btn {
+  background-color: #27272a;
+  color: white;
+  border: none;
+  padding-block: .75rem;
+  margin-block-start: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
