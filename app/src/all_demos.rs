@@ -19,6 +19,7 @@ use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 use crate::__demos__::demo_password_strength_meter::DemoPasswordStrengthMeter;
 use crate::__demos__::demo_slider_point::DemoSliderPoint;
+use crate::__demos__::leptos_struct_table::editable::DemoLeptosStructTable_Editable;
 use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
 use crate::__demos__::leptos_struct_table::tailwind::DemoLeptosStructTable_Tailwind;
 
@@ -36,14 +37,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Leptos Struct Table",
-        render_fn: || view! { <DemoLeptosStructTable_Simple /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Leptos Struct Table Tailwind",
-        render_fn: || view! { <DemoLeptosStructTable_Tailwind /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Password Strength Meter",
@@ -116,5 +109,17 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Bento 3 Transition",
         render_fn: || view! { <DemoBento3Transition /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Leptos Struct Table",
+        render_fn: || view! { <DemoLeptosStructTable_Simple /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Leptos Struct Table Tailwind",
+        render_fn: || view! { <DemoLeptosStructTable_Tailwind /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Leptos Struct Table Editable",
+        render_fn: || view! { <DemoLeptosStructTable_Editable /> }.into_any(),
     },
 ];
