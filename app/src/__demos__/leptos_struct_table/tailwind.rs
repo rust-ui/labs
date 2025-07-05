@@ -87,8 +87,7 @@ impl TableClassesProvider for TailwindClassesPreset {
         };
 
         format!(
-            "cursor-pointer px-5 py-2 {} {}",
-            sort_class, template_classes
+            "cursor-pointer px-5 py-2 {sort_class} {template_classes}"
         )
     }
 
@@ -97,7 +96,7 @@ impl TableClassesProvider for TailwindClassesPreset {
     }
 
     fn row(&self, row_index: usize, selected: bool, template_classes: &str) -> String {
-        let bg_color = if row_index % 2 == 0 {
+        let bg_color = if row_index.is_multiple_of(2) {
             if selected {
                 "bg-sky-300 text-gray-700 dark:bg-sky-700 dark:text-gray-400"
             } else {
@@ -127,8 +126,7 @@ impl TableClassesProvider for TailwindClassesPreset {
             _ => "w-[calc(60%-2.5rem)]",
         };
         format!(
-            "animate-pulse h-2 bg-gray-200 rounded-full dark:bg-gray-700 inline-block align-middle {} {}",
-            width, prop_class
+            "animate-pulse h-2 bg-gray-200 rounded-full dark:bg-gray-700 inline-block align-middle {width} {prop_class}"
         )
     }
 
