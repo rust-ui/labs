@@ -24,6 +24,9 @@ tower = { version = "0.5", default-features = false, features = ["util"] }
 tower-http = { version = "0.6", default-features = false, features = ["fs", "trace"] }
 tw_merge = { version = "0.1", features = ["variant", "debug"] }
 wasm-bindgen = "0.2"
+leptos-struct-table = { version = "0.15", features = ["chrono"] }
+chrono = "0.4"
+leptos-use = "0.16" 
 
 
 

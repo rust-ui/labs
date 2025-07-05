@@ -16,6 +16,9 @@ leptos_ui.workspace = true
 thiserror.workspace = true
 tw_merge.workspace = true
 wasm-bindgen.workspace = true
+chrono.workspace = true
+leptos-struct-table.workspace = true
+leptos-use.workspace = true
 
 
 
@@ -24,5 +27,5 @@ wasm-bindgen.workspace = true
 [features]
 default = []
 hydrate = ["leptos/hydrate"]
-ssr = ["leptos/ssr", "leptos_meta/ssr", "leptos_router/ssr", "dep:leptos_axum"]
+ssr = ["leptos/ssr", "leptos_meta/ssr", "leptos_router/ssr", "dep:leptos_axum", "leptos-use/ssr"]
 

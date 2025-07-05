@@ -19,6 +19,7 @@ use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 use crate::__demos__::demo_password_strength_meter::DemoPasswordStrengthMeter;
 use crate::__demos__::demo_slider_point::DemoSliderPoint;
+use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -34,6 +35,10 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Leptos Struct Table",
+        render_fn: || view! { <DemoLeptosStructTable_Simple /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Password Strength Meter",
