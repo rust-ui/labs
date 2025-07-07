@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/home/almamun/OpensourceContribution/labs/1-LEPTOS-UI-LABS/target/debug/build/mime_guess-2c79d4b2370cbd86/out/mime_types_generated.rs
