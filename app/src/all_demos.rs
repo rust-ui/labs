@@ -23,6 +23,8 @@ use crate::__demos__::leptos_struct_table::editable::DemoLeptosStructTable_Edita
 use crate::__demos__::leptos_struct_table::selectable::DemoLeptosStructTable_Selectable;
 use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
 use crate::__demos__::leptos_struct_table::tailwind::DemoLeptosStructTable_Tailwind;
+use crate::shared::components::ui_hero_one::HeroOne;
+
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -35,6 +37,11 @@ pub struct DemoItem {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 pub const ALL_DEMOS: &[DemoItem] = &[
+    DemoItem {
+    name: "🔥 Hero One - Rustify UI",
+    render_fn: || view! { <HeroOne /> }.into_any(),
+},
+
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
