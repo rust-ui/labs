@@ -24,6 +24,7 @@ use crate::__demos__::leptos_struct_table::selectable::DemoLeptosStructTable_Sel
 use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
 use crate::__demos__::leptos_struct_table::tailwind::DemoLeptosStructTable_Tailwind;
 use crate::shared::components::ui_hero_one::HeroOne;
+use crate::shared::components::ui_hero_two::HeroTwo;
 
 
 #[derive(Clone)]
@@ -41,6 +42,11 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     name: "🔥 Hero One - Rustify UI",
     render_fn: || view! { <HeroOne /> }.into_any(),
 },
+     DemoItem {
+    name: "🔥 Hero Two - Rustify UI",
+    render_fn: || view! { <HeroTwo /> }.into_any(),
+},
+
 
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
