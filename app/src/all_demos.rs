@@ -25,7 +25,7 @@ use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
 use crate::__demos__::leptos_struct_table::tailwind::DemoLeptosStructTable_Tailwind;
 use crate::shared::components::ui_hero_one::HeroOne;
 use crate::shared::components::ui_hero_two::HeroTwo;
-
+ 
 
 #[derive(Clone)]
 pub struct DemoItem {
