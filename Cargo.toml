@@ -1,35 +1,55 @@
-[workspace]
-resolver = "2"
-members = ["app", "frontend", "server"]
+[package]
+name = "rust_ui_labs"
+version = "0.1.0"
+edition = "2021"
 
-# * 💁 Don't forget to run `cargo update` ! 😄
-# * └──> This is why we only specify "0.6" instead of "0.6.XXX"
+[lib]
+crate-type = ["cdylib", "rlib"]
 
-
-[workspace.dependencies]
-axum = "0.8"
+[dependencies]
 cfg-if = "1"
-console_error_panic_hook = "0.1"
-console_log = "1"
 http = "1"
 leptos = { version = "0.8", features = ["nightly"] }
-leptos_axum = "0.8"
 leptos_meta = "0.8"
 leptos_router = { version = "0.8", features = ["nightly"] }
 leptos_ui = "0.1"
 log = "0.4"
 thiserror = "2"
-tokio = { version = "1", default-features = false, features = ["macros", "rt-multi-thread"] }
-tower = { version = "0.5", default-features = false, features = ["util"] }
-tower-http = { version = "0.6", default-features = false, features = ["fs", "trace"] }
 tw_merge = { version = "0.1", features = ["variant", "debug"] }
 wasm-bindgen = "0.2"
 leptos-struct-table = { version = "0.15", features = ["chrono"] }
 chrono = "0.4"
 leptos-use = "0.16"
-typos-cli = "1"
 
+# Client-side dependencies
+console_error_panic_hook = { version = "0.1", optional = true }
+console_log = { version = "1", optional = true }
 
+# Server-side dependencies
+axum = { version = "0.8", optional = true }
+leptos_axum = { version = "0.8", optional = true }
+tokio = { version = "1", default-features = false, features = ["macros", "rt-multi-thread"], optional = true }
+tower = { version = "0.5", default-features = false, features = ["util"], optional = true }
+tower-http = { version = "0.6", default-features = false, features = ["fs", "trace"], optional = true }
+
+[features]
+default = []
+hydrate = [
+    "leptos/hydrate",
+    "dep:console_error_panic_hook",
+    "dep:console_log",
+]
+ssr = [
+    "leptos/ssr",
+    "leptos_meta/ssr",
+    "leptos_router/ssr",
+    "dep:leptos_axum",
+    "dep:axum",
+    "dep:tokio",
+    "dep:tower",
+    "dep:tower-http",
+    "leptos-use/ssr",
+]
 
 [profile.dev]
 debug = false
@@ -40,11 +60,12 @@ codegen-units = 1
 lto = true
 opt-level = 'z'
 
-
-[[workspace.metadata.leptos]]
+[[bin]]
 name = "rust_ui_labs"
-bin-package = "server"
-lib-package = "frontend"
+required-features = ["ssr"]
+
+[package.metadata.leptos]
+output-name = "rust_ui_labs"
 site-root = "target/site"
 site-pkg-dir = "pkg"
 tailwind-input-file = "style/tailwind.css"
@@ -54,7 +75,7 @@ reload-port = 3001
 browserquery = "defaults"
 watch = false
 env = "DEV"
-bin-features = []
+bin-features = ["ssr"]
 bin-default-features = false
-lib-features = []
+lib-features = ["hydrate"]
 lib-default-features = false

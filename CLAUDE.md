@@ -40,10 +40,8 @@ git pull origin master --rebase
 
 ## Architecture
 
-### Workspace Structure
-- **`app/`** - Core application logic and Leptos components
-- **`frontend/`** - WASM frontend build configuration
-- **`server/`** - Axum SSR server setup  
+### Project Structure
+- **`src/`** - All Rust source code (unified single-crate structure)
 - **`public/`** - Static assets (CSS, JS, images)
 - **`style/`** - Tailwind CSS configuration
 
@@ -55,10 +53,10 @@ git pull origin master --rebase
 - **leptos-struct-table** - Data table components
 
 ### Component Organization
-- **Demo-driven development** - Each component has its own demo in `app/src/__demos__/`
-- **Shared components** - Reusable components in `app/src/shared/components/`
+- **Demo-driven development** - Each component has its own demo in `src/__demos__/`
+- **Shared components** - Reusable components in `src/shared/components/`
 - **Query-based routing** - URL parameters select which demo to display
-- **Component registration** - All demos registered in `app/src/all_demos.rs`
+- **Component registration** - All demos registered in `src/all_demos.rs`
 
 ## Development Guidelines
 
@@ -83,7 +81,7 @@ git pull origin master --rebase
 
 ### Demo Structure
 ```
-app/src/__demos__/
+src/__demos__/
 ├── demo_name.rs               # Main demo implementation
 ├── demo_name/                 # Supporting files (if needed)
 │   ├── components.rs          # Demo-specific components

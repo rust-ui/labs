@@ -60,25 +60,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487"
 
 [[package]]
-name = "app"
-version = "0.1.0"
-dependencies = [
- "cfg-if",
- "chrono",
- "http",
- "leptos",
- "leptos-struct-table",
- "leptos-use",
- "leptos_axum",
- "leptos_meta",
- "leptos_router",
- "leptos_ui",
- "thiserror 2.0.12",
- "tw_merge",
- "wasm-bindgen",
-]
-
-[[package]]
 name = "async-lock"
 version = "3.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -613,18 +594,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e13624c2627564efccf4934284bdd98cbaa14e79b0b5a141218e507b3a823456"
 dependencies = [
  "percent-encoding",
-]
-
-[[package]]
-name = "frontend"
-version = "0.1.0"
-dependencies = [
- "app",
- "console_error_panic_hook",
- "console_log",
- "leptos",
- "log",
- "wasm-bindgen",
 ]
 
 [[package]]
@@ -1996,6 +1965,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust_ui_labs"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "cfg-if",
+ "chrono",
+ "console_error_panic_hook",
+ "console_log",
+ "http",
+ "leptos",
+ "leptos-struct-table",
+ "leptos-use",
+ "leptos_axum",
+ "leptos_meta",
+ "leptos_router",
+ "leptos_ui",
+ "log",
+ "thiserror 2.0.12",
+ "tokio",
+ "tower",
+ "tower-http",
+ "tw_merge",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "rustc-demangle"
 version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2130,20 +2125,6 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
-]
-
-[[package]]
-name = "server"
-version = "0.1.0"
-dependencies = [
- "app",
- "axum",
- "leptos",
- "leptos_axum",
- "log",
- "tokio",
- "tower",
- "tower-http",
 ]
 
 [[package]]
