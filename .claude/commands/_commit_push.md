@@ -21,6 +21,6 @@ Use this command when you want to:
 
 ## Commit Details
 See `_commit.md` for detailed information about:
-- Conventional commit message format requirements
+- Conventional commit message format with robot emoji 🤖 at start
 - Staging behavior and file handling
-- Robot emoji 🤖 and Claude Code attribution
+- Claude Code attribution

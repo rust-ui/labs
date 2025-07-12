@@ -18,17 +18,16 @@ Use this command when you want to:
 
 ## Commit Message Format
 Commits must follow conventional commit format:
-- `feat: add new component functionality`
-- `fix: resolve styling issue in button component`
-- `refactor: convert CSS to Tailwind classes`
-- `docs: update component documentation`
-- `chore: update dependencies`
-- `test: add component tests`
+- `feat: Add new component functionality.`
+- `fix: Resolve styling issue in button component.`
+- `refactor: Convert CSS to Tailwind classes.`
+- `docs: Update component documentation.`
+- `chore: Update dependencies.`
+- `test: Add component tests.`
 
 ## Notes
 - Follows Git workflow guidelines in CLAUDE.md
 - Uses conventional commit message format (required)
-- Includes robot emoji 🤖 to indicate agent-generated commit
-- Includes Claude Code attribution
+- Does NOT include Claude Code attribution
 - Does NOT push to remote (use _commit_push for that)
 - Good for frequent local commits during development
