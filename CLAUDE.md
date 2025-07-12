@@ -60,6 +60,16 @@ git pull origin master --rebase
 
 ## Development Guidelines
 
+### Git Workflow
+- **Commit changes frequently** - Make small, focused commits as you work
+- **Write descriptive commit messages** - Use conventional commit format when possible:
+  - `feat: add new component functionality`
+  - `fix: resolve styling issue in button component`
+  - `refactor: convert CSS to Tailwind classes`
+  - `docs: update component documentation`
+- **Include context in commit messages** - Explain the "why" behind changes
+- **Use present tense** - "Add feature" not "Added feature"
+
 ### CSS Conversion Process
 1. **Use `this__pattern` naming** for custom CSS classes that cannot be converted to Tailwind
 2. **Prefer Tailwind over custom CSS** when possible
