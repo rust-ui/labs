@@ -26,7 +26,8 @@ tw_merge = { version = "0.1", features = ["variant", "debug"] }
 wasm-bindgen = "0.2"
 leptos-struct-table = { version = "0.15", features = ["chrono"] }
 chrono = "0.4"
-leptos-use = "0.16" 
+leptos-use = "0.16"
+typos-cli = "1"
 
 
 

@@ -20,6 +20,10 @@ cargo fmt                      # Format Rust code
 cargo clippy                   # Rust linting
 cargo clippy --fix            # Auto-fix clippy issues
 
+# Spell checking
+typos                          # Check for typos in source code
+typos -w                       # Auto-fix typos
+
 # JavaScript/CSS formatting and linting  
 npm run format                 # Format JS/CSS with Biome
 npm run check                  # Check JS/CSS with Biome
