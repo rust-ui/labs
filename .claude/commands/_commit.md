@@ -28,6 +28,7 @@ Commits must follow conventional commit format:
 ## Notes
 - Follows Git workflow guidelines in CLAUDE.md
 - Uses conventional commit message format (required)
+- Includes robot emoji 🤖 to indicate agent-generated commit
 - Includes Claude Code attribution
 - Does NOT push to remote (use _commit_push for that)
 - Good for frequent local commits during development

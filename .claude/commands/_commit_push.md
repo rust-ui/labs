@@ -4,19 +4,23 @@ Commit current changes and push them to the GitHub repository.
 
 ## Usage
 Use this command when you want to:
-- Commit all staged/unstaged changes with an appropriate message
-- Push the commit to the remote GitHub repository
-- Follow the project's Git workflow guidelines from CLAUDE.md
+- Commit and immediately push changes to the remote repository
+- Share work with the team or save to remote backup
+- Complete a development cycle with remote synchronization
 
 ## Behavior
-1. Check git status and recent commits for context
-2. Stage relevant files (avoiding sensitive or temporary files)
-3. Create a descriptive commit message following conventional commit format
-4. Push changes to origin/master (or current branch)
-5. Verify the push succeeded
+1. Performs commit using `_commit` command behavior (see _commit.md for details)
+2. Push changes to origin/master (or current branch)
+3. Verify the push succeeded
 
-## Notes
-- Follows Git workflow guidelines in CLAUDE.md
-- Uses conventional commit message format
-- Includes Claude Code attribution
+## Push Notes
+- Combines local commit with remote push in one action
+- Use `_commit` for local-only commits during development
 - Only pushes when explicitly requested (this command implies explicit request)
+- Requires network access and push permissions to remote repository
+
+## Commit Details
+See `_commit.md` for detailed information about:
+- Conventional commit message format requirements
+- Staging behavior and file handling
+- Robot emoji 🤖 and Claude Code attribution
