@@ -10,7 +10,7 @@
   
   @layer points {
     .points {
-      /* to change apperance use the custom props */
+      /* to change appearance use the custom props */
       --std-dim: 40px;
       --active-dim: 200px;
       --color-point: #ccc;
