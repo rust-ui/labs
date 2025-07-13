@@ -27,6 +27,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Font size**: `text-sm`, `text-lg`, `text-xl`, `text-2xl`, etc.
 - **Font weight**: `font-bold`, `font-semibold`, `font-light`, etc.
 - **Text align**: `text-center`, `text-left`, `text-right`, etc.
+- **Font family**: `font-sans`, `font-serif`, `font-mono`, etc.
 
 ### Layout
 - **Display**: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `hidden`, etc.
@@ -34,6 +35,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
 - **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
 - **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
+- **Box sizing**: `box-border`, `box-content`, etc.
 
 ### Sizing
 - **Width**: `w-full`, `w-1/2`, `w-64`, `w-96`, `w-[75px]`, etc.

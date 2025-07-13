@@ -3,32 +3,20 @@
 /*
 ====== CSS CLASS USAGE REPORT ======
 
-.mainDiv          → 1 time
 .scroll__x        → 1 time
 .scroll__snap__container → 1 time
 .items            → 1 time
 
 */
 
-.mainDiv {
-  box-sizing: border-box;
-  display: grid;
-  place-items: center;
-  font-family: system-ui, sans-serif;
-  height: 100vh;
-}
 
 .scroll__x {
-  max-width: 100%;
-  overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-color: #2563eb #bfdbfe;
 }
 
 .scroll__snap__container {
   scroll-snap-type: x mandatory;
-  display: grid;
-  padding-block: 2rem;
   grid-template-columns:
     [full-start] 1fr
     [content-start]
@@ -39,8 +27,6 @@
 
 .items {
   grid-area: content;
-  display: flex;
-  gap: 0.5rem;
 
   &::after {
     content: "";
@@ -51,17 +37,9 @@
   }
 
   > * {
-    display: grid;
-    place-content: center;
-    flex-shrink: 0;
     inline-size: clamp(12rem, 1rem + 50vw, 20rem);
     aspect-ratio: 4 / 5;
     scroll-snap-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-    color: white;
-    background-color: #2563eb;
-    border-radius: 0.5rem;
   }
 }
 
