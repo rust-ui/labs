@@ -56,6 +56,10 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 ## Important Notes
 
 - **Keep complex CSS**: Don't convert complex animations, transforms, or custom properties
+- **Use specific naming for @keyframes**: Always prefix keyframe names with the component/feature name using __ pattern to avoid conflicts
+  - Example: `@keyframes scale` → `@keyframes scroll__snap__scale`
+  - Example: `@keyframes fade` → `@keyframes modal__fade`
+  - Example: `@keyframes slide` → `@keyframes carousel__slide`
 - **Preserve hardcoded values**: When CSS uses specific measurements that make sense to preserve, use Tailwind's arbitrary value syntax
   - Example: `min-width: 25rem` → `min-w-[25rem]` 
   - Example: `padding: 1.5rem` → `p-[1.5rem]`

@@ -45,12 +45,12 @@
 
 @supports (animation-timeline: view()) {
   .scroll__snap__item > * {
-    animation: scale linear both, fade linear both;
+    animation: scroll__snap__scale linear both, scroll__snap__fade linear both;
     animation-timeline: view(inline);
     animation-range: cover 30% cover 70%, cover 5% cover 95%;
   }
 
-  @keyframes scale {
+  @keyframes scroll__snap__scale {
     from,
     to {
       scale: 0.9;
@@ -67,7 +67,7 @@
     }
   }
 
-  @keyframes fade {
+  @keyframes scroll__snap__fade {
     from,
     to {
       opacity: 0;
