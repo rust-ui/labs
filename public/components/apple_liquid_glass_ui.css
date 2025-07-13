@@ -55,12 +55,10 @@
   }
   
   .glass_container__large {
-    min-width: 32rem;
-  }
+    }
   
   .glass-container--medium {
-    min-width: 25rem;
-  }
+    }
   
   .glass-container svg {
     fill: white;
@@ -68,8 +66,6 @@
   
   /* ========== GLASS ITEM ========== */
   .glass-item {
-    align-items: center;
-    justify-content: space-between;
     border-radius: 1rem;
     color: white;
     transition: color 0.3s ease;
@@ -91,20 +87,12 @@
   }
   
   .player {
-    align-items: center;
-    flex: 1 1 auto;
-    justify-content: space-between;
   }
   
   .player__thumb {
-    align-items: center;
-    justify-content: center;
   }
   
   .player__img {
-    width: 5rem;
-    height: auto;
-    border-radius: 0.5rem;
   }
   
   .player__legend {
@@ -115,12 +103,9 @@
   }
   
   .player__legend__sub-title {
-    opacity: 0.45;
   }
   
   .player__controls {
-    align-items: center;
-    justify-content: center;
   }
   
   .player__controls__play {
@@ -148,13 +133,9 @@
   }
   
   .glass__content {
-    align-items: center;
-    gap: 20px;
   }
   
   .glass__content__inline {
-    flex: 1 1 auto;
-    justify-content: space-between;
   }
   
   /* ========== ICONS AND IMAGES ========== */

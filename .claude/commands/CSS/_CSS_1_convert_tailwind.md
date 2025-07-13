@@ -8,7 +8,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 2. **Identify convertible classes**: Only convert CSS classes that match the patterns listed below
 3. **Convert in Rust files**: Replace custom CSS classes with Tailwind classes in `clx!` macros
 4. **Clean up CSS**: Remove the converted CSS rules from `.css` files
-5. **Test**: Verify the component still works correctly
+5. **Test**: Run `cargo check` to make sure there is no error.
 
 
 ## Convertible CSS Patterns
