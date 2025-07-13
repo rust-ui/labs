@@ -35,3 +35,12 @@ text-center, text-left, text-right - Text alignment
 
 flex, grid, block, inline-block - Display types
 justify-center, justify-between, items-center - Flexbox alignment
+
+### Sizing
+
+w-full, w-1/2, w-64, w-96 - Width
+max-w-md, max-w-lg, max-w-xl, max-w-2xl - Max width
+h-full, h-64, h-96, h-screen - Height
+max-h-64, max-h-96, max-h-screen - Max height
+min-w-0, min-w-full - Min width
+min-h-0, min-h-full, min-h-screen - Min height
