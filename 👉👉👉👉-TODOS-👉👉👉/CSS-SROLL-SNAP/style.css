@@ -7,7 +7,7 @@
   height: 100vh;
 }
 
-.scroll-x {
+.scroll__x {
   max-width: 100%;
   overflow-x: auto;
   overscroll-behavior-x: contain;
