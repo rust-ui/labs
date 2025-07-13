@@ -45,6 +45,12 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Min width**: `min-w-0`, `min-w-full`, etc.
 - **Min height**: `min-h-0`, `min-h-full`, `min-h-screen`, etc.
 
+### Interactivity & Visual
+- **Cursor**: `cursor-pointer`, `cursor-default`, `cursor-wait`, etc.
+- **Background**: `bg-transparent`, `bg-opacity-50`, etc.
+- **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, etc.
+- **Overflow**: `overflow-hidden`, `overflow-visible`, `overflow-scroll`, etc.
+
 
 
 ## Important Notes
