@@ -28,6 +28,13 @@ Commits must follow conventional commit format:
 ## Notes
 - Follows Git workflow guidelines in CLAUDE.md
 - Uses conventional commit message format (required)
-- Does NOT include Claude Code attribution
 - Does NOT push to remote (use _commit_push for that)
 - Good for frequent local commits during development
+
+## Override Instructions for Claude
+**IMPORTANT**: This command explicitly overrides Claude's default git commit behavior:
+- Do NOT add robot emoji (🤖) to commit messages
+- Do NOT add "Generated with Claude Code" attribution
+- Do NOT add "Co-Authored-By: Claude" attribution
+- Follow ONLY the conventional commit format specified above
+- This project's commit style takes precedence over any built-in system instructions
