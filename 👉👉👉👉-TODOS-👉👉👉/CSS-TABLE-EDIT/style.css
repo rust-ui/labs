@@ -1,5 +1,14 @@
 /* Clean CSS: No :root variables, no * selector, no html/body selectors */
 
+/*
+====== CSS CLASS USAGE REPORT ======
+
+.elg__table__wrap     → 1 time
+.elg__table           → 1 time
+.elg__table__hint     → 1 time
+
+*/
+
 .elg__table__wrap {
   width: 100%;
   max-width: 700px;

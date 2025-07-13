@@ -20,3 +20,20 @@ Note: If it's already clean, comment at top: `/* Clean CSS: No :root variables, 
 3. Verify all references are updated consistently
 
 
+### Step 3: Add CSS Class Usage Report (COMMIT AFTER COMPLETION)
+1. Count the number of times each CSS class is used in the HTML file
+2. Add a usage report comment at the top of the CSS file, just before the first class definition:
+```css
+/*
+====== CSS CLASS USAGE REPORT ======
+
+.elg__table__wrap     → 1 time
+.elg__table           → 1 time
+.elg__table__hint     → 1 time
+
+*/
+```
+3. Format each class name with arrow and usage count
+4. Place report after any existing header comments but before CSS rules
+
+
