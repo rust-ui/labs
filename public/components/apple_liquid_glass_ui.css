@@ -34,8 +34,6 @@
   
   /* ========== GLASS CONTAINER ========== */
   .glass-container {
-    position: relative;
-    display: flex;
     font-weight: 600;
     color: var(--lg-text);
     cursor: pointer;
@@ -48,12 +46,10 @@
   
   .glass_container__rounded {
     border-radius: 5rem;
-    margin: 0.5rem;
     fill: var(--lg-grey);
   }
   
   .glass-container--small {
-    margin: 5rem 0 1rem;
     border-radius: 5rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
   }
@@ -72,8 +68,6 @@
   
   /* ========== GLASS ITEM ========== */
   .glass-item {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     border-radius: 1rem;
@@ -84,14 +78,11 @@
   .glass-item svg {
     fill: white;
     height: 50px;
-    margin-bottom: 0.25rem;
   }
   
   .glass-item--active {
     background: rgba(0, 0, 0, 0.25);
     color: black;
-    margin: 0 -0.5rem;
-    padding: 0.25rem 1.95rem;
     border-radius: 5rem;
   }
   
@@ -100,31 +91,23 @@
   }
   
   .player {
-    display: flex;
     align-items: center;
-    width: 100%;
     flex: 1 1 auto;
     justify-content: space-between;
   }
   
   .player__thumb {
-    display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 0.5rem;
   }
   
   .player__img {
     width: 5rem;
     height: auto;
-    margin: 0.25rem 0;
     border-radius: 0.5rem;
   }
   
   .player__legend {
-    display: flex;
-    flex-direction: column;
-    margin: 0 1rem;
     color: black;
   }
   
@@ -136,42 +119,28 @@
   }
   
   .player__controls {
-    margin-right: -1rem;
-    display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .player__controls__play {
-    margin-right: 1rem;
-    display: flex;
   }
   
   .player__controls__ff {
-    display: flex;
   }
   
   /* ========== GLASS LAYERS ========== */
   .glass__filter {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
     backdrop-filter: blur(0px);
     filter: url(#lg-dist);
     isolation: isolate;
   }
   
   .glass__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
     background: var(--lg-bg-color);
   }
   
   .glass__specular {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
     border-radius: inherit;
     overflow: hidden;
     box-shadow: inset 1px 1px 0 var(--lg-highlight),
@@ -179,30 +148,21 @@
   }
   
   .glass__content {
-    position: relative;
-    z-index: 3;
-    display: flex;
     align-items: center;
     gap: 20px;
-    padding: 1rem 1.5rem 0.9rem;
   }
   
   .glass__content__inline {
-    padding: 0.25rem 2rem 0.25rem 0.75rem;
     flex: 1 1 auto;
     justify-content: space-between;
   }
   
   /* ========== ICONS AND IMAGES ========== */
   .glass__content a {
-    display: inline-block;
-    position: relative;
-    padding: 1px;
     border-radius: 1.2rem;
   }
   
   .glass__content a img {
-    display: block;
     width: 75px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
   }
