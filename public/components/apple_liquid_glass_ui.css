@@ -1,4 +1,4 @@
-/* Step 1 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ */
 
 /* ========== BASE LAYOUT ========== */
 .mainDiv {
@@ -26,7 +26,7 @@
 }
 
 /* ========== GLASS CONTAINER ========== */
-.glass-container {
+.glass__container {
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
@@ -35,33 +35,33 @@
   fill: #5b5b5b;
 }
 
-.glass-container--small {
+.glass__container__small {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .glass_container__large {
 }
 
-.glass-container--medium {
+.glass__container__medium {
 }
 
-.glass-container svg {
+.glass__container svg {
   fill: white;
 }
 
 /* ========== GLASS ITEM ========== */
-.glass-item {
+.glass__item {
   transition: color 0.3s ease;
 }
 
-.glass-item svg {
+.glass__item svg {
 }
 
-.glass-item--active {
+.glass__item__active {
   background: rgba(0, 0, 0, 0.25);
 }
 
-.glass-item--active svg {
+.glass__item__active svg {
 }
 
 .player {
