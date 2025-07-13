@@ -23,7 +23,21 @@
       "Bash(rm -rf:*)",
       "Bash(rm -rf *)",
       "Bash(rm -r:*)",
-      "Bash(rm --recursive:*)"
+      "Bash(rm --recursive:*)",
+      "Bash(shred:*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)",
+      "Bash(sudo:*)",
+      "Bash(su:*)",
+      "Bash(chown:*)",
+      "Bash(chmod 777:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -f:*)",
+      "Bash(git push --force:*)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | sh)",
+      "Bash(killall:*)",
+      "Bash(kill -9:*)"
     ]
   }
 }
