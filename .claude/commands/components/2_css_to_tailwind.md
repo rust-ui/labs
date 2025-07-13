@@ -4,7 +4,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 
 ## Workflow
 
-1. **Find files**: Locate `.css` file and its ajacent `.html` file
+1. **Find files**: Locate `.css` file and its ajacent `.html` file (OR `rs` file if it's on `src/`)
 2. **Identify convertible classes**: Only convert CSS classes that match the patterns listed below
 3. **Clean up CSS**: Remove the converted CSS rules from `.css` files
 
