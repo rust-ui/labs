@@ -8,6 +8,7 @@ Follow these steps:
 2. Make sure you ONLY convert the type of classes listed in this file (## Classes to convert).
 3. Make the list of classes you need to convert.
 4. Convert the classes in the `.rs` file(s).
+5. Remove the now unused CSS classes from the `.css` file(s).
 
 
 ## Classes to convert
