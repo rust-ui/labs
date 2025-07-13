@@ -1,17 +1,9 @@
-  
-  * {
+  .mainDiv {
     box-sizing: border-box;
-  }
-  
-  html,
-  body {
-    height: 100%;
-  }
-  
-  body {
     display: grid;
     place-items: center;
     font-family: system-ui, sans-serif;
+    height: 100vh;
   }
   
   .scroll-x {
