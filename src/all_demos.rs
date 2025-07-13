@@ -2,7 +2,6 @@ use leptos::prelude::*;
 
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
-use crate::__demos__::demo_bento_3_transition::DemoBento3Transition;
 use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
@@ -66,10 +65,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Mobile Stack",
         render_fn: || view! { <DemoMobileStack /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Bento 3 Transition",
-        render_fn: || view! { <DemoBento3Transition /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Leptos Struct Table",
