@@ -9,7 +9,6 @@ use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
-use crate::__demos__::demo_inline_picker::DemoInlinePicker;
 use crate::__demos__::demo_menu_bar_interaction::DemoMenuBarInteraction;
 use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
@@ -56,10 +55,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Carousel Hover Smooth",
         render_fn: || view! { <DemoCarouselHoverSmooth /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Inline Picker",
-        render_fn: || view! { <DemoInlinePicker /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Menu Interaction",
