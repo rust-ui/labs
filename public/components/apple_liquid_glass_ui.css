@@ -39,9 +39,6 @@
   isolation: isolate;
 }
 
-.glass__overlay {
-  background: rgba(255, 255, 255, 0.25);
-}
 
 .glass__specular {
   border-radius: inherit;

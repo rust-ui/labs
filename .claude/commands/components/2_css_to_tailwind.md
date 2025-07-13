@@ -17,7 +17,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 
 ### Colors
 - **Text**: `text-red-500`, `text-blue-600`, `text-green-400`, etc.
-- **Background**: `bg-gray-100`, `bg-blue-500`, `bg-red-200`, etc.  
+- **Background**: `bg-gray-100`, `bg-blue-500`, `bg-red-200`, `bg-white/25`, `bg-black/50`, etc.  
 - **Border**: `border-gray-300`, `border-blue-500`, etc.
 
 ### Spacing
