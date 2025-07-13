@@ -31,32 +31,10 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                             </div>
                             <div class="flex justify-center items-center -mr-4 player__controls">
                                 <div class="flex mr-4 player__controls__play">
-                                    <svg
-                                        viewBox="0 0 448 512"
-                                        width="24"
-                                        title="play"
-                                        class="fill-gray-500"
-                                    >
-                                        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                    </svg>
+                                    <Svg_PlayIcon />
                                 </div>
                                 <div class="flex player__controls__ff">
-                                    <svg
-                                        viewBox="0 0 448 512"
-                                        width="24"
-                                        title="play"
-                                        class="fill-gray-500"
-                                    >
-                                        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                    </svg>
-                                    <svg
-                                        viewBox="0 0 448 512"
-                                        width="24"
-                                        title="play"
-                                        class="fill-gray-500"
-                                    >
-                                        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
-                                    </svg>
+                                    <Svg_FastForwardIcon />
                                 </div>
                             </div>
                         </div>
@@ -71,14 +49,7 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                     <div class="overflow-hidden absolute inset-0 z-20 glass__specular"></div>
                     <div class="flex relative z-30 gap-5 items-center px-6 pt-4 pb-4 glass__content glass__content__alone">
                         <div class="flex flex-col justify-between items-center text-center text-white rounded-lg glass__item">
-                            <svg
-                                viewBox="0 0 512 512"
-                                width="40"
-                                title="search"
-                                class="mb-1 fill-white h-[50px]"
-                            >
-                                <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
-                            </svg>
+                            <Svg_SearchIcon />
                         </div>
                     </div>
                 </div>
@@ -127,27 +98,89 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                         </a>
                     </div>
 
-                    <svg style="display: none">
-                        <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
-                            <feTurbulence
-                                type="fractalNoise"
-                                baseFrequency="0.008 0.008"
-                                numOctaves="2"
-                                seed="92"
-                                result="noise"
-                            />
-                            <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-                            <feDisplacementMap
-                                in="SourceGraphic"
-                                in2="blurred"
-                                scale="70"
-                                xChannelSelector="R"
-                                yChannelSelector="G"
-                            />
-                        </filter>
-                    </svg>
+                    <Svg_LiquidGlassFilter />
+
                 </div>
             </div>
         </div>
+    }
+}
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ FUNCTIONS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+#[component]
+pub fn Svg_PlayIcon() -> impl IntoView {
+    view! {
+        <svg
+            viewBox="0 0 448 512"
+            width="24"
+            title="play"
+            class="fill-gray-500"
+        >
+            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+        </svg>
+    }
+}
+
+#[component]
+pub fn Svg_FastForwardIcon() -> impl IntoView {
+    view! {
+        <svg
+            viewBox="0 0 448 512"
+            width="24"
+            title="fast-forward"
+            class="fill-gray-500"
+        >
+            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+        </svg>
+        <svg
+            viewBox="0 0 448 512"
+            width="24"
+            title="fast-forward"
+            class="fill-gray-500"
+        >
+            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
+        </svg>
+    }
+}
+
+#[component]
+pub fn Svg_SearchIcon() -> impl IntoView {
+    view! {
+        <svg
+            viewBox="0 0 512 512"
+            width="40"
+            title="search"
+            class="mb-1 fill-white h-[50px]"
+        >
+            <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
+        </svg>
+    }
+}
+
+#[component]
+pub fn Svg_LiquidGlassFilter() -> impl IntoView {
+    view! {
+        <svg style="display: none">
+            <filter id="lg-dist" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.008 0.008"
+                    numOctaves="2"
+                    seed="92"
+                    result="noise"
+                />
+                <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+                <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="blurred"
+                    scale="70"
+                    xChannelSelector="R"
+                    yChannelSelector="G"
+                />
+            </filter>
+        </svg>
     }
 }
