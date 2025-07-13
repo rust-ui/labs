@@ -38,7 +38,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
 
 ### Sizing
-- **Width**: `w-full`, `w-1/2`, `w-64`, `w-96`, etc.
+- **Width**: `w-full`, `w-1/2`, `w-64`, `w-96`, `w-[75px]`, etc.
 - **Max width**: `max-w-md`, `max-w-lg`, `max-w-xl`, `max-w-2xl`, etc.
 - **Height**: `h-full`, `h-64`, `h-96`, `h-screen`, etc.
 - **Max height**: `max-h-64`, `max-h-96`, `max-h-screen`, etc.
@@ -48,7 +48,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 ### Interactivity & Visual
 - **Cursor**: `cursor-pointer`, `cursor-default`, `cursor-wait`, etc.
 - **Background**: `bg-transparent`, `bg-opacity-50`, etc.
-- **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, etc.
+- **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, `rounded-[1.2rem]`, etc.
 - **Overflow**: `overflow-hidden`, `overflow-visible`, `overflow-scroll`, etc.
 
 
