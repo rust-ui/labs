@@ -9,7 +9,6 @@ use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
-use crate::__demos__::demo_menu_bar_interaction::DemoMenuBarInteraction;
 use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 use crate::__demos__::leptos_struct_table::editable::DemoLeptosStructTable_Editable;
@@ -59,10 +58,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Menu Interaction",
         render_fn: || view! { <DemoMenuInteraction /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Menu Bar Interaction",
-        render_fn: || view! { <DemoMenuBarInteraction /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Button Multi State",
