@@ -9,10 +9,6 @@ use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
-use crate::__demos__::leptos_struct_table::editable::DemoLeptosStructTable_Editable;
-use crate::__demos__::leptos_struct_table::selectable::DemoLeptosStructTable_Selectable;
-use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
-use crate::__demos__::leptos_struct_table::tailwind::DemoLeptosStructTable_Tailwind;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -60,21 +56,5 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Mobile Stack",
         render_fn: || view! { <DemoMobileStack /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Leptos Struct Table",
-        render_fn: || view! { <DemoLeptosStructTable_Simple /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Leptos Struct Table Tailwind",
-        render_fn: || view! { <DemoLeptosStructTable_Tailwind /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Leptos Struct Table Editable",
-        render_fn: || view! { <DemoLeptosStructTable_Editable /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Leptos Struct Table Selectable",
-        render_fn: || view! { <DemoLeptosStructTable_Selectable /> }.into_any(),
     },
 ];

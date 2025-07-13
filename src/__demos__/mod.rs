@@ -11,4 +11,4 @@ pub mod demo_drawer;
 pub mod demo_gsap_dynamic_cursor;
 pub mod demo_mobile_stack;
 
-pub mod leptos_struct_table;
+pub mod _leptos_struct_table;
