@@ -1,13 +1,5 @@
 /* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 
-/*
-====== CSS CLASS USAGE REPORT ======
-
-.elg__table__wrap     → 1 time
-.elg__table           → 1 time
-.elg__table__hint     → 1 time
-
-*/
 
 .elg__table__wrap {
   width: 100%;

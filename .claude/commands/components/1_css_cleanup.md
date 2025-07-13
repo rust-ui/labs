@@ -24,32 +24,15 @@ Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 
 
-### Step 3: Add CSS Class Usage Report (COMMIT AFTER COMPLETION)
-1. Count the number of times each CSS class is used in the HTML file
-2. Add a usage report comment at the top of the CSS file, just before the first class definition:
-```css
-/*
-====== CSS CLASS USAGE REPORT ======
-
-.elg__table__wrap     → 1 time
-.elg__table           → 1 time
-.elg__table__hint     → 1 time
-
-*/
-```
-3. Format each class name with arrow and usage count
-4. Place report after any existing header comments but before CSS rules
-
-Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */`
 
 
-### Step 4: Replace Generic CSS Class Names (COMMIT AFTER COMPLETION)
+### Step 3: Replace Generic CSS Class Names (COMMIT AFTER COMPLETION)
 1. Identify generic class names like `.wrapper`, `.container`, `.item` that lack descriptive context
 2. Replace with more descriptive names following the `__` convention (e.g., `.wrapper` → `.scroll__snap__container`)
 3. Update both CSS selectors and HTML class references consistently
 4. Update the CSS class usage report to reflect the new class names
 5. Ensure new names clearly describe the component's purpose and functionality
 
-Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */`
+Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */`
 
 

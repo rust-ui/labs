@@ -1,29 +1,5 @@
 /* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
-/*
-====== CSS CLASS USAGE REPORT ======
-
-.mainDiv                     → 1 time
-.liquid__glass__container                   → 3 times
-.liquid__glass__container__inline           → 2 times
-.glass__container            → 3 times
-.glass_container__rounded    → 2 times
-.glass__filter               → 3 times
-.glass__overlay              → 3 times
-.glass__specular             → 3 times
-.glass__content              → 3 times
-.glass__item                 → 1 time
-.player                      → 1 time
-.player__thumb               → 1 time
-.player__img                 → 1 time
-.player__legend              → 1 time
-.player__legend__title       → 1 time
-.player__legend__sub-title   → 1 time
-.player__controls            → 1 time
-.player__controls__play      → 1 time
-.player__controls__ff        → 1 time
-
-*/
 
 /* ========== BASE LAYOUT ========== */
 .mainDiv {
@@ -31,10 +7,10 @@
   font-family: sans-serif;
   background: url("https://images.unsplash.com/photo-1551384963-cccb0b7ed94b?q=80&w=3247&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
     center/cover;
-  animation: bg-move 5s ease-in-out infinite alternate;
+  animation: bg__move 5s ease-in-out infinite alternate;
 }
 
-@keyframes bg-move {
+@keyframes bg__move {
   from {
     background-position: center center;
   }
