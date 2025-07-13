@@ -17,13 +17,13 @@ Use this command when you want to:
 5. Verify the commit succeeded
 
 ## Commit Message Format
-Commits must follow conventional commit format:
-- `feat: Add new component functionality.`
-- `fix: Resolve styling issue in button component.`
-- `refactor: Convert CSS to Tailwind classes.`
-- `docs: Update component documentation.`
-- `chore: Update dependencies.`
-- `test: Add component tests.`
+Commits must follow conventional commit format, adding robot emoji at the beginning 🤖:
+- `🤖 feat: Add new component functionality.`
+- `🤖 fix: Resolve styling issue in button component.`
+- `🤖 refactor: Convert CSS to Tailwind classes.`
+- `🤖 docs: Update component documentation.`
+- `🤖 chore: Update dependencies.`
+- `🤖 test: Add component tests.`
 
 ## Notes
 - Follows Git workflow guidelines in CLAUDE.md
