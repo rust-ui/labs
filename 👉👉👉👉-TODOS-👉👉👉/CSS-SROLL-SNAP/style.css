@@ -5,7 +5,7 @@
 
 .scroll__x        → 1 time
 .scroll__snap__container → 1 time
-.items            → 1 time
+.scroll__snap__item → 1 time
 
 */
 
@@ -25,7 +25,7 @@
     1fr [full-end];
 }
 
-.items {
+.scroll__snap__item {
   grid-area: content;
 
   &::after {
@@ -44,7 +44,7 @@
 }
 
 @supports (animation-timeline: view()) {
-  .items > * {
+  .scroll__snap__item > * {
     animation: scale linear both, fade linear both;
     animation-timeline: view(inline);
     animation-range: cover 30% cover 70%, cover 5% cover 95%;
