@@ -1,4 +1,29 @@
-/* Step 1 ✔️ Step 2 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+
+/*
+====== CSS CLASS USAGE REPORT ======
+
+.mainDiv                     → 1 time
+.container                   → 3 times
+.container__inline           → 2 times
+.glass__container            → 3 times
+.glass_container__rounded    → 2 times
+.glass__filter               → 3 times
+.glass__overlay              → 3 times
+.glass__specular             → 3 times
+.glass__content              → 3 times
+.glass__item                 → 1 time
+.player                      → 1 time
+.player__thumb               → 1 time
+.player__img                 → 1 time
+.player__legend              → 1 time
+.player__legend__title       → 1 time
+.player__legend__sub-title   → 1 time
+.player__controls            → 1 time
+.player__controls__play      → 1 time
+.player__controls__ff        → 1 time
+
+*/
 
 /* ========== BASE LAYOUT ========== */
 .mainDiv {
