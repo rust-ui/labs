@@ -7,7 +7,6 @@ use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
-use crate::__demos__::demo_gsap_dynamic_cursor::DemoGsapDynamicCursor;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 
 #[derive(Clone)]
@@ -24,10 +23,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Gsap Dynamic Cursor",
-        render_fn: || view! { <DemoGsapDynamicCursor /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Carousel",
