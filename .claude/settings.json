@@ -19,6 +19,11 @@
       "Bash(chmod:*)",
       "Bash(git push:*)"
     ],
-    "deny": []
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(rm -rf *)",
+      "Bash(rm -r:*)",
+      "Bash(rm --recursive:*)"
+    ]
   }
 }
