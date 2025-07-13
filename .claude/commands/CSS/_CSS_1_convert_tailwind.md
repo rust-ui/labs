@@ -56,3 +56,9 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 ## Important Notes
 
 - **Keep complex CSS**: Don't convert complex animations, transforms, or custom properties
+- **Preserve hardcoded values**: When CSS uses specific measurements that make sense to preserve, use Tailwind's arbitrary value syntax
+  - Example: `min-width: 25rem` → `min-w-[25rem]` 
+  - Example: `padding: 1.5rem` → `p-[1.5rem]`
+  - Example: `font-size: 1.125rem` → `text-[1.125rem]`
+- **Create separate commits**: If hardcoded values are converted to arbitrary value syntax, make a dedicated commit specifically for those conversions:
+  - `refactor: convert [component_name] hardcoded values to Tailwind arbitrary syntax.`
