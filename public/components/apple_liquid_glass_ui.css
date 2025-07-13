@@ -1,11 +1,11 @@
-/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 
 /*
 ====== CSS CLASS USAGE REPORT ======
 
 .mainDiv                     → 1 time
-.container                   → 3 times
-.container__inline           → 2 times
+.liquid__glass__container                   → 3 times
+.liquid__glass__container__inline           → 2 times
 .glass__container            → 3 times
 .glass_container__rounded    → 2 times
 .glass__filter               → 3 times
@@ -43,11 +43,11 @@
   }
 }
 
-/* ========== CONTAINER ========== */
-.container {
+/* ========== LIQUID GLASS CONTAINER ========== */
+.liquid__glass__container {
 }
 
-.container__inline {
+.liquid__glass__container__inline {
 }
 
 /* ========== GLASS CONTAINER ========== */

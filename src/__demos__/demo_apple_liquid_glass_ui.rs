@@ -9,7 +9,7 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
         <Stylesheet href="/components/apple_liquid_glass_ui.css" />
 
         <div class="mainDiv m-0 py-8 flex flex-col items-center justify-center">
-            <div class="container container__inline flex flex-col items-center justify-center flex-row">
+            <div class="liquid__glass__container liquid__glass__container__inline flex flex-col items-center justify-center flex-row">
                 <div class="glass__container glass_container__rounded min-w-[32rem] relative flex m-2 rounded-[5rem] font-semibold text-white cursor-pointer bg-transparent overflow-hidden">
                     <div class="glass__filter"></div>
                     <div class="glass__overlay"></div>
@@ -56,7 +56,7 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                 </div>
             </div>
 
-            <div class="container container__inline flex flex-col items-center justify-center flex-row">
+            <div class="liquid__glass__container liquid__glass__container__inline flex flex-col items-center justify-center flex-row">
                 <div class="glass__container glass_container__rounded relative flex m-2 rounded-[5rem] font-semibold text-white cursor-pointer bg-transparent overflow-hidden">
                     <div class="glass__filter absolute inset-0 z-0"></div>
                     <div class="glass__overlay absolute inset-0 z-10"></div>
@@ -71,7 +71,7 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                 </div>
             </div>
 
-            <div class="container flex flex-col items-center justify-center">
+            <div class="liquid__glass__container flex flex-col items-center justify-center">
                 <div class="glass__container relative flex rounded-2xl font-semibold text-white cursor-pointer bg-transparent overflow-hidden">
                     <div class="glass__filter absolute inset-0 z-0"></div>
                     <div class="glass__overlay absolute inset-0 z-10"></div>
