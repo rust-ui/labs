@@ -16,8 +16,19 @@
       "Bash(git rm:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(chmod:*)",
-      "Bash(git push:*)"
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(chmod +x:*)",
+      "Bash(chmod 644:*)",
+      "Bash(chmod 755:*)",
+      "Bash(git push origin:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(echo:*)",
+      "Bash(pwd:*)"
     ],
     "deny": [
       "Bash(rm -rf:*)",
