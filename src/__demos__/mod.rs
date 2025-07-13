@@ -15,6 +15,5 @@ pub mod demo_inline_picker;
 pub mod demo_menu_bar_interaction;
 pub mod demo_menu_interaction;
 pub mod demo_mobile_stack;
-pub mod demo_slider_point;
 
 pub mod leptos_struct_table;

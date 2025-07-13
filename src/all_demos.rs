@@ -14,7 +14,6 @@ use crate::__demos__::demo_inline_picker::DemoInlinePicker;
 use crate::__demos__::demo_menu_bar_interaction::DemoMenuBarInteraction;
 use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
-use crate::__demos__::demo_slider_point::DemoSliderPoint;
 use crate::__demos__::leptos_struct_table::editable::DemoLeptosStructTable_Editable;
 use crate::__demos__::leptos_struct_table::selectable::DemoLeptosStructTable_Selectable;
 use crate::__demos__::leptos_struct_table::simple::DemoLeptosStructTable_Simple;
@@ -70,10 +69,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Menu Bar Interaction",
         render_fn: || view! { <DemoMenuBarInteraction /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Slider Point",
-        render_fn: || view! { <DemoSliderPoint /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Button Multi State",
