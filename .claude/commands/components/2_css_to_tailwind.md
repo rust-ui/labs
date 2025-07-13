@@ -52,6 +52,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Background**: `bg-transparent`, `bg-opacity-50`, etc.
 - **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, `rounded-[1.2rem]`, etc.
 - **Overflow**: `overflow-hidden`, `overflow-visible`, `overflow-scroll`, etc.
+- **Transform**: `scale-95`, `scale-100`, `scale-105`, `scale-110`, etc.
 
 
 

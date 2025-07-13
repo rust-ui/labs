@@ -78,23 +78,23 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                     <div class="glass__specular absolute inset-0 z-20 overflow-hidden"></div>
                     <div class="glass__content items-center gap-5 relative z-30 flex px-6 pt-4 pb-4">
                         <a href="#" class="inline-block relative p-px">
-                            <img src="https://assets.codepen.io/923404/finder.png" alt="Finder" class="block w-[75px]" />
+                            <img src="https://assets.codepen.io/923404/finder.png" alt="Finder" class="block w-[75px] hover:scale-95" />
                         </a>
                         <a href="#" class="inline-block relative p-px">
-                            <img src="https://assets.codepen.io/923404/map.png" alt="Maps" class="block w-[75px]" />
+                            <img src="https://assets.codepen.io/923404/map.png" alt="Maps" class="block w-[75px] hover:scale-95" />
                         </a>
                         <a href="#" class="inline-block relative p-px">
                             <img
                                 src="https://assets.codepen.io/923404/messages.png"
                                 alt="Messages"
-                                class="block w-[75px]"
+                                class="block w-[75px] hover:scale-95"
                             />
                         </a>
                         <a href="#" class="inline-block relative p-px">
-                            <img src="https://assets.codepen.io/923404/safari.png" alt="Safari" class="block w-[75px]" />
+                            <img src="https://assets.codepen.io/923404/safari.png" alt="Safari" class="block w-[75px] hover:scale-95" />
                         </a>
                         <a href="#" class="inline-block relative p-px">
-                            <img src="https://assets.codepen.io/923404/books.png" alt="Books" class="block w-[75px]" />
+                            <img src="https://assets.codepen.io/923404/books.png" alt="Books" class="block w-[75px] hover:scale-95" />
                         </a>
                     </div>
 

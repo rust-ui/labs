@@ -60,6 +60,3 @@
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }
 
-.glass__content a img:hover {
-  transform: scale(0.95);
-}
