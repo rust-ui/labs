@@ -7,7 +7,8 @@
 
 ## Shortcuts 
 
-`Cmd` + `Option` + `K` = Add lines to Terminal.
+- `Cmd` + `Option` + `K` = Add lines to Terminal.
+- `claude --dangerously-skip-permissions`
 
 
 
