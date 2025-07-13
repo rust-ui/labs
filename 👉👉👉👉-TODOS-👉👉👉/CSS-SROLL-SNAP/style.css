@@ -1,7 +1,3 @@
-:root {
-    --color-fg: #2563eb;
-    --color-bg: #bfdbfe;
-  }
   
   * {
     box-sizing: border-box;
@@ -22,7 +18,7 @@
     max-width: 100%;
     overflow-x: auto;
     overscroll-behavior-x: contain;
-    scrollbar-color: var(--color-fg) var(--color-bg);
+    scrollbar-color: #2563eb #bfdbfe;
   }
   
   .wrapper {
@@ -63,7 +59,7 @@
       font-size: 2rem;
       font-weight: 600;
       color: white;
-      background-color: var(--color-fg);
+      background-color: #2563eb;
       border-radius: 0.5rem;
     }
   }
