@@ -31,8 +31,11 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Text align**: `text-center`, `text-left`, `text-right`, etc.
 
 ### Layout
-- **Display**: `flex`, `grid`, `block`, `inline-block`, etc.
+- **Display**: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `hidden`, etc.
 - **Flexbox**: `justify-center`, `justify-between`, `items-center`, etc.
+- **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
+- **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
+- **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
 
 ### Sizing
 - **Width**: `w-full`, `w-1/2`, `w-64`, `w-96`, etc.
