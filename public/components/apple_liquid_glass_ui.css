@@ -1,135 +1,127 @@
-:root {
-    --lg-bg-color: rgba(255, 255, 255, 0.25);
-    --lg-highlight: rgba(255, 255, 255, 0.75);
-    --lg-text: #ffffff;
-    --lg-hover-glow: rgba(255, 255, 255, 0.4);
-    --lg-red: #fb4268;
-    --lg-grey: #5b5b5b;
+/* Step 1 ✔️ */
+
+/* ========== BASE LAYOUT ========== */
+.mainDiv {
+  min-height: calc(100vh - 4rem);
+  font-family: sans-serif;
+  background: url("https://images.unsplash.com/photo-1551384963-cccb0b7ed94b?q=80&w=3247&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    center/cover;
+  animation: bg-move 5s ease-in-out infinite alternate;
+}
+
+@keyframes bg-move {
+  from {
+    background-position: center center;
   }
-  
-  /* ========== BASE LAYOUT ========== */
-  .mainDiv {
-    min-height: calc(100vh - 4rem);
-    font-family: sans-serif;
-    background: url("https://images.unsplash.com/photo-1551384963-cccb0b7ed94b?q=80&w=3247&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-      center/cover;
-    animation: bg-move 5s ease-in-out infinite alternate;
+  to {
+    background-position: center top;
   }
-  
-  @keyframes bg-move {
-    from {
-      background-position: center center;
-    }
-    to {
-      background-position: center top;
-    }
-  }
-  
-  /* ========== CONTAINER ========== */
-  .container {
-  }
-  
-  .container__inline {
-  }
-  
-  /* ========== GLASS CONTAINER ========== */
-  .glass-container {
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-  }
-  
-  .glass_container__rounded {
-    fill: var(--lg-grey);
-  }
-  
-  .glass-container--small {
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-  }
-  
-  .glass_container__large {
-    }
-  
-  .glass-container--medium {
-    }
-  
-  .glass-container svg {
-    fill: white;
-  }
-  
-  /* ========== GLASS ITEM ========== */
-  .glass-item {
-    transition: color 0.3s ease;
-  }
-  
-  .glass-item svg {
-  }
-  
-  .glass-item--active {
-    background: rgba(0, 0, 0, 0.25);
-  }
-  
-  .glass-item--active svg {
-  }
-  
-  .player {
-  }
-  
-  .player__thumb {
-  }
-  
-  .player__img {
-  }
-  
-  .player__legend {
-  }
-  
-  .player__legend__title {
-  }
-  
-  .player__legend__sub-title {
-  }
-  
-  .player__controls {
-  }
-  
-  .player__controls__play {
-  }
-  
-  .player__controls__ff {
-  }
-  
-  /* ========== GLASS LAYERS ========== */
-  .glass__filter {
-    backdrop-filter: blur(0px);
-    filter: url(#lg-dist);
-    isolation: isolate;
-  }
-  
-  .glass__overlay {
-    background: var(--lg-bg-color);
-  }
-  
-  .glass__specular {
-    border-radius: inherit;
-    box-shadow: inset 1px 1px 0 var(--lg-highlight),
-      inset 0 0 5px var(--lg-highlight);
-  }
-  
-  .glass__content {
-  }
-  
-  .glass__content__inline {
-  }
-  
-  /* ========== ICONS AND IMAGES ========== */
-  .glass__content a {
-  }
-  
-  .glass__content a img {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
-  }
-  
-  .glass__content a img:hover {
-    transform: scale(0.95);
-  }
-  
+}
+
+/* ========== CONTAINER ========== */
+.container {
+}
+
+.container__inline {
+}
+
+/* ========== GLASS CONTAINER ========== */
+.glass-container {
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.glass_container__rounded {
+  fill: #5b5b5b;
+}
+
+.glass-container--small {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.glass_container__large {
+}
+
+.glass-container--medium {
+}
+
+.glass-container svg {
+  fill: white;
+}
+
+/* ========== GLASS ITEM ========== */
+.glass-item {
+  transition: color 0.3s ease;
+}
+
+.glass-item svg {
+}
+
+.glass-item--active {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.glass-item--active svg {
+}
+
+.player {
+}
+
+.player__thumb {
+}
+
+.player__img {
+}
+
+.player__legend {
+}
+
+.player__legend__title {
+}
+
+.player__legend__sub-title {
+}
+
+.player__controls {
+}
+
+.player__controls__play {
+}
+
+.player__controls__ff {
+}
+
+/* ========== GLASS LAYERS ========== */
+.glass__filter {
+  backdrop-filter: blur(0px);
+  filter: url(#lg-dist);
+  isolation: isolate;
+}
+
+.glass__overlay {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.glass__specular {
+  border-radius: inherit;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 0 5px rgba(255, 255, 255, 0.75);
+}
+
+.glass__content {
+}
+
+.glass__content__inline {
+}
+
+/* ========== ICONS AND IMAGES ========== */
+.glass__content a {
+}
+
+.glass__content a img {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.glass__content a img:hover {
+  transform: scale(0.95);
+}
