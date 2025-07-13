@@ -8,8 +8,8 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
     view! {
         <Stylesheet href="/components/apple_liquid_glass_ui.css" />
 
-        <div class="mainDiv">
-            <div class="container container__inline">
+        <div class="mainDiv m-0 py-8 flex flex-col items-center justify-center">
+            <div class="container container__inline flex flex-col items-center justify-center flex-row">
                 <div class="glass-container glass_container__rounded glass_container__large">
                     <div class="glass__filter"></div>
                     <div class="glass__overlay"></div>
@@ -23,8 +23,8 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                                     alt="All Of Me"
                                 />
                                 <div class="player__legend">
-                                    <h3 class="player__legend__title">All Of Me</h3>
-                                    <span class="player__legend__sub-title">Nao</span>
+                                    <h3 class="player__legend__title text-base m-0">All Of Me</h3>
+                                    <span class="player__legend__sub-title text-base m-0">Nao</span>
                                 </div>
                             </div>
                             <div class="player__controls">
@@ -56,13 +56,13 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                 </div>
             </div>
 
-            <div class="container container__inline">
+            <div class="container container__inline flex flex-col items-center justify-center flex-row">
                 <div class="glass-container glass_container__rounded">
                     <div class="glass__filter"></div>
                     <div class="glass__overlay"></div>
                     <div class="glass__specular"></div>
                     <div class="glass__content glass__content__alone">
-                        <div class="glass-item">
+                        <div class="glass-item text-center">
                             <svg viewBox="0 0 512 512" width="40" title="search">
                                 <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
                             </svg>
@@ -71,7 +71,7 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container flex flex-col items-center justify-center">
                 <div class="glass-container">
                     <div class="glass__filter"></div>
                     <div class="glass__overlay"></div>

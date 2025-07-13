@@ -9,13 +9,7 @@
   
   /* ========== BASE LAYOUT ========== */
   .mainDiv {
-    margin: 0;
-    padding: 2rem 0;
     min-height: calc(100vh - 4rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-family: sans-serif;
     background: url("https://images.unsplash.com/photo-1551384963-cccb0b7ed94b?q=80&w=3247&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
       center/cover;
@@ -33,14 +27,9 @@
   
   /* ========== CONTAINER ========== */
   .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   
   .container__inline {
-    flex-direction: row;
   }
   
   /* ========== GLASS CONTAINER ========== */
@@ -90,7 +79,6 @@
     border-radius: 1rem;
     color: white;
     transition: color 0.3s ease;
-    text-align: center;
   }
   
   .glass-item svg {
@@ -141,13 +129,9 @@
   }
   
   .player__legend__title {
-    font-size: 1rem;
-    margin: 0;
   }
   
   .player__legend__sub-title {
-    font-size: 1rem;
-    margin: 0;
     opacity: 0.45;
   }
   
