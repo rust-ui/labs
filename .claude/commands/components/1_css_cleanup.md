@@ -43,3 +43,13 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */`
 
 
+### Step 4: Replace Generic CSS Class Names (COMMIT AFTER COMPLETION)
+1. Identify generic class names like `.wrapper`, `.container`, `.item` that lack descriptive context
+2. Replace with more descriptive names following the `__` convention (e.g., `.wrapper` → `.scroll__snap__container`)
+3. Update both CSS selectors and HTML class references consistently
+4. Update the CSS class usage report to reflect the new class names
+5. Ensure new names clearly describe the component's purpose and functionality
+
+Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */`
+
+

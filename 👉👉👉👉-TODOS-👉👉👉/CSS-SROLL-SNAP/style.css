@@ -5,7 +5,7 @@
 
 .mainDiv          → 1 time
 .scroll__x        → 1 time
-.wrapper          → 1 time
+.scroll__snap__container → 1 time
 .items            → 1 time
 
 */
@@ -25,7 +25,7 @@
   scrollbar-color: #2563eb #bfdbfe;
 }
 
-.wrapper {
+.scroll__snap__container {
   scroll-snap-type: x mandatory;
   display: grid;
   padding-block: 2rem;
