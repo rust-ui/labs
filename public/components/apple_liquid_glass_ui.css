@@ -1,4 +1,4 @@
-/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
 /*
 ====== CSS CLASS USAGE REPORT ======
@@ -43,13 +43,6 @@
   }
 }
 
-/* ========== LIQUID GLASS CONTAINER ========== */
-.liquid__glass__container {
-}
-
-.liquid__glass__container__inline {
-}
-
 /* ========== GLASS CONTAINER ========== */
 .glass__container {
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
@@ -60,16 +53,6 @@
   fill: #5b5b5b;
 }
 
-.glass__container__small {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-}
-
-.glass_container__large {
-}
-
-.glass__container__medium {
-}
-
 .glass__container svg {
   fill: white;
 }
@@ -77,43 +60,6 @@
 /* ========== GLASS ITEM ========== */
 .glass__item {
   transition: color 0.3s ease;
-}
-
-.glass__item svg {
-}
-
-.glass__item__active {
-  background: rgba(0, 0, 0, 0.25);
-}
-
-.glass__item__active svg {
-}
-
-.player {
-}
-
-.player__thumb {
-}
-
-.player__img {
-}
-
-.player__legend {
-}
-
-.player__legend__title {
-}
-
-.player__legend__sub-title {
-}
-
-.player__controls {
-}
-
-.player__controls__play {
-}
-
-.player__controls__ff {
 }
 
 /* ========== GLASS LAYERS ========== */
@@ -133,16 +79,7 @@
     inset 0 0 5px rgba(255, 255, 255, 0.75);
 }
 
-.glass__content {
-}
-
-.glass__content__inline {
-}
-
 /* ========== ICONS AND IMAGES ========== */
-.glass__content a {
-}
-
 .glass__content a img {
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
 }

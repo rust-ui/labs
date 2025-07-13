@@ -7,6 +7,8 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 1. **Find files**: Locate `.css` file and its ajacent `.html` file (OR `rs` file if it's on `src/`)
 2. **Identify convertible classes**: Only convert CSS classes that match the patterns listed below
 3. **Clean up CSS**: Remove the converted CSS rules from `.css` files
+4. **Remove unused classes**: Remove any empty or unused CSS classes that have no content or are not referenced
+5. **Update usage reports**: If a CSS class usage report exists, update it to reflect the changes
 
 
 ## Convertible CSS Patterns
