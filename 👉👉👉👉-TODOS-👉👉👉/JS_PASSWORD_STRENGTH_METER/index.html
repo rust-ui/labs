@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- GSAP (uncomment if needed) -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+</head>
+<body>
+
+
+
+
+  <div class="password-strength-container">
+    <div class="password-input-group">
+        <input
+            type="password"
+            class="password-input"
+            id="password"
+            placeholder="Enter password"
+        />
+        <button type="button" class="password-toggle" id="toggle-password">
+            <i class="fas fa-eye"></i>
+        </button>
+    </div>
+
+    <div class="strength-meter">
+        <div class="strength-meter-fill" id="strength-fill"></div>
+    </div>
+
+    <div class="strength-text" id="strength-text">
+        Enter a password
+    </div>
+
+    <div class="strength-requirements">
+        <div class="requirement" id="length">
+            <i class="fas fa-times-circle"></i>
+            At least 8 characters
+        </div>
+        <div class="requirement" id="uppercase">
+            <i class="fas fa-times-circle"></i>
+            At least 1 uppercase letter
+        </div>
+        <div class="requirement" id="lowercase">
+            <i class="fas fa-times-circle"></i>
+            At least 1 lowercase letter
+        </div>
+        <div class="requirement" id="number">
+            <i class="fas fa-times-circle"></i>
+            At least 1 number
+        </div>
+        <div class="requirement" id="special">
+            <i class="fas fa-times-circle"></i>
+            At least 1 special character
+        </div>
+    </div>
+</div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

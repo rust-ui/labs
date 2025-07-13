@@ -17,7 +17,6 @@ use crate::__demos__::demo_menu_bar_interaction::DemoMenuBarInteraction;
 use crate::__demos__::demo_menu_grid_transition::DemoMenuGridTransition;
 use crate::__demos__::demo_menu_interaction::DemoMenuInteraction;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
-use crate::__demos__::demo_password_strength_meter::DemoPasswordStrengthMeter;
 use crate::__demos__::demo_slider_point::DemoSliderPoint;
 use crate::__demos__::leptos_struct_table::editable::DemoLeptosStructTable_Editable;
 use crate::__demos__::leptos_struct_table::selectable::DemoLeptosStructTable_Selectable;
@@ -38,10 +37,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Password Strength Meter",
-        render_fn: || view! { <DemoPasswordStrengthMeter /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Gsap Dynamic Cursor",

@@ -18,7 +18,6 @@ pub mod demo_menu_bar_interaction;
 pub mod demo_menu_grid_transition;
 pub mod demo_menu_interaction;
 pub mod demo_mobile_stack;
-pub mod demo_password_strength_meter;
 pub mod demo_slider_point;
 
 pub mod leptos_struct_table;
