@@ -62,6 +62,17 @@ Example:
 }
 ```
 
+### CSS to Tailwind Conversion
+
+See `.claude/commands/CSS`.
+
+```mermaid
+flowchart LR
+    A[CSS file] --> B[Find matching classes]
+    B --> C[Replace in .rs file]
+    C --> D[Delete old CSS]
+```
+
 
 
 ## JS
