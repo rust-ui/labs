@@ -36,3 +36,12 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */`
 
 
+### Step 4: Remove CSS Layers (COMMIT AFTER COMPLETION)
+1. Remove all `@layer` declarations and their wrapper blocks
+2. Keep the CSS rules but flatten them to the root level
+3. Maintain proper indentation and structure
+4. Ensure all CSS functionality remains intact
+
+Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */`
+
+
