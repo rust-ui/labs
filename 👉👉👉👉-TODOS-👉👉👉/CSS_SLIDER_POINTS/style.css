@@ -1,28 +1,13 @@
 /* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
-.mainDiv {
-  min-height: 100vh;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background: #222;
+
+.slider__point {
+  transition: width .4s linear;
 }
 
-.slider__points__container {
-  display: flex;
-  gap: 10px;
+.slider__point input {
+  display: none;
+}
 
-  .slider__point {
-    background: #ccc;
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
-    transition: width .4s linear;
-  }
-
-  .slider__point input {
-    display: none;
-  }
-  .slider__point:has(:checked) {
-    width: 200px;
-  }
+.slider__point:has(:checked) {
+  width: 200px;
 }
