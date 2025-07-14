@@ -5,6 +5,8 @@ use wasm_bindgen::JsCast;
 // TODO. The Autoplay effect should be optional.
 // TODO. If Autoplay is enabled, display an elapsed timer.
 
+const TIMER_INTERVAL: i32 = 4000;
+
 #[component]
 pub fn DemoCarousel() -> impl IntoView {
     let images = RwSignal::new(vec![
@@ -16,8 +18,6 @@ pub fn DemoCarousel() -> impl IntoView {
     let index = RwSignal::new(0);
 
     let next = {
-        let index = index.clone();
-        let images = images.clone();
         move |_| {
             let len = images.get().len();
             index.update(|i| *i = (*i + 1) % len);
@@ -25,8 +25,6 @@ pub fn DemoCarousel() -> impl IntoView {
     };
 
     let prev = {
-        let index = index.clone();
-        let images = images.clone();
         move |_| {
             let len = images.get().len();
             index.update(|i| {
@@ -41,8 +39,6 @@ pub fn DemoCarousel() -> impl IntoView {
 
     // Autoplay effect: every 4s update index
     Effect::new({
-        let index = index.clone();
-        let images = images.clone();
         move |_| {
             let window = window();
             let closure = Closure::wrap(Box::new(move || {
@@ -54,7 +50,7 @@ pub fn DemoCarousel() -> impl IntoView {
             window
                 .set_interval_with_callback_and_timeout_and_arguments_0(
                     closure.as_ref().unchecked_ref(),
-                    4000,
+                    TIMER_INTERVAL,
                 )
                 .expect("interval should be set");
 
