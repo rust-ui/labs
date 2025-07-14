@@ -1,6 +1,9 @@
 use leptos::prelude::*;
-use wasm_bindgen::JsCast;
 use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsCast;
+
+// TODO. The Autoplay effect should be optional.
+// TODO. If Autoplay is enabled, display an elapsed timer.
 
 #[component]
 pub fn DemoCarousel() -> impl IntoView {
@@ -60,8 +63,8 @@ pub fn DemoCarousel() -> impl IntoView {
     });
 
     view! {
-        <div class="relative max-w-xl mx-auto">
-            <div class="overflow-hidden rounded-lg h-96">
+        <div class="relative mx-auto max-w-xl">
+            <div class="overflow-hidden h-96 rounded-lg">
                 <img
                     class="object-cover w-full h-full transition-all duration-700 ease-in-out"
                     src=move || images.get()[index.get()]
@@ -70,25 +73,35 @@ pub fn DemoCarousel() -> impl IntoView {
             </div>
 
             // Prev button
-            <div class="absolute inset-y-0 left-0 flex items-center pl-4">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-4">
                 <button
                     on:click=prev
                     class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 19l-7-7 7-7"
+                        />
                     </svg>
                 </button>
             </div>
 
             // Next button
-            <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+            <div class="flex absolute inset-y-0 right-0 items-center pr-4">
                 <button
                     on:click=next
                     class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none"
                 >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                        />
                     </svg>
                 </button>
             </div>
