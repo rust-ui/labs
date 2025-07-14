@@ -8,6 +8,7 @@ use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
+use crate::__demos__::demo_bento3_transition::DemoBento3Transition;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -52,4 +53,8 @@ pub const ALL_DEMOS: &[DemoItem] = &[
         name: "👉 TODO: Mobile Stack",
         render_fn: || view! { <DemoMobileStack /> }.into_any(),
     },
+    DemoItem {
+        name: "👉 Bento3 Transition",
+        render_fn: || view! { <DemoBento3Transition /> }.into_any(),
+    }, 
 ];

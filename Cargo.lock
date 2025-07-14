@@ -1982,6 +1982,7 @@ dependencies = [
  "leptos_router",
  "leptos_ui",
  "log",
+ "styles",
  "thiserror 2.0.12",
  "tokio",
  "tower",
@@ -2261,6 +2262,12 @@ name = "strsim"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
+
+[[package]]
+name = "styles"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d5ff4efed0378547cc8460ae98e21c49595e250b6d7f34bcd8d1f81cd8919af2"
 
 [[package]]
 name = "syn"
