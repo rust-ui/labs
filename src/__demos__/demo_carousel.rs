@@ -1,71 +1,94 @@
 use leptos::prelude::*;
+use wasm_bindgen::JsCast;
+use wasm_bindgen::prelude::*;
 
 #[component]
 pub fn DemoCarousel() -> impl IntoView {
+    let images = RwSignal::new(vec![
+        "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=1469&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584395630827-860eee694d7b?q=80&w=1469&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1469&auto=format&fit=crop",
+    ]);
+
+    let index = RwSignal::new(0);
+
+    let next = {
+        let index = index.clone();
+        let images = images.clone();
+        move |_| {
+            let len = images.get().len();
+            index.update(|i| *i = (*i + 1) % len);
+        }
+    };
+
+    let prev = {
+        let index = index.clone();
+        let images = images.clone();
+        move |_| {
+            let len = images.get().len();
+            index.update(|i| {
+                if *i == 0 {
+                    *i = len - 1;
+                } else {
+                    *i -= 1;
+                }
+            });
+        }
+    };
+
+    // Autoplay effect: every 4s update index
+    Effect::new({
+        let index = index.clone();
+        let images = images.clone();
+        move |_| {
+            let window = window();
+            let closure = Closure::wrap(Box::new(move || {
+                let len = images.get().len();
+                index.update(|i| *i = (*i + 1) % len);
+            }) as Box<dyn FnMut()>);
+
+            // Set interval every 4 seconds
+            window
+                .set_interval_with_callback_and_timeout_and_arguments_0(
+                    closure.as_ref().unchecked_ref(),
+                    4000,
+                )
+                .expect("interval should be set");
+
+            closure.forget(); // prevent dropping
+        }
+    });
+
     view! {
-        // * https://tailwindflex.com/@nikolai-petrovich/image-carousel-2
-        <script src="/components/carousel.js" />
-
-        <div class="relative">
-            <div class="flex max-w-xl carousel">
-
-                <div class="carousel-item">
-                    <img
-                        src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Carousel Image 1"
-                        class="object-cover w-full h-96"
-                    />
-                </div>
-                <div class="carousel-item">
-                    <img
-                        src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Carousel Image 2"
-                        class="object-cover w-full h-96"
-                    />
-                </div>
-                <div class="carousel-item">
-                    <img
-                        src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Carousel Image 3"
-                        class="object-cover w-full h-96"
-                    />
-                </div>
+        <div class="relative max-w-xl mx-auto">
+            <div class="overflow-hidden rounded-lg h-96">
+                <img
+                    class="object-cover w-full h-full transition-all duration-700 ease-in-out"
+                    src=move || images.get()[index.get()]
+                    alt="Carousel image"
+                />
             </div>
 
-            // CAROUSEL CONTROLS
-            <div class="flex absolute inset-y-0 left-0 justify-start items-center pl-4">
-                <button class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none carousel-control-prev">
-                    <svg
-                        class="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M15 19l-7-7 7-7"
-                        ></path>
+            // Prev button
+            <div class="absolute inset-y-0 left-0 flex items-center pl-4">
+                <button
+                    on:click=prev
+                    class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
             </div>
-            <div class="flex absolute inset-y-0 right-0 justify-end items-center pr-4">
-                <button class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none carousel-control-next">
-                    <svg
-                        class="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"
-                        ></path>
+
+            // Next button
+            <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+                <button
+                    on:click=next
+                    class="p-2 text-white bg-gray-800 rounded-full hover:bg-gray-700 focus:outline-none"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
             </div>
