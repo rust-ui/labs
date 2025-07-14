@@ -70,3 +70,19 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
   - Example: `font-size: 1.125rem` → `text-[1.125rem]`
 - **Create separate commits**: If hardcoded values are converted to arbitrary value syntax, make a dedicated commit specifically for those conversions:
   - `refactor: convert [component_name] hardcoded values to Tailwind arbitrary syntax.`
+
+
+
+## Completion (Change Directory name by prepending `2. `)
+
+When the CSS to Tailwind conversion is completed, make a separate commit with the message:
+```
+feat: Complete CSS to Tailwind conversion ✔️
+
+All convertible CSS properties have been successfully migrated to Tailwind utilities.
+Component is now using Tailwind for styling with minimal custom CSS remaining.
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
