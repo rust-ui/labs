@@ -88,4 +88,15 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  
+  /* https://tailwindcss.com/docs/upgrade-guide#dialog-margins-removed */
+  dialog {
+    margin: auto;
+  }
 }
