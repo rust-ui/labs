@@ -75,14 +75,8 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 
 ## Completion (Change Directory name by prepending `✔️ `)
 
-When the CSS to Tailwind conversion is completed, make a separate commit with the message:
-```
-feat: Complete CSS to Tailwind conversion ✔️
+When the CSS to Tailwind conversion is completed, you need to :
 
-All convertible CSS properties have been successfully migrated to Tailwind utilities.
-Component is now using Tailwind for styling with minimal custom CSS remaining.
+1. Change the name of the parent directory to preppend it with `✔️ `
+2. Do a separate commit 🤖 feat: Complete CSS to Tailwind conversion ✔️
 
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
