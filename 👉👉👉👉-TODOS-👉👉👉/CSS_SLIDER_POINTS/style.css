@@ -1,3 +1,4 @@
+/* Step 1 ✔️ */
 .mainDiv {
   min-height: 100vh;
   display:flex;
@@ -7,19 +8,14 @@
 }
 
 .points {
-  /* to change appearance use the custom props */
-  --std-dim: 40px;
-  --active-dim: 200px;
-  --color-point: #ccc;
-  
   display: flex;
-  gap: calc(var( --std-dim ) / 4 );
+  gap: 10px;
 
   .point {
-    background: var(--color-point);
-    height: var(--std-dim);
-    width:  var(--std-dim);
-    border-radius: calc( var( --std-dim ) / 2 );
+    background: #ccc;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
     transition: width .4s linear;
   }
 
@@ -27,6 +23,6 @@
     display: none;
   }
   .point:has(:checked) {
-    width: var(--active-dim);
+    width: 200px;
   }
 }
