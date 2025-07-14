@@ -73,7 +73,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 
 
 
-## Completion (Change Directory name by prepending `2. `)
+## Completion (Change Directory name by prepending `✔️ `)
 
 When the CSS to Tailwind conversion is completed, make a separate commit with the message:
 ```
