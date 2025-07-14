@@ -1,4 +1,4 @@
-/* Step 1 ✔️ Step 2 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 .mainDiv {
   min-height: 100vh;
   display:flex;
@@ -7,11 +7,11 @@
   background: #222;
 }
 
-.points {
+.slider__points__container {
   display: flex;
   gap: 10px;
 
-  .point {
+  .slider__point {
     background: #ccc;
     height: 40px;
     width: 40px;
@@ -19,10 +19,10 @@
     transition: width .4s linear;
   }
 
-  .point input {
+  .slider__point input {
     display: none;
   }
-  .point:has(:checked) {
+  .slider__point:has(:checked) {
     width: 200px;
   }
 }
