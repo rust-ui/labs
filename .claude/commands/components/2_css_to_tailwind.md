@@ -81,3 +81,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
   - Example: `color: #9e9e9e` → `text-[#9e9e9e]` (in HTML)
   - Example: `background-color: #f8f9fa` → `bg-[#f8f9fa]` (in HTML)
   - Example: `border-color: #dee2e6` → `border-[#dee2e6]` (in HTML)
+- **Convert percentage values**: When CSS uses percentage values that don't match standard Tailwind utilities, convert them to Tailwind arbitrary value syntax:
+  - Example: `width: 140%` → `w-[140%]` (in HTML)
+  - Example: `left: -20%` → `left-[-20%]` (in HTML)
+  - Example: `margin-top: 25%` → `mt-[25%]` (in HTML)
