@@ -87,3 +87,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
   - Example: `width: 140%` → `w-[140%]` (in HTML)
   - Example: `left: -20%` → `left-[-20%]` (in HTML)
   - Example: `margin-top: 25%` → `mt-[25%]` (in HTML)
+- **Convert border properties**: When CSS uses border properties with custom values, convert them to Tailwind arbitrary value syntax:
+  - Example: `border-top: .035em solid #007bff; border-left: .035em solid #007bff;` → `border-t-[.035em] border-l-[.035em] border-solid border-[#007bff]` (in HTML)
+  - Example: `border: 2px dashed #ff0000` → `border-[2px] border-dashed border-[#ff0000]` (in HTML)
+  - Example: `border-radius: 1.5rem` → `rounded-[1.5rem]` (in HTML)

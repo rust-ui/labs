@@ -6,11 +6,6 @@
 }
 
 
-.looping-words__edge {
-  border-top: .035em solid #007bff;
-  border-left: .035em solid #007bff;
-}
-
 .looping-words__edge.is__3 {
   inset: auto 0 0 auto;
 }
