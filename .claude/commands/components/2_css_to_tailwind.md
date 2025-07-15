@@ -70,3 +70,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
   - Example: `font-size: 1.125rem` → `text-[1.125rem]`
 - **Create separate commits**: If hardcoded values are converted to arbitrary value syntax, make a dedicated commit specifically for those conversions:
   - `refactor: convert [component_name] hardcoded values to Tailwind arbitrary syntax.`
+- **Convert em/rem units**: When CSS uses em or rem units, convert them to Tailwind arbitrary value syntax to preserve the exact measurements:
+  - Example: `padding-left: .1em; padding-right: .1em;` → `px-[.1em]`
+  - Example: `height: 2.7em` → `h-[2.7em]`
+  - Example: `font-size: 1.2rem` → `text-[1.2rem]`
