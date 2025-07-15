@@ -1,127 +1,113 @@
+/* Step 2 ✔️ */
 
+.mainDiv {
+  background-color: #f5f5f5;
+  color: #333333;
+  font-size: 16px;
+}
 
-:root {
-    /* Define your color variables */
-    --color-primary: #007bff;        /* Example blue color */
-    --color-dark: #333333;           /* Example dark color */
-    --color-neutral-300: #f5f5f5;    /* Example light gray */
-    --color-neutral-400: #e0e0e0;    /* Example medium gray */
-    --color-neutral-500: #9e9e9e;    /* Example darker gray */
-    
-    /* Other variables used in your CSS */
-    --size-font: 16px;
-    --container-padding: 1rem;
-  }
-  
-  .mainDiv {
-    background-color: var(--color-neutral-300);
-    color: var(--color-dark);
-    font-size: var(--size-font);
-  }
-  
-  .cloneable {
-    padding: var(--container-padding);
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    display: flex;
-    position: relative;
-  }
-  
-  .looping-words {
-    height: 2.7em;
-    padding-left: .1em;
-    padding-right: .1em;
-    font-size: 11vw;
-    line-height: .9;
-    position: relative;
-  }
-  
-  .looping-words__list {
-    text-align: center;
-    text-transform: uppercase;
-    white-space: nowrap;
-    flex-flow: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-family: PP Neue Corp, sans-serif;
-    font-weight: 700;
-    list-style: none;
-    display: flex;
-    position: relative;
-  }
-  
-  .looping-words__list.is--primary {
-    color: var(--color-primary);
-  }
-  
-  .looping-words__list.is--gray {
-    color: var(--color-neutral-500);
-  }
-  
-  .looping-words__fade {
-    background-image: linear-gradient(180deg, var(--color-neutral-300) 5%, transparent 40%, transparent 60%, var(--color-neutral-300) 95%);
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .looping-words__fade.is--radial {
-    background-image: radial-gradient(circle closest-side at 50% 50%, transparent 64%, var(--color-neutral-400) 93%);
-    width: 140%;
-    display: block;
-    left: -20%;
-  }
-  
-  .looping-words__selector {
-    pointer-events: none;
-    width: 100%;
-    height: .9em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .looping-words__edge {
-    border-top: .035em solid var(--color-primary);
-    border-left: .035em solid var(--color-primary);
-    width: .125em;
-    height: .125em;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .looping-words__edge.is--2 {
-    left: auto;
-    right: 0;
-    transform: rotate(90deg);
-  }
-  
-  .looping-words__edge.is--3 {
-    inset: auto 0 0 auto;
-    transform: rotate(180deg);
-  }
-  
-  .looping-words__edge.is--4 {
-    top: auto;
-    bottom: 0;
-    transform: rotate(270deg);
-  }
-  
-  .looping-words__containers {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .looping-words__p {
-    margin: 0;
-  }
-  
+.cloneable {
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.looping-words {
+  height: 2.7em;
+  padding-left: .1em;
+  padding-right: .1em;
+  font-size: 11vw;
+  line-height: .9;
+  position: relative;
+}
+
+.looping-words__list {
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-flow: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: PP Neue Corp, sans-serif;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.looping-words__list.is--primary {
+  color: #007bff;
+}
+
+.looping-words__list.is--gray {
+  color: #9e9e9e;
+}
+
+.looping-words__fade {
+  background-image: linear-gradient(180deg, #f5f5f5 5%, transparent 40%, transparent 60%, #f5f5f5 95%);
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.looping-words__fade.is--radial {
+  background-image: radial-gradient(circle closest-side at 50% 50%, transparent 64%, #e0e0e0 93%);
+  width: 140%;
+  display: block;
+  left: -20%;
+}
+
+.looping-words__selector {
+  pointer-events: none;
+  width: 100%;
+  height: .9em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.looping-words__edge {
+  border-top: .035em solid #007bff;
+  border-left: .035em solid #007bff;
+  width: .125em;
+  height: .125em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.looping-words__edge.is--2 {
+  left: auto;
+  right: 0;
+  transform: rotate(90deg);
+}
+
+.looping-words__edge.is--3 {
+  inset: auto 0 0 auto;
+  transform: rotate(180deg);
+}
+
+.looping-words__edge.is--4 {
+  top: auto;
+  bottom: 0;
+  transform: rotate(270deg);
+}
+
+.looping-words__containers {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.looping-words__p {
+  margin: 0;
+}
