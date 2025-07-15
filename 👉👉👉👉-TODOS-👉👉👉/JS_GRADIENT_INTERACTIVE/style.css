@@ -1,18 +1,7 @@
+/* Step 1 ✔️ */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-:root {
-  --color-bg1: rgb(8, 10, 15);
-  --color-bg2: rgb(0, 17, 32);
-  --color1: 18, 113, 255;
-  --color2: 107, 74, 255;
-  --color3: 100, 100, 255;
-  --color4: 50, 160, 220;
-  --color5: 80, 47, 122;
-  --color-interactive: 140, 100, 255;
-  --circle-size: 80%;
-  --blending: hard-light;
-}
 
-.mainHtml {
+.mainDiv {
   margin: 0;
   padding: 0;
   outline: none;
@@ -20,21 +9,11 @@
   text-decoration: none;
   box-sizing: border-box;
   color: #FFF;
-  background: transparent;
+  background: #FFF;
   border: none;
-}
-
-.mainDiv {
-  font-family: "Dongle", sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: "Montserrat", sans-serif;
   height: 100%;
   width: 100%;
-}
-
-.mainDiv {
-  background: #FFF;
-  font-family: "Montserrat", sans-serif;
   overflow: hidden;
 }
 
@@ -121,7 +100,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  background: linear-gradient(40deg, rgb(8, 10, 15), rgb(0, 17, 32));
   top: 0;
   left: 0;
 }
@@ -145,68 +124,68 @@
 }
 .gradient-bg .g1 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+  background: radial-gradient(circle at center, rgba(18, 113, 255, 0.8) 0, rgba(18, 113, 255, 0) 50%) no-repeat;
+  mix-blend-mode: hard-light;
+  width: 80%;
+  height: 80%;
+  top: calc(50% - 80% / 2);
+  left: calc(50% - 80% / 2);
   transform-origin: center center;
   animation: moveVertical 30s ease infinite;
   opacity: 1;
 }
 .gradient-bg .g2 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+  background: radial-gradient(circle at center, rgba(107, 74, 255, 0.8) 0, rgba(107, 74, 255, 0) 50%) no-repeat;
+  mix-blend-mode: hard-light;
+  width: 80%;
+  height: 80%;
+  top: calc(50% - 80% / 2);
+  left: calc(50% - 80% / 2);
   transform-origin: calc(50% - 400px);
   animation: moveInCircle 20s reverse infinite;
   opacity: 1;
 }
 .gradient-bg .g3 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2 + 200px);
-  left: calc(50% - var(--circle-size) / 2 - 500px);
+  background: radial-gradient(circle at center, rgba(100, 100, 255, 0.8) 0, rgba(100, 100, 255, 0) 50%) no-repeat;
+  mix-blend-mode: hard-light;
+  width: 80%;
+  height: 80%;
+  top: calc(50% - 80% / 2 + 200px);
+  left: calc(50% - 80% / 2 - 500px);
   transform-origin: calc(50% + 400px);
   animation: moveInCircle 40s linear infinite;
   opacity: 1;
 }
 .gradient-bg .g4 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
-  mix-blend-mode: var(--blending);
-  width: var(--circle-size);
-  height: var(--circle-size);
-  top: calc(50% - var(--circle-size) / 2);
-  left: calc(50% - var(--circle-size) / 2);
+  background: radial-gradient(circle at center, rgba(50, 160, 220, 0.8) 0, rgba(50, 160, 220, 0) 50%) no-repeat;
+  mix-blend-mode: hard-light;
+  width: 80%;
+  height: 80%;
+  top: calc(50% - 80% / 2);
+  left: calc(50% - 80% / 2);
   transform-origin: calc(50% - 200px);
   animation: moveHorizontal 40s ease infinite;
   opacity: 0.7;
 }
 .gradient-bg .g5 {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
-  mix-blend-mode: var(--blending);
-  width: calc(var(--circle-size) * 2);
-  height: calc(var(--circle-size) * 2);
-  top: calc(50% - var(--circle-size));
-  left: calc(50% - var(--circle-size));
+  background: radial-gradient(circle at center, rgba(80, 47, 122, 0.8) 0, rgba(80, 47, 122, 0) 50%) no-repeat;
+  mix-blend-mode: hard-light;
+  width: calc(80% * 2);
+  height: calc(80% * 2);
+  top: calc(50% - 80%);
+  left: calc(50% - 80%);
   transform-origin: calc(50% - 800px) calc(50% + 200px);
   animation: moveInCircle 20s ease infinite;
   opacity: 1;
 }
 .gradient-bg .interactive {
   position: absolute;
-  background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
-  mix-blend-mode: var(--blending);
+  background: radial-gradient(circle at center, rgba(140, 100, 255, 0.8) 0, rgba(140, 100, 255, 0) 50%) no-repeat;
+  mix-blend-mode: hard-light;
   width: 100%;
   height: 100%;
   top: -50%;
