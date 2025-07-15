@@ -10,10 +10,13 @@ Clean CSS classes for the specified files: $ARGUMENTS
 1. Commit your work.
 2. Ask me permission to continue.
 
-### Step 1: Understand the CSS / HTML / (JS)
+### Step 1: Keep JS classes target in memory
 
-Make sure to understand first the files and adjacents (CSS / HTML / possibly JS).
-Keep the context in memory.
+If there is no adjacent JS file, you can skip this part.
+Otherwise, make sure to list all the CSS classes used in the JS file and keep that in memory.
+From that, do a mapping with adjacent HTML and CSS files.
+Keep that in memory.
+This way when you will change CSS classes you are sure not to break JS.
 
 
 ### Step 2: Clean CSS with mainDiv (COMMIT AFTER COMPLETION)
