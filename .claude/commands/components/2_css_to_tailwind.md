@@ -77,3 +77,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 - **Convert unitless line-height**: When CSS uses unitless line-height values, convert them to Tailwind arbitrary value syntax:
   - Example: `line-height: .9` → `leading-[.9]`
   - Example: `line-height: 1.5` → `leading-[1.5]`
+- **Convert hex colors**: When CSS uses hex color values that don't match standard Tailwind colors, convert them to Tailwind arbitrary value syntax:
+  - Example: `color: #9e9e9e` → `text-[#9e9e9e]` (in HTML)
+  - Example: `background-color: #f8f9fa` → `bg-[#f8f9fa]` (in HTML)
+  - Example: `border-color: #dee2e6` → `border-[#dee2e6]` (in HTML)
