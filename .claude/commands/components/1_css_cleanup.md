@@ -17,9 +17,10 @@ Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 
 
 ### Step 2: Replace hyphenated CSS classes (COMMIT AFTER COMPLETION)
-1. Replace hyphenated CSS classes with double underscores (e.g., `elg-table-wrap` → `elg__table__wrap`)
-2. Update both CSS selectors and HTML class references
-3. Verify all references are updated consistently
+1. Look at the adjacent .js (if any) and make sure not to brake JS by changing CSS class names.
+2. Replace hyphenated CSS classes with double underscores (e.g., `elg-table-wrap` → `elg__table__wrap`)
+3. Update both CSS selectors and HTML class references
+4. Verify all references are updated consistently
 
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 
