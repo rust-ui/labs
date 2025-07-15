@@ -6,7 +6,9 @@ Clean CSS classes for the specified files: $ARGUMENTS
 
 **Check progress marker `✔️` at top and skip completed steps**
 
-⚠️ *IMPORTANT*: For each steps, ask me the permission to continue. This helps me to make sure all works properly.
+⚠️ *IMPORTANT*: For each steps, you need to:
+1. Commit your work.
+2. Ask me permission to continue.
 
 ### Step 1: Understand the CSS / HTML / (JS)
 
