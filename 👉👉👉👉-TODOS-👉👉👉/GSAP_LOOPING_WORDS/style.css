@@ -11,10 +11,6 @@
 }
 
 
-.looping-words__selector {
-  height: .9em;
-}
-
 .looping-words__edge {
   border-top: .035em solid #007bff;
   border-left: .035em solid #007bff;
