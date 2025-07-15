@@ -19,10 +19,10 @@
 
 
   <div class="mainHtml">
-    <div class="mainDiv">
+    <div class="mainDiv m-0 p-0 box-border text-white bg-white border-none h-full w-full overflow-hidden outline-none list-none no-underline">
 
-        <div class="card">
-            <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" class="noise">
+        <div class="card absolute z-10 top-1/2 left-1/2 max-w-[600px] p-[48px] rounded-lg overflow-hidden">
+            <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" class="noise absolute top-0 left-0 h-full w-full z-[1] opacity-10">
                 <filter id="noiseFilter">
                     <feTurbulence
                         type="fractalNoise"
@@ -38,18 +38,18 @@
                     filter="url(#noiseFilter)"
                 />
             </svg>
-            <div class="content">
+            <div class="content relative z-[2]">
                 <h1>Interactive Gradient</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum tempore unde ex pariatur distinctio laboriosam, dolorem quibusdam aperiam expedita consequuntur dolorum porro vitae earum quos voluptates et maxime. Tempora, mollitia.
                 </p>
             </div>
         </div>
-        <div class="gradient____bg">
+        <div class="gradient____bg w-screen h-screen relative overflow-hidden top-0 left-0">
             <svg
                 viewBox="0 0 100vw 100vw"
                 xmlns="http://www.w3.org/2000/svg"
-                class="noiseBg"
+                class="noiseBg absolute w-full h-full top-0 left-0 z-[1] opacity-30"
             >
                 <filter id="noiseFilterBg">
                     <feTurbulence
@@ -65,7 +65,7 @@
                     filter="url(#noiseFilterBg)"
                 />
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur hidden">
                 <defs>
                     <filter id="goo">
                         <feGaussianBlur
@@ -83,13 +83,13 @@
                     </filter>
                 </defs>
             </svg>
-            <div class="gradients____container">
-                <div class="g1"></div>
-                <div class="g2"></div>
-                <div class="g3"></div>
-                <div class="g4"></div>
-                <div class="g5"></div>
-                <div class="interactive__bubble"></div>
+            <div class="gradients____container w-full h-full">
+                <div class="g1 absolute w-[80%] h-[80%] opacity-100"></div>
+                <div class="g2 absolute w-[80%] h-[80%] opacity-100"></div>
+                <div class="g3 absolute w-[80%] h-[80%] opacity-100"></div>
+                <div class="g4 absolute w-[80%] h-[80%] opacity-70"></div>
+                <div class="g5 absolute opacity-100 w-[160%] h-[160%]"></div>
+                <div class="interactive__bubble absolute w-full h-full opacity-70"></div>
             </div>
         </div>
 
