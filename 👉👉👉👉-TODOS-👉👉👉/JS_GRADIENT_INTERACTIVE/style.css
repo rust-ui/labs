@@ -1,4 +1,4 @@
-/* Step 1 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
 .mainDiv {
@@ -95,7 +95,7 @@
     transform: translateX(-50%) translateY(-10%);
   }
 }
-.gradient-bg {
+.gradient__bg {
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -104,10 +104,10 @@
   top: 0;
   left: 0;
 }
-.gradient-bg .svgBlur {
+.gradient__bg .svgBlur {
   display: none;
 }
-.gradient-bg .noiseBg {
+.gradient__bg .noiseBg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -117,12 +117,12 @@
   mix-blend-mode: soft-light;
   opacity: 0.3;
 }
-.gradient-bg .gradients-container {
+.gradient__bg .gradients__container {
   filter: url(#goo) blur(40px);
   width: 100%;
   height: 100%;
 }
-.gradient-bg .g1 {
+.gradient__bg .g1 {
   position: absolute;
   background: radial-gradient(circle at center, rgba(18, 113, 255, 0.8) 0, rgba(18, 113, 255, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
@@ -134,7 +134,7 @@
   animation: moveVertical 30s ease infinite;
   opacity: 1;
 }
-.gradient-bg .g2 {
+.gradient__bg .g2 {
   position: absolute;
   background: radial-gradient(circle at center, rgba(107, 74, 255, 0.8) 0, rgba(107, 74, 255, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
@@ -146,7 +146,7 @@
   animation: moveInCircle 20s reverse infinite;
   opacity: 1;
 }
-.gradient-bg .g3 {
+.gradient__bg .g3 {
   position: absolute;
   background: radial-gradient(circle at center, rgba(100, 100, 255, 0.8) 0, rgba(100, 100, 255, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
@@ -158,7 +158,7 @@
   animation: moveInCircle 40s linear infinite;
   opacity: 1;
 }
-.gradient-bg .g4 {
+.gradient__bg .g4 {
   position: absolute;
   background: radial-gradient(circle at center, rgba(50, 160, 220, 0.8) 0, rgba(50, 160, 220, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
@@ -170,7 +170,7 @@
   animation: moveHorizontal 40s ease infinite;
   opacity: 0.7;
 }
-.gradient-bg .g5 {
+.gradient__bg .g5 {
   position: absolute;
   background: radial-gradient(circle at center, rgba(80, 47, 122, 0.8) 0, rgba(80, 47, 122, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
@@ -182,7 +182,7 @@
   animation: moveInCircle 20s ease infinite;
   opacity: 1;
 }
-.gradient-bg .interactive {
+.gradient__bg .interactive {
   position: absolute;
   background: radial-gradient(circle at center, rgba(140, 100, 255, 0.8) 0, rgba(140, 100, 255, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;
