@@ -1,4 +1,4 @@
-/* Step 2 ✔️ Step 3 ✔️ */
+/* Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 
 .mainDiv {
   background-color: #f5f5f5;
@@ -6,7 +6,7 @@
   font-size: 16px;
 }
 
-.cloneable {
+.looping__words__section {
   padding: 1rem;
   justify-content: center;
   align-items: center;
