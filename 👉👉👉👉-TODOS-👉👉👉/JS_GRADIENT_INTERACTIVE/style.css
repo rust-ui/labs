@@ -182,7 +182,7 @@
   animation: moveInCircle 20s ease infinite;
   opacity: 1;
 }
-.gradient____bg .interactive {
+.gradient____bg .interactive__bubble {
   position: absolute;
   background: radial-gradient(circle at center, rgba(140, 100, 255, 0.8) 0, rgba(140, 100, 255, 0) 50%) no-repeat;
   mix-blend-mode: hard-light;

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const interBubble = document.querySelector(".interactive");
+    const interBubble = document.querySelector(".interactive__bubble");
     let curX = 0;
     let curY = 0;
     let tgX = 0;
