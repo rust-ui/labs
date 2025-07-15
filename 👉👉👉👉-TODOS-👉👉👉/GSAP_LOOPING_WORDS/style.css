@@ -14,8 +14,6 @@
 .looping-words__edge {
   border-top: .035em solid #007bff;
   border-left: .035em solid #007bff;
-  width: .125em;
-  height: .125em;
 }
 
 .looping-words__edge.is__3 {

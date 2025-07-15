@@ -74,6 +74,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
   - Example: `padding-left: .1em; padding-right: .1em;` → `px-[.1em]`
   - Example: `height: 2.7em` → `h-[2.7em]`
   - Example: `height: .9em` → `h-[.9em]`
+  - Example: `width: .125em; height: .125em;` → `w-[.125em] h-[.125em]`
   - Example: `font-size: 1.2rem` → `text-[1.2rem]`
 - **Convert unitless line-height**: When CSS uses unitless line-height values, convert them to Tailwind arbitrary value syntax:
   - Example: `line-height: .9` → `leading-[.9]`
