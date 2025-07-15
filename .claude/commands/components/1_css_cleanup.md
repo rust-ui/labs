@@ -59,3 +59,14 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Ste
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */`
 
 
+### Step 6: Remove Unused CSS Classes (COMMIT AFTER COMPLETION)
+1. Check the adjacent HTML file for all CSS classes that are actually used
+2. Compare with CSS classes defined in the CSS file
+3. Remove any CSS classes that are defined in CSS but not used in HTML
+4. Also check adjacent JS file (if any) to ensure classes used in JavaScript are not removed
+5. Clean up any empty CSS rules after removal
+6. Verify that all remaining CSS classes have corresponding usage in HTML or JS
+
+Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */`
+
+
