@@ -31,9 +31,11 @@ Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 
 ### Step 3: Replace hyphenated CSS classes (COMMIT AFTER COMPLETION)
 1. Look at the adjacent .js (if any) and make sure not to brake JS by changing CSS class names.
-2. Replace hyphenated CSS classes with double underscores (e.g., `elg-table-wrap` → `elg__table__wrap`)
-3. Update both CSS selectors and HTML class references
-4. Verify all references are updated consistently
+2. Replace ALL hyphenated CSS classes with double underscores (e.g., `elg-table-wrap` → `elg__table__wrap`)
+3. **IMPORTANT**: This includes ALL hyphens in class names - not just the first one (e.g., `looping-words__edge` → `looping__words__edge`)
+4. Update both CSS selectors and HTML class references
+5. Verify all references are updated consistently
+6. **Double-check**: Search for any remaining hyphens in class names to ensure none were missed
 
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 
