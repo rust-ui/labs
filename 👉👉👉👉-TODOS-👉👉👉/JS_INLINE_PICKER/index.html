@@ -17,19 +17,20 @@
 
 
 
-  <div class="mainDiv">
-    <div class="time__input__wrapper">
+  <div class="mainDiv min-h-screen flex justify-center items-center bg-[#202124]">
+    <div class="time__input__wrapper relative scale-[1.5]">
         <svg
             width="14"
             height="14"
             viewBox="0 0 14 14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="absolute bg-[#eee] z-[1] top-[9px] left-[11px] pointer-events-none rounded-full translate-x-0 translate-y-0 translate-z-0 stroke-[#2D2E31] stroke-[1.5]"
         >
-            <path d="M7 4V7" id="hourHand" />
-            <path d="M7 2.5V7" id="minHand" />
+            <path d="M7 4V7" id="hourHand" class="stroke-[round]" />
+            <path d="M7 2.5V7" id="minHand" class="stroke-[round]" />
         </svg>
-        <input type="time" value="09:41" id="timeInput" />
+        <input type="time" value="09:41" id="timeInput" class="relative bg-[#2D2E31] text-[#eee] rounded-lg appearance-none border-0 text-center py-[6px] pr-[12px] pl-[33px] outline-none font-inherit text-[15px] font-bold leading-[18px] h-[32px] focus:shadow-[0_0_0_1px_rgba(255,255,255,0.25)]" />
     </div>
 </div>
 
