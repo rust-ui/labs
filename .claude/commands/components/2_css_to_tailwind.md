@@ -91,3 +91,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
   - Example: `border-top: .035em solid #007bff; border-left: .035em solid #007bff;` → `border-t-[.035em] border-l-[.035em] border-solid border-[#007bff]` (in HTML)
   - Example: `border: 2px dashed #ff0000` → `border-[2px] border-dashed border-[#ff0000]` (in HTML)
   - Example: `border-radius: 1.5rem` → `rounded-[1.5rem]` (in HTML)
+- **Convert inset properties**: When CSS uses inset properties, convert them to Tailwind arbitrary value syntax:
+  - Example: `inset: auto 0 0 auto` → `inset-[auto_0_0_auto]` (in HTML)
+  - Example: `inset: 10px 20px` → `inset-[10px_20px]` (in HTML)
+  - Example: `inset: 0` → `inset-0` (in HTML)
