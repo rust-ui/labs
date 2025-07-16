@@ -1,91 +1,26 @@
 /* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
-.password__strength__container {
-  }
-  
-  .password__input__group {
-  }
-  
-  .password__input {
-    border: 1px solid #e0e0e0;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  
-  .password__input:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
-  }
-  
-  .password__toggle {
-    background: none;
-    border: none;
-    transition: color 0.2s;
-  }
-  
-  .password__toggle:hover {
-  }
-  
-  .strength__meter {
-  }
-  
-  .strength__meter__fill {
-    transition: width 0.5s ease, background-color 0.5s ease;
-  }
-  
-  .strength__text {
-    transition: color 0.3s;
-  }
-  
-  .strength__requirements {
-  }
-  
-  .password__requirement {
-  }
-  
-  .password__requirement i {
-  }
-  
-  .password__requirement.valid {
-  }
-  
-  .password__requirement.valid i {
-  }
-  
-  /* Strength levels */
-  .strength__very__weak .strength__meter__fill {
-  }
-  
-  .strength__weak .strength__meter__fill {
-  }
-  
-  .strength__medium .strength__meter__fill {
-  }
-  
-  .strength__strong .strength__meter__fill {
-  }
-  
-  .strength__very__strong .strength__meter__fill {
-  }
-  
-  .strength__very__weak .strength__text {
-  }
-  
-  .strength__weak .strength__text {
-  }
-  
-  .strength__medium .strength__text {
-  }
-  
-  .strength__strong .strength__text {
-  }
-  
-  .strength__very__strong .strength__text {
-  }
-  
-  /* Dark mode */
-  @media (prefers-color-scheme: dark) {
-    .password__input {
-    }
-    
-    .strength__meter {
-    }
-  }
+
+/* Remaining CSS that cannot be easily converted to Tailwind */
+.password__input {
+  border: 1px solid #e0e0e0;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.password__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.password__toggle {
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+
+.strength__meter__fill {
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.strength__text {
+  transition: color 0.3s;
+}
