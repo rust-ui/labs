@@ -1,15 +1,11 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 .password__strength__container {
-    width: 100%;
-    max-width: 400px;
   }
   
   .password__input__group {
-    width: 100%;
   }
   
   .password__input {
-    width: 100%;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -31,14 +27,10 @@
   }
   
   .strength__meter {
-    width: 100%;
-    height: 8px;
     border-radius: 4px;
   }
   
   .strength__meter__fill {
-    height: 100%;
-    width: 0;
     border-radius: 4px;
     transition: width 0.5s ease, background-color 0.5s ease;
   }
@@ -54,7 +46,6 @@
   }
   
   .password__requirement i {
-    width: 16px;
   }
   
   .password__requirement.valid {
@@ -65,23 +56,18 @@
   
   /* Strength levels */
   .strength__very__weak .strength__meter__fill {
-    width: 20%;
   }
   
   .strength__weak .strength__meter__fill {
-    width: 40%;
   }
   
   .strength__medium .strength__meter__fill {
-    width: 60%;
   }
   
   .strength__strong .strength__meter__fill {
-    width: 80%;
   }
   
   .strength__very__strong .strength__meter__fill {
-    width: 100%;
   }
   
   .strength__very__weak .strength__text {
