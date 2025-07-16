@@ -22,16 +22,16 @@
     <div class="password__input__group">
         <input
             type="password"
-            class="password__input"
+            class="password__input bg-white text-[#333] border-[#e0e0e0] focus:border-[#3498db] dark:bg-[#222] dark:border-[#444] dark:text-[#eee]"
             id="password"
             placeholder="Enter password"
         />
-        <button type="button" class="password__toggle" id="toggle-password">
+        <button type="button" class="password__toggle text-[#777] hover:text-[#3498db]" id="toggle-password">
             <i class="fas fa-eye"></i>
         </button>
     </div>
 
-    <div class="strength__meter">
+    <div class="strength__meter bg-[#e0e0e0] dark:bg-[#373737]">
         <div class="strength__meter__fill" id="strength-fill"></div>
     </div>
 
@@ -40,23 +40,23 @@
     </div>
 
     <div class="strength__requirements">
-        <div class="password__requirement" id="length">
+        <div class="password__requirement text-[#777]" id="length">
             <i class="fas fa-times-circle"></i>
             At least 8 characters
         </div>
-        <div class="password__requirement" id="uppercase">
+        <div class="password__requirement text-[#777]" id="uppercase">
             <i class="fas fa-times-circle"></i>
             At least 1 uppercase letter
         </div>
-        <div class="password__requirement" id="lowercase">
+        <div class="password__requirement text-[#777]" id="lowercase">
             <i class="fas fa-times-circle"></i>
             At least 1 lowercase letter
         </div>
-        <div class="password__requirement" id="number">
+        <div class="password__requirement text-[#777]" id="number">
             <i class="fas fa-times-circle"></i>
             At least 1 number
         </div>
-        <div class="password__requirement" id="special">
+        <div class="password__requirement text-[#777]" id="special">
             <i class="fas fa-times-circle"></i>
             At least 1 special character
         </div>
@@ -67,5 +67,54 @@
 
 
   <script src="script.js"></script>
+  <script>
+    // Add Tailwind classes for strength levels and valid requirements
+    const strengthLevels = {
+      'strength__very__weak': { fill: 'bg-[#ff4d4d]', text: 'text-[#ff4d4d]' },
+      'strength__weak': { fill: 'bg-[#ffa64d]', text: 'text-[#ffa64d]' },
+      'strength__medium': { fill: 'bg-[#ffdb4d]', text: 'text-[#ffdb4d]' },
+      'strength__strong': { fill: 'bg-[#9ee34d]', text: 'text-[#9ee34d]' },
+      'strength__very__strong': { fill: 'bg-[#4caf50]', text: 'text-[#4caf50]' }
+    };
+
+    // Apply colors when strength levels change
+    function applyStrengthColors() {
+      const container = document.querySelector('.password__strength__container');
+      const fill = document.querySelector('.strength__meter__fill');
+      const text = document.querySelector('.strength__text');
+      
+      Object.keys(strengthLevels).forEach(level => {
+        if (container.classList.contains(level)) {
+          fill.className = `strength__meter__fill ${strengthLevels[level].fill}`;
+          text.className = `strength__text ${strengthLevels[level].text}`;
+        }
+      });
+      
+      // Apply green color to valid requirements
+      document.querySelectorAll('.password__requirement.valid').forEach(req => {
+        req.classList.add('text-[#4caf50]');
+        req.classList.remove('text-[#777]');
+        const icon = req.querySelector('i');
+        if (icon) {
+          icon.classList.add('text-[#4caf50]');
+        }
+      });
+    }
+
+    // Observer to watch for class changes
+    const observer = new MutationObserver(applyStrengthColors);
+    observer.observe(document.querySelector('.password__strength__container'), {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    // Also observe individual requirements
+    document.querySelectorAll('.password__requirement').forEach(req => {
+      observer.observe(req, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    });
+  </script>
 </body>
 </html>
