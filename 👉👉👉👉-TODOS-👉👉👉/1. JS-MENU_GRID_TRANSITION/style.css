@@ -1,5 +1,5 @@
 
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
 .mainDivParent {
     /* display: flex; - converted to flex */
     /* justify-content: center; - converted to justify-center */
@@ -17,9 +17,9 @@
     /* width: 188px; - converted to w-[188px] */
     /* height: 188px; - converted to h-[188px] */
     background-color: rgb(255 255 255 / 21%);
-    border-radius: 10px;
+    /* border-radius: 10px; - converted to rounded-[10px] */
     backdrop-filter: blur(6px);
-    border: 1px solid rgb(255 255 255 / 18%);
+    /* border: 1px solid rgb(255 255 255 / 18%); - converted to border border-[rgb(255_255_255_/_18%)] */
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -52,8 +52,8 @@
     /* height: 45px; - converted to h-[45px] */
     /* background: rgb(9 14 22 / 83%); - converted to bg-[rgb(9_14_22_/_83%)] */
     transform: translate(calc(60px* var(--x)), calc(60px* var(--y)));
-    border-radius: 7px;
-    border: 1px solid #ffffff7d;
+    /* border-radius: 7px; - converted to rounded-[7px] */
+    /* border: 1px solid #ffffff7d; - converted to border border-[#ffffff7d] */
 }
 
 .mainDiv .grid__menu__navigation span ion-icon {
@@ -91,7 +91,7 @@
     pointer-events: initial;
     transition-delay: 0.8s;
     /* background: #2dfc52; - converted to bg-[#2dfc52] */
-    border-radius: 8px;
+    /* border-radius: 8px; - converted to rounded-[8px] */
 }
 
 .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
