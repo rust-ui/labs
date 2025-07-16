@@ -30,6 +30,8 @@ If the CSS is nested, flatten it. If not nested, you can skip this step.
 
 Check if there is extra spaces useless. If any, remvove them.
 
+We must have an empty line between each classes.
+
 
 ### Step 3: Clean CSS with mainDiv (*COMMIT AFTER COMPLETION*)
 1. Fix formatting (2-space indentation)

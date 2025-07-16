@@ -6,22 +6,24 @@
     align-items: center;
     min-height: 100vh;
     background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
-   background-image: radial-gradient(circle at 1% 52%, rgba(139, 139, 139,0.05) 0%, rgba(139, 139, 139,0.05) 50%,rgba(21, 21, 21,0.05) 50%, rgba(21, 21, 21,0.05) 100%),radial-gradient(circle at 41% 28%, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),radial-gradient(circle at 48% 1%, rgba(93, 93, 93,0.05) 0%, rgba(93, 93, 93,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),linear-gradient(255deg, rgb(156, 41, 132),rgb(47, 14, 122));
-  }
-  .mainDiv {
+    background-image: radial-gradient(circle at 1% 52%, rgba(139, 139, 139,0.05) 0%, rgba(139, 139, 139,0.05) 50%,rgba(21, 21, 21,0.05) 50%, rgba(21, 21, 21,0.05) 100%),radial-gradient(circle at 41% 28%, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),radial-gradient(circle at 48% 1%, rgba(93, 93, 93,0.05) 0%, rgba(93, 93, 93,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),linear-gradient(255deg, rgb(156, 41, 132),rgb(47, 14, 122));
+}
+
+.mainDiv {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 188px;
-      height: 188px;
-        background-color: rgb(255 255 255 / 21%);
-      border-radius: 10px;
-      backdrop-filter: blur(6px);
-      border: 1px solid rgb(255 255 255 / 18%);
+    height: 188px;
+    background-color: rgb(255 255 255 / 21%);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgb(255 255 255 / 18%);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  }
-  .mainDiv .grid__menu__navigation {
+}
+
+.mainDiv .grid__menu__navigation {
     position: relative;
     width: 40px;
     height: 40px;
@@ -30,8 +32,9 @@
     justify-content: center;
     align-items: center;
     transition: 0.5s;
-  }
-  .mainDiv .grid__menu__navigation span {
+}
+
+.mainDiv .grid__menu__navigation span {
     position: absolute;
     width: 7px;
     height: 7px;
@@ -42,30 +45,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .mainDiv .grid__menu__navigation.active span {
-        width: 45px;
-      height: 45px;
-      background: rgb(9 14 22 / 83%);
-      transform: translate(calc(60px* var(--x)), calc(60px* var(--y)));
-      border-radius: 7px;
-      border: 1px solid #ffffff7d;
-  }
-  
-  .mainDiv .grid__menu__navigation span ion-icon {
+}
+
+.mainDiv .grid__menu__navigation.active span {
+    width: 45px;
+    height: 45px;
+    background: rgb(9 14 22 / 83%);
+    transform: translate(calc(60px* var(--x)), calc(60px* var(--y)));
+    border-radius: 7px;
+    border: 1px solid #ffffff7d;
+}
+
+.mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
     font-size: 0em;
     color: #fff;
-  }
-  .mainDiv .grid__menu__navigation.active span ion-icon {
+}
+
+.mainDiv .grid__menu__navigation.active span ion-icon {
     font-size: 1.35em;
-  }
-  .mainDiv .grid__menu__navigation.active span:hover ion-icon {
+}
+
+.mainDiv .grid__menu__navigation.active span:hover ion-icon {
     color: #2dfc52;
     filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
-      drop-shadow(0 0 15px #2dfc52);
-  }
-  .grid__menu__close {
+        drop-shadow(0 0 15px #2dfc52);
+}
+
+.grid__menu__close {
     position: absolute;
     width: 7px;
     height: 7px;
@@ -76,23 +83,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .mainDiv .grid__menu__navigation.active ~ .grid__menu__close {
+}
+
+.mainDiv .grid__menu__navigation.active ~ .grid__menu__close {
     width: 40px;
     height: 40px;
     pointer-events: initial;
     transition-delay: 0.8s;
     background: #2dfc52;
     border-radius: 8px;
-  }
-  .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
+}
+
+.mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
     font-size: 2em;
     scale: 0;
     color: #10131c;
     transition: 0.5s;
-  }
-  .mainDiv .grid__menu__navigation.active ~ .grid__menu__close ion-icon {
+}
+
+.mainDiv .grid__menu__navigation.active ~ .grid__menu__close ion-icon {
     scale: 1;
     transition-delay: 1s;
-  }
+}
