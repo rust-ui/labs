@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 .password__strength__container {
     width: 100%;
     max-width: 400px;
@@ -75,7 +75,7 @@
     margin-top: 16px;
   }
   
-  .requirement {
+  .password__requirement {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -84,17 +84,17 @@
     color: #777;
   }
   
-  .requirement i {
+  .password__requirement i {
     font-size: 14px;
     width: 16px;
     text-align: center;
   }
   
-  .requirement.valid {
+  .password__requirement.valid {
     color: #4caf50;
   }
   
-  .requirement.valid i {
+  .password__requirement.valid i {
     color: #4caf50;
   }
   
