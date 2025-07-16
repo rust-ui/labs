@@ -18,7 +18,12 @@ Keep that in memory.
 This way when you will change CSS classes you are sure not to break JS.
 
 
-### Step 2: Clean CSS with mainDiv (*COMMIT AFTER COMPLETION*)
+### Step 2: Flatten CSS if nested (*COMMIT AFTER COMPLETION*)
+
+If the CSS is nested, flatten it. If not nested, you can skip this step.
+
+
+### Step 3: Clean CSS with mainDiv (*COMMIT AFTER COMPLETION*)
 1. Fix formatting (2-space indentation)
 2. Replace `:root` CSS variables with direct values, remove `:root` block
 3. Move `*` selector styles to `.mainDiv`, remove `*` selector
@@ -28,7 +33,7 @@ This way when you will change CSS classes you are sure not to break JS.
 Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 
 
-### Step 3: Replace hyphenated CSS classes (*COMMIT AFTER COMPLETION*)
+### Step 4: Replace hyphenated CSS classes (*COMMIT AFTER COMPLETION*)
 1. Look at the adjacent .js (if any) and make sure not to brake JS by changing CSS class names.
 2. Replace ALL hyphenated CSS classes with double underscores (e.g., `elg-table-wrap` → `elg__table__wrap`)
 3. **IMPORTANT**: This includes ALL hyphens in class names - not just the first one (e.g., `looping-words__edge` → `looping__words__edge`)
@@ -39,7 +44,7 @@ Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 
 
-### Step 4: Replace Generic CSS Class Names (*COMMIT AFTER COMPLETION*)
+### Step 5: Replace Generic CSS Class Names (*COMMIT AFTER COMPLETION*)
 1. Identify generic class names like `.wrapper`, `.container`, `.item` that lack descriptive context
 2. Replace with more descriptive names following the `__` convention (e.g., `.wrapper` → `.scroll__snap__container`)
 3. Update both CSS selectors and HTML class references consistently
@@ -50,7 +55,7 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */`
 
 
-### Step 5: Remove CSS Layers (*COMMIT AFTER COMPLETION*)
+### Step 6: Remove CSS Layers (*COMMIT AFTER COMPLETION*)
 1. Remove all `@layer` declarations and their wrapper blocks
 2. Keep the CSS rules but flatten them to the root level
 3. Maintain proper indentation and structure
@@ -59,7 +64,7 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Ste
 Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */`
 
 
-### Step 6: Remove Unused CSS Classes (*COMMIT AFTER COMPLETION*)
+### Step 7: Remove Unused CSS Classes (*COMMIT AFTER COMPLETION*)
 1. Check the adjacent HTML file for all CSS classes that are actually used
 2. Compare with CSS classes defined in the CSS file
 3. Remove any CSS classes that are defined in CSS but not used in HTML

@@ -1,153 +1,168 @@
 .mainDiv {
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    background-color: #9CB46D;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .widget {
-    width: 288px;
-    height: 200px;
-    display: flex;
-    justify-content: flex-end;
-    border-radius: 10px;
-    background-color: #FFF;
-  
-    &.active {
-        
-        .menu {
-            width: 344px;
-  
-            .toggle {
-                right: 296px;
-  
-                i {
-                    width: 8px;
-                    transition: width 400ms cubic-bezier(.6,0,.45,.99),
-                                transform 1000ms cubic-bezier(.6,0,.45,.99) 300ms,
-                                top 200ms cubic-bezier(.6,0,.45,.99) 200ms,
-                                bottom 200ms cubic-bezier(.6,0,.45,.99) 200ms;
-                                    
-                    &:first-of-type {
-                        top: 19px;
-                        transform: rotate(45deg) translate(-1px, -2px);
-                    }
-                    
-                    &:last-of-type {
-                        bottom: 19px;
-                        transform: rotate(-45deg) translate(-1px, 2px);
-                    }
-                }
-            }
-  
-            .list {
-                visibility: visible;
-                flex-direction: row-reverse;
-  
-                li {
-                    transform: scale(1);
-                }
-            }
-        }
-    }
-  
-    .menu {
-        width: 56px;
-        height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        border-radius: 100px;
-        background-color: #4C5042;
-        transform: translate(28px, -50%);
-        box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7);
-        transition: 650ms cubic-bezier(.79,0,.22,1);
-  
-        .toggle {
-            width: 40px;
-            height: 40px;
-            right: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: absolute;
-            border-radius: 100px;
-            cursor: pointer;
-            z-index: 100;
-            background-color: #4C5042;
-            transition: 600ms cubic-bezier(.79,0,.22,1);
-  
-            &:hover {
-                background-color: #3C4134;
-            }
-            
-            i {
-                width: 12px;
-                height: 2px;
-                position: absolute;
-                display: flex;
-                border-radius: 100px;
-                background-color: #FFF;
-                transition: width 400ms cubic-bezier(.6,0,.45,.99),
-                            transform 600ms cubic-bezier(.6,0,.45,.99),
-                            top 600ms cubic-bezier(.6,0,.45,.99) 600ms,
-                            bottom 600ms cubic-bezier(.6,0,.45,.99) 600ms;
-                
-                &:first-of-type {
-                    top: 16px;
-                }
-                
-                &:last-of-type {
-                    bottom: 16px;
-                }
-            }
-        }
-  
-        .list {
-            flex-direction: row;
-            margin: 0;
-            right: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            position: absolute;
-  
-            li {
-                width: 40px;
-                height: 40px;
-                margin-left: 8px;
-                list-style: none;
-                border-radius: 100px;
-                background-color: #73776C;
-                transform: scale(0);
-                transition: 300ms cubic-bezier(.37,.01,.43,1.3);
-                transition-delay: 300ms;
-              
-                  @for $i from 1 through 6{
-                    &:nth-child(#{$i}){
-                      transition-delay: $i * 50ms;
-                    }
-                  }
-            }
-        }
-    }
-  }
-  
-  .dribbble {
-    position: fixed;
-    display: block;
-    right: 24px;
-    bottom: 24px;
-    
-    img {
-        display: block;
-        width: 76px;
-    }
-  }
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-color: #9CB46D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget {
+  width: 288px;
+  height: 200px;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 10px;
+  background-color: #FFF;
+}
+
+.widget.active .menu {
+  width: 344px;
+}
+
+.widget.active .menu .toggle {
+  right: 296px;
+}
+
+.widget.active .menu .toggle i {
+  width: 8px;
+  transition: width 400ms cubic-bezier(.6,0,.45,.99),
+              transform 1000ms cubic-bezier(.6,0,.45,.99) 300ms,
+              top 200ms cubic-bezier(.6,0,.45,.99) 200ms,
+              bottom 200ms cubic-bezier(.6,0,.45,.99) 200ms;
+}
+
+.widget.active .menu .toggle i:first-of-type {
+  top: 19px;
+  transform: rotate(45deg) translate(-1px, -2px);
+}
+
+.widget.active .menu .toggle i:last-of-type {
+  bottom: 19px;
+  transform: rotate(-45deg) translate(-1px, 2px);
+}
+
+.widget.active .menu .list {
+  visibility: visible;
+  flex-direction: row-reverse;
+}
+
+.widget.active .menu .list li {
+  transform: scale(1);
+}
+
+.widget .menu {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 100px;
+  background-color: #4C5042;
+  transform: translate(28px, -50%);
+  box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7);
+  transition: 650ms cubic-bezier(.79,0,.22,1);
+}
+
+.widget .menu .toggle {
+  width: 40px;
+  height: 40px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  border-radius: 100px;
+  cursor: pointer;
+  z-index: 100;
+  background-color: #4C5042;
+  transition: 600ms cubic-bezier(.79,0,.22,1);
+}
+
+.widget .menu .toggle:hover {
+  background-color: #3C4134;
+}
+
+.widget .menu .toggle i {
+  width: 12px;
+  height: 2px;
+  position: absolute;
+  display: flex;
+  border-radius: 100px;
+  background-color: #FFF;
+  transition: width 400ms cubic-bezier(.6,0,.45,.99),
+              transform 600ms cubic-bezier(.6,0,.45,.99),
+              top 600ms cubic-bezier(.6,0,.45,.99) 600ms,
+              bottom 600ms cubic-bezier(.6,0,.45,.99) 600ms;
+}
+
+.widget .menu .toggle i:first-of-type {
+  top: 16px;
+}
+
+.widget .menu .toggle i:last-of-type {
+  bottom: 16px;
+}
+
+.widget .menu .list {
+  flex-direction: row;
+  margin: 0;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  position: absolute;
+}
+
+.widget .menu .list li {
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  list-style: none;
+  border-radius: 100px;
+  background-color: #73776C;
+  transform: scale(0);
+  transition: 300ms cubic-bezier(.37,.01,.43,1.3);
+  transition-delay: 300ms;
+}
+
+.widget .menu .list li:nth-child(1) {
+  transition-delay: 50ms;
+}
+
+.widget .menu .list li:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.widget .menu .list li:nth-child(3) {
+  transition-delay: 150ms;
+}
+
+.widget .menu .list li:nth-child(4) {
+  transition-delay: 200ms;
+}
+
+.widget .menu .list li:nth-child(5) {
+  transition-delay: 250ms;
+}
+
+.widget .menu .list li:nth-child(6) {
+  transition-delay: 300ms;
+}
+
+.dribbble {
+  position: fixed;
+  display: block;
+  right: 24px;
+  bottom: 24px;
+}
+
+.dribbble img {
+  display: block;
+  width: 76px;
+}
