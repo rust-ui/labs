@@ -68,6 +68,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Min width**: `min-w-0`, `min-w-full`, etc.
 - **Min height**: `min-h-0`, `min-h-full`, `min-h-screen`, etc.
 - **Custom sizes**: Use arbitrary syntax for specific measurements: `min-w-[25rem]`, `h-[2.7em]`, `w-[140%]`
+- **Custom pixel sizes**: Use arbitrary syntax for specific pixel values: `w-[344px]`, `h-[8px]`, `w-[12px]`
 
 
 ### Step 6: Interactivity & Visual (*COMMIT AFTER COMPLETION*)
