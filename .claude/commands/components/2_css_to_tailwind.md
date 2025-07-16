@@ -84,6 +84,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Background**: `bg-transparent`, `bg-opacity-50`, etc.
 - **Background none**: `background: none` → `bg-transparent`
 - **Border none**: `border: none` → `border-0`
+- **Outline none**: `outline: none` → `outline-none`
 - **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, `rounded-[1.2rem]`, etc.
 - **Overflow**: `overflow-hidden`, `overflow-visible`, `overflow-scroll`, etc.
 - **List style**: `list-none`, `list-disc`, `list-decimal`, etc.
