@@ -1,4 +1,4 @@
-/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
 .mainDiv {
   width: 100%;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.widget {
+.menu__widget {
   width: 288px;
   height: 200px;
   display: flex;
@@ -20,15 +20,15 @@
   background-color: #FFF;
 }
 
-.widget.active .menu {
+.menu__widget.active .hamburger__menu {
   width: 344px;
 }
 
-.widget.active .menu .toggle {
+.menu__widget.active .hamburger__menu .menu__toggle__button {
   right: 296px;
 }
 
-.widget.active .menu .toggle i {
+.menu__widget.active .hamburger__menu .menu__toggle__button i {
   width: 8px;
   transition: width 400ms cubic-bezier(.6,0,.45,.99),
               transform 1000ms cubic-bezier(.6,0,.45,.99) 300ms,
@@ -36,26 +36,26 @@
               bottom 200ms cubic-bezier(.6,0,.45,.99) 200ms;
 }
 
-.widget.active .menu .toggle i:first-of-type {
+.menu__widget.active .hamburger__menu .menu__toggle__button i:first-of-type {
   top: 19px;
   transform: rotate(45deg) translate(-1px, -2px);
 }
 
-.widget.active .menu .toggle i:last-of-type {
+.menu__widget.active .hamburger__menu .menu__toggle__button i:last-of-type {
   bottom: 19px;
   transform: rotate(-45deg) translate(-1px, 2px);
 }
 
-.widget.active .menu .list {
+.menu__widget.active .hamburger__menu .menu__items__list {
   visibility: visible;
   flex-direction: row-reverse;
 }
 
-.widget.active .menu .list li {
+.menu__widget.active .hamburger__menu .menu__items__list li {
   transform: scale(1);
 }
 
-.widget .menu {
+.menu__widget .hamburger__menu {
   width: 56px;
   height: 56px;
   display: flex;
@@ -69,7 +69,7 @@
   transition: 650ms cubic-bezier(.79,0,.22,1);
 }
 
-.widget .menu .toggle {
+.menu__widget .hamburger__menu .menu__toggle__button {
   width: 40px;
   height: 40px;
   right: 8px;
@@ -85,11 +85,11 @@
   transition: 600ms cubic-bezier(.79,0,.22,1);
 }
 
-.widget .menu .toggle:hover {
+.menu__widget .hamburger__menu .menu__toggle__button:hover {
   background-color: #3C4134;
 }
 
-.widget .menu .toggle i {
+.menu__widget .hamburger__menu .menu__toggle__button i {
   width: 12px;
   height: 2px;
   position: absolute;
@@ -102,15 +102,15 @@
               bottom 600ms cubic-bezier(.6,0,.45,.99) 600ms;
 }
 
-.widget .menu .toggle i:first-of-type {
+.menu__widget .hamburger__menu .menu__toggle__button i:first-of-type {
   top: 16px;
 }
 
-.widget .menu .toggle i:last-of-type {
+.menu__widget .hamburger__menu .menu__toggle__button i:last-of-type {
   bottom: 16px;
 }
 
-.widget .menu .list {
+.menu__widget .hamburger__menu .menu__items__list {
   flex-direction: row;
   margin: 0;
   right: 8px;
@@ -121,7 +121,7 @@
   position: absolute;
 }
 
-.widget .menu .list li {
+.menu__widget .hamburger__menu .menu__items__list li {
   width: 40px;
   height: 40px;
   margin-left: 8px;
@@ -133,27 +133,27 @@
   transition-delay: 300ms;
 }
 
-.widget .menu .list li:nth-child(1) {
+.menu__widget .hamburger__menu .menu__items__list li:nth-child(1) {
   transition-delay: 50ms;
 }
 
-.widget .menu .list li:nth-child(2) {
+.menu__widget .hamburger__menu .menu__items__list li:nth-child(2) {
   transition-delay: 100ms;
 }
 
-.widget .menu .list li:nth-child(3) {
+.menu__widget .hamburger__menu .menu__items__list li:nth-child(3) {
   transition-delay: 150ms;
 }
 
-.widget .menu .list li:nth-child(4) {
+.menu__widget .hamburger__menu .menu__items__list li:nth-child(4) {
   transition-delay: 200ms;
 }
 
-.widget .menu .list li:nth-child(5) {
+.menu__widget .hamburger__menu .menu__items__list li:nth-child(5) {
   transition-delay: 250ms;
 }
 
-.widget .menu .list li:nth-child(6) {
+.menu__widget .hamburger__menu .menu__items__list li:nth-child(6) {
   transition-delay: 300ms;
 }
 
