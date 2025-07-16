@@ -91,3 +91,4 @@ For each commit, mark the top of the CSS file this pattern:
   - `@keyframes fade` → `@keyframes modal__fade`
 - **Separate commits**: Create dedicated commits for arbitrary value conversions:
   - `refactor: convert [component_name] hardcoded values to Tailwind arbitrary syntax.`
+- **Active state classes**: When encountering `.active` classes or state-dependent styles, add "/* Active class */" comments above each selector to indicate active state styling
