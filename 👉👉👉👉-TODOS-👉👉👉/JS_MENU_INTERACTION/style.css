@@ -42,7 +42,6 @@
 }
 
 .menu__widget .hamburger__menu .menu__toggle__button {
-  right: 8px;
   transition: 600ms cubic-bezier(.79,0,.22,1);
 }
 
@@ -56,17 +55,6 @@
               bottom 600ms cubic-bezier(.6,0,.45,.99) 600ms;
 }
 
-.menu__widget .hamburger__menu .menu__toggle__button i:first-of-type {
-  top: 16px;
-}
-
-.menu__widget .hamburger__menu .menu__toggle__button i:last-of-type {
-  bottom: 16px;
-}
-
-.menu__widget .hamburger__menu .menu__items__list {
-  right: 8px;
-}
 
 .menu__widget .hamburger__menu .menu__items__list li {
   transform: scale(0);

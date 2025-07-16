@@ -54,6 +54,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Flexbox**:  `flex`, `justify-center`, `justify-between`, `items-center`, `flex-col`, `flex-row`, etc.
 - **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
 - **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
+- **Custom positioning**: Use arbitrary syntax for specific pixel values: `top-[19px]`, `right-[296px]`, `bottom-[16px]`
 - **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
 - **Box sizing**: `box-border`, `box-content`, etc.
 - **Complex inset**: Use arbitrary syntax for complex values: `inset-[auto_0_0_auto]`, `inset-[10px_20px]`
