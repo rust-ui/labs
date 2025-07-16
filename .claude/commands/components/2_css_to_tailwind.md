@@ -37,6 +37,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Text**: `text-red-500`, `text-blue-600`, `text-green-400`, etc.
 - **Background**: `bg-gray-100`, `bg-blue-500`, `bg-red-200`, `bg-white/25`, `bg-black/50`, etc.  
 - **Border**: `border-gray-300`, `border-blue-500`, etc.
+- **Border with width**: `border: 1px solid #color` → `border border-[#color]`
 - **Hex colors**: Use arbitrary syntax for custom hex values: `text-[#9e9e9e]`, `bg-[#f8f9fa]`, `border-[#dee2e6]`
 
 
