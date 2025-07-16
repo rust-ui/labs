@@ -2,6 +2,15 @@
 
 Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 
+## 🚨 IMPORTANT RESTRICTIONS
+
+**DO NOT MODIFY JAVASCRIPT FILES OR ADD JAVASCRIPT CODE**
+- Focus ONLY on CSS to Tailwind conversion
+- Do NOT add JavaScript for dynamic Tailwind classes
+- Do NOT modify or add `<script>` tags
+- Keep all existing JavaScript functionality intact
+- Let existing JavaScript handle dynamic behavior with CSS classes
+
 ## Workflow
 
 1. **Find files**: Locate `.css` file and its ajacent `.html` file (OR `rs` file if it's on `src/`)
@@ -9,7 +18,6 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 3. **Clean up CSS**: Remove the converted CSS rules from `.css` files
 4. **Remove unused classes**: Remove any empty or unused CSS classes that have no content or are not referenced
 5. **Update usage reports**: If a CSS class usage report exists, update it to reflect the changes
-
 
 **Check progress marker `✔️` at top and skip completed steps**
 
@@ -81,6 +89,16 @@ For each commit, mark the top of the CSS file this pattern:
 - **Fill**: `fill-white`, `fill-black`, `fill-gray-500`, `fill-blue-600`, etc.
 - **Complex borders**: Use arbitrary syntax for custom borders: `border-t-[.035em] border-solid border-[#007bff]`
 - **Keep complex CSS**: Don't convert animations, transforms, or custom properties - preserve these as CSS
+
+## ⚠️ PRESERVE DYNAMIC CSS CLASSES
+
+**DO NOT REMOVE CSS classes that are dynamically applied by JavaScript:**
+- State-dependent classes (e.g., `.active`, `.valid`, `.invalid`)
+- Classes applied based on user interaction
+- Classes that change based on data or conditions
+- Strength levels, validation states, or any CSS managed by existing JavaScript
+
+**When in doubt, KEEP the CSS class** - it's better to have redundant CSS than broken functionality.
 
 
 
