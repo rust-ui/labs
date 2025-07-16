@@ -1,51 +1,34 @@
-
 /* TW: Step 3 ✔️ Step 4 ✔️ Step 6 ✔️ */
 /* REVERTED: Sizing and colors restored to original CSS */
+/* NOTE: Do not add comments for classes you remove during conversion */
+
 .mainDivParent {
-    /* display: flex; - converted to flex */
-    /* justify-content: center; - converted to justify-center */
-    /* align-items: center; - converted to items-center */
     min-height: 100vh;
     background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
     background-image: radial-gradient(circle at 1% 52%, rgba(139, 139, 139,0.05) 0%, rgba(139, 139, 139,0.05) 50%,rgba(21, 21, 21,0.05) 50%, rgba(21, 21, 21,0.05) 100%),radial-gradient(circle at 41% 28%, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),radial-gradient(circle at 48% 1%, rgba(93, 93, 93,0.05) 0%, rgba(93, 93, 93,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),linear-gradient(255deg, rgb(156, 41, 132),rgb(47, 14, 122));
 }
 
 .mainDiv {
-    /* position: relative; - converted to relative */
-    /* display: flex; - converted to flex */
-    /* justify-content: center; - converted to justify-center */
-    /* align-items: center; - converted to items-center */
     width: 188px;
     height: 188px;
     background-color: rgb(255 255 255 / 21%);
-    /* border-radius: 10px; - converted to rounded-[10px] */
     backdrop-filter: blur(6px);
-    /* border: 1px solid rgb(255 255 255 / 18%); - converted to border border-[rgb(255_255_255_/_18%)] */
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .mainDiv .grid__menu__navigation {
-    /* position: relative; - converted to relative */
     width: 40px;
     height: 40px;
-    /* cursor: pointer; - converted to cursor-pointer */
-    /* display: flex; - converted to flex */
-    /* justify-content: center; - converted to justify-center */
-    /* align-items: center; - converted to items-center */
     transition: 0.5s;
 }
 
 .mainDiv .grid__menu__navigation span {
-    /* position: absolute; - converted to absolute */
     width: 7px;
     height: 7px;
     background: #fff;
     transform: translate(calc(14px * var(--x)), calc(14px * var(--y)));
     transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
     transition-delay: calc(0.1s * var(--i));
-    /* display: flex; - converted to flex */
-    /* justify-content: center; - converted to justify-center */
-    /* align-items: center; - converted to items-center */
 }
 
 .mainDiv .grid__menu__navigation.active span {
@@ -53,18 +36,18 @@
     height: 45px;
     background: rgb(9 14 22 / 83%);
     transform: translate(calc(60px* var(--x)), calc(60px* var(--y)));
-    /* border-radius: 7px; - converted to rounded-[7px] */
-    /* border: 1px solid #ffffff7d; - converted to border border-[#ffffff7d] */
+    border-radius: 7px;
+    border: 1px solid #ffffff7d;
 }
 
 .mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
-    /* font-size: 0em; - converted to text-[0em] */
+    font-size: 0em;
     color: #fff;
 }
 
 .mainDiv .grid__menu__navigation.active span ion-icon {
-    /* font-size: 1.35em; - converted to text-[1.35em] */
+    font-size: 1.35em;
 }
 
 .mainDiv .grid__menu__navigation.active span:hover ion-icon {
@@ -74,16 +57,11 @@
 }
 
 .grid__menu__close {
-    /* position: absolute; - converted to absolute */
     width: 7px;
     height: 7px;
     background: #fff;
     transition: 0.5s;
     transition-delay: 0.4s;
-    /* pointer-events: none; - converted to pointer-events-none */
-    /* display: flex; - converted to flex */
-    /* justify-content: center; - converted to justify-center */
-    /* align-items: center; - converted to items-center */
 }
 
 .mainDiv .grid__menu__navigation.active ~ .grid__menu__close {
@@ -92,7 +70,7 @@
     pointer-events: initial;
     transition-delay: 0.8s;
     background: #2dfc52;
-    /* border-radius: 8px; - converted to rounded-[8px] */
+    border-radius: 8px;
 }
 
 .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {

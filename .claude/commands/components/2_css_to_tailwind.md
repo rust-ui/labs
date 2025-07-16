@@ -114,3 +114,4 @@ For each commit, mark the top of the CSS file this pattern:
 - **Separate commits**: Create dedicated commits for arbitrary value conversions:
   - `refactor: convert [component_name] hardcoded values to Tailwind arbitrary syntax.`
 - **Active state classes**: When encountering `.active` classes or state-dependent styles, add "/* Active class */" comments above each selector to indicate active state styling
+- **No conversion comments**: Do NOT add comments for CSS properties that you remove during conversion. Simply remove the CSS properties and add the Tailwind classes to HTML without explanatory comments.
