@@ -48,7 +48,7 @@ For each commit, mark the top of the CSS file this pattern:
 ### Step 4: Layout
 - **Display**: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `hidden`, etc.
 - **Visibility**: `visible`, `invisible`, etc.
-- **Flexbox**: `justify-center`, `justify-between`, `items-center`, etc.
+- **Flexbox**:  `flex`, `justify-center`, `justify-between`, `items-center`, `flex-col`, `flex-row`, etc.
 - **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
 - **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
 - **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
