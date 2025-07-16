@@ -18,45 +18,45 @@
 
 
 
-  <div class="mainDiv password__strength__container">
+  <div class="mainDiv password__strength__container space-y-5">
     <div class="password__input__group">
         <input
             type="password"
-            class="password__input bg-white text-[#333] border-[#e0e0e0] focus:border-[#3498db] dark:bg-[#222] dark:border-[#444] dark:text-[#eee]"
+            class="password__input bg-white text-[#333] border-[#e0e0e0] focus:border-[#3498db] dark:bg-[#222] dark:border-[#444] dark:text-[#eee] py-3 px-4 pr-10"
             id="password"
             placeholder="Enter password"
         />
-        <button type="button" class="password__toggle text-[#777] hover:text-[#3498db]" id="toggle-password">
+        <button type="button" class="password__toggle text-[#777] hover:text-[#3498db] right-3" id="toggle-password">
             <i class="fas fa-eye"></i>
         </button>
     </div>
 
-    <div class="strength__meter bg-[#e0e0e0] dark:bg-[#373737]">
+    <div class="strength__meter bg-[#e0e0e0] dark:bg-[#373737] mt-2">
         <div class="strength__meter__fill" id="strength-fill"></div>
     </div>
 
-    <div class="strength__text" id="strength-text">
+    <div class="strength__text mt-2" id="strength-text">
         Enter a password
     </div>
 
-    <div class="strength__requirements">
-        <div class="password__requirement text-[#777]" id="length">
+    <div class="strength__requirements mt-4">
+        <div class="password__requirement text-[#777] gap-2 mb-1.5" id="length">
             <i class="fas fa-times-circle"></i>
             At least 8 characters
         </div>
-        <div class="password__requirement text-[#777]" id="uppercase">
+        <div class="password__requirement text-[#777] gap-2 mb-1.5" id="uppercase">
             <i class="fas fa-times-circle"></i>
             At least 1 uppercase letter
         </div>
-        <div class="password__requirement text-[#777]" id="lowercase">
+        <div class="password__requirement text-[#777] gap-2 mb-1.5" id="lowercase">
             <i class="fas fa-times-circle"></i>
             At least 1 lowercase letter
         </div>
-        <div class="password__requirement text-[#777]" id="number">
+        <div class="password__requirement text-[#777] gap-2 mb-1.5" id="number">
             <i class="fas fa-times-circle"></i>
             At least 1 number
         </div>
-        <div class="password__requirement text-[#777]" id="special">
+        <div class="password__requirement text-[#777] gap-2 mb-1.5" id="special">
             <i class="fas fa-times-circle"></i>
             At least 1 special character
         </div>
