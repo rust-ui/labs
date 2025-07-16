@@ -23,15 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check password strength on input
     passwordInput.addEventListener("input", () => {
       const password = passwordInput.value;
-      const container = passwordInput.closest(".password-strength-container");
+      const container = passwordInput.closest(".password__strength__container");
   
       // Remove all strength classes
       container.classList.remove(
-        "strength-very-weak",
-        "strength-weak",
-        "strength-medium",
-        "strength-strong",
-        "strength-very-strong",
+        "strength__very__weak",
+        "strength__weak",
+        "strength__medium",
+        "strength__strong",
+        "strength__very__strong",
       );
   
       // Check requirements
@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateStrengthMeter(container, score, textElement) {
       const strengthClasses = [
         "",
-        "strength-very-weak",
-        "strength-weak",
-        "strength-medium",
-        "strength-strong",
-        "strength-very-strong",
+        "strength__very__weak",
+        "strength__weak",
+        "strength__medium",
+        "strength__strong",
+        "strength__very__strong",
       ];
   
       const strengthTexts = [

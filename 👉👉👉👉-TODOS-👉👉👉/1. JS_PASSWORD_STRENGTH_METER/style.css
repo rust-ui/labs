@@ -1,5 +1,5 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
-.password-strength-container {
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+.password__strength__container {
     width: 100%;
     max-width: 400px;
     display: flex;
@@ -8,12 +8,12 @@
     font-family: 'Arial', sans-serif;
   }
   
-  .password-input-group {
+  .password__input__group {
     position: relative;
     width: 100%;
   }
   
-  .password-input {
+  .password__input {
     width: 100%;
     padding: 12px 40px 12px 16px;
     border: 1px solid #e0e0e0;
@@ -24,13 +24,13 @@
     transition: border-color 0.3s, box-shadow 0.3s;
   }
   
-  .password-input:focus {
+  .password__input:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
   }
   
-  .password-toggle {
+  .password__toggle {
     position: absolute;
     right: 12px;
     top: 50%;
@@ -43,11 +43,11 @@
     transition: color 0.2s;
   }
   
-  .password-toggle:hover {
+  .password__toggle:hover {
     color: #3498db;
   }
   
-  .strength-meter {
+  .strength__meter {
     width: 100%;
     height: 8px;
     background-color: #e0e0e0;
@@ -57,21 +57,21 @@
     position: relative;
   }
   
-  .strength-meter-fill {
+  .strength__meter__fill {
     height: 100%;
     width: 0;
     border-radius: 4px;
     transition: width 0.5s ease, background-color 0.5s ease;
   }
   
-  .strength-text {
+  .strength__text {
     font-size: 14px;
     margin-top: 8px;
     font-weight: 500;
     transition: color 0.3s;
   }
   
-  .strength-requirements {
+  .strength__requirements {
     margin-top: 16px;
   }
   
@@ -99,60 +99,60 @@
   }
   
   /* Strength levels */
-  .strength-very-weak .strength-meter-fill {
+  .strength__very__weak .strength__meter__fill {
     width: 20%;
     background-color: #ff4d4d;
   }
   
-  .strength-weak .strength-meter-fill {
+  .strength__weak .strength__meter__fill {
     width: 40%;
     background-color: #ffa64d;
   }
   
-  .strength-medium .strength-meter-fill {
+  .strength__medium .strength__meter__fill {
     width: 60%;
     background-color: #ffdb4d;
   }
   
-  .strength-strong .strength-meter-fill {
+  .strength__strong .strength__meter__fill {
     width: 80%;
     background-color: #9ee34d;
   }
   
-  .strength-very-strong .strength-meter-fill {
+  .strength__very__strong .strength__meter__fill {
     width: 100%;
     background-color: #4caf50;
   }
   
-  .strength-very-weak .strength-text {
+  .strength__very__weak .strength__text {
     color: #ff4d4d;
   }
   
-  .strength-weak .strength-text {
+  .strength__weak .strength__text {
     color: #ffa64d;
   }
   
-  .strength-medium .strength-text {
+  .strength__medium .strength__text {
     color: #ffdb4d;
   }
   
-  .strength-strong .strength-text {
+  .strength__strong .strength__text {
     color: #9ee34d;
   }
   
-  .strength-very-strong .strength-text {
+  .strength__very__strong .strength__text {
     color: #4caf50;
   }
   
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
-    .password-input {
+    .password__input {
       background-color: #222;
       border-color: #444;
       color: #eee;
     }
     
-    .strength-meter {
+    .strength__meter {
       background-color: #373737;
     }
   }
