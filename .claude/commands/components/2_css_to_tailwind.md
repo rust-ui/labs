@@ -74,7 +74,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Background**: `bg-transparent`, `bg-opacity-50`, etc.
 - **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, `rounded-[1.2rem]`, etc.
 - **Overflow**: `overflow-hidden`, `overflow-visible`, `overflow-scroll`, etc.
-- **Transform**: `scale-95`, `scale-100`, `scale-105`, `scale-110`, etc.
+- **Transform**: ⚠️ **DO NOT CONVERT** scale transforms - keep `transform: scale()` in CSS for animations
 - **Fill**: `fill-white`, `fill-black`, `fill-gray-500`, `fill-blue-600`, etc.
 - **Complex borders**: Use arbitrary syntax for custom borders: `border-t-[.035em] border-solid border-[#007bff]`
 - **Keep complex CSS**: Don't convert animations, transforms, or custom properties - preserve these as CSS

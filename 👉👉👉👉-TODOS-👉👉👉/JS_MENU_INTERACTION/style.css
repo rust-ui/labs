@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 4 ✔️ Step 5 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
 
 .menu__widget.active .hamburger__menu {
   width: 344px;
@@ -36,7 +36,6 @@
 }
 
 .menu__widget .hamburger__menu {
-  border-radius: 100px;
   transform: translate(28px, -50%);
   box-shadow: 0px 10px 30px -15px rgba(0, 0, 0, 0.7);
   transition: 650ms cubic-bezier(.79,0,.22,1);
@@ -44,17 +43,13 @@
 
 .menu__widget .hamburger__menu .menu__toggle__button {
   right: 8px;
-  border-radius: 100px;
   transition: 600ms cubic-bezier(.79,0,.22,1);
 }
 
-.menu__widget .hamburger__menu .menu__toggle__button:hover {
-}
 
 .menu__widget .hamburger__menu .menu__toggle__button i {
   width: 12px;
   height: 2px;
-  border-radius: 100px;
   transition: width 400ms cubic-bezier(.6,0,.45,.99),
               transform 600ms cubic-bezier(.6,0,.45,.99),
               top 600ms cubic-bezier(.6,0,.45,.99) 600ms,
@@ -75,7 +70,6 @@
 
 .menu__widget .hamburger__menu .menu__items__list li {
   list-style: none;
-  border-radius: 100px;
   transform: scale(0);
   transition: 300ms cubic-bezier(.37,.01,.43,1.3);
   transition-delay: 300ms;
