@@ -9,6 +9,25 @@
   
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Active state classes for JavaScript -->
+  <style>
+    .grid__menu__navigation.active span {
+      @apply bg-[rgb(9_14_22_/_83%)];
+    }
+    
+    .grid__menu__navigation.active span:hover ion-icon {
+      @apply text-[#2dfc52];
+    }
+    
+    .grid__menu__navigation.active ~ .grid__menu__close {
+      @apply bg-[#2dfc52];
+    }
+    
+    .grid__menu__navigation ~ .grid__menu__close ion-icon {
+      @apply text-[#10131c];
+    }
+  </style>
   <!-- GSAP (uncomment if needed) -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
@@ -20,33 +39,33 @@
   <div class="mainDivParent">
     <div class="mainDiv">
         <div class="grid__menu__navigation">
-            <span style="--i: 0; --x: -1; --y: 0">
-                <ion-icon name="time-outline"></ion-icon>
+            <span style="--i: 0; --x: -1; --y: 0" class="bg-white">
+                <ion-icon name="time-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 1; --x: 1; --y: 0">
-                <ion-icon name="moon-outline"></ion-icon>
+            <span style="--i: 1; --x: 1; --y: 0" class="bg-white">
+                <ion-icon name="moon-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 2; --x: 0; --y: -1">
-                <ion-icon name="diamond-outline"></ion-icon>
+            <span style="--i: 2; --x: 0; --y: -1" class="bg-white">
+                <ion-icon name="diamond-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 3; --x: 0; --y: 1">
-                <ion-icon name="alarm-outline"></ion-icon>
+            <span style="--i: 3; --x: 0; --y: 1" class="bg-white">
+                <ion-icon name="alarm-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 4; --x: -1; --y: 1">
-                <ion-icon name="game-controller-outline"></ion-icon>
+            <span style="--i: 4; --x: -1; --y: 1" class="bg-white">
+                <ion-icon name="game-controller-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 5; --x: -1; --y: -1">
-                <ion-icon name="chatbubble-outline"></ion-icon>
+            <span style="--i: 5; --x: -1; --y: -1" class="bg-white">
+                <ion-icon name="chatbubble-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 6; --x: 1; --y: -1">
-                <ion-icon name="water-outline"></ion-icon>
+            <span style="--i: 6; --x: 1; --y: -1" class="bg-white">
+                <ion-icon name="water-outline" class="text-white"></ion-icon>
             </span>
-            <span style="--i: 7; --x: 1; --y: 1">
-                <ion-icon name="camera-outline"></ion-icon>
+            <span style="--i: 7; --x: 1; --y: 1" class="bg-white">
+                <ion-icon name="camera-outline" class="text-white"></ion-icon>
             </span>
         </div>
-        <div class="grid__menu__close">
-            <ion-icon name="close-outline"></ion-icon>
+        <div class="grid__menu__close bg-white">
+            <ion-icon name="close-outline" class="text-white"></ion-icon>
         </div>
     </div>
 

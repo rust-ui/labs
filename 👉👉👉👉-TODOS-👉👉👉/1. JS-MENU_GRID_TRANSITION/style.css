@@ -1,5 +1,5 @@
 
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
+/* TW: Step 1 ✔️ */
 .mainDivParent {
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
     position: absolute;
     width: 7px;
     height: 7px;
-    background: #fff;
+    /* background: #fff; - converted to bg-white */
     transform: translate(calc(14px * var(--x)), calc(14px * var(--y)));
     transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
     transition-delay: calc(0.1s * var(--i));
@@ -50,7 +50,7 @@
 .mainDiv .grid__menu__navigation.active span {
     width: 45px;
     height: 45px;
-    background: rgb(9 14 22 / 83%);
+    /* background: rgb(9 14 22 / 83%); - converted to bg-[rgb(9_14_22_/_83%)] */
     transform: translate(calc(60px* var(--x)), calc(60px* var(--y)));
     border-radius: 7px;
     border: 1px solid #ffffff7d;
@@ -59,7 +59,7 @@
 .mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
     font-size: 0em;
-    color: #fff;
+    /* color: #fff; - converted to text-white */
 }
 
 .mainDiv .grid__menu__navigation.active span ion-icon {
@@ -67,7 +67,7 @@
 }
 
 .mainDiv .grid__menu__navigation.active span:hover ion-icon {
-    color: #2dfc52;
+    /* color: #2dfc52; - converted to text-[#2dfc52] */
     filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
         drop-shadow(0 0 15px #2dfc52);
 }
@@ -76,7 +76,7 @@
     position: absolute;
     width: 7px;
     height: 7px;
-    background: #fff;
+    /* background: #fff; - converted to bg-white */
     transition: 0.5s;
     transition-delay: 0.4s;
     pointer-events: none;
@@ -90,14 +90,14 @@
     height: 40px;
     pointer-events: initial;
     transition-delay: 0.8s;
-    background: #2dfc52;
+    /* background: #2dfc52; - converted to bg-[#2dfc52] */
     border-radius: 8px;
 }
 
 .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
     font-size: 2em;
     scale: 0;
-    color: #10131c;
+    /* color: #10131c; - converted to text-[#10131c] */
     transition: 0.5s;
 }
 
