@@ -12,8 +12,6 @@
 }
 
 .password__toggle {
-  background: none;
-  border: none;
   transition: color 0.2s;
 }
 

@@ -82,6 +82,8 @@ For each commit, mark the top of the CSS file this pattern:
 ### Step 6: Interactivity & Visual (*COMMIT AFTER COMPLETION*)
 - **Cursor**: `cursor-pointer`, `cursor-default`, `cursor-wait`, etc.
 - **Background**: `bg-transparent`, `bg-opacity-50`, etc.
+- **Background none**: `background: none` → `bg-transparent`
+- **Border none**: `border: none` → `border-0`
 - **Border radius**: `rounded`, `rounded-lg`, `rounded-full`, `rounded-2xl`, `rounded-[1.2rem]`, etc.
 - **Overflow**: `overflow-hidden`, `overflow-visible`, `overflow-scroll`, etc.
 - **List style**: `list-none`, `list-disc`, `list-decimal`, etc.
