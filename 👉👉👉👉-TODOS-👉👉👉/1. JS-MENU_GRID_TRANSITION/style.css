@@ -1,10 +1,11 @@
 
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
+/* TW: Step 3 ✔️ Step 4 ✔️ Step 6 ✔️ */
+/* REVERTED: Sizing and colors restored to original CSS */
 .mainDivParent {
     /* display: flex; - converted to flex */
     /* justify-content: center; - converted to justify-center */
     /* align-items: center; - converted to items-center */
-    /* min-height: 100vh; - converted to min-h-screen */
+    min-height: 100vh;
     background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
     background-image: radial-gradient(circle at 1% 52%, rgba(139, 139, 139,0.05) 0%, rgba(139, 139, 139,0.05) 50%,rgba(21, 21, 21,0.05) 50%, rgba(21, 21, 21,0.05) 100%),radial-gradient(circle at 41% 28%, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),radial-gradient(circle at 48% 1%, rgba(93, 93, 93,0.05) 0%, rgba(93, 93, 93,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),linear-gradient(255deg, rgb(156, 41, 132),rgb(47, 14, 122));
 }
@@ -14,8 +15,8 @@
     /* display: flex; - converted to flex */
     /* justify-content: center; - converted to justify-center */
     /* align-items: center; - converted to items-center */
-    /* width: 188px; - converted to w-[188px] */
-    /* height: 188px; - converted to h-[188px] */
+    width: 188px;
+    height: 188px;
     background-color: rgb(255 255 255 / 21%);
     /* border-radius: 10px; - converted to rounded-[10px] */
     backdrop-filter: blur(6px);
@@ -25,8 +26,8 @@
 
 .mainDiv .grid__menu__navigation {
     /* position: relative; - converted to relative */
-    /* width: 40px; - converted to w-[40px] */
-    /* height: 40px; - converted to h-[40px] */
+    width: 40px;
+    height: 40px;
     /* cursor: pointer; - converted to cursor-pointer */
     /* display: flex; - converted to flex */
     /* justify-content: center; - converted to justify-center */
@@ -36,9 +37,9 @@
 
 .mainDiv .grid__menu__navigation span {
     /* position: absolute; - converted to absolute */
-    /* width: 7px; - converted to w-[7px] */
-    /* height: 7px; - converted to h-[7px] */
-    /* background: #fff; - converted to bg-white */
+    width: 7px;
+    height: 7px;
+    background: #fff;
     transform: translate(calc(14px * var(--x)), calc(14px * var(--y)));
     transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
     transition-delay: calc(0.1s * var(--i));
@@ -48,9 +49,9 @@
 }
 
 .mainDiv .grid__menu__navigation.active span {
-    /* width: 45px; - converted to w-[45px] */
-    /* height: 45px; - converted to h-[45px] */
-    /* background: rgb(9 14 22 / 83%); - converted to bg-[rgb(9_14_22_/_83%)] */
+    width: 45px;
+    height: 45px;
+    background: rgb(9 14 22 / 83%);
     transform: translate(calc(60px* var(--x)), calc(60px* var(--y)));
     /* border-radius: 7px; - converted to rounded-[7px] */
     /* border: 1px solid #ffffff7d; - converted to border border-[#ffffff7d] */
@@ -59,7 +60,7 @@
 .mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
     /* font-size: 0em; - converted to text-[0em] */
-    /* color: #fff; - converted to text-white */
+    color: #fff;
 }
 
 .mainDiv .grid__menu__navigation.active span ion-icon {
@@ -67,16 +68,16 @@
 }
 
 .mainDiv .grid__menu__navigation.active span:hover ion-icon {
-    /* color: #2dfc52; - converted to text-[#2dfc52] */
+    color: #2dfc52;
     filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
         drop-shadow(0 0 15px #2dfc52);
 }
 
 .grid__menu__close {
     /* position: absolute; - converted to absolute */
-    /* width: 7px; - converted to w-[7px] */
-    /* height: 7px; - converted to h-[7px] */
-    /* background: #fff; - converted to bg-white */
+    width: 7px;
+    height: 7px;
+    background: #fff;
     transition: 0.5s;
     transition-delay: 0.4s;
     /* pointer-events: none; - converted to pointer-events-none */
@@ -86,18 +87,18 @@
 }
 
 .mainDiv .grid__menu__navigation.active ~ .grid__menu__close {
-    /* width: 40px; - converted to w-[40px] */
-    /* height: 40px; - converted to h-[40px] */
+    width: 40px;
+    height: 40px;
     pointer-events: initial;
     transition-delay: 0.8s;
-    /* background: #2dfc52; - converted to bg-[#2dfc52] */
+    background: #2dfc52;
     /* border-radius: 8px; - converted to rounded-[8px] */
 }
 
 .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
-    /* font-size: 2em; - converted to text-[2em] */
+    font-size: 2em;
     scale: 0;
-    /* color: #10131c; - converted to text-[#10131c] */
+    color: #10131c;
     transition: 0.5s;
 }
 
