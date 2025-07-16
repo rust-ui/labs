@@ -1,5 +1,5 @@
-const navigation = document.querySelector(".navigation");
-const close = document.querySelector(".close");
+const navigation = document.querySelector(".grid__menu__navigation");
+const close = document.querySelector(".grid__menu__close");
 navigation.onclick = () => {
   navigation.classList.add("active");
 };

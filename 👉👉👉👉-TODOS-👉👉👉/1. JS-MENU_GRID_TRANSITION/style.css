@@ -1,5 +1,5 @@
 
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 .mainDivParent {
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@
       border: 1px solid rgb(255 255 255 / 18%);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
-  .mainDiv .navigation {
+  .mainDiv .grid__menu__navigation {
     position: relative;
     width: 40px;
     height: 40px;
@@ -31,7 +31,7 @@
     align-items: center;
     transition: 0.5s;
   }
-  .mainDiv .navigation span {
+  .mainDiv .grid__menu__navigation span {
     position: absolute;
     width: 7px;
     height: 7px;
@@ -43,7 +43,7 @@
     justify-content: center;
     align-items: center;
   }
-  .mainDiv .navigation.active span {
+  .mainDiv .grid__menu__navigation.active span {
         width: 45px;
       height: 45px;
       background: rgb(9 14 22 / 83%);
@@ -52,20 +52,20 @@
       border: 1px solid #ffffff7d;
   }
   
-  .mainDiv .navigation span ion-icon {
+  .mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
     font-size: 0em;
     color: #fff;
   }
-  .mainDiv .navigation.active span ion-icon {
+  .mainDiv .grid__menu__navigation.active span ion-icon {
     font-size: 1.35em;
   }
-  .mainDiv .navigation.active span:hover ion-icon {
+  .mainDiv .grid__menu__navigation.active span:hover ion-icon {
     color: #2dfc52;
     filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
       drop-shadow(0 0 15px #2dfc52);
   }
-  .close {
+  .grid__menu__close {
     position: absolute;
     width: 7px;
     height: 7px;
@@ -78,7 +78,7 @@
     align-items: center;
   }
   
-  .mainDiv .navigation.active ~ .close {
+  .mainDiv .grid__menu__navigation.active ~ .grid__menu__close {
     width: 40px;
     height: 40px;
     pointer-events: initial;
@@ -86,13 +86,13 @@
     background: #2dfc52;
     border-radius: 8px;
   }
-  .mainDiv .navigation ~ .close ion-icon {
+  .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
     font-size: 2em;
     scale: 0;
     color: #10131c;
     transition: 0.5s;
   }
-  .mainDiv .navigation.active ~ .close ion-icon {
+  .mainDiv .grid__menu__navigation.active ~ .grid__menu__close ion-icon {
     scale: 1;
     transition-delay: 1s;
   }
