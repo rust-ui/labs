@@ -1,24 +1,19 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 6 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
 /* REVERTED: Sizing and colors restored to original CSS */
 /* NOTE: Do not add comments for classes you remove during conversion */
 
 .mainDivParent {
-    min-height: 100vh;
     background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
     background-image: radial-gradient(circle at 1% 52%, rgba(139, 139, 139,0.05) 0%, rgba(139, 139, 139,0.05) 50%,rgba(21, 21, 21,0.05) 50%, rgba(21, 21, 21,0.05) 100%),radial-gradient(circle at 41% 28%, rgba(81, 81, 81,0.05) 0%, rgba(81, 81, 81,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),radial-gradient(circle at 48% 1%, rgba(93, 93, 93,0.05) 0%, rgba(93, 93, 93,0.05) 50%,rgba(7, 7, 7,0.05) 50%, rgba(7, 7, 7,0.05) 100%),linear-gradient(255deg, rgb(156, 41, 132),rgb(47, 14, 122));
 }
 
 .mainDiv {
-    width: 188px;
-    height: 188px;
     background-color: rgb(255 255 255 / 21%);
     backdrop-filter: blur(6px);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .mainDiv .grid__menu__navigation {
-    width: 40px;
-    height: 40px;
     transition: 0.5s;
 }
 
