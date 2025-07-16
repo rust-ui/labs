@@ -22,17 +22,17 @@
     <div class="password__input__group relative w-full">
         <input
             type="password"
-            class="password__input bg-white text-[#333] border-[#e0e0e0] focus:border-[#3498db] dark:bg-[#222] dark:border-[#444] dark:text-[#eee] py-3 px-4 pr-10 text-base w-full"
+            class="password__input bg-white text-[#333] border-[#e0e0e0] focus:border-[#3498db] dark:bg-[#222] dark:border-[#444] dark:text-[#eee] py-3 px-4 pr-10 text-base w-full rounded-lg"
             id="password"
             placeholder="Enter password"
         />
-        <button type="button" class="password__toggle text-[#777] hover:text-[#3498db] right-3 text-base absolute top-1/2 -translate-y-1/2" id="toggle-password">
+        <button type="button" class="password__toggle text-[#777] hover:text-[#3498db] right-3 text-base absolute top-1/2 -translate-y-1/2 cursor-pointer" id="toggle-password">
             <i class="fas fa-eye"></i>
         </button>
     </div>
 
-    <div class="strength__meter bg-[#e0e0e0] dark:bg-[#373737] mt-2 overflow-hidden relative w-full h-2">
-        <div class="strength__meter__fill h-full w-0" id="strength-fill"></div>
+    <div class="strength__meter bg-[#e0e0e0] dark:bg-[#373737] mt-2 overflow-hidden relative w-full h-2 rounded">
+        <div class="strength__meter__fill h-full w-0 rounded" id="strength-fill"></div>
     </div>
 
     <div class="strength__text mt-2 text-sm font-medium" id="strength-text">
@@ -70,11 +70,11 @@
   <script>
     // Add Tailwind classes for strength levels and valid requirements
     const strengthLevels = {
-      'strength__very__weak': { fill: 'bg-[#ff4d4d] w-[20%]', text: 'text-[#ff4d4d]' },
-      'strength__weak': { fill: 'bg-[#ffa64d] w-[40%]', text: 'text-[#ffa64d]' },
-      'strength__medium': { fill: 'bg-[#ffdb4d] w-[60%]', text: 'text-[#ffdb4d]' },
-      'strength__strong': { fill: 'bg-[#9ee34d] w-[80%]', text: 'text-[#9ee34d]' },
-      'strength__very__strong': { fill: 'bg-[#4caf50] w-full', text: 'text-[#4caf50]' }
+      'strength__very__weak': { fill: 'bg-[#ff4d4d] w-[20%] rounded', text: 'text-[#ff4d4d]' },
+      'strength__weak': { fill: 'bg-[#ffa64d] w-[40%] rounded', text: 'text-[#ffa64d]' },
+      'strength__medium': { fill: 'bg-[#ffdb4d] w-[60%] rounded', text: 'text-[#ffdb4d]' },
+      'strength__strong': { fill: 'bg-[#9ee34d] w-[80%] rounded', text: 'text-[#9ee34d]' },
+      'strength__very__strong': { fill: 'bg-[#4caf50] w-full rounded', text: 'text-[#4caf50]' }
     };
 
     // Apply colors when strength levels change
