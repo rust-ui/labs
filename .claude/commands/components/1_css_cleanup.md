@@ -24,9 +24,11 @@ Keep that in memory.
 This way when you will change CSS classes you are sure not to break JS.
 
 
-### Step 2: Flatten CSS if nested (*COMMIT AFTER COMPLETION*)
+### Step 2: Flatten CSS if nested and remove extra spaces (*COMMIT AFTER COMPLETION*)
 
 If the CSS is nested, flatten it. If not nested, you can skip this step.
+
+Check if there is extra spaces useless. If any, remvove them.
 
 
 ### Step 3: Clean CSS with mainDiv (*COMMIT AFTER COMPLETION*)
