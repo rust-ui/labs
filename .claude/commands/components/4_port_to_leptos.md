@@ -1,6 +1,6 @@
 # Convert CSS to Tailwind
 
-Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
+Convert CSS classes to Tailwind CSS for the specified files: $ARGUMENTS
 
 ## Workflow
 

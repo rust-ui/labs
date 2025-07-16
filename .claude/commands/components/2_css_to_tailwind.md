@@ -1,6 +1,6 @@
 # Convert CSS to Tailwind
 
-Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
+Convert CSS classes to Tailwind CSS for the specified files: $ARGUMENTS
 
 ## 🚨 IMPORTANT RESTRICTIONS
 
@@ -31,7 +31,7 @@ For each commit, mark the top of the CSS file this pattern:
 
 ## Convertible CSS Patterns
 
-**Only convert CSS that can be replaced with these Tailwind utilities:**
+**Only convert CSS that can be replaced with these Tailwind CSS:**
 
 ### Step 1: Colors (*COMMIT AFTER COMPLETION*)
 - **Text**: `text-red-500`, `text-blue-600`, `text-green-400`, etc.
@@ -111,7 +111,5 @@ For each commit, mark the top of the CSS file this pattern:
 - **@keyframes naming**: Always prefix keyframe names with component/feature name using __ pattern:
   - `@keyframes scale` → `@keyframes scroll__snap__scale`
   - `@keyframes fade` → `@keyframes modal__fade`
-- **Separate commits**: Create dedicated commits for arbitrary value conversions:
-  - `refactor: convert [component_name] hardcoded values to Tailwind arbitrary syntax.`
 - **Active state classes**: When encountering `.active` classes or state-dependent styles, add "/* Active class */" comments above each selector to indicate active state styling
 - **No conversion comments**: Do NOT add comments for CSS properties that you remove during conversion. Simply remove the CSS properties and add the Tailwind classes to HTML without explanatory comments.
