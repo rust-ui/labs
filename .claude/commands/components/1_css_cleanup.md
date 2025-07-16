@@ -8,6 +8,12 @@ Clean CSS classes for the specified files: $ARGUMENTS
 
 ⚠️ *IMPORTANT*: For each steps, you need to ommit your work.
 
+For each commit, mark the top of the CSS file this pattern:
+- `/* CLEAN: Step 1 ✔️ */`
+- `/* CLEAN: Step 1 ✔️ Step 2 ✔️ */`
+- `/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */` etc.
+
+
 
 ### Step 1: Keep JS classes target in memory (*COMMIT AFTER COMPLETION*)
 
@@ -30,7 +36,6 @@ If the CSS is nested, flatten it. If not nested, you can skip this step.
 4. Move `html`/`body` styles to `.mainDiv`, remove empty selectors
 5. Ensure root element has `class="mainDiv"` at the top
 
-Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 
 
 ### Step 4: Replace hyphenated CSS classes (*COMMIT AFTER COMPLETION*)
@@ -41,7 +46,6 @@ Note: When complete, add progress marker at top: `/* Step 1 ✔️ */`
 5. Verify all references are updated consistently
 6. **Double-check**: Search for any remaining hyphens in class names to ensure none were missed
 
-Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 
 
 ### Step 5: Replace Generic CSS Class Names (*COMMIT AFTER COMPLETION*)
@@ -52,7 +56,6 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ */`
 5. Update the CSS class usage report to reflect the new class names
 6. Ensure new names clearly describe the component's purpose and functionality
 
-Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */`
 
 
 ### Step 6: Remove CSS Layers (*COMMIT AFTER COMPLETION*)
@@ -61,7 +64,6 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Ste
 3. Maintain proper indentation and structure
 4. Ensure all CSS functionality remains intact
 
-Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */`
 
 
 ### Step 7: Remove Unused CSS Classes (*COMMIT AFTER COMPLETION*)
@@ -71,7 +73,5 @@ Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Ste
 4. Also check adjacent JS file (if any) to ensure classes used in JavaScript are not removed
 5. Clean up any empty CSS rules after removal
 6. Verify that all remaining CSS classes have corresponding usage in HTML or JS
-
-Note: When complete, update progress marker: `/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */`
 
 
