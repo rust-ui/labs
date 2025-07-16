@@ -33,6 +33,7 @@ Convert CSS classes to Tailwind utilities for the specified files: $ARGUMENTS
 
 ### Layout
 - **Display**: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `hidden`, etc.
+- **Visibility**: `visible`, `invisible`, etc.
 - **Flexbox**: `justify-center`, `justify-between`, `items-center`, etc.
 - **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
 - **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.

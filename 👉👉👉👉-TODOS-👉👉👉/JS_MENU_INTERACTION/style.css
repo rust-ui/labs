@@ -1,25 +1,5 @@
 /* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
 
-.mainDiv {
-  width: 100%;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-color: #9CB46D;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu__widget {
-  width: 288px;
-  height: 200px;
-  display: flex;
-  justify-content: flex-end;
-  border-radius: 10px;
-  background-color: #FFF;
-}
-
 .menu__widget.active .hamburger__menu {
   width: 344px;
 }
@@ -114,11 +94,6 @@
   flex-direction: row;
   margin: 0;
   right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  position: absolute;
 }
 
 .menu__widget .hamburger__menu .menu__items__list li {
@@ -157,14 +132,3 @@
   transition-delay: 300ms;
 }
 
-.dribbble {
-  position: fixed;
-  display: block;
-  right: 24px;
-  bottom: 24px;
-}
-
-.dribbble img {
-  display: block;
-  width: 76px;
-}
