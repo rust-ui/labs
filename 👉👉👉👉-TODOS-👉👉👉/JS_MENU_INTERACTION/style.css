@@ -38,10 +38,6 @@
 .menu__widget .hamburger__menu {
   width: 56px;
   height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
   border-radius: 100px;
   background-color: #4C5042;
   transform: translate(28px, -50%);
@@ -53,11 +49,6 @@
   width: 40px;
   height: 40px;
   right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
   border-radius: 100px;
   cursor: pointer;
   z-index: 100;
