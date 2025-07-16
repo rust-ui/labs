@@ -1,5 +1,5 @@
 
-/* TW: Step 1 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 .mainDivParent {
     display: flex;
     justify-content: center;
@@ -58,12 +58,12 @@
 
 .mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
-    font-size: 0em;
+    /* font-size: 0em; - converted to text-[0em] */
     /* color: #fff; - converted to text-white */
 }
 
 .mainDiv .grid__menu__navigation.active span ion-icon {
-    font-size: 1.35em;
+    /* font-size: 1.35em; - converted to text-[1.35em] */
 }
 
 .mainDiv .grid__menu__navigation.active span:hover ion-icon {
@@ -95,7 +95,7 @@
 }
 
 .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
-    font-size: 2em;
+    /* font-size: 2em; - converted to text-[2em] */
     scale: 0;
     /* color: #10131c; - converted to text-[#10131c] */
     transition: 0.5s;
