@@ -24,3 +24,57 @@
 .strength__text {
   transition: color 0.3s;
 }
+
+/* Strength levels - restored for script.js to work properly */
+.strength__very__weak .strength__meter__fill {
+  width: 20%;
+  background-color: #ff4d4d;
+}
+
+.strength__weak .strength__meter__fill {
+  width: 40%;
+  background-color: #ffa64d;
+}
+
+.strength__medium .strength__meter__fill {
+  width: 60%;
+  background-color: #ffdb4d;
+}
+
+.strength__strong .strength__meter__fill {
+  width: 80%;
+  background-color: #9ee34d;
+}
+
+.strength__very__strong .strength__meter__fill {
+  width: 100%;
+  background-color: #4caf50;
+}
+
+.strength__very__weak .strength__text {
+  color: #ff4d4d;
+}
+
+.strength__weak .strength__text {
+  color: #ffa64d;
+}
+
+.strength__medium .strength__text {
+  color: #ffdb4d;
+}
+
+.strength__strong .strength__text {
+  color: #9ee34d;
+}
+
+.strength__very__strong .strength__text {
+  color: #4caf50;
+}
+
+.password__requirement.valid {
+  color: #4caf50;
+}
+
+.password__requirement.valid i {
+  color: #4caf50;
+}

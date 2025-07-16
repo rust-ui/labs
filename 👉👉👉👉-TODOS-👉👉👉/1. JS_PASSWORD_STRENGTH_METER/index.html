@@ -67,54 +67,5 @@
 
 
   <script src="script.js"></script>
-  <script>
-    // Add Tailwind classes for strength levels and valid requirements
-    const strengthLevels = {
-      'strength__very__weak': { fill: 'bg-[#ff4d4d] w-[20%] rounded', text: 'text-[#ff4d4d]' },
-      'strength__weak': { fill: 'bg-[#ffa64d] w-[40%] rounded', text: 'text-[#ffa64d]' },
-      'strength__medium': { fill: 'bg-[#ffdb4d] w-[60%] rounded', text: 'text-[#ffdb4d]' },
-      'strength__strong': { fill: 'bg-[#9ee34d] w-[80%] rounded', text: 'text-[#9ee34d]' },
-      'strength__very__strong': { fill: 'bg-[#4caf50] w-full rounded', text: 'text-[#4caf50]' }
-    };
-
-    // Apply colors when strength levels change
-    function applyStrengthColors() {
-      const container = document.querySelector('.password__strength__container');
-      const fill = document.querySelector('.strength__meter__fill');
-      const text = document.querySelector('.strength__text');
-      
-      Object.keys(strengthLevels).forEach(level => {
-        if (container.classList.contains(level)) {
-          fill.className = `strength__meter__fill ${strengthLevels[level].fill}`;
-          text.className = `strength__text ${strengthLevels[level].text}`;
-        }
-      });
-      
-      // Apply green color to valid requirements
-      document.querySelectorAll('.password__requirement.valid').forEach(req => {
-        req.classList.add('text-[#4caf50]');
-        req.classList.remove('text-[#777]');
-        const icon = req.querySelector('i');
-        if (icon) {
-          icon.classList.add('text-[#4caf50]');
-        }
-      });
-    }
-
-    // Observer to watch for class changes
-    const observer = new MutationObserver(applyStrengthColors);
-    observer.observe(document.querySelector('.password__strength__container'), {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-    
-    // Also observe individual requirements
-    document.querySelectorAll('.password__requirement').forEach(req => {
-      observer.observe(req, {
-        attributes: true,
-        attributeFilter: ['class']
-      });
-    });
-  </script>
 </body>
 </html>
