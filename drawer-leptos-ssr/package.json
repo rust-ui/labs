@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "format": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --apply ."
+  },
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.3",
+    "tailwindcss": "^4.1.3",
+    "tw-animate-css": "^1.2.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}

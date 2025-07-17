@@ -1,0 +1,48 @@
+{
+	"[rust]": {
+		"editor.tabSize": 4,
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+		"editor.formatOnSave": true
+	},
+
+	"rust-analyzer": {
+		"rustfmt": {
+			"overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"]
+		}
+	},
+	"rust-analyzer.check.command": "clippy",
+
+	"tailwindCSS.includeLanguages": {
+		"rust": "html"
+	},
+	"tailwindCSS.emmetCompletions": true,
+
+	"tailwindCSS.experimental.classRegex": [
+		["tw_merge!\\(([^)]*)\\)"],
+		["#[tw\\\\([^\\]]*class\\s*=\\s*\"([^\"]*)\"\\)]", "\"([^\"]*)\""]
+	],
+
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "explicit",
+			"source.fixAll.biome": "explicit"
+		}
+	},
+	"biome.enable": true,
+	"biome.lint.enable": true,
+
+  "emmet.includeLanguages": {
+    "rust": "html",
+    "*.rs": "html"
+  },
+  "files.associations": {
+      "*.rs": "rust"
+  },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": true
+  },
+  "css.validate": false
+}

@@ -1,0 +1,189 @@
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Final ✔️ */
+
+
+.drawer__drag span:first-of-type {
+    background: color-mix(in hsl, canvasText, canvas 75%);
+  }
+  
+  /* This provides you the sticky effect on the bottom */
+  
+  .drawer__slide {
+    view-timeline: --drawer;
+  }
+  
+  .drawer:not([data-snapped='true']) {
+    /* This acts like a holding animation */
+    transition-property: display, overlay;
+    transition-behavior: allow-discrete;
+    transition-duration: 0.5s;
+  }
+  
+  .drawer__content {
+    transition-property: translate;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+    translate: 0 100%;
+  }
+  
+  .drawer:popover-open .drawer__content {
+    translate: 0 0;
+    @starting-style {
+      translate: 0 100%;
+    }
+  }
+  
+  /* transition this one */
+  @property --opened {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  /* don't transition this one */
+  @property --closed {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+  }
+  
+  .mainDivDrawer {
+    /* only transition the opener */
+    transition-property: --opened, --closed;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+    transform-origin: 50% 0%;
+  }
+  
+  :root:has(.drawer:popover-open) .mainDivDrawer {
+    transition-property: --opened;
+  }
+  
+  /* Safari has a bug when transition the popover back from the :top-layer */
+  /* This would work on body in Chromium which would make the effect better */
+  
+  .mainDivDrawer{
+    --diff: calc(var(--opened) * var(--closed));
+    --scale-down: 0.04;
+    --rad: 12px;
+    --ty: calc(env(safe-area-inset-top) + var(--rad));
+    scale: calc(
+      1 -
+        (
+          (var(--opened) * var(--scale-down)) -
+            (var(--diff) * var(--scale-down))
+        )
+    );
+    border-radius: calc(
+      (var(--opened) * var(--rad)) - (var(--diff) * var(--rad))
+    );
+    translate: 0 calc((var(--opened) * var(--ty)) - (var(--diff) * var(--ty)));
+  }
+  
+  :root:has(.drawer:popover-open) .mainDivDrawer {
+    overflow: hidden;
+    --opened: 1;
+  }
+  
+  :root:has(.drawer:popover-open) {
+    --closed: 0;
+  }
+  
+  @supports (animation-timeline: scroll()) {
+    :root:has(.drawer:popover-open) {
+      --closed: 1;
+      animation: open both linear reverse;
+      animation-timeline: --drawer;
+      animation-range: entry;
+    }
+    @keyframes open {
+      0% {
+        --closed: 0;
+      }
+    }
+  }
+  
+  :root:has(.drawer:popover-open),
+  :root:has(.drawer:popover-open) .mainDivDrawer,
+  .drawer:popover-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  
+  .drawer::backdrop {
+    transition-property: display, --opened, --closed, overlay;
+    transition-behavior: allow-discrete;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+    opacity: calc(var(--opened) - (var(--opened) * var(--closed)));
+  }
+  .drawer:popover-open::backdrop {
+    --opened: 1;
+  }
+  @starting-style {
+    .drawer:popover-open::backdrop {
+      --opened: 0;
+    }
+  }
+  
+  .drawer {
+    transition: inset 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  
+  /* software keyboard handling */
+  /* this is akin to using interactive-widget=resizes-content */
+  /* .drawer {
+    inset: 0 0 calc(var(--sw-keyboard-height, 0) * 1px) 0;
+  } */
+  
+  
+  [data-dragging='true'] .drawer__scroller {
+    scroll-snap-type: none;
+  }
+  
+  /* Add a little rubber banding cover (Simulator showed some) */
+  @media (hover: none) and (pointer: coarse) {
+    .drawer__slide::after {
+      content: '';
+      translate: 0 100%;
+    }
+  }
+  
+  .drawer__scroller {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .drawer__scroller::after {
+    content: '';
+  }
+  
+  [data-meta='true'] .drawer__slide {
+    max-height: calc(95% - (var(--sw-keyboard-height, 0) * 1px));
+  }
+  
+  .drawer__anchor:first-of-type {
+    translate: 0 -100%;
+  }
+  
+  /* Sticky pieces */
+  
+  :where(.fluid) {
+    --fluid-min: calc(
+      16 * pow(1.2, var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      20 * pow(1.33, var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (1500 - 375)
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * 375) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+  
