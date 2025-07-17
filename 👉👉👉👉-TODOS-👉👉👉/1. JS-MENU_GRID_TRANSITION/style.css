@@ -1,5 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
-/* REVERTED: Sizing and colors restored to original CSS */
+/* TW: Step 1 ✔️ */
 /* NOTE: Do not add comments for classes you remove during conversion */
 
 .mainDivParent {
@@ -25,6 +24,7 @@
     transition-delay: calc(0.1s * var(--i));
 }
 
+/* Active class */
 .mainDiv .grid__menu__navigation.active span {
     width: 45px;
     height: 45px;
@@ -39,10 +39,12 @@
     font-size: 0em;
 }
 
+/* Active class */
 .mainDiv .grid__menu__navigation.active span ion-icon {
     font-size: 1.35em;
 }
 
+/* Active class */
 .mainDiv .grid__menu__navigation.active span:hover ion-icon {
     filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
         drop-shadow(0 0 15px #2dfc52);
@@ -55,6 +57,7 @@
     transition-delay: 0.4s;
 }
 
+/* Active class */
 .mainDiv .grid__menu__navigation.active ~ .grid__menu__close {
     width: 40px;
     height: 40px;
@@ -70,6 +73,7 @@
     transition: 0.5s;
 }
 
+/* Active class */
 .mainDiv .grid__menu__navigation.active ~ .grid__menu__close ion-icon {
     scale: 1;
     transition-delay: 1s;
