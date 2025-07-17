@@ -217,16 +217,6 @@
   font-size: var(--fluid-type);
 }
 
-.mainDiv,
-.mainDiv *,
-.mainDiv *:after,
-.mainDiv *:before {
-  box-sizing: border-box;
-}
-
-.mainDiv {
-  background: black;
-}
 
 .mainDivDrawer {
   background: canvas;
