@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
 .mainDiv {
   height: 100%;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.chat-bar {
+.chat__bar {
   background: #714efc;
   box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.3);
   border-radius: 36px;
@@ -19,7 +19,7 @@
   overflow: hidden;
   transform-origin: calc(0.5em + 18px) 50%;
 }
-.chat-bar__toggle {
+.chat__bar__toggle {
   height: 36px;
   width: 36px;
   display: flex;
@@ -30,17 +30,17 @@
   border-radius: 50%;
   transition: 0.3s ease-in-out;
 }
-.chat-bar__toggle .material-icons {
+.chat__bar__toggle .material-icons {
   font-size: 24px;
 }
-.chat-bar__message, .chat-bar__buttons {
+.chat__bar__message, .chat__bar__buttons {
   transform-origin: calc(-1em - 18px) 50%;
   width: 190px;
   transition: 0.2s ease-out;
   position: relative;
   padding-left: 1em;
 }
-.chat-bar__input {
+.chat__bar__input {
   background: rgba(255, 255, 255, 0.3);
   height: 36px;
   box-sizing: border-box;
@@ -50,10 +50,10 @@
   padding: 1em;
   color: white;
 }
-.chat-bar__input::placeholder {
+.chat__bar__input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.chat-bar__buttons {
+.chat__bar__buttons {
   position: absolute;
   display: flex;
   left: calc(36px + 1em);
@@ -61,25 +61,25 @@
   width: 190px;
   transform: rotate(90deg);
 }
-.chat-bar.--is-active .chat-bar__toggle {
+.chat__bar.--is-active .chat__bar__toggle {
   transform: rotateZ(-135deg);
 }
-.chat-bar.--is-active .chat-bar__message {
+.chat__bar.--is-active .chat__bar__message {
   transform: rotate(-90deg);
 }
-.chat-bar.--is-active .chat-bar__buttons {
+.chat__bar.--is-active .chat__bar__buttons {
   transform: rotate(0);
 }
-.chat-bar.--is-active .chat-bar__buttons .button {
+.chat__bar.--is-active .chat__bar__buttons .button {
   animation-name: lift;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-duration: 0.25s;
 }
-.chat-bar.--bop {
+.chat__bar.--bop {
   animation: bop 0.6s forwards;
 }
-.chat-bar.--drop {
+.chat__bar.--drop {
   animation: drop 0.6s forwards;
 }
 
