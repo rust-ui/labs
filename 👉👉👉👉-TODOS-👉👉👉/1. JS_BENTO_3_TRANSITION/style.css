@@ -1,5 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
+/* TW: Step 1 ✔️ */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 .mainDivParent {
@@ -19,8 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #222;
-  background-color: #fff6de;
   font-size: 0.3rem;
   font-family: "Space Grotesk", sans-serif;
 }
@@ -49,7 +48,6 @@ input:checked + .bento__grid__item {
 }
 
 .bento__grid__item {
-  background-color: rgba(255, 255, 255, 0.3333333333);
   border-radius: 0.2rem;
   cursor: pointer;
   background: no-repeat center/cover;
