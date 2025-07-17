@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
 .mainDiv {
   height: 100%;
@@ -70,7 +70,7 @@
 .chat__bar.--is-active .chat__bar__buttons {
   transform: rotate(0);
 }
-.chat__bar.--is-active .chat__bar__buttons .button {
+.chat__bar.--is-active .chat__bar__buttons .chat__action__button {
   animation-name: lift;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
@@ -83,7 +83,7 @@
   animation: drop 0.6s forwards;
 }
 
-.button {
+.chat__action__button {
   width: 36px;
   height: 36px;
   background: rgba(255, 255, 255, 0.3);
