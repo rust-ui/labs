@@ -30,9 +30,9 @@
     </button>
  
   </div>
-  <aside class="drawer bg-transparent p-0 m-0 border-0   [&::backdrop]:bg-black/50" popover="auto" id="drawer">
-    <div class="flex overflow-y-auto overscroll-none flex-col items-center w-full h-full drawer__scroller">
-      <div class="drawer__slide max-w-[600px] w-full relative max-h-[95%]">
+  <aside class="drawer bg-transparent p-0 m-0 border-0   [&::backdrop]:bg-black/50 inset-0" popover="auto" id="drawer">
+    <div class="flex overflow-y-auto overscroll-none flex-col items-center w-full h-full drawer__scroller [&::after]:order-[-999999] [&::after]:flex-[1_0_100svh]">
+      <div class="drawer__slide max-w-[600px] w-full relative max-h-[95%] flex-[1_0_600px] [&::after]:absolute [&::after]:inset-0">
         <div class="absolute inset-0 z-[10] flex flex-col justify-between pointer-events-none drawer__anchors">
           <div class="drawer__anchor h-[50px] w-full snap-end"></div>
           <div class="drawer__anchor h-[50px] w-full snap-end"></div>

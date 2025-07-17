@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 @import url('https://unpkg.com/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
@@ -139,7 +139,6 @@
 }
 
 .drawer {
-  inset: 0 0 0 0;
   width: unset;
   height: unset;
   transition: inset 0.5s cubic-bezier(0.32, 0.72, 0, 1);
@@ -160,8 +159,6 @@
 @media (hover: none) and (pointer: coarse) {
   .drawer__slide::after {
     content: '';
-    position: absolute;
-    inset: 0;
     translate: 0 100%;
   }
 }
@@ -174,8 +171,6 @@
   content: '';
   width: 100%;
   height: 100svh;
-  order: -999999;
-  flex: 1 0 100svh;
 }
 
 [data-meta='true'] .drawer__slide {
@@ -184,7 +179,6 @@
 
 .drawer__slide {
   height: 600px;
-  flex: 1 0 600px;
   /* transition: height 0.5s cubic-bezier(0.32, 0.72, 0, 1); */
 }
 
