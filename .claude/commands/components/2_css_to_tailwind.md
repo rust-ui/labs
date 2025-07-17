@@ -94,6 +94,13 @@ For each commit, mark the top of the CSS file this pattern:
 - **Complex borders**: Use arbitrary syntax for custom borders: `border-t-[.035em] border-solid border-[#007bff]`
 - **Keep complex CSS**: Don't convert animations, transforms, or custom properties - preserve these as CSS
 
+
+
+### Final Step: Remove any unused class (*COMMIT AFTER COMPLETION*)
+Remove any unused classes from both CSS and HTML.
+
+
+
 ## ⚠️ PRESERVE DYNAMIC CSS CLASSES
 
 **DO NOT REMOVE CSS classes that are dynamically applied by JavaScript:**
