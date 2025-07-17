@@ -1,1 +1,8 @@
 echo "Testing hook functionality" - Test if the bash command logging hook is working
+ls /System/Library/Sounds/ - List available system sounds
+afplay /System/Library/Sounds/Ping.aiff - Test playing the ping sound
+osascript -e 'beep 2' - Test the beep command from settings
+say 'Claude done' - Test the say command from settings
+afplay /System/Library/Sounds/Glass.aiff - Test the Glass sound
+afplay /System/Library/Sounds/Ping.aiff - Test the Ping sound
+afplay /System/Library/Sounds/Ping.aiff - Test the Ping sound again
