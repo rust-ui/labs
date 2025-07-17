@@ -232,22 +232,4 @@
   background: canvas;
 }
 
-.mainDivDrawer::before {
-  content: '';
-  height: 100svh;
-  width: 100%;
-  position: fixed;
-  background: linear-gradient(
-        90deg,
-        color-mix(in lch, canvasText, transparent 70%) 1px,
-        transparent 1px 45px
-      )
-      50% 50% / 45px 45px,
-    linear-gradient(color-mix(in lch, canvasText, transparent 70%) 1px, transparent 1px 45px) 50% 50% /
-      45px 45px;
-  mask: linear-gradient(-20deg, transparent 50%, white);
-  top: 0;
-  transform-style: flat;
-  pointer-events: none;
-}
 
