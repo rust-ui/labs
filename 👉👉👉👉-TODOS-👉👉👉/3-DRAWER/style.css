@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
 @import url('https://unpkg.com/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
@@ -6,13 +6,11 @@
 /* according to Chat GPT */
 
 .drawer__drag span:first-of-type {
-  border-radius: 10px;
   background: color-mix(in hsl, canvasText, canvas 75%);
 }
 
 /* This provides you the sticky effect on the bottom */
 .drawer__drag {
-  border: 0;
 }
 .drawer__content {
 }
