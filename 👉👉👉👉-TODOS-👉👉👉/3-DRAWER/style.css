@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ */
 @import url('https://unpkg.com/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
@@ -18,7 +18,6 @@
   border: 0;
 }
 .drawer__content {
-  padding-top: 44px;
 }
 
 .drawer__slide {
