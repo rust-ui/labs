@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
+/* TODO. Tailwind CSS  */
 @import url('https://unpkg.com/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
@@ -251,10 +251,3 @@
   pointer-events: none;
 }
 
-:where(.x__link, .bear__link):is(:hover, :focus-visible) {
-  opacity: 1;
-}
-
-div.tp__dfwv {
-  width: 280px;
-}
