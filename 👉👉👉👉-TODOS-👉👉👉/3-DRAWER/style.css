@@ -1,6 +1,5 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Final ✔️ */
 @import url('https://unpkg.com/normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
 
 /* according to Chat GPT */
@@ -10,10 +9,6 @@
 }
 
 /* This provides you the sticky effect on the bottom */
-.drawer__drag {
-}
-.drawer__content {
-}
 
 .drawer__slide {
   view-timeline: --drawer;
@@ -168,11 +163,6 @@
   max-height: calc(95% - (var(--sw-keyboard-height, 0) * 1px));
 }
 
-.drawer__slide {
-  /* transition: height 0.5s cubic-bezier(0.32, 0.72, 0, 1); */
-}
-
-
 .drawer__anchor:first-of-type {
   translate: 0 -100%;
 }
@@ -199,9 +189,3 @@
   );
   font-size: var(--fluid-type);
 }
-
-
-.mainDivDrawer {
-}
-
-
