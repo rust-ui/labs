@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
+/* TW: Step 1 ✔️ */
 /* TODO. Tailwind CSS  */
 
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
@@ -12,7 +12,6 @@
 }
 
 .chat__bar {
-  background: #714efc;
   box-shadow: 0px 15px 24px rgba(0, 0, 0, 0.3);
   border-radius: 36px;
   padding: 1em;
@@ -28,7 +27,6 @@
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   transition: 0.3s ease-in-out;
 }
@@ -43,17 +41,14 @@
   padding-left: 1em;
 }
 .chat__bar__input {
-  background: rgba(255, 255, 255, 0.3);
   height: 36px;
   box-sizing: border-box;
   border-radius: 18px;
   width: 100%;
   border: 0;
   padding: 1em;
-  color: white;
 }
 .chat__bar__input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
 }
 .chat__bar__buttons {
   position: absolute;
@@ -88,7 +83,6 @@
 .chat__action__button {
   width: 36px;
   height: 36px;
-  background: rgba(255, 255, 255, 0.3);
   border-radius: 18px;
   transform: translateY(50px);
   display: flex;
@@ -159,7 +153,6 @@
 }
 
 .material-icons {
-  color: white;
 }
 
 
