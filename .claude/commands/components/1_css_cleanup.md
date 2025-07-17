@@ -14,6 +14,9 @@ For each commit, mark the top of the CSS file this pattern:
 - `/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */` etc.
 
 
+When all is done, Add at the top of the file this comment: `/* TODO. Tailwind CSS  */`
+
+
 
 ### Step 1: Keep JS classes target in memory (*COMMIT AFTER COMPLETION*)
 
