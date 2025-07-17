@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 /* NOTE: Do not add comments for classes you remove during conversion */
 
 .mainDivParent {
@@ -36,7 +36,6 @@
 
 .mainDiv .grid__menu__navigation span ion-icon {
     transition: 0.5s;
-    font-size: 0em;
 }
 
 /* Active class */
@@ -68,7 +67,6 @@
 }
 
 .mainDiv .grid__menu__navigation ~ .grid__menu__close ion-icon {
-    font-size: 2em;
     scale: 0;
     transition: 0.5s;
 }
