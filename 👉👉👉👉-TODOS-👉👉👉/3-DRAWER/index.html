@@ -16,7 +16,7 @@
 
 
 
-<div class="mainBody min-h-[100svh] grid place-items-center text-[var(--color)]">
+<div class="mainDiv min-h-[100svh] grid place-items-center text-[var(--color)]">
 
   <div class="mainDivDrawer grid place-items-center w-full content-center h-[100svh]">
     <h1 class="fluid">Drawer.</h1>
@@ -44,10 +44,10 @@
           class="drawer__curtain absolute w-full opacity-0 bottom-0 border-0 left-1/2 translate-x-[-50%] translate-y-0 h-[100svh]"
           tabindex="-1"
         ></button>
-        <div class="drawer__content w-full h-full absolute z-[2] flex flex-col justify-between border-b-0 rounded-[12px_12px_0_0] text-[color:var(--color)] border border-[color:var(--border)] bg-[var(--drawer)]">
+        <div class="drawer__content w-full h-full absolute z-[2] flex flex-col justify-between border-b-0 rounded-[12px_12px_0_0] text-[color:var(--color)] border border-[color:color-mix(in_hsl,_canvas,_canvasText_10%)] bg-[canvas]">
           <button
             autofocus
-            class="drawer__drag flex flex-col items-center justify-evenly bg-[#0000] text-sm absolute top-0 w-full outline-none border-b border-[var(--border)]"
+            class="drawer__drag flex flex-col items-center justify-evenly bg-[#0000] text-sm absolute top-0 w-full outline-none border-b border-[color:color-mix(in_hsl,_canvas,_canvasText_10%)]"
             popovertargetaction="hide"
             popovertarget="drawer"
           >

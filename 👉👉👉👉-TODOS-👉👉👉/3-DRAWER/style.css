@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 @import url('https://unpkg.com/normalize.css') layer(normalize);
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
@@ -7,20 +7,6 @@
 
 @layer aesthetic {
   /* according to Chat GPT */
-  :root {
-    --duration: 0.5s;
-    --ease: cubic-bezier(0.32, 0.72, 0, 1);
-    --drag-bar: 44px;
-    --border: color-mix(in hsl, canvas, canvasText 10%);
-    --highlight: color-mix(in hsl, canvas, canvasText 10%);
-    --drawer: canvas;
-  }
-
-  @supports (light-dark(red, blue)) {
-    :root {
-      --drawer: light-dark(#111, #000);
-    }
-  }
 
   .drawer__drag span:first-of-type {
     width: 8ch;
@@ -31,18 +17,15 @@
 
   /* This provides you the sticky effect on the bottom */
   .drawer__drag {
-    height: var(--drag-bar);
+    height: 44px;
     border: 0;
   }
   .drawer__content {
-    padding-top: var(--drag-bar);
+    padding-top: 44px;
   }
 }
 
 @layer animation {
-  :root {
-    timeline-scope: --drawer;
-  }
 
   .drawer__slide {
     view-timeline: --drawer;
@@ -52,13 +35,13 @@
     /* This acts like a holding animation */
     transition-property: display, overlay;
     transition-behavior: allow-discrete;
-    transition-duration: var(--duration);
+    transition-duration: 0.5s;
   }
 
   .drawer__content {
     transition-property: translate;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--ease);
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
     translate: 0 100%;
   }
 
@@ -86,8 +69,8 @@
   .mainDivDrawer {
     /* only transition the opener */
     transition-property: --opened, --closed;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--ease);
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
     transform-origin: 50% 0%;
   }
 
@@ -149,8 +132,8 @@
   .drawer::backdrop {
     transition-property: display, --opened, --closed, overlay;
     transition-behavior: allow-discrete;
-    transition-duration: var(--duration);
-    transition-timing-function: var(--ease);
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
     opacity: calc(var(--opened) - (var(--opened) * var(--closed)));
   }
   .drawer:popover-open::backdrop {
@@ -168,7 +151,7 @@
     inset: 0 0 0 0;
     width: unset;
     height: unset;
-    transition: inset var(--duration) var(--ease);
+    transition: inset 0.5s cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   /* software keyboard handling */
@@ -209,10 +192,9 @@
   }
 
   .drawer__slide {
-    --size: 600px;
-    height: var(--size);
-    flex: 1 0 var(--size);
-    /* transition: height var(--duration) var(--ease); */
+    height: 600px;
+    flex: 1 0 600px;
+    /* transition: height 0.5s cubic-bezier(0.32, 0.72, 0, 1); */
   }
 
 
@@ -221,49 +203,40 @@
   }
 
  /* Sticky pieces */
-
-  :root {
-    --size: 45px;
-    --line: color-mix(in lch, white, transparent 85%);
-    background: black;
-  }
 }
 
 @layer base {
-  :root {
-    --font-size-min: 16;
-    --font-size-max: 20;
-    --font-ratio-min: 1.2;
-    --font-ratio-max: 1.33;
-    --font-width-min: 375;
-    --font-width-max: 1500;
-  }
 
   :where(.fluid) {
     --fluid-min: calc(
-      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+      16 * pow(1.2, var(--font-level, 0))
     );
     --fluid-max: calc(
-      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+      20 * pow(1.33, var(--font-level, 0))
     );
     --fluid-preferred: calc(
       (var(--fluid-max) - var(--fluid-min)) /
-        (var(--font-width-max) - var(--font-width-min))
+        (1500 - 375)
     );
     --fluid-type: clamp(
       (var(--fluid-min) / 16) * 1rem,
       ((var(--fluid-min) / 16) * 1rem) -
-        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (((var(--fluid-preferred) * 375) / 16) * 1rem) +
         (var(--fluid-preferred) * var(--variable-unit, 100vi)),
       (var(--fluid-max) / 16) * 1rem
     );
     font-size: var(--fluid-type);
   }
 
-  *,
-  *:after,
-  *:before {
+  .mainDiv,
+  .mainDiv *,
+  .mainDiv *:after,
+  .mainDiv *:before {
     box-sizing: border-box;
+  }
+
+  .mainDiv {
+    background: black;
   }
 
   .mainDivDrawer {
@@ -271,20 +244,18 @@
   }
 
   .mainDivDrawer::before {
-    --size: 45px;
-    --line: color-mix(in lch, canvasText, transparent 70%);
     content: '';
     height: 100svh;
     width: 100%;
     position: fixed;
     background: linear-gradient(
           90deg,
-          var(--line) 1px,
-          transparent 1px var(--size)
+          color-mix(in lch, canvasText, transparent 70%) 1px,
+          transparent 1px 45px
         )
-        50% 50% / var(--size) var(--size),
-      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-        var(--size) var(--size);
+        50% 50% / 45px 45px,
+      linear-gradient(color-mix(in lch, canvasText, transparent 70%) 1px, transparent 1px 45px) 50% 50% /
+        45px 45px;
     mask: linear-gradient(-20deg, transparent 50%, white);
     top: 0;
     transform-style: flat;
