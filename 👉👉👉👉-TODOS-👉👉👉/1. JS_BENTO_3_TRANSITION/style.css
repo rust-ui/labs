@@ -1,6 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 .mainDivParent {
@@ -8,22 +8,13 @@
 
 .mainDiv {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .bento__grid__container {
   width: 8rem;
   aspect-ratio: 16/9;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
 }
 
-input {
-  display: none;
-}
 
 input:checked + .bento__grid__item {
   grid-row: 1/-1;
