@@ -52,7 +52,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Font size**: `text-sm`, `text-lg`, `text-xl`, `text-2xl`, etc.
 - **Font weight**: `font-bold`, `font-semibold`, `font-light`, etc.
 - **Text align**: `text-center`, `text-left`, `text-right`, etc.
-- **Font family**: `font-sans`, `font-serif`, `font-mono`, etc.
+- **Font family**: `font-sans`, `font-serif`, `font-mono`, etc. (Use only Tailwind built-in fonts, remove custom font imports)
 - **Letter spacing**: `tracking-tight`, `tracking-normal`, `tracking-wide`, etc.
 - **Custom sizes**: Use arbitrary syntax for specific measurements: `text-[1.125rem]`, `text-[1.2rem]`
 - **Line height**: Use arbitrary syntax for unitless values: `leading-[.9]`, `leading-[1.5]`

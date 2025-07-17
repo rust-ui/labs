@@ -1,27 +1,16 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
-/* TW: Step 1 ✔️ Step 2 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 .mainDivParent {
-  font-size: 6.25vmax;
-  box-sizing: border-box;
-}
-
-@media (max-width: 992px) {
-  .mainDivParent {
-    font-size: 60px;
-  }
 }
 
 .mainDiv {
-  font-size: 6.25vmax;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.3rem;
-  font-family: "Space Grotesk", sans-serif;
 }
 
 .bento__grid__container {
