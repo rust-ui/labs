@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
 /* TODO. Tailwind CSS  */
 
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
@@ -11,7 +11,6 @@
   transform-origin: calc(0.5em + 18px) 50%;
 }
 .chat__bar__toggle {
-  border-radius: 50%;
   transition: 0.3s ease-in-out;
 }
 .chat__bar__toggle .material-icons {
@@ -22,8 +21,6 @@
 }
 .chat__bar__input {
   box-sizing: border-box;
-  border-radius: 18px;
-  border: 0;
 }
 .chat__bar__input::placeholder {
 }
@@ -54,7 +51,6 @@
 }
 
 .chat__action__button {
-  border-radius: 18px;
   transform: translateY(50px);
 }
 .b-1 {
