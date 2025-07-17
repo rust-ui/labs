@@ -1,6 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
-/* TW: Step 1 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 .mainDivParent {
@@ -30,7 +30,6 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 24px;
 }
 
 input {
