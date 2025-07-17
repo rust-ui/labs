@@ -8,6 +8,12 @@ const DRAG_THRESHOLD = 5
 const drawer = document.querySelector('.drawer')
 const scroller = drawer.querySelector('.drawer__scroller')
 const slide = drawer.querySelector('.drawer__slide')
+const anchor = drawer.querySelector('.drawer__anchor')
+const options = {
+  root: drawer,
+  rootMargin: '0px 0px -1px 0px',
+  threshold: 1.0,
+}
 
 // Set default theme and behavior
 document.documentElement.dataset.snap = true
@@ -32,13 +38,7 @@ if (scrollSnapChangeSupport) {
   })
 }
 
-// ... existing code ...
-const anchor = drawer.querySelector('.drawer__anchor')
-const options = {
-  root: drawer,
-  rootMargin: '0px 0px -1px 0px',
-  threshold: 1.0,
-}
+
 let observer
 
 let syncer, syncs = new Array(SYNC_BUFFER_SIZE), index = 0, frame = 0
