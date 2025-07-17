@@ -64,17 +64,6 @@
           }
         ]
       }
-    ],
-    "PostResponse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "afplay /System/Library/Sounds/Ping.aiff"
-          }
-        ]
-      }
     ]
   }
 }
