@@ -1,5 +1,5 @@
 /* TODO. Tailwind CSS  */
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 .mainDivParent {
@@ -38,7 +38,7 @@ input {
   display: none;
 }
 
-input:checked + .box {
+input:checked + .bento__grid__item {
   grid-row: 1/-1;
   grid-column: 1;
 }
@@ -48,7 +48,7 @@ input:checked + .box {
   animation-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 
-.box {
+.bento__grid__item {
   background-color: rgba(255, 255, 255, 0.3333333333);
   border-radius: 0.2rem;
   cursor: pointer;
@@ -56,14 +56,14 @@ input:checked + .box {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3333333333);
 }
 
-.box[data-index="1"] {
+.bento__grid__item[data-index="1"] {
   view-transition-name: box-1;
 }
 
-.box[data-index="2"] {
+.bento__grid__item[data-index="2"] {
   view-transition-name: box-2;
 }
 
-.box[data-index="3"] {
+.bento__grid__item[data-index="3"] {
   view-transition-name: box-3;
 }
