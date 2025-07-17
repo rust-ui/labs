@@ -15,4 +15,6 @@ pnpm-lock.yaml
 **/.DS_Store
 **/.Icon?
 
+# Claude
+/bash-command-log.txt
 
