@@ -20,26 +20,3 @@
   color: #161616;
 }
 
-
-@media (max-width: 700px) {
-  .elg__table__wrap {
-    padding: 1.4em 1em 1em;
-    border-radius: 1em;
-  }
-
-  .elg__table {
-    min-width: 100%;
-  }
-
-  .elg__table th,
-  .elg__table td {
-    padding: 0.85em 0.9em;
-    font-size: 0.94rem;
-  }
-
-  .elg__table td {
-    min-width: 100px;
-  }
-
-}
-  
