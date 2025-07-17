@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 /* TODO. Tailwind CSS  */
 
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
@@ -28,7 +28,6 @@
   transition: 0.3s ease-in-out;
 }
 .chat__bar__toggle .material-icons {
-  font-size: 24px;
 }
 .chat__bar__message, .chat__bar__buttons {
   transform-origin: calc(-1em - 18px) 50%;
@@ -129,9 +128,7 @@
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
-  font-size: 20px; /* Preferred icon size */
   display: inline-block;
-  line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
