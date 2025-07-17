@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
 
 .mainDivParent {
@@ -24,7 +24,7 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
-.wrapper {
+.bento__grid__container {
   width: 8rem;
   aspect-ratio: 16/9;
   display: grid;
