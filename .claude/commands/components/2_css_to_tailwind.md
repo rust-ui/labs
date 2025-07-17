@@ -14,10 +14,15 @@ Convert CSS classes to Tailwind CSS for the specified files: $ARGUMENTS
 ## Workflow
 
 1. **Find files**: Locate `.css` file and its ajacent `.html` file (OR `rs` file if it's on `src/`)
-2. **Identify convertible classes**: Only convert CSS classes that match the patterns listed below
-3. **Clean up CSS**: Remove the converted CSS rules from `.css` files
-4. **Remove unused classes**: Remove any empty or unused CSS classes that have no content or are not referenced
-5. **Update usage reports**: If a CSS class usage report exists, update it to reflect the changes
+2. **🚨 CRITICAL: Check JavaScript files first**: 
+   - Read ALL `.js` files in the project to understand dynamic class usage
+   - Create a list of CSS classes that are added/removed/toggled by JavaScript
+   - **NEVER convert CSS classes that are dynamically used by JavaScript** (e.g., `.active`, `.open`, `.visible`, `.selected`, etc.)
+   - Look for patterns like `classList.add()`, `classList.remove()`, `classList.toggle()`, `className =`, etc.
+3. **Identify convertible classes**: Only convert CSS classes that match the patterns listed below AND are NOT used by JavaScript
+4. **Clean up CSS**: Remove the converted CSS rules from `.css` files
+5. **Remove unused classes**: Remove any empty or unused CSS classes that have no content or are not referenced
+6. **Update usage reports**: If a CSS class usage report exists, update it to reflect the changes
 
 **Check progress marker `✔️` at top and skip completed steps**
 
@@ -59,30 +64,7 @@ For each commit, mark the top of the CSS file this pattern:
 - **Custom letter spacing**: Use arbitrary syntax for specific values: `tracking-[0.01em]`, `tracking-[0.03em]`
 
 
-### Step 4: Layout (*COMMIT AFTER COMPLETION*)
-- **Display**: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `hidden`, etc.
-- **Visibility**: `visible`, `invisible`, etc.
-- **Flexbox**:  `flex`, `justify-center`, `justify-between`, `items-center`, `flex-col`, `flex-row`, etc.
-- **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
-- **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
-- **Custom positioning**: Use arbitrary syntax for specific pixel values: `top-[19px]`, `right-[296px]`, `bottom-[16px]`
-- **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
-- **Box sizing**: `box-border`, `box-content`, etc.
-- **Complex inset**: Use arbitrary syntax for complex values: `inset-[auto_0_0_auto]`, `inset-[10px_20px]`
-
-
-### Step 5: Sizing (*COMMIT AFTER COMPLETION*)
-- **Width**: `w-full`, `w-1/2`, `w-64`, `w-96`, `w-[75px]`, etc.
-- **Max width**: `max-w-md`, `max-w-lg`, `max-w-xl`, `max-w-2xl`, etc.
-- **Height**: `h-full`, `h-64`, `h-96`, `h-screen`, etc.
-- **Max height**: `max-h-64`, `max-h-96`, `max-h-screen`, etc.
-- **Min width**: `min-w-0`, `min-w-full`, etc.
-- **Min height**: `min-h-0`, `min-h-full`, `min-h-screen`, etc.
-- **Custom sizes**: Use arbitrary syntax for specific measurements: `min-w-[25rem]`, `h-[2.7em]`, `w-[140%]`
-- **Custom pixel sizes**: Use arbitrary syntax for specific pixel values: `w-[344px]`, `h-[8px]`, `w-[12px]`
-
-
-### Step 6: Interactivity & Visual (*COMMIT AFTER COMPLETION*)
+### Step 4: Interactivity & Visual (*COMMIT AFTER COMPLETION*)
 - **Cursor**: `cursor-pointer`, `cursor-default`, `cursor-wait`, etc.
 - **Background**: `bg-transparent`, `bg-opacity-50`, etc.
 - **Background none**: `background: none` → `bg-transparent`
@@ -96,6 +78,28 @@ For each commit, mark the top of the CSS file this pattern:
 - **Complex borders**: Use arbitrary syntax for custom borders: `border-t-[.035em] border-solid border-[#007bff]`
 - **Keep complex CSS**: Don't convert animations, transforms, or custom properties - preserve these as CSS
 
+
+### Step 5: Layout (*COMMIT AFTER COMPLETION*)
+- **Display**: `block`, `inline-block`, `inline`, `flex`, `inline-flex`, `grid`, `hidden`, etc.
+- **Visibility**: `visible`, `invisible`, etc.
+- **Flexbox**:  `flex`, `justify-center`, `justify-between`, `items-center`, `flex-col`, `flex-row`, etc.
+- **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
+- **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
+- **Custom positioning**: Use arbitrary syntax for specific pixel values: `top-[19px]`, `right-[296px]`, `bottom-[16px]`
+- **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
+- **Box sizing**: `box-border`, `box-content`, etc.
+- **Complex inset**: Use arbitrary syntax for complex values: `inset-[auto_0_0_auto]`, `inset-[10px_20px]`
+
+
+### Step 6: Sizing (*COMMIT AFTER COMPLETION*)
+- **Width**: `w-full`, `w-1/2`, `w-64`, `w-96`, `w-[75px]`, etc.
+- **Max width**: `max-w-md`, `max-w-lg`, `max-w-xl`, `max-w-2xl`, etc.
+- **Height**: `h-full`, `h-64`, `h-96`, `h-screen`, etc.
+- **Max height**: `max-h-64`, `max-h-96`, `max-h-screen`, etc.
+- **Min width**: `min-w-0`, `min-w-full`, etc.
+- **Min height**: `min-h-0`, `min-h-full`, `min-h-screen`, etc.
+- **Custom sizes**: Use arbitrary syntax for specific measurements: `min-w-[25rem]`, `h-[2.7em]`, `w-[140%]`
+- **Custom pixel sizes**: Use arbitrary syntax for specific pixel values: `w-[344px]`, `h-[8px]`, `w-[12px]`
 
 
 ### Final Step: Remove any unused class (*COMMIT AFTER COMPLETION*)
