@@ -1,17 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
-
-.mainDivParent {
-}
-
-.mainDiv {
-}
-
-.bento__grid__container {
-}
-
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
 
 input:checked + .bento__grid__item {
   grid-row: 1/-1;
@@ -21,9 +10,6 @@ input:checked + .bento__grid__item {
 ::view-transition-group(*) {
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
-}
-
-.bento__grid__item {
 }
 
 .bento__grid__item[data-index="1"] {
