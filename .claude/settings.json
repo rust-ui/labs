@@ -52,18 +52,5 @@
       "Bash(sudo:*)",
       "Bash(wget * | sh)"
     ]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '\"\\(.tool_input.command) - \\(.tool_input.description // \"No description\")\"' >> ./bash-command-log.txt"
-          }
-        ]
-      }
-    ]
   }
 }
