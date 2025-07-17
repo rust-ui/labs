@@ -1,3 +1,9 @@
+// Constants
+const SYNC_BUFFER_SIZE = 10
+const FRAME_THRESHOLD = 10
+const SCROLL_THRESHOLD = 0.5
+const DRAG_THRESHOLD = 5
+
 // Remove Pane import and replace with drawer initialization
 const drawer = document.querySelector('.drawer')
 const scroller = drawer.querySelector('.drawer__scroller')
@@ -35,7 +41,7 @@ const options = {
 }
 let observer
 
-let syncer, syncs = new Array(10), index = 0, frame = 0
+let syncer, syncs = new Array(SYNC_BUFFER_SIZE), index = 0, frame = 0
 const syncDrawer = () => {
   syncer = requestAnimationFrame(() => {
     document.documentElement.style.setProperty(
@@ -46,9 +52,9 @@ const syncDrawer = () => {
     if (new Set(syncs).size === 1 && syncs[0] === slide.offsetHeight) {
       frame++
     }
-    if (frame >= 10) {
+    if (frame >= FRAME_THRESHOLD) {
       frame = 0
-      syncs = new Array(10)
+      syncs = new Array(SYNC_BUFFER_SIZE)
       index = 0
       scroller.addEventListener('scroll', scrollDriver, { once: true })
     } else {
@@ -69,7 +75,7 @@ const callback = (entries) => {
     !isVisible &&
     !isIntersecting &&
     scroller.scrollTop - window.visualViewport.offsetTop <
-      slide.offsetHeight * 0.5
+      slide.offsetHeight * SCROLL_THRESHOLD
   ) {
     drawer.dataset.snapped = true
     drawer.hidePopover()
@@ -111,7 +117,7 @@ const attachDrag = (element) => {
 
   const reset = () => {
     startY = drag = 0
-    const top = scroller.scrollTop < scrollStart * 0.5 ? 0 : scrollStart
+    const top = scroller.scrollTop < scrollStart * SCROLL_THRESHOLD ? 0 : scrollStart
 
     const handleScroll = () => {
       if (scroller.scrollTop === top) {
@@ -150,7 +156,7 @@ const attachDrag = (element) => {
     document.addEventListener('mouseup', teardown)
   }
   element.addEventListener('click', (event) => {
-    if (drag > 5) event.preventDefault()
+    if (drag > DRAG_THRESHOLD) event.preventDefault()
     reset()
   })
   element.addEventListener('mousedown', activate)
