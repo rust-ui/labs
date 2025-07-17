@@ -29,7 +29,12 @@
       "Bash(head:*)",
       "Bash(tail:*)",
       "Bash(echo:*)",
-      "Bash(pwd:*)"
+      "Bash(pwd:*)",
+      "Bash(git add:*)",
+      "WebFetch(domain:tailwindcss.com)",
+      "Bash(git push:*)",
+      "Bash(git revert:*)",
+      "Bash(afplay:*)"
     ],
     "deny": [
       "Bash(rm -rf:*)",
