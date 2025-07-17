@@ -1,0 +1,1 @@
+echo "Testing hook functionality" - Test if the bash command logging hook is working
