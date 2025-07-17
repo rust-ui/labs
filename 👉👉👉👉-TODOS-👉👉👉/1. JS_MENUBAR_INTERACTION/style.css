@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Step 7 ✔️ */
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
 .mainDiv {
   height: 100%;
@@ -160,22 +160,5 @@
   color: white;
 }
 
-.sidenote {
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
-  font-family: arial;
-  color: #714efc;
-  font-size: 1em;
-  text-decoration: none;
-}
-.sidenote:hover {
-  text-decoration: underline;
-}
-.sidenote i {
-  color: #714efc;
-  font-size: 1em;
-  line-height: 0;
-}
 
 /*# sourceMappingURL=style.css.map */
