@@ -1,9 +1,8 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 /* TODO. Tailwind CSS  */
 
 @import url(//fonts.googleapis.com/icon?family=Material+Icons);
 .mainDiv {
-  height: 100%;
 }
 
 .chat__bar {
@@ -12,8 +11,6 @@
   transform-origin: calc(0.5em + 18px) 50%;
 }
 .chat__bar__toggle {
-  height: 36px;
-  width: 36px;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
 }
@@ -21,21 +18,17 @@
 }
 .chat__bar__message, .chat__bar__buttons {
   transform-origin: calc(-1em - 18px) 50%;
-  width: 190px;
   transition: 0.2s ease-out;
 }
 .chat__bar__input {
-  height: 36px;
   box-sizing: border-box;
   border-radius: 18px;
-  width: 100%;
   border: 0;
 }
 .chat__bar__input::placeholder {
 }
 .chat__bar__buttons {
   left: calc(36px + 1em);
-  width: 190px;
   transform: rotate(90deg);
 }
 .chat__bar.--is-active .chat__bar__toggle {
@@ -61,8 +54,6 @@
 }
 
 .chat__action__button {
-  width: 36px;
-  height: 36px;
   border-radius: 18px;
   transform: translateY(50px);
 }
