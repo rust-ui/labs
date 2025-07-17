@@ -5,10 +5,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.elg__table {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-}
-
 
 /* Active class */
 .elg__table td[contenteditable="true"]:focus {
