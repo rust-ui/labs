@@ -1,11 +1,11 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 
 .mainDiv {
   height: 100%;  
   margin: 0px;
 }
 
-.slider-container {
+.slider__container {
   background: linear-gradient(149deg, #f700ff 0%, #ff9100 100%);
   display: flex;
   align-items: center;
@@ -151,7 +151,7 @@ a.slide__next {
   margin: 0 10px 0 10px;
 }
 
-.read-article {
+.read__article {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -164,11 +164,11 @@ a.slide__next {
   box-shadow: #000 0 0 100px -20px, #000 0 0 60px -15px;
 }
 
-.read-article:hover {
+.read__article:hover {
   background: #d5d5d5;
   box-shadow: #000 0 0 100px -20px, #000 0 0 60px 0px;
 }
 
-iframe[sandbox] .read-article {
+iframe[sandbox] .read__article {
   display: none;
 }
