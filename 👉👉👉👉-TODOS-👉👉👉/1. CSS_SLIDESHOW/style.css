@@ -73,17 +73,6 @@ a.slide__next {
   right: 5%;
 }
 
-.slide__prev {
-  top: 48%;
-  border: solid black;
-  border-width: 0 4px 4px 0;
-}
-
-.slide__next {
-  top: 48%;
-  border: solid black;
-  border-width: 0 4px 4px 0;
-}
 
 .slider__nav {
   bottom: 5%;
