@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 7 ✔️ */
 
 .mainDiv {
   height: 100%;  
@@ -151,24 +151,3 @@ a.slide__next {
   margin: 0 10px 0 10px;
 }
 
-.read__article {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 999;
-  color: #000;
-  background: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  box-shadow: #000 0 0 100px -20px, #000 0 0 60px -15px;
-}
-
-.read__article:hover {
-  background: #d5d5d5;
-  box-shadow: #000 0 0 100px -20px, #000 0 0 60px 0px;
-}
-
-iframe[sandbox] .read__article {
-  display: none;
-}
