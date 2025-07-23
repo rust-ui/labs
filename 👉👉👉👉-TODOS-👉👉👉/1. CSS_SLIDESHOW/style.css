@@ -1,14 +1,10 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 
-html {
-  height: 100%;
+.mainDiv {
+  height: 100%;  
   margin: 0px;
 }
 
-body {
-  height: 100%;
-  margin: 0px;
-}
 .slider-container {
   background: linear-gradient(149deg, #f700ff 0%, #ff9100 100%);
   display: flex;
