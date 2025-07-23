@@ -1,6 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 7 ✔️ */
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
 .mainDiv {
   height: 100%;  
@@ -8,9 +8,6 @@
 
 .slider__container {
   background: linear-gradient(149deg, #f700ff 0%, #ff9100 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }
 
@@ -18,7 +15,6 @@
   width: 100%;
   max-width: 600px;
   height: 400px;
-  position: relative;
 }
 
 .slideshow__container::before {
@@ -52,18 +48,12 @@
 }
 
 .slideshow__track {
-  display: flex;
   overflow-x: scroll;
-  position: relative;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
 
 .slideshow__slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
   width: 100%;
   height: 400px;
   scroll-snap-align: center;
@@ -93,7 +83,6 @@ a.slide__next {
 }
 
 .slide__prev {
-  position: absolute;
   top: 48%;
   width: 35px;
   height: 35px;
@@ -101,7 +90,6 @@ a.slide__next {
 }
 
 .slide__next {
-  position: absolute;
   top: 48%;
   width: 35px;
   height: 35px;
@@ -109,14 +97,12 @@ a.slide__next {
 }
 
 .slider__nav {
-  position: absolute;
   bottom: 5%;
   left: 50%;
   width: 200px;
 }
 
 .slider__navlink {
-  display: inline-block;
   height: 15px;
   width: 15px;
 }

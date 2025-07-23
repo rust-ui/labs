@@ -13,35 +13,35 @@
 <body class="mainDiv m-0">
 
 
-  <div class="slider__container">
-    <div class="slideshow__container m-5 text-center rounded-[20px] overflow-hidden">
-      <div class="slideshow__track">
-        <div id="slides__1" class="slideshow__slide bg-white mr-0 box-border">
+  <div class="slider__container flex items-center justify-center">
+    <div class="slideshow__container m-5 text-center rounded-[20px] overflow-hidden relative">
+      <div class="slideshow__track flex relative">
+        <div id="slides__1" class="slideshow__slide bg-white mr-0 box-border flex justify-center items-center shrink-0">
           <span class="slide__text text-[40px] font-bold font-sans">1</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border" href="#slides__4" title="Next"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border" href="#slides__2" title="Next"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__4" title="Next"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__2" title="Next"></a>
         </div>
-        <div id="slides__2" class="slideshow__slide bg-[#faf6d4] mr-0 box-border">
+        <div id="slides__2" class="slideshow__slide bg-[#faf6d4] mr-0 box-border flex justify-center items-center shrink-0">
           <span class="slide__text text-[40px] font-bold font-sans">2</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border" href="#slides__1" title="Prev"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border" href="#slides__3" title="Next"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__1" title="Prev"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__3" title="Next"></a>
         </div>
-        <div id="slides__3" class="slideshow__slide bg-white mr-0 box-border">
+        <div id="slides__3" class="slideshow__slide bg-white mr-0 box-border flex justify-center items-center shrink-0">
           <span class="slide__text text-[40px] font-bold font-sans">3</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border" href="#slides__2" title="Prev"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border" href="#slides__4" title="Next"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__2" title="Prev"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__4" title="Next"></a>
         </div>
-        <div id="slides__4" class="slideshow__slide bg-[#faf6d4] mr-0 box-border">
+        <div id="slides__4" class="slideshow__slide bg-[#faf6d4] mr-0 box-border flex justify-center items-center shrink-0">
           <span class="slide__text text-[40px] font-bold font-sans">4</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border" href="#slides__3" title="Prev"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border" href="#slides__1" title="Prev"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__3" title="Prev"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__1" title="Prev"></a>
         </div>
       </div>
-      <div class="slider__nav ml-[-100px] text-center box-border">
-        <a class="slider__navlink bg-black mx-[10px] rounded-full" href="#slides__1"></a>
-        <a class="slider__navlink bg-black mx-[10px] rounded-full" href="#slides__2"></a>
-        <a class="slider__navlink bg-black mx-[10px] rounded-full" href="#slides__3"></a>
-        <a class="slider__navlink bg-black mx-[10px] rounded-full" href="#slides__4"></a>
+      <div class="slider__nav ml-[-100px] text-center box-border absolute">
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__1"></a>
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__2"></a>
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__3"></a>
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__4"></a>
       </div>
     </div>
   </div>
