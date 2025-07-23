@@ -1,4 +1,4 @@
-/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
 .mainDiv {
   height: 100%;  
@@ -13,7 +13,7 @@
   height: 100%;
 }
 
-.slider {
+.slideshow__container {
   width: 100%;
   max-width: 600px;
   height: 400px;
@@ -24,7 +24,7 @@
   position: relative;
 }
 
-.slider::before {
+.slideshow__container::before {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
   left: 5%;
@@ -42,7 +42,7 @@
   pointer-events: none;
 }
 
-.slider::after {
+.slideshow__container::after {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   right: 5%;
@@ -60,7 +60,7 @@
   pointer-events: none;
 }
 
-.slides {
+.slideshow__track {
   display: flex;
   overflow-x: scroll;
   position: relative;
@@ -68,7 +68,7 @@
   scroll-snap-type: x mandatory;
 }
 
-.slide {
+.slideshow__slide {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,11 +83,11 @@
   transform: scale(1);
 }
 
-.slide:nth-of-type(even) {
+.slideshow__slide:nth-of-type(even) {
   background-color: #faf6d4;
 }
 
-.slide a {
+.slideshow__slide a {
   background: none;
   border: none;
 }
