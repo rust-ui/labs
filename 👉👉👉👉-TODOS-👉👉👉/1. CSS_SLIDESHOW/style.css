@@ -1,5 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 7 ✔️ */
+/* TW: Step 1 ✔️ */
 
 .mainDiv {
   height: 100%;  
@@ -33,13 +34,11 @@
   top: 48%;
   width: 35px;
   height: 35px;
-  border: solid black;
   border-width: 0 4px 4px 0;
   padding: 3px;
   box-sizing: border-box;
   content: "";
   z-index: 1;
-  background: none;
   pointer-events: none;
 }
 
@@ -51,13 +50,11 @@
   top: 48%;
   width: 35px;
   height: 35px;
-  border: solid black;
   border-width: 0 4px 4px 0;
   padding: 3px;
   box-sizing: border-box;
   content: "";
   z-index: 1;
-  background: none;
   pointer-events: none;
 }
 
@@ -79,18 +76,14 @@
   scroll-snap-align: center;
   margin-right: 0px;
   box-sizing: border-box;
-  background: white;
   transform-origin: center center;
   transform: scale(1);
 }
 
 .slideshow__slide:nth-of-type(even) {
-  background-color: #faf6d4;
 }
 
 .slideshow__slide a {
-  background: none;
-  border: none;
 }
 
 .slide__text {
@@ -116,7 +109,6 @@ a.slide__next {
   top: 48%;
   width: 35px;
   height: 35px;
-  border: solid black;
   border-width: 0 4px 4px 0;
   padding: 3px;
   box-sizing: border-box;
@@ -127,7 +119,6 @@ a.slide__next {
   top: 48%;
   width: 35px;
   height: 35px;
-  border: solid black;
   border-width: 0 4px 4px 0;
   padding: 3px;
   box-sizing: border-box;
@@ -148,7 +139,6 @@ a.slide__next {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: black;
   margin: 0 10px 0 10px;
 }
 
