@@ -77,10 +77,13 @@ For each commit, mark the top of the CSS file this pattern:
 - **Flexbox**:  `flex`, `justify-center`, `justify-between`, `items-center`, `flex-col`, `flex-row`, etc.
 - **Position**: `static`, `relative`, `absolute`, `fixed`, `sticky`, etc.
 - **Inset**: `inset-0`, `top-0`, `right-0`, `bottom-0`, `left-0`, etc.
-- **Custom positioning**: Use arbitrary syntax for specific pixel values: `top-[19px]`, `right-[296px]`, `bottom-[16px]`
+- **Custom positioning**: Use arbitrary syntax for specific pixel values: `top-[19px]`, `right-[296px]`, `bottom-[16px]`, `top-[48%]`
 - **Z-index**: `z-0`, `z-10`, `z-20`, `z-30`, `z-40`, `z-50`, etc.
 - **Box sizing**: `box-border`, `box-content`, etc.
 - **Complex inset**: Use arbitrary syntax for complex values: `inset-[auto_0_0_auto]`, `inset-[10px_20px]`
+- **Borders**: `border-solid`, `border-dashed`, `border-dotted`, `border-double`, `border-none`, etc.
+- **Border widths**: Use arbitrary syntax for specific border widths: `border-[4px]`, `border-r-[4px]`, `border-b-[4px]`, `border-l-0`, `border-t-0`
+- **Border combinations**: Convert `border: solid black; border-width: 0 4px 4px 0` to `border-solid border-black border-r-[4px] border-b-[4px] border-l-0 border-t-0`
 
 
 ### Step 5: Sizing (*COMMIT AFTER COMPLETION*)
