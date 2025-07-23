@@ -1,6 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 7 ✔️ */
-/* TW: Step 1 ✔️ Step 2 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 
 .mainDiv {
   height: 100%;  
@@ -18,7 +18,6 @@
   width: 100%;
   max-width: 600px;
   height: 400px;
-  text-align: center;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -82,9 +81,6 @@
 }
 
 .slide__text {
-  font-size: 40px;
-  font-weight: bold;
-  font-family: sans-serif;
 }
 
 a.slide__prev {
@@ -123,7 +119,6 @@ a.slide__next {
   bottom: 5%;
   left: 50%;
   width: 200px;
-  text-align: center;
 }
 
 .slider__navlink {
