@@ -10,38 +10,38 @@
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="mainDiv m-0">
+<body class="mainDiv m-0 h-full">
 
 
-  <div class="slider__container flex items-center justify-center">
-    <div class="slideshow__container m-5 text-center rounded-[20px] overflow-hidden relative">
+  <div class="slider__container flex items-center justify-center h-full">
+    <div class="slideshow__container m-5 text-center rounded-[20px] overflow-hidden relative w-full max-w-[600px] h-[400px]">
       <div class="slideshow__track flex relative">
-        <div id="slides__1" class="slideshow__slide bg-white mr-0 box-border flex justify-center items-center shrink-0">
+        <div id="slides__1" class="slideshow__slide bg-white mr-0 box-border flex justify-center items-center shrink-0 w-full h-[400px]">
           <span class="slide__text text-[40px] font-bold font-sans">1</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__4" title="Next"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__2" title="Next"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__4" title="Next"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__2" title="Next"></a>
         </div>
-        <div id="slides__2" class="slideshow__slide bg-[#faf6d4] mr-0 box-border flex justify-center items-center shrink-0">
+        <div id="slides__2" class="slideshow__slide bg-[#faf6d4] mr-0 box-border flex justify-center items-center shrink-0 w-full h-[400px]">
           <span class="slide__text text-[40px] font-bold font-sans">2</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__1" title="Prev"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__3" title="Next"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__1" title="Prev"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__3" title="Next"></a>
         </div>
-        <div id="slides__3" class="slideshow__slide bg-white mr-0 box-border flex justify-center items-center shrink-0">
+        <div id="slides__3" class="slideshow__slide bg-white mr-0 box-border flex justify-center items-center shrink-0 w-full h-[400px]">
           <span class="slide__text text-[40px] font-bold font-sans">3</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__2" title="Prev"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__4" title="Next"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__2" title="Prev"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__4" title="Next"></a>
         </div>
-        <div id="slides__4" class="slideshow__slide bg-[#faf6d4] mr-0 box-border flex justify-center items-center shrink-0">
+        <div id="slides__4" class="slideshow__slide bg-[#faf6d4] mr-0 box-border flex justify-center items-center shrink-0 w-full h-[400px]">
           <span class="slide__text text-[40px] font-bold font-sans">4</span>
-          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__3" title="Prev"></a>
-          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute" href="#slides__1" title="Prev"></a>
+          <a class="slide__prev bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__3" title="Prev"></a>
+          <a class="slide__next bg-transparent border-0 border-black p-[3px] box-border absolute w-[35px] h-[35px]" href="#slides__1" title="Prev"></a>
         </div>
       </div>
-      <div class="slider__nav ml-[-100px] text-center box-border absolute">
-        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__1"></a>
-        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__2"></a>
-        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__3"></a>
-        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block" href="#slides__4"></a>
+      <div class="slider__nav ml-[-100px] text-center box-border absolute w-[200px]">
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block h-[15px] w-[15px]" href="#slides__1"></a>
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block h-[15px] w-[15px]" href="#slides__2"></a>
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block h-[15px] w-[15px]" href="#slides__3"></a>
+        <a class="slider__navlink bg-black mx-[10px] rounded-full inline-block h-[15px] w-[15px]" href="#slides__4"></a>
       </div>
     </div>
   </div>
