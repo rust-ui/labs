@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- GSAP (uncomment if needed) -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+
+
+
+  <style>
+    body,
+    html {
+      font-family: sans-serif;
+    }
+
+    body [popover] {
+      border: 1px solid black;
+      width: 120px;
+      inset: unset;
+    }
+
+    #mainpopover {
+      left: 7px;
+      top: 38px;
+    }
+
+    #subpopover {
+      left: 120px;
+      top: 86px;
+    }
+
+    .listcontainer,
+    .subcontainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      flex: 1;
+      text-decoration: none;
+      outline: none;
+      text-align: center;
+      line-height: 3;
+      color: black;
+    }
+
+    a:link,
+    a:visited {
+      background: palegoldenrod;
+      color: black;
+    }
+
+    a:hover,
+    a:focus {
+      background: orange;
+    }
+
+    a:active {
+      background: darkred;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <button popovertarget="mainpopover" popovertargetaction="toggle">
+    Menu
+  </button>
+  <div id="mainpopover" popover>
+    <nav class="listcontainer">
+      <a href="#">Home</a>
+      <div class="subcontainer" tabindex="0">
+        <a href="#">Pizza <strong>></strong></a>
+        <div id="subpopover" popover>
+          <div class="listcontainer">
+            <a href="#">Margherita</a>
+            <a href="#">Pepperoni</a>
+            <a href="#">Ham & Shroom</a>
+            <a href="#">Vegan</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Music</a>
+      <a href="#">Wombats</a>
+      <a href="#">Finland</a>
+    </nav>
+  </div>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
