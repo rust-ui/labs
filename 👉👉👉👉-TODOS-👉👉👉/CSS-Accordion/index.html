@@ -12,7 +12,7 @@
 
 
   <style>
-    /* TW: Step 1 ✔️ Step 2 ✔️ */
+    /* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
 
     summary::marker {
       content: none;
@@ -48,7 +48,6 @@
     }
 
     .accordion-inner {
-      overflow: hidden;
       opacity: 0;
       transform: translateY(-10px);
       transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
@@ -68,7 +67,7 @@
   <details class="border border-gray-300 mb-4">
       <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">What is CSS Grid animation?</summary>
       <div class="accordion-content">
-          <div class="accordion-inner px-4 [details[open]_&]:p-4">
+          <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>CSS Grid animation uses the grid-template-rows property to smoothly transition between 0fr (collapsed) and 1fr (expanded) states. This creates natural height animations without JavaScript.</p>
           </div>
       </div>
@@ -77,7 +76,7 @@
   <details class="border border-gray-300 mb-4">
       <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">How does it work?</summary>
       <div class="accordion-content">
-          <div class="accordion-inner px-4 [details[open]_&]:p-4">
+          <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>The technique works by:</p>
               <ul>
                   <li>Setting grid-template-rows: 0fr for closed state</li>
@@ -92,7 +91,7 @@
   <details class="border border-gray-300 mb-4">
       <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">Why use this method?</summary>
       <div class="accordion-content">
-          <div class="accordion-inner px-4 [details[open]_&]:p-4">
+          <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>This approach is better than max-height hacks because:</p>
               <ul>
                   <li>No need to guess maximum content height</li>
@@ -107,7 +106,7 @@
   <details class="border border-gray-300 mb-4">
       <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">Browser support</summary>
       <div class="accordion-content">
-          <div class="accordion-inner px-4 [details[open]_&]:p-4">
+          <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>This technique has excellent browser support. The details/summary elements work in all modern browsers, and CSS Grid animations are supported in recent versions. Older browsers will still get functional accordions, just without smooth animations.</p>
           </div>
       </div>
