@@ -29,7 +29,7 @@ For each commit, mark the top of the HTML file this pattern:
 ### Step 2: Inline CSS content (*COMMIT AFTER COMPLETION*)
 
 1. Copy the entire CSS content from the external file
-2. Create or locate the `<style>` tag in the HTML `<head>` section
+2. Create or locate the `<style>` tag in the HTML (can be in `<head>` or `<body>` section)
 3. Paste the CSS content inside the `<style>` tag
 4. Ensure proper indentation (2-space indentation for CSS inside `<style>`)
 5. Verify that all CSS rules are properly transferred
@@ -57,6 +57,7 @@ For each commit, mark the top of the HTML file this pattern:
 - If no CSS file exists or it's empty, focus on verification and naming
 - Keep the CSS content exactly as it was in the external file
 - Maintain proper HTML structure and indentation
+- The `<style>` tag can be placed in either `<head>` or `<body>` section as needed
 - Verify that no other files depend on the CSS file being removed
 - If the CSS file is shared by multiple HTML files, do NOT inline it
 - **Naming convention**: If there's only an HTML file, rename it to match the exact parent folder name (including special characters, emojis, etc.) and move it to `✔️ 0. ONLY_HTML` directory, removing the original folder
