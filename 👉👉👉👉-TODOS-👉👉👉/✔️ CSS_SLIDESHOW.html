@@ -10,9 +10,93 @@
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="mainDiv m-0 h-full">
+<body>
 
 
+
+  <style>
+    .slider__container {
+    background: linear-gradient(149deg, #f700ff 0%, #ff9100 100%);
+  }
+
+  .slideshow__container::before {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    left: 5%;
+    position: absolute;
+    top: 48%;
+    width: 35px;
+    height: 35px;
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    content: "";
+    z-index: 1;
+    box-sizing: border-box;
+    pointer-events: none;
+    background: none;
+  }
+
+  .slideshow__container::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 5%;
+    position: absolute;
+    top: 48%;
+    width: 35px;
+    height: 35px;
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    content: "";
+    z-index: 1;
+    box-sizing: border-box;
+    pointer-events: none;
+    background: none;
+  }
+
+  .slideshow__track {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slideshow__slide {
+    scroll-snap-align: center;
+    transform-origin: center center;
+    transform: scale(1);
+    background: white;
+  }
+
+  .slideshow__slide:nth-of-type(even) {
+    background-color: #faf6d4;
+  }
+
+  .slideshow__slide a {
+    background: none;
+    border: none;
+  }
+
+  a.slide__prev {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    left: 5%;
+  }
+
+  a.slide__next {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 5%;
+  }
+
+
+
+  .slider__navlink {
+    background-color: black;
+  }
+
+  </style>
+
+
+<div class="mainDiv m-0 h-full">
   <div class="slider__container flex items-center justify-center h-full">
     <div class="slideshow__container m-5 text-center rounded-[20px] overflow-hidden relative w-full max-w-[600px] h-[400px]">
       <div class="slideshow__track flex relative">
@@ -45,7 +129,9 @@
       </div>
     </div>
   </div>
-  
+</div>  
+
+
 
 
 

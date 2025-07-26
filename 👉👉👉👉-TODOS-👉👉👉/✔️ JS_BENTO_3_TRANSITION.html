@@ -15,6 +15,30 @@
 </head>
 <body>
 
+  <style>
+    input:checked + .bento__grid__item {
+      grid-row: 1/-1;
+      grid-column: 1;
+    }
+
+    ::view-transition-group(*) {
+      animation-duration: 0.5s;
+      animation-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    }
+
+    .bento__grid__item[data-index="1"] {
+      view-transition-name: box-1;
+    }
+
+    .bento__grid__item[data-index="2"] {
+      view-transition-name: box-2;
+    }
+
+    .bento__grid__item[data-index="3"] {
+      view-transition-name: box-3;
+    }
+
+  </style>
 
 
 
@@ -53,6 +77,17 @@
 
 
 
-  <script src="script.js"></script>
+  <script>
+    for (const radio of document.querySelectorAll('input[type="radio"]')) {
+    radio.onclick = (e) => {
+      if (!document.startViewTransition) return;
+  
+      e.preventDefault();
+      document.startViewTransition(() => {
+        e.target.checked = true;
+      });
+    };
+  }
+  </script>
 </body>
 </html>
