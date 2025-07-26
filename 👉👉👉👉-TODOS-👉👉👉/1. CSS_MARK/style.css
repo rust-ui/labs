@@ -1,6 +1,6 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 2 ✔️ Step 3 ✔️ Step 7 ✔️ */
-/* TW: Step 2 ✔️ */
+/* TW: Step 2 ✔️ Step 3 ✔️ */
 
 .mainDiv {
     display: flex;
@@ -10,7 +10,6 @@
   }
   
   mark {
-    background: none;
     position: relative;
   }
   
