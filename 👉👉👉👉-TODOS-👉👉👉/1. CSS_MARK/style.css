@@ -1,6 +1,6 @@
-/* CLEAN: Step 2 ✔️ */
+/* CLEAN: Step 2 ✔️ Step 3 ✔️ */
 
-body {
+.mainDiv {
     display: flex;
     justify-content: center;
     align-items: center;
