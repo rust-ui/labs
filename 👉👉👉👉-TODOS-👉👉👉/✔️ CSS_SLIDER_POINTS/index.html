@@ -9,6 +9,20 @@
 
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    .slider__point {
+    transition: width .4s linear;
+    }
+
+    .slider__point input {
+    display: none;
+    }
+
+    .slider__point:has(:checked) {
+    width: 200px;
+    }
+  </style>
 </head>
 <body>
 
