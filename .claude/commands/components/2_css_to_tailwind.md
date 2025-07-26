@@ -33,6 +33,8 @@ For each commit, mark the top of the CSS file this pattern:
 - `/* TW: Step 1 ✔️ Step 2 ✔️ */`
 - `/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */` etc.
 
+⚠️ **IMPORTANT**: If a step has no convertible changes (e.g., no typography to convert), do NOT create a commit just to update the progress marker. Simply update the marker and proceed directly to the next step with actual changes.
+
 
 ## Convertible CSS Patterns
 
