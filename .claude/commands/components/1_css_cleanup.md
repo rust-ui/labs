@@ -13,6 +13,8 @@ For each commit, mark the top of the CSS file this pattern:
 - `/* CLEAN: Step 1 ✔️ Step 2 ✔️ */`
 - `/* CLEAN: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */` etc.
 
+⚠️ **IMPORTANT**: If a step has no applicable changes (e.g., no nested CSS to flatten), do NOT create a commit just to update the progress marker. Simply update the marker and proceed directly to the next step with actual changes.
+
 
 When all is done, Add at the top of the file this comment: `/* TODO. Tailwind CSS  */`
 
