@@ -48,8 +48,8 @@ For each commit, mark the top of the HTML file this pattern:
 4. Confirm no broken references or missing styles
 5. **If there was only an HTML file**: 
    - Rename the HTML file to match the exact parent folder name (e.g., `index.html` → `✔️ CSS_SLIDER_POINTS.html`)
-   - Move the renamed HTML file to the parent directory (one level up)
-   - Remove the now-empty folder
+   - Move the renamed HTML file to `✔️ 0. ONLY_HTML` directory (create if it doesn't exist)
+   - Remove the now-empty original folder
 
 ## Important Notes
 
@@ -59,4 +59,4 @@ For each commit, mark the top of the HTML file this pattern:
 - Maintain proper HTML structure and indentation
 - Verify that no other files depend on the CSS file being removed
 - If the CSS file is shared by multiple HTML files, do NOT inline it
-- **Naming convention**: If there's only an HTML file, rename it to match the exact parent folder name (including special characters, emojis, etc.) and move it up one directory level, removing the folder
+- **Naming convention**: If there's only an HTML file, rename it to match the exact parent folder name (including special characters, emojis, etc.) and move it to `✔️ 0. ONLY_HTML` directory, removing the original folder
