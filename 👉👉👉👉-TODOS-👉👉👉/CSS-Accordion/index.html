@@ -12,7 +12,7 @@
 
 
   <style>
-    /* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+    /* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
     summary::marker {
       content: none;
@@ -20,8 +20,6 @@
 
     summary::after {
       content: '';
-      width: 12px;
-      height: 12px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E") no-repeat center;
       background-size: contain;
       margin-left: auto;
@@ -60,7 +58,7 @@
   <h1 class="mb-8 text-2xl">Smooth CSS-Only Accordions</h1>
 
   <details class="border border-gray-300 mb-4">
-      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">What is CSS Grid animation?</summary>
+      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center after:w-3 after:h-3">What is CSS Grid animation?</summary>
       <div class="accordion-content grid">
           <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>CSS Grid animation uses the grid-template-rows property to smoothly transition between 0fr (collapsed) and 1fr (expanded) states. This creates natural height animations without JavaScript.</p>
@@ -69,7 +67,7 @@
   </details>
 
   <details class="border border-gray-300 mb-4">
-      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">How does it work?</summary>
+      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center after:w-3 after:h-3">How does it work?</summary>
       <div class="accordion-content grid">
           <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>The technique works by:</p>
@@ -84,7 +82,7 @@
   </details>
 
   <details class="border border-gray-300 mb-4">
-      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">Why use this method?</summary>
+      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center after:w-3 after:h-3">Why use this method?</summary>
       <div class="accordion-content grid">
           <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>This approach is better than max-height hacks because:</p>
@@ -99,7 +97,7 @@
   </details>
 
   <details class="border border-gray-300 mb-4">
-      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center">Browser support</summary>
+      <summary class="p-4 cursor-pointer bg-gray-50 font-medium flex items-center after:w-3 after:h-3">Browser support</summary>
       <div class="accordion-content grid">
           <div class="accordion-inner overflow-hidden px-4 [details[open]_&]:p-4">
               <p>This technique has excellent browser support. The details/summary elements work in all modern browsers, and CSS Grid animations are supported in recent versions. Older browsers will still get functional accordions, just without smooth animations.</p>
