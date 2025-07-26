@@ -46,7 +46,10 @@ For each commit, mark the top of the HTML file this pattern:
 2. Verify that any JavaScript functionality still works
 3. Test that the page renders correctly
 4. Confirm no broken references or missing styles
-5. **If there was only an HTML file**: Update the HTML file name to match the parent folder name (e.g., if parent folder is `accordion`, rename `index.html` to `accordion.html`)
+5. **If there was only an HTML file**: 
+   - Rename the HTML file to match the exact parent folder name (e.g., `index.html` → `✔️ CSS_SLIDER_POINTS.html`)
+   - Move the renamed HTML file to the parent directory (one level up)
+   - Remove the now-empty folder
 
 ## Important Notes
 
@@ -56,4 +59,4 @@ For each commit, mark the top of the HTML file this pattern:
 - Maintain proper HTML structure and indentation
 - Verify that no other files depend on the CSS file being removed
 - If the CSS file is shared by multiple HTML files, do NOT inline it
-- **Naming convention**: If there's only an HTML file, rename it to match the parent folder name
+- **Naming convention**: If there's only an HTML file, rename it to match the exact parent folder name (including special characters, emojis, etc.) and move it up one directory level, removing the folder
