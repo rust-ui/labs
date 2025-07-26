@@ -1,4 +1,4 @@
-<!-- INLINE: Step 1 ✔️ -->
+<!-- INLINE: Step 1 ✔️ Step 2 ✔️ -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +6,39 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Slider</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* TODO. Tailwind CSS  */
+    /* CLEAN: Step 2 ✔️ Step 3 ✔️ Step 7 ✔️ */
+    /* TW: Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Final ✔️ */
+
+    mark::before,
+      mark::after {
+        mix-blend-mode: multiply;
+        position: absolute;
+        content: "";
+        opacity: 1;
+        height: 120%;
+        width: 90%;
+        background-image: linear-gradient(
+          -100deg,
+          rgba(255, 250, 150, 0.6),
+          #fffa96 100%,
+          rgba(255, 250, 150, 0.8)
+        );
+      }
+      
+      mark::before {
+        transform: rotate(1deg) translatey(-0.125em) translatex(-0.125em);
+      }
+      
+      mark::after {
+        left: 30%;
+        top: 0;
+        opacity: 0.8;
+        width: 66%;
+        transform: rotate(-0.5deg) translatey(0.1em) translatex(0.33em);
+      }
+  </style>
 
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
