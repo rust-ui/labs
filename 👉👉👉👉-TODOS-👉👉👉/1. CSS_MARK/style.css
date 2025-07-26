@@ -1,17 +1,16 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 2 ✔️ Step 3 ✔️ Step 7 ✔️ */
+/* TW: Step 2 ✔️ */
 
 .mainDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-size: 3rem;
   }
   
   mark {
     background: none;
-    font-weight: 600;
     position: relative;
   }
   
