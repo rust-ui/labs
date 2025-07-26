@@ -6,7 +6,6 @@ use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
-use crate::__demos__::demo_drawer::DemoDrawer;
 use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 
 #[derive(Clone)]
@@ -27,10 +26,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Carousel",
         render_fn: || view! { <DemoCarousel /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Drawer",
-        render_fn: || view! { <DemoDrawer /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Alert Dialog",
