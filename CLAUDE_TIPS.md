@@ -20,4 +20,6 @@
 
 ```bash
 ccusage blocks --live
+
+ccusage daily
 ```
