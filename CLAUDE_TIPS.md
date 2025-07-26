@@ -17,3 +17,7 @@
 
 - https://ma.rtin.so/posts/monitoring-claude-code-with-datadog/
 
+
+```bash
+ccusage blocks --live
+```
