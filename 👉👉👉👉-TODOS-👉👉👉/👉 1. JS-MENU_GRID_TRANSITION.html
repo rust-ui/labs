@@ -99,7 +99,7 @@
 
   <div class="mainDivParent min-h-screen flex justify-center items-center">
     <div class="mainDiv w-[188px] h-[188px] relative flex justify-center items-center">
-        <div class="grid__menu__navigation w-[40px] h-[40px] relative cursor-pointer flex justify-center items-center">
+        <div class="grid__menu__navigation w-[40px] h-[40px] relative cursor-pointer flex justify-center items-center" onclick="this.classList.add('active')">
             <span style="--i: 0; --x: -1; --y: 0" class="absolute flex justify-center items-center bg-white">
                 <ion-icon name="time-outline" class="text-white hover:text-[#2dfc52] text-[0em]"></ion-icon>
             </span>
@@ -125,7 +125,7 @@
                 <ion-icon name="camera-outline" class="text-white hover:text-[#2dfc52] text-[0em]"></ion-icon>
             </span>
         </div>
-        <div class="grid__menu__close absolute pointer-events-none flex justify-center items-center bg-white">
+        <div class="grid__menu__close absolute pointer-events-none flex justify-center items-center bg-white" onclick="document.querySelector('.grid__menu__navigation').classList.remove('active')">
             <ion-icon name="close-outline" class="text-[#10131c] text-[2em]"></ion-icon>
         </div>
     </div>
@@ -137,15 +137,5 @@
 
 
 
-  <script>
-    const navigation = document.querySelector(".grid__menu__navigation");
-    const close = document.querySelector(".grid__menu__close");
-    navigation.onclick = () => {
-    navigation.classList.add("active");
-    };
-    close.onclick = () => {
-    navigation.classList.remove("active");
-    };
-  </script>
 </body>
 </html>
