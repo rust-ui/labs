@@ -1,16 +1,12 @@
 /* TODO. Tailwind CSS  */
 /* CLEAN: Step 2 ✔️ Step 3 ✔️ Step 7 ✔️ */
-/* TW: Step 2 ✔️ Step 3 ✔️ */
+/* TW: Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 
 .mainDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
   }
   
   mark {
-    position: relative;
   }
   
   mark::before,
