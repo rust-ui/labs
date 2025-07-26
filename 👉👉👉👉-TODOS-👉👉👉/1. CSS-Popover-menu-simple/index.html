@@ -1,4 +1,4 @@
-<!-- INLINE: Step 1 ✔️ -->
+<!-- INLINE: Step 1 ✔️ Step 2 ✔️ -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +6,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Slider</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100dvh;
+    }
+    
+    .menu > [popovertarget="menu-popover"] {
+      anchor-name: --my-anchor;
+        padding: 0.5em;  
+    }
+    
+    .menu :popover-open {
+        position: absolute;
+        inset: unset;
+        position-anchor: --my-anchor;
+        top: calc(anchor(bottom) + 0.5em);
+        left: anchor(left);
+        border: 1px solid darkgray;
+      border-radius: 0.5em;
+        padding: 0.5em;
+    }
+    
+    .menu__popover {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+  </style>
 
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
