@@ -1,10 +1,31 @@
 use leptos::prelude::*;
-use leptos_meta::Stylesheet;
 
 #[component]
 pub fn DemoCarouselHoverSmooth() -> impl IntoView {
     view! {
-        <Stylesheet href="/components/carousel_hover_smooth.css" />
+        <style>
+            {r#"
+.my__container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+.indicator {
+    transition: all 2s cubic-bezier(0.075, 0.082, 0.165, 1);
+}
+
+.gallery-item {
+    flex: 0 1 20px;
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.gallery-item img {
+    transform: scale(2);
+}
+            "#}
+        </style>
 
         <div class="w-screen h-[200vh] bg-black">
             <div class="my__container absolute flex justify-center overflow-hidden w-[70%] mx-auto mb-8 py-4 px-2">
