@@ -9,3 +9,4 @@ pub mod demo_carousel;
 pub mod demo_carousel_hover_smooth;
 pub mod demo_drawer;
 pub mod demo_mobile_stack;
+pub mod demo_bento3_transition;
