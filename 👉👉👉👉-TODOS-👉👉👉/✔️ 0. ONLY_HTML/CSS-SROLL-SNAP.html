@@ -5,7 +5,79 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Slider</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+/* Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+
+
+.scroll__x {
+  overscroll-behavior-x: contain;
+  scrollbar-color: #2563eb #bfdbfe;
+}
+
+.scroll__snap__container {
+  scroll-snap-type: x mandatory;
+  grid-template-columns:
+    [full-start] 1fr
+    [content-start]
+    min(clamp(12rem, 1rem + 50vw, 20rem), 100% - 2rem * 2)
+    [content-end]
+    1fr [full-end];
+}
+
+.scroll__snap__item {
+  grid-area: content;
+
+  &::after {
+    content: "";
+    padding-inline-end: max(
+      2rem,
+      (100vw - clamp(12rem, 1rem + 50vw, 20rem)) / 2 - 2rem
+    );
+  }
+
+  > * {
+    inline-size: clamp(12rem, 1rem + 50vw, 20rem);
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: center;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .scroll__snap__item > * {
+    animation: scroll__snap__scale linear both, scroll__snap__fade linear both;
+    animation-timeline: view(inline);
+    animation-range: cover 30% cover 70%, cover 5% cover 95%;
+  }
+
+  @keyframes scroll__snap__scale {
+    from,
+    to {
+      scale: 0.9;
+    }
+    50% {
+      scale: 1;
+    }
+    from {
+      translate: 0.5rem 0;
+    }
+
+    to {
+      translate: calc(0.5rem * -1) 0;
+    }
+  }
+
+  @keyframes scroll__snap__fade {
+    from,
+    to {
+      opacity: 0;
+    }
+    10%,
+    90% {
+      opacity: 1;
+    }
+  }
+}
+  </style>
 
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
