@@ -1,6 +1,7 @@
 {
   "includeCoAuthoredBy": false,
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(afplay:*)",
       "Bash(cargo audit:*)",

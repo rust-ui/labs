@@ -8,7 +8,8 @@ Follow these instructions for the specified files: $ARGUMENTS
 2. Copy the content inside `../RUST-UI/app/src/registry/demos/demo_extensions`. If .css file or .js file, copy in `public/components/*`.
 3. Add the component name in the `mod.rs`.
 4. Add the components in `PageLabs`.
-5. In our current directory, **remove** the now unused demo (and `.js` + `.css` if any).
-6. Commit your changes in `RUST-UI` (if not possible, tell me).
+5. Run `cargo check` to make sure all is good.
+6. In our current directory, **remove** the now unused demo (and `.js` + `.css` if any).
+7. Commit your changes in `RUST-UI` (if not possible, tell me).
 
 
