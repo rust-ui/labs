@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
 
 ::view-transition-group(item-0) {
     animation-delay: 0s;
@@ -49,7 +49,6 @@
     box-shadow: inset 0 -1px 0 black;
   }
   #grid > div {
-    width: 50px;
     aspect-ratio: 1;
     background-color: oklch(69% 0.27 11.59deg);
     transition: background 0.15s;
