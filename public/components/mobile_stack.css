@@ -41,24 +41,13 @@
   }
   
   #grid {
-    background: #221b1b;
-    gap: 1rem;
     inline-size: min(100vw, 300px);
     min-block-size: 677px;
-    border-top: 1px solid #555;
     box-shadow: inset 0 -1px 0 black;
   }
   #grid > div {
-    aspect-ratio: 1;
     background-color: oklch(69% 0.27 11.59deg);
-    transition: background 0.15s;
     grid-area: 1/1/2/2;
-  }
-  #grid > div:first-child {
-    z-index: 1;
-  }
-  #grid > div:hover {
-    background: white;
   }
   #grid.open > div {
     grid-area: initial;
