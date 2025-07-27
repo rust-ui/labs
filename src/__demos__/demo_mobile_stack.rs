@@ -10,7 +10,7 @@ pub fn DemoMobileStack() -> impl IntoView {
 
             <div class="grid place-content-center m-0 mainDiv">
 
-                <div id="grid">
+                <div id="grid" class="p-4 mx-auto">
                     <div style="view-transition-name: item-0; --sibling-index: 0;">{"☰"}</div>
                     <div style="view-transition-name: item-1; --sibling-index: 1;">{"👍"}</div>
                     <div style="view-transition-name: item-2; --sibling-index: 2;">{"👎"}</div>

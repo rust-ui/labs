@@ -1,3 +1,5 @@
+/* TW: Step 1 ✔️ */
+
 ::view-transition-group(item-0) {
     animation-delay: 0s;
   }
@@ -39,14 +41,12 @@
   }
   
   #grid {
-    padding: 1rem;
     background: #221b1b;
     border-radius: 40px;
     display: grid;
     gap: 1rem;
     inline-size: min(100vw, 300px);
     min-block-size: 677px;
-    margin-inline: auto;
     border-top: 1px solid #555;
     box-shadow: inset 0 -1px 0 black;
     overflow: clip;
