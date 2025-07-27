@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ */
 
 ::view-transition-group(item-0) {
     animation-delay: 0s;
@@ -60,7 +60,6 @@
     grid-area: 1/1/2/2;
     display: grid;
     place-items: center;
-    font-size: 24px;
     color: white;
   }
   #grid > div:first-child {
