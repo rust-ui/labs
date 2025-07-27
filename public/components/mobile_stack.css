@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ */
 
 ::view-transition-group(item-0) {
     animation-delay: 0s;
@@ -53,14 +53,12 @@
     background-color: oklch(69% 0.27 11.59deg);
     transition: background 0.15s;
     grid-area: 1/1/2/2;
-    color: white;
   }
   #grid > div:first-child {
     z-index: 1;
   }
   #grid > div:hover {
     background: white;
-    color: black;
   }
   #grid.open > div {
     grid-area: initial;
