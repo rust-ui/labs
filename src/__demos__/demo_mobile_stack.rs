@@ -6,9 +6,9 @@ pub fn DemoMobileStack() -> impl IntoView {
     view! {
         <Stylesheet href="/components/mobile_stack.css" />
 
-        <div class="mainHtml">
+        <div class="bg-[radial-gradient(circle,#555,#111)]">
 
-            <div class="grid place-content-center m-0 mainDiv">
+            <div class="grid place-content-center m-0 h-screen">
 
                 <div id="grid" class="p-4 mx-auto rounded-[40px] overflow-clip grid bg-[#221b1b] gap-4 border-t border-[#555]">
                     <div class="text-2xl rounded-[50px] grid place-items-center w-[50px] text-white hover:text-black aspect-square transition-colors duration-150 first:z-10 hover:bg-white" style="view-transition-name: item-0; --sibling-index: 0;">{"☰"}</div>
