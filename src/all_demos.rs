@@ -6,7 +6,6 @@ use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
-use crate::__demos__::demo_mobile_stack::DemoMobileStack;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -42,9 +41,5 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Button Multi State",
         render_fn: || view! { <DemoButtonMultiState /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Mobile Stack",
-        render_fn: || view! { <DemoMobileStack /> }.into_any(),
     },
 ];
