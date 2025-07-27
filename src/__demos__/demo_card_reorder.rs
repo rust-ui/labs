@@ -1,6 +1,8 @@
 use leptos::prelude::*;
 use leptos_ui::clx;
 
+use crate::components::ui::button::Button;
+
 #[component]
 pub fn DemoCardReorder() -> impl IntoView {
     clx! {Card, div, "grid place-content-center text-2xl bg-gray-300 rounded card w-[20vw] max-w-20 aspect-[1/1.6]"}
@@ -34,7 +36,7 @@ pub fn DemoCardReorder() -> impl IntoView {
         </div>
 
         <div class="flex justify-center">
-            <button class="p-4 text-gray-600 rounded-lg bg-neutral-100">Reorder</button>
+            <Button>Reorder</Button>
         </div>
 
         <script src="/components/card_reorder.js"></script>
