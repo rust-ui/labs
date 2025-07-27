@@ -128,6 +128,7 @@ Remove any unused classes from both CSS and HTML.
 ## Additional Conversion Notes
 
 - **Replace CSS ID selectors (#) with Tailwind:** Move CSS properties from `#id { ... }` rules to Tailwind classes in the HTML element, keeping the `id` attribute for JavaScript.
+- **Use Tailwind colors instead of custom colors:** Replace `oklch()`, `rgb()`, `hsl()` and hex colors with Tailwind's standard color palette (e.g., `bg-orange-500`, `text-blue-600`).
 - **@keyframes naming**: Always prefix keyframe names with component/feature name using __ pattern:
   - `@keyframes scale` → `@keyframes scroll__snap__scale`
   - `@keyframes fade` → `@keyframes modal__fade`

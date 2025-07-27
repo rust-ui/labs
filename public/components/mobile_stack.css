@@ -46,7 +46,6 @@
     box-shadow: inset 0 -1px 0 black;
   }
   #grid > div {
-    background-color: oklch(69% 0.27 11.59deg);
     grid-area: 1/1/2/2;
   }
   #grid.open > div {
