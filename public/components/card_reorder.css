@@ -1,55 +1,25 @@
-@layer view-transitions {
-
-	@supports (x: attr(x type(*))) {
-		.warning {
-			display: none;
-		}
-	}
-
-	.card[id] {
-		view-transition-name: attr(id type(<custom-ident>), none);
-		/* card-1, card-2, card-3, etc. */
-		view-transition-class: card;
-	}
-
-	:root {
-		view-transition-name: none;
-	}
-
-	::view-transition {
-		pointer-events: none;
-	}
-}
-
-@layer layout {
-	.card {
-		width: 20vw;
-		max-width: 5em;
-		aspect-ratio: 1 / 1.6;
-	}
-
-}
-
-@layer warning {
+@supports (x: attr(x type(*))) {
 	.warning {
-		background: rgba(255 0 0 / 0.8);
+		display: none;
 	}
+}
 
-	.warning> :first-child {
-		margin-top: 0;
-	}
+.card[id] {
+	view-transition-name: attr(id type(<custom-ident>), none);
+	/* card-1, card-2, card-3, etc. */
+	view-transition-class: card;
+}
 
-	.warning> :last-child {
-		margin-bottom: 0;
-	}
+:root {
+	view-transition-name: none;
+}
 
-	.warning--info {
-		border: 1px solid #123456;
-		background: rgb(255 0 0 / 0.8);
-	}
+::view-transition {
+	pointer-events: none;
+}
 
-	.warning--alarm {
-		border: 1px solid red;
-		background: #ff000010;
-	}
+.card {
+	width: 20vw;
+	max-width: 5em;
+	aspect-ratio: 1 / 1.6;
 }
