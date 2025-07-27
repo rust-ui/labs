@@ -3,7 +3,6 @@ use leptos::prelude::*;
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
 use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
-use crate::__demos__::demo_card_reorder::DemoCardReorder;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 
@@ -29,10 +28,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Alert Dialog",
         render_fn: || view! { <DemoAlertDialog /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Card Reorder",
-        render_fn: || view! { <DemoCardReorder /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Carousel Hover Smooth",
