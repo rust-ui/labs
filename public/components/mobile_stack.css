@@ -1,4 +1,4 @@
-/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ */
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ */
 
 ::view-transition-group(item-0) {
     animation-delay: 0s;
@@ -42,7 +42,6 @@
   
   #grid {
     background: #221b1b;
-    display: grid;
     gap: 1rem;
     inline-size: min(100vw, 300px);
     min-block-size: 677px;
@@ -55,8 +54,6 @@
     background-color: oklch(69% 0.27 11.59deg);
     transition: background 0.15s;
     grid-area: 1/1/2/2;
-    display: grid;
-    place-items: center;
     color: white;
   }
   #grid > div:first-child {
