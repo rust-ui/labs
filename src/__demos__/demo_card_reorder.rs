@@ -1,22 +1,47 @@
 use leptos::prelude::*;
-use leptos_meta::Stylesheet;
 
 #[component]
 pub fn DemoCardReorder() -> impl IntoView {
     view! {
-        <Stylesheet href="/components/card_reorder.css" />
+        <style>
+            r#"
+            :root {
+            view-transition-name: none;
+            }
+            
+            ::view-transition {
+            pointer-events: none;
+            }
+            "#
+        </style>
 
         <div class="flex flex-row gap-4 justify-center p-4">
-            <div class="grid place-content-center text-2xl bg-gray-300 rounded card" id="card-1">
+            <div
+                class="grid place-content-center text-2xl bg-gray-300 rounded card w-[20vw] max-w-20 aspect-[1/1.6]"
+                id="card-1"
+                style="view-transition-name: card-1; view-transition-class: card;"
+            >
                 1
             </div>
-            <div class="grid place-content-center text-2xl bg-gray-300 rounded card" id="card-2">
+            <div
+                class="grid place-content-center text-2xl bg-gray-300 rounded card w-[20vw] max-w-20 aspect-[1/1.6]"
+                id="card-2"
+                style="view-transition-name: card-2; view-transition-class: card;"
+            >
                 2
             </div>
-            <div class="grid place-content-center text-2xl bg-gray-300 rounded card" id="card-3">
+            <div
+                class="grid place-content-center text-2xl bg-gray-300 rounded card w-[20vw] max-w-20 aspect-[1/1.6]"
+                id="card-3"
+                style="view-transition-name: card-3; view-transition-class: card;"
+            >
                 3
             </div>
-            <div class="grid place-content-center text-2xl bg-gray-300 rounded card" id="card-4">
+            <div
+                class="grid place-content-center text-2xl bg-gray-300 rounded card w-[20vw] max-w-20 aspect-[1/1.6]"
+                id="card-4"
+                style="view-transition-name: card-4; view-transition-class: card;"
+            >
                 4
             </div>
         </div>
