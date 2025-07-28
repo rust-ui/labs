@@ -2,6 +2,7 @@ use leptos::prelude::*;
 
 use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
+use crate::__demos__::demo_bento3_transition::DemoBento3Transition;
 use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
@@ -36,5 +37,9 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Button Multi State",
         render_fn: || view! { <DemoButtonMultiState /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO: Bento3 Transition",
+        render_fn: || view! { <DemoBento3Transition /> }.into_any(),
     },
 ];
