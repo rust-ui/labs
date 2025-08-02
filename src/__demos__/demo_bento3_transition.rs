@@ -1,5 +1,7 @@
 use leptos::prelude::*;
 
+// TODO. Use clx macro. You can ask Claude for this using 10_convert_clx.md
+
 #[component]
 pub fn DemoBento3Transition() -> impl IntoView {
     view! {
