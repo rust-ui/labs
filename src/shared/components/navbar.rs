@@ -1,6 +1,7 @@
 use leptos::prelude::*;
 
-use super::{reactive_indicator::ReactiveIndicator, theme_toggle::ThemeToggle};
+use super::reactive_indicator::ReactiveIndicator;
+use super::theme_toggle::ThemeToggle;
 
 #[component]
 pub fn Navbar() -> impl IntoView {

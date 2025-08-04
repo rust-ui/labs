@@ -1,14 +1,12 @@
-use crate::app::App;
-use axum::response::Response as AxumResponse;
-use axum::{
-    body::Body,
-    extract::State,
-    http::{Request, Response, StatusCode, Uri},
-    response::IntoResponse,
-};
+use axum::body::Body;
+use axum::extract::State;
+use axum::http::{Request, Response, StatusCode, Uri};
+use axum::response::{IntoResponse, Response as AxumResponse};
 use leptos::prelude::*;
 use tower::ServiceExt;
 use tower_http::services::ServeDir;
+
+use crate::app::App;
 
 pub async fn file_and_error_handler(
     uri: Uri,

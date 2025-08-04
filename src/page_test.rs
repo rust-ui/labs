@@ -1,5 +1,6 @@
-use crate::shared::components::card::*;
 use leptos::prelude::*;
+
+use crate::shared::components::card::*;
 
 #[component]
 pub fn PageTest() -> impl IntoView {

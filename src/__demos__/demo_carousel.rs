@@ -1,6 +1,6 @@
 use leptos::prelude::*;
-use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
+use wasm_bindgen::prelude::*;
 
 // TODO. The Autoplay effect should be optional.
 // TODO. If Autoplay is enabled, display an elapsed timer.

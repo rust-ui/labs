@@ -3,9 +3,9 @@
 use axum::Router;
 use leptos::logging::log;
 use leptos::prelude::*;
-use leptos_axum::{generate_route_list, LeptosRoutes};
-
-use rust_ui_labs::{app::App, shell::shell};
+use leptos_axum::{LeptosRoutes, generate_route_list};
+use rust_ui_labs::app::App;
+use rust_ui_labs::shell::shell;
 
 #[cfg(feature = "ssr")]
 #[tokio::main]

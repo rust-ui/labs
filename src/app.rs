@@ -1,14 +1,12 @@
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Stylesheet, Title};
-use leptos_router::{
-    components::{Route, Router, Routes},
-    StaticSegment,
-};
+use leptos_meta::{Stylesheet, Title, provide_meta_context};
+use leptos_router::StaticSegment;
+use leptos_router::components::{Route, Router, Routes};
 
-use crate::{
-    all_demos_page::AllDemosPage, gsap_intro_page::GsapIntroPage, page_test::PageTest,
-    shared::components::navbar::Navbar,
-};
+use crate::all_demos_page::AllDemosPage;
+use crate::gsap_intro_page::GsapIntroPage;
+use crate::page_test::PageTest;
+use crate::shared::components::navbar::Navbar;
 
 #[component]
 pub fn App() -> impl IntoView {
