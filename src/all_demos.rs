@@ -6,6 +6,7 @@ use crate::__demos__::demo_bento3_transition::DemoBento3Transition;
 use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
+use crate::__demos__::demo_pagination::DemoPagination;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -18,6 +19,10 @@ pub struct DemoItem {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 pub const ALL_DEMOS: &[DemoItem] = &[
+    DemoItem {
+        name: "👉 TODO: Pagination",
+        render_fn: || view! { <DemoPagination /> }.into_any(),
+    },
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
