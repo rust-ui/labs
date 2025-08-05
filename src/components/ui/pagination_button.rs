@@ -1,9 +1,6 @@
 use icons::{ChevronLeft, ChevronRight, Ellipsis};
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
-use tw_merge::*;
-
-use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
 
 mod components {
     use super::*;
@@ -20,7 +17,7 @@ mod components {
 
     a! {PaginationActive, COMMON_CLASSES, "gap-2 border  bg-background shadow-xs size-9 dark:bg-input/30 dark:border-input dark:hover:bg-input/50"}
 
-    a! {RootPrevious, COMMON_CLASSES,  "py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
+    a! {RootPrevious,COMMON_CLASSES,  "py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
 
     a! {RootNext, COMMON_CLASSES, "h-9  has-[>svg]:px-3 dark:hover:bg-accent/50"}
 }
@@ -58,34 +55,5 @@ pub fn PaginationEllipsis() -> impl IntoView {
             <Ellipsis class="size-4" />
             <span class="sr-only">More pages</span>
         </EllipsisRoot>
-    }
-}
-
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                     ✨ FUNCTIONS ✨                        */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-// TODO. Merge properly with Button
-#[component]
-pub fn PaginationLinkWithButton(
-    #[prop(into, optional)] variant: Signal<ButtonVariant>,
-    #[prop(into, optional)] size: Signal<ButtonSize>,
-    #[prop(into, optional)] class: Signal<String>,
-    #[prop(into, optional)] is_active: Option<bool>,
-    #[prop(into)] href: &'static str,
-    children: Children,
-) -> impl IntoView {
-    // TODO. should be ButtonVariant::Ghost OR ButtonVariant::Outline if is_active
-    let class = Memo::new(move |_| {
-        let variant = variant.get();
-        let size = size.get();
-        let button = ButtonClass { variant, size };
-        button.with_class(class.get())
-    });
-
-    view! {
-        <a class=class href=href>
-            {children()}
-        </a>
     }
 }
