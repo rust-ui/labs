@@ -946,6 +946,7 @@ version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a1c349a1a2d8191521c24fbea56eef375dfca8160e43e42ad45d3ac4b91a666b"
 dependencies = [
+ "leptos",
  "tw_merge",
 ]
 
