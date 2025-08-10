@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+
+  <style>
+
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
+@import "https://unpkg.com/open-props/shadows.min.css";
+
+.m-icon {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' 0,
+    'opsz' 24
+  ;
+}
+
+/* anchoring */
+[popovertarget="menu"] {
+  anchor-name: --menu;
+}
+
+[popovertarget="submenu"] {
+  anchor-name: --submenu;
+}
+
+#menu {
+  position: absolute;
+  margin: 0;
+  position-anchor: --menu;
+/*   inset-area: bottom span-right; */
+  left: anchor(--menu left);
+  top: anchor(--menu bottom);
+}
+
+#submenu {
+  position: absolute;
+  margin: 0;
+  position-anchor: --submenu;
+  /*  inset-area not implemented yet in position-try  */
+  /*   inset-area: right span-bottom; */
+  left: anchor(--submenu right);
+  top: anchor(--submenu top);
+  margin-left: var(--padding);
+  position-try-options: --bottom;
+  transition: left 0.25s, top 0.25s;
+  width: max-content;
+}
+
+@position-try --bottom {
+  margin: var(--padding) 0 0 var(--padding);
+  /*  inset-area not implemented yet in position-try  */
+  /*   inset-area: bottom; */
+  left: anchor(--submenu left);
+  top: anchor(--submenu bottom);
+  margin-left: var(--padding);
+}
+
+[popovertarget="submenu"] {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* animating */
+
+/* etc */
+:root {
+  --padding: 1rem;
+}
+
+#menu,
+#submenu {
+  padding: 1px;
+  background: white;
+  box-shadow: var(--shadow-4);
+  border-radius: 10px;
+  color: #333;
+  gap: 1px;
+  border: none;
+  width: 205px;
+  
+  > li > :is(a, button) {
+    font-size: .8rem;
+    padding-block: .5rem;
+    padding-inline: .75rem 1rem;
+    outline-offset: -4px;
+    border-radius: 8px;
+    
+    &:is(:hover,:focus-visible) {
+      background: #ddd;
+      color: blue;
+    }
+  }
+  
+  > li > :is(a, button),
+  > li > button > span:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+  }
+}
+
+#menu:popover-open,
+#submenu:popover-open {
+  display: grid;
+}
+
+#menu-btn {
+  display: inline-flex;
+  place-items: center;
+  gap: 1ch;
+  background: white;
+  color: #333;
+  padding: var(--padding);
+  padding-inline-end: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-1);
+  transition: box-shadow .2s ease;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: var(--shadow-2);
+  }
+}
+
+#menu {
+  margin-block-start: .5rem;
+}
+
+#submenu {
+  margin-inline-start: .5rem;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+a, button {
+  font-family: system-ui;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border: none;
+  background: none;
+  outline-offset: 5px;
+}
+
+.arrow {
+  transition: rotate 0.2s;
+}
+
+#menu:has(:popover-open) {
+  .arrow {
+    rotate: -90deg;
+  }
+}
+
+body {
+  background: #ccc;
+}
+
+:root {
+  --shadow-strength: 1%;
+}
+
+body {
+  padding: 3rem;
+}
+
+
+  </style>
+
+
+
+
+<button popovertarget="menu" id="menu-btn">
+  <span class="m-icon">person</span>
+  Your Account
+</button> 
+
+<ul role="nav" id="menu" popover>
+  <li><a href=#>
+    <span class="m-icon">visibility</span>
+    View Profile
+  </a></li>
+  <li><a href=#>
+    <span class="m-icon">mail</span>
+    Messages
+  </a></li>
+  <li><a href=#>
+    <span class="m-icon">star</span>
+    Favorites
+  </a></li>
+  <li><a href="#"> 
+    <span class="m-icon">settings</span>
+    Account Settings
+  </a></li>
+  <li>
+    <button popovertarget="submenu">
+      <span>
+        <span class="m-icon">local_mall</span>
+        Storefront
+      </span>
+      <span class="arrow">➤</span> 
+      <ul id="submenu" role="nav" popover>
+        <li><a href=#>
+          <span class="m-icon">dns</span>
+          Listings
+        </a></li>
+        <li><a href=#>
+          <span class="m-icon">sell</span>
+          Special Offers
+        </a></li>
+        <li><a href=#>
+          <span class="m-icon">logout</span>
+          Sign out
+        </a></li>
+      </ul>
+    </button>
+  </li>
+</ul>
+
+
+
+</body>
+</html>
