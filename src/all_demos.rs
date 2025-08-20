@@ -4,9 +4,7 @@ use crate::__demos__::demo_alert_dialog::DemoAlertDialog;
 use crate::__demos__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
 use crate::__demos__::demo_bento3_transition::DemoBento3Transition;
 use crate::__demos__::demo_button_multi_state::DemoButtonMultiState;
-use crate::__demos__::demo_carousel::DemoCarousel;
 use crate::__demos__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
-use crate::__demos__::demo_carousel_v2::DemoCarouselV2;
 use crate::__demos__::demo_pagination::DemoPagination;
 
 #[derive(Clone)]
@@ -25,16 +23,8 @@ pub const ALL_DEMOS: &[DemoItem] = &[
         render_fn: || view! { <DemoPagination /> }.into_any(),
     },
     DemoItem {
-        name: "👉 TODO: Carousel V2",
-        render_fn: || view! { <DemoCarouselV2 /> }.into_any(),
-    },
-    DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Carousel",
-        render_fn: || view! { <DemoCarousel /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Alert Dialog",
