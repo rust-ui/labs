@@ -42,7 +42,7 @@ pub fn DemoCarouselV2() -> impl IntoView {
             <CarouselDot onclick="currentSlide(3)" />
         </CarouselDots>
 
-        <script src="/components/carousel_v2.js"></script>
+        <script>{SCRIPT_CAROUSEL}</script>
     }
 }
 
@@ -55,3 +55,50 @@ const IMAGE_2: &str =
     "https://images.unsplash.com/photo-1584395630827-860eee694d7b?q=80&w=1469&auto=format&fit=crop";
 const IMAGE_3: &str =
     "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1469&auto=format&fit=crop";
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                      ✨ CONSTANTS ✨                       */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+const SCRIPT_CAROUSEL: &str = r#"
+// set the default active slide to the first one
+let slideIndex = 1;
+showSlide(slideIndex);
+
+// change slide with the prev/next button
+function moveSlide(moveStep) {
+    showSlide(slideIndex += moveStep);
+}
+
+// change slide with the dots
+function currentSlide(n) {
+    showSlide(slideIndex = n);
+}
+
+function showSlide(n) {
+    let i;
+    const slides = document.getElementsByClassName("carousel__slide");
+    const dots = document.getElementsByClassName('carousel__dot');
+    
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    // hide all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].classList.add('hidden');
+    }
+
+    // remove active status from all dots
+    for (i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('bg-yellow-500');
+        dots[i].classList.add('bg-green-600');
+    }
+
+    // show the active slide
+    slides[slideIndex - 1].classList.remove('hidden');
+
+    // highlight the active dot
+    dots[slideIndex - 1].classList.remove('bg-green-600');
+    dots[slideIndex - 1].classList.add('bg-yellow-500');
+}
+"#;
