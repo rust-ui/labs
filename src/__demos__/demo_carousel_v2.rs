@@ -1,56 +1,57 @@
 use leptos::prelude::*;
+use leptos_ui::{clx, div, img};
 
 #[component]
 pub fn DemoCarouselV2() -> impl IntoView {
+    clx! {CarouselContainer, div, "relative"}
+    clx! {CarouselSlide, div, "carousel__slide", "relative"}
+    clx! {CarouselCaption, div, "absolute bottom-0 py-3 px-5 w-full text-center text-white bg-black/40"}
+    clx! {CarouselController, div, "absolute top-1/2 p-4 text-white -translate-y-1/2 cursor-pointer hover:text-amber-500 bg-black/30 hover:bg-black/50"}
+    clx! {CarouselDots, div, "flex justify-center items-center space-x-5"}
+    div! {CarouselDot, "carousel__dot", "size-4 rounded-full cursor-pointer"}
+    img! {CarouselImage, "object-cover w-full"}
+
     view! {
-        <div class="relative mx-auto w-[600px]">
-            <div class="relative slide">
-                <img
-                    class="object-cover w-full h-[300px]"
-                    src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=1469&auto=format&fit=crop"
-                />
-                <div class="absolute bottom-0 py-3 px-5 w-full text-center text-white bg-black/40">
-                    Slide 1
-                </div>
-            </div>
-            <div class="relative slide">
-                <img
-                    class="object-cover w-full h-[300px]"
-                    src="https://images.unsplash.com/photo-1584395630827-860eee694d7b?q=80&w=1469&auto=format&fit=crop"
-                />
-                <div class="absolute bottom-0 py-3 px-5 w-full text-center text-white bg-black/40">
-                    Slide 2
-                </div>
-            </div>
-            <div class="relative slide">
-                <img
-                    class="object-cover w-full h-[300px]"
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1469&auto=format&fit=crop"
-                />
-                <div class="absolute bottom-0 py-3 px-5 w-full text-center text-white bg-black/40">
-                    Slide 3
-                </div>
-            </div>
-            <a
-                class="absolute left-0 top-1/2 p-4 text-white -translate-y-1/2 cursor-pointer hover:text-amber-500 bg-black/30 hover:bg-black/50"
-                onclick="moveSlide(-1)"
-            >
+        <CarouselContainer class="mx-auto w-[600px]">
+            <CarouselSlide>
+                <CarouselImage class="h-[300px]" src=IMAGE_1 />
+                <CarouselCaption>{"Slide 1"}</CarouselCaption>
+            </CarouselSlide>
+            <CarouselSlide>
+                <CarouselImage class="h-[300px]" src=IMAGE_2 />
+                <CarouselCaption>{"Slide 2"}</CarouselCaption>
+            </CarouselSlide>
+            <CarouselSlide>
+                <CarouselImage class="h-[300px]" src=IMAGE_3 />
+                <CarouselCaption>{"Slide 2"}</CarouselCaption>
+            </CarouselSlide>
+
+            <CarouselController class="left-0" onclick="moveSlide(-1)">
                 "❮"
-            </a>
-            <a
-                class="absolute right-0 top-1/2 p-4 text-white -translate-y-1/2 cursor-pointer hover:text-amber-500 bg-black/30 hover:bg-black/50"
-                onclick="moveSlide(1)"
-            >
+            </CarouselController>
+            <CarouselController class="right-0" onclick="moveSlide(1)">
                 "❯"
-            </a>
-        </div>
+            </CarouselController>
+        </CarouselContainer>
+
         <br />
-        <div class="flex justify-center items-center space-x-5">
-            <div class="w-4 h-4 rounded-full cursor-pointer dot" onclick="currentSlide(1)"></div>
-            <div class="w-4 h-4 rounded-full cursor-pointer dot" onclick="currentSlide(2)"></div>
-            <div class="w-4 h-4 rounded-full cursor-pointer dot" onclick="currentSlide(3)"></div>
-        </div>
+
+        <CarouselDots>
+            <CarouselDot onclick="currentSlide(1)" />
+            <CarouselDot onclick="currentSlide(2)" />
+            <CarouselDot onclick="currentSlide(3)" />
+        </CarouselDots>
 
         <script src="/components/carousel_v2.js"></script>
     }
 }
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                      ✨ CONSTANTS ✨                       */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+const IMAGE_1: &str = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=1469&auto=format&fit=crop";
+const IMAGE_2: &str =
+    "https://images.unsplash.com/photo-1584395630827-860eee694d7b?q=80&w=1469&auto=format&fit=crop";
+const IMAGE_3: &str =
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1469&auto=format&fit=crop";
