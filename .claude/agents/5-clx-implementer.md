@@ -46,16 +46,22 @@ Here is what a typical port would look like:
 
 ```rust
 use leptos::prelude::*;
+use leptos_ui::{clx, a, div};
+
+mod components {
+  use super::*;
+  clx! {Gallery, div, "..."}
+  
+  a! {MyLink, "..."}
+  img! {MyImage, "..."}
+}
+
+pub use components::*;
 
 const IMAGE_1: &str = "https://example.com/image1.jpg";
 
 #[component]
 pub fn DemoComponentName() -> impl IntoView {
-  clx! {Gallery, div, "..."}
-  // Specific cases (if needed)
-  a! {MyLink, "..."}
-  img! {MyImage, "..."}
-
     view! {
        <style>
         {"
