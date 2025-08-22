@@ -148,7 +148,8 @@ Remove any unused classes from both CSS and HTML.
   - `:active { background: #d3d3d3; }` → `active:bg-[#d3d3d3]`
   - `:focus { border-color: blue; }` → `focus:border-blue-500`
 - **No conversion comments**: Do NOT add comments for CSS properties that you remove during conversion. Simply remove the CSS properties and add the Tailwind classes to HTML without explanatory comments.
-
+- Remove unnecessary `box-border` classes - they are not needed
+- Remove unnecessary div wrappers that don't add styling or functionality
 
 
 

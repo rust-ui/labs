@@ -11,9 +11,8 @@ pub fn DemoSplitButton() -> impl IntoView {
             "}
         </style>
 
-        <div class="box-border">
-            <div class="flex p-20 mx-auto border border-border">
-                <div class="inline-block relative mt-5 text-left split__button__container">
+        <div class="flex p-20 mx-auto border border-border">
+            <div class="inline-block relative mt-5 text-left split__button__container">
                     <button class="float-left relative px-3 text-sm border outline-none h-8 leading-7 bg-secondary text-secondary-foreground border-border shadow-sm hover:bg-accent active:bg-muted transition-colors duration-150">
                         "❖ Action"
                     </button>
@@ -46,7 +45,6 @@ pub fn DemoSplitButton() -> impl IntoView {
                             </a>
                         </li>
                     </ul>
-                </div>
             </div>
         </div>
 
