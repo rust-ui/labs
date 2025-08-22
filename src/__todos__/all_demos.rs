@@ -7,7 +7,6 @@ use crate::__TODOS__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__TODOS__::demo_card_reverse::DemoCardReverse;
 use crate::__TODOS__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__TODOS__::demo_pagination::DemoPagination;
-use crate::__ready_to_port__::demo_split_button::DemoSplitButton;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -20,10 +19,6 @@ pub struct DemoItem {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 pub const ALL_DEMOS: &[DemoItem] = &[
-    DemoItem {
-        name: "✅ Split Button",
-        render_fn: || view! { <DemoSplitButton /> }.into_any(),
-    },
     DemoItem {
         name: "👉 TODO:  Card Reverse",
         render_fn: || view! { <DemoCardReverse /> }.into_any(),
