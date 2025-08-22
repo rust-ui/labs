@@ -71,7 +71,8 @@ pub fn PaginationLinkWithButton(
     #[prop(into, optional)] variant: Signal<ButtonVariant>,
     #[prop(into, optional)] size: Signal<ButtonSize>,
     #[prop(into, optional)] class: Signal<String>,
-    #[prop(into, optional)] is_active: Option<bool>,
+    // TODO _is_active.
+    #[prop(into, optional)] _is_active: Option<bool>,
     #[prop(into)] href: &'static str,
     children: Children,
 ) -> impl IntoView {
