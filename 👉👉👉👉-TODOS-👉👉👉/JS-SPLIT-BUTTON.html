@@ -24,15 +24,10 @@
   position: relative;
   height: 30px;
   float: left;
-  outline: none;
-  background: #f2f2f2;
-  border: 1px solid #e0e0e0;
-  box-shadow: 1px 1px 2px #e0e0e0;
   color: #333;
 }
 
 .split__button__action:hover {
-  cursor: pointer;
   background: #e0e0e0;
 }
 
@@ -44,16 +39,10 @@
   position: relative;
   height: 30px;
   float: left;
-  outline: none;
-  background: #f2f2f2;
-  border: 1px solid #e0e0e0;
-  border-left: 0;
-  box-shadow: 1px 1px 2px #e0e0e0;
   color: #333;
 }
 
 .split__button__dropdown:hover {
-  cursor: pointer;
   background: #e0e0e0;
 }
 
@@ -72,7 +61,6 @@
   z-index: 1000;
   display: none;
   min-width: 160px;
-  list-style: none;
   background-color: #f2f2f2;
   background-clip: padding-box;
   border: 1px solid #e0e0e0;
@@ -82,7 +70,6 @@
 .split__button__menu__item {
   display: block;
   color: #444;
-  text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
@@ -97,12 +84,12 @@
   <div class="mainDiv m-0 p-0">
     <div class="flex p-20 mx-auto border border-gray-500">
       <div class="split__button__container mt-5">
-        <button class="split__button__action m-0 px-3 text-sm leading-[27px]">❖ Action</button>
-        <button class="split__button__dropdown m-0 px-2 text-xs leading-[27px]">▼</button>
-        <ul class="split__button__menu py-[5px] mt-[2px] text-sm">
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5">Item - 1</a></li>
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5">Item - 2</a></li>
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5">Long Item - 3</a></li>
+        <button class="split__button__action m-0 px-3 text-sm leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] cursor-pointer no-underline">❖ Action</button>
+        <button class="split__button__dropdown m-0 px-2 text-xs leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] border-l-0 shadow-[1px_1px_2px_#e0e0e0] cursor-pointer">▼</button>
+        <ul class="split__button__menu py-[5px] mt-[2px] text-sm list-none bg-clip-padding">
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out">Item - 1</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out">Item - 2</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out">Long Item - 3</a></li>
         </ul>
       </div>
     </div>
