@@ -1,113 +1,128 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Slider</title>
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- * TAILWIND CSS -->
+  <title>Split Button Component</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <!-- GSAP (uncomment if needed) -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
 </head>
 <body>
 
 
-  <style> 
+  <style>
+.mainDiv {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.split__button {
+.split__button__container {
   position: relative;
   display: inline-block;
   text-align: left;
   margin-top: 20px;
 }
 
-.my__button {
+.split__button__action {
   position: relative;
   margin: 0;
   height: 30px;
   float: left;
   outline: none;
   line-height: 27px;
-  background: #F2F2F2;
-  border: 1px solid #E0E0E0;
-  box-shadow: 1px 1px 2px #E0E0E0;
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  box-shadow: 1px 1px 2px #e0e0e0;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #333;
 }
 
-.my__button:hover {
+.split__button__action:hover {
   cursor: pointer;
-  background: #E0E0E0;
+  background: #e0e0e0;
 }
 
-.my__button:active {
-  background: #D3D3D3;
+.split__button__action:active {
+  background: #d3d3d3;
 }
 
-.my__button.split__button__drop {
-  border-left: 0;
+.split__button__dropdown {
+  position: relative;
+  margin: 0;
   height: 30px;
+  float: left;
+  outline: none;
+  line-height: 27px;
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  border-left: 0;
+  box-shadow: 1px 1px 2px #e0e0e0;
+  padding: 0 8px;
+  font-size: 12px;
+  color: #333;
 }
 
-.open > .split__button__drop-menu {
+.split__button__dropdown:hover {
+  cursor: pointer;
+  background: #e0e0e0;
+}
+
+.split__button__dropdown:active {
+  background: #d3d3d3;
+}
+
+.split__button__container.open > .split__button__menu {
   display: block;
 }
 
-.split__button__drop-menu {
+.split__button__menu {
   position: absolute;
-  top: 27px;
+  top: 29px;
   right: 0;
   z-index: 1000;
   display: none;
-  float: left;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
   font-size: 14px;
   list-style: none;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   background-clip: padding-box;
-  border: 1px solid #E0E0E0;
-  box-shadow: 1px 1px 2px #E0E0E0;
+  border: 1px solid #e0e0e0;
+  box-shadow: 1px 1px 2px #e0e0e0;
 }
 
-.split__button__drop-menu li a {
+.split__button__menu__item {
   display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-family: arial;
+  padding: 6px 20px;
   color: #444;
   text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
-.split__button__drop-menu li a:hover {
-  background: #D3D3D3;
+.split__button__menu__item:hover {
+  background: #d3d3d3;
 }
-
   </style>
 
 
 
 
-<div class="flex p-20 mx-auto border border-gray-500">
-  <span class="split__button">
-    <button class="my__button my__button-main">&#10070; Action</button>
-    <button class="my__button split__button__drop">&#9660;</button>
-    <ul class="split__button__drop-menu">
-      <li>
-        <a href="#">Item - 1</a>
-      </li>
-      <li>
-        <a href="">Item - 2</a>
-      </li>
-      <li>
-        <a href="">Long Item - 3</a>
-      </li>
-    </ul>
-  </span>
-</div>
+  <div class="mainDiv">
+    <div class="flex p-20 mx-auto border border-gray-500">
+      <div class="split__button__container">
+        <button class="split__button__action">❖ Action</button>
+        <button class="split__button__dropdown">▼</button>
+        <ul class="split__button__menu">
+          <li><a href="#" class="split__button__menu__item">Item - 1</a></li>
+          <li><a href="#" class="split__button__menu__item">Item - 2</a></li>
+          <li><a href="#" class="split__button__menu__item">Long Item - 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -115,26 +130,26 @@
 
 
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const splitBtn = document.querySelector('.split__button');
-    const dropButton = document.querySelector('button.split__button__drop');
+    document.addEventListener('DOMContentLoaded', function() {
+      const splitBtnContainer = document.querySelector('.split__button__container');
+      const dropdownButton = document.querySelector('.split__button__dropdown');
 
-    dropButton.addEventListener('click', function() {
-        if (!splitBtn.classList.contains('open')) {
-            splitBtn.classList.add('open');
+      dropdownButton.addEventListener('click', function() {
+        if (!splitBtnContainer.classList.contains('open')) {
+          splitBtnContainer.classList.add('open');
         }
-    });
-  
-    splitBtn.addEventListener('click', function(event) {
+      });
+
+      splitBtnContainer.addEventListener('click', function(event) {
         event.stopPropagation();
-    });
+      });
 
-    document.documentElement.addEventListener('click', function() {
-        if (splitBtn.classList.contains('open')) {
-            splitBtn.classList.remove('open');
+      document.addEventListener('click', function() {
+        if (splitBtnContainer.classList.contains('open')) {
+          splitBtnContainer.classList.remove('open');
         }
+      });
     });
-});
   </script>
 </body>
 </html>
