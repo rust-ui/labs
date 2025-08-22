@@ -15,15 +15,10 @@
 }
 
 .split__button__container {
-  position: relative;
-  display: inline-block;
-  text-align: left;
 }
 
 .split__button__action {
-  position: relative;
   height: 30px;
-  float: left;
   color: #333;
 }
 
@@ -36,9 +31,7 @@
 }
 
 .split__button__dropdown {
-  position: relative;
   height: 30px;
-  float: left;
   color: #333;
 }
 
@@ -55,11 +48,8 @@
 }
 
 .split__button__menu {
-  position: absolute;
   top: 29px;
   right: 0;
-  z-index: 1000;
-  display: none;
   min-width: 160px;
   background-color: #f2f2f2;
   background-clip: padding-box;
@@ -68,7 +58,6 @@
 }
 
 .split__button__menu__item {
-  display: block;
   color: #444;
   transition: background-color 0.2s ease;
 }
@@ -83,13 +72,13 @@
 
   <div class="mainDiv m-0 p-0">
     <div class="flex p-20 mx-auto border border-gray-500">
-      <div class="split__button__container mt-5">
-        <button class="split__button__action m-0 px-3 text-sm leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] cursor-pointer no-underline">❖ Action</button>
-        <button class="split__button__dropdown m-0 px-2 text-xs leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] border-l-0 shadow-[1px_1px_2px_#e0e0e0] cursor-pointer">▼</button>
-        <ul class="split__button__menu py-[5px] mt-[2px] text-sm list-none bg-clip-padding">
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out">Item - 1</a></li>
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out">Item - 2</a></li>
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out">Long Item - 3</a></li>
+      <div class="split__button__container mt-5 relative inline-block text-left">
+        <button class="split__button__action m-0 px-3 text-sm leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] cursor-pointer no-underline relative float-left">❖ Action</button>
+        <button class="split__button__dropdown m-0 px-2 text-xs leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] border-l-0 shadow-[1px_1px_2px_#e0e0e0] cursor-pointer relative float-left">▼</button>
+        <ul class="split__button__menu py-[5px] mt-[2px] text-sm list-none bg-clip-padding absolute top-[29px] right-0 z-[1000] hidden">
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block">Item - 1</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block">Item - 2</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block">Long Item - 3</a></li>
         </ul>
       </div>
     </div>
