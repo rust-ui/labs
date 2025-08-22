@@ -6,7 +6,6 @@ use leptos_router::components::{Route, Router, Routes};
 use crate::__TODOS__::all_demos_page::AllDemosPage;
 use crate::components::_app::navbar::Navbar;
 use crate::gsap_intro_page::GsapIntroPage;
-use crate::page_test::PageTest;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -26,7 +25,6 @@ pub fn App() -> impl IntoView {
                             view! { <AllDemosPage /> }
                         }
                     />
-                    <Route path=StaticSegment("/test") view=PageTest />
                     <Route path=StaticSegment("/gsap-intro") view=GsapIntroPage />
                 </Routes>
             </div>

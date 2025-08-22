@@ -3,16 +3,7 @@ use leptos::prelude::*;
 use crate::components::ui::card::{Card, CardContent, CardDescription, CardTitle};
 
 #[component]
-pub fn PageTest() -> impl IntoView {
-    view! { <CardReverseDemo /> }
-}
-
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                     ✨ FUNCTIONS ✨                        */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-#[component]
-pub fn CardReverseDemo() -> impl IntoView {
+pub fn DemoCardReverse() -> impl IntoView {
     view! {
         <div class="p-8 min-h-screen">
             <div class="mx-auto max-w-4xl">

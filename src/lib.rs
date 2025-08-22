@@ -6,14 +6,10 @@ pub mod __TODOS__;
 pub mod __ready_to_port__;
 pub mod components;
 pub mod gsap_intro_page;
-pub mod page_test;
 pub mod utils;
 
 pub mod app;
 pub mod shell;
-
-#[cfg(feature = "ssr")]
-pub mod fileserv;
 
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
