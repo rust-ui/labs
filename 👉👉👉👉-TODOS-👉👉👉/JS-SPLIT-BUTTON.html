@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- GSAP (uncomment if needed) -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+</head>
+<body>
+
+
+  <style> 
+
+.split__button {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.my__button {
+  position: relative;
+  margin: 0;
+  height: 30px;
+  float: left;
+  outline: none;
+  line-height: 27px;
+  background: #F2F2F2;
+  border: 1px solid #E0E0E0;
+  box-shadow: 1px 1px 2px #E0E0E0;
+}
+
+.my__button:hover {
+  cursor: pointer;
+  background: #E0E0E0;
+}
+
+.my__button:active {
+  background: #D3D3D3;
+}
+
+.my__button.split__button__drop {
+  border-left: 0;
+  height: 30px;
+}
+
+.open > .split__button__drop-menu {
+  display: block;
+}
+
+.split__button__drop-menu {
+  position: absolute;
+  top: 27px;
+  right: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #F2F2F2;
+  background-clip: padding-box;
+  border: 1px solid #E0E0E0;
+  box-shadow: 1px 1px 2px #E0E0E0;
+}
+
+.split__button__drop-menu li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-family: arial;
+  color: #444;
+  text-decoration: none;
+}
+
+.split__button__drop-menu li a:hover {
+  background: #D3D3D3;
+}
+
+  </style>
+
+
+
+
+<div class="flex p-20 mx-auto border border-gray-500">
+  <span class="split__button">
+    <button class="my__button my__button-main">&#10070; Action</button>
+    <button class="my__button split__button__drop">&#9660;</button>
+    <ul class="split__button__drop-menu">
+      <li>
+        <a href="#">Item - 1</a>
+      </li>
+      <li>
+        <a href="">Item - 2</a>
+      </li>
+      <li>
+        <a href="">Long Item - 3</a>
+      </li>
+    </ul>
+  </span>
+</div>
+
+
+
+
+
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const splitBtn = document.querySelector('.split__button');
+    const dropButton = document.querySelector('button.split__button__drop');
+
+    dropButton.addEventListener('click', function() {
+        if (!splitBtn.classList.contains('open')) {
+            splitBtn.classList.add('open');
+        }
+    });
+  
+    splitBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    document.documentElement.addEventListener('click', function() {
+        if (splitBtn.classList.contains('open')) {
+            splitBtn.classList.remove('open');
+        }
+    });
+});
+  </script>
+</body>
+</html>
