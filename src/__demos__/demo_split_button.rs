@@ -5,7 +5,7 @@ use leptos_ui::{a, clx};
 mod components {
     use super::*;
     clx! {SplitButtonContainer, div, "inline-flex relative mt-5", "split__button__container"}
-    clx! {MyButton, button, "flex items-center px-3 h-8 text-sm font-medium border rounded-l-md transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300 hover:bg-gray-50 active:bg-gray-100"}
+    clx! {MyButton, button, "flex items-center px-3 h-8 text-sm font-medium border rounded-l-md transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300 hover:bg-gray-50 active:bg-gray-100 [&_svg:not(:last-child)]:mr-2 [&_svg:not(:first-child)]:ml-2"}
     clx! {DropdownButton, button, "flex items-center px-1.5 h-8 border border-l-0 rounded-r-md transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300", "split__button__dropdown", "hover:bg-gray-50 active:bg-gray-100"}
     clx! {DropdownMenu, ul, "hidden absolute right-0 top-8 z-50 py-1 mt-1 text-sm list-none border rounded-md shadow-lg min-w-40 bg-white border-gray-200", "split__button__menu"}
     clx! {MenuItem, li, ""}
@@ -28,9 +28,9 @@ pub fn DemoSplitButton() -> impl IntoView {
 
         <div class="flex p-20 mx-auto border border-border">
             <SplitButtonContainer>
-                <MyButton class="[&_svg]:mr-2">
+                <MyButton>
                     <Copy class="size-3" />
-                    "Copy Page"
+                    <span>"Copy Page"</span>
                 </MyButton>
                 <DropdownButton>
                     <ChevronDown class="size-3" />
