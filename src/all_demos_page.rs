@@ -42,11 +42,14 @@ pub fn AllDemosPage() -> impl IntoView {
 pub fn RenderDemoFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
     let demo_query = QueryUtils::extract(QUERY::DEMO.to_string());
 
+    // "relative" to make sure there is no issue in the DemoComponents.
+    clx! {Preview, div, "relative", "w-[800px] min-h-[400px] border border-input rounded-md flex items-center justify-center mx-auto"}
+
     view! {
         <div class="flex flex-col gap-4 w-full">
             <Card__ComponentsPortToRustUI />
 
-            <div class="w-full">
+            <Preview>
                 {move || {
                     let current_demo = demo_query();
                     if let Some(demo) = demos.iter().find(|d| d.name == current_demo) {
@@ -61,7 +64,7 @@ pub fn RenderDemoFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
                             .into_any()
                     }
                 }}
-            </div>
+            </Preview>
         </div>
     }
 }

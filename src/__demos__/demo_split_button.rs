@@ -26,29 +26,27 @@ pub fn DemoSplitButton() -> impl IntoView {
             "}
         </style>
 
-        <div class="flex p-20 mx-auto border border-border">
-            <SplitButton>
-                <Button>
-                    <Copy class="size-3" />
-                    <span>"Copy Page"</span>
-                </Button>
+        <SplitButton>
+            <Button>
+                <Copy class="size-3" />
+                <span>"Copy Page"</span>
+            </Button>
 
-                <DropdownButton>
-                    <ChevronDown class="size-3" />
-                </DropdownButton>
-                <DropdownMenu>
-                    <MenuItem>
-                        <MenuLink href="#">Item - 1</MenuLink>
-                    </MenuItem>
-                    <MenuItem>
-                        <MenuLink href="#">Item - 2</MenuLink>
-                    </MenuItem>
-                    <MenuItem>
-                        <MenuLink href="#">Item - 3</MenuLink>
-                    </MenuItem>
-                </DropdownMenu>
-            </SplitButton>
-        </div>
+            <DropdownButton>
+                <ChevronDown class="size-3" />
+            </DropdownButton>
+            <DropdownMenu>
+                <MenuItem>
+                    <MenuLink href="#">Item - 1</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                    <MenuLink href="#">Item - 2</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                    <MenuLink href="#">Item - 3</MenuLink>
+                </MenuItem>
+            </DropdownMenu>
+        </SplitButton>
 
         <script>
             // **IMPORTANT**: DO NOT MODIFY.
