@@ -4,51 +4,53 @@ use leptos::prelude::*;
 pub fn DemoSplitButton() -> impl IntoView {
     view! {
         <style>
+            // **IMPORTANT**: DO NOT MODIFY.
             {"
             .split__button__container.open__split__button > .split__button__menu {
-                display: block;
+             display: block;
             }
             "}
         </style>
 
         <div class="flex p-20 mx-auto border border-border">
             <div class="inline-block relative mt-5 text-left split__button__container">
-                    <button class="float-left relative px-3 text-sm border outline-none h-8 leading-7 bg-secondary text-secondary-foreground border-border shadow-sm hover:bg-accent active:bg-muted transition-colors duration-150">
-                        "❖ Action"
-                    </button>
-                    <button class="float-left relative px-2 text-xs border border-l-0 outline-none h-8 leading-7 bg-secondary text-secondary-foreground border-border shadow-sm hover:bg-accent active:bg-muted transition-colors duration-150 split__button__dropdown">
-                        "▼"
-                    </button>
-                    <ul class="hidden absolute right-0 top-8 z-50 min-w-40 text-sm list-none border bg-popover border-border shadow-md mt-0.5 py-1 split__button__menu">
-                        <li>
-                            <a
-                                href="#"
-                                class="block px-5 py-1.5 no-underline text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 split__button__menu__item"
-                            >
-                                Item - 1
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="block px-5 py-1.5 no-underline text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 split__button__menu__item"
-                            >
-                                Item - 2
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="block px-5 py-1.5 no-underline text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 split__button__menu__item"
-                            >
-                                Long Item - 3
-                            </a>
-                        </li>
-                    </ul>
+                <button class="float-left relative px-3 h-8 text-sm leading-7 border shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border hover:bg-accent active:bg-muted">
+                    "❖ Action"
+                </button>
+                <button class="float-left relative px-2 h-8 text-xs leading-7 border border-l-0 shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border split__button__dropdown hover:bg-accent active:bg-muted">
+                    "▼"
+                </button>
+                <ul class="hidden absolute right-0 top-8 z-50 py-1 mt-0.5 text-sm list-none border shadow-md min-w-40 bg-popover border-border split__button__menu">
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-1.5 px-5 no-underline transition-colors duration-200 text-popover-foreground split__button__menu__item hover:bg-accent hover:text-accent-foreground"
+                        >
+                            Item - 1
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-1.5 px-5 no-underline transition-colors duration-200 text-popover-foreground split__button__menu__item hover:bg-accent hover:text-accent-foreground"
+                        >
+                            Item - 2
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-1.5 px-5 no-underline transition-colors duration-200 text-popover-foreground split__button__menu__item hover:bg-accent hover:text-accent-foreground"
+                        >
+                            Long Item - 3
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <script>
+            // **IMPORTANT**: DO NOT MODIFY.
             {"
             document.addEventListener('DOMContentLoaded', function() {
             const splitBtnContainer = document.querySelector('.split__button__container');
@@ -56,7 +58,7 @@ pub fn DemoSplitButton() -> impl IntoView {
             
             dropdownButton.addEventListener('click', function() {
             if (!splitBtnContainer.classList.contains('open__split__button')) {
-             splitBtnContainer.classList.add('open__split__button');
+            splitBtnContainer.classList.add('open__split__button');
             }
             });
             
@@ -66,7 +68,7 @@ pub fn DemoSplitButton() -> impl IntoView {
             
             document.addEventListener('click', function() {
             if (splitBtnContainer.classList.contains('open__split__button')) {
-             splitBtnContainer.classList.remove('open__split__button');
+            splitBtnContainer.classList.remove('open__split__button');
             }
             });
             });
