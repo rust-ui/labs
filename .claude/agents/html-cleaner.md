@@ -1,6 +1,19 @@
 ---
 name: html-cleaner
-description: Use this agent when you need to clean up HTML code by removing unnecessary elements, redundant CSS layers, or bloated markup, especially when you want to ensure the cleaned HTML still functions correctly with Playwright testing. Examples: <example>Context: User has messy HTML with inline styles and wants it cleaned up. user: 'This HTML file has tons of unnecessary divs and inline styles. Can you clean it up?' assistant: 'I'll use the html-cleaner agent to clean up your HTML and verify it works properly.' <commentary>Since the user needs HTML cleanup with verification, use the html-cleaner agent.</commentary></example> <example>Context: User scraped HTML from a website and needs it simplified. user: 'I scraped this HTML but it has way too many CSS classes and nested elements. Please simplify it.' assistant: 'Let me use the html-cleaner agent to streamline this HTML while ensuring functionality is preserved.' <commentary>The user needs HTML simplification with testing verification, perfect for the html-cleaner agent.</commentary></example>
+description: |
+  Clean HTML from .html files and make sure it still works with Playwright. This
+  makes sure the HTML is clean and the component still work. Use
+  PROACTIVELY Playwright to make sure it still works.
+  
+  Examples:
+  
+  <example>
+  Context: User has messy HTML with inline styles and wants it cleaned up.
+  User: "This HTML file has tons of unnecessary divs and inline styles. Can you clean it up?"
+  Assistant: "I'll use the html-cleaner agent to clean up your HTML and verify it works properly with Playwright."
+  <commentary>Since the user needs HTML cleanup with verification, use the html-cleaner agent.</commentary>
+  </example>
+
 model: sonnet
 color: yellow
 ---
