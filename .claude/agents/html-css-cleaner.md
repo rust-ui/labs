@@ -58,6 +58,7 @@ Your core responsibilities:
 3. Move `*` selector styles to `.mainDiv`, remove `*` selector
 4. Move `html`/`body` styles to `.mainDiv`, remove empty selectors
 5. Ensure root element has `class="mainDiv"` at the top
+6. **IMPORTANT**: Do NOT add `font-family` to `.mainDiv` - let the system use default fonts
 
 
 **Others**
