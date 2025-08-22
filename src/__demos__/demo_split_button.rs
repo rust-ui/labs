@@ -1,15 +1,15 @@
-use icons::ChevronDown;
+use icons::{ChevronDown, Copy};
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
 mod components {
     use super::*;
     clx! {SplitButtonContainer, div, "inline-block relative mt-5 text-left", "split__button__container"}
-    clx! {MyButton, button, "float-left relative px-3 h-8 text-sm leading-7 border shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border hover:bg-accent active:bg-muted"}
-    clx! {DropdownButton, button, "float-left relative px-2 h-8 text-xs leading-7 border border-l-0 shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border", "split__button__dropdown", "hover:bg-accent active:bg-muted"}
-    clx! {DropdownMenu, ul, "hidden absolute right-0 top-8 z-50 py-1 mt-0.5 text-sm list-none border shadow-md min-w-40 bg-popover border-border", "split__button__menu"}
+    clx! {MyButton, button, "float-left relative px-4 h-9 text-sm font-medium border rounded-l-md shadow-sm transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300 hover:bg-gray-50 active:bg-gray-100"}
+    clx! {DropdownButton, button, "float-left relative px-2 h-9 text-xs border border-l-0 rounded-r-md shadow-sm transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300", "split__button__dropdown", "hover:bg-gray-50 active:bg-gray-100"}
+    clx! {DropdownMenu, ul, "hidden absolute right-0 top-9 z-50 py-1 mt-1 text-sm list-none border rounded-md shadow-lg min-w-40 bg-white border-gray-200", "split__button__menu"}
     clx! {MenuItem, li, ""}
-    a! {MenuLink, "block py-1.5 px-5 no-underline transition-colors duration-200 text-popover-foreground", "split__button__menu__item", "hover:bg-accent hover:text-accent-foreground"}
+    a! {MenuLink, "block py-2 px-4 no-underline transition-colors duration-200 text-gray-700", "split__button__menu__item", "hover:bg-gray-100 hover:text-gray-900"}
 }
 
 pub use components::*;
@@ -28,7 +28,10 @@ pub fn DemoSplitButton() -> impl IntoView {
 
         <div class="flex p-20 mx-auto border border-border">
             <SplitButtonContainer>
-                <MyButton>"My Button"</MyButton>
+                <MyButton>
+                    <Copy class="mr-2 size-4" />
+                    "Copy Page"
+                </MyButton>
                 <DropdownButton>
                     <ChevronDown class="size-4" />
                 </DropdownButton>

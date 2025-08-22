@@ -10,7 +10,10 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
         <html lang="en" data-snap="true" data-meta="true" data-content="true">
             <head>
                 <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0, interactive-widget=resizes-content" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0, interactive-widget=resizes-content"
+                />
 
                 <AutoReload options=options.clone() />
                 <HydrationScripts options />

@@ -113,12 +113,7 @@ pub fn DemoAppleLiquidGlassUi() -> impl IntoView {
 #[component]
 pub fn Svg_PlayIcon() -> impl IntoView {
     view! {
-        <svg
-            viewBox="0 0 448 512"
-            width="24"
-            title="play"
-            class="fill-gray-500"
-        >
+        <svg viewBox="0 0 448 512" width="24" title="play" class="fill-gray-500">
             <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
         </svg>
     }
@@ -127,20 +122,10 @@ pub fn Svg_PlayIcon() -> impl IntoView {
 #[component]
 pub fn Svg_FastForwardIcon() -> impl IntoView {
     view! {
-        <svg
-            viewBox="0 0 448 512"
-            width="24"
-            title="fast-forward"
-            class="fill-gray-500"
-        >
+        <svg viewBox="0 0 448 512" width="24" title="fast-forward" class="fill-gray-500">
             <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
         </svg>
-        <svg
-            viewBox="0 0 448 512"
-            width="24"
-            title="fast-forward"
-            class="fill-gray-500"
-        >
+        <svg viewBox="0 0 448 512" width="24" title="fast-forward" class="fill-gray-500">
             <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" />
         </svg>
     }
@@ -149,12 +134,7 @@ pub fn Svg_FastForwardIcon() -> impl IntoView {
 #[component]
 pub fn Svg_SearchIcon() -> impl IntoView {
     view! {
-        <svg
-            viewBox="0 0 512 512"
-            width="40"
-            title="search"
-            class="mb-1 fill-white h-[50px]"
-        >
+        <svg viewBox="0 0 512 512" width="40" title="search" class="mb-1 fill-white h-[50px]">
             <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
         </svg>
     }

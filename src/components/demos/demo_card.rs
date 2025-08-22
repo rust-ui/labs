@@ -1,7 +1,9 @@
 use leptos::prelude::*;
 
 use crate::components::ui::button::Button;
-use crate::components::ui::card::{Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle};
+use crate::components::ui::card::{
+    Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
+};
 
 #[component]
 pub fn DemoCard() -> impl IntoView {
