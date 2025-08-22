@@ -29,6 +29,7 @@ You are an expert in the clx! macro, a powerful utility for conditional CSS clas
   - Images: `<img>` 
 - Keep a line break before the view macro.
 - Add constants for repeated values like URLs, strings, etc.
+- **IMPORTANT**: In clx! macro, make sure to **ALWAYS** have `__` pattern FIRST.
 
 
 

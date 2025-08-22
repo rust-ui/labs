@@ -4,12 +4,12 @@ use leptos_ui::{a, clx};
 
 mod components {
     use super::*;
-    clx! {SplitButton, div, "inline-flex relative", "split__button"}
+    clx! {SplitButton, div, "split__button", "inline-flex relative"}
     clx! {Button, button, "flex items-center px-3 h-8 text-sm font-medium border rounded-l-md transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300 hover:bg-gray-50 active:bg-gray-100 [&_svg:not(:last-child)]:mr-2 [&_svg:not(:first-child)]:ml-2"}
-    clx! {DropdownButton, button, "flex items-center px-1.5 h-8 border border-l-0 rounded-r-md transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300", "split__button__dropdown", "hover:bg-gray-50 active:bg-gray-100"}
-    clx! {DropdownMenu, ul, "hidden absolute right-0 top-8 z-50 py-1 mt-1 text-sm list-none border rounded-md shadow-lg min-w-40 bg-white border-gray-200", "split__button__menu"}
+    clx! {DropdownButton, button, "split__button__dropdown", "flex items-center px-1.5 h-8 border border-l-0 rounded-r-md transition-colors duration-150 outline-none bg-white text-gray-700 border-gray-300 hover:bg-gray-50 active:bg-gray-100"}
+    clx! {DropdownMenu, ul, "split__button__menu", "hidden absolute right-0 top-8 z-50 py-1 mt-1 text-sm list-none border rounded-md shadow-lg min-w-40 bg-white border-gray-200"}
     clx! {MenuItem, li, ""}
-    a! {MenuLink, "block py-2 px-4 no-underline transition-colors duration-200 text-gray-700", "split__button__menu__item", "hover:bg-gray-100 hover:text-gray-900"}
+    a! {MenuLink, "split__button__menu__item", "block py-2 px-4 no-underline transition-colors duration-200 text-gray-700 hover:bg-gray-100 hover:text-gray-900"}
 }
 
 pub use components::*;
@@ -44,7 +44,7 @@ pub fn DemoSplitButton() -> impl IntoView {
                         <MenuLink href="#">Item - 2</MenuLink>
                     </MenuItem>
                     <MenuItem>
-                        <MenuLink href="#">Long Item - 3</MenuLink>
+                        <MenuLink href="#">Item - 3</MenuLink>
                     </MenuItem>
                 </DropdownMenu>
             </SplitButton>
