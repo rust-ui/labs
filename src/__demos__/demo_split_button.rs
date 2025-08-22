@@ -20,7 +20,7 @@ pub fn DemoSplitButton() -> impl IntoView {
         <style>
             // **IMPORTANT**: DO NOT MODIFY.
             {"
-            .split__button.open__split__button > .split__button__menu {
+            .split__button.split__button___open > .split__button__menu {
             display: block;
             }
             "}
@@ -32,7 +32,7 @@ pub fn DemoSplitButton() -> impl IntoView {
                 <span>"Copy Page"</span>
             </Button>
 
-            <DropdownButton onclick="this.closest('.split__button').classList.add('open__split__button')">
+            <DropdownButton onclick="this.closest('.split__button').classList.add('split__button___open')">
                 <ChevronDown class="size-3" />
             </DropdownButton>
             <DropdownMenu>
@@ -49,7 +49,7 @@ pub fn DemoSplitButton() -> impl IntoView {
         </SplitButton>
 
         <script>
-            {"document.body.addEventListener('click', () => document.querySelector('.split__button')?.classList.remove('open__split__button'));"}
+            {"document.body.addEventListener('click', () => document.querySelector('.split__button')?.classList.remove('split__button___open'));"}
         </script>
     }
 }
