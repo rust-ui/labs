@@ -1,7 +1,6 @@
+use icons::ChevronDown;
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
-
-const DROPDOWN_ARROW: &str = "▼";
 
 mod components {
     use super::*;
@@ -30,7 +29,9 @@ pub fn DemoSplitButton() -> impl IntoView {
         <div class="flex p-20 mx-auto border border-border">
             <SplitButtonContainer>
                 <MyButton>"My Button"</MyButton>
-                <DropdownButton>{DROPDOWN_ARROW}</DropdownButton>
+                <DropdownButton>
+                    <ChevronDown class="size-4" />
+                </DropdownButton>
                 <DropdownMenu>
                     <MenuItem>
                         <MenuLink href="#">Item - 1</MenuLink>
