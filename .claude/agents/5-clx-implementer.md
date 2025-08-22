@@ -32,11 +32,12 @@ You are an expert in the clx! macro, a powerful utility for conditional CSS clas
 
 
 
-## Specific cases for `a!` and `img!`
+## Specific cases for `a!`, `div` and `img!`
 
 Make sure to use the correct macros for this specific use cases :
-- **IMPORTANT**: Use`a!`,if you need `href`.
-- **IMPORTANT**: Use`img!`,if you need `src`.
+- **IMPORTANT**: Use`a!`, if you need `href`.
+- **IMPORTANT**: Use`img!`, if you need `src`.
+- **IMPORTANT**: Use`div!`, for self-closing `<div />`.
 
 
 
