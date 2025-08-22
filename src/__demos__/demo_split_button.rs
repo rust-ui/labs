@@ -1,14 +1,12 @@
 use leptos::prelude::*;
 use leptos_ui::{a, clx};
 
-const ACTION_TEXT: &str = "❖ Action";
 const DROPDOWN_ARROW: &str = "▼";
 
 mod components {
     use super::*;
-    clx! {DemoWrapper, div, "flex p-20 mx-auto border border-border"}
     clx! {SplitButtonContainer, div, "inline-block relative mt-5 text-left", "split__button__container"}
-    clx! {ActionButton, button, "float-left relative px-3 h-8 text-sm leading-7 border shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border hover:bg-accent active:bg-muted"}
+    clx! {MyButton, button, "float-left relative px-3 h-8 text-sm leading-7 border shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border hover:bg-accent active:bg-muted"}
     clx! {DropdownButton, button, "float-left relative px-2 h-8 text-xs leading-7 border border-l-0 shadow-sm transition-colors duration-150 outline-none bg-secondary text-secondary-foreground border-border", "split__button__dropdown", "hover:bg-accent active:bg-muted"}
     clx! {DropdownMenu, ul, "hidden absolute right-0 top-8 z-50 py-1 mt-0.5 text-sm list-none border shadow-md min-w-40 bg-popover border-border", "split__button__menu"}
     clx! {MenuItem, li, ""}
@@ -29,9 +27,9 @@ pub fn DemoSplitButton() -> impl IntoView {
             "}
         </style>
 
-        <DemoWrapper>
+        <div class="flex p-20 mx-auto border border-border">
             <SplitButtonContainer>
-                <ActionButton>{ACTION_TEXT}</ActionButton>
+                <MyButton>"My Button"</MyButton>
                 <DropdownButton>{DROPDOWN_ARROW}</DropdownButton>
                 <DropdownMenu>
                     <MenuItem>
@@ -45,7 +43,7 @@ pub fn DemoSplitButton() -> impl IntoView {
                     </MenuItem>
                 </DropdownMenu>
             </SplitButtonContainer>
-        </DemoWrapper>
+        </div>
 
         <script>
             // **IMPORTANT**: DO NOT MODIFY.
