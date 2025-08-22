@@ -1,9 +1,8 @@
 #![warn(clippy::all)]
 #![deny(clippy::unwrap_used)]
 
-pub mod __demos__;
-pub mod all_demos;
-pub mod all_demos_page;
+pub mod __ready_to_port__;
+pub mod __todos__;
 pub mod components;
 pub mod gsap_intro_page;
 pub mod page_test;
