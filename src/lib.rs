@@ -7,7 +7,7 @@ pub mod __ready_to_port__;
 pub mod components;
 pub mod gsap_intro_page;
 pub mod page_test;
-pub mod shared;
+pub mod utils;
 
 pub mod app;
 pub mod shell;

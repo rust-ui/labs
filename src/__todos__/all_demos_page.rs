@@ -3,7 +3,7 @@ use leptos_ui::clx;
 
 use crate::__TODOS__::_card_component_port_to_rust_ui::Card__ComponentsPortToRustUI;
 use crate::__TODOS__::all_demos::{ALL_DEMOS, DemoItem};
-use crate::shared::utils::query::{QUERY, QueryUtils};
+use crate::utils::query::{QUERY, QueryUtils};
 
 #[component]
 pub fn AllDemosPage() -> impl IntoView {
