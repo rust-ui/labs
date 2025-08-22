@@ -1,6 +1,20 @@
 ---
 name: js-inliner
-description: WIP.
+description: |
+  Replace JavaScript event handlers with inline onclick attributes for simple
+  state toggles and interactions. Converts external JavaScript to inline handlers
+  while preserving functionality. Use PROACTIVELY when users want to simplify
+  JavaScript interactions with inline handlers.
+  
+  Examples:
+  
+  <example>
+  Context: User has a component with external JavaScript handlers and wants inline handlers.
+  User: "This component has external JavaScript handlers. Can you convert them to inline onclick handlers?"
+  Assistant: "I'll use the js-inliner agent to convert your external JavaScript handlers to inline onclick attributes while ensuring functionality is preserved."
+  <commentary>Since the user wants JavaScript to inline handler conversion with verification, use the js-inliner agent.</commentary>
+  </example>
+
 model: sonnet
 color: yellow
 ---
