@@ -1,5 +1,5 @@
 ---
-name: tailwind-implementer
+name: tailwind-converter
 description: |
   Convert CSS to Tailwind CSS classes in HTML files while preserving functionality.
   Systematically converts CSS properties to equivalent Tailwind classes step by step,
@@ -11,8 +11,8 @@ description: |
   <example>
   Context: User has an HTML file with custom CSS and wants to convert it to Tailwind.
   User: "Can you convert the CSS in this component to use Tailwind classes instead?"
-  Assistant: "I'll use the tailwind-implementer agent to systematically convert your CSS to Tailwind classes while ensuring functionality is preserved."
-  <commentary>Since the user wants CSS to Tailwind conversion with verification, use the tailwind-implementer agent.</commentary>
+  Assistant: "I'll use the tailwind-converter agent to systematically convert your CSS to Tailwind classes while ensuring functionality is preserved."
+  <commentary>Since the user wants CSS to Tailwind conversion with verification, use the tailwind-converter agent.</commentary>
   </example>
 
 model: sonnet
