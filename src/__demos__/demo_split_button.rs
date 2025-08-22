@@ -6,25 +6,25 @@ pub fn DemoSplitButton() -> impl IntoView {
         <style>
             {"
             .split__button__container.open__split__button > .split__button__menu {
-            display: block;
+                display: block;
             }
             "}
         </style>
 
-        <div class="p-0 m-0 box-border">
-            <div class="flex p-20 mx-auto border border-gray-500">
+        <div class="box-border">
+            <div class="flex p-20 mx-auto border border-border">
                 <div class="inline-block relative mt-5 text-left split__button__container">
-                    <button class="float-left relative px-3 m-0 text-sm no-underline border cursor-pointer outline-none split__button__action leading-[27px] bg-[#f2f2f2] border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] h-[30px] text-[#333] hover:bg-[#e0e0e0] active:bg-[#d3d3d3]">
+                    <button class="float-left relative px-3 text-sm border outline-none h-8 leading-7 bg-secondary text-secondary-foreground border-border shadow-sm hover:bg-accent active:bg-muted transition-colors duration-150">
                         "❖ Action"
                     </button>
-                    <button class="float-left relative px-2 m-0 text-xs border border-l-0 cursor-pointer outline-none split__button__dropdown leading-[27px] bg-[#f2f2f2] border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] h-[30px] text-[#333] hover:bg-[#e0e0e0] active:bg-[#d3d3d3]">
+                    <button class="float-left relative px-2 text-xs border border-l-0 outline-none h-8 leading-7 bg-secondary text-secondary-foreground border-border shadow-sm hover:bg-accent active:bg-muted transition-colors duration-150 split__button__dropdown">
                         "▼"
                     </button>
-                    <ul class="hidden absolute right-0 text-sm list-none bg-clip-padding border split__button__menu py-[5px] mt-[2px] top-[29px] z-[1000] min-w-[160px] bg-[#f2f2f2] border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0]">
+                    <ul class="hidden absolute right-0 top-8 z-50 min-w-40 text-sm list-none border bg-popover border-border shadow-md mt-0.5 py-1 split__button__menu">
                         <li>
                             <a
                                 href="#"
-                                class="block px-5 no-underline duration-200 ease-in-out split__button__menu__item py-[6px] transition-[background-color] text-[#444] hover:bg-[#d3d3d3]"
+                                class="block px-5 py-1.5 no-underline text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 split__button__menu__item"
                             >
                                 Item - 1
                             </a>
@@ -32,7 +32,7 @@ pub fn DemoSplitButton() -> impl IntoView {
                         <li>
                             <a
                                 href="#"
-                                class="block px-5 no-underline duration-200 ease-in-out split__button__menu__item py-[6px] transition-[background-color] text-[#444] hover:bg-[#d3d3d3]"
+                                class="block px-5 py-1.5 no-underline text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 split__button__menu__item"
                             >
                                 Item - 2
                             </a>
@@ -40,7 +40,7 @@ pub fn DemoSplitButton() -> impl IntoView {
                         <li>
                             <a
                                 href="#"
-                                class="block px-5 no-underline duration-200 ease-in-out split__button__menu__item py-[6px] transition-[background-color] text-[#444] hover:bg-[#d3d3d3]"
+                                class="block px-5 py-1.5 no-underline text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors duration-200 split__button__menu__item"
                             >
                                 Long Item - 3
                             </a>
