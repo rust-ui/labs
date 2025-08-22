@@ -26,13 +26,13 @@ pub fn DemoSplitButton() -> impl IntoView {
             "}
         </style>
 
-        <SplitButton>
+        <SplitButton onclick="event.stopPropagation()">
             <Button>
                 <Copy class="size-3" />
                 <span>"Copy Page"</span>
             </Button>
 
-            <DropdownButton>
+            <DropdownButton onclick="this.closest('.split__button').classList.add('open__split__button')">
                 <ChevronDown class="size-3" />
             </DropdownButton>
             <DropdownMenu>
@@ -49,29 +49,7 @@ pub fn DemoSplitButton() -> impl IntoView {
         </SplitButton>
 
         <script>
-            // **IMPORTANT**: DO NOT MODIFY.
-            {"
-            document.addEventListener('DOMContentLoaded', function() {
-            const splitButton = document.querySelector('.split__button');
-            const dropdownButton = document.querySelector('.split__button__dropdown');
-            
-            dropdownButton.addEventListener('click', function() {
-            if (!splitButton.classList.contains('open__split__button')) {
-            splitButton.classList.add('open__split__button');
-            }
-            });
-            
-            splitButton.addEventListener('click', function(event) {
-            event.stopPropagation();
-            });
-            
-            document.addEventListener('click', function() {
-            if (splitButton.classList.contains('open__split__button')) {
-            splitButton.classList.remove('open__split__button');
-            }
-            });
-            });
-            "}
+            {"document.body.addEventListener('click', () => document.querySelector('.split__button')?.classList.remove('open__split__button'));"}
         </script>
     }
 }
