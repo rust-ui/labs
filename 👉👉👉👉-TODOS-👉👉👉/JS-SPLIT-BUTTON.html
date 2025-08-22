@@ -10,14 +10,9 @@
 
 
   <style>
-.mainDiv {
-  box-sizing: border-box;
-}
-
-.split__button__container {
-}
-
-.split__button__action {
+/* Active class */
+.split__button__container.open > .split__button__menu {
+  display: block;
 }
 
 .split__button__action:hover {
@@ -28,29 +23,12 @@
   background: #d3d3d3;
 }
 
-.split__button__dropdown {
-}
-
 .split__button__dropdown:hover {
   background: #e0e0e0;
 }
 
 .split__button__dropdown:active {
   background: #d3d3d3;
-}
-
-.split__button__container.open > .split__button__menu {
-  display: block;
-}
-
-.split__button__menu {
-  top: 29px;
-  right: 0;
-  background-clip: padding-box;
-}
-
-.split__button__menu__item {
-  transition: background-color 0.2s ease;
 }
 
 .split__button__menu__item:hover {
@@ -61,7 +39,7 @@
 
 
 
-  <div class="mainDiv m-0 p-0">
+  <div class="box-border m-0 p-0">
     <div class="flex p-20 mx-auto border border-gray-500">
       <div class="split__button__container mt-5 relative inline-block text-left">
         <button class="split__button__action m-0 px-3 text-sm leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] cursor-pointer no-underline relative float-left h-[30px] text-[#333]">❖ Action</button>
