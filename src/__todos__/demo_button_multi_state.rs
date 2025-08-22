@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::shared::components::button::Button;
+use crate::components::ui::button::Button;
 
 #[component]
 pub fn DemoButtonMultiState() -> impl IntoView {

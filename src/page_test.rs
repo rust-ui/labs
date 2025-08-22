@@ -1,11 +1,15 @@
 use leptos::prelude::*;
 
-use crate::shared::components::card::*;
+use crate::components::ui::card::{Card, CardContent, CardDescription, CardTitle};
 
 #[component]
 pub fn PageTest() -> impl IntoView {
     view! { <CardReverseDemo /> }
 }
+
+/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/*                     ✨ FUNCTIONS ✨                        */
+/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 #[component]
 pub fn CardReverseDemo() -> impl IntoView {

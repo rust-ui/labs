@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::shared::components::card::Card;
+use crate::components::ui::card::Card;
 
 #[component]
 pub fn Card__ComponentsPortToRustUI() -> impl IntoView {
