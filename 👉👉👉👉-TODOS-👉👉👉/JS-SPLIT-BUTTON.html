@@ -10,29 +10,9 @@
 
 
   <style>
-/* Active class */
+/* Active class - show menu when container has 'open' class */
 .split__button__container.open > .split__button__menu {
   display: block;
-}
-
-.split__button__action:hover {
-  background: #e0e0e0;
-}
-
-.split__button__action:active {
-  background: #d3d3d3;
-}
-
-.split__button__dropdown:hover {
-  background: #e0e0e0;
-}
-
-.split__button__dropdown:active {
-  background: #d3d3d3;
-}
-
-.split__button__menu__item:hover {
-  background: #d3d3d3;
 }
   </style>
 
@@ -42,12 +22,12 @@
   <div class="box-border m-0 p-0">
     <div class="flex p-20 mx-auto border border-gray-500">
       <div class="split__button__container mt-5 relative inline-block text-left">
-        <button class="split__button__action m-0 px-3 text-sm leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] cursor-pointer no-underline relative float-left h-[30px] text-[#333]">❖ Action</button>
-        <button class="split__button__dropdown m-0 px-2 text-xs leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] border-l-0 shadow-[1px_1px_2px_#e0e0e0] cursor-pointer relative float-left h-[30px] text-[#333]">▼</button>
+        <button class="split__button__action m-0 px-3 text-sm leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0] cursor-pointer no-underline relative float-left h-[30px] text-[#333] hover:bg-[#e0e0e0] active:bg-[#d3d3d3]">❖ Action</button>
+        <button class="split__button__dropdown m-0 px-2 text-xs leading-[27px] outline-none bg-[#f2f2f2] border border-[#e0e0e0] border-l-0 shadow-[1px_1px_2px_#e0e0e0] cursor-pointer relative float-left h-[30px] text-[#333] hover:bg-[#e0e0e0] active:bg-[#d3d3d3]">▼</button>
         <ul class="split__button__menu py-[5px] mt-[2px] text-sm list-none bg-clip-padding absolute top-[29px] right-0 z-[1000] hidden min-w-[160px] bg-[#f2f2f2] border border-[#e0e0e0] shadow-[1px_1px_2px_#e0e0e0]">
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block text-[#444]">Item - 1</a></li>
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block text-[#444]">Item - 2</a></li>
-          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block text-[#444]">Long Item - 3</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block text-[#444] hover:bg-[#d3d3d3]">Item - 1</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block text-[#444] hover:bg-[#d3d3d3]">Item - 2</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5 no-underline transition-[background-color] duration-200 ease-in-out block text-[#444] hover:bg-[#d3d3d3]">Long Item - 3</a></li>
         </ul>
       </div>
     </div>

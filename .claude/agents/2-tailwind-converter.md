@@ -143,6 +143,10 @@ Remove any unused classes from both CSS and HTML.
   - `@keyframes scale` → `@keyframes scroll__snap__scale`
   - `@keyframes fade` → `@keyframes modal__fade`
 - **Active state classes**: When encountering `.active` classes or state-dependent styles, add "/* Active class */" comments above each selector to indicate active state styling
+- **Hover and active states**: Convert CSS hover/active states to Tailwind pseudo-class variants:
+  - `:hover { background: #e0e0e0; }` → `hover:bg-[#e0e0e0]`
+  - `:active { background: #d3d3d3; }` → `active:bg-[#d3d3d3]`
+  - `:focus { border-color: blue; }` → `focus:border-blue-500`
 - **No conversion comments**: Do NOT add comments for CSS properties that you remove during conversion. Simply remove the CSS properties and add the Tailwind classes to HTML without explanatory comments.
 
 
