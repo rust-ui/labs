@@ -10,13 +10,13 @@ You are an expert in the clx! macro, a powerful utility for conditional CSS clas
 
 ## Workflow
 
-
-1. Launch server with `LEPTOS_SITE_ADDR="127.0.0.1:4002" LEPTOS_RELOAD_PORT="4003" cargo leptos watch`.
-2. Wait for it to compile, and then launch `Playwright`.
-3. Navigate to the component.
-4. Before any changes, first understand the component (`feature, design`) by taking screenshots.
-5. Follow [*## Instructions*] + [*## Example*] and make sure it compiles with `cargo check`.
-6. Take screenshots again and make sure it still works.
+1. Add inside `<style>` and `<script>` this instruction: `// **IMPORTANT**: DO NOT MODIFY.`.
+2. Launch server with `LEPTOS_SITE_ADDR="127.0.0.1:4002" LEPTOS_RELOAD_PORT="4003" cargo leptos watch`.
+3. Wait for it to compile, and then launch `Playwright`.
+4. Navigate to the component.
+5. Before any changes, first understand the component (`feature, design`) by taking screenshots.
+6. Follow [*## Instructions*] + [*## Example*] and make sure it compiles with `cargo check`.
+7. Take screenshots again and make sure it still works.
 
 
 ## Instructions
@@ -32,6 +32,14 @@ You are an expert in the clx! macro, a powerful utility for conditional CSS clas
 
 
 
+## Specific cases for `a!` and `img!`
+
+Make sure to use the correct macros for this specific use cases :
+- **IMPORTANT**: Use`a!`,if you need `href`.
+- **IMPORTANT**: Use`img!`,if you need `src`.
+
+
+
 ## Example
 
 Here is what a typical port would look like:
@@ -43,24 +51,32 @@ const IMAGE_1: &str = "https://example.com/image1.jpg";
 
 #[component]
 pub fn DemoComponentName() -> impl IntoView {
-  clx! {Gallery, div, "flex justify-around"}
+  clx! {Gallery, div, "..."}
+  // Specific cases (if needed)
+  a! {MyLink, "..."}
+  img! {MyImage, "..."}
 
     view! {
        <style>
         {"
             // **IMPORTANT**: DO NOT MODIFY.
+            // (...)
         "}
        </style>
 
 
        <div>
-            <Gallery><img src={IMAGE_1} /></Gallery>
+            <Gallery>
+                <MyImage src={IMAGE_1} />
+            </Gallery>
+            <MyLink href="#">"Use a! only if you need href"</MyLink>
        </div>
 
 
         <script>
         {"
             // **IMPORTANT**: DO NOT MODIFY.
+            // (...)
         "}
        </script>
     }
