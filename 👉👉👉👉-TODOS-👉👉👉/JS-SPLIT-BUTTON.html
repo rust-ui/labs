@@ -10,8 +10,8 @@
 
 
   <style>
-/* Active class - show menu when container has 'open' class */
-.split__button__container.open > .split__button__menu {
+/* Active class - show menu when container has 'open__split__button' class */
+.split__button__container.open__split__button > .split__button__menu {
   display: block;
 }
   </style>
@@ -44,8 +44,8 @@
       const dropdownButton = document.querySelector('.split__button__dropdown');
 
       dropdownButton.addEventListener('click', function() {
-        if (!splitBtnContainer.classList.contains('open')) {
-          splitBtnContainer.classList.add('open');
+        if (!splitBtnContainer.classList.contains('open__split__button')) {
+          splitBtnContainer.classList.add('open__split__button');
         }
       });
 
@@ -54,8 +54,8 @@
       });
 
       document.addEventListener('click', function() {
-        if (splitBtnContainer.classList.contains('open')) {
-          splitBtnContainer.classList.remove('open');
+        if (splitBtnContainer.classList.contains('open__split__button')) {
+          splitBtnContainer.classList.remove('open__split__button');
         }
       });
     });

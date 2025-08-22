@@ -65,6 +65,11 @@ Your core responsibilities:
 - Remove all `@layer` declarations and their wrapper blocks
 - Identify generic class names like `.wrapper`, `.container`, `.item` that lack descriptive context
 - Replace with more descriptive names following the `__` convention (e.g., `.wrapper` → `.scroll__snap__container`)
+- **JS Class Naming**: Inside JS `<script>`, replace generic state classes with meaningful names using `__` convention:
+  - `.open` → `.open__split__button`
+  - `.active` → `.active__modal`
+  - `.show` → `.show__dropdown`
+  - Update both JS and CSS accordingly.
 
 
 
