@@ -11,8 +11,6 @@
 
   <style>
 .mainDiv {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -20,12 +18,10 @@
   position: relative;
   display: inline-block;
   text-align: left;
-  margin-top: 20px;
 }
 
 .split__button__action {
   position: relative;
-  margin: 0;
   height: 30px;
   float: left;
   outline: none;
@@ -33,7 +29,6 @@
   background: #f2f2f2;
   border: 1px solid #e0e0e0;
   box-shadow: 1px 1px 2px #e0e0e0;
-  padding: 0 12px;
   font-size: 14px;
   color: #333;
 }
@@ -49,7 +44,6 @@
 
 .split__button__dropdown {
   position: relative;
-  margin: 0;
   height: 30px;
   float: left;
   outline: none;
@@ -58,7 +52,6 @@
   border: 1px solid #e0e0e0;
   border-left: 0;
   box-shadow: 1px 1px 2px #e0e0e0;
-  padding: 0 8px;
   font-size: 12px;
   color: #333;
 }
@@ -83,8 +76,6 @@
   z-index: 1000;
   display: none;
   min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
   font-size: 14px;
   list-style: none;
   background-color: #f2f2f2;
@@ -95,7 +86,6 @@
 
 .split__button__menu__item {
   display: block;
-  padding: 6px 20px;
   color: #444;
   text-decoration: none;
   transition: background-color 0.2s ease;
@@ -109,15 +99,15 @@
 
 
 
-  <div class="mainDiv">
+  <div class="mainDiv m-0 p-0">
     <div class="flex p-20 mx-auto border border-gray-500">
-      <div class="split__button__container">
-        <button class="split__button__action">❖ Action</button>
-        <button class="split__button__dropdown">▼</button>
-        <ul class="split__button__menu">
-          <li><a href="#" class="split__button__menu__item">Item - 1</a></li>
-          <li><a href="#" class="split__button__menu__item">Item - 2</a></li>
-          <li><a href="#" class="split__button__menu__item">Long Item - 3</a></li>
+      <div class="split__button__container mt-5">
+        <button class="split__button__action m-0 px-3">❖ Action</button>
+        <button class="split__button__dropdown m-0 px-2">▼</button>
+        <ul class="split__button__menu py-[5px] mt-[2px]">
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5">Item - 1</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5">Item - 2</a></li>
+          <li><a href="#" class="split__button__menu__item py-[6px] px-5">Long Item - 3</a></li>
         </ul>
       </div>
     </div>
