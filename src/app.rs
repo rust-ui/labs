@@ -3,7 +3,7 @@ use leptos_meta::{Stylesheet, Title, provide_meta_context};
 use leptos_router::StaticSegment;
 use leptos_router::components::{Route, Router, Routes};
 
-use crate::__todos__::all_demos_page::AllDemosPage;
+use crate::__TODOS__::all_demos_page::AllDemosPage;
 use crate::gsap_intro_page::GsapIntroPage;
 use crate::page_test::PageTest;
 use crate::shared::components::navbar::Navbar;

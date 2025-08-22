@@ -1,8 +1,9 @@
 #![warn(clippy::all)]
 #![deny(clippy::unwrap_used)]
 
+#[allow(non_snake_case)]
+pub mod __TODOS__;
 pub mod __ready_to_port__;
-pub mod __todos__;
 pub mod components;
 pub mod gsap_intro_page;
 pub mod page_test;
