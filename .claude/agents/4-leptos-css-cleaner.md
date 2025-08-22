@@ -52,11 +52,10 @@ Your core responsibilities:
 - **IMPORTANT**: Preserve Leptos-specific syntax like `view!` macro and component structure
 - **IMPORTANT**: Keep JavaScript functionality in `<script>` blocks intact
 - **IMPORTANT**: Use proper Leptos self-closing tags (`<img />`, `<input />`)
+- **IMPORTANT**: Replace hardcoded colors with theme-aware classes to ensure proper rendering in both light and dark themes
+  - Use semantic color tokens: `bg-card`, `text-card-foreground`, `border-border`, `bg-accent`, `text-accent-foreground`, etc.
+  - Avoid hardcoded colors like `bg-white`, `text-gray-700`, `border-gray-300` that don't adapt to theme changes
+  - Use `Playwright` to test components in both light and dark modes to verify proper contrast and readability
 
-**Leptos-Specific Considerations:**
-- Maintain proper component structure and naming conventions
-- Preserve signal handling and reactive behavior
-- Keep event handlers and component logic unchanged
-- Ensure proper use of Leptos attributes and directives
 
 When refactoring, prioritize code readability and maintainability while ensuring the component remains fully functional. Test compilation after changes and verify the component integrates properly with the overall application design system.
