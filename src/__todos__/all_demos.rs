@@ -7,6 +7,10 @@ use crate::__TODOS__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__TODOS__::demo_card_reverse::DemoCardReverse;
 use crate::__TODOS__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__TODOS__::demo_pagination::DemoPagination;
+use crate::__ready_to_port__::demo_login_page_1::DemoLoginPage1;
+use crate::__ready_to_port__::demo_login_page_2::DemoLoginPage2;
+use crate::__ready_to_port__::demo_login_page_3::DemoLoginPage3;
+use crate::__ready_to_port__::demo_login_page_4::DemoLoginPage4;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -19,6 +23,22 @@ pub struct DemoItem {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 pub const ALL_DEMOS: &[DemoItem] = &[
+    DemoItem {
+        name: "👉 TODO:  Demo Page Login 1",
+        render_fn: || view! { <DemoLoginPage1 /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO:  Demo Page Login 2",
+        render_fn: || view! { <DemoLoginPage2 /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO:  Demo Page Login 3",
+        render_fn: || view! { <DemoLoginPage3 /> }.into_any(),
+    },
+    DemoItem {
+        name: "👉 TODO:  Demo Page Login 4",
+        render_fn: || view! { <DemoLoginPage4 /> }.into_any(),
+    },
     DemoItem {
         name: "👉 TODO:  Card Reverse",
         render_fn: || view! { <DemoCardReverse /> }.into_any(),
