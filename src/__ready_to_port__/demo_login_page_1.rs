@@ -56,17 +56,10 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                             <Input r#type="password" id="password" required=true />
                                         </div>
                                         <div class="flex flex-col gap-3">
-                                            <Button
-                                                variant=ButtonVariant::Default
-                                                r#type="submit"
-                                                class="w-full"
-                                            >
+                                            <Button variant=ButtonVariant::Default class="w-full">
                                                 Login
                                             </Button>
-                                            <Button
-                                                variant=ButtonVariant::Outline
-                                                class="w-full bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
-                                            >
+                                            <Button variant=ButtonVariant::Outline class="w-full">
                                                 Login with Google
                                             </Button>
                                         </div>
