@@ -1,27 +1,13 @@
 use leptos::prelude::*;
 use leptos_ui::input;
 
-const FLEX_WIDTH_FULL: &str = "flex w-full";
-const FILE_STYLES: &str = "file:bg-transparent file:text-sm file:font-medium  file:border-0";
-const FOCUS_VISIBLE_RING: &str = "focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1";
-const BORDER_INPUT: &str = "border border-input";
-const DISABLED_NOT_ALLOWED: &str = "disabled:cursor-not-allowed disabled:opacity-50";
-const RING_OFFSET_BG: &str = "ring-offset-background";
-const PLACEHOLDER_MUTED_FOREGROUND: &str = "placeholder:text-muted-foreground";
-
 mod components {
     use super::*;
 
     input! {Input,
-        PLACEHOLDER_MUTED_FOREGROUND,
-        FILE_STYLES,
-        DISABLED_NOT_ALLOWED,
-        FOCUS_VISIBLE_RING,
-        RING_OFFSET_BG,
-        BORDER_INPUT,
-        FLEX_WIDTH_FULL,
-        "h-10 rounded-md bg-background px-3 py-2",
-        "text-sm text-muted-foreground"
+        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+        "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
     }
 }
 

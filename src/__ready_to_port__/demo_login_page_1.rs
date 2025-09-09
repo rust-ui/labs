@@ -3,6 +3,7 @@ use leptos::prelude::*;
 use crate::components::ui::button::{Button, ButtonVariant};
 use crate::components::ui::card::*;
 use crate::components::ui::input::Input;
+use crate::components::ui::label::Label;
 
 #[component]
 pub fn DemoLoginPage1() -> impl IntoView {
@@ -24,13 +25,12 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                 <form>
                                     <div class="flex flex-col gap-6">
                                         <div class="grid gap-3">
-                                            <label
-                                                data-slot="label"
-                                                class="flex gap-2 items-center text-sm font-medium leading-none select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
-                                                for="email"
+                                            <Label
+                                                html_for="email"
+                                                class="flex gap-2 items-center select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50"
                                             >
                                                 Email
-                                            </label>
+                                            </Label>
                                             <Input
                                                 r#type="email"
                                                 id="email"
@@ -41,13 +41,12 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                         </div>
                                         <div class="grid gap-3">
                                             <div class="flex items-center">
-                                                <label
-                                                    data-slot="label"
-                                                    class="flex gap-2 items-center text-sm font-medium leading-none select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
-                                                    for="password"
+                                                <Label
+                                                    html_for="password"
+                                                    class="flex gap-2 items-center select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50"
                                                 >
                                                     Password
-                                                </label>
+                                                </Label>
                                                 <a
                                                     href="#"
                                                     class="inline-block ml-auto text-sm hover:underline underline-offset-4"
