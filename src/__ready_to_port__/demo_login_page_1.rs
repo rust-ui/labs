@@ -12,16 +12,14 @@ pub fn DemoLoginPage1() -> impl IntoView {
             <div class="flex justify-center items-center p-6 w-full md:p-10 min-h-svh">
                 <div class="w-full max-w-sm">
                     <div class="flex flex-col gap-6">
-                        <Card class="flex flex-col gap-6 py-6 rounded-xl border shadow-sm bg-card text-card-foreground">
-                            <CardHeader class="grid auto-rows-min gap-1.5 items-start px-6 @container/card-header grid-rows-[auto_auto] has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
-                                <CardTitle class="font-semibold leading-none">
-                                    Login to your account
-                                </CardTitle>
-                                <CardDescription class="text-sm text-muted-foreground">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Login to your account</CardTitle>
+                                <CardDescription>
                                     Enter your email below to login to your account
                                 </CardDescription>
                             </CardHeader>
-                            <CardContent class="px-6">
+                            <CardContent>
                                 <form>
                                     <div class="flex flex-col gap-6">
                                         <div class="grid gap-3">
