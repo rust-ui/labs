@@ -1,5 +1,10 @@
 use leptos::prelude::*;
 
+use crate::components::ui::button::{Button, ButtonVariant};
+use crate::components::ui::card::*;
+use crate::components::ui::input::Input;
+use crate::components::ui::label::Label;
+
 #[component]
 pub fn DemoLoginPage4() -> impl IntoView {
     view! {
@@ -7,11 +12,8 @@ pub fn DemoLoginPage4() -> impl IntoView {
             <div class="flex flex-col justify-center items-center p-6 md:p-10 bg-muted min-h-svh">
                 <div class="w-full max-w-sm md:max-w-3xl">
                     <div class="flex flex-col gap-6">
-                        <div
-                            data-slot="card"
-                            class="flex overflow-hidden flex-col gap-6 p-0 rounded-xl border shadow-sm bg-card text-card-foreground"
-                        >
-                            <div data-slot="card-content" class="grid p-0 md:grid-cols-2">
+                        <Card class="overflow-hidden p-0">
+                            <CardContent class="grid p-0 md:grid-cols-2">
                                 <form class="p-6 md:p-8">
                                     <div class="flex flex-col gap-6">
                                         <div class="flex flex-col items-center text-center">
@@ -21,31 +23,17 @@ pub fn DemoLoginPage4() -> impl IntoView {
                                             </p>
                                         </div>
                                         <div class="grid gap-3">
-                                            <label
-                                                data-slot="label"
-                                                class="flex gap-2 items-center text-sm font-medium leading-none select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
-                                                for="email"
-                                            >
-                                                Email
-                                            </label>
-                                            <input
-                                                type="email"
-                                                data-slot="input"
-                                                class="flex py-1 px-3 w-full min-w-0 h-9 text-base bg-transparent rounded-md border outline-none md:text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input shadow-xs transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:bg-input/30 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+                                            <Label html_for="email">Email</Label>
+                                            <Input
+                                                r#type="email"
                                                 id="email"
                                                 placeholder="m@example.com"
-                                                required=""
+                                                required=true
                                             />
                                         </div>
                                         <div class="grid gap-3">
                                             <div class="flex items-center">
-                                                <label
-                                                    data-slot="label"
-                                                    class="flex gap-2 items-center text-sm font-medium leading-none select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
-                                                    for="password"
-                                                >
-                                                    Password
-                                                </label>
+                                                <Label html_for="password">Password</Label>
                                                 <a
                                                     href="#"
                                                     class="ml-auto text-sm hover:underline underline-offset-2"
@@ -53,32 +41,22 @@ pub fn DemoLoginPage4() -> impl IntoView {
                                                     Forgot your password?
                                                 </a>
                                             </div>
-                                            <input
-                                                type="password"
-                                                data-slot="input"
-                                                class="flex py-1 px-3 w-full min-w-0 h-9 text-base bg-transparent rounded-md border outline-none md:text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input shadow-xs transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:bg-input/30 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                                id="password"
-                                                required=""
-                                            />
+                                            <Input r#type="password" id="password" required=true />
                                         </div>
-                                        <button
-                                            data-slot="button"
-                                            class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                            type="submit"
+                                        <Button
+                                            variant=ButtonVariant::Default
+                                            class="w-full"
+                                            r#type="submit"
                                         >
                                             Login
-                                        </button>
+                                        </Button>
                                         <div class="relative text-sm text-center after:border-border after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                                             <span class="relative z-10 px-2 bg-card text-muted-foreground">
                                                 Or continue with
                                             </span>
                                         </div>
                                         <div class="grid grid-cols-3 gap-4">
-                                            <button
-                                                data-slot="button"
-                                                class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md border transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-background shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                                type="button"
-                                            >
+                                            <Button variant=ButtonVariant::Outline>
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 24 24"
@@ -90,12 +68,8 @@ pub fn DemoLoginPage4() -> impl IntoView {
                                                     ></path>
                                                 </svg>
                                                 <span class="sr-only">Login with Apple</span>
-                                            </button>
-                                            <button
-                                                data-slot="button"
-                                                class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md border transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-background shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                                type="button"
-                                            >
+                                            </Button>
+                                            <Button variant=ButtonVariant::Outline>
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 24 24"
@@ -107,12 +81,8 @@ pub fn DemoLoginPage4() -> impl IntoView {
                                                     ></path>
                                                 </svg>
                                                 <span class="sr-only">Login with Google</span>
-                                            </button>
-                                            <button
-                                                data-slot="button"
-                                                class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md border transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-background shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                                type="button"
-                                            >
+                                            </Button>
+                                            <Button variant=ButtonVariant::Outline>
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 24 24"
@@ -124,7 +94,7 @@ pub fn DemoLoginPage4() -> impl IntoView {
                                                     ></path>
                                                 </svg>
                                                 <span class="sr-only">Login with Meta</span>
-                                            </button>
+                                            </Button>
                                         </div>
                                         <div class="text-sm text-center">
                                             "Don't have an account?"
@@ -141,8 +111,8 @@ pub fn DemoLoginPage4() -> impl IntoView {
                                         class="object-cover absolute inset-0 w-full h-full dark:brightness-[0.2] dark:grayscale"
                                     />
                                 </div>
-                            </div>
-                        </div>
+                            </CardContent>
+                        </Card>
                         <div class="text-xs text-center text-muted-foreground *:[a]:hover:text-primary text-balance *:[a]:underline *:[a]:underline-offset-4">
                             By clicking continue, you agree to our <a href="#">Terms of Service</a>
                             and <a href="#">Privacy Policy</a>.
