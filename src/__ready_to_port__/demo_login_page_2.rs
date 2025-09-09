@@ -1,5 +1,6 @@
 use leptos::prelude::*;
 
+use crate::components::ui::button::{Button, ButtonVariant};
 use crate::components::ui::input::Input;
 use crate::components::ui::label::Label;
 
@@ -43,9 +44,7 @@ pub fn DemoLoginPage2() -> impl IntoView {
                                 </div>
                                 <div class="grid gap-6">
                                     <div class="grid gap-3">
-                                        <Label html_for="email">
-                                            Email
-                                        </Label>
+                                        <Label html_for="email">Email</Label>
                                         <Input
                                             r#type="email"
                                             id="email"
@@ -55,9 +54,7 @@ pub fn DemoLoginPage2() -> impl IntoView {
                                     </div>
                                     <div class="grid gap-3">
                                         <div class="flex items-center">
-                                            <Label html_for="password">
-                                                Password
-                                            </Label>
+                                            <Label html_for="password">Password</Label>
                                             <a
                                                 href="#"
                                                 class="ml-auto text-sm hover:underline underline-offset-4"
@@ -65,28 +62,18 @@ pub fn DemoLoginPage2() -> impl IntoView {
                                                 Forgot your password?
                                             </a>
                                         </div>
-                                        <Input
-                                            r#type="password"
-                                            id="password"
-                                            required=true
-                                        />
+                                        <Input r#type="password" id="password" required=true />
                                     </div>
-                                    <button
-                                        data-slot="button"
-                                        class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                        type="submit"
-                                    >
+
+                                    <Button class="w-full" r#type="submit">
                                         Login
-                                    </button>
+                                    </Button>
                                     <div class="relative text-sm text-center after:border-border after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                                         <span class="relative z-10 px-2 bg-background text-muted-foreground">
                                             Or continue with
                                         </span>
                                     </div>
-                                    <button
-                                        data-slot="button"
-                                        class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md border transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-background shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                    >
+                                    <Button variant=ButtonVariant::Outline class="w-full">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24"
@@ -98,7 +85,7 @@ pub fn DemoLoginPage2() -> impl IntoView {
                                             ></path>
                                         </svg>
                                         Login with GitHub
-                                    </button>
+                                    </Button>
                                 </div>
                                 <div class="text-sm text-center">
                                     "Don't have an account?"
