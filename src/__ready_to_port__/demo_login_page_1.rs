@@ -1,5 +1,6 @@
 use leptos::prelude::*;
 
+use crate::components::ui::button::{Button, ButtonVariant};
 use crate::components::ui::card::*;
 
 #[component]
@@ -63,19 +64,19 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                             />
                                         </div>
                                         <div class="flex flex-col gap-3">
-                                            <button
-                                                data-slot="button"
-                                                class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-                                                type="submit"
+                                            <Button
+                                                variant=ButtonVariant::Default
+                                                r#type="submit"
+                                                class="w-full"
                                             >
                                                 Login
-                                            </button>
-                                            <button
-                                                data-slot="button"
-                                                class="inline-flex gap-2 justify-center items-center py-2 px-4 w-full h-9 text-sm font-medium whitespace-nowrap rounded-md border transition-all outline-none disabled:opacity-50 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 aria-invalid:ring-destructive/20 aria-invalid:border-destructive bg-background shadow-xs has-[&gt;svg]:px-3 dark:aria-invalid:ring-destructive/40 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 hover:bg-accent hover:text-accent-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+                                            </Button>
+                                            <Button
+                                                variant=ButtonVariant::Outline
+                                                class="w-full bg-background dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
                                             >
                                                 Login with Google
-                                            </button>
+                                            </Button>
                                         </div>
                                     </div>
                                     <div class="mt-4 text-sm text-center">
