@@ -1,5 +1,7 @@
 use leptos::prelude::*;
 
+use crate::components::ui::card::*;
+
 #[component]
 pub fn DemoLoginPage1() -> impl IntoView {
     view! {
@@ -7,25 +9,16 @@ pub fn DemoLoginPage1() -> impl IntoView {
             <div class="flex justify-center items-center p-6 w-full md:p-10 min-h-svh">
                 <div class="w-full max-w-sm">
                     <div class="flex flex-col gap-6">
-                        <div
-                            data-slot="card"
-                            class="flex flex-col gap-6 py-6 rounded-xl border shadow-sm bg-card text-card-foreground"
-                        >
-                            <div
-                                data-slot="card-header"
-                                class="grid auto-rows-min gap-1.5 items-start px-6 @container/card-header grid-rows-[auto_auto] has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
-                            >
-                                <div data-slot="card-title" class="font-semibold leading-none">
+                        <Card class="flex flex-col gap-6 py-6 rounded-xl border shadow-sm bg-card text-card-foreground">
+                            <CardHeader class="grid auto-rows-min gap-1.5 items-start px-6 @container/card-header grid-rows-[auto_auto] has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+                                <CardTitle class="font-semibold leading-none">
                                     Login to your account
-                                </div>
-                                <div
-                                    data-slot="card-description"
-                                    class="text-sm text-muted-foreground"
-                                >
+                                </CardTitle>
+                                <CardDescription class="text-sm text-muted-foreground">
                                     Enter your email below to login to your account
-                                </div>
-                            </div>
-                            <div data-slot="card-content" class="px-6">
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent class="px-6">
                                 <form>
                                     <div class="flex flex-col gap-6">
                                         <div class="grid gap-3">
@@ -92,8 +85,8 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                         </a>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
             </div>
