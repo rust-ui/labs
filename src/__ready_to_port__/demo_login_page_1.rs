@@ -25,12 +25,7 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                 <form>
                                     <div class="flex flex-col gap-6">
                                         <div class="grid gap-3">
-                                            <Label
-                                                html_for="email"
-                                                class="flex gap-2 items-center select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50"
-                                            >
-                                                Email
-                                            </Label>
+                                            <Label html_for="email">Email</Label>
                                             <Input
                                                 r#type="email"
                                                 id="email"
@@ -40,12 +35,7 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                         </div>
                                         <div class="grid gap-3">
                                             <div class="flex items-center">
-                                                <Label
-                                                    html_for="password"
-                                                    class="flex gap-2 items-center select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50"
-                                                >
-                                                    Password
-                                                </Label>
+                                                <Label html_for="password">Password</Label>
                                                 <a
                                                     href="#"
                                                     class="inline-block ml-auto text-sm hover:underline underline-offset-4"

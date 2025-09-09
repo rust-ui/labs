@@ -1,8 +1,6 @@
 use leptos::prelude::*;
 use tw_merge::*;
 
-const DISABLED_NOT_ALLOWED_PEER: &str = "peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
-
 #[component]
 pub fn Label(
     #[prop(optional, into)] class: String,
@@ -10,8 +8,7 @@ pub fn Label(
     children: Children,
 ) -> impl IntoView {
     let class = tw_merge!(
-        DISABLED_NOT_ALLOWED_PEER,
-        "text-sm font-medium leading-none",
+        "flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
         class
     );
 
