@@ -1,3 +1,4 @@
+use icons::GalleryVerticalEnd;
 use leptos::prelude::*;
 
 #[component]
@@ -8,22 +9,7 @@ pub fn DemoLoginPage3() -> impl IntoView {
                 <div class="flex flex-col gap-6 w-full max-w-sm">
                     <a href="#" class="flex gap-2 items-center self-center font-medium">
                         <div class="flex justify-center items-center rounded-md bg-primary text-primary-foreground size-6">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-gallery-vertical-end size-4"
-                            >
-                                <path d="M7 2h10"></path>
-                                <path d="M5 6h14"></path>
-                                <rect width="18" height="12" x="3" y="10" rx="2"></rect>
-                            </svg>
+                            <GalleryVerticalEnd class="size-4" />
                         </div>
                         Acme Inc.
                     </a>

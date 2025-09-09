@@ -1,12 +1,12 @@
 use leptos::prelude::*;
 
-use crate::__ready_to_port__::demo_login_page_2::DemoLoginPage2;
+use crate::__ready_to_port__::demo_login_page_3::DemoLoginPage3;
 
 #[component]
 pub fn TestPage() -> impl IntoView {
     view! {
         <div>
-            <DemoLoginPage2 />
+            <DemoLoginPage3 />
         </div>
     }
 }
