@@ -6,6 +6,7 @@ pub mod __TODOS__;
 pub mod __ready_to_port__;
 pub mod components;
 pub mod gsap_intro_page;
+pub mod test_page;
 pub mod utils;
 
 pub mod app;
