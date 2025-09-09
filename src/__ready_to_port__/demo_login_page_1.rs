@@ -2,6 +2,7 @@ use leptos::prelude::*;
 
 use crate::components::ui::button::{Button, ButtonVariant};
 use crate::components::ui::card::*;
+use crate::components::ui::input::Input;
 
 #[component]
 pub fn DemoLoginPage1() -> impl IntoView {
@@ -30,13 +31,12 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                             >
                                                 Email
                                             </label>
-                                            <input
-                                                type="email"
-                                                data-slot="input"
-                                                class="flex py-1 px-3 w-full min-w-0 h-9 text-base bg-transparent rounded-md border outline-none md:text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input shadow-xs transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:bg-input/30 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+                                            <Input
+                                                r#type="email"
                                                 id="email"
                                                 placeholder="m@example.com"
-                                                required=""
+                                                required=true
+                                                class="py-1 h-9 text-base bg-transparent md:text-sm selection:bg-primary selection:text-primary-foreground shadow-xs transition-[color,box-shadow] aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:bg-input/30 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
                                             />
                                         </div>
                                         <div class="grid gap-3">
@@ -55,12 +55,11 @@ pub fn DemoLoginPage1() -> impl IntoView {
                                                     Forgot your password?
                                                 </a>
                                             </div>
-                                            <input
-                                                type="password"
-                                                data-slot="input"
-                                                class="flex py-1 px-3 w-full min-w-0 h-9 text-base bg-transparent rounded-md border outline-none md:text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input shadow-xs transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:bg-input/30 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+                                            <Input
+                                                r#type="password"
                                                 id="password"
-                                                required=""
+                                                required=true
+                                                class="py-1 h-9 text-base bg-transparent md:text-sm selection:bg-primary selection:text-primary-foreground shadow-xs transition-[color,box-shadow] aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:bg-input/30 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
                                             />
                                         </div>
                                         <div class="flex flex-col gap-3">
