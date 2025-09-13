@@ -44,6 +44,8 @@ Your core responsibilities:
 
 ## Instructions
 
+- **IMPORTANT**: Do NOT remove Tailwind CDN.
+
 
 **Flatten CSS:**
 - If the CSS is nested, flatten it. If not nested, you can skip this step.
@@ -56,7 +58,7 @@ Your core responsibilities:
 1. Fix formatting (2-space indentation)
 2. Replace `:root` CSS variables with direct values, remove `:root` block
 3. Move `*` selector styles to `.mainDiv`, remove `*` selector
-4. Move `html`/`body` styles to `.mainDiv`, remove empty selectors
+4. Move `html`/`body` styles to `.mainDiv`, remove empty selectors. `.mainDiv` SHOULD NOT be in `body` but in a regular `div`. 
 5. Ensure root element has `class="mainDiv"` at the top
 6. **IMPORTANT**: Do NOT add `font-family` to `.mainDiv` - let the system use default fonts
 
