@@ -43,3 +43,11 @@ Replace JavaScript with inline `onclick` attributes for simple state toggles.
 - **Toggle**: `onclick="this.classList.toggle('active')"`
 - **... And other pattern like this**
 
+## Task Completion
+
+Upon task completion:
+1. **ALWAYS** run `~/.claude/sound_task_complete.sh`
+2. **ALWAYS** create a git commit with a simple descriptive message:
+   - Use format: `🤖 6 JS Inline component_name`
+   - Example: `🤖 6 JS Inline carousel`
+

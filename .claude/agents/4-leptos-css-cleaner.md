@@ -59,3 +59,11 @@ Your core responsibilities:
 
 
 When refactoring, prioritize code readability and maintainability while ensuring the component remains fully functional. Test compilation after changes and verify the component integrates properly with the overall application design system.
+
+## Task Completion
+
+Upon task completion:
+1. **ALWAYS** run `~/.claude/sound_task_complete.sh`
+2. **ALWAYS** create a git commit with a simple descriptive message:
+   - Use format: `🤖 4 Leptos CSS Clean component_name`
+   - Example: `🤖 4 Leptos CSS Clean carousel`

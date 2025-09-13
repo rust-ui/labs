@@ -90,3 +90,11 @@ pub fn DemoComponentName() -> impl IntoView {
     }
 }
 ```
+
+## Task Completion
+
+Upon task completion:
+1. **ALWAYS** run `~/.claude/sound_task_complete.sh`
+2. **ALWAYS** create a git commit with a simple descriptive message:
+   - Use format: `🤖 5 CLX Implement component_name`
+   - Example: `🤖 5 CLX Implement carousel`

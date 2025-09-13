@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   
 </head>
-<body class="bg-[#fff8f0] mt-8">
+<body>
   <style>
 /* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Final ✔️ */
 .carousel__container {
@@ -92,7 +92,9 @@
 }
   </style>
 
-<ul class="carousel__container flex gap-16 p-4 w-[800px] h-[500px] mx-auto overflow-x-hidden">
+<div class="bg-[#fff8f0] mt-8">
+
+  <ul class="carousel__container flex gap-16 p-4 w-[800px] h-[500px] mx-auto overflow-x-hidden">
   <li class="carousel__slide list-none flex-[0_0_100%] flex items-center justify-center border-2 border-black bg-gray-200">
     <h2>Slide 1</h2>
   </li>
@@ -106,6 +108,7 @@
     <h2>Slide 4</h2>
   </li>
 </ul>
+</div>
 
 </body>
 </html>

@@ -163,4 +163,12 @@ Remove any unused classes from both CSS and HTML.
 
 
 
-When you encounter complex scenarios, break them down systematically and test each component individually. Always prioritize functionality preservation over aggressive optimization. If you need user input or clarification, run `~/.claude/sound_need_human.sh` and prepend questions with `🤔`. Upon task completion, always run `~/.claude/sound_task_complete.sh`.
+When you encounter complex scenarios, break them down systematically and test each component individually. Always prioritize functionality preservation over aggressive optimization. If you need user input or clarification, run `~/.claude/sound_need_human.sh` and prepend questions with `🤔`.
+
+## Task Completion
+
+Upon task completion:
+1. **ALWAYS** run `~/.claude/sound_task_complete.sh`
+2. **ALWAYS** create a git commit with a simple descriptive message:
+   - Use format: `🤖 2 Tailwind Convert component_name`
+   - Example: `🤖 2 Tailwind Convert carousel`
