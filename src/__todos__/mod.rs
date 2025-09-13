@@ -9,4 +9,5 @@ pub mod demo_bento3_transition;
 pub mod demo_button_multi_state;
 pub mod demo_card_reverse;
 pub mod demo_carousel_hover_smooth;
+pub mod demo_css_carousel;
 pub mod demo_pagination;
