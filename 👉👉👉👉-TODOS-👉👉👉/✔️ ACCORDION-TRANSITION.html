@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+
+  <style>
+
+summary {
+  display: block;
+}
+
+summary::-webkit-details-marker { /* Hide default arrow on Safari */ 
+  display: none;
+}
+
+span {
+  display: flex;
+  justify-content: space-between;
+}
+
+span:after {
+  content: "\276F";
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.content { 
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease, padding 0.3s ease;
+}
+
+.inner {
+  overflow: hidden;
+  margin: 0;
+}
+
+details[open] + .content {
+  grid-template-rows: 1fr;
+  padding: 10px;
+}
+
+details[open] span:after {
+  transform: rotate(270deg);
+}
+
+
+
+
+
+/* OTHER STYLES */
+
+
+.accordion {
+  margin-bottom: 1em;
+  box-shadow: 0 5px black;
+  border-radius: 6px;
+  border: 2px solid black;
+  overflow: clip;
+  
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.accordion:has(details[open]), 
+.accordion:hover, 
+.accordion:has(summary:focus) {
+  box-shadow: 0 0 var(--black);
+  transform: translateY(6px);
+}
+
+
+span {
+  font-size: 1.1em;
+  background: #367d59;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem 0.8rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  background-color: #fff8f0;
+  padding: 0.5em 2em;
+  line-height: 1.5em;
+  max-width: 800px;
+  min-width: 300px; 
+  margin:auto;
+}
+
+.content { 
+  padding: 0 10px;
+}
+
+
+  </style>
+
+
+
+  <h1>Title of the page</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet turpis sed erat tincidunt dignissim. Maecenas auctor, mi ac pellentesque imperdiet, libero libero ullamcorper est, sit amet sagittis nibh augue in ipsum. Nam fringilla risus est, vitae scelerisque orci convallis id.</p>
+<div class="accordion">
+  <details name="super">
+    <summary aria-describedby="accordion1">
+      <span role="term">Accordion title 1</span>
+    </summary>
+  </details>
+
+  <div class="content">
+    <p class="inner" role="definition" id="accordion1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <details name="super">
+    <summary aria-describedby="accordion2">
+      <span role="term">Accordion title 2</span>
+    </summary>
+  </details>
+
+  <div class="content">
+    <p class="inner" role="definition" id="accordion2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+  </div>
+</div>
+
+
+
+</body>
+</html>

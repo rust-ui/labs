@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+
+  <style>
+.carousel {
+  display: flex;
+  gap: 4em;
+  padding: 1em;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  scroll-marker-group: after;
+  anchor-name: --carousel;
+}
+
+.carousel > li {
+  list-style: none;
+  flex: 0 0 100%;
+  background: #eee;
+  border: 2px solid #000;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel::scroll-marker-group {
+  position: absolute;
+  position-anchor: --carousel;
+  top: calc(anchor(bottom));
+
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  inset-inline: 0;
+}
+
+.carousel > li::scroll-marker {
+  content: "";
+  inline-size: 14px;
+  block-size: 14px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: #fff;
+  color: green;
+  transition: background-color 0.3s;
+}
+
+.carousel > li::scroll-marker:hover {
+  background-color: #eee;
+}
+
+.carousel > li::scroll-marker:target-current {
+  background: currentColor;
+}
+
+.carousel::scroll-button(*) {
+  font-size: 2em;
+  position: absolute;
+  text-align: center;
+  position-anchor: --carousel;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #000;
+  transition: background-color 0.3s;
+}
+
+.carousel::scroll-button(*):hover {
+  background-color: #eee;
+}
+
+.carousel::scroll-button(left) {
+  content: "";
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z"/></svg>')
+    no-repeat center;
+
+  right: calc(anchor(left) + 1em);
+  top: calc(anchor(center));
+}
+
+.carousel::scroll-button(right) {
+  content: "";
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>')
+    no-repeat center;
+  left: calc(anchor(right) + 1em);
+  top: calc(anchor(center));
+}
+
+.carousel::scroll-button(*):disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+body {
+  background-color: #fff8f0;
+  margin-top: 2em;
+}
+
+
+
+
+  </style>
+
+
+<ul class="carousel">
+  <li>
+    <h2>Slide 1</h2>
+  </li>
+  <li>
+    <h2>Slide 2</h2>
+  </li>
+  <li>
+    <h2>Slide 3</h2>
+  </li>
+  <li>
+    <h2>Slide 4</h2>
+  </li>
+</ul>
+
+
+</body>
+</html>

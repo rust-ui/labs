@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+
+  <style>
+.compare {
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+}
+
+section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+}
+
+.before {
+  background-color: #fff8f0;
+  mask: linear-gradient(to right, #000 0, var(--pos, 50%), transparent 0);
+}
+
+.after {
+  background-color: #122b1f;
+  mask: linear-gradient(to right, transparent 0, var(--pos, 50%), #000 0);
+  color: #fff8f0;
+}
+
+input {
+  z-index: 1;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input::-webkit-slider-thumb {
+  appearance: none;
+  inline-size: 4px;
+  block-size: 100dvh;
+  background-color: #000;
+}
+
+input::-moz-range-thumb {
+  appearance: none;
+  inline-size: 4px;
+  block-size: 100dvh;
+  background-color: #000;
+}
+
+
+
+  </style>
+
+
+<div class="compare">
+  <section class="before"> I'm the left section 😻</section>
+  <section class="after"> I'm the right section 🙀 </section>
+  <input type="range" id="range" step="0.1">
+</div>
+
+
+<script>
+
+  range.oninput = () =>
+  document.body.style.setProperty("--pos", range.value + "%");
+
+</script>
+
+
+</body>
+</html>

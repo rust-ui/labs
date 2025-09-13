@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- GSAP (uncomment if needed) -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+</head>
+<body>
+
+
+   <style>
+        :root {
+            --small-particles: '';
+            --medium-particles: '';
+            --big-particles: '';
+        }
+
+        .stars {
+            border-radius: 50%;
+        }
+
+        .stars:after {
+            content: " ";
+            position: absolute;
+            top: 2000px;
+        }
+
+        .stars.small {
+            box-shadow: var(--small-particles);
+            width: 1px;
+            height: 1px;
+            animation: starMovement 25s linear infinite;
+        }
+
+        .stars.small:after {
+            box-shadow: var(--small-particles);
+            width: 1px;
+            height: 1px;
+        }
+
+        .stars.medium {
+            box-shadow: var(--medium-particles);
+            width: 2px;
+            height: 2px;
+            animation: starMovement 50s linear infinite;
+        }
+
+        .stars.medium:after {
+            box-shadow: var(--medium-particles);
+            width: 2px;
+            height: 2px;
+        }
+
+        .stars.big {
+            box-shadow: var(--big-particles);
+            width: 3px;
+            height: 3px;
+            animation: starMovement 75s linear infinite;
+        }
+
+        .stars.big:after {
+            box-shadow: var(--big-particles);
+            width: 3px;
+            height: 3px;
+        }
+
+        @keyframes starMovement {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-2000px);
+            }
+        }
+
+        /* OTHER */
+        html {
+            height: 100%;
+            background: #065f46;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+
+
+
+  <div class="container">
+        <div class="stars small"></div>
+        <div class="stars medium"></div>
+        <div class="stars big"></div>
+    </div>
+
+
+
+
+
+  <script>
+          function generateParticles(count, distance = 2000) {
+            const particles = [];
+            for (let i = 0; i < count; i++) {
+                const x = Math.floor(Math.random() * distance);
+                const y = Math.floor(Math.random() * distance);
+                particles.push(`${x}px ${y}px #fff`);
+            }
+            return particles.join(', ');
+        }
+
+        // Generate particles and set CSS custom properties
+        function initializeStars() {
+            const smallParticles = generateParticles(700);
+            const mediumParticles = generateParticles(200);
+            const bigParticles = generateParticles(100);
+
+            document.documentElement.style.setProperty('--small-particles', smallParticles);
+            document.documentElement.style.setProperty('--medium-particles', mediumParticles);
+            document.documentElement.style.setProperty('--big-particles', bigParticles);
+        }
+
+        // Initialize stars when page loads
+        document.addEventListener('DOMContentLoaded', initializeStars);
+
+        // Optional: Regenerate stars on click for demo purposes
+        document.addEventListener('click', initializeStars);
+
+  </script>
+</body>
+</html>
