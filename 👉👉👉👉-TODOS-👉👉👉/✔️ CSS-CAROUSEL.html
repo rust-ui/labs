@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Slider</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- * TAILWIND CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>CSS Carousel</title>
 </head>
-<body>
-
-
+<body class="mainDiv">
   <style>
-.carousel {
+.mainDiv {
+  background-color: #fff8f0;
+  margin-top: 2em;
+}
+
+.carousel__container {
   display: flex;
   gap: 4em;
   padding: 1em;
@@ -25,12 +23,11 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
-
   scroll-marker-group: after;
   anchor-name: --carousel;
 }
 
-.carousel > li {
+.carousel__slide {
   list-style: none;
   flex: 0 0 100%;
   background: #eee;
@@ -41,18 +38,17 @@
   justify-content: center;
 }
 
-.carousel::scroll-marker-group {
+.carousel__container::scroll-marker-group {
   position: absolute;
   position-anchor: --carousel;
   top: calc(anchor(bottom));
-
   display: flex;
   justify-content: center;
   gap: 1em;
   inset-inline: 0;
 }
 
-.carousel > li::scroll-marker {
+.carousel__slide::scroll-marker {
   content: "";
   inline-size: 14px;
   block-size: 14px;
@@ -63,15 +59,15 @@
   transition: background-color 0.3s;
 }
 
-.carousel > li::scroll-marker:hover {
+.carousel__slide::scroll-marker:hover {
   background-color: #eee;
 }
 
-.carousel > li::scroll-marker:target-current {
+.carousel__slide::scroll-marker:target-current {
   background: currentColor;
 }
 
-.carousel::scroll-button(*) {
+.carousel__container::scroll-button(*) {
   font-size: 2em;
   position: absolute;
   text-align: center;
@@ -85,20 +81,18 @@
   transition: background-color 0.3s;
 }
 
-.carousel::scroll-button(*):hover {
+.carousel__container::scroll-button(*):hover {
   background-color: #eee;
 }
 
-.carousel::scroll-button(left) {
+.carousel__container::scroll-button(left) {
   content: "";
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z"/></svg>')
-    no-repeat center;
-
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z"/></svg>') no-repeat center;
   right: calc(anchor(left) + 1em);
   top: calc(anchor(center));
 }
 
-.carousel::scroll-button(right) {
+.carousel__container::scroll-button(right) {
   content: "";
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>')
     no-repeat center;
@@ -106,37 +100,26 @@
   top: calc(anchor(center));
 }
 
-.carousel::scroll-button(*):disabled {
+.carousel__container::scroll-button(*):disabled {
   opacity: 0.35;
   cursor: default;
 }
-
-body {
-  background-color: #fff8f0;
-  margin-top: 2em;
-}
-
-
-
-
   </style>
 
-
-<ul class="carousel">
-  <li>
+<ul class="carousel__container">
+  <li class="carousel__slide">
     <h2>Slide 1</h2>
   </li>
-  <li>
+  <li class="carousel__slide">
     <h2>Slide 2</h2>
   </li>
-  <li>
+  <li class="carousel__slide">
     <h2>Slide 3</h2>
   </li>
-  <li>
+  <li class="carousel__slide">
     <h2>Slide 4</h2>
   </li>
 </ul>
-
 
 </body>
 </html>
