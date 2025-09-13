@@ -4,22 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Carousel</title>
-</head>
-<body class="mainDiv">
-  <style>
-.mainDiv {
-  background-color: #fff8f0;
-  margin-top: 2em;
-}
 
+    <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+</head>
+<body class="bg-[#fff8f0] mt-8">
+  <style>
+/* TW: Step 1 ✔️ Step 2 ✔️ Step 3 ✔️ Step 4 ✔️ Step 5 ✔️ Step 6 ✔️ Final ✔️ */
 .carousel__container {
-  display: flex;
-  gap: 4em;
-  padding: 1em;
-  width: 800px;
-  height: 500px;
-  margin: auto;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
@@ -28,14 +21,7 @@
 }
 
 .carousel__slide {
-  list-style: none;
-  flex: 0 0 100%;
-  background: #eee;
-  border: 2px solid #000;
   scroll-snap-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .carousel__container::scroll-marker-group {
@@ -106,17 +92,17 @@
 }
   </style>
 
-<ul class="carousel__container">
-  <li class="carousel__slide">
+<ul class="carousel__container flex gap-16 p-4 w-[800px] h-[500px] mx-auto overflow-x-hidden">
+  <li class="carousel__slide list-none flex-[0_0_100%] flex items-center justify-center border-2 border-black bg-gray-200">
     <h2>Slide 1</h2>
   </li>
-  <li class="carousel__slide">
+  <li class="carousel__slide list-none flex-[0_0_100%] flex items-center justify-center border-2 border-black bg-gray-200">
     <h2>Slide 2</h2>
   </li>
-  <li class="carousel__slide">
+  <li class="carousel__slide list-none flex-[0_0_100%] flex items-center justify-center border-2 border-black bg-gray-200">
     <h2>Slide 3</h2>
   </li>
-  <li class="carousel__slide">
+  <li class="carousel__slide list-none flex-[0_0_100%] flex items-center justify-center border-2 border-black bg-gray-200">
     <h2>Slide 4</h2>
   </li>
 </ul>
