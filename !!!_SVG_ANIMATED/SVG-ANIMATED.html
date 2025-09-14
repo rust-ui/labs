@@ -14,9 +14,13 @@
     <div id="icon__container" class="font-sans flex justify-center items-center gap-8 min-h-screen m-0 bg-gray-100"></div>
 
     <script>
-        createIcon('HeartAnimate', 'heart');
-        createIcon('PlusAnimate', 'plus');
-        createIcon('AArrowDownAnimate', 'a_arrow_down');
+        // Load sequentially
+        async function loadIcons() {
+            await createIcon('AArrowDownAnimate', 'a_arrow_down');
+            await createIcon('HeartAnimate', 'heart');
+            await createIcon('PlusAnimate', 'plus');
+        }
+        loadIcons();
         // --------- TODOS ------------ //
     </script>
 </body>
