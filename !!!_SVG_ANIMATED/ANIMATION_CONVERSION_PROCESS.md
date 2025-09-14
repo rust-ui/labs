@@ -145,21 +145,39 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 
 ## Best Practices
 
-### 1. **CRUCIAL**: Smooth Hover Transitions
-- **ALWAYS use CSS transitions for bidirectional animations** instead of keyframe animations
+### 1. **CRUCIAL**: Choose the Right Animation Pattern
+
+#### For State-Change Animations: Use Smooth Transitions
+- **Use CSS transitions for animations that move elements to different end states**
 - This ensures smooth animation both on hover AND unhover
 - Use `transition: transform 0.5s cubic-bezier(...)` on base elements
 - Use `transform: translateY(...)` on `:hover` states
-- **Example:**
+- **Example (arrow_down icons):**
 ```css
 /* Base state with transition */
-[data-name="IconName"] rect {
+[data-name="ArrowDown01Animate"] rect {
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Hover state with transform */
-[data-name="IconName"]:hover rect {
+[data-name="ArrowDown01Animate"]:hover rect {
     transform: translateY(10px);
+}
+```
+
+#### For Self-Contained Sequences: Use Keyframes
+- **Use keyframe animations for bounce/sequence effects that naturally return to start**
+- These animations complete their cycle and don't need smooth unhover transitions
+- **Example (arrow_big_down bounce):**
+```css
+[data-name="ArrowBigDownAnimate"]:hover path {
+    animation: bounce 0.4s ease-in-out;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0); }
 }
 ```
 
