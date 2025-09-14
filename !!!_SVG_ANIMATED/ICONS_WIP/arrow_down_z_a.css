@@ -1,30 +1,17 @@
-[data-name="ArrowDownZAAnimate"]:hover path[d="m3 16 4 4 4-4"],
-[data-name="ArrowDownZAAnimate"]:hover path[d="M7 4v16"] {
-    animation: arrowAnimate 0.6s ease-out;
+[data-name="ArrowDownZAAnimate"] path[d="M15 4h5l-5 6h5"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="ArrowDownZAAnimate"] path[d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20"],
+[data-name="ArrowDownZAAnimate"] path[d="M20 18h-5"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 [data-name="ArrowDownZAAnimate"]:hover path[d="M15 4h5l-5 6h5"] {
-    animation: zSwapDown 0.6s ease-out;
+    transform: translateY(10px);
 }
 
 [data-name="ArrowDownZAAnimate"]:hover path[d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20"],
 [data-name="ArrowDownZAAnimate"]:hover path[d="M20 18h-5"] {
-    animation: aSwapUp 0.6s ease-out;
-}
-
-@keyframes arrowAnimate {
-    0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes zSwapDown {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes aSwapUp {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    transform: translateY(-10px);
 }
