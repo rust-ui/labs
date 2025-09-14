@@ -2,15 +2,15 @@
     cursor: pointer;
 }
 
-/* Letter "A" animation - first 2 paths */
-[data-name="AArrowDownAnimate"]:hover path:nth-child(1),
-[data-name="AArrowDownAnimate"]:hover path:nth-child(2) {
+/* Letter "A" animation - targeting specific paths */
+[data-name="AArrowDownAnimate"]:hover path[d="M3.5 13h6"],
+[data-name="AArrowDownAnimate"]:hover path[d="m2 16 4.5-9 4.5 9"] {
     animation: letterAnimate 0.3s ease-in-out;
 }
 
-/* Arrow animation - last 2 paths with delay */
-[data-name="AArrowDownAnimate"]:hover path:nth-child(3),
-[data-name="AArrowDownAnimate"]:hover path:nth-child(4) {
+/* Arrow animation - targeting specific paths with delay */
+[data-name="AArrowDownAnimate"]:hover path[d="M18 7v9"],
+[data-name="AArrowDownAnimate"]:hover path[d="m14 12 4 4 4-4"] {
     animation: arrowAnimate 0.3s ease-in-out 0.2s both;
 }
 
