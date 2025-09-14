@@ -11,12 +11,11 @@
 </head>
 
 <body>
-    <div id="icon__container" class="font-sans flex justify-center items-center gap-8 min-h-screen m-0"></div>
+    <div id="icon__container" class="mt-40 font-sans grid gap-x-8 gap-y-5 h-fit p-8 place-items-center justify-center" style="grid-template-columns: repeat(15, minmax(0, 1fr));"></div>
 
     <script>
         // Load sequentially
         async function loadIcons() {
-            await createIcon('AtSignAnimate', 'at_sign');
             await createIcon('AArrowUpAnimate', 'a_arrow_up');
             await createIcon('ArrowBigRightDashAnimate', 'arrow_big_right_dash');
             await createIcon('ArrowDown01Animate', 'arrow_down_0_1');
