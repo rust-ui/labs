@@ -31,7 +31,14 @@ ICONS_WIP/
 <path d="m14 12 4 4 4-4" />      <!-- Arrow - chevron down -->
 ```
 
-### 2. Analyze TSX Animation Variants
+### 2. Find Original TSX Animation Source
+
+**IMPORTANT**: Before creating CSS animations, you must first locate and analyze the original TSX animation source to understand the exact animation behavior.
+
+**Locate TSX file**: Search in `icons-animated-pqoqubbw/` directory for the corresponding `.tsx` file
+- Example: For `activity.txt` → find `icons-animated-pqoqubbw/activity.tsx`
+
+### 3. Analyze TSX Animation Variants
 
 **Original TSX Structure:**
 ```tsx
@@ -54,7 +61,7 @@ const arrowVariants: Variants = {
 };
 ```
 
-### 3. Convert to CSS Keyframes
+### 4. Convert to CSS Keyframes
 
 **Create Animation File:** `ICONS_WIP/a_arrow_down.css`
 
@@ -84,7 +91,7 @@ const arrowVariants: Variants = {
 }
 ```
 
-### 4. Add to HTML System
+### 5. Add to HTML System
 **In:** `SVG-ANIMATED.html`
 ```javascript
 createIcon('AArrowDownAnimate', 'a_arrow_down');
@@ -117,6 +124,12 @@ path[d="m2 16 4.5-9 4.5 9"]   /* More reliable than nth-child(2) */
 ### 3. Transform Properties
 - **TSX `scale: [0.8, 1]`** → **CSS `transform: scale(0.8)` to `scale(1)`**
 - **TSX `y: [-10, 0]`** → **CSS `transform: translateY(-10px)` to `translateY(0)`**
+
+### 4. Path Drawing Effects
+- **TSX `pathLength: [0, 1]`** → **CSS `stroke-dasharray` and `stroke-dashoffset`**
+- **TSX `pathOffset: [1, 0]`** → **CSS `stroke-dashoffset` animation**
+- Use large `stroke-dasharray` value to cover entire path length
+- Animate `stroke-dashoffset` from full length to 0 for drawing effect
 
 ### 4. Animation Fill Mode
 - Use `both` keyword to maintain initial state during delay period
