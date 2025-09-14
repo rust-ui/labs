@@ -30,5 +30,6 @@
 		}
 	},
 	"biome.enable": true,
-	"biome.lint.enable": true
+	"biome.lint.enable": true,
+	"liveServer.settings.port": 5501
 }
