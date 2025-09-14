@@ -1,0 +1,13 @@
+[data-name="HeartAnimate"]:hover {
+    animation: HeartAnimation 1.2s ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes HeartAnimation {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.15); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.08); }
+    56% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
