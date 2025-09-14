@@ -1,0 +1,29 @@
+/* Blocks Animation - Animated block moves diagonally up-left and down-right */
+
+/* Initial state - smooth bounce back when not hovered */
+[data-name="BlocksAnimate"] rect[x="14"][y="2"][width="8"][height="8"] {
+    animation: blockRevert 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* On hover - move to new position */
+[data-name="BlocksAnimate"]:hover rect[x="14"][y="2"][width="8"][height="8"] {
+    animation: blockMove 0.3s ease-in-out forwards;
+}
+
+@keyframes blockMove {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-4px) translateY(4px);
+    }
+}
+
+@keyframes blockRevert {
+    0% {
+        transform: translateX(-4px) translateY(4px);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
