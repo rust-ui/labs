@@ -1,0 +1,13 @@
+/* Align center animation - only the middle line wiggles to simulate alignment adjustment */
+[data-name="AlignCenterAnimate"]:hover path[d="M17 12H7"] {
+    animation: alignCenterWiggle 1s linear;
+}
+
+@keyframes alignCenterWiggle {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(3px); }
+    40% { transform: translateX(-3px); }
+    60% { transform: translateX(2px); }
+    80% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}

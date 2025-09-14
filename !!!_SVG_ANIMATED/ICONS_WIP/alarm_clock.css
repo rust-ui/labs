@@ -1,0 +1,47 @@
+/* Alarm clock shake animation for clock face and hands */
+[data-name="AlarmClockAnimate"]:hover circle[cx="12"][cy="13"][r="8"],
+[data-name="AlarmClockAnimate"]:hover path[d="M12 9v4l2 2"] {
+    animation: clockShake 0.4s ease-in-out infinite;
+}
+
+/* Alarm indicator lines with more intense shake */
+[data-name="AlarmClockAnimate"]:hover path[d="M5 3 2 6"],
+[data-name="AlarmClockAnimate"]:hover path[d="m22 6-3-3"],
+[data-name="AlarmClockAnimate"]:hover path[d="M6.38 18.7 4 21"],
+[data-name="AlarmClockAnimate"]:hover path[d="M17.64 18.67 20 21"] {
+    animation: alarmIndicatorShake 0.3s ease-in-out infinite;
+}
+
+@keyframes clockShake {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-1px) translateY(-0.5px);
+    }
+    50% {
+        transform: translateX(1px) translateY(-1px);
+    }
+    75% {
+        transform: translateX(-0.5px) translateY(-0.5px);
+    }
+}
+
+@keyframes alarmIndicatorShake {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(-2px) translateY(-1px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(2px) translateY(-1.5px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-1px) translateY(-1px);
+        opacity: 0.9;
+    }
+}
