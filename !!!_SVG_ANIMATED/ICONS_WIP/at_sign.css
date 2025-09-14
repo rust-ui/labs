@@ -11,15 +11,15 @@
 @keyframes circleAnimate {
     0% {
         opacity: 0;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dasharray: 25.1;
+        stroke-dashoffset: -25.1;
     }
     33% {
         opacity: 1;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 25.1;
         stroke-dashoffset: 0;
     }
 }
@@ -27,15 +27,15 @@
 @keyframes pathAnimate {
     0% {
         opacity: 0;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
     }
     33% {
         opacity: 1;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 50;
         stroke-dashoffset: 0;
     }
 }
