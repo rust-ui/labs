@@ -1,28 +1,18 @@
+[data-name="ArrowDown10Animate"] path[d="M17 10V4h-2"],
+[data-name="ArrowDown10Animate"] path[d="M15 10h4"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="ArrowDown10Animate"] rect[x="15"][y="14"][width="4"][height="6"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 [data-name="ArrowDown10Animate"]:hover path[d="M17 10V4h-2"],
 [data-name="ArrowDown10Animate"]:hover path[d="M15 10h4"] {
-    animation: numberOneAnimate 0.3s ease-in-out;
+    transform: translateY(10px);
 }
 
 [data-name="ArrowDown10Animate"]:hover rect[x="15"][y="14"][width="4"][height="6"] {
-    animation: numberZeroAnimate 0.3s ease-in-out 0.15s both;
+    transform: translateY(-10px);
 }
-
-[data-name="ArrowDown10Animate"]:hover path[d="m3 16 4 4 4-4"],
-[data-name="ArrowDown10Animate"]:hover path[d="M7 20V4"] {
-    animation: arrowAnimate 0.3s ease-in-out 0.3s both;
-}
-
-@keyframes numberOneAnimate {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes numberZeroAnimate {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes arrowAnimate {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
