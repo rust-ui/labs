@@ -1,18 +1,18 @@
+[data-name="ArrowDown01Animate"] rect[x="15"][y="4"][width="4"][height="6"][ry="2"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="ArrowDown01Animate"] path[d="M17 20v-6h-2"],
+[data-name="ArrowDown01Animate"] path[d="M15 20h4"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 [data-name="ArrowDown01Animate"]:hover rect[x="15"][y="4"][width="4"][height="6"][ry="2"] {
-    animation: rectMoveDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(10px);
 }
 
 [data-name="ArrowDown01Animate"]:hover path[d="M17 20v-6h-2"],
 [data-name="ArrowDown01Animate"]:hover path[d="M15 20h4"] {
-    animation: pathsMoveUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(-10px);
 }
 
-@keyframes rectMoveDown {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(10px); }
-}
-
-@keyframes pathsMoveUp {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
-}
