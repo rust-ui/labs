@@ -1,0 +1,30 @@
+[data-name="ArrowDownAZAnimate"]:hover path[d="m3 16 4 4 4-4"],
+[data-name="ArrowDownAZAnimate"]:hover path[d="M7 20V4"] {
+    animation: arrowAnimate 0.6s ease-out;
+}
+
+[data-name="ArrowDownAZAnimate"]:hover path[d="M20 8h-5"],
+[data-name="ArrowDownAZAnimate"]:hover path[d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"] {
+    animation: aSwapDown 0.6s ease-out;
+}
+
+[data-name="ArrowDownAZAnimate"]:hover path[d="M15 14h5l-5 6h5"] {
+    animation: zSwapUp 0.6s ease-out;
+}
+
+@keyframes arrowAnimate {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aSwapDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes zSwapUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}

@@ -1,0 +1,49 @@
+/* Bluetooth main path animation */
+[data-name="BluetoothConnectedAnimate"]:hover path[d="m7 7 10 10-5 5V2l5 5L7 17"] {
+    animation: bluetoothPathAnimate 0.3s ease-in-out 0.2s both;
+}
+
+@keyframes bluetoothPathAnimate {
+    0% { opacity: 0; }
+    33% { opacity: 1; }
+    66% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Right line drawing animation */
+[data-name="BluetoothConnectedAnimate"]:hover line[x1="18"][x2="21"][y1="12"][y2="12"] {
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    opacity: 0;
+    animation: rightLineAnimate 0.4s ease-in-out;
+}
+
+@keyframes rightLineAnimate {
+    0% {
+        stroke-dashoffset: 10;
+        opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+/* Left line drawing animation */
+[data-name="BluetoothConnectedAnimate"]:hover line[x1="3"][x2="6"][y1="12"][y2="12"] {
+    stroke-dasharray: 10;
+    stroke-dashoffset: -10;
+    opacity: 0;
+    animation: leftLineAnimate 0.2s ease-in-out;
+}
+
+@keyframes leftLineAnimate {
+    0% {
+        stroke-dashoffset: -10;
+        opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
