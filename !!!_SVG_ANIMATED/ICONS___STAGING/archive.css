@@ -1,0 +1,59 @@
+/* Archive lid lifting animation - smooth transition */
+[data-name="ArchiveAnimate"] rect[width="20"][height="5"][x="2"][y="3"][rx="1"] {
+    transition: transform 0.2s ease-out;
+}
+
+[data-name="ArchiveAnimate"]:hover rect[width="20"][height="5"][x="2"][y="3"][rx="1"] {
+    transform: translateY(-1.5px);
+}
+
+/* Archive body opening animation - path morphing with reverse */
+[data-name="ArchiveAnimate"] path[d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"] {
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+[data-name="ArchiveAnimate"]:hover path[d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"] {
+    animation-name: archiveBodyOpen;
+}
+
+[data-name="ArchiveAnimate"]:not(:hover) path[d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"] {
+    animation-name: archiveBodyClose;
+}
+
+/* Archive handle moving animation - path morphing with reverse */
+[data-name="ArchiveAnimate"] path[d="M10 12h4"] {
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+[data-name="ArchiveAnimate"]:hover path[d="M10 12h4"] {
+    animation-name: archiveHandleMove;
+}
+
+[data-name="ArchiveAnimate"]:not(:hover) path[d="M10 12h4"] {
+    animation-name: archiveHandleReturn;
+}
+
+
+@keyframes archiveBodyOpen {
+    0% { d: path('M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8'); }
+    100% { d: path('M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11'); }
+}
+
+@keyframes archiveBodyClose {
+    0% { d: path('M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11'); }
+    100% { d: path('M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8'); }
+}
+
+@keyframes archiveHandleMove {
+    0% { d: path('M10 12h4'); }
+    100% { d: path('M10 15h4'); }
+}
+
+@keyframes archiveHandleReturn {
+    0% { d: path('M10 15h4'); }
+    100% { d: path('M10 12h4'); }
+}
