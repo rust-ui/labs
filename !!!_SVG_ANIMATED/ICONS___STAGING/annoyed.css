@@ -1,0 +1,37 @@
+/* Face animation - scales the entire SVG */
+[data-name="AnnoyedAnimate"] {
+    transition: transform 0.2s ease-out;
+}
+
+[data-name="AnnoyedAnimate"]:hover {
+    transform: scale(1.05);
+}
+
+/* Mouth animation - horizontal scale and slight vertical movement */
+[data-name="AnnoyedAnimate"] path[d="M8 15h8"] {
+    transition: transform 0.2s ease-out;
+}
+
+[data-name="AnnoyedAnimate"]:hover path[d="M8 15h8"] {
+    transform: scaleX(0.8) translateY(1px);
+}
+
+/* Left eyebrow animation - rotation and translation */
+[data-name="AnnoyedAnimate"] path[d="M8 9h2"] {
+    transition: transform 0.25s ease-out;
+    transform-origin: center;
+}
+
+[data-name="AnnoyedAnimate"]:hover path[d="M8 9h2"] {
+    transform: rotate(15deg) translate(-0.5px, -1px);
+}
+
+/* Right eyebrow animation - rotation and translation */
+[data-name="AnnoyedAnimate"] path[d="M14 9h2"] {
+    transition: transform 0.25s ease-out 0.05s;
+    transform-origin: center;
+}
+
+[data-name="AnnoyedAnimate"]:hover path[d="M14 9h2"] {
+    transform: rotate(15deg) translate(0.5px, -1px);
+}
