@@ -950,9 +950,9 @@ dependencies = [
 
 [[package]]
 name = "icons"
-version = "0.3.7"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "482ac92470774dd4cf78ddd023dba6e69c0203cf0e5bcf760959138f9495eed7"
+checksum = "5aa6e53ebb726ac51cde02dfc00c3efa7db65aaf937441813953ab48fce3f727"
 dependencies = [
  "leptos",
  "paste",
