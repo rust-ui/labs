@@ -12,7 +12,7 @@ SVG-ANIMATED.html              # Main HTML file with icon container
 create_icon.js                 # JavaScript function to dynamically create icons
 ICONS_WIP/
 ├── {icon_name}.txt           # SVG path data
-└── {icon_name}_animate.txt   # CSS animation styles
+└── {icon_name}.css           # CSS animation styles
 ```
 
 ### Core Pattern
@@ -56,7 +56,7 @@ const arrowVariants: Variants = {
 
 ### 3. Convert to CSS Keyframes
 
-**Create Animation File:** `ICONS_WIP/a_arrow_down_animate.txt`
+**Create Animation File:** `ICONS_WIP/a_arrow_down.css`
 
 #### Phase 1: Letter Animation (Precise Path Targeting)
 ```css
@@ -149,7 +149,7 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 - Consider `prefers-reduced-motion` media queries
 
 ### 5. File Formatting
-- **Always add trailing newlines** to all SVG and animation files
+- **Always add trailing newlines** to all SVG (.txt) and CSS (.css) animation files
 - Ensures consistent formatting and linting compliance
 - Files should end with a newline character for proper file termination
 
