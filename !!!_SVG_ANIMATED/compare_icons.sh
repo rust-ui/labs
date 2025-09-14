@@ -9,6 +9,8 @@ set -e
 # Directory paths (relative to script location)
 ICONS_TODOS_DIR="./ICONS_TODOS"
 ICONS_ANIMATED_DIR="./icons-animated-pqoqubbw"
+ICONS_DONE_DIR="./ICONS_DONE"
+ICONS_WIP_DIR="./ICONS_WIP"
 OUTPUT_FILE="./icon_comparison_report.md"
 
 # Temporary files
@@ -17,6 +19,8 @@ ANIMATED_NORMALIZED="/tmp/animated_normalized.txt"
 COMMON_FILES="/tmp/common_files.txt"
 TODOS_ONLY="/tmp/todos_only.txt"
 ANIMATED_ONLY="/tmp/animated_only.txt"
+DONE_NORMALIZED="/tmp/done_normalized.txt"
+WIP_NORMALIZED="/tmp/wip_normalized.txt"
 
 echo "🔍 Starting icon file comparison..."
 
@@ -27,6 +31,20 @@ normalize_filename() {
     basename_no_ext="${filename%.*}"
     # Convert snake_case to kebab-case
     echo "$basename_no_ext" | sed 's/_/-/g'
+}
+
+# Function to get status symbol for an icon
+get_status_symbol() {
+    local normalized="$1"
+    # Check if icon is in ICONS_DONE directory
+    if grep -q "^$normalized$" "$DONE_NORMALIZED" 2>/dev/null; then
+        echo "✅"
+    # Check if icon is in ICONS_WIP directory
+    elif grep -q "^$normalized$" "$WIP_NORMALIZED" 2>/dev/null; then
+        echo "💪"
+    else
+        echo ""
+    fi
 }
 
 # Create normalized lists
@@ -60,6 +78,32 @@ if [ -d "$ICONS_ANIMATED_DIR" ]; then
 else
     echo "❌ Error: icons-animated-pqoqubbw directory not found: $ICONS_ANIMATED_DIR"
     exit 1
+fi
+
+echo "📋 Normalizing ICONS_DONE filenames..."
+> "$DONE_NORMALIZED"
+if [ -d "$ICONS_DONE_DIR" ]; then
+    for file in "$ICONS_DONE_DIR"/*.txt; do
+        if [ -f "$file" ]; then
+            filename=$(basename "$file")
+            normalized=$(normalize_filename "$filename")
+            echo "$normalized" >> "$DONE_NORMALIZED"
+        fi
+    done
+    sort "$DONE_NORMALIZED" -o "$DONE_NORMALIZED"
+fi
+
+echo "📋 Normalizing ICONS_WIP filenames..."
+> "$WIP_NORMALIZED"
+if [ -d "$ICONS_WIP_DIR" ]; then
+    for file in "$ICONS_WIP_DIR"/*.txt; do
+        if [ -f "$file" ]; then
+            filename=$(basename "$file")
+            normalized=$(normalize_filename "$filename")
+            echo "$normalized" >> "$WIP_NORMALIZED"
+        fi
+    done
+    sort "$WIP_NORMALIZED" -o "$WIP_NORMALIZED"
 fi
 
 # Find common files
@@ -140,8 +184,8 @@ cat >> "$OUTPUT_FILE" << EOF
 
 The following files exist in both directories (after normalization):
 
-| # | Icon Name | ICONS_TODOS File | icons-animated-pqoqubbw File |
-|---|-----------|------------------|------------------------------|
+| # | Status | Icon Name | ICONS_TODOS File | icons-animated-pqoqubbw File |
+|---|--------|-----------|------------------|------------------------------|
 EOF
 
 # Add common files table
@@ -149,7 +193,8 @@ counter=1
 while read -r normalized; do
     todos_original=$(grep "^$normalized:" "$TODOS_LOOKUP" | cut -d: -f2)
     animated_original=$(grep "^$normalized:" "$ANIMATED_LOOKUP" | cut -d: -f2)
-    echo "| $counter | \`$normalized\` | $todos_original | $animated_original |" >> "$OUTPUT_FILE"
+    status_symbol=$(get_status_symbol "$normalized")
+    echo "| $counter | $status_symbol | \`$normalized\` | $todos_original | $animated_original |" >> "$OUTPUT_FILE"
     counter=$((counter + 1))
 done < "$COMMON_FILES"
 
@@ -180,12 +225,15 @@ cat >> "$OUTPUT_FILE" << EOF
 
 These icons exist only in the icons-animated-pqoqubbw directory:
 
+| # | Status | Icon Name | File |
+|---|--------|-----------|------|
 EOF
 
 counter=1
 while read -r normalized; do
     animated_original=$(grep "^$normalized:" "$ANIMATED_LOOKUP" | cut -d: -f2)
-    echo "$counter. \`$normalized\` ($animated_original)" >> "$OUTPUT_FILE"
+    status_symbol=$(get_status_symbol "$normalized")
+    echo "| $counter | $status_symbol | \`$normalized\` | $animated_original |" >> "$OUTPUT_FILE"
     counter=$((counter + 1))
 done < "$ANIMATED_ONLY"
 
@@ -204,7 +252,7 @@ cat >> "$OUTPUT_FILE" << EOF
 EOF
 
 # Cleanup temporary files
-rm -f "$TODOS_NORMALIZED" "$ANIMATED_NORMALIZED" "$COMMON_FILES" "$TODOS_ONLY" "$ANIMATED_ONLY" "$TODOS_LOOKUP" "$ANIMATED_LOOKUP"
+rm -f "$TODOS_NORMALIZED" "$ANIMATED_NORMALIZED" "$COMMON_FILES" "$TODOS_ONLY" "$ANIMATED_ONLY" "$TODOS_LOOKUP" "$ANIMATED_LOOKUP" "$DONE_NORMALIZED" "$WIP_NORMALIZED"
 
 echo "✅ Report generated successfully: $OUTPUT_FILE"
 echo ""
