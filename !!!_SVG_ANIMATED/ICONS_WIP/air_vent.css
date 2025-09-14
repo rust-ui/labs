@@ -1,0 +1,19 @@
+/* Air vent wind animation - first wind path (immediate) */
+[data-name="AirVentAnimate"]:hover path[d="M18 17.5a2.5 2.5 0 1 1-4 2.03V12"] {
+    animation: windAnimate1 0.5s ease-in-out;
+}
+
+/* Air vent wind animation - second wind path (delayed) */
+[data-name="AirVentAnimate"]:hover path[d="M6.6 15.572A2 2 0 1 0 10 17v-5"] {
+    animation: windAnimate2 0.5s ease-in-out 0.2s both;
+}
+
+@keyframes windAnimate1 {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes windAnimate2 {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}

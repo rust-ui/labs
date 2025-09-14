@@ -1,0 +1,15 @@
+/* Activity heartbeat line drawing animation */
+[data-name="ActivityAnimate"]:hover path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: activityDraw 0.6s linear forwards;
+}
+
+@keyframes activityDraw {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
