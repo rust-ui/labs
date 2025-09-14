@@ -1,6 +1,7 @@
 /* Bone shaking animation - targeting the specific bone path */
 [data-name="BoneAnimate"]:hover path[d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"] {
-    animation: boneShake 0.5s cubic-bezier(0.55, 0, 1, 0.45);
+    animation: boneShake 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform-origin: center;
 }
 
 @keyframes boneShake {
