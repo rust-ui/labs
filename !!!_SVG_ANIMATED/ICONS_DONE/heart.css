@@ -1,6 +1,5 @@
 [data-name="HeartAnimate"]:hover {
     animation: HeartAnimation 1.2s ease-in-out;
-    cursor: pointer;
 }
 
 @keyframes HeartAnimation {

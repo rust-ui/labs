@@ -1,7 +1,3 @@
-[data-name="AArrowDownAnimate"]:hover {
-    cursor: pointer;
-}
-
 /* Letter "A" animation - targeting specific paths */
 [data-name="AArrowDownAnimate"]:hover path[d="M3.5 13h6"],
 [data-name="AArrowDownAnimate"]:hover path[d="m2 16 4.5-9 4.5 9"] {
