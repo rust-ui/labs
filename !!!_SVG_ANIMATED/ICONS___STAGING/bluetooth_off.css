@@ -12,12 +12,12 @@
 @keyframes bluetoothAnimate {
     0% {
         opacity: 0;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dasharray: 30;
+        stroke-dashoffset: -30;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 30;
         stroke-dashoffset: 0;
     }
 }
@@ -25,12 +25,12 @@
 @keyframes offlineAnimate {
     0% {
         opacity: 0;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dasharray: 28;
+        stroke-dashoffset: 28;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 28;
         stroke-dashoffset: 0;
     }
 }
