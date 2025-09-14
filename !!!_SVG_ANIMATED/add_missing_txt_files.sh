@@ -11,7 +11,7 @@ for tsx in *.tsx; do
     base="${tsx%.tsx}"
     snake_case="${base//-/_}"
     if [[ ! -f "${snake_case}.txt" ]]; then
-        echo "- $tsx (missing ${snake_case}.txt)"
+        echo "- $tsx -> ${snake_case}.txt"
         missing_files+=("${snake_case}.txt")
     fi
 done
