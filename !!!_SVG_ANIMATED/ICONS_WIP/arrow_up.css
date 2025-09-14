@@ -1,0 +1,19 @@
+[data-name="ArrowUpAnimate"]:hover path[d="m5 12 7-7 7 7"] {
+    animation: arrowPathAnimate 0.4s ease-in-out;
+}
+
+[data-name="ArrowUpAnimate"]:hover path[d="M12 19V5"] {
+    animation: linePathAnimate 0.4s ease-in-out;
+}
+
+@keyframes arrowPathAnimate {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes linePathAnimate {
+    0% { d: path('M12 19V5'); }
+    50% { d: path('M12 19V10'); }
+    100% { d: path('M12 19V5'); }
+}

@@ -1,0 +1,12 @@
+/* Bell ringing animation - rotates entire icon */
+[data-name="BellAnimate"]:hover {
+    animation: bellRing 0.5s ease-in-out;
+}
+
+@keyframes bellRing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}

@@ -1,0 +1,61 @@
+/* Face animation - entire SVG container */
+[data-name="AngryAnimate"]:hover {
+    animation: faceAnimate 0.6s ease-in-out;
+}
+
+@keyframes faceAnimate {
+    0% { transform: scale(1) rotate(0deg); }
+    20% { transform: scale(1.2) rotate(-3deg); }
+    40% { transform: scale(1.2) rotate(3deg); }
+    60% { transform: scale(1.2) rotate(-1deg); }
+    80% { transform: scale(1.2) rotate(1deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Left eyebrow animation */
+[data-name="AngryAnimate"]:hover path[d="M7.5 8 10 9"] {
+    animation: leftEyebrowAnimate 0.8s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes leftEyebrowAnimate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Right eyebrow animation */
+[data-name="AngryAnimate"]:hover path[d="m14 9 2.5-1"] {
+    animation: rightEyebrowAnimate 0.8s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes rightEyebrowAnimate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Eye animations */
+[data-name="AngryAnimate"]:hover path[d="M9 10h.01"],
+[data-name="AngryAnimate"]:hover path[d="M15 10h.01"] {
+    animation: eyeAnimate 0.6s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes eyeAnimate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Mouth animation */
+[data-name="AngryAnimate"]:hover path[d="M16 16s-1.5-2-4-2-4 2-4 2"] {
+    animation: mouthAnimate 0.6s ease-in-out;
+}
+
+@keyframes mouthAnimate {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-0.5px); }
+    100% { transform: translateY(0); }
+}

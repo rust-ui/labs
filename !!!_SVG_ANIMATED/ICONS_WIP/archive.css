@@ -1,0 +1,29 @@
+/* Archive lid lifting animation */
+[data-name="ArchiveAnimate"]:hover rect[width="20"][height="5"][x="2"][y="3"][rx="1"] {
+    animation: archiveLidLift 0.2s ease-out forwards;
+}
+
+/* Archive body opening animation */
+[data-name="ArchiveAnimate"]:hover path[d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"] {
+    animation: archiveBodyOpen 0.2s ease-out forwards;
+}
+
+/* Archive handle moving down animation */
+[data-name="ArchiveAnimate"]:hover path[d="M10 12h4"] {
+    animation: archiveHandleMove 0.2s ease-out forwards;
+}
+
+@keyframes archiveLidLift {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-1.5px); }
+}
+
+@keyframes archiveBodyOpen {
+    0% { d: path('M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8'); }
+    100% { d: path('M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11'); }
+}
+
+@keyframes archiveHandleMove {
+    0% { d: path('M10 12h4'); }
+    100% { d: path('M10 15h4'); }
+}

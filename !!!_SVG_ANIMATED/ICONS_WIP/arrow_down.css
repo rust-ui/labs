@@ -1,0 +1,19 @@
+[data-name="ArrowDownAnimate"]:hover path[d="m19 12-7 7-7-7"] {
+    animation: chevronAnimate 0.4s ease-in-out;
+}
+
+[data-name="ArrowDownAnimate"]:hover path[d="M12 5v14"] {
+    animation: lineAnimate 0.4s ease-in-out;
+}
+
+@keyframes chevronAnimate {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes lineAnimate {
+    0% { d: path('M12 5v14'); }
+    50% { d: path('M12 5v9'); }
+    100% { d: path('M12 5v14'); }
+}
