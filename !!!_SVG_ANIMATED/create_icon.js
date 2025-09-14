@@ -36,6 +36,7 @@ async function createIcon(ComponentName, icon_filename) {
     "group flex justify-center items-center p-2 rounded-md transition-colors duration-200 cursor-pointer select-none hover:bg-gray-100";
 
   // Append SVG to wrapper, then wrapper to container
-  wrapper.appendChild(svg);
-  document.getElementById("icon__container").appendChild(wrapper);
+  // wrapper.appendChild(svg);
+  // document.getElementById("icon__container").appendChild(wrapper);
+  document.getElementById("icon__container").appendChild(svg);
 }
