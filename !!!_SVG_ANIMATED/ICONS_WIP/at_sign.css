@@ -1,0 +1,41 @@
+/* Circle animation - targeting specific circle */
+[data-name="AtSignAnimate"]:hover circle[cx="12"][cy="12"][r="4"] {
+    animation: circleAnimate 0.3s ease-in-out;
+}
+
+/* Path animation - targeting specific path with delay */
+[data-name="AtSignAnimate"]:hover path[d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"] {
+    animation: pathAnimate 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes circleAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    33% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes pathAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    33% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}

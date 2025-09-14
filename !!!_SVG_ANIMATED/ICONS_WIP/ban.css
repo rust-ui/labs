@@ -1,0 +1,35 @@
+/* Circle animation - draws the circle first */
+[data-name="BanAnimate"]:hover circle[cx="12"][cy="12"][r="10"] {
+    animation: circleAnimate 0.4s ease-in-out;
+}
+
+/* Line animation - draws the diagonal slash with delay */
+[data-name="BanAnimate"]:hover path[d="M4.929 4.929 19.07 19.071"] {
+    animation: lineAnimate 0.4s ease-in-out 0.5s both;
+}
+
+@keyframes circleAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes lineAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}

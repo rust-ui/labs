@@ -1,0 +1,36 @@
+/* Bluetooth symbol paths animation (path 1 and 3) */
+[data-name="BluetoothOffAnimate"]:hover path[d="m17 17-5 5V12l-5 5"],
+[data-name="BluetoothOffAnimate"]:hover path[d="M14.5 9.5 17 7l-5-5v4.5"] {
+    animation: bluetoothAnimate 0.3s ease-in-out;
+}
+
+/* Diagonal slash line animation (path 2) with delay */
+[data-name="BluetoothOffAnimate"]:hover path[d="m2 2 20 20"] {
+    animation: offlineAnimate 0.2s ease-in-out 0.3s both;
+}
+
+@keyframes bluetoothAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes offlineAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}

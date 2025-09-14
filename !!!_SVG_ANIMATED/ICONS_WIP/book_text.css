@@ -1,0 +1,22 @@
+/* Book text animation - animating the entire SVG with scale, rotate, and translateY */
+[data-name="BookTextAnimate"]:hover {
+    animation: bookTextAnimation 0.6s ease-in-out;
+}
+
+@keyframes bookTextAnimation {
+    0% {
+        transform: scale(1) rotate(0deg) translateY(0px);
+    }
+    20% {
+        transform: scale(1.04) rotate(-8deg) translateY(-2px);
+    }
+    50% {
+        transform: scale(1) rotate(8deg) translateY(0px);
+    }
+    80% {
+        transform: scale(1) rotate(-8deg) translateY(0px);
+    }
+    100% {
+        transform: scale(1) rotate(0deg) translateY(0px);
+    }
+}

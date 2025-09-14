@@ -1,0 +1,12 @@
+/* Bone shaking animation - targeting the specific bone path */
+[data-name="BoneAnimate"]:hover path[d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"] {
+    animation: boneShake 0.5s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+@keyframes boneShake {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-8deg); }
+    40% { transform: rotate(8deg); }
+    60% { transform: rotate(-6deg); }
+    100% { transform: rotate(0deg); }
+}
