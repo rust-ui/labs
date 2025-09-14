@@ -148,6 +148,11 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 - Ensure animations don't exceed motion sensitivity guidelines
 - Consider `prefers-reduced-motion` media queries
 
+### 5. File Formatting
+- **Always add trailing newlines** to all SVG and animation files
+- Ensures consistent formatting and linting compliance
+- Files should end with a newline character for proper file termination
+
 ## Troubleshooting
 
 ### Common Issues
