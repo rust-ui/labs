@@ -145,23 +145,41 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 
 ## Best Practices
 
-### 1. Consistent Timing
+### 1. **CRUCIAL**: Smooth Hover Transitions
+- **ALWAYS use CSS transitions for bidirectional animations** instead of keyframe animations
+- This ensures smooth animation both on hover AND unhover
+- Use `transition: transform 0.5s cubic-bezier(...)` on base elements
+- Use `transform: translateY(...)` on `:hover` states
+- **Example:**
+```css
+/* Base state with transition */
+[data-name="IconName"] rect {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover state with transform */
+[data-name="IconName"]:hover rect {
+    transform: translateY(10px);
+}
+```
+
+### 2. Consistent Timing
 - Match exact durations and delays from TSX variants
 - Use same easing functions (`ease-in-out`)
 
-### 2. Path Organization
+### 3. Path Organization
 - Keep related paths grouped in logical order
 - Document which paths represent which visual elements
 
-### 3. Performance
+### 4. Performance
 - Use `transform` and `opacity` for smooth animations
 - Avoid animating layout properties (`width`, `height`, `top`, `left`)
 
-### 4. Accessibility
+### 5. Accessibility
 - Ensure animations don't exceed motion sensitivity guidelines
 - Consider `prefers-reduced-motion` media queries
 
-### 5. File Formatting
+### 6. File Formatting
 - **Always add trailing newlines** to all SVG (.txt) and CSS (.css) animation files
 - Ensures consistent formatting and linting compliance
 - Files should end with a newline character for proper file termination
