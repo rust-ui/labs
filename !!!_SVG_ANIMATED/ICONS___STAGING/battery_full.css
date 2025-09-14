@@ -2,21 +2,25 @@
 
 /* First battery line (leftmost) - fades out then back in first */
 [data-name="BatteryFullAnimate"]:hover path[d="M6 10v4"] {
-    animation: batteryFadeOutIn 1s ease-in-out;
+    animation: batteryFadeOut 0.4s ease-in-out, batteryFadeIn 0.6s ease-in-out 0.4s both;
 }
 
 /* Second battery line (middle) - fades out then back in with 0.4s delay */
 [data-name="BatteryFullAnimate"]:hover path[d="M10 10v4"] {
-    animation: batteryFadeOutIn 1s ease-in-out 0.4s both;
+    animation: batteryFadeOut 0.4s ease-in-out, batteryFadeIn 0.6s ease-in-out 0.8s both;
 }
 
 /* Third battery line (rightmost) - fades out then back in with 0.8s delay */
 [data-name="BatteryFullAnimate"]:hover path[d="M14 10v4"] {
-    animation: batteryFadeOutIn 1s ease-in-out 0.8s both;
+    animation: batteryFadeOut 0.4s ease-in-out, batteryFadeIn 0.6s ease-in-out 1.2s both;
 }
 
-@keyframes batteryFadeOutIn {
+@keyframes batteryFadeOut {
     0% { opacity: 1; }
-    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes batteryFadeIn {
+    0% { opacity: 0; }
     100% { opacity: 1; }
 }
