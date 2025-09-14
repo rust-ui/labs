@@ -3,18 +3,15 @@ async function createIcon(ComponentName, icon_filename) {
   const response = await fetch(`ICONS_WIP/${icon_filename}.txt`);
   const pathsHtml = await response.text();
 
-  // Construct CSS filename from icon_filename
-  const css_filename = `${icon_filename}_animate`;
-
   // Load and inject CSS
-  const cssResponse = await fetch(`ICONS_WIP/${css_filename}.txt`);
+  const cssResponse = await fetch(`ICONS_WIP/${icon_filename}.css`);
   const cssContent = await cssResponse.text();
 
   // Check if style element for this CSS already exists
-  const existingStyle = document.querySelector(`style[data-css="${css_filename}"]`);
+  const existingStyle = document.querySelector(`style[data-css="${icon_filename}"]`);
   if (!existingStyle) {
     const style = document.createElement("style");
-    style.setAttribute("data-css", css_filename);
+    style.setAttribute("data-css", icon_filename);
     style.textContent = cssContent.trim();
     document.head.appendChild(style);
   }
