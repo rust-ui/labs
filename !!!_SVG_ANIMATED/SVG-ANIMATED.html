@@ -4,58 +4,27 @@
     <!-- Inspiration from https://icons.pqoqubbw.dev/ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated HeartAnimate & Plus Icons</title>
+    <title>Rust/UI - Animated Icons</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+    <!-- CREATE ICONS -->
+    <script src="create_icons.js"></script>
+    <!-- GUIDELINES -->
+    <link rel="stylesheet" href="guidelines/heart__animated.css">
+    <link rel="stylesheet" href="guidelines/plus__animated.css">
+    <!-- TODOS -->
 
-        [data-name="HeartAnimate"]:hover {
-            animation: HeartAnimation 1.2s ease-in-out;
-        }
 
-        @keyframes HeartAnimation {
-            0% { transform: scale(1); }
-            14% { transform: scale(1.15); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.08); }
-            56% { transform: scale(1); }
-            100% { transform: scale(1); }
-        }
 
-        [data-name="PlusAnimate"] {
-            transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        [data-name="PlusAnimate"]:hover {
-            transform: rotate(180deg);
-            cursor: pointer;
-        }
 
-    </style>
 </head>
 <body>
 
-    <div class="font-sans flex justify-center items-center gap-8 min-h-screen m-0 bg-gray-100">
-        <svg data-name="HeartAnimate" class="size-7 text-gray-700 cursor-pointer"
-                stroke="currentColor"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-        </svg>
-
-        <svg data-name="PlusAnimate" class="size-7 text-gray-700"
-                stroke="currentColor"
-                fill="none"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-            <path d="M5 12h14" />
-            <path d="M12 5v14" />
-        </svg>
+    <div id="icon__container" class="font-sans flex justify-center items-center gap-8 min-h-screen m-0 bg-gray-100">
     </div>
+
+    <script>
+        createIcons('HeartAnimate', 'heart');
+        createIcons('PlusAnimate', 'plus');
+    </script>
 </body>
 </html>
