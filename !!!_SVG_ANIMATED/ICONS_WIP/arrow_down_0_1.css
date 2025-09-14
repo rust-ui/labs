@@ -1,10 +1,10 @@
-[data-name="ArrowDown01Animate"]:hover rect[x="15"][y="4"][width="4"][height="6"] {
-    animation: rectMoveDown 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+[data-name="ArrowDown01Animate"]:hover rect[x="15"][y="4"][width="4"][height="6"][ry="2"] {
+    animation: rectMoveDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 [data-name="ArrowDown01Animate"]:hover path[d="M17 20v-6h-2"],
 [data-name="ArrowDown01Animate"]:hover path[d="M15 20h4"] {
-    animation: pathsMoveUp 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+    animation: pathsMoveUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes rectMoveDown {
