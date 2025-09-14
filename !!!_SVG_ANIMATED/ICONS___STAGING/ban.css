@@ -11,12 +11,12 @@
 @keyframes circleAnimate {
     0% {
         opacity: 0;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dasharray: 62.8;
+        stroke-dashoffset: 62.8;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 62.8;
         stroke-dashoffset: 0;
     }
 }
@@ -24,12 +24,12 @@
 @keyframes lineAnimate {
     0% {
         opacity: 0;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 20;
         stroke-dashoffset: 0;
     }
 }
