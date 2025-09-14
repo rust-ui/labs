@@ -1,0 +1,25 @@
+[data-name="AArrowDownAnimate"]:hover {
+    cursor: pointer;
+}
+
+/* Letter "A" animation - first 2 paths */
+[data-name="AArrowDownAnimate"]:hover path:nth-child(1),
+[data-name="AArrowDownAnimate"]:hover path:nth-child(2) {
+    animation: letterAnimate 0.3s ease-in-out;
+}
+
+/* Arrow animation - last 2 paths with delay */
+[data-name="AArrowDownAnimate"]:hover path:nth-child(3),
+[data-name="AArrowDownAnimate"]:hover path:nth-child(4) {
+    animation: arrowAnimate 0.3s ease-in-out 0.2s both;
+}
+
+@keyframes letterAnimate {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes arrowAnimate {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
