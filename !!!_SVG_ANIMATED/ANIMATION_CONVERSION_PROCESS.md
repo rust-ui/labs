@@ -225,6 +225,62 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 - **Flexible**: Works with both simple transforms and complex keyframe sequences
 - **Bouncy effects**: Cubic-bezier curves can add playful bounce to the reverse animation
 
+#### For Line Drawing Animations: Use Proper Initial State
+- **Use for**: Path drawing effects like checkmarks, arrows, or signature-style animations
+- **Critical rule**: Always match the TSX `initial` state to avoid invisible elements
+- **Pattern**: Set proper default visibility + stroke-dash animation on hover
+
+**TSX Analysis for Line Drawing:**
+```tsx
+// TSX shows the initial state and animation
+const checkVariants: Variants = {
+  normal: { pathLength: 1, opacity: 1 },        // Element visible by default
+  animate: {
+    pathLength: [0, 1],                         // Draws from 0% to 100%
+    opacity: [0, 1],                           // Fades in while drawing
+    transition: { duration: 0.4 }
+  },
+};
+
+<motion.path
+  initial="normal"                              // ⚠️ CRITICAL: Starts visible
+  variants={checkVariants}
+  d="m9 16 2 2 4-4"
+/>
+```
+
+**CSS Conversion Pattern:**
+```css
+/* Base state: Match TSX initial="normal" */
+[data-name="IconName"] path[d="specific-path"] {
+    opacity: 1;                                 /* Visible by default */
+    stroke-dasharray: 20;                      /* Adjust to path length */
+    stroke-dashoffset: 0;                      /* Fully drawn initially */
+}
+
+/* Animation: Match TSX animate state */
+[data-name="IconName"]:hover path[d="specific-path"] {
+    animation: drawPath 0.4s ease-in-out;
+}
+
+@keyframes drawPath {
+    0% {
+        opacity: 0;                             /* Start hidden */
+        stroke-dashoffset: 20;                  /* Start undrawn */
+    }
+    100% {
+        opacity: 1;                             /* End visible */
+        stroke-dashoffset: 0;                   /* End fully drawn */
+    }
+}
+```
+
+**Key Points:**
+- **Match initial state**: If TSX uses `initial="normal"`, element must be visible by default
+- **Proper dash length**: Use appropriate `stroke-dasharray` value for the path length
+- **No reverse needed**: Line drawing typically stays completed (use `forwards` if needed)
+- **Duration matching**: Ensure CSS duration matches TSX transition duration
+
 ### 2. Consistent Timing
 - Match exact durations and delays from TSX variants
 - Use same easing functions (`ease-in-out`)
