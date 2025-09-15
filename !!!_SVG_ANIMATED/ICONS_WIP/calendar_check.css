@@ -1,17 +1,22 @@
 /* Calendar Check Animation - Checkmark drawing effect */
-[data-name="CalendarCheckAnimate"]:hover path[d="m9 16 2 2 4-4"] {
-    animation: checkAnimate 0.4s ease-in-out;
+[data-name="CalendarCheckAnimate"] path[d="m9 16 2 2 4-4"] {
+    /* Default state: checkmark visible (matches TSX initial="normal") */
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
 }
 
-@keyframes checkAnimate {
+[data-name="CalendarCheckAnimate"]:hover path[d="m9 16 2 2 4-4"] {
+    animation: checkDraw 0.4s ease-in-out;
+}
+
+@keyframes checkDraw {
     0% {
         opacity: 0;
-        stroke-dasharray: 100;
-        stroke-dashoffset: 100;
+        stroke-dashoffset: 20;
     }
     100% {
         opacity: 1;
-        stroke-dasharray: 100;
         stroke-dashoffset: 0;
     }
 }
