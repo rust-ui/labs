@@ -1,0 +1,51 @@
+/* Base state - paths should be visible initially */
+[data-name="TrendingUpAnimate"] path[d="m22 7-8.5 8.5-5-5L2 17"],
+[data-name="TrendingUpAnimate"] path[d="M16 7h6v6"] {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+/* Trending line - drawing animation */
+[data-name="TrendingUpAnimate"]:hover path[d="m22 7-8.5 8.5-5-5L2 17"] {
+    animation: trendLineUp 0.4s ease-in-out;
+}
+
+/* Arrow indicator - drawing animation with delay */
+[data-name="TrendingUpAnimate"]:hover path[d="M16 7h6v6"] {
+    animation: arrowDraw 0.3s ease-in-out 0.3s both;
+}
+
+/* Whole icon shake animation with upward movement */
+[data-name="TrendingUpAnimate"]:hover {
+    animation: iconShakeUp 0.5s ease-in-out;
+}
+
+@keyframes trendLineUp {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes arrowDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 15;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes iconShakeUp {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(2px) translateY(-2px); }
+    50% { transform: translateX(0) translateY(0); }
+    75% { transform: translateX(2px) translateY(-2px); }
+    100% { transform: translateX(0) translateY(0); }
+}

@@ -1,0 +1,39 @@
+/* Wind animation - path drawing with different delays */
+
+/* Base state - all wind paths visible */
+[data-name="WindAnimate"] path[d*="M12.8 19.6A2 2 0 1 0 14 16H2"],
+[data-name="WindAnimate"] path[d*="M17.5 8a2.5 2.5 0 1 1 2 4H2"],
+[data-name="WindAnimate"] path[d*="M9.8 4.4A2 2 0 1 1 11 8H2"] {
+    stroke-dasharray: 25;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* Animation on hover - path drawing with staggered delays */
+/* Path 2 (custom: 0) - no delay */
+[data-name="WindAnimate"]:hover path[d*="M17.5 8a2.5 2.5 0 1 1 2 4H2"] {
+    animation: windPathDraw 0.5s ease-in-out both;
+}
+
+/* Path 1 (custom: 0.2) - 0.2s delay */
+[data-name="WindAnimate"]:hover path[d*="M12.8 19.6A2 2 0 1 0 14 16H2"] {
+    animation: windPathDraw 0.5s ease-in-out 0.2s both;
+}
+
+/* Path 3 (custom: 0.4) - 0.4s delay */
+[data-name="WindAnimate"]:hover path[d*="M9.8 4.4A2 2 0 1 1 11 8H2"] {
+    animation: windPathDraw 0.5s ease-in-out 0.4s both;
+}
+
+@keyframes windPathDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 25;
+        stroke-dashoffset: 25;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 25;
+        stroke-dashoffset: 0;
+    }
+}

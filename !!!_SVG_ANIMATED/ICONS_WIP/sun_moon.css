@@ -1,0 +1,35 @@
+/* Sun moon main shape - wiggle rotation effect */
+[data-name="SunMoonAnimate"]:hover path[d="M9 8a5 5 0 1 0 7 7 7 7 0 1 1-7-7"] {
+    animation: sunWiggle 1.5s ease-in-out;
+}
+
+/* Moon rays animate sequentially with staggered delays */
+[data-name="SunMoonAnimate"]:hover path[d="M12 2v2"] {
+    animation: rayAppear 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="SunMoonAnimate"]:hover path[d="M13 8.129A4 4 0 0 1 15.873 11"] {
+    animation: rayAppear 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="SunMoonAnimate"]:hover path[d="m19 5-1.256 1.256"] {
+    animation: rayAppear 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="SunMoonAnimate"]:hover path[d="M20 12h2"] {
+    animation: rayAppear 0.3s ease-in-out 0.4s both;
+}
+
+@keyframes sunWiggle {
+    0% { transform: rotate(0deg); }
+    16.67% { transform: rotate(-5deg); }
+    33.33% { transform: rotate(5deg); }
+    50% { transform: rotate(-2deg); }
+    66.67% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes rayAppear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

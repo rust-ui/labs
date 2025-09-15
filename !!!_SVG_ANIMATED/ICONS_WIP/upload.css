@@ -1,0 +1,15 @@
+/* Arrow elements with spring-like transition */
+[data-name="UploadAnimate"] path[d="m17 8-5-5-5 5"],
+[data-name="UploadAnimate"] path[d="M12 3v12"] {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-name="UploadAnimate"]:hover path[d="m17 8-5-5-5 5"],
+[data-name="UploadAnimate"]:hover path[d="M12 3v12"] {
+    transform: translateY(-2px);
+}
+
+/* Container box stays static */
+[data-name="UploadAnimate"] path[d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"] {
+    /* No animation - stays static */
+}

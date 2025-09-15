@@ -1,0 +1,30 @@
+/* Square with smooth transition timing */
+[data-name="SquareArrowUpAnimate"] rect[width="18"][height="18"][x="3"][y="3"][rx="2"] {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Arrow chevron - translateY animation */
+[data-name="SquareArrowUpAnimate"] path[d="m16 12-4-4-4 4"] {
+    transition: transform 0.4s ease-in-out;
+}
+
+[data-name="SquareArrowUpAnimate"]:hover path[d="m16 12-4-4-4 4"] {
+    animation: arrowBounce 0.4s ease-in-out;
+}
+
+/* Vertical line - path morphing animation */
+[data-name="SquareArrowUpAnimate"]:hover path[d="M12 16V8"] {
+    animation: lineShrinkExpand 0.4s ease-in-out;
+}
+
+@keyframes arrowBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes lineShrinkExpand {
+    0% { d: path("M12 16V8"); }
+    50% { d: path("M12 16V13"); }
+    100% { d: path("M12 16V8"); }
+}

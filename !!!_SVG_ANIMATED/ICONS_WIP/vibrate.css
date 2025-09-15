@@ -1,0 +1,15 @@
+/* Vibrate animation - rect shake effect */
+[data-name="VibrateAnimate"]:hover rect[width="8"][height="14"][x="8"][y="5"] {
+    animation: vibrateShake 0.4s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes vibrateShake {
+    0% { transform: rotate(0deg); }
+    16.67% { transform: rotate(-5deg); }
+    33.33% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    66.67% { transform: rotate(5deg); }
+    83.33% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}

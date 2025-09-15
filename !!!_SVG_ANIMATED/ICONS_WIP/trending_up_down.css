@@ -1,0 +1,48 @@
+/* SVG container animation */
+[data-name="TrendingUpDownAnimate"]:hover {
+    animation: svgMove 0.5s ease-in-out;
+}
+
+@keyframes svgMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+/* Line path animations */
+[data-name="TrendingUpDownAnimate"]:hover path[d="M14.828 14.828 21 21"],
+[data-name="TrendingUpDownAnimate"]:hover path[d="m21 3-9 9-4-4-6 6"] {
+    animation: lineDrawing 0.4s ease-in-out;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+@keyframes lineDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Arrow path animations with delay */
+[data-name="TrendingUpDownAnimate"]:hover path[d="M21 16v5h-5"],
+[data-name="TrendingUpDownAnimate"]:hover path[d="M21 8V3h-5"] {
+    animation: arrowDrawing 0.3s ease-in-out 0.3s both;
+    stroke-dasharray: 15;
+    stroke-dashoffset: 0;
+}
+
+@keyframes arrowDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 7.5;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

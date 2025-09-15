@@ -1,0 +1,41 @@
+/* Train tracks - base state visible, animated drawing on hover */
+[data-name="TrainTrackAnimate"] path[d="m2 14 8 8"],
+[data-name="TrainTrackAnimate"] path[d="m5 11 8 8"],
+[data-name="TrainTrackAnimate"] path[d="m8 8 8 8"],
+[data-name="TrainTrackAnimate"] path[d="m11 5 8 8"],
+[data-name="TrainTrackAnimate"] path[d="m14 2 8 8"] {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Sequential track drawing animation */
+[data-name="TrainTrackAnimate"]:hover path[d="m14 2 8 8"] {
+    animation: trackDraw 0.3s ease-in-out 0s both;
+}
+
+[data-name="TrainTrackAnimate"]:hover path[d="m11 5 8 8"] {
+    animation: trackDraw 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="TrainTrackAnimate"]:hover path[d="m8 8 8 8"] {
+    animation: trackDraw 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="TrainTrackAnimate"]:hover path[d="m5 11 8 8"] {
+    animation: trackDraw 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="TrainTrackAnimate"]:hover path[d="m2 14 8 8"] {
+    animation: trackDraw 0.3s ease-in-out 0.4s both;
+}
+
+@keyframes trackDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

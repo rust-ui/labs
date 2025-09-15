@@ -1,0 +1,40 @@
+/* WiFi animation - fade out to center dot, then spring fade in with delays */
+
+/* Base state - all levels visible */
+[data-name="WifiAnimate"] path[d*="M12 20h.01"],
+[data-name="WifiAnimate"] path[d*="M8.5 16.429a5 5 0 0 1 7 0"],
+[data-name="WifiAnimate"] path[d*="M5 12.859a10 10 0 0 1 14 0"],
+[data-name="WifiAnimate"] path[d*="M2 8.82a15 15 0 0 1 20 0"] {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* On hover: immediate fade out animation then spring fade in */
+[data-name="WifiAnimate"]:hover path[d*="M12 20h.01"] {
+    animation: wifiCenterStay 0.4s ease-in-out;
+}
+
+[data-name="WifiAnimate"]:hover path[d*="M8.5 16.429a5 5 0 0 1 7 0"] {
+    animation: wifiFadeOutIn 0.6s ease-in-out 0.1s both;
+}
+
+[data-name="WifiAnimate"]:hover path[d*="M5 12.859a10 10 0 0 1 14 0"] {
+    animation: wifiFadeOutIn 0.6s ease-in-out 0.2s both;
+}
+
+[data-name="WifiAnimate"]:hover path[d*="M2 8.82a15 15 0 0 1 20 0"] {
+    animation: wifiFadeOutIn 0.6s ease-in-out 0.3s both;
+}
+
+@keyframes wifiCenterStay {
+    0% { opacity: 1; }
+    20% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes wifiFadeOutIn {
+    0% { opacity: 1; }
+    20% { opacity: 0; }
+    40% { opacity: 0; }
+    100% { opacity: 1; }
+}

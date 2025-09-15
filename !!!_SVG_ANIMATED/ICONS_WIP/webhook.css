@@ -1,0 +1,33 @@
+/* Webhook animation - path drawing effect with delay */
+
+/* Base state - paths visible by default */
+[data-name="WebhookAnimate"] path[d*="M18 16.98h-5.99"],
+[data-name="WebhookAnimate"] path[d*="m6 17 3.13-5.78"],
+[data-name="WebhookAnimate"] path[d*="m12 6 3.13 5.73"] {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* Animation on hover - path drawing effect with delay */
+[data-name="WebhookAnimate"]:hover path[d*="M18 16.98h-5.99"],
+[data-name="WebhookAnimate"]:hover path[d*="m6 17 3.13-5.78"],
+[data-name="WebhookAnimate"]:hover path[d*="m12 6 3.13 5.73"] {
+    animation: webhookPathDraw 0.3s ease-in-out 0.1s both;
+}
+
+@keyframes webhookPathDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 40;
+        stroke-dashoffset: 40;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 40;
+        stroke-dashoffset: 0;
+    }
+}

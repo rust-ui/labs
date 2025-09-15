@@ -1,0 +1,24 @@
+/* Checkmark animation */
+[data-name="UserRoundCheckAnimate"]:hover path[d="m16 19 2 2 4-4"] {
+    animation: checkDrawing 0.4s ease-in-out;
+    stroke-dasharray: 12;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+}
+
+@keyframes checkDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 12;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Static elements - user path and circle remain unchanged */
+[data-name="UserRoundCheckAnimate"] path[d="M2 21a8 8 0 0 1 13.292-6"],
+[data-name="UserRoundCheckAnimate"] circle[cx="10"][cy="8"][r="5"] {
+    /* No animation - stays static */
+}

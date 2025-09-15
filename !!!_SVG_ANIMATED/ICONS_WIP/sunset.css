@@ -1,0 +1,37 @@
+/* Arrow paths - bounce animation */
+[data-name="SunsetAnimate"]:hover path[d="M12 10V2"],
+[data-name="SunsetAnimate"]:hover path[d="m16 6-4 4-4-4"] {
+    animation: arrowBounce 0.4s ease-in-out;
+}
+
+/* Rays animate sequentially with staggered delays */
+[data-name="SunsetAnimate"]:hover path[d="m4.93 10.93 1.41 1.41"] {
+    animation: rayAppear 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="SunsetAnimate"]:hover path[d="M2 18h2"] {
+    animation: rayAppear 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="SunsetAnimate"]:hover path[d="M20 18h2"] {
+    animation: rayAppear 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="SunsetAnimate"]:hover path[d="m19.07 10.93-1.41 1.41"] {
+    animation: rayAppear 0.3s ease-in-out 0.4s both;
+}
+
+[data-name="SunsetAnimate"]:hover path[d="M22 22H2"] {
+    animation: rayAppear 0.3s ease-in-out 0.5s both;
+}
+
+@keyframes arrowBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(1px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rayAppear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

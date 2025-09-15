@@ -1,0 +1,37 @@
+/* Waves ladder animation - ladder slides down from above with fade in */
+
+/* Base state - ladder elements visible */
+[data-name="WavesLadderAnimate"] path[d*="M19 5a2 2 0 0 0-2 2v11"],
+[data-name="WavesLadderAnimate"] path[d*="M7 13h10"],
+[data-name="WavesLadderAnimate"] path[d*="M7 9h10"],
+[data-name="WavesLadderAnimate"] path[d*="M9 5a2 2 0 0 0-2 2v11"] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Wave path - always visible */
+[data-name="WavesLadderAnimate"] path[d*="M2 18c.6.5 1.2 1 2.5 1"] {
+    opacity: 1;
+}
+
+/* Animation on hover - ladder slides down from above with opacity change */
+[data-name="WavesLadderAnimate"]:hover path[d*="M19 5a2 2 0 0 0-2 2v11"],
+[data-name="WavesLadderAnimate"]:hover path[d*="M7 13h10"],
+[data-name="WavesLadderAnimate"]:hover path[d*="M7 9h10"],
+[data-name="WavesLadderAnimate"]:hover path[d*="M9 5a2 2 0 0 0-2 2v11"] {
+    animation: wavesLadderSlide 1s ease-in-out;
+}
+
+@keyframes wavesLadderSlide {
+    0% {
+        transform: translateY(13px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

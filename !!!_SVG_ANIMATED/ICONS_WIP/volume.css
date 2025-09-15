@@ -1,0 +1,42 @@
+/* Volume animation - speaker base always visible, additional paths fade in on hover, mute lines draw from hidden state */
+
+/* Base speaker path - always visible */
+[data-name="VolumeAnimate"] path[d*="M11 4.702"] {
+    opacity: 1;
+}
+
+/* Volume paths - fade in on hover with staggered delays */
+[data-name="VolumeAnimate"]:hover path[d*="M16 9a5 5 0 0 1 0 6"] {
+    animation: volumeFadeIn 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="VolumeAnimate"]:hover path[d*="M19.364 18.364a9 9 0 0 0 0-12.728"] {
+    animation: volumeFadeIn 0.3s ease-in-out 0.2s both;
+}
+
+/* Default state: show mute lines drawing */
+[data-name="VolumeAnimate"]:not(:hover) line[x1="22"][y1="9"][x2="16"][y2="15"] {
+    animation: volumeMuteDraw 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="VolumeAnimate"]:not(:hover) line[x1="16"][y1="9"][x2="22"][y2="15"] {
+    animation: volumeMuteDraw 0.3s ease-in-out 0.2s both;
+}
+
+@keyframes volumeFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes volumeMuteDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 10;
+        stroke-dashoffset: 10;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 10;
+        stroke-dashoffset: 0;
+    }
+}

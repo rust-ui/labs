@@ -1,0 +1,19 @@
+/* Thermometer - wiggle rotation animation */
+[data-name="ThermometerAnimate"] {
+    transition: transform 0.4s ease-in-out;
+    transform-origin: center;
+}
+
+[data-name="ThermometerAnimate"]:hover path[d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"] {
+    animation: thermometerWiggle 0.4s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes thermometerWiggle {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-5deg); }
+    40% { transform: rotate(5deg); }
+    60% { transform: rotate(-5deg); }
+    80% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}

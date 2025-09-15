@@ -1,0 +1,53 @@
+/* Workflow animation - sequential path drawing with different delays */
+
+/* Base state - all elements visible */
+[data-name="WorkflowAnimate"] rect[x="3"][y="3"],
+[data-name="WorkflowAnimate"] path[d*="M7 11v4a2 2 0 0 0 2 2h4"],
+[data-name="WorkflowAnimate"] rect[x="13"][y="13"] {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* Rectangles animate immediately (custom: 0) */
+[data-name="WorkflowAnimate"]:hover rect[x="3"][y="3"],
+[data-name="WorkflowAnimate"]:hover rect[x="13"][y="13"] {
+    animation: workflowRectDraw 0.3s ease-in-out both;
+}
+
+/* Path animates with delay (custom: 3, delay: 0.3s) */
+[data-name="WorkflowAnimate"]:hover path[d*="M7 11v4a2 2 0 0 0 2 2h4"] {
+    animation: workflowPathDraw 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes workflowRectDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes workflowPathDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+    }
+}

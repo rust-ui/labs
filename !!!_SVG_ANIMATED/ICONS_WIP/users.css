@@ -1,0 +1,17 @@
+/* Second user paths with spring-like transition and delay */
+[data-name="UsersAnimate"] path[d="M16 3.128a4 4 0 0 1 0 7.744"],
+[data-name="UsersAnimate"] path[d="M22 21v-2a4 4 0 0 0-3-3.87"] {
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
+    transform: translateX(-6px);
+}
+
+[data-name="UsersAnimate"]:hover path[d="M16 3.128a4 4 0 0 1 0 7.744"],
+[data-name="UsersAnimate"]:hover path[d="M22 21v-2a4 4 0 0 0-3-3.87"] {
+    transform: translateX(0);
+}
+
+/* First user elements stay static */
+[data-name="UsersAnimate"] path[d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"],
+[data-name="UsersAnimate"] circle[cx="9"][cy="7"][r="4"] {
+    /* No animation - stays static */
+}

@@ -1,0 +1,27 @@
+/* Waves animation - path drawing effect for all wave paths */
+
+/* Base state - paths visible by default */
+[data-name="WavesAnimate"] path[d*="M2 6c.6.5 1.2 1 2.5 1"],
+[data-name="WavesAnimate"] path[d*="M2 12c.6.5 1.2 1 2.5 1"],
+[data-name="WavesAnimate"] path[d*="M2 18c.6.5 1.2 1 2.5 1"] {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+/* Animation on hover - path drawing effect */
+[data-name="WavesAnimate"]:hover path[d*="M2 6c.6.5 1.2 1 2.5 1"],
+[data-name="WavesAnimate"]:hover path[d*="M2 12c.6.5 1.2 1 2.5 1"],
+[data-name="WavesAnimate"]:hover path[d*="M2 18c.6.5 1.2 1 2.5 1"] {
+    animation: wavesPathDraw 0.4s linear;
+}
+
+@keyframes wavesPathDraw {
+    0% {
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        stroke-dasharray: 30;
+        stroke-dashoffset: 0;
+    }
+}

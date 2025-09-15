@@ -1,0 +1,32 @@
+/* X icon animation - path drawing with second path delayed */
+
+/* Base state - both paths visible */
+[data-name="XAnimate"] path[d*="M18 6 6 18"],
+[data-name="XAnimate"] path[d*="m6 6 12 12"] {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* First path - draws immediately */
+[data-name="XAnimate"]:hover path[d*="M18 6 6 18"] {
+    animation: xPathDraw 0.4s ease-in-out both;
+}
+
+/* Second path - draws with 0.2s delay */
+[data-name="XAnimate"]:hover path[d*="m6 6 12 12"] {
+    animation: xPathDraw 0.4s ease-in-out 0.2s both;
+}
+
+@keyframes xPathDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+    }
+}

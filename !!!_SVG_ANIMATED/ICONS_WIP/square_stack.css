@@ -1,0 +1,32 @@
+/* First path - background square with longest delay */
+[data-name="SquareStackAnimate"]:hover path[d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"] {
+    animation: scaleSmall 0.4s ease-in-out 0.3s both;
+}
+
+/* Second path - middle square with medium delay */
+[data-name="SquareStackAnimate"]:hover path[d="M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"] {
+    animation: scaleMedium 0.2s ease-in-out 0.2s both;
+}
+
+/* Rectangle - front square with no delay */
+[data-name="SquareStackAnimate"]:hover rect[width="8"][height="8"][x="14"][y="14"][rx="2"] {
+    animation: scaleLarge 0.4s ease-in-out both;
+}
+
+@keyframes scaleSmall {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes scaleMedium {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes scaleLarge {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}

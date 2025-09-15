@@ -1,0 +1,14 @@
+/* Syringe - slight shift animation for all paths */
+[data-name="SyringeAnimate"]:hover {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-name="SyringeAnimate"]:hover path,
+[data-name="SyringeAnimate"]:hover circle {
+    animation: syringeShift 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes syringeShift {
+    0% { transform: translateX(0) translateY(0) rotate(0deg); }
+    100% { transform: translateX(-3px) translateY(3px) rotate(1deg); }
+}

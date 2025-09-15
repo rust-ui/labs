@@ -1,0 +1,50 @@
+/* YouTube animation - path drawing effect for rounded rectangle and play triangle */
+
+/* Base state - both elements visible */
+[data-name="YoutubeAnimate"] path[d*="M2.5 17a24.12 24.12 0 0 1 0-10"],
+[data-name="YoutubeAnimate"] path[d*="m10 15 5-3-5-3z"] {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* Animation on hover - path drawing effect */
+[data-name="YoutubeAnimate"]:hover path[d*="M2.5 17a24.12 24.12 0 0 1 0-10"] {
+    animation: youtubePathDraw 0.6s linear both;
+}
+
+[data-name="YoutubeAnimate"]:hover path[d*="m10 15 5-3-5-3z"] {
+    animation: youtubeTriangleDraw 0.6s linear both;
+}
+
+@keyframes youtubePathDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes youtubeTriangleDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 15;
+        stroke-dashoffset: 15;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 15;
+        stroke-dashoffset: 0;
+    }
+}

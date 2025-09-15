@@ -1,0 +1,35 @@
+/* Circle animation (head) - drawing + scaling */
+[data-name="UserAnimate"]:hover circle[cx="12"][cy="7"][r="4"] {
+    animation: circleDrawScale 0.4s ease-in-out;
+    stroke-dasharray: 25;
+    stroke-dashoffset: 0;
+}
+
+@keyframes circleDrawScale {
+    0% {
+        stroke-dashoffset: 25;
+        transform: scale(0.5);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: scale(1);
+    }
+}
+
+/* Path animation (body) with delay */
+[data-name="UserAnimate"]:hover path[d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"] {
+    animation: pathDrawing 0.4s ease-in-out 0.2s both;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+@keyframes pathDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

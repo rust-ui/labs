@@ -1,0 +1,35 @@
+/* Base state - all elements visible by default to match TSX normal state */
+[data-name="StethoscopeAnimate"] path,
+[data-name="StethoscopeAnimate"] circle {
+    opacity: 1;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+}
+
+/* Circle draws first - delay 0.1s */
+[data-name="StethoscopeAnimate"]:hover circle[cx="20"][cy="10"][r="2"] {
+    animation: drawPath 0.25s ease-in-out 0.1s both;
+}
+
+/* Tube path draws second - delay 0.35s */
+[data-name="StethoscopeAnimate"]:hover path[d="M8 15a6 6 0 0 0 12 0v-3"] {
+    animation: drawPath 0.25s ease-in-out 0.35s both;
+}
+
+/* Top elements draw last - delay 0.6s */
+[data-name="StethoscopeAnimate"]:hover path[d="M11 2v2"],
+[data-name="StethoscopeAnimate"]:hover path[d="M5 2v2"],
+[data-name="StethoscopeAnimate"]:hover path[d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"] {
+    animation: drawPath 0.25s ease-in-out 0.6s both;
+}
+
+@keyframes drawPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 100;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

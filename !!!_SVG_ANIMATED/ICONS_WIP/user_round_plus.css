@@ -1,0 +1,41 @@
+/* Vertical bar of plus sign */
+[data-name="UserRoundPlusAnimate"]:hover path[d="M19 16v6"] {
+    animation: verticalDrawing 0.2s ease-in-out 0.3s both;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+}
+
+@keyframes verticalDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 6;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Horizontal bar of plus sign with greater delay */
+[data-name="UserRoundPlusAnimate"]:hover path[d="M22 19h-6"] {
+    animation: horizontalDrawing 0.2s ease-in-out 0.6s both;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+}
+
+@keyframes horizontalDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 6;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Static elements - user path and circle remain unchanged */
+[data-name="UserRoundPlusAnimate"] path[d="M2 21a8 8 0 0 1 13.292-6"],
+[data-name="UserRoundPlusAnimate"] circle[cx="10"][cy="8"][r="5"] {
+    /* No animation - stays static */
+}

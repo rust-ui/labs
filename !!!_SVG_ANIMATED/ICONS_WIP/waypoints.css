@@ -1,0 +1,63 @@
+/* Waypoints animation - sequential path drawing with delays based on custom values */
+
+/* Base state - all elements visible */
+[data-name="WaypointsAnimate"] circle[cx="12"][cy="4.5"][r="2.5"],
+[data-name="WaypointsAnimate"] path[d*="m10.2 6.3-3.9 3.9"],
+[data-name="WaypointsAnimate"] circle[cx="4.5"][cy="12"][r="2.5"],
+[data-name="WaypointsAnimate"] path[d*="M7 12h10"],
+[data-name="WaypointsAnimate"] circle[cx="19.5"][cy="12"][r="2.5"],
+[data-name="WaypointsAnimate"] path[d*="m13.8 17.7 3.9-3.9"],
+[data-name="WaypointsAnimate"] circle[cx="12"][cy="19.5"][r="2.5"] {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+    opacity: 1;
+}
+
+/* Circles appear immediately (custom: 0) */
+[data-name="WaypointsAnimate"]:hover circle[cx="12"][cy="4.5"][r="2.5"],
+[data-name="WaypointsAnimate"]:hover circle[cx="4.5"][cy="12"][r="2.5"],
+[data-name="WaypointsAnimate"]:hover circle[cx="19.5"][cy="12"][r="2.5"],
+[data-name="WaypointsAnimate"]:hover circle[cx="12"][cy="19.5"][r="2.5"] {
+    animation: waypointsCircleDraw 0.6s ease-in-out both;
+}
+
+/* Path 1: diagonal line (custom: 1, delay: 0.15s) */
+[data-name="WaypointsAnimate"]:hover path[d*="m10.2 6.3-3.9 3.9"] {
+    animation: waypointsPathDraw 0.6s ease-in-out 0.15s both;
+}
+
+/* Path 2: horizontal line (custom: 2, delay: 0.3s) */
+[data-name="WaypointsAnimate"]:hover path[d*="M7 12h10"] {
+    animation: waypointsPathDraw 0.6s ease-in-out 0.3s both;
+}
+
+/* Path 3: diagonal line (custom: 3, delay: 0.45s) */
+[data-name="WaypointsAnimate"]:hover path[d*="m13.8 17.7 3.9-3.9"] {
+    animation: waypointsPathDraw 0.6s ease-in-out 0.45s both;
+}
+
+@keyframes waypointsCircleDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes waypointsPathDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 15;
+        stroke-dashoffset: 15;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 15;
+        stroke-dashoffset: 0;
+    }
+}

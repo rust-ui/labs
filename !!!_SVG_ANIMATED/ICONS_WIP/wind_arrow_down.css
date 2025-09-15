@@ -1,0 +1,57 @@
+/* Wind Arrow Down animation - wind paths draw with delays, arrow slides down */
+
+/* Base state - all elements visible */
+[data-name="WindArrowDownAnimate"] path[d*="M12.8 21.6A2 2 0 1 0 14 18H2"],
+[data-name="WindArrowDownAnimate"] path[d*="M17.5 10a2.5 2.5 0 1 1 2 4H2"],
+[data-name="WindArrowDownAnimate"] path[d*="M10 2v8"],
+[data-name="WindArrowDownAnimate"] path[d*="m6 6 4 4 4-4"] {
+    opacity: 1;
+}
+
+/* Wind paths - stroke-dash setup for drawing effect */
+[data-name="WindArrowDownAnimate"] path[d*="M12.8 21.6A2 2 0 1 0 14 18H2"],
+[data-name="WindArrowDownAnimate"] path[d*="M17.5 10a2.5 2.5 0 1 1 2 4H2"] {
+    stroke-dasharray: 25;
+    stroke-dashoffset: 0;
+}
+
+/* Wind path animations with delays */
+/* Path 1 (custom: 0.2) - 0.2s delay */
+[data-name="WindArrowDownAnimate"]:hover path[d*="M12.8 21.6A2 2 0 1 0 14 18H2"] {
+    animation: windArrowDownWindDraw 0.5s ease-in-out 0.2s both;
+}
+
+/* Path 2 (custom: 0.4) - 0.4s delay */
+[data-name="WindArrowDownAnimate"]:hover path[d*="M17.5 10a2.5 2.5 0 1 1 2 4H2"] {
+    animation: windArrowDownWindDraw 0.5s ease-in-out 0.4s both;
+}
+
+/* Arrow animations (both vertical line and chevron) with 0.35s delay */
+[data-name="WindArrowDownAnimate"]:hover path[d*="M10 2v8"],
+[data-name="WindArrowDownAnimate"]:hover path[d*="m6 6 4 4 4-4"] {
+    animation: windArrowDownArrowSlide 0.5s ease-in-out 0.35s both;
+}
+
+@keyframes windArrowDownWindDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 25;
+        stroke-dashoffset: 25;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 25;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes windArrowDownArrowSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

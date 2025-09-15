@@ -1,0 +1,10 @@
+/* Terminal cursor - blinking line animation */
+[data-name="TerminalAnimate"]:hover path[d="M12 19h8"] {
+    animation: cursorBlink 0.8s linear infinite;
+}
+
+@keyframes cursorBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}

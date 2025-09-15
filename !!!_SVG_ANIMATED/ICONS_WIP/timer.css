@@ -1,0 +1,21 @@
+/* Timer button - bounce animation */
+[data-name="TimerAnimate"]:hover line[x1="10"][x2="14"][y1="2"][y2="2"] {
+    animation: buttonBounce 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Timer hand - rotation animation with delay */
+[data-name="TimerAnimate"]:hover line[x1="12"][x2="15"][y1="14"][y2="11"] {
+    animation: handRotate 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+    transform-origin: 0% 100%;
+}
+
+@keyframes buttonBounce {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(0.9) translateY(1px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes handRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(300deg); }
+}

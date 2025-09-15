@@ -1,0 +1,43 @@
+/* Base state - all elements visible by default to match TSX normal state */
+[data-name="SunDimAnimate"] circle,
+[data-name="SunDimAnimate"] path {
+    opacity: 1;
+}
+
+/* Sun ray dots fade in sequentially with staggered delays */
+[data-name="SunDimAnimate"]:hover path[d="M12 4h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M20 12h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M12 20h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M4 12h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.4s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M17.657 6.343h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.5s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M17.657 17.657h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.6s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M6.343 17.657h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.7s both;
+}
+
+[data-name="SunDimAnimate"]:hover path[d="M6.343 6.343h.01"] {
+    animation: fadeIn 0.3s ease-in-out 0.8s both;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

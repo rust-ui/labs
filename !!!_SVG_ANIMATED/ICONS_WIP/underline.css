@@ -1,0 +1,35 @@
+/* Path animation (U shape) */
+[data-name="UnderlineAnimate"]:hover path[d="M6 4v6a6 6 0 0 0 12 0V4"] {
+    animation: pathDrawing 0.3s ease-in-out;
+    stroke-dasharray: 25;
+    stroke-dashoffset: 0;
+}
+
+@keyframes pathDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 25;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Line animation (underline) with delay */
+[data-name="UnderlineAnimate"]:hover line[x1="4"][x2="20"][y1="20"][y2="20"] {
+    animation: lineDrawing 0.4s ease-in-out 0.2s both;
+    stroke-dasharray: 16;
+    stroke-dashoffset: 0;
+}
+
+@keyframes lineDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 16;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

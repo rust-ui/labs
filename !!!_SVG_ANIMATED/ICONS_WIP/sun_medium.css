@@ -1,0 +1,37 @@
+/* Sun rays animate sequentially with staggered delays */
+[data-name="SunMediumAnimate"]:hover path[d="M12 3v1"] {
+    animation: rayAppear 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="M12 20v1"] {
+    animation: rayAppear 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="M3 12h1"] {
+    animation: rayAppear 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="M20 12h1"] {
+    animation: rayAppear 0.3s ease-in-out 0.4s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="m18.364 5.636-.707.707"] {
+    animation: rayAppear 0.3s ease-in-out 0.5s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="m6.343 17.657-.707.707"] {
+    animation: rayAppear 0.3s ease-in-out 0.6s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="m5.636 5.636.707.707"] {
+    animation: rayAppear 0.3s ease-in-out 0.7s both;
+}
+
+[data-name="SunMediumAnimate"]:hover path[d="m17.657 17.657.707.707"] {
+    animation: rayAppear 0.3s ease-in-out 0.8s both;
+}
+
+@keyframes rayAppear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
