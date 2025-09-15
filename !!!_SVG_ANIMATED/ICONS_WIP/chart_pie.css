@@ -1,0 +1,11 @@
+/* Chart Pie Icon Animation */
+/* Base state with transition for smooth reverse animation */
+[data-name="ChartPieAnimate"] path[d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+/* Hover state with transform - matches TSX translateX: 1.1, translateY: -1.1 */
+[data-name="ChartPieAnimate"]:hover path[d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"] {
+    transform: translate(1.1px, -1.1px);
+}

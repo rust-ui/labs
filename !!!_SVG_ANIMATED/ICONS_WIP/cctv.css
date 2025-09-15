@@ -1,0 +1,30 @@
+/* CCTV Camera Group - Smooth rotation with transform origin */
+[data-name="CctvAnimate"] path[d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97"],
+[data-name="CctvAnimate"] path[d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z"] {
+    transition: transform 2s ease-in-out;
+    transform-origin: 9px 15px;
+}
+
+/* CCTV Camera Hover Animation */
+[data-name="CctvAnimate"]:hover path[d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97"],
+[data-name="CctvAnimate"]:hover path[d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z"] {
+    animation: cctvRotate 2s ease-in-out;
+}
+
+/* Recording Dot - Infinite Blinking */
+[data-name="CctvAnimate"]:hover path[d="M7 9h.01"] {
+    animation: dotBlink 1s ease-in-out infinite;
+}
+
+@keyframes cctvRotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes dotBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}

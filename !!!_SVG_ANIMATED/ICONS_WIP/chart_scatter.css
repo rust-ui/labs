@@ -1,0 +1,39 @@
+/* Chart Scatter Animation */
+/* Pattern: State-Change with Staggered Opacity - Use Transitions for Smooth Reverse */
+
+/* Base state: All dots visible by default (matches TSX initial="default") */
+[data-name="ChartScatterAnimate"] circle {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Hover animation: Sequential fade-in after initial fade-out */
+[data-name="ChartScatterAnimate"]:hover circle[cx="7.5"][cy="7.5"] {
+    animation: dotFadeIn 0.3s ease-in-out 0s both;
+}
+
+[data-name="ChartScatterAnimate"]:hover circle[cx="18.5"][cy="5.5"] {
+    animation: dotFadeIn 0.3s ease-in-out 0.15s both;
+}
+
+[data-name="ChartScatterAnimate"]:hover circle[cx="11.5"][cy="11.5"] {
+    animation: dotFadeIn 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="ChartScatterAnimate"]:hover circle[cx="7.5"][cy="16.5"] {
+    animation: dotFadeIn 0.3s ease-in-out 0.45s both;
+}
+
+[data-name="ChartScatterAnimate"]:hover circle[cx="17.5"][cy="14.5"] {
+    animation: dotFadeIn 0.3s ease-in-out 0.6s both;
+}
+
+@keyframes dotFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Chart axes path remains static (no animation) */
+[data-name="ChartScatterAnimate"] path {
+    opacity: 1;
+}

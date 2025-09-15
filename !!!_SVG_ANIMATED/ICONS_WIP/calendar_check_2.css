@@ -1,0 +1,25 @@
+/* Calendar Check 2 Animation */
+/* Line drawing animation for checkmark path */
+
+/* Base state: Match TSX initial="normal" - visible by default */
+[data-name="CalendarCheck2Animate"] path[d="m16 20 2 2 4-4"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Animation: Line drawing effect on hover */
+[data-name="CalendarCheck2Animate"]:hover path[d="m16 20 2 2 4-4"] {
+    animation: drawCheckmark 0.4s ease-in-out;
+}
+
+@keyframes drawCheckmark {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
