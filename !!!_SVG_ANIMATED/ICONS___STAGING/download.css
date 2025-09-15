@@ -1,0 +1,13 @@
+/* Download Icon Animation - Arrow elements move down on hover */
+
+/* Base state with transition for smooth animation */
+[data-name="DownloadAnimate"] path[d="M12 15V3"],
+[data-name="DownloadAnimate"] path[d="m7 10 5 5 5-5"] {
+    transition: transform 0.6s cubic-bezier(0.68, -1.2, 0.265, 2.2);
+}
+
+/* Hover state - translate arrow elements down */
+[data-name="DownloadAnimate"]:hover path[d="M12 15V3"],
+[data-name="DownloadAnimate"]:hover path[d="m7 10 5 5 5-5"] {
+    transform: translateY(2px);
+}

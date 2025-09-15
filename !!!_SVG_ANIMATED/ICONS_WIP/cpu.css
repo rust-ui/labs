@@ -1,0 +1,33 @@
+/* CPU Animation - Pulsing Connection Pins Effect */
+
+/* Vertical connection pins - Y scaling */
+[data-name="CpuAnimate"]:hover path[d="M12 20v2"],
+[data-name="CpuAnimate"]:hover path[d="M12 2v2"],
+[data-name="CpuAnimate"]:hover path[d="M17 20v2"],
+[data-name="CpuAnimate"]:hover path[d="M17 2v2"],
+[data-name="CpuAnimate"]:hover path[d="M7 20v2"],
+[data-name="CpuAnimate"]:hover path[d="M7 2v2"] {
+    animation: yPulse 0.5s ease-in-out;
+}
+
+/* Horizontal connection pins - X scaling */
+[data-name="CpuAnimate"]:hover path[d="M2 12h2"],
+[data-name="CpuAnimate"]:hover path[d="M2 17h2"],
+[data-name="CpuAnimate"]:hover path[d="M2 7h2"],
+[data-name="CpuAnimate"]:hover path[d="M20 12h2"],
+[data-name="CpuAnimate"]:hover path[d="M20 17h2"],
+[data-name="CpuAnimate"]:hover path[d="M20 7h2"] {
+    animation: xPulse 0.5s ease-in-out;
+}
+
+@keyframes yPulse {
+    0% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(1.5); opacity: 0.8; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes xPulse {
+    0% { transform: scaleX(1); opacity: 1; }
+    50% { transform: scaleX(1.5); opacity: 0.8; }
+    100% { transform: scaleX(1); opacity: 1; }
+}

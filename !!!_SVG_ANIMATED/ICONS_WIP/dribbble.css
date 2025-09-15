@@ -1,0 +1,55 @@
+/* Dribbble Icon Animation - Line drawing effect on hover */
+
+/* Base state: Match TSX initial="normal" - elements visible by default */
+[data-name="DribbbleAnimate"] circle[cx="12"][cy="12"][r="10"] {
+    opacity: 1;
+    stroke-dasharray: 65;
+    stroke-dashoffset: 0;
+}
+
+[data-name="DribbbleAnimate"] path[d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"],
+[data-name="DribbbleAnimate"] path[d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"],
+[data-name="DribbbleAnimate"] path[d="M8.56 2.75c4.37 6 6 9.42 8 17.72"] {
+    opacity: 1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+}
+
+/* Hover animations - line drawing effect */
+[data-name="DribbbleAnimate"]:hover circle[cx="12"][cy="12"][r="10"] {
+    animation: drawCircle 0.6s linear;
+}
+
+[data-name="DribbbleAnimate"]:hover path[d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"],
+[data-name="DribbbleAnimate"]:hover path[d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"],
+[data-name="DribbbleAnimate"]:hover path[d="M8.56 2.75c4.37 6 6 9.42 8 17.72"] {
+    animation: drawPath 0.6s linear;
+}
+
+@keyframes drawCircle {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 65;
+    }
+    16% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 50;
+    }
+    16% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

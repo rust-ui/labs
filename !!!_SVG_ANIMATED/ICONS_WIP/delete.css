@@ -1,0 +1,23 @@
+/* Delete Animation - Trash Can Lid Lift Effect */
+
+/* Trash can lid group - base transition for smooth reverse */
+[data-name="DeleteAnimate"] path[d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"] {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Trash can X marks - base transition */
+[data-name="DeleteAnimate"] path[d="m12 9 6 6"],
+[data-name="DeleteAnimate"] path[d="m18 9-6 6"] {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Hover states - lid lifts up */
+[data-name="DeleteAnimate"]:hover path[d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"] {
+    transform: translateY(-1.1px);
+}
+
+/* X marks slightly lift with the action */
+[data-name="DeleteAnimate"]:hover path[d="m12 9 6 6"],
+[data-name="DeleteAnimate"]:hover path[d="m18 9-6 6"] {
+    transform: translateY(-0.5px);
+}

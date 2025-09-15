@@ -1,0 +1,47 @@
+/* Expand icon - Corner arrows move outward on hover with spring-like transition */
+
+/* Base state with spring-like transition for smooth reverse animation */
+[data-name="ExpandAnimate"] path[d="m15 15 6 6"],
+[data-name="ExpandAnimate"] path[d="M21 16v5h-5"] {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="ExpandAnimate"] path[d="m15 9 6-6"],
+[data-name="ExpandAnimate"] path[d="M21 8V3h-5"] {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="ExpandAnimate"] path[d="M3 16v5h5"],
+[data-name="ExpandAnimate"] path[d="m3 21 6-6"] {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="ExpandAnimate"] path[d="M3 8V3h5"],
+[data-name="ExpandAnimate"] path[d="M9 9 3 3"] {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover states - each corner moves in its respective direction */
+/* Bottom-right corner moves down and right */
+[data-name="ExpandAnimate"]:hover path[d="m15 15 6 6"],
+[data-name="ExpandAnimate"]:hover path[d="M21 16v5h-5"] {
+    transform: translate(2px, 2px);
+}
+
+/* Top-right corner moves up and right */
+[data-name="ExpandAnimate"]:hover path[d="m15 9 6-6"],
+[data-name="ExpandAnimate"]:hover path[d="M21 8V3h-5"] {
+    transform: translate(2px, -2px);
+}
+
+/* Bottom-left corner moves down and left */
+[data-name="ExpandAnimate"]:hover path[d="M3 16v5h5"],
+[data-name="ExpandAnimate"]:hover path[d="m3 21 6-6"] {
+    transform: translate(-2px, 2px);
+}
+
+/* Top-left corner moves up and left */
+[data-name="ExpandAnimate"]:hover path[d="M3 8V3h5"],
+[data-name="ExpandAnimate"]:hover path[d="M9 9 3 3"] {
+    transform: translate(-2px, -2px);
+}

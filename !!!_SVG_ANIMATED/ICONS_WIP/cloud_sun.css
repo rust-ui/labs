@@ -1,0 +1,39 @@
+/* Cloud animation: subtle shake/wiggle effect */
+[data-name="CloudSunAnimate"]:hover path[d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"] {
+    animation: cloudWiggle 1s ease-in-out;
+}
+
+@keyframes cloudWiggle {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-1px, -1px); }
+    40% { transform: translate(1px, 1px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Sun rays animation: sequential fade-in with staggered delays */
+[data-name="CloudSunAnimate"]:hover path[d="M12 2v2"] {
+    animation: sunRayFade 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="CloudSunAnimate"]:hover path[d="m4.93 4.93 1.41 1.41"] {
+    animation: sunRayFade 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="CloudSunAnimate"]:hover path[d="M20 12h2"] {
+    animation: sunRayFade 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="CloudSunAnimate"]:hover path[d="m19.07 4.93-1.41 1.41"] {
+    animation: sunRayFade 0.3s ease-in-out 0.4s both;
+}
+
+[data-name="CloudSunAnimate"]:hover path[d="M15.947 12.65a4 4 0 0 0-5.925-4.128"] {
+    animation: sunRayFade 0.3s ease-in-out 0.5s both;
+}
+
+@keyframes sunRayFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,22 @@
+/* Cloud Rain Animation - Staggered Rain Drop Opacity Effect */
+
+/* Rain line 1 - immediate animation */
+[data-name="CloudRainAnimate"]:hover path[d="M16 14v6"] {
+    animation: rainFade 1s ease-in-out infinite;
+}
+
+/* Rain line 2 - 0.2s delay */
+[data-name="CloudRainAnimate"]:hover path[d="M8 14v6"] {
+    animation: rainFade 1s ease-in-out infinite 0.2s;
+}
+
+/* Rain line 3 - 0.4s delay */
+[data-name="CloudRainAnimate"]:hover path[d="M12 16v6"] {
+    animation: rainFade 1s ease-in-out infinite 0.4s;
+}
+
+@keyframes rainFade {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,25 @@
+/* ClipboardCheck Animation - Line Drawing Effect */
+/* Only the checkmark path is animated, following Pattern 4: Line Drawing */
+
+/* Base state: Element visible by default (matching TSX initial="normal") */
+[data-name="ClipboardCheckAnimate"] path[d="m9 14 2 2 4-4"] {
+    opacity: 0;
+    stroke-dasharray: 15;
+    stroke-dashoffset: 15;
+}
+
+/* Animation: Line drawing effect on hover */
+[data-name="ClipboardCheckAnimate"]:hover path[d="m9 14 2 2 4-4"] {
+    animation: drawCheckmark 0.3s ease-in-out forwards;
+}
+
+@keyframes drawCheckmark {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 15;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,18 @@
+/* Copy Animation - Document Separation Effect */
+/* Following Pattern 1: State-Change Animations with smooth transitions */
+
+/* Base state with spring-like transition for both documents */
+[data-name="CopyAnimate"] rect[width="14"][height="14"][x="8"][y="8"],
+[data-name="CopyAnimate"] path[d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"] {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Front document (rect) moves up and left on hover */
+[data-name="CopyAnimate"]:hover rect[width="14"][height="14"][x="8"][y="8"] {
+    transform: translate(-3px, -3px);
+}
+
+/* Back document (path) moves down and right on hover */
+[data-name="CopyAnimate"]:hover path[d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"] {
+    transform: translate(3px, 3px);
+}

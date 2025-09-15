@@ -1,0 +1,28 @@
+/* Base state: Define transition for smooth reverse animation */
+[data-name="DrumAnimate"] path[d="m2 2 8 8"],
+[data-name="DrumAnimate"] path[d="m22 2-8 8"] {
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+/* Left drumstick animation - matches custom={1} with delay 0.1s */
+[data-name="DrumAnimate"]:hover path[d="m2 2 8 8"] {
+    animation: drumstickLeft 0.5s ease-in-out 0.1s infinite alternate;
+}
+
+/* Right drumstick animation - matches custom={2} with delay 0.2s */
+[data-name="DrumAnimate"]:hover path[d="m22 2-8 8"] {
+    animation: drumstickRight 0.5s ease-in-out 0.2s infinite alternate;
+}
+
+@keyframes drumstickLeft {
+    0% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes drumstickRight {
+    0% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}

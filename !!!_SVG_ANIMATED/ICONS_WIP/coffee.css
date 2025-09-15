@@ -1,0 +1,27 @@
+/* Steam lines animation: simulate steam rising with infinite loop */
+[data-name="CoffeeAnimate"]:hover path[d="M6 2v2"] {
+    animation: steamRise 1.5s ease-in-out infinite;
+}
+
+[data-name="CoffeeAnimate"]:hover path[d="M10 2v2"] {
+    animation: steamRise 1.5s ease-in-out infinite 0.04s;
+}
+
+[data-name="CoffeeAnimate"]:hover path[d="M14 2v2"] {
+    animation: steamRise 1.5s ease-in-out infinite 0.08s;
+}
+
+@keyframes steamRise {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
