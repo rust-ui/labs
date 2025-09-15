@@ -3,7 +3,7 @@
 # Script to copy CSS animated icons from ICONS___STAGING to RUST-UI icons directory
 # Path to the staging icons directory
 STAGING_ICONS_PATH="./ICONS___STAGING"
-RUST_UI_ICONS_PATH="../../RUST-UI/crates/icons/ICONS"
+RUST_UI_ICONS_PATH="../../RUST-UI/crates/icons/PIPELINE"
 
 echo "CSS Animated Icons - Copy from Staging to RUST-UI:"
 echo "=================================================="
