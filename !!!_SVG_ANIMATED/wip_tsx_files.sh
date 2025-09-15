@@ -1,13 +1,29 @@
 #!/bin/bash
 
-# Script to move the first 20 .tsx files from icons-animated-pqoqubbw to ICONS_WIP
+# Script to move the first N .tsx files from icons-animated-pqoqubbw to ICONS_WIP
 # With progress output and validation
+# Usage: ./wip_tsx_files.sh <number_of_files>
 
 set -e
 
+# Check if parameter is provided
+if [ $# -eq 0 ]; then
+    echo "❌ Error: Number of files parameter is required"
+    echo "Usage: $0 <number_of_files>"
+    echo "Example: $0 20"
+    exit 1
+fi
+
+# Validate parameter is a number
+if ! [[ "$1" =~ ^[0-9]+$ ]]; then
+    echo "❌ Error: Parameter must be a positive number"
+    echo "Usage: $0 <number_of_files>"
+    exit 1
+fi
+
 SOURCE_DIR="./icons-animated-pqoqubbw"
 TARGET_DIR="./ICONS_WIP"
-MAX_FILES=20
+MAX_FILES=$1
 
 # Colors for output
 RED='\033[0;31m'
