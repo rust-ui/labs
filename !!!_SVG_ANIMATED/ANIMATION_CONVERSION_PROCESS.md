@@ -12,14 +12,14 @@ SVG-ANIMATED.html              # Main HTML file with icon container
 create_icon.js                 # JavaScript function to dynamically create icons
 ICONS_WIP/
 ├── {icon_name}.txt           # SVG path data
-└── {icon_name}.css           # CSS animation styles
+└── {icon_name}.css           # CSS animation styles (TO CREATE)
 └── {icon_name}.tst           # TSX animation styles
 ```
 
 ### Core Pattern
 1. **HTML**: Calls `createIcon(ComponentName, icon_filename)`.
 2. **JavaScript**: Fetches SVG paths and CSS, creates DOM elements.
-3. **CSS**: Defines animations targeting `[data-name="ComponentName"]`.
+3. **CSS**: TO CREATE. Define animations targeting `[data-name="ComponentName"]`.
 4. **TSX**: Inspiration for the CSS.
 
 ## Step-by-Step Process
@@ -63,7 +63,7 @@ const arrowVariants: Variants = {
 };
 ```
 
-### 4. Convert to CSS Keyframes
+### 4. Create CSS file and Convert to CSS
 
 **Create Animation File:** `ICONS_WIP/a_arrow_down.css`
 
