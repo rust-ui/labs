@@ -1,8 +1,8 @@
-[data-name="BadgePercentAnimate"]:hover path[d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"] {
-    animation: badgeRotate 0.5s ease-out 0.1s both;
+[data-name="BadgePercentAnimate"] path[d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"] {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
 }
 
-@keyframes badgeRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(180deg); }
+[data-name="BadgePercentAnimate"]:hover path[d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"] {
+    transform: rotate(180deg);
 }
