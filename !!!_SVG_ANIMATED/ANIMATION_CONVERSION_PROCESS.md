@@ -183,6 +183,48 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 }
 ```
 
+#### For Smooth Reverse Animations: Use Transition + Transform Pattern
+- **Use for**: Animations that need smooth return to original state on unhover
+- **Problem**: Keyframe animations stop abruptly when hover ends, creating jarring visual effects
+- **Solution**: Base transition + hover state transform for seamless bidirectional animation
+- **When to use**: Wiggle effects, rotations, scale changes, movements that should reverse smoothly
+
+**Pattern Structure:**
+```css
+/* Base element: Define transition for smooth reverse */
+[data-name="IconName"] {
+    transition: transform 0.4s cubic-bezier(0.68, -1.2, 0.265, 2.2);
+    transform-origin: center;
+}
+
+/* Hover state: Apply end transform or trigger keyframe */
+[data-name="IconName"]:hover {
+    transform: scale(1.1) rotate(5deg); /* For simple transforms */
+    /* OR */
+    animation: wiggleEffect 0.5s ease-in-out; /* For complex sequences */
+}
+
+/* Optional: Keyframe for complex hover animation */
+@keyframes wiggleEffect {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-3deg); }
+    50% { transform: scale(1.1) rotate(3deg); }
+    75% { transform: scale(1.1) rotate(-1deg); }
+    100% { transform: scale(1.1) rotate(0deg); }
+}
+```
+
+**Examples:**
+- **Badge wiggle**: Keyframe animation on hover + transition for smooth return
+- **Box movements**: Simple transform on hover + bouncy cubic-bezier transition
+- **Icon rotations**: Transform rotate on hover + smooth spring-like easing
+
+**Key Benefits:**
+- **Smooth unhover**: Transition handles the return animation automatically
+- **Professional feel**: No abrupt stopping or snapping back to original state
+- **Flexible**: Works with both simple transforms and complex keyframe sequences
+- **Bouncy effects**: Cubic-bezier curves can add playful bounce to the reverse animation
+
 ### 2. Consistent Timing
 - Match exact durations and delays from TSX variants
 - Use same easing functions (`ease-in-out`)
