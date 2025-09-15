@@ -1,0 +1,33 @@
+/* File with pen line - Pen wiggle and line extension animation */
+
+/* Pen animation - wiggle effect with rotation and translation */
+[data-name="FilePenLineAnimate"]:hover path[d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"] {
+    animation: penWiggle 0.5s ease-in-out;
+}
+
+@keyframes penWiggle {
+    0% {
+        transform: rotate(0deg) translateX(0px) translateY(0px);
+    }
+    16.7% {
+        transform: rotate(-0.3deg) translateX(-0.5px) translateY(1px);
+    }
+    33.3% {
+        transform: rotate(0.2deg) translateX(1px) translateY(-0.5px);
+    }
+    50% {
+        transform: rotate(-0.4deg) translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: rotate(0deg) translateX(0px) translateY(0px);
+    }
+}
+
+/* Line extension - Using transition for smooth bidirectional animation */
+[data-name="FilePenLineAnimate"] path[d="M8 18h1"] {
+    transition: d 0.5s ease-in-out;
+}
+
+[data-name="FilePenLineAnimate"]:hover path[d="M8 18h1"] {
+    d: path("M8 18h5");
+}

@@ -1,0 +1,20 @@
+/* File with cog - Gear rotation animation */
+
+/* Gear animation (paths inside motion.g in TSX) */
+[data-name="FileCogAnimate"]:hover path[d="m3.2 12.9-.9-.4"],
+[data-name="FileCogAnimate"]:hover path[d="m3.2 15.1-.9.4"],
+[data-name="FileCogAnimate"]:hover path[d="m4.9 11.2-.4-.9"],
+[data-name="FileCogAnimate"]:hover path[d="m4.9 16.8-.4.9"],
+[data-name="FileCogAnimate"]:hover path[d="m7.5 10.3-.4.9"],
+[data-name="FileCogAnimate"]:hover path[d="m7.5 17.7-.4-.9"],
+[data-name="FileCogAnimate"]:hover path[d="m9.7 12.5-.9.4"],
+[data-name="FileCogAnimate"]:hover path[d="m9.7 15.5-.9-.4"],
+[data-name="FileCogAnimate"]:hover circle[cx="6"][cy="14"][r="3"] {
+    transform-origin: 6px 14px;
+    animation: gearRotate 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes gearRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}

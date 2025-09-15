@@ -1,0 +1,26 @@
+/* File Check Icon Animation */
+
+/* Base state - all paths visible by default to match initial="normal" */
+[data-name="FileCheckAnimate"] path {
+    opacity: 1;
+    stroke-dasharray: 15;
+    stroke-dashoffset: 0;
+}
+
+/* Checkmark drawing animation - precise path targeting */
+[data-name="FileCheckAnimate"]:hover path[d="m9 15 2 2 4-4"] {
+    animation: checkmarkDraw 0.4s ease-in-out;
+}
+
+@keyframes checkmarkDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 15;
+        stroke-dashoffset: 15;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 15;
+        stroke-dashoffset: 0;
+    }
+}

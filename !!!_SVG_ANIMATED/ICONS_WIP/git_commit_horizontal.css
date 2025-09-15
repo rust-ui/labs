@@ -1,0 +1,65 @@
+/* Git Commit Horizontal Animation */
+/* Pattern: Sequential line drawing animation from left to right */
+
+/* Base state: Match initial="normal" - all elements visible by default */
+[data-name="GitCommitHorizontalAnimate"] circle[cx="12"][cy="12"][r="3"],
+[data-name="GitCommitHorizontalAnimate"] line[x1="3"][x2="9"][y1="12"][y2="12"],
+[data-name="GitCommitHorizontalAnimate"] line[x1="15"][x2="21"][y1="12"][y2="12"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Left line animation - starts immediately (custom=0) */
+[data-name="GitCommitHorizontalAnimate"]:hover line[x1="3"][x2="9"][y1="12"][y2="12"] {
+    animation: drawLeftLine 0.4s ease-in-out;
+}
+
+/* Circle animation - slight delay (custom=1, pathLength delay=0.15s, opacity delay=0.1s) */
+[data-name="GitCommitHorizontalAnimate"]:hover circle[cx="12"][cy="12"][r="3"] {
+    animation: drawCircle 0.4s ease-in-out 0.15s both;
+}
+
+/* Right line animation - longest delay (custom=2, pathLength delay=0.3s, opacity delay=0.2s) */
+[data-name="GitCommitHorizontalAnimate"]:hover line[x1="15"][x2="21"][y1="12"][y2="12"] {
+    animation: drawRightLine 0.4s ease-in-out 0.3s both;
+}
+
+@keyframes drawLeftLine {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCircle {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawRightLine {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

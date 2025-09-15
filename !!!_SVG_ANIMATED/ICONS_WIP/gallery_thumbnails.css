@@ -1,0 +1,25 @@
+/* Sequential fade-in animations for thumbnail paths */
+[data-name="GalleryThumbnailsAnimate"]:hover path[d="M4 21h1"] {
+    animation: fadeInThumb 0.2s ease-in-out 0.15s both;
+}
+
+[data-name="GalleryThumbnailsAnimate"]:hover path[d="M9 21h1"] {
+    animation: fadeInThumb 0.2s ease-in-out 0.3s both;
+}
+
+[data-name="GalleryThumbnailsAnimate"]:hover path[d="M14 21h1"] {
+    animation: fadeInThumb 0.2s ease-in-out 0.45s both;
+}
+
+[data-name="GalleryThumbnailsAnimate"]:hover path[d="M19 21h1"] {
+    animation: fadeInThumb 0.2s ease-in-out 0.6s both;
+}
+
+@keyframes fadeInThumb {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

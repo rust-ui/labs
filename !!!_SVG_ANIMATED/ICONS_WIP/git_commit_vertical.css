@@ -1,0 +1,65 @@
+/* Git Commit Vertical Animation */
+/* Pattern: Sequential line drawing animation from top to bottom */
+
+/* Base state: Match initial="normal" - all elements visible by default */
+[data-name="GitCommitVerticalAnimate"] path[d="M12 3v6"],
+[data-name="GitCommitVerticalAnimate"] circle[cx="12"][cy="12"][r="3"],
+[data-name="GitCommitVerticalAnimate"] path[d="M12 15v6"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Top path animation - starts immediately (custom=0) */
+[data-name="GitCommitVerticalAnimate"]:hover path[d="M12 3v6"] {
+    animation: drawTopPath 0.4s ease-in-out;
+}
+
+/* Circle animation - slight delay (custom=1, pathLength delay=0.15s, opacity delay=0.1s) */
+[data-name="GitCommitVerticalAnimate"]:hover circle[cx="12"][cy="12"][r="3"] {
+    animation: drawCircle 0.4s ease-in-out 0.15s both;
+}
+
+/* Bottom path animation - longest delay (custom=2, pathLength delay=0.3s, opacity delay=0.2s) */
+[data-name="GitCommitVerticalAnimate"]:hover path[d="M12 15v6"] {
+    animation: drawBottomPath 0.4s ease-in-out 0.3s both;
+}
+
+@keyframes drawTopPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCircle {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawBottomPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,90 @@
+/* File text - Scale and line drawing animation */
+
+/* Container scale animation */
+[data-name="FileTextAnimate"]:hover {
+    animation: fileScale 0.3s ease-out;
+}
+
+@keyframes fileScale {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+/* Line drawing animations with proper initial state */
+/* First line - starts visible, draws from right to left, then back */
+[data-name="FileTextAnimate"] path[d="M10 9H8"] {
+    opacity: 1;
+    stroke-dasharray: 5;
+    stroke-dashoffset: 0;
+}
+
+[data-name="FileTextAnimate"]:hover path[d="M10 9H8"] {
+    animation: redrawLine1 0.7s ease-in-out 0.3s both;
+}
+
+@keyframes redrawLine1 {
+    0% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+    33% {
+        opacity: 0;
+        stroke-dashoffset: 5;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Second line - longer line */
+[data-name="FileTextAnimate"] path[d="M16 13H8"] {
+    opacity: 1;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 0;
+}
+
+[data-name="FileTextAnimate"]:hover path[d="M16 13H8"] {
+    animation: redrawLine2 0.7s ease-in-out 0.5s both;
+}
+
+@keyframes redrawLine2 {
+    0% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+    33% {
+        opacity: 0;
+        stroke-dashoffset: 10;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Third line - same as second line */
+[data-name="FileTextAnimate"] path[d="M16 17H8"] {
+    opacity: 1;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 0;
+}
+
+[data-name="FileTextAnimate"]:hover path[d="M16 17H8"] {
+    animation: redrawLine3 0.7s ease-in-out 0.7s both;
+}
+
+@keyframes redrawLine3 {
+    0% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+    33% {
+        opacity: 0;
+        stroke-dashoffset: 10;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

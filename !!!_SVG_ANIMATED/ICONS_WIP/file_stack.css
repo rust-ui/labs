@@ -1,0 +1,21 @@
+/* File stack - Files spreading animation */
+
+/* Top files move up and left */
+[data-name="FileStackAnimate"] path[d="M21 7h-3a2 2 0 0 1-2-2V2"],
+[data-name="FileStackAnimate"] path[d="M21 6v6.5c0 .8-.7 1.5-1.5 1.5h-7c-.8 0-1.5-.7-1.5-1.5v-9c0-.8.7-1.5 1.5-1.5H17Z"] {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="FileStackAnimate"]:hover path[d="M21 7h-3a2 2 0 0 1-2-2V2"],
+[data-name="FileStackAnimate"]:hover path[d="M21 6v6.5c0 .8-.7 1.5-1.5 1.5h-7c-.8 0-1.5-.7-1.5-1.5v-9c0-.8.7-1.5 1.5-1.5H17Z"] {
+    transform: translateX(-4px) translateY(4px);
+}
+
+/* Bottom file moves down and right */
+[data-name="FileStackAnimate"] path[d="M3 12v8.8c0 .3.2.6.4.8.2.2.5.4.8.4H11"] {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="FileStackAnimate"]:hover path[d="M3 12v8.8c0 .3.2.6.4.8.2.2.5.4.8.4H11"] {
+    transform: translateX(4px) translateY(-4px);
+}

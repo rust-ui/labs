@@ -1,0 +1,33 @@
+/* Base state with transition for smooth animations */
+[data-name="FrameAnimate"] line[y1="6"] {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="FrameAnimate"] line[y1="18"] {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="FrameAnimate"] line[x1="6"] {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="FrameAnimate"] line[x1="18"] {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover state transforms */
+[data-name="FrameAnimate"]:hover line[y1="6"] {
+    transform: translateY(-4px);
+}
+
+[data-name="FrameAnimate"]:hover line[y1="18"] {
+    transform: translateY(4px);
+}
+
+[data-name="FrameAnimate"]:hover line[x1="6"] {
+    transform: translateX(-4px);
+}
+
+[data-name="FrameAnimate"]:hover line[x1="18"] {
+    transform: translateX(4px);
+}

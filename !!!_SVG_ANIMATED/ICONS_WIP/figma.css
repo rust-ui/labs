@@ -1,0 +1,33 @@
+/* Figma Icon Animation */
+
+/* Base state - all paths visible by default */
+[data-name="FigmaAnimate"] path {
+    opacity: 1;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+/* All Figma shapes animate together with delay - precise path targeting */
+[data-name="FigmaAnimate"]:hover path[d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"],
+[data-name="FigmaAnimate"]:hover path[d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"],
+[data-name="FigmaAnimate"]:hover path[d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"],
+[data-name="FigmaAnimate"]:hover path[d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"],
+[data-name="FigmaAnimate"]:hover path[d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"] {
+    animation: figmaDraw 0.5s ease-in-out 0.3s both;
+}
+
+@keyframes figmaDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 0;
+    }
+}

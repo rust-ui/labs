@@ -1,0 +1,18 @@
+/* Base state with transition for smooth animations */
+[data-name="FoldersAnimate"] path[d="M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-name="FoldersAnimate"] path[d="M2 8v11a2 2 0 0 0 2 2h14"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover state transforms */
+[data-name="FoldersAnimate"]:hover path[d="M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z"] {
+    transform: translate(-2px, 2px);
+}
+
+[data-name="FoldersAnimate"]:hover path[d="M2 8v11a2 2 0 0 0 2 2h14"] {
+    transform: translate(2px, -2px) scale(0.9);
+    opacity: 0;
+}

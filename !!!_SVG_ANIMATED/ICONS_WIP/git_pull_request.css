@@ -1,0 +1,76 @@
+/* Git Pull Request Animation */
+/* Pattern: Sequential drawing animation with complex timing */
+
+/* Base state: Match initial="normal" - all elements visible by default */
+[data-name="GitPullRequestAnimate"] circle[cx="18"][cy="18"][r="3"],
+[data-name="GitPullRequestAnimate"] circle[cx="6"][cy="6"][r="3"],
+[data-name="GitPullRequestAnimate"] path[d="M13 6h3a2 2 0 0 1 2 2v7"],
+[data-name="GitPullRequestAnimate"] line[x1="6"][x2="6"][y1="9"][y2="21"] {
+    opacity: 1;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+/* Bottom-right circle - first to animate (delay=0.1s) */
+[data-name="GitPullRequestAnimate"]:hover circle[cx="18"][cy="18"][r="3"] {
+    animation: drawCircle1 0.3s ease-in-out 0.1s both;
+}
+
+/* Curved connection path - second to animate (delay=0.4s) */
+[data-name="GitPullRequestAnimate"]:hover path[d="M13 6h3a2 2 0 0 1 2 2v7"] {
+    animation: drawCurvedPath 0.3s ease-in-out 0.4s both;
+}
+
+/* Top-left circle - third to animate (delay=0.7s) */
+[data-name="GitPullRequestAnimate"]:hover circle[cx="6"][cy="6"][r="3"] {
+    animation: drawCircle2 0.3s ease-in-out 0.7s both;
+}
+
+/* Vertical line - last to animate (delay=1.0s) */
+[data-name="GitPullRequestAnimate"]:hover line[x1="6"][x2="6"][y1="9"][y2="21"] {
+    animation: drawVerticalLine 0.3s ease-in-out 1.0s both;
+}
+
+@keyframes drawCircle1 {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCurvedPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCircle2 {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawVerticalLine {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,13 @@
+/* Gauge Animation */
+/* Pattern: Smooth bidirectional needle movement with spring-like easing */
+
+/* Base state: Define transition for smooth reverse animation */
+[data-name="GaugeAnimate"] path[d="m12 14 4-4"] {
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: 12px 14px;
+}
+
+/* Hover state: Apply needle movement transform */
+[data-name="GaugeAnimate"]:hover path[d="m12 14 4-4"] {
+    transform: translateX(0.5px) translateY(3px) rotate(72deg);
+}

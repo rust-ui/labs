@@ -1,0 +1,30 @@
+/* Path animations with staggered timing */
+[data-name="GalleryHorizontalEndAnimate"]:hover path[d="M6 5v14"] {
+    animation: slideInPath2 0.5s ease-out;
+}
+
+[data-name="GalleryHorizontalEndAnimate"]:hover path[d="M2 7v10"] {
+    animation: slideInPath1 0.5s ease-out 0.25s both;
+}
+
+@keyframes slideInPath2 {
+    0% {
+        opacity: 0;
+        transform: translateX(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInPath1 {
+    0% {
+        opacity: 0;
+        transform: translateX(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

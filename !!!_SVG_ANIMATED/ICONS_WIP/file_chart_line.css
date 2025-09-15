@@ -1,0 +1,29 @@
+/* File Chart Line Icon Animation */
+
+/* Base state - all paths visible by default to match initial state */
+[data-name="FileChartLineAnimate"] path {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Chart line drawing animation - precise path targeting */
+[data-name="FileChartLineAnimate"]:hover path[d="m16 13-3.5 3.5-2-2L8 17"] {
+    animation: chartLineDraw 0.3s ease-in-out 0.15s both;
+}
+
+@keyframes chartLineDraw {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+    }
+    33.3% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+    }
+}

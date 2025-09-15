@@ -1,0 +1,27 @@
+/* Fish symbol - Path drawing animation */
+
+/* Initial state - visible by default */
+[data-name="FishSymbolAnimate"] path[d="M2 16s9-15 20-4C11 23 2 8 2 8"] {
+    opacity: 1;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+
+/* Drawing animation on hover */
+[data-name="FishSymbolAnimate"]:hover path[d="M2 16s9-15 20-4C11 23 2 8 2 8"] {
+    animation: fishDraw 1s ease-in-out 0.15s both;
+}
+
+@keyframes fishDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 60;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
