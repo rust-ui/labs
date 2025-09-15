@@ -25,6 +25,12 @@ This document focuses on verifying that CSS animations **exactly match** the cod
 - **Extract variants**: Identify all `Variants` objects (e.g., `letterVariants`, `arrowVariants`)
 - **Map to SVG paths**: Understand which paths use which variants
 
+#### ⚠️ CRITICAL: SVG Path Consistency Check
+**BEFORE animation verification, verify SVG paths are identical across all three files:**
+- `{icon_name}.txt`, `{icon_name}.tsx`, `{icon_name}.css` must have matching `d` attributes
+- If paths don't match exactly, **STOP and fix immediately**
+- All animated paths in TSX must have corresponding CSS selectors
+
 #### Example TSX Analysis
 ```tsx
 const letterVariants: Variants = {
@@ -226,6 +232,7 @@ ICONS_WIP/
 
 Before marking any animation as complete:
 
+- [ ] **🚨 SVG PATH CONSISTENCY VERIFIED**: All three files (.txt, .tsx, .css) contain identical path `d` attributes
 - [ ] **TSX file analyzed**: All variants identified and documented from `ICONS_WIP/{icon_name}.tsx`
 - [ ] **Path mapping verified**: Each SVG path in `{icon_name}.txt` matches correct TSX motion.path
 - [ ] **All properties converted**: Every TSX property has CSS equivalent in `{icon_name}.css`
