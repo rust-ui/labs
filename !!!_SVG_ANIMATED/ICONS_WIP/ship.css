@@ -1,0 +1,31 @@
+/* Water waves - line drawing animation */
+[data-name="ShipAnimate"]:hover path[d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"] {
+    animation: waveDrawing 0.5s ease-in-out 0.15s both;
+}
+
+@keyframes waveDrawing {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Ship elements - rocking motion */
+[data-name="ShipAnimate"]:hover path[d="M12 10.189V14"],
+[data-name="ShipAnimate"]:hover path[d="M12 2v3"],
+[data-name="ShipAnimate"]:hover path[d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"],
+[data-name="ShipAnimate"]:hover path[d="M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76"] {
+    animation: shipRocking 1.2s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes shipRocking {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}

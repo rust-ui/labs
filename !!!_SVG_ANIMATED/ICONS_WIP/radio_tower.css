@@ -1,0 +1,30 @@
+/* Base state - all paths visible */
+[data-name="RadioTowerAnimate"] path {
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+}
+
+/* Radio wave animation - fade out then fade in with staggered delays */
+[data-name="RadioTowerAnimate"]:hover path[d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"],
+[data-name="RadioTowerAnimate"]:hover path[d="M16.2 4.8c2 2 2.26 5.11.8 7.47"] {
+    animation: towerWaveFade 0.7s ease-out;
+}
+
+[data-name="RadioTowerAnimate"]:hover path[d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"],
+[data-name="RadioTowerAnimate"]:hover path[d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"] {
+    animation: towerWaveFade 0.7s ease-out 0.1s;
+}
+
+/* Center circle and tower structure remain static */
+[data-name="RadioTowerAnimate"] circle,
+[data-name="RadioTowerAnimate"] path[d="M9.5 18h5"],
+[data-name="RadioTowerAnimate"] path[d="m8 22 4-11 4 11"] {
+    opacity: 1;
+}
+
+@keyframes towerWaveFade {
+    0% { opacity: 1; }
+    30% { opacity: 0; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,28 @@
+/* Rocket float animation - smooth up and down movement */
+[data-name="RocketAnimate"]:hover {
+    animation: rocketFloat 6s ease-in-out infinite;
+}
+
+@keyframes rocketFloat {
+    0% { transform: translateX(0) translateY(0); }
+    15% { transform: translateX(0) translateY(-3px); }
+    30% { transform: translateX(-3px) translateY(0); }
+    45% { transform: translateX(2px) translateY(-2px); }
+    60% { transform: translateX(-2px) translateY(-3px); }
+    75% { transform: translateX(1px) translateY(-1px); }
+    90% { transform: translateX(-1px) translateY(-2px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Fire/exhaust trail animation - morphing effect */
+[data-name="RocketAnimate"]:hover path[d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"] {
+    animation: fireFlicker 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes fireFlicker {
+    0% { opacity: 1; transform: scale(1); }
+    25% { opacity: 0.8; transform: scale(1.1); }
+    50% { opacity: 0.9; transform: scale(0.95); }
+    75% { opacity: 0.85; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,9 @@
+/* Lightning bolt - pulsing opacity animation */
+[data-name="SmartphoneChargingAnimate"]:hover path[d="M12.667 8 10 12h4l-2.667 4"] {
+    animation: chargingPulse 1s ease-in-out infinite;
+}
+
+@keyframes chargingPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}

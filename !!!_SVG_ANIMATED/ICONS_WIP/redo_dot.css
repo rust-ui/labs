@@ -1,0 +1,32 @@
+/* Arrow element - translate and rotate animation */
+[data-name="RedoDotAnimate"]:hover path[d="M21 7v6h-6"] {
+    animation: arrowMove 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes arrowMove {
+    0% { transform: translateX(0) translateY(0) rotate(0deg); }
+    50% { transform: translateX(-2.1px) translateY(-1.4px) rotate(-12deg); }
+    100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+/* Arc path - path length animation */
+[data-name="RedoDotAnimate"]:hover path[d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"] {
+    animation: pathShrink 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes pathShrink {
+    0% { stroke-dasharray: 100; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: 100; stroke-dashoffset: 20; }
+    100% { stroke-dasharray: 100; stroke-dashoffset: 0; }
+}
+
+/* Dot circle - scale animation */
+[data-name="RedoDotAnimate"]:hover circle[cx="12"][cy="17"][r="1"] {
+    animation: dotScale 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes dotScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

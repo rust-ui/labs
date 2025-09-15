@@ -1,0 +1,17 @@
+/* Base state with smooth transition for search movement */
+[data-name="SearchAnimate"] {
+    transition: transform 1s cubic-bezier(0.68, -0.3, 0.32, 1.3);
+    transform-origin: center;
+}
+
+/* Hover state triggers search scanning animation */
+[data-name="SearchAnimate"]:hover {
+    animation: searchScan 1s cubic-bezier(0.68, -0.3, 0.32, 1.3);
+}
+
+@keyframes searchScan {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(0) translateY(-4px); }
+    50% { transform: translateX(-3px) translateY(0); }
+    100% { transform: translateX(0) translateY(0); }
+}

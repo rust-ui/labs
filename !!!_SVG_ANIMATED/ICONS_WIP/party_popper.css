@@ -1,0 +1,95 @@
+/* Base transitions for smooth reverse animation */
+[data-name="PartyPopperAnimate"] {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+/* Popper body animation - main path and confetti cone */
+[data-name="PartyPopperAnimate"]:hover path[d="M5.8 11.3 2 22l10.7-3.79"],
+[data-name="PartyPopperAnimate"]:hover path[d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"] {
+    animation: popperBodyAnimate 0.7s ease-out;
+}
+
+/* Lines animation - the streaming confetti lines */
+[data-name="PartyPopperAnimate"]:hover path[d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"],
+[data-name="PartyPopperAnimate"]:hover path[d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"],
+[data-name="PartyPopperAnimate"]:hover path[d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"] {
+    animation: confettiLinesAnimate 0.7s ease-out;
+}
+
+/* Dots animation - the floating confetti dots */
+[data-name="PartyPopperAnimate"]:hover path[d="M4 3h.01"],
+[data-name="PartyPopperAnimate"]:hover path[d="M22 8h.01"],
+[data-name="PartyPopperAnimate"]:hover path[d="M15 2h.01"],
+[data-name="PartyPopperAnimate"]:hover path[d="M22 20h.01"] {
+    animation: confettiDotsAnimate 0.7s ease-out;
+}
+
+@keyframes popperBodyAnimate {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-1.5px) translateY(1.5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes confettiLinesAnimate {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+        transform: scale(0.3) translateX(-5px) translateY(5px);
+    }
+    25% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 10;
+        transform: scale(0.8) translateX(-2px) translateY(2px);
+    }
+    50% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+        transform: scale(1) translateX(0) translateY(0);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.1) translateX(0) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+        transform: scale(1) translateX(0) translateY(0);
+    }
+}
+
+@keyframes confettiDotsAnimate {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateX(-5px) translateY(5px);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(0.8) translateX(-2px) translateY(2px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) translateX(0) translateY(0);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.1) translateX(0) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0) translateY(0);
+    }
+}

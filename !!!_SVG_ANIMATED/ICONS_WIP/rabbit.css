@@ -1,0 +1,31 @@
+/* Base transitions for smooth reverse animation */
+[data-name="RabbitAnimate"] {
+    transition: transform 0.6s cubic-bezier(0.42, 0, 0.58, 1);
+    transform-origin: center;
+}
+
+/* Rabbit wiggle animation - entire SVG shakes */
+[data-name="RabbitAnimate"]:hover {
+    animation: rabbitWiggle 0.6s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+@keyframes rabbitWiggle {
+    0% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    15% {
+        transform: rotate(5deg) translateX(3px) translateY(1.5px);
+    }
+    30% {
+        transform: rotate(-5deg) translateX(-3px) translateY(-1.5px);
+    }
+    45% {
+        transform: rotate(3deg) translateX(2px) translateY(1px);
+    }
+    60% {
+        transform: rotate(-3deg) translateX(-2px) translateY(-1px);
+    }
+    100% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+}

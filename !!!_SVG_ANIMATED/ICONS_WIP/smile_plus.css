@@ -1,0 +1,22 @@
+/* Face elements - scale animation */
+[data-name="SmilePlusAnimate"]:hover {
+    animation: faceScale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+@keyframes faceScale {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Plus sign - rotation and scale animation with delay */
+[data-name="SmilePlusAnimate"]:hover path[d="M16 5h6"],
+[data-name="SmilePlusAnimate"]:hover path[d="M19 2v6"] {
+    animation: plusSpin 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s both;
+    transform-origin: 19px 5px;
+}
+
+@keyframes plusSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(90deg) scale(1.2); }
+}

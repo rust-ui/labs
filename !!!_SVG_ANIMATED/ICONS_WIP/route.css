@@ -1,0 +1,45 @@
+/* Base state for circles - visible by default with stroke dash setup */
+[data-name="RouteAnimate"] circle {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Base state for path - visible by default with stroke dash setup */
+[data-name="RouteAnimate"] path[d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"] {
+    opacity: 1;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+}
+
+/* Circles animation - start first with 0.1s delay */
+[data-name="RouteAnimate"]:hover circle {
+    animation: circleDrawing 0.3s ease-in-out 0.1s both;
+}
+
+/* Path animation - starts later with 0.5s delay for sequenced effect */
+[data-name="RouteAnimate"]:hover path[d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"] {
+    animation: routeDrawing 0.7s ease-in-out 0.5s both;
+}
+
+@keyframes circleDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes routeDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 100;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

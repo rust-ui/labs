@@ -1,0 +1,29 @@
+/* Base transitions for smooth reverse animation */
+[data-name="PauseAnimate"] rect {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+/* Left rectangle animation - bounces first */
+[data-name="PauseAnimate"]:hover rect[x="5"] {
+    animation: leftRectBounce 0.5s ease-out;
+}
+
+/* Right rectangle animation - bounces after delay */
+[data-name="PauseAnimate"]:hover rect[x="14"] {
+    animation: rightRectBounce 0.5s ease-out;
+}
+
+@keyframes leftRectBounce {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(2px); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rightRectBounce {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(0); }
+    50% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+}

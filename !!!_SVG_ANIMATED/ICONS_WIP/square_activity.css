@@ -1,0 +1,20 @@
+/* Activity line - path drawing animation */
+[data-name="SquareActivityAnimate"]:hover path[d="M17 12h-2l-2 5-2-10-2 5H7"] {
+    animation: activityDrawing 0.6s linear;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+@keyframes activityDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    16.7% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

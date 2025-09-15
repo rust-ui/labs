@@ -1,0 +1,10 @@
+/* Base transition for smooth rotation */
+[data-name="RefreshCCWAnimate"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+/* Hover state rotation */
+[data-name="RefreshCCWAnimate"]:hover {
+    transform: rotate(-50deg);
+}

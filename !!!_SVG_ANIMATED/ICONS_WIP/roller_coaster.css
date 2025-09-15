@@ -1,0 +1,48 @@
+/* Base state - visible by default to match TSX initial state */
+[data-name="RollerCoasterAnimate"] path {
+    opacity: 1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+}
+
+/* Sequential line drawing animation for roller coaster tracks */
+[data-name="RollerCoasterAnimate"]:hover path[d="M6 19V5"] {
+    animation: drawLine 0.6s ease-in-out;
+}
+
+[data-name="RollerCoasterAnimate"]:hover path[d="M10 19V6.8"] {
+    animation: drawLine 0.6s ease-in-out 0.1s both;
+}
+
+[data-name="RollerCoasterAnimate"]:hover path[d="M14 19v-7.8"] {
+    animation: drawLine 0.6s ease-in-out 0.2s both;
+}
+
+[data-name="RollerCoasterAnimate"]:hover path[d="M18 5v4"] {
+    animation: drawLine 0.6s ease-in-out 0.3s both;
+}
+
+[data-name="RollerCoasterAnimate"]:hover path[d="M18 19v-6"] {
+    animation: drawLine 0.6s ease-in-out 0.4s both;
+}
+
+[data-name="RollerCoasterAnimate"]:hover path[d="M22 19V9"] {
+    animation: drawLine 0.6s ease-in-out 0.5s both;
+}
+
+/* Main track curve with longer delay */
+[data-name="RollerCoasterAnimate"]:hover path[d="M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65"] {
+    animation: drawLine 0.6s ease-in-out 0.2s both;
+    stroke-dasharray: 80;
+}
+
+@keyframes drawLine {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 50;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

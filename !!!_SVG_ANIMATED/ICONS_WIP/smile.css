@@ -1,0 +1,47 @@
+/* Face circle - scale, rotation, and stroke animation */
+[data-name="SmileAnimate"]:hover circle[cx="12"][cy="12"][r="10"] {
+    animation: faceAnimation 0.8s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes faceAnimation {
+    0% { transform: scale(1) rotate(0deg); stroke-width: 2; }
+    30% { transform: scale(1.15) rotate(-3deg); stroke-width: 2.5; }
+    60% { transform: scale(1.05) rotate(3deg); stroke-width: 2.5; }
+    100% { transform: scale(1.1) rotate(0deg); stroke-width: 2.5; }
+}
+
+/* Smile mouth - shape morphing and path drawing */
+[data-name="SmileAnimate"]:hover path[d="M8 14s1.5 2 4 2 4-2 4-2"] {
+    animation: mouthAnimation 0.5s ease-in-out 0.1s both;
+    stroke-width: 2.5;
+}
+
+@keyframes mouthAnimation {
+    0% {
+        stroke-dasharray: 10;
+        stroke-dashoffset: 7;
+    }
+    50% {
+        stroke-dasharray: 10;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 10;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Eyes - scale animation */
+[data-name="SmileAnimate"]:hover line[x1="9"][x2="9.01"][y1="9"][y2="9"],
+[data-name="SmileAnimate"]:hover line[x1="15"][x2="15.01"][y1="9"][y2="9"] {
+    animation: eyeAnimation 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes eyeAnimation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.5); }
+    60% { transform: scale(0.8); }
+    100% { transform: scale(1.2); }
+}

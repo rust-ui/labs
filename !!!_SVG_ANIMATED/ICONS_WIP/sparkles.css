@@ -1,0 +1,27 @@
+/* Main sparkle - bounce up and fill animation */
+[data-name="SparklesAnimate"]:hover path[d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"] {
+    animation: sparkleBounce 1s ease-out;
+    fill: currentColor;
+}
+
+@keyframes sparkleBounce {
+    0% { transform: translateY(0); fill: none; }
+    25% { transform: translateY(-1px); fill: currentColor; }
+    50% { transform: translateY(0); fill: currentColor; }
+    100% { transform: translateY(0); fill: currentColor; }
+}
+
+/* Small star elements - blinking animation with delay */
+[data-name="SparklesAnimate"]:hover path[d="M20 2v4"],
+[data-name="SparklesAnimate"]:hover path[d="M22 4h-4"] {
+    animation: starBlink 2s ease-in-out 1s both;
+}
+
+[data-name="SparklesAnimate"]:hover circle[cx="4"][cy="20"][r="2"] {
+    animation: starBlink 2s ease-in-out 1s both;
+}
+
+@keyframes starBlink {
+    0%, 14.3%, 28.6%, 42.9%, 57.1%, 71.4% { opacity: 0; }
+    7.15%, 21.45%, 35.75%, 50%, 64.3%, 78.6%, 100% { opacity: 1; }
+}

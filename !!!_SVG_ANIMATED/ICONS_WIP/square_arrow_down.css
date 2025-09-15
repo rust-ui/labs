@@ -1,0 +1,23 @@
+/* Arrow chevron - bounce animation */
+[data-name="SquareArrowDownAnimate"]:hover path[d="m8 12 4 4 4-4"] {
+    animation: arrowBounce 0.4s ease-in-out;
+}
+
+@keyframes arrowBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* Arrow shaft - pulsing/shortening animation */
+[data-name="SquareArrowDownAnimate"]:hover path[d="M12 8v8"] {
+    animation: shaftPulse 0.4s ease-in-out;
+    stroke-dasharray: 8;
+    stroke-dashoffset: 0;
+}
+
+@keyframes shaftPulse {
+    0% { stroke-dasharray: 8; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: 8; stroke-dashoffset: 3; }
+    100% { stroke-dasharray: 8; stroke-dashoffset: 0; }
+}

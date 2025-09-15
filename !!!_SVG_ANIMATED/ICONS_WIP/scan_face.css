@@ -1,0 +1,54 @@
+/* Base state with smooth transitions for sequential animation */
+[data-name="ScanFaceAnimate"] {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Corner paths base state */
+[data-name="ScanFaceAnimate"] path[d="M3 7V5a2 2 0 0 1 2-2h2"],
+[data-name="ScanFaceAnimate"] path[d="M17 3h2a2 2 0 0 1 2 2v2"],
+[data-name="ScanFaceAnimate"] path[d="M21 17v2a2 2 0 0 1-2 2h-2"],
+[data-name="ScanFaceAnimate"] path[d="M7 21H5a2 2 0 0 1-2-2v-2"] {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s ease;
+    transform-origin: center;
+}
+
+/* Mouth path base state */
+[data-name="ScanFaceAnimate"] path[d="M8 14s1.5 2 4 2 4-2 4-2"] {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hover triggers the scanning sequence */
+[data-name="ScanFaceAnimate"]:hover {
+    animation: faceScan 0.8s ease-in-out;
+}
+
+[data-name="ScanFaceAnimate"]:hover path[d="M3 7V5a2 2 0 0 1 2-2h2"],
+[data-name="ScanFaceAnimate"]:hover path[d="M17 3h2a2 2 0 0 1 2 2v2"],
+[data-name="ScanFaceAnimate"]:hover path[d="M21 17v2a2 2 0 0 1-2 2h-2"],
+[data-name="ScanFaceAnimate"]:hover path[d="M7 21H5a2 2 0 0 1-2-2v-2"] {
+    animation: cornersScan 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-name="ScanFaceAnimate"]:hover path[d="M8 14s1.5 2 4 2 4-2 4-2"] {
+    animation: mouthScan 0.6s ease 0.1s both;
+}
+
+@keyframes faceScan {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes cornersScan {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(45deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes mouthScan {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}

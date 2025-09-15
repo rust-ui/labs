@@ -1,0 +1,11 @@
+/* Rocking chair animation - gentle back and forth rotation */
+[data-name="RockingChairAnimate"]:hover {
+    animation: rockingMotion 1.2s ease-in-out infinite alternate;
+    transform-origin: 10% 90%;
+}
+
+@keyframes rockingMotion {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}

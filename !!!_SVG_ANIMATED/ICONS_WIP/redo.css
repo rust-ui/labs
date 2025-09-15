@@ -1,0 +1,44 @@
+/* Base transitions for smooth reverse animation */
+[data-name="RedoAnimate"] path {
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform-origin: center;
+}
+
+/* Arrow head animation - movement and rotation */
+[data-name="RedoAnimate"]:hover path[d="M21 7v6h-6"] {
+    animation: redoArrowMove 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Curved arrow path animation - line drawing effect */
+[data-name="RedoAnimate"] path[d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"] {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 0;
+}
+
+[data-name="RedoAnimate"]:hover path[d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"] {
+    animation: redoPathDraw 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes redoArrowMove {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-2.1px) translateY(-1.4px) rotate(-12deg);
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes redoPathDraw {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dashoffset: 8;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

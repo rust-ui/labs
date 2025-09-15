@@ -1,0 +1,40 @@
+/* Water drops - staggered opacity animation */
+[data-name="ShowerHeadAnimate"]:hover path[d="M14 17v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+[data-name="ShowerHeadAnimate"]:hover path[d="M10 16v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+
+[data-name="ShowerHeadAnimate"]:hover path[d="M13 13v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 0.4s;
+}
+
+[data-name="ShowerHeadAnimate"]:hover path[d="M16 10v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 0.6s;
+}
+
+[data-name="ShowerHeadAnimate"]:hover path[d="M11 20v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+[data-name="ShowerHeadAnimate"]:hover path[d="M17 14v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+[data-name="ShowerHeadAnimate"]:hover path[d="M20 11v.01"] {
+    animation: dropPulse 1s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
+
+@keyframes dropPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}

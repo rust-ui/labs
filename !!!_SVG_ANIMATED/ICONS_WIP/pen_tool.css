@@ -1,0 +1,60 @@
+/* Base transitions for smooth reverse animation */
+[data-name="PenToolAnimate"] {
+    transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center;
+}
+
+/* SVG-level animation - wiggle and slight movement */
+[data-name="PenToolAnimate"]:hover {
+    animation: penWiggle 1s ease-out;
+}
+
+/* Line drawing animation for the diagonal line */
+[data-name="PenToolAnimate"] path[d="m2.3 2.3 7.286 7.286"] {
+    stroke-dasharray: 15;
+    stroke-dashoffset: 15;
+    opacity: 0;
+    transition: stroke-dashoffset 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+[data-name="PenToolAnimate"]:hover path[d="m2.3 2.3 7.286 7.286"] {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    animation: pathDraw 0.8s ease-out;
+}
+
+@keyframes penWiggle {
+    0% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    15% {
+        transform: rotate(0deg) translateX(0) translateY(2px);
+    }
+    30% {
+        transform: rotate(8deg) translateX(0) translateY(0);
+    }
+    45% {
+        transform: rotate(-3deg) translateX(0) translateY(-1px);
+    }
+    60% {
+        transform: rotate(8deg) translateX(0) translateY(0);
+    }
+    100% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+}
+
+@keyframes pathDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 15;
+    }
+    30% {
+        opacity: 0;
+        stroke-dashoffset: 15;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

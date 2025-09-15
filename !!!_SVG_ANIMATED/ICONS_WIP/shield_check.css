@@ -1,0 +1,26 @@
+/* Base state for checkmark - visible by default with stroke dash setup */
+[data-name="ShieldCheckAnimate"] path[d="m9 12 2 2 4-4"] {
+    opacity: 1;
+    stroke-dasharray: 15;
+    stroke-dashoffset: 0;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+/* Checkmark animation on hover */
+[data-name="ShieldCheckAnimate"]:hover path[d="m9 12 2 2 4-4"] {
+    animation: checkmarkDraw 0.4s ease-in-out;
+}
+
+@keyframes checkmarkDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 15;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        transform: scale(1);
+    }
+}

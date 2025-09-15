@@ -1,0 +1,10 @@
+/* Base state with smooth transition for rotation */
+[data-name="RotateCcwAnimate"] {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Hover state applies counterclockwise rotation */
+[data-name="RotateCcwAnimate"]:hover {
+    transform: rotate(-50deg);
+}
