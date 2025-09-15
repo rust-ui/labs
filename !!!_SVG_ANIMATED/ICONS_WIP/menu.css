@@ -1,0 +1,28 @@
+/* Top line - transforms to X top part */
+[data-name="MenuAnimate"] path[d="M4 6h16"] {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+[data-name="MenuAnimate"]:hover path[d="M4 6h16"] {
+    transform: rotate(45deg) translateY(6px);
+}
+
+/* Middle line - fades out */
+[data-name="MenuAnimate"] path[d="M4 12h16"] {
+    transition: opacity 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-name="MenuAnimate"]:hover path[d="M4 12h16"] {
+    opacity: 0;
+}
+
+/* Bottom line - transforms to X bottom part */
+[data-name="MenuAnimate"] path[d="M4 18h16"] {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+[data-name="MenuAnimate"]:hover path[d="M4 18h16"] {
+    transform: rotate(-45deg) translateY(-6px);
+}

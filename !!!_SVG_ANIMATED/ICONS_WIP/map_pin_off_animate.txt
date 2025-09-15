@@ -1,0 +1,38 @@
+/* Map Pin Off Animation */
+
+/* SVG bounce animation - entire icon bounces up and settles */
+[data-name="MapPinOffAnimate"]:hover {
+    animation: mapPinBounce 0.5s ease-in-out;
+}
+
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Strike-through line animation - draws with delay */
+[data-name="MapPinOffAnimate"] path[d="m2 2 20 20"] {
+    opacity: 1;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+[data-name="MapPinOffAnimate"]:hover path[d="m2 2 20 20"] {
+    animation: strikeThrough 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes strikeThrough {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    33% {
+        opacity: 1;
+        stroke-dashoffset: 30;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

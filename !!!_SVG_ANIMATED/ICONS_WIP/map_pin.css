@@ -1,0 +1,33 @@
+/* Map Pin Icon Animation */
+
+/* SVG container bounce animation */
+[data-name="MapPinAnimate"]:hover {
+    animation: mapPinBounce 0.5s ease-in-out;
+}
+
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Circle drawing animation with precise path targeting */
+[data-name="MapPinAnimate"]:hover circle[cx="12"][cy="10"][r="3"] {
+    animation: circleDrawing 0.5s ease-in-out 0.3s both;
+}
+
+@keyframes circleDrawing {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 19;
+        stroke-dashoffset: 9.5;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dasharray: 19;
+        stroke-dashoffset: 0;
+    }
+}

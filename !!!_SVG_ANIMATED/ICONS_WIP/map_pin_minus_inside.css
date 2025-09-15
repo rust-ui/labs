@@ -1,0 +1,37 @@
+/* SVG container animation - bounce movement */
+[data-name="MapPinMinusInsideAnimate"]:hover {
+    animation: mapPinBounce 0.5s ease-in-out;
+}
+
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Minus line initial state - visible by default to match TSX initial="normal" */
+[data-name="MapPinMinusInsideAnimate"] path[d="M9 10h6"] {
+    opacity: 1;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+}
+
+/* Minus line animation - drawing effect with delay */
+[data-name="MapPinMinusInsideAnimate"]:hover path[d="M9 10h6"] {
+    animation: minusDrawing 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes minusDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 6;
+    }
+    33% {
+        opacity: 1;
+        stroke-dashoffset: 6;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

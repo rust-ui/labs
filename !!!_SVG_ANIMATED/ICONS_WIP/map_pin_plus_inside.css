@@ -1,0 +1,64 @@
+/* SVG container animation - bounce movement */
+[data-name="MapPinPlusInsideAnimate"]:hover {
+    animation: mapPinBounce 0.5s ease-in-out;
+}
+
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Vertical bar initial state - visible by default to match TSX initial="normal" */
+[data-name="MapPinPlusInsideAnimate"] path[d="M12 7v6"] {
+    opacity: 1;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+}
+
+/* Vertical bar animation - drawing effect with delay */
+[data-name="MapPinPlusInsideAnimate"]:hover path[d="M12 7v6"] {
+    animation: verticalBarDrawing 0.2s ease-in-out 0.3s both;
+}
+
+@keyframes verticalBarDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 6;
+    }
+    50% {
+        opacity: 1;
+        stroke-dashoffset: 6;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Horizontal bar initial state - visible by default to match TSX initial="normal" */
+[data-name="MapPinPlusInsideAnimate"] path[d="M9 10h6"] {
+    opacity: 1;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+}
+
+/* Horizontal bar animation - drawing effect with delay */
+[data-name="MapPinPlusInsideAnimate"]:hover path[d="M9 10h6"] {
+    animation: horizontalBarDrawing 0.2s ease-in-out 0.6s both;
+}
+
+@keyframes horizontalBarDrawing {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 6;
+    }
+    50% {
+        opacity: 1;
+        stroke-dashoffset: 6;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

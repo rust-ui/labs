@@ -1,0 +1,60 @@
+/* Map Pin House Icon Animation - Bounce + House Drawing Effect */
+
+/* SVG Container Bounce Animation */
+[data-name="MapPinHouseAnimate"] {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-name="MapPinHouseAnimate"]:hover {
+    animation: mapPinBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* House Path Drawing Animation - Initial state visible */
+[data-name="MapPinHouseAnimate"] path[d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z"] {
+    opacity: 1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+}
+
+[data-name="MapPinHouseAnimate"]:hover path[d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z"] {
+    animation: houseDrawIn 0.3s ease-in-out 0.3s both;
+}
+
+/* House Vertical Line Animation */
+[data-name="MapPinHouseAnimate"] path[d="M18 22v-3"] {
+    opacity: 1;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 0;
+}
+
+[data-name="MapPinHouseAnimate"]:hover path[d="M18 22v-3"] {
+    animation: houseLineDrawIn 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes houseDrawIn {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 50;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes houseLineDrawIn {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 10;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

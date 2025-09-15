@@ -1,0 +1,50 @@
+/* Left dot blinking animation */
+[data-name="MessageCircleMoreAnimate"]:hover path[d="M8 12h.01"] {
+    animation: dotBlink1 1.5s ease-in-out;
+}
+
+/* Center dot blinking animation */
+[data-name="MessageCircleMoreAnimate"]:hover path[d="M12 12h.01"] {
+    animation: dotBlink2 1.5s ease-in-out;
+}
+
+/* Right dot blinking animation */
+[data-name="MessageCircleMoreAnimate"]:hover path[d="M16 12h.01"] {
+    animation: dotBlink3 1.5s ease-in-out;
+}
+
+@keyframes dotBlink1 {
+    0% { opacity: 1; }
+    6.67% { opacity: 0; }
+    16.67% { opacity: 0; }
+    23.33% { opacity: 1; }
+    33.33% { opacity: 1; }
+    40% { opacity: 0; }
+    50% { opacity: 0; }
+    56.67% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes dotBlink2 {
+    0% { opacity: 1; }
+    6.67% { opacity: 0; }
+    23.33% { opacity: 0; }
+    30% { opacity: 1; }
+    33.33% { opacity: 1; }
+    40% { opacity: 0; }
+    56.67% { opacity: 0; }
+    63.33% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes dotBlink3 {
+    0% { opacity: 1; }
+    6.67% { opacity: 0; }
+    30% { opacity: 0; }
+    36.67% { opacity: 1; }
+    33.33% { opacity: 1; }
+    40% { opacity: 0; }
+    63.33% { opacity: 0; }
+    70% { opacity: 1; }
+    100% { opacity: 1; }
+}

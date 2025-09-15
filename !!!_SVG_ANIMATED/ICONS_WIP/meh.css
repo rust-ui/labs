@@ -1,0 +1,75 @@
+/* Face wiggle animation - base transition for smooth reverse */
+[data-name="MehAnimate"] {
+    transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Face hover animation with keyframes */
+[data-name="MehAnimate"]:hover {
+    animation: faceWiggle 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Mouth transition */
+[data-name="MehAnimate"] line[x1="8"][x2="16"][y1="15"][y2="15"] {
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Mouth hover animation */
+[data-name="MehAnimate"]:hover line[x1="8"][x2="16"][y1="15"][y2="15"] {
+    animation: mouthWiggle 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s both;
+}
+
+/* Left eye transition */
+[data-name="MehAnimate"] line[x1="9"][x2="9.01"][y1="9"][y2="9"] {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Left eye hover animation */
+[data-name="MehAnimate"]:hover line[x1="9"][x2="9.01"][y1="9"][y2="9"] {
+    animation: leftEyeWiggle 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Right eye transition */
+[data-name="MehAnimate"] line[x1="15"][x2="15.01"][y1="9"][y2="9"] {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+/* Right eye hover animation */
+[data-name="MehAnimate"]:hover line[x1="15"][x2="15.01"][y1="9"][y2="9"] {
+    animation: rightEyeWiggle 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes faceWiggle {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(1deg); }
+    50% { transform: scale(0.98) rotate(-1deg); }
+    75% { transform: scale(1.02) rotate(0deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes mouthWiggle {
+    0% { transform: scaleX(1) translateY(0); }
+    25% { transform: scaleX(1.2) translateY(0.5px); }
+    50% { transform: scaleX(0.9) translateY(-0.5px); }
+    75% { transform: scaleX(1.1) translateY(0); }
+    100% { transform: scaleX(1) translateY(0); }
+}
+
+@keyframes leftEyeWiggle {
+    0% { transform: scale(1) translateX(0); }
+    25% { transform: scale(1.3) translateX(-0.3px); }
+    50% { transform: scale(1) translateX(0.3px); }
+    75% { transform: scale(1.2) translateX(0); }
+    100% { transform: scale(1) translateX(0); }
+}
+
+@keyframes rightEyeWiggle {
+    0% { transform: scale(1) translateX(0); }
+    25% { transform: scale(1.3) translateX(0.3px); }
+    50% { transform: scale(1) translateX(-0.3px); }
+    75% { transform: scale(1.2) translateX(0); }
+    100% { transform: scale(1) translateX(0); }
+}

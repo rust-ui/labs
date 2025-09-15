@@ -1,0 +1,43 @@
+/* Map Pin Minus Animation */
+/* Pattern: SVG Bounce + Line Drawing Animation */
+
+/* Base state: Smooth transition for SVG bounce effect */
+[data-name="MapPinMinusAnimate"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover state: Trigger SVG bounce animation */
+[data-name="MapPinMinusAnimate"]:hover {
+    animation: mapPinBounce 0.5s ease-in-out;
+}
+
+/* Base state for minus line: Match initial="normal" - visible by default */
+[data-name="MapPinMinusAnimate"] path[d="M16 18h6"] {
+    opacity: 1;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 0;
+}
+
+/* Minus line animation with delay */
+[data-name="MapPinMinusAnimate"]:hover path[d="M16 18h6"] {
+    animation: drawMinusLine 0.3s ease-in-out 0.3s both;
+}
+
+/* SVG bounce animation - matches y: [0, -5, -3] with times: [0, 0.6, 1] */
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Minus line drawing animation */
+@keyframes drawMinusLine {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 10;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

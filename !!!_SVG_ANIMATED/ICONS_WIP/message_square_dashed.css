@@ -1,0 +1,41 @@
+/* Sequential path animations - each path appears in order */
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M10 17H7l-4 4v-7"] {
+    animation: fadeInPath 0.3s ease-in-out 0.1s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M14 17h1"] {
+    animation: fadeInPath 0.3s ease-in-out 0.2s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M14 3h1"] {
+    animation: fadeInPath 0.3s ease-in-out 0.3s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M19 3a2 2 0 0 1 2 2"] {
+    animation: fadeInPath 0.3s ease-in-out 0.4s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M21 14v1a2 2 0 0 1-2 2"] {
+    animation: fadeInPath 0.3s ease-in-out 0.5s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M21 9v1"] {
+    animation: fadeInPath 0.3s ease-in-out 0.6s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M3 9v1"] {
+    animation: fadeInPath 0.3s ease-in-out 0.7s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M5 3a2 2 0 0 0-2 2"] {
+    animation: fadeInPath 0.3s ease-in-out 0.8s both;
+}
+
+[data-name="MessageSquareDashedAnimate"]:hover path[d="M9 3h1"] {
+    animation: fadeInPath 0.3s ease-in-out 0.9s both;
+}
+
+@keyframes fadeInPath {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

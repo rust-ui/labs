@@ -1,0 +1,16 @@
+/* Message Square Animation - Wiggle and scale effect */
+[data-name="MessageSquareAnimate"] {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+}
+
+[data-name="MessageSquareAnimate"]:hover {
+    animation: messageWiggle 0.5s ease-in-out;
+}
+
+@keyframes messageWiggle {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(-7deg); }
+    50% { transform: scale(1.05) rotate(7deg); }
+    100% { transform: scale(1.05) rotate(0deg); }
+}

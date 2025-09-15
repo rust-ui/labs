@@ -1,0 +1,13 @@
+/* Moon Animation - Gentle rocking motion */
+[data-name="MoonAnimate"]:hover {
+    animation: moonRock 1.2s ease-in-out;
+}
+
+@keyframes moonRock {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    60% { transform: rotate(-5deg); }
+    80% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}

@@ -1,0 +1,49 @@
+/* Message Square More Animation - Staggered dot blinking effect */
+[data-name="MessageSquareMoreAnimate"]:hover path[d="M8 10h.01"] {
+    animation: dotBlink1 1.5s ease-in-out;
+}
+
+[data-name="MessageSquareMoreAnimate"]:hover path[d="M12 10h.01"] {
+    animation: dotBlink2 1.5s ease-in-out;
+}
+
+[data-name="MessageSquareMoreAnimate"]:hover path[d="M16 10h.01"] {
+    animation: dotBlink3 1.5s ease-in-out;
+}
+
+/* First dot animation (custom: 0) */
+@keyframes dotBlink1 {
+    0% { opacity: 1; }
+    10% { opacity: 0; }
+    20% { opacity: 1; }
+    50% { opacity: 1; }
+    60% { opacity: 0; }
+    70% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/* Second dot animation (custom: 1, 0.1s delay in timing) */
+@keyframes dotBlink2 {
+    0% { opacity: 1; }
+    5% { opacity: 1; }
+    15% { opacity: 0; }
+    25% { opacity: 1; }
+    50% { opacity: 1; }
+    55% { opacity: 1; }
+    65% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/* Third dot animation (custom: 2, 0.2s delay in timing) */
+@keyframes dotBlink3 {
+    0% { opacity: 1; }
+    10% { opacity: 1; }
+    20% { opacity: 0; }
+    30% { opacity: 1; }
+    50% { opacity: 1; }
+    60% { opacity: 1; }
+    70% { opacity: 0; }
+    80% { opacity: 1; }
+    100% { opacity: 1; }
+}

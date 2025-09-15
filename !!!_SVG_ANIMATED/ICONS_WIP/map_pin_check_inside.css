@@ -1,0 +1,43 @@
+/* Map pin with check icon animation - bounce up + check drawing effect */
+
+/* Base state: SVG container with smooth transition for reverse animation */
+[data-name="MapPinCheckInsideAnimate"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* SVG container bounce animation */
+[data-name="MapPinCheckInsideAnimate"]:hover {
+    animation: pinBounce 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes pinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Check path - base state: visible and fully drawn (matches TSX initial="normal") */
+[data-name="MapPinCheckInsideAnimate"] path[d="m9 10 2 2 4-4"] {
+    opacity: 1;
+    stroke-dasharray: 12;
+    stroke-dashoffset: 0;
+}
+
+/* Check path animation - line drawing effect with fade in */
+[data-name="MapPinCheckInsideAnimate"]:hover path[d="m9 10 2 2 4-4"] {
+    animation: checkDraw 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes checkDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 12;
+    }
+    33% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,10 @@
+/* Panel Right Open Animation - Chevron slide animation */
+[data-name="PanelRightOpenAnimate"]:hover path[d="m10 15-3-3 3-3"] {
+    animation: chevronSlideLeft 0.5s ease-in-out;
+}
+
+@keyframes chevronSlideLeft {
+    0% { transform: translateX(0); }
+    40% { transform: translateX(-1.5px); }
+    100% { transform: translateX(0); }
+}

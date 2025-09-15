@@ -1,0 +1,37 @@
+/* Map pin container bounce animation */
+[data-name="MapPinCheckAnimate"]:hover {
+    animation: mapPinBounce 0.5s ease-in-out;
+}
+
+@keyframes mapPinBounce {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-5px); }
+    100% { transform: translateY(-3px); }
+}
+
+/* Checkmark base state - visible by default to match TSX initial="normal" */
+[data-name="MapPinCheckAnimate"] path[d="m16 18 2 2 4-4"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Checkmark drawing animation with delay */
+[data-name="MapPinCheckAnimate"]:hover path[d="m16 18 2 2 4-4"] {
+    animation: checkmarkDraw 0.3s ease-in-out 0.3s both;
+}
+
+@keyframes checkmarkDraw {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    33% {
+        opacity: 1;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
