@@ -18,9 +18,9 @@ async function createIcon(ComponentName, icon_filename) {
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("data-name", ComponentName);
-  svg.className = "size-7 text-gray-700";
-  svg.style.width = "1.75rem";
-  svg.style.height = "1.75rem";
+  svg.className = "size-10 text-gray-700";
+  svg.style.width = "2.5rem";
+  svg.style.height = "2.5rem";
   svg.setAttribute("stroke", "currentColor");
   svg.setAttribute("fill", "none");
   svg.setAttribute("stroke-width", "2");
