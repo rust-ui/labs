@@ -1,12 +1,16 @@
 # SVG Animation Verification Process
 
+## 🚨 CRUCIAL: Text-Based Verification Only
+
+**WE SHOULD NOT use browser for verification. This is PURE TEXT-BASED verification at this stage.**
+
 ## Overview
 
-This document focuses on verifying that CSS animations **exactly match** the behavior defined in the original TSX files. The primary goal is ensuring 1:1 accuracy between TSX variants and CSS implementations.
+This document focuses on verifying that CSS animations **exactly match** the code structure defined in the original TSX files. The primary goal is ensuring 1:1 code accuracy between TSX variants and CSS implementations.
 
 ## Core Verification Principle
 
-**The CSS file must replicate the exact animation behavior from the TSX file.** Every property, timing, and transform must match precisely.
+**The CSS file must replicate the exact animation code structure from the TSX file.** Every property, timing, and transform must match precisely in code.
 
 ## TSX-to-CSS Verification Workflow
 
@@ -157,10 +161,10 @@ scale: [0.8, 1]
 transition: { duration: 0.3, delay: 0.2 }
 ```
 ```css
-/* ❌ WRONG: Will flicker during delay */
+/* ❌ WRONG: Missing fill mode */
 animation: animate 0.3s ease-in-out 0.2s;
 
-/* ✅ CORRECT: Maintains state during delay */
+/* ✅ CORRECT: Includes both fill mode */
 animation: animate 0.3s ease-in-out 0.2s both;
 ```
 
@@ -236,6 +240,6 @@ Before marking any animation as complete:
 1. Identify the exact discrepancy
 2. Correct the CSS to match TSX exactly
 3. Re-verify with checklist
-4. Confirm visual behavior is identical
+4. Confirm code-level accuracy is identical (TEXT-BASED verification only)
 
 **Remember: The goal is 100% accuracy, not "close enough".**
