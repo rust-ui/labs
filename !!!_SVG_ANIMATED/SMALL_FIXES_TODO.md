@@ -7,6 +7,8 @@
 - Some Check animations a little fast.
 - Delete should be Trash (or Trash2), see delete in https://icons.pqoqubbw.dev.
 - Files* : Some paths not showing.
+- Some Map does not work well.
+
 
 
 ## COULD BE BETTER
@@ -15,3 +17,5 @@
 - EyeOff
 - Link
 - Locks
+- MailCheck a little fast
+
