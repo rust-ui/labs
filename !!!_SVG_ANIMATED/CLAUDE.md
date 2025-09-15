@@ -4,4 +4,9 @@
 
 **Pattern**: SVG paths in `ICONS_WIP/{name}.txt`, animations in `ICONS_WIP/{name}_animate.txt`
 **Usage**: Add `createIcon(ComponentName, icon_filename)` to HTML
-**Testing**: Open `SVG-ANIMATED.html` to test animations
+
+
+- **🚨 CRITICAL 🚨**: NEVER verify with browser UNLESS expressively asked so.
+- **🚨 CRITICAL 🚨**: NEVER make ANY CHANGES to `tsx` files. **NEVER**.
+
+
