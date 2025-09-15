@@ -13,16 +13,18 @@ create_icon.js                 # JavaScript function to dynamically create icons
 ICONS_WIP/
 ├── {icon_name}.txt           # SVG path data
 └── {icon_name}.css           # CSS animation styles
+└── {icon_name}.tst           # TSX animation styles
 ```
 
 ### Core Pattern
-1. **HTML**: Calls `createIcon(ComponentName, icon_filename)`
-2. **JavaScript**: Fetches SVG paths and CSS, creates DOM elements
-3. **CSS**: Defines animations targeting `[data-name="ComponentName"]`
+1. **HTML**: Calls `createIcon(ComponentName, icon_filename)`.
+2. **JavaScript**: Fetches SVG paths and CSS, creates DOM elements.
+3. **CSS**: Defines animations targeting `[data-name="ComponentName"]`.
+4. **TSX**: Inspiration for the CSS.
 
 ## Step-by-Step Process
 
-### 1. SVG Path File
+### 1. Understand SVG Path File
 **File:** `ICONS_WIP/a_arrow_down.txt`
 ```html
 <path d="M3.5 13h6" />           <!-- Letter A - horizontal line -->
@@ -35,8 +37,8 @@ ICONS_WIP/
 
 **IMPORTANT**: Before creating CSS animations, you must first locate and analyze the original TSX animation source to understand the exact animation behavior.
 
-**Locate TSX file**: Search in `icons-animated-pqoqubbw/` directory for the corresponding `.tsx` file
-- Example: For `activity.txt` → find `icons-animated-pqoqubbw/activity.tsx`
+**Locate TSX file**: Search in `icons-animated-pqoqubbw/` directory for the corresponding `.css` file
+- Example: For `ICONS_WIP/activity.css` → find `ICONS_WIP/activity.tsx`
 
 ### 3. Analyze TSX Animation Variants
 
@@ -235,14 +237,6 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 }
 ```
 
-**Legacy CSS (nth-child approach):**
-```css
-[data-name="IconName"]:hover path:nth-child(1) {
-    animation: letterAnimate 0.3s ease-in-out;
-}
-[data-name="IconName"]:hover path:nth-child(2) {
-    animation: arrowAnimate 0.3s ease-in-out 0.2s both;
-}
-```
+
 
 This conversion maintains the exact same visual behavior while using pure CSS animations instead of JavaScript-based motion libraries.
