@@ -1,0 +1,10 @@
+/* Chevron left animation - horizontal wiggle effect */
+[data-name="ChevronLeftAnimate"]:hover path[d="m15 18-6-6 6-6"] {
+    animation: chevronLeftWiggle 0.5s ease-in-out;
+}
+
+@keyframes chevronLeftWiggle {
+    0% { transform: translateX(0); }
+    40% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}

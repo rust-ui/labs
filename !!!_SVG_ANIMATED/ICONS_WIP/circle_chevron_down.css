@@ -1,0 +1,9 @@
+[data-name="CircleChevronDownAnimate"]:hover path[d="m16 10-4 4-4-4"] {
+    animation: chevronDownBounce 0.5s ease-in-out;
+}
+
+@keyframes chevronDownBounce {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+}

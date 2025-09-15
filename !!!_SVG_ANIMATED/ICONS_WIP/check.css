@@ -1,0 +1,28 @@
+/* Check Icon Animation */
+/* Pattern: Line Drawing Animation with Scale Transform */
+
+/* Base state: Match TSX initial="normal" - visible by default */
+[data-name="CheckAnimate"] path[d="M20 6 9 17l-5-5"] {
+    opacity: 1;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+    transform: scale(1);
+}
+
+/* Animation: Line drawing effect with scale on hover */
+[data-name="CheckAnimate"]:hover path[d="M20 6 9 17l-5-5"] {
+    animation: drawCheckmark 0.4s ease-in-out;
+}
+
+@keyframes drawCheckmark {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        transform: scale(1);
+    }
+}

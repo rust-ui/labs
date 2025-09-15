@@ -1,0 +1,14 @@
+/* Base state with smooth transitions for bidirectional animation */
+[data-name="ChevronsUpDownAnimate"] path {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Down chevron - moves down on hover */
+[data-name="ChevronsUpDownAnimate"]:hover path[d="m7 15 5 5 5-5"] {
+    transform: translateY(2px);
+}
+
+/* Up chevron - moves up on hover */
+[data-name="ChevronsUpDownAnimate"]:hover path[d="m7 9 5-5 5 5"] {
+    transform: translateY(-2px);
+}

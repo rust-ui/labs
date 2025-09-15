@@ -1,0 +1,18 @@
+/* Chevrons Right Left Animation - State-Change Pattern */
+/* Pattern: Smooth transition for bidirectional movement */
+
+/* Base state with transition for smooth reverse animation */
+[data-name="ChevronsRightLeftAnimate"] path[d="m20 17-5-5 5-5"],
+[data-name="ChevronsRightLeftAnimate"] path[d="m4 17 5-5-5-5"] {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Right chevron moves left on hover */
+[data-name="ChevronsRightLeftAnimate"]:hover path[d="m20 17-5-5 5-5"] {
+    transform: translateX(-2px);
+}
+
+/* Left chevron moves right on hover */
+[data-name="ChevronsRightLeftAnimate"]:hover path[d="m4 17 5-5-5-5"] {
+    transform: translateX(2px);
+}

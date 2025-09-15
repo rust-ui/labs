@@ -1,0 +1,32 @@
+/* Chart Spline Icon CSS Animation */
+
+/* Base state: Static chart axes (not animated) */
+[data-name="ChartSplineAnimate"] path[d="M3 3v16a2 2 0 0 0 2 2h16"] {
+    opacity: 1;
+}
+
+/* Base state: Animated spline curve - visible by default (matches TSX initial="normal") */
+[data-name="ChartSplineAnimate"] path[d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"] {
+    opacity: 1;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+/* Animation: Line drawing effect for spline curve */
+[data-name="ChartSplineAnimate"]:hover path[d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"] {
+    animation: drawSpline 0.3s ease-in-out 0.15s both;
+}
+
+@keyframes drawSpline {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+    }
+    33% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

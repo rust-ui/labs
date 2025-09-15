@@ -1,0 +1,9 @@
+[data-name="ChevronRightAnimate"]:hover path[d="m9 18 6-6-6-6"] {
+    animation: chevronRightMove 0.5s ease-in-out;
+}
+
+@keyframes chevronRightMove {
+    0% { transform: translateX(0); }
+    40% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}

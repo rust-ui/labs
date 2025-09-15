@@ -1,0 +1,38 @@
+/* Base state: Match TSX initial="normal" - elements visible by default */
+[data-name="CheckCheckAnimate"] path[d="M18 6 7 17l-5-5"] {
+    opacity: 1;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+}
+
+[data-name="CheckCheckAnimate"] path[d="m22 10-7.5 7.5L13 16"] {
+    opacity: 1;
+    stroke-dasharray: 25;
+    stroke-dashoffset: 0;
+}
+
+/* First checkmark animation - no delay (custom=0) */
+[data-name="CheckCheckAnimate"]:hover path[d="M18 6 7 17l-5-5"] {
+    animation: checkAnimate 0.4s ease-in-out;
+}
+
+/* Second checkmark animation - 0.1s delay (custom=1, delay=0.1*1) */
+[data-name="CheckCheckAnimate"]:hover path[d="m22 10-7.5 7.5L13 16"] {
+    animation: checkAnimate 0.4s ease-in-out 0.1s both;
+}
+
+@keyframes checkAnimate {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 30;
+        transform: scale(0.5);
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        transform: scale(1);
+    }
+}

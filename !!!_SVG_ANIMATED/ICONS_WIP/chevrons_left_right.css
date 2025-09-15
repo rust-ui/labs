@@ -1,0 +1,14 @@
+/* Base state with transition for smooth reverse animation */
+[data-name="ChevronsLeftRightAnimate"] path {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Left chevron: moves left on hover */
+[data-name="ChevronsLeftRightAnimate"]:hover path[d="m9 7-5 5 5 5"] {
+    transform: translateX(-2px);
+}
+
+/* Right chevron: moves right on hover */
+[data-name="ChevronsLeftRightAnimate"]:hover path[d="m15 7 5 5-5 5"] {
+    transform: translateX(2px);
+}

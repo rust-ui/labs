@@ -1,0 +1,10 @@
+/* Circle chevron right animation - horizontal wiggle effect */
+[data-name="CircleChevronRightAnimate"]:hover path[d="m10 8 4 4-4 4"] {
+    animation: circleChevronRightWiggle 0.5s ease-in-out;
+}
+
+@keyframes circleChevronRightWiggle {
+    0% { transform: translateX(0); }
+    40% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}

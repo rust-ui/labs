@@ -1,0 +1,54 @@
+/* Audio lines animation - simulates audio level visualization */
+/* Line 1 and 6 (M2 10v3 and M22 10v3) are static - no animation */
+
+/* Line 2 (M6 6v11) - 1.5s duration */
+[data-name="AudioLinesAnimate"]:hover path[d="M6 6v11"] {
+    animation: audioLine2 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Line 3 (M10 3v18) - 1s duration */
+[data-name="AudioLinesAnimate"]:hover path[d="M10 3v18"] {
+    animation: audioLine3 1s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Line 4 (M14 8v7) - 0.8s duration */
+[data-name="AudioLinesAnimate"]:hover path[d="M14 8v7"] {
+    animation: audioLine4 0.8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Line 5 (M18 5v13) - 1.5s duration */
+[data-name="AudioLinesAnimate"]:hover path[d="M18 5v13"] {
+    animation: audioLine5 1.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Line 2 animation: M6 6v11 -> M6 10v3 -> M6 6v11 */
+@keyframes audioLine2 {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.27); } /* 3/11 ≈ 0.27 */
+    100% { transform: scaleY(1); }
+}
+
+/* Line 3 animation: M10 3v18 -> M10 9v5 -> M10 3v18 */
+@keyframes audioLine3 {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.28); } /* 5/18 ≈ 0.28 */
+    100% { transform: scaleY(1); }
+}
+
+/* Line 4 animation: M14 8v7 -> M14 6v11 -> M14 8v7 */
+@keyframes audioLine4 {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(1.57); } /* 11/7 ≈ 1.57 */
+    100% { transform: scaleY(1); }
+}
+
+/* Line 5 animation: M18 5v13 -> M18 7v9 -> M18 5v13 */
+@keyframes audioLine5 {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.69); } /* 9/13 ≈ 0.69 */
+    100% { transform: scaleY(1); }
+}

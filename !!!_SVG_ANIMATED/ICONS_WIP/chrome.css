@@ -1,0 +1,43 @@
+/* Base state: Match TSX initial="normal" - elements visible by default */
+[data-name="ChromeAnimate"] circle[cx="12"][cy="12"][r="4"],
+[data-name="ChromeAnimate"] line[x1="21.17"][x2="12"][y1="8"][y2="8"],
+[data-name="ChromeAnimate"] line[x1="3.95"][x2="8.54"][y1="6.06"][y2="14"],
+[data-name="ChromeAnimate"] line[x1="10.88"][x2="15.46"][y1="21.94"][y2="14"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Inner circle animation - starts immediately */
+[data-name="ChromeAnimate"]:hover circle[cx="12"][cy="12"][r="4"] {
+    animation: chromeInnerCircle 0.45s ease-in-out;
+}
+
+/* Lines animation - delayed by 0.3s */
+[data-name="ChromeAnimate"]:hover line[x1="21.17"][x2="12"][y1="8"][y2="8"],
+[data-name="ChromeAnimate"]:hover line[x1="3.95"][x2="8.54"][y1="6.06"][y2="14"],
+[data-name="ChromeAnimate"]:hover line[x1="10.88"][x2="15.46"][y1="21.94"][y2="14"] {
+    animation: chromeLines 0.45s ease-in-out 0.3s both;
+}
+
+@keyframes chromeInnerCircle {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes chromeLines {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

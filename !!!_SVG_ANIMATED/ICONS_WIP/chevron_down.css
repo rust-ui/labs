@@ -1,0 +1,9 @@
+[data-name="ChevronDownAnimate"]:hover path[d="m6 9 6 6 6-6"] {
+    animation: chevronDownBounce 0.5s ease-in-out;
+}
+
+@keyframes chevronDownBounce {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+}
