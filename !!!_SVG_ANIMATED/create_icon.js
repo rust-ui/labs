@@ -1,3 +1,47 @@
+// Custom tooltip functionality
+function createTooltip() {
+  const tooltip = document.createElement("div");
+  tooltip.id = "custom-tooltip";
+  tooltip.style.cssText = `
+    position: absolute;
+    background: transparent;
+    color: #374151;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: system-ui, -apple-system, sans-serif;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  `;
+  document.body.appendChild(tooltip);
+  return tooltip;
+}
+
+function showTooltip(event, text) {
+  let tooltip = document.getElementById("custom-tooltip");
+  if (!tooltip) {
+    tooltip = createTooltip();
+  }
+
+  tooltip.textContent = text;
+  tooltip.style.opacity = "1";
+
+  // Position relative to mouse
+  const rect = event.target.getBoundingClientRect();
+  tooltip.style.left = `${rect.left + rect.width / 2 - tooltip.offsetWidth / 2}px`;
+  tooltip.style.top = `${rect.top - tooltip.offsetHeight - 8}px`;
+}
+
+function hideTooltip() {
+  const tooltip = document.getElementById("custom-tooltip");
+  if (tooltip) {
+    tooltip.style.opacity = "0";
+  }
+}
+
 async function createIcon(ComponentName, icon_filename) {
   // Load SVG paths
   const response = await fetch(`ICONS_WIP/${icon_filename}.txt`);
@@ -27,6 +71,10 @@ async function createIcon(ComponentName, icon_filename) {
   svg.setAttribute("stroke-linecap", "round");
   svg.setAttribute("stroke-linejoin", "round");
   svg.setAttribute("viewBox", "0 0 24 24");
+
+  // Add custom tooltip events
+  svg.addEventListener("mouseenter", (e) => showTooltip(e, icon_filename));
+  svg.addEventListener("mouseleave", hideTooltip);
 
   svg.innerHTML = pathsHtml.trim();
 
