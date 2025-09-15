@@ -12,8 +12,8 @@ SVG-ANIMATED.html              # Main HTML file with icon container
 create_icon.js                 # JavaScript function to dynamically create icons
 ICONS_WIP/
 ├── {icon_name}.txt           # SVG path data
-└── {icon_name}.css           # CSS animation styles (TO CREATE)
-└── {icon_name}.tst           # TSX animation styles
+├── {icon_name}.css           # CSS animation styles (TO CREATE)
+└── {icon_name}.tsx           # TSX animation styles (reference)
 ```
 
 ### Core Pattern
@@ -37,8 +37,8 @@ ICONS_WIP/
 
 **IMPORTANT**: Before creating CSS animations, you must first locate and analyze the original TSX animation source to understand the exact animation behavior.
 
-**Locate TSX file**: Search in `icons-animated-pqoqubbw/` directory for the corresponding `.css` file
-- Example: For `ICONS_WIP/activity.css` → find `ICONS_WIP/activity.tsx`
+**Locate TSX file**: Find the corresponding TSX file in the `ICONS_WIP/` directory
+- Example: For `ICONS_WIP/activity.css` → analyze `ICONS_WIP/activity.tsx`
 
 ### 3. Analyze TSX Animation Variants
 
@@ -133,7 +133,7 @@ path[d="m2 16 4.5-9 4.5 9"]   /* More reliable than nth-child(2) */
 - Use large `stroke-dasharray` value to cover entire path length
 - Animate `stroke-dashoffset` from full length to 0 for drawing effect
 
-### 4. Animation Fill Mode
+### 5. Animation Fill Mode
 - Use `both` keyword to maintain initial state during delay period
 - Prevents flickering before delayed animations start
 
@@ -149,7 +149,7 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 
 ### 1. **CRUCIAL**: Choose the Right Animation Pattern
 
-#### For State-Change Animations: Use Smooth Transitions
+#### Pattern 1: State-Change Animations - Use Smooth Transitions
 - **Use CSS transitions for animations that move elements to different end states**
 - This ensures smooth animation both on hover AND unhover
 - Use `transition: transform 0.5s cubic-bezier(...)` on base elements
@@ -167,7 +167,7 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 }
 ```
 
-#### For Self-Contained Sequences: Use Keyframes
+#### Pattern 2: Self-Contained Sequences - Use Keyframes
 - **Use keyframe animations for bounce/sequence effects that naturally return to start**
 - These animations complete their cycle and don't need smooth unhover transitions
 - **Example (arrow_big_down bounce):**
@@ -183,7 +183,7 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 }
 ```
 
-#### For Smooth Reverse Animations: Use Transition + Transform Pattern
+#### Pattern 3: Smooth Reverse Animations - Use Transition + Transform Pattern
 - **Use for**: Animations that need smooth return to original state on unhover
 - **Problem**: Keyframe animations stop abruptly when hover ends, creating jarring visual effects
 - **Solution**: Base transition + hover state transform for seamless bidirectional animation
@@ -225,7 +225,7 @@ This creates a sequential reveal effect that guides the eye from letter to arrow
 - **Flexible**: Works with both simple transforms and complex keyframe sequences
 - **Bouncy effects**: Cubic-bezier curves can add playful bounce to the reverse animation
 
-#### For Line Drawing Animations: Use Proper Initial State
+#### Pattern 4: Line Drawing Animations - Use Proper Initial State
 - **Use for**: Path drawing effects like checkmarks, arrows, or signature-style animations
 - **Critical rule**: Always match the TSX `initial` state to avoid invisible elements
 - **Pattern**: Set proper default visibility + stroke-dash animation on hover
