@@ -1,5 +1,5 @@
 /* Chart line drawing animation */
-[data-name="ChartLineAnimate"]:hover path[d="m19 9-5 5-4-4-3 3"] {
+[data-name="ChartLineAnimate"]:hover path[d="m7 13 3-3 4 4 5-5"] {
     animation: lineDrawing 0.3s ease-in-out 0.15s both;
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
