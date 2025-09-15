@@ -336,5 +336,9 @@ const checkVariants: Variants = {
 ```
 
 
+## Other Instructions
+
+- **🚨 CRITICAL 🚨**: **DO NOT** mention `tsx` in your **comments** in the `.css` files.
+
 
 This conversion maintains the exact same visual behavior while using pure CSS animations instead of JavaScript-based motion libraries.
