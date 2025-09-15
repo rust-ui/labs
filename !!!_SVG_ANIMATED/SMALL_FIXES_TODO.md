@@ -6,6 +6,6 @@
 - Chart bars.
 - Some Check animations a little fast.
 - Delete should be Trash (or Trash2), see delete in https://icons.pqoqubbw.dev.
-
-
+- Files* : Some paths not showing.
+- Gauge: could be better.
 
