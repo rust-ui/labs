@@ -1,0 +1,31 @@
+/* Calendar Cog Animation - Cog rotation on hover */
+
+/* Animated cog elements - 180 degree rotation with spring-like transition */
+[data-name="CalendarCogAnimate"]:hover path[d="m15.228 16.852-.923-.383"],
+[data-name="CalendarCogAnimate"]:hover path[d="m15.228 19.148-.923.383"],
+[data-name="CalendarCogAnimate"]:hover path[d="m16.47 14.305.382.923"],
+[data-name="CalendarCogAnimate"]:hover path[d="m16.852 20.772-.383.924"],
+[data-name="CalendarCogAnimate"]:hover path[d="m19.148 15.228.383-.923"],
+[data-name="CalendarCogAnimate"]:hover path[d="m19.53 21.696-.382-.924"],
+[data-name="CalendarCogAnimate"]:hover path[d="m20.772 16.852.924-.383"],
+[data-name="CalendarCogAnimate"]:hover path[d="m20.772 19.148.924.383"],
+[data-name="CalendarCogAnimate"]:hover circle[cx="18"][cy="18"][r="3"] {
+    transform-origin: 18px 18px;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: rotate(180deg);
+}
+
+/* Base state with smooth transition for reverse animation */
+[data-name="CalendarCogAnimate"] path[d="m15.228 16.852-.923-.383"],
+[data-name="CalendarCogAnimate"] path[d="m15.228 19.148-.923.383"],
+[data-name="CalendarCogAnimate"] path[d="m16.47 14.305.382.923"],
+[data-name="CalendarCogAnimate"] path[d="m16.852 20.772-.383.924"],
+[data-name="CalendarCogAnimate"] path[d="m19.148 15.228.383-.923"],
+[data-name="CalendarCogAnimate"] path[d="m19.53 21.696-.382-.924"],
+[data-name="CalendarCogAnimate"] path[d="m20.772 16.852.924-.383"],
+[data-name="CalendarCogAnimate"] path[d="m20.772 19.148.924.383"],
+[data-name="CalendarCogAnimate"] circle[cx="18"][cy="18"][r="3"] {
+    transform-origin: 18px 18px;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: rotate(0deg);
+}

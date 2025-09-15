@@ -1,0 +1,21 @@
+/* Cast icon animation - Sequential fade-in of casting signal waves */
+
+/* Central point (dot) - no delay, immediate animation */
+[data-name="CastAnimate"]:hover line[x1="2"][x2="2.01"][y1="20"][y2="20"] {
+    animation: castFadeIn 0.5s ease-in-out;
+}
+
+/* Outer arc - 0.1s delay */
+[data-name="CastAnimate"]:hover path[d="M2 16a5 5 0 0 1 4 4"] {
+    animation: castFadeIn 0.5s ease-in-out 0.1s both;
+}
+
+/* Inner arc - 0.2s delay */
+[data-name="CastAnimate"]:hover path[d="M2 12a9 9 0 0 1 8 8"] {
+    animation: castFadeIn 0.5s ease-in-out 0.2s both;
+}
+
+@keyframes castFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

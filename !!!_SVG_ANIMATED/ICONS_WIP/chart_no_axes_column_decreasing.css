@@ -1,0 +1,39 @@
+/* Tallest column (custom=0, no delay) */
+[data-name="ChartNoAxesColumnDecreasingAnimate"]:hover path[d="M6 20V4"] {
+    animation: columnDisappear 0.3s ease-in-out 0s both, columnReappear 0.3s ease-in-out 0.3s both;
+    stroke-dasharray: 50;
+}
+
+/* Medium column (custom=1, 0.1s delay) */
+[data-name="ChartNoAxesColumnDecreasingAnimate"]:hover path[d="M12 20V10"] {
+    animation: columnDisappear 0.3s ease-in-out 0.1s both, columnReappear 0.3s ease-in-out 0.4s both;
+    stroke-dasharray: 50;
+}
+
+/* Shortest column (custom=2, 0.2s delay) */
+[data-name="ChartNoAxesColumnDecreasingAnimate"]:hover path[d="M18 20v-4"] {
+    animation: columnDisappear 0.3s ease-in-out 0.2s both, columnReappear 0.3s ease-in-out 0.5s both;
+    stroke-dasharray: 50;
+}
+
+@keyframes columnDisappear {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 50;
+        opacity: 0;
+    }
+}
+
+@keyframes columnReappear {
+    0% {
+        stroke-dashoffset: 50;
+        opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}

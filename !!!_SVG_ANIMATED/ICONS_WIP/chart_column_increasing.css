@@ -1,0 +1,42 @@
+/* Chart Column Increasing Animation */
+/* Short column - draws first (custom=0, delay: 0s) */
+[data-name="ChartColumnIncreasingAnimate"]:hover path[d="M8 17v-3"] {
+    animation: columnErase 0.3s ease-in-out 0s, columnDraw 0.3s ease-in-out 0.3s;
+}
+
+/* Medium column - draws second (custom=1, delay: 0.1s) */
+[data-name="ChartColumnIncreasingAnimate"]:hover path[d="M13 17V9"] {
+    animation: columnErase 0.3s ease-in-out 0.1s, columnDraw 0.3s ease-in-out 0.4s;
+}
+
+/* Tall column - draws third (custom=2, delay: 0.2s) */
+[data-name="ChartColumnIncreasingAnimate"]:hover path[d="M18 17V5"] {
+    animation: columnErase 0.3s ease-in-out 0.2s, columnDraw 0.3s ease-in-out 0.5s;
+}
+
+@keyframes columnErase {
+    0% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+}
+
+@keyframes columnDraw {
+    0% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    100% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+

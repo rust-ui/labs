@@ -1,0 +1,34 @@
+/* Calendar Days Animation - Sequential opacity pulse for calendar day dots */
+
+/* First row dots with staggered delays */
+[data-name="CalendarDaysAnimate"]:hover path[d="M8 14h.01"] {
+    animation: dotPulse 0.4s ease-in-out 0s;
+}
+
+[data-name="CalendarDaysAnimate"]:hover path[d="M12 14h.01"] {
+    animation: dotPulse 0.4s ease-in-out 0.1s;
+}
+
+[data-name="CalendarDaysAnimate"]:hover path[d="M16 14h.01"] {
+    animation: dotPulse 0.4s ease-in-out 0.2s;
+}
+
+/* Second row dots with continued staggered delays */
+[data-name="CalendarDaysAnimate"]:hover path[d="M8 18h.01"] {
+    animation: dotPulse 0.4s ease-in-out 0.3s;
+}
+
+[data-name="CalendarDaysAnimate"]:hover path[d="M12 18h.01"] {
+    animation: dotPulse 0.4s ease-in-out 0.4s;
+}
+
+[data-name="CalendarDaysAnimate"]:hover path[d="M16 18h.01"] {
+    animation: dotPulse 0.4s ease-in-out 0.5s;
+}
+
+@keyframes dotPulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+

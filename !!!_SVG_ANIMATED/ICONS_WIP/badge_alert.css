@@ -1,0 +1,25 @@
+/* Badge Alert Animation - Shake and scale effect */
+[data-name="BadgeAlertAnimate"]:hover svg {
+    animation: badgeAlertShake 0.5s ease-in-out;
+}
+
+@keyframes badgeAlertShake {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    20% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+    40% {
+        transform: scale(1.1) rotate(3deg);
+    }
+    60% {
+        transform: scale(1.1) rotate(-2deg);
+    }
+    80% {
+        transform: scale(1) rotate(2deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}

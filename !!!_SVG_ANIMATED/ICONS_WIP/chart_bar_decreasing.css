@@ -1,0 +1,39 @@
+/* Top bar (custom=0, no delay) */
+[data-name="ChartBarDecreasingAnimate"]:hover path[d="M7 6h12"] {
+    animation: barDisappear 0.3s ease-in-out 0s both, barReappear 0.3s ease-in-out 0.3s both;
+    stroke-dasharray: 50;
+}
+
+/* Middle bar (custom=1, 0.1s delay) */
+[data-name="ChartBarDecreasingAnimate"]:hover path[d="M7 11h8"] {
+    animation: barDisappear 0.3s ease-in-out 0.1s both, barReappear 0.3s ease-in-out 0.4s both;
+    stroke-dasharray: 50;
+}
+
+/* Bottom bar (custom=2, 0.2s delay) */
+[data-name="ChartBarDecreasingAnimate"]:hover path[d="M7 16h3"] {
+    animation: barDisappear 0.3s ease-in-out 0.2s both, barReappear 0.3s ease-in-out 0.5s both;
+    stroke-dasharray: 50;
+}
+
+@keyframes barDisappear {
+    0% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 50;
+        opacity: 0;
+    }
+}
+
+@keyframes barReappear {
+    0% {
+        stroke-dashoffset: 50;
+        opacity: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
