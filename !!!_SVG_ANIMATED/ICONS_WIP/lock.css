@@ -1,0 +1,24 @@
+[data-name="LockAnimate"] {
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+[data-name="LockAnimate"]:hover {
+    animation: lockWiggle 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-name="LockAnimate"]:hover path[d="M7 11V7a5 5 0 0 1 10 0v4"] {
+    animation: pathShorten 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes lockWiggle {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-3deg) scale(0.95); }
+    50% { transform: rotate(1deg) scale(1.05); }
+    75% { transform: rotate(-2deg) scale(0.98); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes pathShorten {
+    0% { stroke-dasharray: 100; stroke-dashoffset: 0; }
+    100% { stroke-dasharray: 100; stroke-dashoffset: 30; }
+}

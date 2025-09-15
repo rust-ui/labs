@@ -1,0 +1,30 @@
+/* Lock Keyhole Open Animation */
+
+/* Base SVG animation - wiggle and scale sequence */
+[data-name="LockKeyholeOpenAnimate"] {
+    transition: transform 0.4s cubic-bezier(0.68, -1.2, 0.265, 2.2);
+    transform-origin: center;
+}
+
+[data-name="LockKeyholeOpenAnimate"]:hover {
+    animation: lockWiggle 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes lockWiggle {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(2deg) scale(1.05); }
+    50% { transform: rotate(4deg) scale(0.95); }
+    75% { transform: rotate(-2deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* Path drawing animation - lock arc extension */
+[data-name="LockKeyholeOpenAnimate"] path[d="M7 10V7a5 5 0 0 1 9.33-2.5"] {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 4;
+    transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-name="LockKeyholeOpenAnimate"]:hover path[d="M7 10V7a5 5 0 0 1 9.33-2.5"] {
+    stroke-dashoffset: 0;
+}

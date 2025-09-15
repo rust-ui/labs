@@ -1,0 +1,35 @@
+/* Base element: Define transition for smooth reverse */
+[data-name="LockOpenAnimate"] {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* Hover state: Trigger wiggle animation */
+[data-name="LockOpenAnimate"]:hover {
+    animation: lockOpenWiggle 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keyframe animation for the wiggle effect */
+@keyframes lockOpenWiggle {
+    0% { transform: scale(1) rotate(0deg); }
+    12.5% { transform: scale(1.05) rotate(2deg); }
+    25% { transform: scale(0.95) rotate(4deg); }
+    50% { transform: scale(1.02) rotate(-2deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Shackle path animation - extend drawing effect */
+[data-name="LockOpenAnimate"]:hover path[d="M7 11V7a5 5 0 0 1 9.9-1"] {
+    animation: shackleExtend 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes shackleExtend {
+    0% {
+        stroke-dasharray: 20;
+        stroke-dashoffset: 4;
+    }
+    100% {
+        stroke-dasharray: 20;
+        stroke-dashoffset: 0;
+    }
+}

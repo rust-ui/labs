@@ -1,0 +1,20 @@
+/* First coin animation - immediate */
+[data-name="HandCoinsAnimate"]:hover circle[cx="16"][cy="9"] {
+    animation: coinDrop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Second coin animation - delayed */
+[data-name="HandCoinsAnimate"]:hover circle[cx="6"][cy="5"] {
+    animation: coinDrop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.15s both;
+}
+
+@keyframes coinDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

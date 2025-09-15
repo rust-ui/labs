@@ -1,0 +1,39 @@
+/* Link Animation - Complex path drawing with rotation */
+
+/* Base state for both paths - visible with stroke dash setup */
+[data-name="LinkAnimate"] path[d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"],
+[data-name="LinkAnimate"] path[d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"] {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    transform: rotate(0deg);
+}
+
+/* Hover animation for both paths */
+[data-name="LinkAnimate"]:hover path[d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"],
+[data-name="LinkAnimate"]:hover path[d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"] {
+    animation: linkPulse 1s ease-in-out;
+}
+
+@keyframes linkPulse {
+    0% {
+        stroke-dashoffset: 0;
+        transform: rotate(0deg);
+    }
+    20% {
+        stroke-dashoffset: 1.5;
+        transform: rotate(-2.5deg);
+    }
+    40% {
+        stroke-dashoffset: 0;
+        transform: rotate(-5deg);
+    }
+    60% {
+        stroke-dashoffset: 1.5;
+        transform: rotate(-2.5deg);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: rotate(0deg);
+    }
+}

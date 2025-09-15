@@ -1,0 +1,12 @@
+/* Pinwheel loader rotation animation */
+[data-name="LoaderPinwheelAnimate"]:hover path[d="M22 12a1 1 0 0 1-10 0 1 1 0 0 0-10 0"],
+[data-name="LoaderPinwheelAnimate"]:hover path[d="M7 20.7a1 1 0 1 1 5-8.7 1 1 0 1 0 5-8.6"],
+[data-name="LoaderPinwheelAnimate"]:hover path[d="M7 3.3a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6"] {
+    animation: pinwheelRotate 1s linear infinite;
+    transform-origin: 12px 12px;
+}
+
+@keyframes pinwheelRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

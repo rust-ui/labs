@@ -1,0 +1,38 @@
+/* ID Card icon - line drawing animation with sequential reveal */
+
+/* Base state: All animated elements start visible (matching TSX initial="normal") */
+[data-name="IdCardAnimate"] path[d="M6.17 15a3 3 0 0 1 5.66 0"],
+[data-name="IdCardAnimate"] circle[cx="9"][cy="11"][r="2"],
+[data-name="IdCardAnimate"] path[d="M16 10h2"],
+[data-name="IdCardAnimate"] path[d="M16 14h2"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* Phase 1: Arc path animation (custom: 0, delay: 0s) */
+[data-name="IdCardAnimate"]:hover path[d="M6.17 15a3 3 0 0 1 5.66 0"] {
+    animation: drawPath 0.3s ease-in-out;
+}
+
+/* Phase 2: Circle animation (custom: 1, delay: 0.1s) */
+[data-name="IdCardAnimate"]:hover circle[cx="9"][cy="11"][r="2"] {
+    animation: drawPath 0.3s ease-in-out 0.1s both;
+}
+
+/* Phase 3: Horizontal lines animation (custom: 2, delay: 0.2s) */
+[data-name="IdCardAnimate"]:hover path[d="M16 10h2"],
+[data-name="IdCardAnimate"]:hover path[d="M16 14h2"] {
+    animation: drawPath 0.3s ease-in-out 0.2s both;
+}
+
+@keyframes drawPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

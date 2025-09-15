@@ -1,0 +1,16 @@
+[data-name="KeyAnimate"] {
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform-origin: 30% 70%;
+}
+
+[data-name="KeyAnimate"]:hover {
+    animation: keyRotate 0.6s ease-in-out;
+    transform-origin: 30% 70%;
+}
+
+@keyframes keyRotate {
+    0% { transform: rotate(-3deg); }
+    60% { transform: rotate(-33deg); }
+    80% { transform: rotate(-25deg); }
+    100% { transform: rotate(-28deg); }
+}

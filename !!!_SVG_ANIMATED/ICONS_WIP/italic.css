@@ -1,0 +1,49 @@
+/* Italic Animation - Line drawing effect */
+
+/* Base state: Elements visible by default matching initial="normal" */
+[data-name="ItalicAnimate"] line[x1="19"][x2="10"][y1="4"][y2="4"],
+[data-name="ItalicAnimate"] line[x1="14"][x2="5"][y1="20"][y2="20"] {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+[data-name="ItalicAnimate"] line[x1="15"][x2="9"][y1="4"][y2="20"] {
+    opacity: 1;
+    stroke-dasharray: 25;
+    stroke-dashoffset: 0;
+}
+
+/* Hover animations */
+/* Top and bottom horizontal lines animate first (0.2s duration) */
+[data-name="ItalicAnimate"]:hover line[x1="19"][x2="10"][y1="4"][y2="4"],
+[data-name="ItalicAnimate"]:hover line[x1="14"][x2="5"][y1="20"][y2="20"] {
+    animation: lineDrawFast 0.2s ease-in-out;
+}
+
+/* Diagonal italic line animates with delay (0.1s delay, 0.4s duration) */
+[data-name="ItalicAnimate"]:hover line[x1="15"][x2="9"][y1="4"][y2="20"] {
+    animation: lineDrawSlow 0.4s ease-in-out 0.1s both;
+}
+
+@keyframes lineDrawFast {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes lineDrawSlow {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 25;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

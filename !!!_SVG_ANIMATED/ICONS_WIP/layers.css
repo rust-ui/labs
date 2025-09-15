@@ -1,0 +1,30 @@
+/* Layers Icon Animation - Two-phase sequential movement */
+
+/* Base state: Add transition for smooth animations */
+[data-name="LayersAnimate"] path {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Phase 1: Middle layer animation (second path) - moves up 5px first */
+[data-name="LayersAnimate"]:hover path[d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"] {
+    animation: middleLayerSequence 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Phase 2: Bottom layer animation (third path) - moves up 9px with slight delay */
+[data-name="LayersAnimate"]:hover path[d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"] {
+    animation: bottomLayerSequence 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Middle layer keyframes: up 5px then back */
+@keyframes middleLayerSequence {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Bottom layer keyframes: up 9px then back */
+@keyframes bottomLayerSequence {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+    100% { transform: translateY(0); }
+}

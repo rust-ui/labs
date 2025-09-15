@@ -1,0 +1,19 @@
+/* Heart animation - base state with transition for smooth reverse */
+[data-name="HandHeartAnimate"] path[d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"] {
+    transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform-origin: center;
+}
+
+/* Heart animation - hover state */
+[data-name="HandHeartAnimate"]:hover path[d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"] {
+    animation: heartBounce 0.4s ease-in-out 0.1s both;
+}
+
+@keyframes heartBounce {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-2px) scale(1.1);
+    }
+}

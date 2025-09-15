@@ -1,0 +1,18 @@
+/* Base element: Define transition for smooth reverse */
+[data-name="KeySquareAnimate"] {
+    transition: transform 0.6s cubic-bezier(0.68, -1.2, 0.265, 2.2);
+    transform-origin: center;
+}
+
+/* Hover state: Trigger wiggle animation */
+[data-name="KeySquareAnimate"]:hover {
+    animation: keyWiggle 0.6s ease-in-out;
+}
+
+/* Keyframe animation for the wiggle effect */
+@keyframes keyWiggle {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(15deg); }
+    50% { transform: scale(1) rotate(-15deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}

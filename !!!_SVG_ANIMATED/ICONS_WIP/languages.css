@@ -1,0 +1,47 @@
+/* Languages Animation - Line drawing with staggered reveal */
+
+/* Base state: All paths visible by default with proper stroke-dash setup */
+[data-name="LanguagesAnimate"] path {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 0;
+}
+
+/* First path (custom=0): No delay */
+[data-name="LanguagesAnimate"]:hover path[d="M7 2h1"] {
+    animation: drawPath 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Second path (custom=1): 0.1s delay */
+[data-name="LanguagesAnimate"]:hover path[d="M2 5h12"] {
+    animation: drawPath 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+/* Third path (custom=2): 0.2s delay */
+[data-name="LanguagesAnimate"]:hover path[d="m4 14 6-6 2-3"] {
+    animation: drawPath 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+/* Fourth path group (custom=3): 0.3s delay */
+[data-name="LanguagesAnimate"]:hover path[d="m5 8 6 6"] {
+    animation: drawPath 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+[data-name="LanguagesAnimate"]:hover path[d="m22 22-5-10-5 10"] {
+    animation: drawPath 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+[data-name="LanguagesAnimate"]:hover path[d="M14 18h6"] {
+    animation: drawPath 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+@keyframes drawPath {
+    0% {
+        opacity: 0;
+        stroke-dashoffset: 20;
+    }
+    100% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}

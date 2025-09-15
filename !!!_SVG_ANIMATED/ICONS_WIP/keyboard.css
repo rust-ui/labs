@@ -1,0 +1,45 @@
+/* Keyboard Animation - Individual Key Flickering Effect */
+
+/* Base state: All keys visible by default */
+[data-name="KeyboardAnimate"] path {
+    opacity: 1;
+}
+
+/* Individual key animations with staggered delays */
+[data-name="KeyboardAnimate"]:hover path[d="M10 8h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M12 12h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0.04s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M14 8h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0.08s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M16 12h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0.12s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M18 8h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0.16s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M6 8h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0.2s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M7 16h10"] {
+    animation: keyFlicker 1.5s ease-in-out 0.24s;
+}
+
+[data-name="KeyboardAnimate"]:hover path[d="M8 12h.01"] {
+    animation: keyFlicker 1.5s ease-in-out 0.28s;
+}
+
+@keyframes keyFlicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}

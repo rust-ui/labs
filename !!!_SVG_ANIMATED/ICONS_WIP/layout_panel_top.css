@@ -1,0 +1,29 @@
+/* Top panel - slides down with fade-in */
+[data-name="LayoutPanelTopAnimate"]:hover rect[width="18"][height="7"][x="3"][y="3"] {
+    animation: topPanelAnimate 0.5s ease-in-out;
+}
+
+@keyframes topPanelAnimate {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Bottom left panel - slides in from left with delay and fade-in */
+[data-name="LayoutPanelTopAnimate"]:hover rect[width="7"][height="7"][x="3"][y="14"] {
+    animation: bottomLeftPanelAnimate 0.5s ease-in-out 0.3s both;
+}
+
+@keyframes bottomLeftPanelAnimate {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Bottom right panel - slides in from right with delay and fade-in */
+[data-name="LayoutPanelTopAnimate"]:hover rect[width="7"][height="7"][x="14"][y="14"] {
+    animation: bottomRightPanelAnimate 0.5s ease-in-out 0.4s both;
+}
+
+@keyframes bottomRightPanelAnimate {
+    0% { opacity: 0; transform: translateX(10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
