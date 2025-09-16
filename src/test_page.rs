@@ -1,4 +1,4 @@
-use icons::{AArrowDownAnimate, HeartAnimate, PlusAnimate};
+use icons::{HeartAnimate, PlusAnimate};
 use leptos::prelude::*;
 use leptos_ui::clx;
 
@@ -12,10 +12,9 @@ pub fn TestPage() -> impl IntoView {
 
             <div class="flex gap-8 justify-center items-center m-0 min-h-screen font-sans">
                 <IconsWrapper>
-                    <AArrowDownAnimate />
+                    <HeartAnimate />
                 </IconsWrapper>
 
-                <HeartAnimate />
                 <PlusAnimate />
             </div>
         </div>
