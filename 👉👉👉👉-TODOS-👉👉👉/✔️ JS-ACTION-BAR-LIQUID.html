@@ -20,7 +20,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
 .action__bar__container {
@@ -29,20 +28,17 @@
   background-color: #fcfcfc;
   border: 1px solid lightgray;
   border-radius: 1rem;
-  padding: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .action__bar__button {
   position: relative;
-  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background: none;
   border-radius: 50px;
-  margin: 0 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -114,24 +110,24 @@
 
 
 
-  <div class="mainDiv">
-    <div class="action__bar__container">
-      <button class="action__bar__button">
+  <div class="mainDiv m-0">
+    <div class="action__bar__container p-2">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1">
         <i class="action__bar__icon" data-lucide="user"></i>
       </button>
-      <button class="action__bar__button">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1">
         <i class="action__bar__icon" data-lucide="pin"></i>
       </button>
-      <button class="action__bar__button selected__action__button">
+      <button class="action__bar__button selected__action__button px-[15px] py-[10px] mx-1">
         <i class="action__bar__icon" data-lucide="at-sign"></i>
       </button>
-      <button class="action__bar__button">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1">
         <i class="action__bar__icon" data-lucide="mail"></i>
       </button>
-      <button class="action__bar__button">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1">
         <i class="action__bar__icon" data-lucide="edit"></i>
       </button>
-      <button class="action__bar__button">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1">
         <i class="action__bar__icon" data-lucide="briefcase"></i>
       </button>
     </div>
