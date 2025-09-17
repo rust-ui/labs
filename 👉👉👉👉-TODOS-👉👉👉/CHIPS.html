@@ -17,38 +17,38 @@
 
         .nature__places__content {
           width: 100%;
-          max-width: calc(8vmin * 8.25);
+          max-width: 66vmin;
           z-index: 1;
           background: #0002;
-          padding: calc(8vmin * 0.35);
-          border-radius: calc(8vmin * 0.25);
-          box-shadow: 0 0 calc(8vmin * 0.01) calc(8vmin * 0.01) #ebebeb inset;
+          padding: 2.8vmin;
+          border-radius: 2vmin;
+          box-shadow: 0 0 1px 1px #ebebeb inset;
         }
 
         .nature__places__content label {
-          width: calc(8vmin * 1.5);
+          width: 12vmin;
           width: auto;
-          height: calc(8vmin * 0.75);
+          height: 6vmin;
           background: linear-gradient(0deg, #12172080, #0d121780);
           border-radius: 8vmin;
-          padding: calc(8vmin * 0.25) calc(8vmin * 0.25) calc(8vmin * 0.25) calc(8vmin * 0.375);
-          font-size: calc(8vmin * 0.25);
+          padding: 2vmin 2vmin 2vmin 3vmin;
+          font-size: 2vmin;
           color: #ebebeb;
-          margin: calc(8vmin * 0.125);
-          box-shadow: 0 0 0 calc(8vmin * 0.015) #ebebeb inset;
+          margin: 1vmin;
+          box-shadow: 0 0 0 1px #ebebeb inset;
         }
 
         .nature__places__content label::after {
           content:"";
           width: 0;
           height: 0;
-          margin-left: calc(8vmin * 0.125);
+          margin-left: 1vmin;
           border-radius: 8vmin;
           font-size: 0;
           background:
-            linear-gradient(230deg, orange 0 calc(8vmin * 0.12), #fff0 0 100%),
-            linear-gradient(142deg, orange 0 calc(8vmin * 0.14), #fff0 0 100%),
-            conic-gradient(from 43deg at 43% calc(64% + calc(8vmin * 0.03)), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
+            linear-gradient(230deg, orange 0 0.96vmin, #fff0 0 100%),
+            linear-gradient(142deg, orange 0 1.12vmin, #fff0 0 100%),
+            conic-gradient(from 43deg at 43% calc(64% + 0.24vmin), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
             conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
         }
 
@@ -58,8 +58,8 @@
         }
 
         .nature__places__content label:has(input:checked)::after {
-          width: calc(8vmin * 0.25);
-          height: calc(8vmin * 0.25);
+          width: 2vmin;
+          height: 2vmin;
           overflow: hidden;
           font-size: 22px;
         }
