@@ -42,17 +42,10 @@
   stroke-width: 2.5;
 }
 
-.action__bar__icon {
-  width: 24px;
-  height: 24px;
-}
-
 .liquid__pointer__indicator {
   position-anchor: --selected;
   top: anchor(top);
   left: anchor(left);
-  width: 3rem;
-  height: 5rem;
   transition: all 1s linear(0, 0.0018, 0.0069 1.15%, 0.026 2.3%, 0.0637, 0.1135 5.18%, 0.2229 7.78%, 0.5977 15.84%, 0.7014, 0.7904, 0.8641, 0.9228, 0.9676 28.8%, 1.0032 31.68%, 1.0225, 1.0352 36.29%, 1.0431 38.88%, 1.046 42.05%, 1.0448 44.35%, 1.0407 47.23%, 1.0118 61.63%, 1.0025 69.41%, 0.9981 80.35%, 0.9992 99.94%);
   filter: drop-shadow(0 3px 6px gray);
   backdrop-filter: url(#filter);
@@ -73,26 +66,26 @@
   <div class="mainDiv m-0 flex justify-center items-center h-screen">
     <div class="action__bar__container p-2 flex items-center rounded-2xl">
       <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute relative flex items-center justify-center">
-        <i class="action__bar__icon stroke-[1.5]" data-lucide="user"></i>
+        <i class="action__bar__icon stroke-[1.5] w-6 h-6" data-lucide="user"></i>
       </button>
       <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute relative flex items-center justify-center">
-        <i class="action__bar__icon stroke-[1.5]" data-lucide="pin"></i>
+        <i class="action__bar__icon stroke-[1.5] w-6 h-6" data-lucide="pin"></i>
       </button>
       <button class="action__bar__button selected__action__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute relative flex items-center justify-center">
-        <i class="action__bar__icon stroke-[1.5]" data-lucide="at-sign"></i>
+        <i class="action__bar__icon stroke-[1.5] w-6 h-6" data-lucide="at-sign"></i>
       </button>
       <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute relative flex items-center justify-center">
-        <i class="action__bar__icon stroke-[1.5]" data-lucide="mail"></i>
+        <i class="action__bar__icon stroke-[1.5] w-6 h-6" data-lucide="mail"></i>
       </button>
       <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute relative flex items-center justify-center">
-        <i class="action__bar__icon stroke-[1.5]" data-lucide="edit"></i>
+        <i class="action__bar__icon stroke-[1.5] w-6 h-6" data-lucide="edit"></i>
       </button>
       <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute relative flex items-center justify-center">
-        <i class="action__bar__icon stroke-[1.5]" data-lucide="briefcase"></i>
+        <i class="action__bar__icon stroke-[1.5] w-6 h-6" data-lucide="briefcase"></i>
       </button>
     </div>
 
-    <div class="liquid__pointer__indicator mt-[calc(anchor-size(height)*-0.5)] block bg-transparent border border-white rounded-[2rem] overflow-hidden pointer-events-none absolute"></div>
+    <div class="liquid__pointer__indicator mt-[calc(anchor-size(height)*-0.5)] block bg-transparent border border-white rounded-[2rem] overflow-hidden pointer-events-none absolute w-12 h-20"></div>
   </div>
 
 <!-- SVG filter -->
