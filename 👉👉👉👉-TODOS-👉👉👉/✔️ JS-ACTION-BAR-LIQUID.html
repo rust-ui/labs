@@ -31,45 +31,30 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Active class */
 .action__bar__button {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  background: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.action__bar__button:hover,
-.action__bar__button:focus {
-  background-color: #f5f5f5;
-}
-
-.action__bar__button:focus {
-  outline: none;
-}
-
+/* Active class */
 .selected__action__button {
   background-color: #fcebeb;
   color: red;
 }
 
+/* Active class */
 .selected__action__button:hover,
 .selected__action__button:focus {
   background-color: #fcebeb;
 }
 
+/* Active class */
 .selected__action__button i[data-lucide] {
   filter: drop-shadow(0 0 4px tomato);
   stroke-width: 2.5;
-}
-
-.action__bar__button::before {
-  content: '';
-  position: absolute;
 }
 
 .action__bar__icon {
@@ -84,14 +69,8 @@
   left: anchor(left);
   width: 3rem;
   height: 5rem;
-  display: block;
-  background: none;
-  border: 1px solid white;
-  border-radius: 2rem;
   transition: all 1s linear(0, 0.0018, 0.0069 1.15%, 0.026 2.3%, 0.0637, 0.1135 5.18%, 0.2229 7.78%, 0.5977 15.84%, 0.7014, 0.7904, 0.8641, 0.9228, 0.9676 28.8%, 1.0032 31.68%, 1.0225, 1.0352 36.29%, 1.0431 38.88%, 1.046 42.05%, 1.0448 44.35%, 1.0407 47.23%, 1.0118 61.63%, 1.0025 69.41%, 0.9981 80.35%, 0.9992 99.94%);
   filter: drop-shadow(0 3px 6px gray);
-  pointer-events: none;
-  overflow: hidden;
   backdrop-filter: url(#filter);
 }
 
@@ -109,27 +88,27 @@
 
   <div class="mainDiv m-0">
     <div class="action__bar__container p-2">
-      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute">
         <i class="action__bar__icon stroke-[1.5]" data-lucide="user"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute">
         <i class="action__bar__icon stroke-[1.5]" data-lucide="pin"></i>
       </button>
-      <button class="action__bar__button selected__action__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
+      <button class="action__bar__button selected__action__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute">
         <i class="action__bar__icon stroke-[1.5]" data-lucide="at-sign"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute">
         <i class="action__bar__icon stroke-[1.5]" data-lucide="mail"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute">
         <i class="action__bar__icon stroke-[1.5]" data-lucide="edit"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem] cursor-pointer bg-transparent border-0 rounded-[50px] outline-none transition-[background-color,color] duration-300 ease-[ease] hover:bg-[#f5f5f5] focus:bg-[#f5f5f5] before:content-[''] before:absolute">
         <i class="action__bar__icon stroke-[1.5]" data-lucide="briefcase"></i>
       </button>
     </div>
 
-    <div class="liquid__pointer__indicator mt-[calc(anchor-size(height)*-0.5)]"></div>
+    <div class="liquid__pointer__indicator mt-[calc(anchor-size(height)*-0.5)] block bg-transparent border border-white rounded-[2rem] overflow-hidden pointer-events-none"></div>
   </div>
 
 <!-- SVG filter -->
