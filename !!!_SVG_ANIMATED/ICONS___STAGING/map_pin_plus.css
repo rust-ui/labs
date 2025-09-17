@@ -21,7 +21,7 @@
     stroke-dashoffset: 0;
 }
 
-/* Vertical bar animation - draws first with 0.3s delay */
+/* Vertical bar animation - draws with 0.3s delay */
 [data-name="MapPinPlusAnimate"]:hover path[d="M19 15v6"] {
     animation: drawVerticalBar 0.2s ease-in-out 0.3s both;
 }
@@ -37,9 +37,9 @@
     }
 }
 
-/* Horizontal bar animation - draws second with 0.6s delay */
+/* Horizontal bar animation - draws simultaneously with 0.3s delay */
 [data-name="MapPinPlusAnimate"]:hover path[d="M16 18h6"] {
-    animation: drawHorizontalBar 0.2s ease-in-out 0.6s both;
+    animation: drawHorizontalBar 0.2s ease-in-out 0.3s both;
 }
 
 @keyframes drawHorizontalBar {

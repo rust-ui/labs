@@ -16,9 +16,9 @@
     }
 }
 
-/* Horizontal bar of plus sign with greater delay */
+/* Horizontal bar of plus sign with same delay */
 [data-name="UserRoundPlusAnimate"]:hover path[d="M22 19h-6"] {
-    animation: horizontalDrawing 0.2s ease-in-out 0.6s both;
+    animation: horizontalDrawing 0.2s ease-in-out 0.3s both;
     stroke-dasharray: 6;
     stroke-dashoffset: 0;
 }
