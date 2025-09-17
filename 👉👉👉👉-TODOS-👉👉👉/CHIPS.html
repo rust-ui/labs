@@ -12,10 +12,6 @@
           transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
           width: 100vw;
           height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
           background: linear-gradient(135deg, #1f1f23, #2d2d31, #101012);
         }
 
@@ -42,20 +38,14 @@
           color: #ebebeb;
           margin-bottom: calc(8vmin * 0.25);
           font-size: calc(8vmin * 0.25);
-          display: block;
           width: 100%;
           padding: 0 calc(8vmin * 0.2);
         }
 
         .nature__places__content {
-          position: relative;
           width: 100%;
           max-width: calc(8vmin * 8.25);
-          display: flex;
           z-index: 1;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          align-content: center;
           background: #0002;
           padding: calc(8vmin * 0.35);
           border-radius: calc(8vmin * 0.25);
@@ -63,14 +53,11 @@
         }
 
         .nature__places__content label {
-          position: relative;
           width: calc(8vmin * 1.5);
           width: auto;
           height: calc(8vmin * 0.75);
           background: linear-gradient(0deg, #12172080, #0d121780);
           border-radius: 8vmin;
-          display: flex;
-          align-items: center;
           padding: calc(8vmin * 0.25) calc(8vmin * 0.25) calc(8vmin * 0.25) calc(8vmin * 0.375);
           font-size: calc(8vmin * 0.25);
           color: #ebebeb;
@@ -80,7 +67,6 @@
 
         .nature__places__content label::after {
           content:"";
-          position: relative;
           width: 0;
           height: 0;
           margin-left: calc(8vmin * 0.125);
@@ -210,55 +196,55 @@
     </style>
 </head>
 <body>
-    <div class="mainDiv m-0 p-0 overflow-hidden">
-        <div class="nature__places__content">
-        <h1 class="font-medium">What are your favorite places in nature?</h1>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">mountain
+    <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col">
+        <div class="nature__places__content relative flex flex-wrap justify-start content-center">
+        <h1 class="font-medium block w-full">What are your favorite places in nature?</h1>
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
             <input type="checkbox" id="mountain">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">ocean
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">ocean
             <input type="checkbox" id="ocean">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">forest
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">forest
             <input type="checkbox" id="forest">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">river
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">river
             <input type="checkbox" id="river">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">desert
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">desert
             <input type="checkbox" id="desert">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">jungle
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">jungle
             <input type="checkbox" id="jungle">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">beach
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">beach
             <input type="checkbox" id="beach">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">tropical
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">tropical
             <input type="checkbox" id="tropical">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">tundra
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">tundra
             <input type="checkbox" id="tundra">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">artic
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">artic
             <input type="checkbox" id="artic">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">lake
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">lake
             <input type="checkbox" id="lake">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">savanna
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">savanna
             <input type="checkbox" id="savanna">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">snow
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">snow
             <input type="checkbox" id="snow">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">grass
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">grass
             <input type="checkbox" id="grass">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">taiga
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">taiga
             <input type="checkbox" id="taiga">
         </label>
-        <label class="capitalize font-sans cursor-pointer overflow-hidden">pond
+        <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">pond
             <input type="checkbox" id="pond">
         </label>
         </div>
