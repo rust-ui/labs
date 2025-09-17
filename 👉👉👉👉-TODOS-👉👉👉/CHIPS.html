@@ -8,33 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .mainDiv {
-          box-sizing: border-box;
           transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
-          width: 100vw;
-          height: 100vh;
-          background: linear-gradient(135deg, #1f1f23, #2d2d31, #101012);
         }
 
         .mainDiv *, .mainDiv *:before, .mainDiv *:after {
-          box-sizing: border-box;
           transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
         }
-
-        .mainDiv:before,
-        .mainDiv:after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          opacity: 0.75;
-          filter: blur(0.75px);
-          z-index: 0;
-          background:
-            repeating-conic-gradient(#0002 0.000095%, #fff0 .0005%, #fff0 .005%, #fff0 .0005%),
-            repeating-conic-gradient(#0002 0.00001%, #fff0 .00009%, #fff0 .00075%, #fff0 .000025%);
-        }
-
-  
 
         .nature__places__content {
           width: 100%;
@@ -91,7 +70,7 @@
     </style>
 </head>
 <body>
-    <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col">
+    <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col box-border w-screen h-screen bg-black">
         <div class="nature__places__content relative flex flex-wrap justify-start content-center">
         <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
             <input type="checkbox" id="mountain">
