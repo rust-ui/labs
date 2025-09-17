@@ -6,175 +6,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nature Places Checkboxes</title>
     <style>
-        :root {
-            --sz: 8vmin;   /* size */
-            --sp: 0.35s;   /* speed */
-            --ac: orange;  /* active color */
-            --ic: #ebebeb; /* inactive color */
+        .mainDiv {
+          box-sizing: border-box;
+          transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
+          margin: 0;
+          padding: 0;
+          width: 100vw;
+          height: 100vh;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          background: linear-gradient(135deg, #1f1f23, #2d2d31, #101012);
         }
-        
-        *, *:before, *:after {
-            box-sizing: border-box;
-            transition: all var(--sp) cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
+
+        .mainDiv *, .mainDiv *:before, .mainDiv *:after {
+          box-sizing: border-box;
+          transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
         }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #1f1f23, #2d2d31, #101012);
+
+        .mainDiv:before,
+        .mainDiv:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0.75;
+          filter: blur(0.75px);
+          z-index: 0;
+          background:
+            repeating-conic-gradient(#0002 0.000095%, #fff0 .0005%, #fff0 .005%, #fff0 .0005%),
+            repeating-conic-gradient(#0002 0.00001%, #fff0 .00009%, #fff0 .00075%, #fff0 .000025%);
         }
-        
-        body:before, 
-        body:after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.75;
-            filter: blur(0.75px);
-            z-index: 0;
-            background: 
-                repeating-conic-gradient(#0002 0.000095%, #fff0 .0005%, #fff0 .005%, #fff0 .0005%), 
-                repeating-conic-gradient(#0002 0.00001%, #fff0 .00009%, #fff0 .00075%, #fff0 .000025%);
+
+        .mainDiv h1 {
+          color: #ebebeb;
+          margin-bottom: calc(8vmin * 0.25);
+          font-weight: 500;
+          font-size: calc(8vmin * 0.25);
+          display: block;
+          width: 100%;
+          padding: 0 calc(8vmin * 0.2);
         }
-        
-        body h1 {
-            color: var(--ic);
-            margin-bottom: calc(var(--sz) * 0.25);
-            font-weight: 500;
-            font-size: calc(var(--sz) * 0.25);
-            display: block;
-            width: 100%;
-            padding: 0 calc(var(--sz) * 0.2);
+
+        .nature__places__content {
+          position: relative;
+          width: 100%;
+          max-width: calc(8vmin * 8.25);
+          display: flex;
+          z-index: 1;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-content: center;
+          background: #0002;
+          padding: calc(8vmin * 0.35);
+          border-radius: calc(8vmin * 0.25);
+          box-shadow: 0 0 calc(8vmin * 0.01) calc(8vmin * 0.01) #ebebeb inset;
         }
-        
-        body .content {
-            position: relative;
-            width: 100%;
-            max-width: calc(var(--sz) * 8.25);
-            display: flex;
-            z-index: 1;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-content: center;
-            background: #0002;
-            padding: calc(var(--sz) * 0.35);
-            border-radius: calc(var(--sz) * 0.25);
-            box-shadow: 0 0 calc(var(--sz) * 0.01) calc(var(--sz) * 0.01) #ebebeb inset;
+
+        .nature__places__content label {
+          position: relative;
+          width: calc(8vmin * 1.5);
+          width: auto;
+          text-transform: Capitalize;
+          height: calc(8vmin * 0.75);
+          background: linear-gradient(0deg, #12172080, #0d121780);
+          border-radius: 8vmin;
+          display: flex;
+          align-items: center;
+          padding: calc(8vmin * 0.25) calc(8vmin * 0.25) calc(8vmin * 0.25) calc(8vmin * 0.375);
+          font-size: calc(8vmin * 0.25);
+          color: #ebebeb;
+          font-family: Arial, Helvetica, sans-serif;
+          margin: calc(8vmin * 0.125);
+          cursor: pointer;
+          box-shadow: 0 0 0 calc(8vmin * 0.015) #ebebeb inset;
+          overflow: hidden;
         }
-        
-        body .content label {
-            position: relative;
-            width: calc(var(--sz) * 1.5);
-            width: auto;
-            text-transform: Capitalize;
-            height: calc(var(--sz) * 0.75);
-            background: linear-gradient(0deg, #12172080, #0d121780);
-            border-radius: var(--sz);
-            display: flex;
-            align-items: center;
-            padding: calc(var(--sz) * 0.25) calc(var(--sz) * 0.25) calc(var(--sz) * 0.25) calc(var(--sz) * 0.375);
-            font-size: calc(var(--sz) * 0.25);
-            color: var(--ic);
-            font-family: Arial, Helvetica, sans-serif;
-            margin: calc(var(--sz) * 0.125);
-            cursor: pointer;
-            box-shadow: 0 0 0 calc(var(--sz) * 0.015) var(--ic) inset;
-            overflow: hidden;
+
+        .nature__places__content label::after {
+          content:"";
+          position: relative;
+          width: 0;
+          height: 0;
+          margin-left: calc(8vmin * 0.125);
+          border-radius: 8vmin;
+          font-size: 0;
+          background:
+            linear-gradient(230deg, orange 0 calc(8vmin * 0.12), #fff0 0 100%),
+            linear-gradient(142deg, orange 0 calc(8vmin * 0.14), #fff0 0 100%),
+            conic-gradient(from 43deg at 43% calc(64% + calc(8vmin * 0.03)), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
+            conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
         }
-        
-        body .content label::after {
-            content:"";
-            position: relative;
-            width: 0;
-            height: 0;
-            margin-left: calc(var(--sz) * 0.125);
-            border-radius: var(--sz);
-            font-size: 0;
-            background: 
-                linear-gradient(230deg, var(--ac) 0 calc(var(--sz) * 0.12), #fff0 0 100%), 
-                linear-gradient(142deg, var(--ac) 0 calc(var(--sz) * 0.14), #fff0 0 100%), 
-                conic-gradient(from 43deg at 43% calc(64% + calc(var(--sz) * 0.03)), #fff0 0 0%, var(--ac) 1% 76%, #fff0 77% 100%), 
-                conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, var(--ac) 2% 25%, #fff0 26% 100%);
+
+        .nature__places__content label:has(input:checked) {
+          box-shadow: 0 0 0 2px orange inset;
+          color: orange;
         }
-        
-        body .content label:has(input:checked) {
-            box-shadow: 0 0 0 2px var(--ac) inset;
-            color: var(--ac);
+
+        .nature__places__content label:has(input:checked)::after {
+          width: calc(8vmin * 0.25);
+          height: calc(8vmin * 0.25);
+          overflow: hidden;
+          font-size: 22px;
         }
-        
-        body .content label:has(input:checked)::after {
-            width: calc(var(--sz) * 0.25);
-            height: calc(var(--sz) * 0.25);
-            overflow: hidden;
-            font-size: 22px;
+
+        .nature__places__content input {
+          display: none;
         }
-        
-        body .content input {
-            display: none;
-        }
-        
+
         @media screen and (max-width:767px) {
-            :root {
-                --sz: 80px;
-            }
-            body {
-                height: auto;
-                overflow-y: visible;
-                justify-content: flex-start;
-                align-items: center;
-                padding:  calc(var(--sz) * 0.5) ;
-                background: #232323 !important;
-                padding-bottom: calc(var(--sz) * 0.5) !important;
-            }
-            body::before,
-            body::after {
-                display: none;
-            }
-            body .content {
-                height: 100%;
-                padding: 0 !important;
-                align-content: flex-start !important;
-                max-width: 100% !important;
-                box-shadow: none !important;
-                background: #ffffff00 !important;
-            }
-            body .content label {
-                font-size: calc(var(--sz) * 0.22) !important;
-                height: calc(var(--sz) * 0.625) !important;
-            }
+          .mainDiv {
+            height: auto;
+            overflow-y: visible;
+            justify-content: flex-start;
+            align-items: center;
+            padding: calc(80px * 0.5);
+            background: #232323 !important;
+            padding-bottom: calc(80px * 0.5) !important;
+          }
+
+          .mainDiv::before,
+          .mainDiv::after {
+            display: none;
+          }
+
+          .mainDiv h1 {
+            margin-bottom: calc(80px * 0.25);
+            font-size: calc(80px * 0.25);
+            padding: 0 calc(80px * 0.2);
+          }
+
+          .nature__places__content {
+            max-width: calc(80px * 8.25);
+            padding: calc(80px * 0.35);
+            border-radius: calc(80px * 0.25);
+            box-shadow: 0 0 calc(80px * 0.01) calc(80px * 0.01) #ebebeb inset;
+            height: 100%;
+            padding: 0 !important;
+            align-content: flex-start !important;
+            max-width: 100% !important;
+            box-shadow: none !important;
+            background: #ffffff00 !important;
+          }
+
+          .nature__places__content label {
+            width: calc(80px * 1.5);
+            height: calc(80px * 0.75);
+            border-radius: 80px;
+            padding: calc(80px * 0.25) calc(80px * 0.25) calc(80px * 0.25) calc(80px * 0.375);
+            font-size: calc(80px * 0.25);
+            margin: calc(80px * 0.125);
+            box-shadow: 0 0 0 calc(80px * 0.015) #ebebeb inset;
+            font-size: calc(80px * 0.22) !important;
+            height: calc(80px * 0.625) !important;
+          }
+
+          .nature__places__content label::after {
+            margin-left: calc(80px * 0.125);
+            border-radius: 80px;
+            background:
+              linear-gradient(230deg, orange 0 calc(80px * 0.12), #fff0 0 100%),
+              linear-gradient(142deg, orange 0 calc(80px * 0.14), #fff0 0 100%),
+              conic-gradient(from 43deg at 43% calc(64% + calc(80px * 0.03)), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
+              conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
+          }
+
+          .nature__places__content label:has(input:checked)::after {
+            width: calc(80px * 0.25);
+            height: calc(80px * 0.25);
+          }
         }
-        
+
         @media screen and (max-height:580px) and (orientation: landscape) {
-            :root {
-                --sz: 60px !important;
-            }
-            body {
-                overflow-x: visible;
-                justify-content: center !important;
-                align-items: center !important;
-                padding: calc(var(--sz) * 0.5);
-            }
-            body .content {
-                max-width: 100% !important;
-                justify-content: center !important;
-            }
-            body .content h1 {
-                text-align: center !important;
-            }
+          .mainDiv {
+            overflow-x: visible;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: calc(60px * 0.5);
+          }
+
+          .mainDiv h1 {
+            margin-bottom: calc(60px * 0.25);
+            font-size: calc(60px * 0.25);
+            padding: 0 calc(60px * 0.2);
+            text-align: center !important;
+          }
+
+          .nature__places__content {
+            max-width: calc(60px * 8.25);
+            padding: calc(60px * 0.35);
+            border-radius: calc(60px * 0.25);
+            box-shadow: 0 0 calc(60px * 0.01) calc(60px * 0.01) #ebebeb inset;
+            max-width: 100% !important;
+            justify-content: center !important;
+          }
+
+          .nature__places__content label {
+            width: calc(60px * 1.5);
+            height: calc(60px * 0.75);
+            border-radius: 60px;
+            padding: calc(60px * 0.25) calc(60px * 0.25) calc(60px * 0.25) calc(60px * 0.375);
+            font-size: calc(60px * 0.25);
+            margin: calc(60px * 0.125);
+            box-shadow: 0 0 0 calc(60px * 0.015) #ebebeb inset;
+          }
+
+          .nature__places__content label::after {
+            margin-left: calc(60px * 0.125);
+            border-radius: 60px;
+            background:
+              linear-gradient(230deg, orange 0 calc(60px * 0.12), #fff0 0 100%),
+              linear-gradient(142deg, orange 0 calc(60px * 0.14), #fff0 0 100%),
+              conic-gradient(from 43deg at 43% calc(64% + calc(60px * 0.03)), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
+              conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
+          }
+
+          .nature__places__content label:has(input:checked)::after {
+            width: calc(60px * 0.25);
+            height: calc(60px * 0.25);
+          }
         }
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="mainDiv">
+        <div class="nature__places__content">
         <h1>What are your favorite places in nature?</h1>
         <label>mountain
             <input type="checkbox" id="mountain">
@@ -224,6 +282,7 @@
         <label>pond
             <input type="checkbox" id="pond">
         </label>
+        </div>
     </div>
 </body>
 </html>
