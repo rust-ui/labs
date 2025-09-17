@@ -34,13 +34,7 @@
             repeating-conic-gradient(#0002 0.00001%, #fff0 .00009%, #fff0 .00075%, #fff0 .000025%);
         }
 
-        .mainDiv h1 {
-          color: #ebebeb;
-          margin-bottom: calc(8vmin * 0.25);
-          font-size: calc(8vmin * 0.25);
-          width: 100%;
-          padding: 0 calc(8vmin * 0.2);
-        }
+  
 
         .nature__places__content {
           width: 100%;
@@ -94,111 +88,11 @@
         .nature__places__content input {
           display: none;
         }
-
-        @media screen and (max-width:767px) {
-          .mainDiv {
-            height: auto;
-            overflow-y: visible;
-            justify-content: flex-start;
-            align-items: center;
-            padding: calc(80px * 0.5);
-            background: #232323 !important;
-            padding-bottom: calc(80px * 0.5) !important;
-          }
-
-          .mainDiv::before,
-          .mainDiv::after {
-            display: none;
-          }
-
-          .mainDiv h1 {
-            font-size: calc(80px * 0.25);
-          }
-
-          .nature__places__content {
-            max-width: calc(80px * 8.25);
-            border-radius: calc(80px * 0.25);
-            box-shadow: 0 0 calc(80px * 0.01) calc(80px * 0.01) #ebebeb inset;
-            height: 100%;
-            align-content: flex-start !important;
-            max-width: 100% !important;
-            box-shadow: none !important;
-            background: #ffffff00 !important;
-          }
-
-          .nature__places__content label {
-            width: calc(80px * 1.5);
-            height: calc(80px * 0.75);
-            border-radius: 80px;
-            font-size: calc(80px * 0.25);
-            box-shadow: 0 0 0 calc(80px * 0.015) #ebebeb inset;
-            font-size: calc(80px * 0.22) !important;
-            height: calc(80px * 0.625) !important;
-          }
-
-          .nature__places__content label::after {
-            border-radius: 80px;
-            background:
-              linear-gradient(230deg, orange 0 calc(80px * 0.12), #fff0 0 100%),
-              linear-gradient(142deg, orange 0 calc(80px * 0.14), #fff0 0 100%),
-              conic-gradient(from 43deg at 43% calc(64% + calc(80px * 0.03)), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
-              conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
-          }
-
-          .nature__places__content label:has(input:checked)::after {
-            width: calc(80px * 0.25);
-            height: calc(80px * 0.25);
-          }
-        }
-
-        @media screen and (max-height:580px) and (orientation: landscape) {
-          .mainDiv {
-            overflow-x: visible;
-            justify-content: center !important;
-            align-items: center !important;
-          }
-
-          .mainDiv h1 {
-            font-size: calc(60px * 0.25);
-            text-align: center !important;
-          }
-
-          .nature__places__content {
-            max-width: calc(60px * 8.25);
-            border-radius: calc(60px * 0.25);
-            box-shadow: 0 0 calc(60px * 0.01) calc(60px * 0.01) #ebebeb inset;
-            max-width: 100% !important;
-            justify-content: center !important;
-          }
-
-          .nature__places__content label {
-            width: calc(60px * 1.5);
-            height: calc(60px * 0.75);
-            border-radius: 60px;
-            font-size: calc(60px * 0.25);
-            box-shadow: 0 0 0 calc(60px * 0.015) #ebebeb inset;
-          }
-
-          .nature__places__content label::after {
-            border-radius: 60px;
-            background:
-              linear-gradient(230deg, orange 0 calc(60px * 0.12), #fff0 0 100%),
-              linear-gradient(142deg, orange 0 calc(60px * 0.14), #fff0 0 100%),
-              conic-gradient(from 43deg at 43% calc(64% + calc(60px * 0.03)), #fff0 0 0%, orange 1% 76%, #fff0 77% 100%),
-              conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
-          }
-
-          .nature__places__content label:has(input:checked)::after {
-            width: calc(60px * 0.25);
-            height: calc(60px * 0.25);
-          }
-        }
     </style>
 </head>
 <body>
     <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col">
         <div class="nature__places__content relative flex flex-wrap justify-start content-center">
-        <h1 class="font-medium block w-full">What are your favorite places in nature?</h1>
         <label class="capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
             <input type="checkbox" id="mountain">
         </label>
