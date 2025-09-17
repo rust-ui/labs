@@ -1,8 +1,17 @@
 /* Construction Animation - Moving Stripe Pattern Effect */
-/* This simulates the TSX moving pattern animation using CSS transforms */
+/* Simulates the TSX moving diagonal stripes pattern using CSS transforms */
 
-/* Main construction barrier - simulate moving stripes with transform animation */
-[data-name="ConstructionAnimate"]:hover rect[x="2"][y="6"][width="20"][height="8"] {
+/* Initial state - normal variant */
+[data-name="ConstructionAnimate"] path[d="M10 14 2.3 6.3"],
+[data-name="ConstructionAnimate"] path[d="m14 6 7.7 7.7"],
+[data-name="ConstructionAnimate"] path[d="m8 6 8 8"] {
+    transition: transform 0.3s ease;
+}
+
+/* Animation state - animate variant */
+[data-name="ConstructionAnimate"]:hover path[d="M10 14 2.3 6.3"],
+[data-name="ConstructionAnimate"]:hover path[d="m14 6 7.7 7.7"],
+[data-name="ConstructionAnimate"]:hover path[d="m8 6 8 8"] {
     animation: movingStripes 1s linear infinite;
 }
 
