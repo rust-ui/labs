@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nature Places Checkboxes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .mainDiv {
           box-sizing: border-box;
           transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
-          margin: 0;
-          padding: 0;
           width: 100vw;
           height: 100vh;
           overflow: hidden;
@@ -133,18 +132,14 @@
           }
 
           .mainDiv h1 {
-            margin-bottom: calc(80px * 0.25);
             font-size: calc(80px * 0.25);
-            padding: 0 calc(80px * 0.2);
           }
 
           .nature__places__content {
             max-width: calc(80px * 8.25);
-            padding: calc(80px * 0.35);
             border-radius: calc(80px * 0.25);
             box-shadow: 0 0 calc(80px * 0.01) calc(80px * 0.01) #ebebeb inset;
             height: 100%;
-            padding: 0 !important;
             align-content: flex-start !important;
             max-width: 100% !important;
             box-shadow: none !important;
@@ -155,16 +150,13 @@
             width: calc(80px * 1.5);
             height: calc(80px * 0.75);
             border-radius: 80px;
-            padding: calc(80px * 0.25) calc(80px * 0.25) calc(80px * 0.25) calc(80px * 0.375);
             font-size: calc(80px * 0.25);
-            margin: calc(80px * 0.125);
             box-shadow: 0 0 0 calc(80px * 0.015) #ebebeb inset;
             font-size: calc(80px * 0.22) !important;
             height: calc(80px * 0.625) !important;
           }
 
           .nature__places__content label::after {
-            margin-left: calc(80px * 0.125);
             border-radius: 80px;
             background:
               linear-gradient(230deg, orange 0 calc(80px * 0.12), #fff0 0 100%),
@@ -184,19 +176,15 @@
             overflow-x: visible;
             justify-content: center !important;
             align-items: center !important;
-            padding: calc(60px * 0.5);
           }
 
           .mainDiv h1 {
-            margin-bottom: calc(60px * 0.25);
             font-size: calc(60px * 0.25);
-            padding: 0 calc(60px * 0.2);
             text-align: center !important;
           }
 
           .nature__places__content {
             max-width: calc(60px * 8.25);
-            padding: calc(60px * 0.35);
             border-radius: calc(60px * 0.25);
             box-shadow: 0 0 calc(60px * 0.01) calc(60px * 0.01) #ebebeb inset;
             max-width: 100% !important;
@@ -207,14 +195,11 @@
             width: calc(60px * 1.5);
             height: calc(60px * 0.75);
             border-radius: 60px;
-            padding: calc(60px * 0.25) calc(60px * 0.25) calc(60px * 0.25) calc(60px * 0.375);
             font-size: calc(60px * 0.25);
-            margin: calc(60px * 0.125);
             box-shadow: 0 0 0 calc(60px * 0.015) #ebebeb inset;
           }
 
           .nature__places__content label::after {
-            margin-left: calc(60px * 0.125);
             border-radius: 60px;
             background:
               linear-gradient(230deg, orange 0 calc(60px * 0.12), #fff0 0 100%),
@@ -231,7 +216,7 @@
     </style>
 </head>
 <body>
-    <div class="mainDiv">
+    <div class="mainDiv m-0 p-0">
         <div class="nature__places__content">
         <h1>What are your favorite places in nature?</h1>
         <label>mountain
