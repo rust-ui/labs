@@ -70,7 +70,6 @@
 .action__bar__button::before {
   content: '';
   position: absolute;
-  inset: -0.4rem;
 }
 
 .action__bar__icon {
@@ -86,7 +85,6 @@
   left: anchor(left);
   width: 3rem;
   height: 5rem;
-  margin-top: calc(anchor-size(height) * -0.5);
   display: block;
   background: none;
   border: 1px solid white;
@@ -112,27 +110,27 @@
 
   <div class="mainDiv m-0">
     <div class="action__bar__container p-2">
-      <button class="action__bar__button px-[15px] py-[10px] mx-1">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
         <i class="action__bar__icon" data-lucide="user"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
         <i class="action__bar__icon" data-lucide="pin"></i>
       </button>
-      <button class="action__bar__button selected__action__button px-[15px] py-[10px] mx-1">
+      <button class="action__bar__button selected__action__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
         <i class="action__bar__icon" data-lucide="at-sign"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
         <i class="action__bar__icon" data-lucide="mail"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
         <i class="action__bar__icon" data-lucide="edit"></i>
       </button>
-      <button class="action__bar__button px-[15px] py-[10px] mx-1">
+      <button class="action__bar__button px-[15px] py-[10px] mx-1 before:inset-[-0.4rem]">
         <i class="action__bar__icon" data-lucide="briefcase"></i>
       </button>
     </div>
 
-    <div class="liquid__pointer__indicator"></div>
+    <div class="liquid__pointer__indicator mt-[calc(anchor-size(height)*-0.5)]"></div>
   </div>
 
 <!-- SVG filter -->
