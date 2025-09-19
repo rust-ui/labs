@@ -7,16 +7,6 @@
     <title>Nature Places Checkboxes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        [data-name="ChipsContainer"] {
-          transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
-        }
-
-        [data-name="ChipsContainer"] *, [data-name="ChipsContainer"] *:before, [data-name="ChipsContainer"] *:after {
-          transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
-        }
-
-
-
         [data-name="ChipsContainer"] label::after {
           content:"";
           width: 0;
@@ -43,7 +33,7 @@
 </head>
 <body>
     <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col box-border w-screen h-screen bg-black">
-        <div data-name="ChipsContainer" class="chips__main__container w-full max-w-[66vmin] z-[1] bg-black/[0.02] p-[2.8vmin] rounded-[2vmin] shadow-[inset_0_0_1px_1px_#ebebeb] relative flex flex-wrap justify-start content-center">
+        <div data-name="ChipsContainer" class="chips__main__container w-full max-w-[66vmin] z-[1] bg-black/[0.02] p-[2.8vmin] rounded-[2vmin] shadow-[inset_0_0_1px_1px_#ebebeb] relative flex flex-wrap justify-start content-center transition-all duration-[350ms] ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] *:transition-all *:duration-[350ms] *:ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] *:before:transition-all *:before:duration-[350ms] *:before:ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] *:after:transition-all *:after:duration-[350ms] *:after:ease-[cubic-bezier(0.68,-0.55,0.265,1.55)]">
         <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
             <input type="checkbox" id="mountain" class="hidden">
         </label>
