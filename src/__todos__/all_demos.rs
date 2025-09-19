@@ -1,10 +1,7 @@
 use leptos::prelude::*;
 
-use crate::__TODOS__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
-use crate::__TODOS__::demo_bento3_transition::DemoBento3Transition;
 use crate::__TODOS__::demo_button_multi_state::DemoButtonMultiState;
 use crate::__TODOS__::demo_card_reverse::DemoCardReverse;
-use crate::__TODOS__::demo_carousel_hover_smooth::DemoCarouselHoverSmooth;
 use crate::__TODOS__::demo_css_carousel::DemoCssCarousel;
 use crate::__TODOS__::demo_pagination::DemoPagination;
 
@@ -28,23 +25,11 @@ pub const ALL_DEMOS: &[DemoItem] = &[
         render_fn: || view! { <DemoPagination /> }.into_any(),
     },
     DemoItem {
-        name: "👉 TODO: Apple Liquid Glass UI",
-        render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Carousel Hover Smooth",
-        render_fn: || view! { <DemoCarouselHoverSmooth /> }.into_any(),
-    },
-    DemoItem {
         name: "👉 TODO: CSS Carousel",
         render_fn: || view! { <DemoCssCarousel /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Button Multi State",
         render_fn: || view! { <DemoButtonMultiState /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Bento3 Transition",
-        render_fn: || view! { <DemoBento3Transition /> }.into_any(),
     },
 ];
