@@ -1,10 +1,11 @@
 ## Workflow
 
 1. Create `DemoComponentName` in `__ready_to_port__`.
-2. Follow [*## Instructions*] and make sure it compiles with `cargo check`.
-3. Launch server with `LEPTOS_SITE_ADDR="127.0.0.1:4002" LEPTOS_RELOAD_PORT="4003" cargo leptos watch`.
-4. Meanwhile it compiles, launch `Live Server` of the HTML file.
-5. Once Leptos has compiled, use `Playwright` to make sure Leptos implements well the HTML.
+2. Import in `all_demos.rs`.
+3. Follow [*## Instructions*] and make sure it compiles with `cargo check`.
+4. Launch server with `LEPTOS_SITE_ADDR="127.0.0.1:4002" LEPTOS_RELOAD_PORT="4003" cargo leptos watch`.
+5. Meanwhile it compiles, launch `Live Server` of the HTML file.
+6. Once Leptos has compiled, use `Playwright` to make sure Leptos implements well the HTML.
 
 
 
