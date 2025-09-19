@@ -5,18 +5,18 @@ pub fn DemoChips() -> impl IntoView {
     view! {
         <style>
             {"
-              :root {
-                --accent-color: orange;
-              }
+             :root {
+               --accent-color: orange;
+             }
             
-              [data-name=\"ChipsContainer\"] label::after {
-                content:\"\";
-                background:
-                  linear-gradient(230deg, var(--accent-color) 0 0.96vmin, #fff0 0 100%),
-                  linear-gradient(142deg, var(--accent-color) 0 1.12vmin, #fff0 0 100%),
-                  conic-gradient(from 43deg at 43% calc(64% + 0.24vmin), #fff0 0 0%, var(--accent-color) 1% 76%, #fff0 77% 100%),
-                  conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, var(--accent-color) 2% 25%, #fff0 26% 100%);
-              }
+             [data-name=\"ChipsContainer\"] label::after {
+               content:\"\";
+               background:
+                 linear-gradient(230deg, var(--accent-color) 0 0.96vmin, #fff0 0 100%),
+                 linear-gradient(142deg, var(--accent-color) 0 1.12vmin, #fff0 0 100%),
+                 conic-gradient(from 43deg at 43% calc(64% + 0.24vmin), #fff0 0 0%, var(--accent-color) 1% 76%, #fff0 77% 100%),
+                 conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, var(--accent-color) 2% 25%, #fff0 26% 100%);
+             }
             "}
         </style>
 
@@ -30,49 +30,64 @@ pub fn DemoChips() -> impl IntoView {
                     <input type="checkbox" id="mountain" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "ocean" <input type="checkbox" id="ocean" class="hidden" />
+                    <span>"ocean"</span>
+                    <input type="checkbox" id="ocean" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "forest" <input type="checkbox" id="forest" class="hidden" />
+                    <span>"forest"</span>
+                    <input type="checkbox" id="forest" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "river" <input type="checkbox" id="river" class="hidden" />
+                    <span>"river"</span>
+                    <input type="checkbox" id="river" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "desert" <input type="checkbox" id="desert" class="hidden" />
+                    <span>"desert"</span>
+                    <input type="checkbox" id="desert" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "jungle" <input type="checkbox" id="jungle" class="hidden" />
+                    <span>"jungle"</span>
+                    <input type="checkbox" id="jungle" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "beach" <input type="checkbox" id="beach" class="hidden" />
+                    <span>"beach"</span>
+                    <input type="checkbox" id="beach" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "tropical" <input type="checkbox" id="tropical" class="hidden" />
+                    <span>"tropical"</span>
+                    <input type="checkbox" id="tropical" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "tundra" <input type="checkbox" id="tundra" class="hidden" />
+                    <span>"tundra"</span>
+                    <input type="checkbox" id="tundra" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "artic" <input type="checkbox" id="artic" class="hidden" />
+                    <span>"artic"</span>
+                    <input type="checkbox" id="artic" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "lake" <input type="checkbox" id="lake" class="hidden" />
+                    <span>"lake"</span>
+                    <input type="checkbox" id="lake" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "savanna" <input type="checkbox" id="savanna" class="hidden" />
+                    <span>"savanna"</span>
+                    <input type="checkbox" id="savanna" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "snow" <input type="checkbox" id="snow" class="hidden" />
+                    <span>"snow"</span>
+                    <input type="checkbox" id="snow" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "grass" <input type="checkbox" id="grass" class="hidden" />
+                    <span>"grass"</span>
+                    <input type="checkbox" id="grass" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "taiga" <input type="checkbox" id="taiga" class="hidden" />
+                    <span>"taiga"</span>
+                    <input type="checkbox" id="taiga" class="hidden" />
                 </label>
                 <label class="flex overflow-hidden relative items-center w-auto cursor-pointer h-[6vmin] bg-neutral-600 rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_var(--accent-color)] has-[:checked]:text-[var(--accent-color)] after:content-[''] after:w-0 after:h-0 after:ml-[1vmin] after:rounded-[8vmin] after:text-[0px] has-[:checked]:after:w-[2vmin] has-[:checked]:after:h-[2vmin] has-[:checked]:after:overflow-hidden has-[:checked]:after:text-[22px]">
-                    "pond" <input type="checkbox" id="pond" class="hidden" />
+                    <span>"pond"</span>
+                    <input type="checkbox" id="pond" class="hidden" />
                 </label>
             </div>
         </div>
