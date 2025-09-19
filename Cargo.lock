@@ -1984,6 +1984,7 @@ dependencies = [
  "console_log",
  "http",
  "icons",
+ "js-sys",
  "leptos",
  "leptos-struct-table",
  "leptos-use",
@@ -1998,6 +1999,7 @@ dependencies = [
  "tower-http",
  "tw_merge",
  "wasm-bindgen",
+ "web-sys",
 ]
 
 [[package]]

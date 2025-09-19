@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::__TODOS__::demo_button_multi_state::DemoButtonMultiState;
+use crate::__TODOS__::demo_button_stateful::DemoButtonStateful;
 use crate::__TODOS__::demo_card_reverse::DemoCardReverse;
 use crate::__TODOS__::demo_css_carousel::DemoCssCarousel;
 use crate::__TODOS__::demo_pagination::DemoPagination;
@@ -35,6 +35,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     },
     DemoItem {
         name: "👉 TODO: Button Multi State",
-        render_fn: || view! { <DemoButtonMultiState /> }.into_any(),
+        render_fn: || view! { <DemoButtonStateful /> }.into_any(),
     },
 ];
