@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 
-use crate::__TODOS__::demo_alert_dialog::DemoAlertDialog;
 use crate::__TODOS__::demo_apple_liquid_glass_ui::DemoAppleLiquidGlassUi;
 use crate::__TODOS__::demo_bento3_transition::DemoBento3Transition;
 use crate::__TODOS__::demo_button_multi_state::DemoButtonMultiState;
@@ -31,10 +30,6 @@ pub const ALL_DEMOS: &[DemoItem] = &[
     DemoItem {
         name: "👉 TODO: Apple Liquid Glass UI",
         render_fn: || view! { <DemoAppleLiquidGlassUi /> }.into_any(),
-    },
-    DemoItem {
-        name: "👉 TODO: Alert Dialog",
-        render_fn: || view! { <DemoAlertDialog /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Carousel Hover Smooth",

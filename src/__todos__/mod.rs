@@ -3,7 +3,6 @@ pub mod _card_component_port_to_rust_ui;
 
 pub mod all_demos;
 pub mod all_demos_page;
-pub mod demo_alert_dialog;
 pub mod demo_apple_liquid_glass_ui;
 pub mod demo_bento3_transition;
 pub mod demo_button_multi_state;
