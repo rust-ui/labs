@@ -14,8 +14,8 @@ pub fn DemoCardReverse() -> impl IntoView {
                 <div class="space-y-6">
                     // Card 1 - Normal layout
                     <Card class="flex flex-col gap-6 md:flex-row">
-                        <div class="flex justify-center items-center w-full h-48 bg-gray-200 rounded-lg md:w-1/3 md:h-32">
-                            <div class="font-medium text-gray-600">"Image Placeholder"</div>
+                        <div class="flex justify-center items-center w-full h-48 bg-gray-200 rounded-lg md:w-1/3 md:h-32 font-medium text-gray-600">
+                            "Image Placeholder"
                         </div>
                         <CardContent class="flex-1 pt-0">
                             <CardTitle class="mb-3">"Nature's Beauty"</CardTitle>
@@ -27,8 +27,8 @@ pub fn DemoCardReverse() -> impl IntoView {
 
                     // Card 2 - Reverse layout
                     <Card class="flex flex-col gap-6 md:flex-row-reverse">
-                        <div class="flex justify-center items-center w-full h-48 bg-gray-200 rounded-lg md:w-1/3 md:h-32">
-                            <div class="font-medium text-gray-600">"Image Placeholder"</div>
+                        <div class="flex justify-center items-center w-full h-48 bg-gray-200 rounded-lg md:w-1/3 md:h-32 font-medium text-gray-600">
+                            "Image Placeholder"
                         </div>
                         <CardContent class="flex-1 pt-0">
                             <CardTitle class="mb-3">"Ecosystem Balance"</CardTitle>
@@ -40,8 +40,8 @@ pub fn DemoCardReverse() -> impl IntoView {
 
                     // Card 3 - Normal layout
                     <Card class="flex flex-col gap-6 md:flex-row">
-                        <div class="flex justify-center items-center w-full h-48 bg-gray-200 rounded-lg md:w-1/3 md:h-32">
-                            <div class="font-medium text-gray-600">"Image Placeholder"</div>
+                        <div class="flex justify-center items-center w-full h-48 bg-gray-200 rounded-lg md:w-1/3 md:h-32 font-medium text-gray-600">
+                            "Image Placeholder"
                         </div>
                         <CardContent class="flex-1 pt-0">
                             <CardTitle class="mb-3">"Changing Landscapes"</CardTitle>
