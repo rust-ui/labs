@@ -7,17 +7,17 @@
     <title>Nature Places Checkboxes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .mainDiv {
+        .chips__main__container {
           transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
         }
 
-        .mainDiv *, .mainDiv *:before, .mainDiv *:after {
+        .chips__main__container *, .chips__main__container *:before, .chips__main__container *:after {
           transition: all 0.35s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) 0s;
         }
 
 
 
-        .nature__places__content label::after {
+        .chips__main__container label::after {
           content:"";
           width: 0;
           height: 0;
@@ -31,12 +31,12 @@
             conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
         }
 
-        .nature__places__content label:has(input:checked) {
+        .chips__main__container label:has(input:checked) {
           box-shadow: 0 0 0 2px orange inset;
           color: orange;
         }
 
-        .nature__places__content label:has(input:checked)::after {
+        .chips__main__container label:has(input:checked)::after {
           width: 2vmin;
           height: 2vmin;
           overflow: hidden;
@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col box-border w-screen h-screen bg-black">
-        <div class="nature__places__content w-full max-w-[66vmin] z-[1] bg-black/[0.02] p-[2.8vmin] rounded-[2vmin] shadow-[inset_0_0_1px_1px_#ebebeb] relative flex flex-wrap justify-start content-center">
+        <div class="chips__main__container w-full max-w-[66vmin] z-[1] bg-black/[0.02] p-[2.8vmin] rounded-[2vmin] shadow-[inset_0_0_1px_1px_#ebebeb] relative flex flex-wrap justify-start content-center">
         <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
             <input type="checkbox" id="mountain" class="hidden">
         </label>
