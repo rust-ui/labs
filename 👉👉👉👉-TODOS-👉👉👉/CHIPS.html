@@ -31,10 +31,6 @@
             conic-gradient(from -45deg at 43% 64%, #fff0 0 0%, orange 2% 25%, #fff0 26% 100%);
         }
 
-        .chips__main__container label:has(input:checked) {
-          box-shadow: 0 0 0 2px orange inset;
-          color: orange;
-        }
 
         .chips__main__container label:has(input:checked)::after {
           width: 2vmin;
@@ -48,52 +44,52 @@
 <body>
     <div class="mainDiv m-0 p-0 overflow-hidden flex items-center justify-center flex-col box-border w-screen h-screen bg-black">
         <div class="chips__main__container w-full max-w-[66vmin] z-[1] bg-black/[0.02] p-[2.8vmin] rounded-[2vmin] shadow-[inset_0_0_1px_1px_#ebebeb] relative flex flex-wrap justify-start content-center">
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">mountain
             <input type="checkbox" id="mountain" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">ocean
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">ocean
             <input type="checkbox" id="ocean" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">forest
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">forest
             <input type="checkbox" id="forest" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">river
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">river
             <input type="checkbox" id="river" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">desert
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">desert
             <input type="checkbox" id="desert" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">jungle
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">jungle
             <input type="checkbox" id="jungle" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">beach
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">beach
             <input type="checkbox" id="beach" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">tropical
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">tropical
             <input type="checkbox" id="tropical" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">tundra
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">tundra
             <input type="checkbox" id="tundra" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">artic
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">artic
             <input type="checkbox" id="artic" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">lake
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">lake
             <input type="checkbox" id="lake" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">savanna
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">savanna
             <input type="checkbox" id="savanna" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">snow
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">snow
             <input type="checkbox" id="snow" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">grass
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">grass
             <input type="checkbox" id="grass" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">taiga
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">taiga
             <input type="checkbox" id="taiga" class="hidden">
         </label>
-        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">pond
+        <label class="w-auto h-[6vmin] bg-gradient-to-t from-[#12172080] to-[#0d121780] rounded-[8vmin] py-[2vmin] pr-[2vmin] pl-[3vmin] text-[2vmin] text-[#ebebeb] m-[1vmin] shadow-[inset_0_0_0_1px_#ebebeb] has-[:checked]:shadow-[inset_0_0_0_2px_orange] has-[:checked]:text-orange-500 capitalize font-sans cursor-pointer overflow-hidden relative flex items-center">pond
             <input type="checkbox" id="pond" class="hidden">
         </label>
         </div>
