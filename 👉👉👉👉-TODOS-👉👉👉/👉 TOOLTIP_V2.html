@@ -9,13 +9,13 @@
   <!-- * TAILWIND CSS -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <style>
 
+  
+  <style>
     /* JS adds this class to enable interaction */
-    [data-name="TooltipContent"].interactive {
+    [data-name="TooltipContent"].tooltip__interactive {
       pointer-events: auto;
     }
-
   </style>
 </head>
 <body>
@@ -60,13 +60,13 @@ tooltipTriggers.forEach(trigger => {
   const content = trigger.querySelector('[data-name="TooltipContent"]');
 
   trigger.addEventListener('mouseenter', () => {
-    content.classList.add('interactive');
+    content.classList.add('tooltip__interactive');
   });
 
   trigger.addEventListener('mouseleave', () => {
     setTimeout(() => {
       if (!trigger.matches(':hover')) {
-        content.classList.remove('interactive');
+        content.classList.remove('tooltip__interactive');
       }
     }, 50);
   });
