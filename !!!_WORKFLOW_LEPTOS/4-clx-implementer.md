@@ -13,7 +13,7 @@
 ## Instructions
 
 - For the clx pattern implementation, refer to `demo_card.rs` and `card.rs`.
-- For CSS classes with `__`, separate concerns as follow: `clx! {MyComponent, element, "this__pattern", "..."}`
+- You can use `data-name` for the name of the clx! component name, if any. Otherwise, create it yourself. Note that the clx! macro creates automatically the  data-name with the component name.
 - Replace `<div>` tags that accept children with `clx!` macro using meaningful names.
 - Keep self-closing tags as regular HTML:
   - Empty divs: `<div class="..."></div>`
