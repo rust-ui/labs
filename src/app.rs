@@ -14,7 +14,7 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Stylesheet id="leptos" href="/pkg/rust_ui_labs.css" />
-        <Title text="Lepos UI Labs" />
+        <Title text="Rust/UI Labs" />
 
         <Router>
             <Navbar />
