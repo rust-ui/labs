@@ -956,9 +956,9 @@ dependencies = [
 
 [[package]]
 name = "icons"
-version = "0.8.2"
+version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "46b26335572c737f0161bd49b872775600525a1be04cdf2a4c0aaac6f9a2ff67"
+checksum = "13dee8ae68c0ce9549eebe2f1c722fd2e3b973f253a4cc3d02c48ec276719f59"
 dependencies = [
  "leptos",
  "strum",
@@ -1424,9 +1424,9 @@ dependencies = [
 
 [[package]]
 name = "leptos_ui"
-version = "0.1.49"
+version = "0.1.51"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ffa0965399e29f34d93cab85dd39dab49fe87e4782069061651d501d16a1bc23"
+checksum = "3c616294c8bc55b01944c7afda762117cc0e2e226a9d07a8083ad5415910a42c"
 dependencies = [
  "leptos",
  "paste",
@@ -1435,9 +1435,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.175"
+version = "0.2.176"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a82ae493e598baaea5209805c49bbf2ea7de956d50d7da0da1164f9c6d28543"
+checksum = "58f929b4d672ea937a23a1ab494143d968337a5f47e56d0815df1e0890ddf174"
 
 [[package]]
 name = "linear-map"
@@ -2657,9 +2657,9 @@ dependencies = [
 
 [[package]]
 name = "tw_merge"
-version = "0.1.6"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "76f0e4e9db5ef5b2769341596599c902d11cae8c8e154d48640ef38802db673b"
+checksum = "97db850b711089abdcd9192238b946491d1562fe3eb83e25b238fd73eecebf13"
 dependencies = [
  "nom",
  "tw_merge_variants",
@@ -2667,9 +2667,9 @@ dependencies = [
 
 [[package]]
 name = "tw_merge_variants"
-version = "0.1.6"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1da06516446b7e75b2b04327289d7bdcce2de959a971aa02d59575d3a1f509d4"
+checksum = "03de956478d5562138828bb736cc066949bda33dbb99c55ef77b2bb5438868e4"
 dependencies = [
  "darling",
  "proc-macro2",

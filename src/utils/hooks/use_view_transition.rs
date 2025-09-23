@@ -1,4 +1,3 @@
-
 /// Reusable view transition hook
 pub fn use_view_transition() -> impl Fn(Box<dyn FnOnce()>) + Clone {
     move |callback: Box<dyn FnOnce()>| {
@@ -19,7 +18,11 @@ pub fn use_view_transition() -> impl Fn(Box<dyn FnOnce()>) + Clone {
         // Set callback on window
         if let Some(window) = web_sys::window() {
             let closure = wasm_bindgen::closure::Closure::once_into_js(callback);
-            let _ = js_sys::Reflect::set(&window, &wasm_bindgen::JsValue::from_str("_leptos_callback"), &closure);
+            let _ = js_sys::Reflect::set(
+                &window,
+                &wasm_bindgen::JsValue::from_str("_leptos_callback"),
+                &closure,
+            );
             let _ = js_sys::eval(script);
         } else {
             callback();

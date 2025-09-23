@@ -8,45 +8,105 @@ pub fn DemoTooltip() -> impl IntoView {
             /* JS adds this class to enable interaction */
             [data-name=\"TooltipContent\"].tooltip__interactive,
             [data-name=\"TooltipContent\"]:hover {
-              pointer-events: auto;
+             pointer-events: auto;
             }
             "}
         </style>
 
-        <div class="mt-20 text-center text-[18px] h-full text-[#444]">
+        <div class="mt-20 h-full text-center text-[18px] text-[#444]">
             <div>
-                <div data-name="Tooltip" data-position="Top" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                <div
+                    data-name="Tooltip"
+                    data-position="Top"
+                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
+                >
                     <span>Top</span>
-                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent bottom-full left-1/2 -mb-6 border-t-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
-                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg bottom-full left-1/2 -mb-3 -ml-2.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip on top</div>
+                    <div
+                        data-name="TooltipArrow"
+                        class="absolute left-1/2 bottom-full -mb-6 bg-transparent border-transparent opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] border-6 border-t-black/80"
+                    ></div>
+                    <div
+                        data-name="TooltipContent"
+                        class="absolute left-1/2 bottom-full py-2 px-2.5 -mb-3 -ml-2.5 text-xs text-white whitespace-nowrap shadow-lg opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] bg-black/80"
+                    >
+                        Tooltip on top
+                    </div>
                 </div>
             </div>
             <div>
-                <div data-name="Tooltip" data-position="Right" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                <div
+                    data-name="Tooltip"
+                    data-position="Right"
+                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
+                >
                     <span>Right</span>
-                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent left-full bottom-1/2 -mr-0.5 -mb-1 border-r-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
-                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg left-full bottom-1/2 ml-2.5 -mb-3.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip on right</div>
+                    <div
+                        data-name="TooltipArrow"
+                        class="absolute bottom-1/2 left-full -mr-0.5 -mb-1 bg-transparent border-transparent opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] border-6 border-r-black/80"
+                    ></div>
+                    <div
+                        data-name="TooltipContent"
+                        class="absolute bottom-1/2 left-full py-2 px-2.5 ml-2.5 -mb-3.5 text-xs text-white whitespace-nowrap shadow-lg opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] bg-black/80"
+                    >
+                        Tooltip on right
+                    </div>
                 </div>
             </div>
             <div>
-                <div data-name="Tooltip" data-position="Bottom" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                <div
+                    data-name="Tooltip"
+                    data-position="Bottom"
+                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
+                >
                     <span>Bottom</span>
-                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent top-full left-1/2 -mt-2 border-b-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
-                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg top-full left-1/2 mt-1 -ml-2.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip bottom</div>
+                    <div
+                        data-name="TooltipArrow"
+                        class="absolute left-1/2 top-full -mt-2 bg-transparent border-transparent opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] border-6 border-b-black/80"
+                    ></div>
+                    <div
+                        data-name="TooltipContent"
+                        class="absolute left-1/2 top-full py-2 px-2.5 mt-1 -ml-2.5 text-xs text-white whitespace-nowrap shadow-lg opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] bg-black/80"
+                    >
+                        Tooltip bottom
+                    </div>
                 </div>
             </div>
             <div>
-                <div data-name="Tooltip" data-position="Left" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                <div
+                    data-name="Tooltip"
+                    data-position="Left"
+                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
+                >
                     <span>Left</span>
-                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent right-full bottom-1/2 -ml-0.5 -mb-1 border-l-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
-                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg right-full bottom-1/2 mr-2.5 -mb-3.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip left</div>
+                    <div
+                        data-name="TooltipArrow"
+                        class="absolute bottom-1/2 right-full -mb-1 -ml-0.5 bg-transparent border-transparent opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] border-6 border-l-black/80"
+                    ></div>
+                    <div
+                        data-name="TooltipContent"
+                        class="absolute bottom-1/2 right-full py-2 px-2.5 mr-2.5 -mb-3.5 text-xs text-white whitespace-nowrap shadow-lg opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] bg-black/80"
+                    >
+                        Tooltip left
+                    </div>
                 </div>
             </div>
 
-            <div data-name="Tooltip" data-position="Right" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+            <div
+                data-name="Tooltip"
+                data-position="Right"
+                class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
+            >
                 <a href="https://rust-ui.com">Rust/UI</a>
-                <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent left-full bottom-1/2 -mr-0.5 -mb-1 border-r-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
-                <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg left-full bottom-1/2 ml-2.5 -mb-3.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip on right</div>
+                <div
+                    data-name="TooltipArrow"
+                    class="absolute bottom-1/2 left-full -mr-0.5 -mb-1 bg-transparent border-transparent opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] border-6 border-r-black/80"
+                ></div>
+                <div
+                    data-name="TooltipContent"
+                    class="absolute bottom-1/2 left-full py-2 px-2.5 ml-2.5 -mb-3.5 text-xs text-white whitespace-nowrap shadow-lg opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] bg-black/80"
+                >
+                    Tooltip on right
+                </div>
             </div>
         </div>
 
@@ -54,19 +114,19 @@ pub fn DemoTooltip() -> impl IntoView {
             {"
             // Simplified JS - only handles pointer-events for text selection
             const tooltipTriggers = document.querySelectorAll('[data-name=\"Tooltip\"]');
-
+            
             tooltipTriggers.forEach(trigger => {
-              const content = trigger.querySelector('[data-name=\"TooltipContent\"]');
-
-              trigger.addEventListener('mouseenter', () => {
-                content.classList.add('tooltip__interactive');
-              });
-
-              trigger.addEventListener('mouseleave', () => {
-                setTimeout(() => {
-                  content.classList.remove('tooltip__interactive');
-                }, 100);
-              });
+             const content = trigger.querySelector('[data-name=\"TooltipContent\"]');
+            
+             trigger.addEventListener('mouseenter', () => {
+               content.classList.add('tooltip__interactive');
+             });
+            
+             trigger.addEventListener('mouseleave', () => {
+               setTimeout(() => {
+                 content.classList.remove('tooltip__interactive');
+               }, 100);
+             });
             });
             "}
         </script>
