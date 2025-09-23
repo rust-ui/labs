@@ -4,3 +4,4 @@ pub mod input;
 pub mod label;
 pub mod pagination;
 pub mod pagination_button;
+pub mod separator;
