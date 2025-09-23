@@ -13,7 +13,8 @@
   
   <style>
     /* JS adds this class to enable interaction */
-    [data-name="TooltipContent"].tooltip__interactive {
+    [data-name="TooltipContent"].tooltip__interactive,
+    [data-name="TooltipContent"]:hover {
       pointer-events: auto;
     }
   </style>
@@ -65,10 +66,8 @@ tooltipTriggers.forEach(trigger => {
 
   trigger.addEventListener('mouseleave', () => {
     setTimeout(() => {
-      if (!trigger.matches(':hover')) {
-        content.classList.remove('tooltip__interactive');
-      }
-    }, 50);
+      content.classList.remove('tooltip__interactive');
+    }, 100);
   });
 });
 </script>
