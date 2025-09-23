@@ -1993,6 +1993,7 @@ dependencies = [
  "leptos_router",
  "leptos_ui",
  "log",
+ "strum",
  "thiserror 2.0.16",
  "tokio",
  "tower",
