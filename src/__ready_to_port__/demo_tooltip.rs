@@ -1,0 +1,74 @@
+use leptos::prelude::*;
+
+#[component]
+pub fn DemoTooltip() -> impl IntoView {
+    view! {
+        <style>
+            {"
+            /* JS adds this class to enable interaction */
+            [data-name=\"TooltipContent\"].tooltip__interactive,
+            [data-name=\"TooltipContent\"]:hover {
+              pointer-events: auto;
+            }
+            "}
+        </style>
+
+        <div class="mt-20 text-center text-[18px] h-full text-[#444]">
+            <div>
+                <div data-name="Tooltip" data-position="Top" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                    <span>Top</span>
+                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent bottom-full left-1/2 -mb-6 border-t-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
+                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg bottom-full left-1/2 -mb-3 -ml-2.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip on top</div>
+                </div>
+            </div>
+            <div>
+                <div data-name="Tooltip" data-position="Right" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                    <span>Right</span>
+                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent left-full bottom-1/2 -mr-0.5 -mb-1 border-r-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
+                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg left-full bottom-1/2 ml-2.5 -mb-3.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip on right</div>
+                </div>
+            </div>
+            <div>
+                <div data-name="Tooltip" data-position="Bottom" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                    <span>Bottom</span>
+                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent top-full left-1/2 -mt-2 border-b-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
+                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg top-full left-1/2 mt-1 -ml-2.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip bottom</div>
+                </div>
+            </div>
+            <div>
+                <div data-name="Tooltip" data-position="Left" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                    <span>Left</span>
+                    <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent right-full bottom-1/2 -ml-0.5 -mb-1 border-l-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
+                    <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg right-full bottom-1/2 mr-2.5 -mb-3.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip left</div>
+                </div>
+            </div>
+
+            <div data-name="Tooltip" data-position="Right" class="group my-[5px] mx-0 whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out">
+                <a href="https://rust-ui.com">Rust/UI</a>
+                <div data-name="TooltipArrow" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-transparent border-6 border-transparent left-full bottom-1/2 -mr-0.5 -mb-1 border-r-black/80 opacity-0 pointer-events-none group-hover:opacity-100"></div>
+                <div data-name="TooltipContent" class="absolute z-[1000000] transition-all duration-300 ease-in-out bg-black/80 text-white px-2.5 py-2 text-xs whitespace-nowrap shadow-lg left-full bottom-1/2 ml-2.5 -mb-3.5 opacity-0 pointer-events-none group-hover:opacity-100">Tooltip on right</div>
+            </div>
+        </div>
+
+        <script>
+            {"
+            // Simplified JS - only handles pointer-events for text selection
+            const tooltipTriggers = document.querySelectorAll('[data-name=\"Tooltip\"]');
+
+            tooltipTriggers.forEach(trigger => {
+              const content = trigger.querySelector('[data-name=\"TooltipContent\"]');
+
+              trigger.addEventListener('mouseenter', () => {
+                content.classList.add('tooltip__interactive');
+              });
+
+              trigger.addEventListener('mouseleave', () => {
+                setTimeout(() => {
+                  content.classList.remove('tooltip__interactive');
+                }, 100);
+              });
+            });
+            "}
+        </script>
+    }
+}
