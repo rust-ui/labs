@@ -13,8 +13,8 @@
 
   <style>
 
-    .tooltip:before,
-    .tooltip:after {
+    [data-name="Tooltip"]:before,
+    [data-name="Tooltip"]:after {
       position: absolute;
       opacity: 0;
       z-index: 1000000;
@@ -23,12 +23,12 @@
       pointer-events: none;
     }
 
-    .tooltip:hover:before,
-    .tooltip:hover:after {
+    [data-name="Tooltip"]:hover:before,
+    [data-name="Tooltip"]:hover:after {
       opacity: 1;
     }
 
-    .tooltip:before {
+    [data-name="Tooltip"]:before {
       content: '';
       position: absolute;
       background: transparent;
@@ -36,7 +36,7 @@
       position: absolute;
     }
 
-    .tooltip:after {
+    [data-name="Tooltip"]:after {
       content: attr(data-tooltip);
       background: rgba(0, 0, 0, 0.8);
       color: white;
@@ -46,103 +46,103 @@
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .tooltip[data-position="top"]:before {
+    [data-name="Tooltip"][data-position="top"]:before {
       bottom: 100%;
       left: 50%;
       margin: 0 0 -18px 0;
       border-top-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip[data-position="top"]:after {
+    [data-name="Tooltip"][data-position="top"]:after {
       bottom: 100%;
       left: 50%;
       margin: 0 0 -6px -10px;
     }
 
-    .tooltip[data-position="top"]:hover:before {
+    [data-name="Tooltip"][data-position="top"]:hover:before {
       margin-bottom: -10px;
     }
 
-    .tooltip[data-position="top"]:hover:after {
+    [data-name="Tooltip"][data-position="top"]:hover:after {
       margin-bottom: 2px;
     }
 
-    .tooltip[data-position="bottom"]:before {
+    [data-name="Tooltip"][data-position="bottom"]:before {
       top: 100%;
       left: 50%;
       margin: -14px 0 0 0;
       border-bottom-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip[data-position="bottom"]:after {
+    [data-name="Tooltip"][data-position="bottom"]:after {
       top: 100%;
       left: 50%;
       margin: -2px 0 0 -10px;
     }
 
-    .tooltip[data-position="bottom"]:hover:before {
+    [data-name="Tooltip"][data-position="bottom"]:hover:before {
       margin-top: -6px;
     }
 
-    .tooltip[data-position="bottom"]:hover:after {
+    [data-name="Tooltip"][data-position="bottom"]:hover:after {
       margin-top: 6px;
     }
 
-    .tooltip[data-position="right"]:before {
+    [data-name="Tooltip"][data-position="right"]:before {
       left: 100%;
       bottom: 50%;
       margin: 0 0 -4px -8px;
       border-right-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip[data-position="right"]:after {
+    [data-name="Tooltip"][data-position="right"]:after {
       left: 100%;
       bottom: 50%;
       margin: 0 0 -13px 4px;
     }
 
-    .tooltip[data-position="right"]:hover:before {
+    [data-name="Tooltip"][data-position="right"]:hover:before {
       margin: 0 0 -4px -0;
     }
 
-    .tooltip[data-position="right"]:hover:after {
+    [data-name="Tooltip"][data-position="right"]:hover:after {
       margin: 0 0 -13px 12px;
     }
 
-    .tooltip[data-position="left"]:before {
+    [data-name="Tooltip"][data-position="left"]:before {
       right: 100%;
       bottom: 50%;
       margin: 0 -8px -4px 0;
       border-left-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip[data-position="left"]:after {
+    [data-name="Tooltip"][data-position="left"]:after {
       right: 100%;
       bottom: 50%;
       margin: 0 4px -13px 0;
     }
 
-    .tooltip[data-position="left"]:hover:before {
+    [data-name="Tooltip"][data-position="left"]:hover:before {
       margin: 0 0 -4px 0;
     }
 
-    .tooltip[data-position="left"]:hover:after {
+    [data-name="Tooltip"][data-position="left"]:hover:after {
       margin: 0 12px -13px 0;
     }
   </style>
 
   <div class="mt-20 text-center text-[18px] h-full text-[#444]">
     <div>
-      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="top" data-tooltip="Tooltip on top">Top</a>
+      <a href="#" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-name="Tooltip" data-position="top" data-tooltip="Tooltip on top">Top</a>
 	</div>
     <div>
-      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="right" data-tooltip="Tooltip on right">Right</a>
+      <a href="#" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-name="Tooltip" data-position="right" data-tooltip="Tooltip on right">Right</a>
 	</div>
     <div>
-      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="bottom" data-tooltip="Tooltip bottom">Bottom</a>
+      <a href="#" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-name="Tooltip" data-position="bottom" data-tooltip="Tooltip bottom">Bottom</a>
 	</div>
     <div>
-      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="left" data-tooltip="Tooltip left">Left</a>
+      <a href="#" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-name="Tooltip" data-position="left" data-tooltip="Tooltip left">Left</a>
 	</div>
   </div>
 
