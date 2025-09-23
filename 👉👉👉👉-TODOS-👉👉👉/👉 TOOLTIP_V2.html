@@ -46,103 +46,103 @@
       box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .tooltip__top:before {
+    .tooltip[data-position="top"]:before {
       bottom: 100%;
       left: 50%;
       margin: 0 0 -18px 0;
       border-top-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip__top:after {
+    .tooltip[data-position="top"]:after {
       bottom: 100%;
       left: 50%;
       margin: 0 0 -6px -10px;
     }
 
-    .tooltip__top:hover:before {
+    .tooltip[data-position="top"]:hover:before {
       margin-bottom: -10px;
     }
 
-    .tooltip__top:hover:after {
+    .tooltip[data-position="top"]:hover:after {
       margin-bottom: 2px;
     }
 
-    .tooltip__bottom:before {
+    .tooltip[data-position="bottom"]:before {
       top: 100%;
       left: 50%;
       margin: -14px 0 0 0;
       border-bottom-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip__bottom:after {
+    .tooltip[data-position="bottom"]:after {
       top: 100%;
       left: 50%;
       margin: -2px 0 0 -10px;
     }
 
-    .tooltip__bottom:hover:before {
+    .tooltip[data-position="bottom"]:hover:before {
       margin-top: -6px;
     }
 
-    .tooltip__bottom:hover:after {
+    .tooltip[data-position="bottom"]:hover:after {
       margin-top: 6px;
     }
 
-    .tooltip__right:before {
+    .tooltip[data-position="right"]:before {
       left: 100%;
       bottom: 50%;
       margin: 0 0 -4px -8px;
       border-right-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip__right:after {
+    .tooltip[data-position="right"]:after {
       left: 100%;
       bottom: 50%;
       margin: 0 0 -13px 4px;
     }
 
-    .tooltip__right:hover:before {
+    .tooltip[data-position="right"]:hover:before {
       margin: 0 0 -4px -0;
     }
 
-    .tooltip__right:hover:after {
+    .tooltip[data-position="right"]:hover:after {
       margin: 0 0 -13px 12px;
     }
 
-    .tooltip__left:before {
+    .tooltip[data-position="left"]:before {
       right: 100%;
       bottom: 50%;
       margin: 0 -8px -4px 0;
       border-left-color: rgba(0, 0, 0, 0.8);
     }
 
-    .tooltip__left:after {
+    .tooltip[data-position="left"]:after {
       right: 100%;
       bottom: 50%;
       margin: 0 4px -13px 0;
     }
 
-    .tooltip__left:hover:before {
+    .tooltip[data-position="left"]:hover:before {
       margin: 0 0 -4px 0;
     }
 
-    .tooltip__left:hover:after {
+    .tooltip[data-position="left"]:hover:after {
       margin: 0 12px -13px 0;
     }
   </style>
 
   <div class="mt-20 text-center text-[18px] h-full text-[#444]">
     <div>
-      <a href="#" class="tooltip tooltip__top my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-tooltip="Tooltip on top">Top</a>
+      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="top" data-tooltip="Tooltip on top">Top</a>
 	</div>
     <div>
-      <a href="#" class="tooltip tooltip__right my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-tooltip="Tooltip on right">Right</a>
+      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="right" data-tooltip="Tooltip on right">Right</a>
 	</div>
     <div>
-      <a href="#" class="tooltip tooltip__bottom my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-tooltip="Tooltip bottom">Bottom</a>
+      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="bottom" data-tooltip="Tooltip bottom">Bottom</a>
 	</div>
     <div>
-      <a href="#" class="tooltip tooltip__left my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-tooltip="Tooltip left">Left</a>
+      <a href="#" class="tooltip my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block text-[#1A5A7A]" data-position="left" data-tooltip="Tooltip left">Left</a>
 	</div>
   </div>
 
