@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <!-- Removed non-existent style.css reference -->
+  
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- GSAP (uncomment if needed) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+
+  <style> 
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize, base, demo;
+
+@layer demo {
+  .controls {
+    --line-height: 34px;
+    --item-size: 56px;
+    --visor: hsl(240deg 3.3% 17.84%);
+    color: hsl(240deg 3.3% 87.84%);
+  }
+  .control {
+    --scroll-padding: 0px;
+    --inner-angle: calc((360 / var(--total)) * 1deg);
+    --scroll-buff: calc(var(--item-size) * var(--scroll-ratio));
+    --gap: calc(var(--item-size) * var(--gap-efficient, 0.1));
+    --gap: 0px;
+    --radius: calc(
+      ((var(--line-height) + var(--gap)) / sin(var(--inner-angle))) * -1
+    );
+  }
+
+  img {
+    position: fixed;
+    z-index: 3;
+    pointer-events: none;
+    width: 375px;
+    translate: 0 110%;
+    opacity: 1;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .meridien-form {
+    position: fixed;
+    top: 50%;
+    left: 1rem;
+  }
+
+  .control {
+    width: var(--item-size);
+    aspect-ratio: 1 / 2;
+    /*height: var(--item-size);*/
+    /*outline: 2px dashed red;*/
+    position: relative;
+    perspective: 60px;
+    timeline-scope: --controller;
+    display: grid;
+    place-items: center;
+    transform-style: preserve-3d;
+    /*perspective: 200px;*/
+    transform: translateX(-0.5rem) translateZ(0);
+    mask: linear-gradient(#0000, #fff, #0000);
+  }
+
+  .meridiem .controller {
+    padding-block: 0;
+  }
+  .meridiem {
+    --rotation: calc(360deg / var(--total));
+  }
+
+  .track {
+    width: 100%;
+    word-break: break-all;
+    color: white;
+    pointer-events: none;
+
+    font-weight: 400;
+    word-spacing: 200px;
+    text-align: center;
+    position: absolute;
+
+    line-height: var(--line-height);
+
+    top: 0;
+    /*outline: 2px green dashed;
+    outline-offset: 2px;*/
+    font-size: 1.45rem;
+  }
+
+  .track-holder {
+    width: 100%;
+    height: var(--line-height);
+    /*outline: 2px dashed white;*/
+    /*outline-offset: 4px;*/
+    position: absolute;
+    top: 50%;
+    left: 0;
+    overflow: hidden;
+    /*background: grey;*/
+    color: white;
+    translate: 0 -50%;
+    pointer-events: none;
+    background: var(--visor);
+    /*transform: translate3d(0, 0, 1px);*/
+  }
+  
+  .controller::-webkit-scrollbar {
+    display: none;
+  }
+
+  .controller {
+    scrollbar-width: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    height: 220px;
+    /*height: 100%;*/
+    color: #0000;
+    overflow: auto;
+    /*outline: 2px dashed hotpink;*/
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: y mandatory;
+    scroll-timeline: --controller;
+    padding-block: 2px;
+    scrollbar-color: #0000 #0000;
+
+    li {
+      width: 100%;
+      /*height: 100%;*/
+      aspect-ratio: 1;
+      height: 220px;
+      scroll-snap-align: center;
+      /*outline: 2px dashed green;*/
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  .controls {
+    transform-style: preserve-3d;
+    /*perspective: 20vmin;*/
+    display: flex;
+    position: fixed;
+    gap: 0;
+    top: 50%;
+    left: 50%;
+    font-weight: 300;
+    translate: -50% -50%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      height: var(--line-height);
+      width: 346px;
+      border-radius: 6px;
+      background: var(--visor);
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, -1px);
+      pointer-events: none;
+    }
+  }
+
+  .wheel {
+    position: absolute;
+    width: 100%;
+    height: var(--line-height);
+    /*aspect-ratio: 1;*/
+    outline: 2px dashed blue;
+    outline-offset: 2px;
+    font-size: 1.4rem;
+    pointer-events: none;
+    transform: translate3d(0, 0, calc((var(--radius) * 1) - 4px));
+    transform-style: preserve-3d;
+
+    div {
+      backface-visibility: hidden;
+      position: absolute;
+      inset: 0;
+      /*outline: 2px dashed yellow;*/
+      /*background: blue;*/
+      outline-offset: 4px;
+      transform-style: preserve-3d;
+      text-align: center;
+      display: grid;
+      place-items: center;
+      transform: rotateX(
+          calc((var(--total) - var(--index)) * var(--inner-angle))
+        )
+        translate3d(0, 0, calc(var(--radius) * -1));
+    }
+  }
+  @supports (animation-timeline: scroll()) {
+    .wheel {
+      animation: rotate both linear;
+      animation-timeline: --controller;
+    }
+    .track {
+      animation: translate both linear;
+      animation-timeline: --controller;
+    }
+  }
+  .controller[data-no-snap] {
+    scroll-snap-type: unset;
+  }
+  .controller[data-no-snap] + .wheel {
+    animation-name: none;
+  }
+  .controller[data-no-snap] ~ .track-holder .track {
+    animation-name: none;
+  }
+  @keyframes rotate {
+    to {
+      transform: translate3d(0, 0, calc((var(--radius) * 1) - 4px))
+        rotateX(var(--rotation, 360deg));
+    }
+  }
+  @keyframes translate {
+    to {
+      transform: translateY(calc(-100% + var(--line-height)));
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: light-dark(#fff, #000);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 80%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
+        calc(var(--size) * 0.32) / var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+  }
+
+  :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+  }
+
+  .bear-link svg {
+    width: 75%;
+  }
+
+  /* Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+div.tp-dfwv {
+  width: 256px;
+  position: fixed;
+
+  [type='time'] {
+    border: 0;
+    width: 100%;
+    padding: 2px 4px;
+  }
+}
+
+
+  </style>
+
+
+<div class="controls">
+      <div class="control control--hours hours"></div>
+      <div class="control control--minutes minutes"></div>
+      <div class="control control--meridiem meridiem"></div>
+    </div>
+    <a
+      aria-label="Follow Jhey"
+      class="bear-link"
+      href="https://twitter.com/intent/follow?screen_name=jh3yy"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <svg
+        class="w-9"
+        viewBox="0 0 969 955"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="161.191"
+          cy="320.191"
+          r="133.191"
+          stroke="currentColor"
+          stroke-width="20"
+        ></circle>
+        <circle
+          cx="806.809"
+          cy="320.191"
+          r="133.191"
+          stroke="currentColor"
+          stroke-width="20"
+        ></circle>
+        <circle
+          cx="695.019"
+          cy="587.733"
+          r="31.4016"
+          fill="currentColor"
+        ></circle>
+        <circle
+          cx="272.981"
+          cy="587.733"
+          r="31.4016"
+          fill="currentColor"
+        ></circle>
+        <path
+          d="M564.388 712.083C564.388 743.994 526.035 779.911 483.372 779.911C440.709 779.911 402.356 743.994 402.356 712.083C402.356 680.173 440.709 664.353 483.372 664.353C526.035 664.353 564.388 680.173 564.388 712.083Z"
+          fill="currentColor"
+        ></path>
+        <rect
+          x="310.42"
+          y="448.31"
+          width="343.468"
+          height="51.4986"
+          fill="#FF1E1E"
+        ></rect>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M745.643 288.24C815.368 344.185 854.539 432.623 854.539 511.741H614.938V454.652C614.938 433.113 597.477 415.652 575.938 415.652H388.37C366.831 415.652 349.37 433.113 349.37 454.652V511.741L110.949 511.741C110.949 432.623 150.12 344.185 219.845 288.24C289.57 232.295 384.138 200.865 482.744 200.865C581.35 200.865 675.918 232.295 745.643 288.24Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+
+
+
+
+
+  <script type="module">
+import gsap from 'https://cdn.skypack.dev/gsap@3.13.0'
+import Draggable from 'https://cdn.skypack.dev/gsap@3.13.0/Draggable'
+import ScrollTrigger from 'https://cdn.skypack.dev/gsap@3.13.0/ScrollTrigger'
+import InertiaPlugin from 'https://cdn.skypack.dev/gsap@3.13.0/InertiaPlugin'
+import { Pane } from 'https://cdn.skypack.dev/tweakpane@4.0.4'
+gsap.registerPlugin(Draggable, InertiaPlugin, ScrollTrigger)
+
+const config = {
+  theme: 'dark',
+}
+
+const ctrl = new Pane({
+  title: 'config',
+  expanded: true,
+})
+
+const update = () => {
+  document.documentElement.dataset.theme = config.theme
+}
+
+const sync = (event) => {
+  if (
+    !document.startViewTransition ||
+    event.target.controller.view.labelElement.innerText !== 'theme'
+  )
+    return update()
+  document.startViewTransition(() => update())
+}
+
+const datepicker = Object.assign(document.createElement('div'), {
+  className: 'tp-lblv tp-v-fst tp-v-vfst',
+  innerHTML: `
+    <div class="tp-lblv_l">time</div>
+    <div class="tp-lblv_v">
+      <div class="tp-lstv">
+        <input type="time" class="datepicker"/>
+      </div>
+    </div>
+  `,
+})
+const panel = document.querySelector('.tp-rotv_c')
+// panel.firstElementChild.classList.remove('tp-v-fst')
+panel.insertBefore(datepicker, panel.firstElementChild)
+
+// ctrl.addBinding(config, 'theme', {
+//   label: 'theme',
+//   options: {
+//     system: 'system',
+//     light: 'light',
+//     dark: 'dark',
+//   },
+// })
+
+ctrl.on('change', sync)
+update()
+
+// make tweakpane panel draggable
+const tweakClass = 'div.tp-dfwv'
+const d = Draggable.create(tweakClass, {
+  type: 'x,y',
+  allowEventDefault: true,
+  trigger: tweakClass + ' button.tp-rotv_b',
+})
+document.querySelector(tweakClass).addEventListener('dblclick', () => {
+  gsap.to(tweakClass, {
+    x: `+=${d[0].x * -1}`,
+    y: `+=${d[0].y * -1}`,
+    onComplete: () => {
+      gsap.set(tweakClass, { clearProps: 'all' })
+    },
+  })
+})
+
+const controls = document.querySelector('.controls')
+const hours = controls.querySelector('.control--hours')
+const minutes = controls.querySelector('.control--minutes')
+const meridiem = document.querySelector('.control--meridiem')
+
+// TODO:: I think once you mess with the override, adjust the hoursIndex by 12
+// the meridien state bumps the scroll/rotation index return by 12 so it doesn't break things
+
+const AMOUNT = 60
+const buildMarkup = () => {
+  hours.style.setProperty('--total', AMOUNT)
+  minutes.style.setProperty('--total', AMOUNT)
+  meridiem.style.setProperty('--total', AMOUNT)
+  // the controller NEEDS +1 to do infinite rotation well
+  hours.innerHTML = `
+    <ul class="controller controller--hours">${new Array(AMOUNT + 1)
+      .fill()
+      .map((_, i) => `<li>${i % 12 || 12}</li>`)
+      .join('')}</ul>
+    <div class="wheel wheel--hours">
+      ${new Array(AMOUNT)
+        .fill()
+        .map(
+          (_, i) =>
+            `<div style="--index: ${i};">${(i % 12 || 12)
+              .toString()
+              .padStart(2, '0')}</div>`
+        )
+        .join('')}
+    </div>
+    <div class="track-holder">
+      <div class="track track--hours">
+        ${new Array(AMOUNT + 1)
+          .fill()
+          .map((_, i) => (i % 12 || 12).toString().padStart(2, '0'))
+          .join(' ')
+          .trim()}
+      </div>
+    </div>
+    `.trim()
+  minutes.innerHTML = `
+    <ul class="controller controller--minutes">${new Array(AMOUNT + 1)
+      .fill()
+      .map((_, i) => `<li>${i === AMOUNT ? 0 : i}</li>`)
+      .join('')}</ul>
+    <div class="wheel wheel--minutes">
+      ${new Array(AMOUNT)
+        .fill()
+        .map(
+          (_, i) =>
+            `<div style="--index: ${i};">${
+              i === AMOUNT ? '00' : i.toString().padStart(2, '0')
+            }</div>`
+        )
+        .join('')}
+    </div>
+    <div class="track-holder">
+      <div class="track track--minutes">
+        ${new Array(AMOUNT + 1)
+          .fill()
+          .map((_, i) => (i === AMOUNT ? '00' : i.toString().padStart(2, '0')))
+          .join(' ')
+          .trim()}
+      </div>
+    </div>
+    `.trim()
+  meridiem.innerHTML = `
+    <ul class="controller controller--meridiem">${new Array(2)
+      .fill()
+      .map((_, i) => `<li>${i === 0 ? 'AM' : 'PM'}</li>`)
+      .join('')}</ul>
+    <div class="wheel wheel--meridiem">
+      ${new Array(2)
+        .fill()
+        .map(
+          (_, i) => `<div style="--index: ${i};">${i === 0 ? 'AM' : 'PM'}</div>`
+        )
+        .join('')}
+    </div>
+    <div class="track-holder">
+      <div class="track track--meridiem">
+        AM PM
+      </div>
+    </div>
+    `.trim()
+}
+
+buildMarkup()
+
+/*** =======================
+ * constants & tiny utils
+ * ======================= */
+const TOTAL = 60
+const DEG_STEP = 360 / TOTAL
+const BUFFER = 2
+const FRAMES = 20
+
+const pad2 = (n) => String(n).padStart(2, '0')
+const mod = (n, m) => ((n % m) + m) % m
+const mod60 = (n) => mod(n, TOTAL)
+const snapRotation = (deg) => Math.round(deg / DEG_STEP) * DEG_STEP
+
+const indexFromRotation = (deg) => {
+  const raw =
+    deg < 0 ? Math.abs((deg % 360) / DEG_STEP) : TOTAL - (deg % 360) / DEG_STEP
+  return Math.round(raw) % TOTAL
+}
+
+const getScrollIndex = (el, straight = false) => {
+  const h = el.offsetHeight
+  if (!h) return 0
+  const raw = el.scrollTop / h
+  let idx = Math.round(raw)
+  if (Math.abs(raw - Math.round(raw)) < 1e-6) idx = Math.round(raw)
+  if (straight) return idx
+  const count = Math.round(el.scrollHeight / h)
+  if (idx < 0 || idx > count - 2) idx = 0
+  return idx
+}
+
+const maintainInfiniteLoop = (el) => {
+  if (el.offsetHeight + el.scrollTop > el.scrollHeight - BUFFER)
+    el.scrollTop = BUFFER
+  if (el.scrollTop < BUFFER) el.scrollTop = el.scrollHeight - BUFFER
+}
+
+const setProxyRotationFromIndex = (proxy, idx) =>
+  gsap.set(proxy, { rotation: (TOTAL - idx) * DEG_STEP })
+
+const clearWheelPropsIfCSS = (selectors) =>
+  CSS.supports('animation-timeline: scroll()') &&
+  gsap.set(selectors, { clearProps: 'all' }) &&
+  gsap.set('.track', { clearProps: 'all' })
+
+/*** =======================
+ * dom refs & basic state
+ * ======================= */
+const AM = document.querySelector('#am')
+const PM = document.querySelector('#pm')
+const timeInput = panel.querySelector('[type="time"]')
+const controllerHours = document.querySelector('.controller--hours')
+const controllerMinutes = document.querySelector('.controller--minutes')
+const controllerMeridiem = document.querySelector('.controller--meridiem')
+
+const PROXY_HOURS = document.createElement('div')
+const PROXY_MINUTES = document.createElement('div')
+const PROXY_MERIDIEM = document.createElement('div')
+
+let meridiemGuard = false
+let meridiemStart
+let passiveTrigger = false
+let programmaticClear
+let meridiemOverride = false // single spelling everywhere
+
+const now = new Date()
+now.setMinutes(now.getMinutes() + 5)
+const currentHours = now.getHours()
+const currentMinutes = now.getMinutes()
+let isPMState = currentHours >= 12
+
+/*** =======================
+ * meridiem helpers + sync
+ * ======================= */
+const setMeridiem = (isPM) => {
+  // update state first
+  isPMState = !!isPM
+  // reflect to UI (but UI is NOT the source of truth)
+  // PM.checked = isPMState
+  // AM.checked = !isPMState
+}
+
+// const isPM = () => isPMState
+
+function toggleMeridiem(drive) {
+  setMeridiem(!isPMState)
+  if (drive) {
+    passiveTrigger = true
+    controllerMeridiem.scrollTo({
+      top: isPMState ? controllerMeridiem.scrollHeight : 0,
+      behavior: 'smooth',
+    })
+  }
+}
+
+const hour24FromIndex = (i) => {
+  const h12 = i % 12 || 12
+  return isPMState ? (h12 === 12 ? 12 : h12 + 12) : h12 === 12 ? 0 : h12
+}
+
+const updateTimeInput = (hIdx, mIdx) =>
+  (timeInput.value = `${pad2(hour24FromIndex(hIdx))}:${pad2(mIdx)}`)
+
+// boundary flip state (with override phase baked in)
+let prevWrapped = null // 0..59
+let prevUnwrapped = null // continuous index
+let lastOverride = false
+
+function syncMeridiem(index0to59) {
+  const i = mod60(index0to59 + (meridiemOverride ? 12 : 0)) // phase shift during override
+
+  if (prevWrapped === null) {
+    prevWrapped = i
+    prevUnwrapped = i
+    lastOverride = !!meridiemOverride
+    return
+  }
+
+  if (lastOverride !== !!meridiemOverride) {
+    // keep continuity when override toggles
+    const shift = meridiemOverride ? +12 : -12
+    prevWrapped = mod60(prevWrapped + shift)
+    prevUnwrapped += shift
+    lastOverride = !!meridiemOverride
+  }
+
+  let delta = i - prevWrapped // shortest path on ring
+  if (delta > 30) delta -= 60
+  else if (delta < -30) delta += 60
+  if (delta === 0) return
+
+  const before = Math.floor(prevUnwrapped / 12)
+  const after = Math.floor((prevUnwrapped + delta) / 12)
+  if (Math.abs(after - before) & 1) toggleMeridiem(true) // flip parity
+
+  prevWrapped = i
+  prevUnwrapped += delta
+}
+
+/*** =======================
+ * factories
+ * ======================= */
+function createScrollWatcher(
+  target,
+  { frames = FRAMES, onStart, onFrame, onStop } = {}
+) {
+  let last = null,
+    repeats = 0,
+    raf = null
+
+  const getTop =
+    target === window
+      ? () =>
+          document.scrollingElement?.scrollTop ??
+          document.documentElement.scrollTop ??
+          window.pageYOffset ??
+          0
+      : () => target.scrollTop
+
+  const addOnce = () =>
+    target.addEventListener('scroll', kick, { once: true, passive: false })
+
+  const frame = () => {
+    const top = getTop()
+    onFrame?.(top)
+    repeats = top === last ? repeats + 1 : 1
+    last = top
+
+    if (repeats >= frames) {
+      onStop?.()
+      cancelAnimationFrame(raf)
+      raf = null
+      last = null
+      repeats = 0
+      addOnce()
+      return
+    }
+    raf = requestAnimationFrame(frame)
+  }
+
+  const kick = () => {
+    onStart?.()
+    if (raf) return
+    last = getTop()
+    repeats = 1
+    raf = requestAnimationFrame(frame)
+  }
+
+  addOnce()
+  return {
+    destroy() {
+      if (raf) cancelAnimationFrame(raf)
+      target.removeEventListener('scroll', kick)
+    },
+    isRunning() {
+      return !!raf
+    },
+  }
+}
+
+function createWheel({
+  key,
+  proxyEl,
+  trigger,
+  wheelSel,
+  track,
+  controller,
+  bounds,
+  onStart, // optional, expects Draggable `this` context
+  onComplete, // (idx, rotation) => void
+}) {
+  Draggable.create(proxyEl, {
+    type: 'rotation',
+    trigger,
+    inertia: true,
+    ...(bounds ? { bounds } : {}),
+    onDragStart: function () {
+      // bind Draggable context so `this.rotation` works in user callback
+      onStart?.call(this)
+    },
+    onDrag: function () {
+      gsap.set(wheelSel, { rotateX: this.rotation * -1 })
+      // complete hack to be refactored
+
+      const trackBounds = track.getBoundingClientRect()
+      if (!bounds) {
+        const r =
+          this.rotation < 0
+            ? 360 - Math.abs(this.rotation % 360)
+            : this.rotation
+        gsap.set(track, {
+          y: (1 - (r % 360) / 360) * -(trackBounds.height - 34),
+        })
+      } else {
+        gsap.set(track, {
+          y: gsap.utils.mapRange(
+            0,
+            -6,
+            0,
+            -(trackBounds.height - 34)
+          )(this.rotation),
+        })
+      }
+
+      const h = getScrollIndex(controllerHours)
+      const m = getScrollIndex(controllerMinutes)
+      syncMeridiem(h)
+      if (key === 'hours') {
+        updateTimeInput(indexFromRotation(this.rotation), m)
+      } else if (key === 'minutes') {
+        updateTimeInput(h, indexFromRotation(this.rotation))
+      } else {
+        updateTimeInput(h, m)
+      }
+    },
+    onThrowUpdate: function () {
+      gsap.set(wheelSel, { rotateX: this.rotation * -1 })
+      const trackBounds = track.getBoundingClientRect()
+      if (!bounds) {
+        const r =
+          this.rotation < 0
+            ? 360 - Math.abs(this.rotation % 360)
+            : this.rotation
+        gsap.set(track, {
+          y: (1 - (r % 360) / 360) * -(trackBounds.height - 34),
+        })
+      } else {
+        gsap.set(track, {
+          y: gsap.utils.mapRange(
+            0,
+            -6,
+            0,
+            -(trackBounds.height - 34)
+          )(this.rotation),
+        })
+      }
+
+      const h = getScrollIndex(controllerHours)
+      const m = getScrollIndex(controllerMinutes)
+      syncMeridiem(h)
+      if (key === 'hours') {
+        updateTimeInput(indexFromRotation(this.rotation), m)
+      } else if (key === 'minutes') {
+        updateTimeInput(h, indexFromRotation(this.rotation))
+      } else {
+        updateTimeInput(h, m)
+      }
+    },
+    snap: snapRotation,
+    onThrowComplete: function () {
+      const idx = indexFromRotation(this.rotation)
+      onComplete?.(idx, this.rotation) // also pass rotation if you want it
+    },
+  })
+}
+
+function setupScrollTriggers(defs) {
+  if (CSS.supports('animation-timeline: scroll()')) return
+  defs.forEach(({ scroller, selector, factor, track }) =>
+    ScrollTrigger.create({
+      scroller,
+      onUpdate: (self) => {
+        const trackBounds = track.getBoundingClientRect()
+        gsap.set(selector, { rotateX: self.progress * factor })
+        gsap.set(track, {
+          y: 1 - self.progress * (trackBounds.height - 34),
+        })
+      },
+    })
+  )
+}
+
+/*** =======================
+ * wheels config (single source)
+ * ======================= */
+const WHEELS = [
+  {
+    key: 'hours',
+    control: hours,
+    controller: controllerHours,
+    wheelSel: '.wheel--hours',
+    track: hours.querySelector('.track--hours'),
+    trigger: '.control--hours',
+    proxy: PROXY_HOURS,
+    scrollStart: () => (meridiemGuard = true),
+    scrollFrame: (controller) => {
+      const h = getScrollIndex(controllerHours)
+      const m = getScrollIndex(controllerMinutes)
+      syncMeridiem(h)
+      updateTimeInput(h, m)
+      maintainInfiniteLoop(controller)
+    },
+    scrollStop: () => {
+      setProxyRotationFromIndex(PROXY_HOURS, getScrollIndex(controllerHours))
+      meridiemGuard = false
+    },
+    dragStart: () => {
+      meridiemGuard = true
+      controllerHours.dataset.noSnap = true
+    },
+    dragComplete: (idx) => {
+      const lis = controllerHours.querySelectorAll('li')
+      const off = meridiemOverride ? idx - 12 : idx
+      const target = lis[mod60(off)]
+      target && target.scrollIntoView()
+      clearWheelPropsIfCSS(['.wheel--hours'])
+      delete controllerHours.dataset.noSnap
+      meridiemGuard = false
+    },
+    triggerFactor: 360,
+  },
+  {
+    key: 'minutes',
+    control: minutes,
+    controller: controllerMinutes,
+    track: minutes.querySelector('.track--minutes'),
+    wheelSel: '.wheel--minutes',
+    trigger: '.control--minutes',
+    proxy: PROXY_MINUTES,
+    scrollFrame: (controller) => {
+      const h = getScrollIndex(controllerHours)
+      const m = getScrollIndex(controllerMinutes)
+      syncMeridiem(h)
+      updateTimeInput(h, m)
+      maintainInfiniteLoop(controller)
+    },
+    scrollStop: () => {
+      setProxyRotationFromIndex(
+        PROXY_MINUTES,
+        getScrollIndex(controllerMinutes)
+      )
+    },
+    dragStart: () => {
+      controllerMinutes.dataset.noSnap = true
+    },
+    dragComplete: (idx) => {
+      const lis = controllerMinutes.querySelectorAll('li')
+      const target = lis[idx]
+      target && target.scrollIntoView()
+      clearWheelPropsIfCSS(['.wheel--minutes'])
+      delete controllerMinutes.dataset.noSnap
+    },
+    triggerFactor: 360,
+  },
+  {
+    key: 'meridiem',
+    control: meridiem,
+    controller: controllerMeridiem,
+    wheelSel: '.wheel--meridiem',
+    track: meridiem.querySelector('.track--meridiem'),
+    trigger: '.control--meridiem', // keep DOM spelling
+    proxy: PROXY_MERIDIEM,
+    bounds: { minRotation: 0, maxRotation: -DEG_STEP },
+    scrollStart: () => {
+      meridiemStart = getScrollIndex(controllerMeridiem, true)
+    },
+    scrollFrame: () => {
+      syncMeridiem(getScrollIndex(controllerHours))
+    },
+    scrollStop: () => {
+      const idx = getScrollIndex(controllerMeridiem, true)
+      gsap.set(PROXY_MERIDIEM, { rotation: idx === 0 ? 0 : -DEG_STEP })
+
+      if (!passiveTrigger) {
+        if (idx !== meridiemStart && !meridiemGuard) {
+          toggleMeridiem()
+          meridiemOverride = !meridiemOverride
+          const h = getScrollIndex(controllerHours)
+          const m = getScrollIndex(controllerMinutes)
+          updateTimeInput(h, m)
+        }
+        meridiemStart = undefined
+      }
+
+      if (passiveTrigger) {
+        clearTimeout(programmaticClear)
+        programmaticClear = setTimeout(() => (passiveTrigger = false), 500)
+      }
+    },
+    dragStart: function () {
+      meridiemStart = indexFromRotation(this.rotation)
+      controllerMeridiem.dataset.noSnap = true
+    },
+    dragComplete: (idx) => {
+      const lis = controllerMeridiem.querySelectorAll('li')
+      const target = lis[idx === TOTAL ? 0 : idx]
+      target && target.scrollIntoView()
+      clearWheelPropsIfCSS(['.wheel--meridiem'])
+      delete controllerMeridiem.dataset.noSnap
+
+      if (idx !== meridiemStart) {
+        toggleMeridiem()
+        meridiemOverride = !meridiemOverride
+        const h = getScrollIndex(controllerHours)
+        const m = getScrollIndex(controllerMinutes)
+        updateTimeInput(h, m)
+      }
+      meridiemStart = undefined
+    },
+    triggerFactor: 360 / 60,
+  },
+]
+
+/*** =======================
+ * initial positions + meridiem
+ * ======================= */
+controllerHours.scrollTo(0, (controllerHours.scrollHeight / 61) * currentHours)
+controllerMinutes.scrollTo(
+  0,
+  (controllerMinutes.scrollHeight / 61) * Math.min(59, currentMinutes)
+)
+controllerMeridiem.scrollTo(0, isPMState ? controllerMeridiem.scrollHeight : 0)
+setMeridiem(isPMState)
+
+timeInput.value = `${pad2(currentHours)}:${pad2(currentMinutes)}`
+
+/*** =======================
+ * wire scroll watchers (loop)
+ * ======================= */
+WHEELS.forEach(({ controller, scrollStart, scrollFrame, scrollStop }) => {
+  createScrollWatcher(controller, {
+    onStart: scrollStart,
+    onFrame: () => scrollFrame?.(controller),
+    onStop: scrollStop,
+  })
+})
+
+/*** =======================
+ * wire draggables (loop)
+ * ======================= */
+WHEELS.forEach(
+  ({
+    proxy,
+    trigger,
+    wheelSel,
+    controller,
+    bounds,
+    dragStart,
+    dragComplete,
+    track,
+    key,
+  }) => {
+    createWheel({
+      key,
+      proxyEl: proxy,
+      trigger,
+      wheelSel,
+      controller,
+      bounds,
+      track,
+      onStart: dragStart,
+      onComplete: dragComplete,
+    })
+  }
+)
+
+/*** =======================
+ * ScrollTrigger fallback (loop)
+ * ======================= */
+setupScrollTriggers(
+  WHEELS.map(({ controller, wheelSel, triggerFactor, track }) => ({
+    scroller: controller,
+    selector: wheelSel,
+    factor: triggerFactor,
+    track,
+  }))
+)
+
+/*** =======================
+ * time input -> scroll wheels
+ * ======================= */
+timeInput.addEventListener('input', () => {
+  const [hours, minutes] = timeInput.value
+    .split(':')
+    .map((v) => parseInt(v, 10))
+  controllerHours.scrollTo({
+    top: (controllerHours.scrollHeight / 61) * hours,
+    behavior: 'smooth',
+  })
+  controllerMinutes.scrollTo({
+    top: (controllerMinutes.scrollHeight / 61) * minutes,
+    behavior: 'smooth',
+  })
+})
+
+/*** =======================
+ * meridiem form toggles override phase
+ * ======================= */
+// document.querySelector(".meridien-form")?.addEventListener(
+//   "change",
+//   () => { meridiemOverride = !meridiemOverride; },
+//   true
+// );
+
+  </script>
+</body>
+</html>
