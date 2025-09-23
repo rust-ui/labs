@@ -11,111 +11,19 @@
 </head>
 <body>
 
-  <style>
-
-    [data-name="Tooltip"]:before,
-    [data-name="Tooltip"]:after {
-      position: absolute;
-      opacity: 0;
-      z-index: 1000000;
-      -webkit-transition: all 0.3s ease;
-      -moz-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-
-    [data-name="Tooltip"]:hover:before,
-    [data-name="Tooltip"]:hover:after {
-      opacity: 1;
-    }
-
-    [data-name="Tooltip"]:before {
-      content: '';
-      position: absolute;
-      background: transparent;
-      border: 6px solid transparent;
-      position: absolute;
-    }
-
-    [data-name="Tooltip"]:after {
-      content: attr(data-tooltip);
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 8px 10px;
-      font-size: 12px;
-      white-space: nowrap;
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    [data-name="Tooltip"][data-position="Top"]:before {
-      bottom: 100%;
-      left: 50%;
-      margin: 0 0 -24px 0;
-      border-top-color: rgba(0, 0, 0, 0.8);
-    }
-
-    [data-name="Tooltip"][data-position="Top"]:after {
-      bottom: 100%;
-      left: 50%;
-      margin: 0 0 -12px -10px;
-    }
-
-
-    [data-name="Tooltip"][data-position="Bottom"]:before {
-      top: 100%;
-      left: 50%;
-      margin: -8px 0 0 0;
-      border-bottom-color: rgba(0, 0, 0, 0.8);
-    }
-
-    [data-name="Tooltip"][data-position="Bottom"]:after {
-      top: 100%;
-      left: 50%;
-      margin: 4px 0 0 -10px;
-    }
-
-
-    [data-name="Tooltip"][data-position="Right"]:before {
-      left: 100%;
-      bottom: 50%;
-      margin: 0 0 -4px -2px;
-      border-right-color: rgba(0, 0, 0, 0.8);
-    }
-
-    [data-name="Tooltip"][data-position="Right"]:after {
-      left: 100%;
-      bottom: 50%;
-      margin: 0 0 -13px 10px;
-    }
-
-
-    [data-name="Tooltip"][data-position="Left"]:before {
-      right: 100%;
-      bottom: 50%;
-      margin: 0 -2px -4px 0;
-      border-left-color: rgba(0, 0, 0, 0.8);
-    }
-
-    [data-name="Tooltip"][data-position="Left"]:after {
-      right: 100%;
-      bottom: 50%;
-      margin: 0 10px -13px 0;
-    }
-
-  </style>
 
   <div class="mt-20 text-center text-[18px] h-full text-[#444]">
     <div>
-      <a href="#" data-name="Tooltip" data-position="Top" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:-mb-2.5 hover:after:mb-0.5" data-tooltip="Tooltip on top">Top</a>
+      <a href="#" data-name="Tooltip" data-position="Top" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:opacity-100 hover:after:opacity-100 hover:before:-mb-2.5 hover:after:mb-0.5 before:content-[''] before:absolute before:opacity-0 before:z-[1000000] before:transition-all before:duration-300 before:ease-in-out before:pointer-events-none before:bg-transparent before:border-6 before:border-transparent before:bottom-full before:left-1/2 before:-mb-6 before:border-t-black/80 after:content-[attr(data-tooltip)] after:absolute after:opacity-0 after:z-[1000000] after:transition-all after:duration-300 after:ease-in-out after:pointer-events-none after:bg-black/80 after:text-white after:px-2.5 after:py-2 after:text-xs after:whitespace-nowrap after:shadow-lg after:bottom-full after:left-1/2 after:-mb-3 after:-ml-2.5" data-tooltip="Tooltip on top">Top</a>
 	</div>
     <div>
-      <a href="#" data-name="Tooltip" data-position="Right" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:ml-0 hover:after:ml-3" data-tooltip="Tooltip on right">Right</a>
+      <a href="#" data-name="Tooltip" data-position="Right" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:opacity-100 hover:after:opacity-100 hover:before:ml-0 hover:after:ml-3 before:content-[''] before:absolute before:opacity-0 before:z-[1000000] before:transition-all before:duration-300 before:ease-in-out before:pointer-events-none before:bg-transparent before:border-6 before:border-transparent before:left-full before:bottom-1/2 before:-mr-0.5 before:-mb-1 before:border-r-black/80 after:content-[attr(data-tooltip)] after:absolute after:opacity-0 after:z-[1000000] after:transition-all after:duration-300 after:ease-in-out after:pointer-events-none after:bg-black/80 after:text-white after:px-2.5 after:py-2 after:text-xs after:whitespace-nowrap after:shadow-lg after:left-full after:bottom-1/2 after:ml-2.5 after:-mb-3.5" data-tooltip="Tooltip on right">Right</a>
 	</div>
     <div>
-      <a href="#" data-name="Tooltip" data-position="Bottom" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:-mt-1.5 hover:after:mt-1.5" data-tooltip="Tooltip bottom">Bottom</a>
+      <a href="#" data-name="Tooltip" data-position="Bottom" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:opacity-100 hover:after:opacity-100 hover:before:-mt-1.5 hover:after:mt-1.5 before:content-[''] before:absolute before:opacity-0 before:z-[1000000] before:transition-all before:duration-300 before:ease-in-out before:pointer-events-none before:bg-transparent before:border-6 before:border-transparent before:top-full before:left-1/2 before:-mt-2 before:border-b-black/80 after:content-[attr(data-tooltip)] after:absolute after:opacity-0 after:z-[1000000] after:transition-all after:duration-300 after:ease-in-out after:pointer-events-none after:bg-black/80 after:text-white after:px-2.5 after:py-2 after:text-xs after:whitespace-nowrap after:shadow-lg after:top-full after:left-1/2 after:mt-1 after:-ml-2.5" data-tooltip="Tooltip bottom">Bottom</a>
 	</div>
     <div>
-      <a href="#" data-name="Tooltip" data-position="Left" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:mr-0 hover:after:mr-3" data-tooltip="Tooltip left">Left</a>
+      <a href="#" data-name="Tooltip" data-position="Left" class="my-[5px] mx-0 no-underline whitespace-nowrap relative inline-block transition-all duration-300 ease-in-out hover:before:opacity-100 hover:after:opacity-100 hover:before:mr-0 hover:after:mr-3 before:content-[''] before:absolute before:opacity-0 before:z-[1000000] before:transition-all before:duration-300 before:ease-in-out before:pointer-events-none before:bg-transparent before:border-6 before:border-transparent before:right-full before:bottom-1/2 before:-ml-0.5 before:-mb-1 before:border-l-black/80 after:content-[attr(data-tooltip)] after:absolute after:opacity-0 after:z-[1000000] after:transition-all after:duration-300 after:ease-in-out after:pointer-events-none after:bg-black/80 after:text-white after:px-2.5 after:py-2 after:text-xs after:whitespace-nowrap after:shadow-lg after:right-full after:bottom-1/2 after:mr-2.5 after:-mb-3.5" data-tooltip="Tooltip left">Left</a>
 	</div>
   </div>
 
