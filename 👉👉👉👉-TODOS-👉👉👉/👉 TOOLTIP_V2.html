@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+
+  <style>
+
+
+body {
+	text-align: center;
+	font-family: Arial;
+	background: #C2E2F2;
+	height: 100%;
+	font-size: 18px;
+	color: #444;
+}
+
+h1 {
+	font-size: 5em;
+}
+
+h1,h3{
+	margin: 5px 0;
+}
+
+a {
+	color: #1A5A7A;
+	text-decoration: none;
+}
+
+
+/**
+ * HINT- A CSS tooltip library
+ */
+
+.hint { position: relative; display: inline-block; }
+
+.hint:before, .hint:after {
+			position: absolute;
+			opacity: 0;
+			z-index: 1000000;
+			-webkit-transition: 0.3s ease;
+			-moz-transition: 0.3s ease;
+  pointer-events: none;
+}
+
+		
+.hint:hover:before, .hint:hover:after {
+	opacity: 1;
+}
+
+.hint:before {
+	content: '';
+	position: absolute;
+	background: transparent;
+	border: 6px solid transparent;
+	position: absolute;
+}
+		
+.hint:after {
+	content: attr(data-hint);
+	background: rgba(0, 0, 0, 0.8);
+			color: white;
+			padding: 8px 10px;
+			font-size: 12px;
+	white-space: nowrap;
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* top */
+
+.hint--top:before {
+	bottom: 100%;
+	left: 50%;
+	margin: 0 0 -18px 0;
+	border-top-color: rgba(0, 0, 0, 0.8);
+}
+		
+.hint--top:after {
+	bottom: 100%;
+	left: 50%;
+	margin: 0 0 -6px -10px;
+}
+
+.hint--top:hover:before {
+	margin-bottom: -10px;
+}
+
+.hint--top:hover:after {
+	margin-bottom: 2px;
+}
+
+/* default: bottom */
+
+.hint--bottom:before {
+	top: 100%;
+	left: 50%;
+	margin: -14px 0 0 0;
+	border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+		
+.hint--bottom:after {
+	top: 100%;
+	left: 50%;
+	margin: -2px 0 0 -10px;
+}
+
+.hint--bottom:hover:before {
+	margin-top: -6px;
+}
+
+.hint--bottom:hover:after {
+	margin-top: 6px;
+}
+
+/* right */
+
+.hint--right:before {
+	left: 100%;
+	bottom: 50%;
+	margin: 0 0 -4px -8px;
+	border-right-color: rgba(0,0,0,0.8);
+}
+		
+.hint--right:after {
+	left: 100%;
+	bottom: 50%;
+	margin: 0 0 -13px 4px;
+}
+
+.hint--right:hover:before {
+	margin: 0 0 -4px -0;
+}
+
+.hint--right:hover:after {
+	margin: 0 0 -13px 12px;
+}
+
+/* left */
+
+.hint--left:before {
+	right: 100%;
+	bottom: 50%;
+	margin: 0 -8px -4px 0;
+	border-left-color: rgba(0,0,0,0.8);
+}
+		
+.hint--left:after {
+	right: 100%;
+	bottom: 50%;
+	margin: 0 4px -13px 0;
+}
+
+.hint--left:hover:before {
+	margin: 0 0 -4px 0;
+}
+
+.hint--left:hover:after {
+	margin: 0 12px -13px 0;
+}
+
+
+
+  </style>
+
+
+<h1>HINT</h1>
+<h3>A CSS tooltip library [WIP]</h3>
+<em><small>(Works best in Firefox)</small></em>
+<br>
+<em>(
+Hint.css <a href="https://kushagragour.in/lab/hint/"  target="_blank">has been released</a>.)</em>
+
+
+<p> 
+	<a href="#" class="hint  hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
+</p>
+
+<p>
+	<a href="#" class="hint  hint--right" data-hint="Are you sure you are?">I am always right!</a>
+</p>
+
+<p>
+	<a href="#" class="hint  hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
+</p>
+
+<p>
+	<a href="#" class="hint  hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
+
+
+<p><a class="hint  hint--right" data-hint="Made by Kushagra Gour" target="_blank" href="https://twitter.com/chinchang457"><img  src="http://www.gravatar.com/avatar/6be4e636e8aacd405bed5cd15124a875?s=80&d=mm&"></a>
+</p>  
+
+
+
+</body>
+</html>

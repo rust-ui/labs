@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- * TAILWIND CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+
+  <style>
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  body: 0;
+}
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  background: #eee;
+  padding: 2rem;
+}
+
+.box {
+  width: 800px;
+  background: #fff;
+  border-radius: 2rem;
+  padding: 3rem 6rem;
+}
+
+summary,
+details {
+  margin-bottom: 1em;
+}
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  &::marker {
+    content: "";
+  }
+  &::before {
+    content: "+";
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    background: #333;
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    font-weight: 100;
+    margin-right: 1rem;
+  }
+}
+details {
+  border-bottom: 1px solid #ccc;
+
+  &[open] summary::before {
+    content: "–";
+  }
+}
+
+
+
+  </style>
+
+
+
+<div class="wrapper">
+
+  <div class="box">
+    <details name="my-accordion">
+      <summary>Lorem ipsum dolor sit amet</summary>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </details>
+    <details name="my-accordion" open>
+      <summary>Consetetur sadipscing elitr</summary>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </details>
+    <details name="my-accordion">
+      <summary>Sed diam nonumy</summary>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </details>
+  </div>
+</div>
+
+</body>
+</html>
