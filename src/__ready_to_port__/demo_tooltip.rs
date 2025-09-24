@@ -65,12 +65,8 @@ pub fn TooltipContent(
     }
 }
 
-/* ========================================================== */
-/*                     ✨ FUNCTIONS ✨                        */
-/* ========================================================== */
-
 #[component]
-pub fn DemoTooltip() -> impl IntoView {
+pub fn TooltipProvider() -> impl IntoView {
     view! {
         <style>
             {"
@@ -81,6 +77,40 @@ pub fn DemoTooltip() -> impl IntoView {
             }
             "}
         </style>
+
+        <div data-name="__TooltipProvider" />
+
+        <script>
+            {"
+            // Simplified JS - only handles pointer-events for text selection
+            const tooltipTriggers = document.querySelectorAll('[data-name=\"Tooltip\"]');
+            
+            tooltipTriggers.forEach(trigger => {
+            const content = trigger.querySelector('[data-name=\"TooltipContent\"]');
+            
+            trigger.addEventListener('mouseenter', () => {
+            content.classList.add('tooltip__interactive');
+            });
+            
+            trigger.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+            content.classList.remove('tooltip__interactive');
+            }, 100);
+            });
+            });
+            "}
+        </script>
+    }
+}
+
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
+
+#[component]
+pub fn DemoTooltip() -> impl IntoView {
+    view! {
+        <TooltipProvider />
 
         <div class="flex flex-col gap-4 mt-20 h-full text-center text-[18px]">
             <Tooltip>
@@ -113,26 +143,5 @@ pub fn DemoTooltip() -> impl IntoView {
                 </TooltipContent>
             </Tooltip>
         </div>
-
-        <script>
-            {"
-            // Simplified JS - only handles pointer-events for text selection
-            const tooltipTriggers = document.querySelectorAll('[data-name=\"Tooltip\"]');
-            
-            tooltipTriggers.forEach(trigger => {
-            const content = trigger.querySelector('[data-name=\"TooltipContent\"]');
-            
-            trigger.addEventListener('mouseenter', () => {
-            content.classList.add('tooltip__interactive');
-            });
-            
-            trigger.addEventListener('mouseleave', () => {
-            setTimeout(() => {
-            content.classList.remove('tooltip__interactive');
-            }, 100);
-            });
-            });
-            "}
-        </script>
     }
 }
