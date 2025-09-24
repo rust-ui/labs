@@ -1,5 +1,17 @@
 use leptos::prelude::*;
+use leptos_ui::clx;
 use tw_merge::tw_merge;
+
+mod components {
+    use super::*;
+    clx! {Tooltip, div, "inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"}
+}
+
+pub use components::*;
+
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
 
 #[derive(Default)]
 pub enum TooltipPosition {
@@ -68,66 +80,34 @@ pub fn DemoTooltip() -> impl IntoView {
             "}
         </style>
 
-        <div class="mt-20 h-full text-center text-[18px]">
-            <div>
-                <div
-                    data-name="Tooltip"
-                    data-position="Top"
-                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
-                >
-                    <span>Top</span>
-                    <TooltipContent data_position=TooltipPosition::Top>
-                        Tooltip on top
-                    </TooltipContent>
-                </div>
-            </div>
-            <div>
-                <div
-                    data-name="Tooltip"
-                    data-position="Right"
-                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
-                >
-                    <span>Right</span>
-                    <TooltipContent data_position=TooltipPosition::Right>
-                        Tooltip on right
-                    </TooltipContent>
-                </div>
-            </div>
-            <div>
-                <div
-                    data-name="Tooltip"
-                    data-position="Bottom"
-                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
-                >
-                    <span>Bottom</span>
-                    <TooltipContent data_position=TooltipPosition::Bottom>
-                        Tooltip bottom
-                    </TooltipContent>
-                </div>
-            </div>
-            <div>
-                <div
-                    data-name="Tooltip"
-                    data-position="Left"
-                    class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
-                >
-                    <span>Left</span>
-                    <TooltipContent data_position=TooltipPosition::Left>
-                        Tooltip left
-                    </TooltipContent>
-                </div>
-            </div>
+        <div class="flex flex-col gap-4 mt-20 h-full text-center text-[18px]">
+            <Tooltip>
+                <span>Top</span>
+                <TooltipContent data_position=TooltipPosition::Top>Tooltip on top</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+                <span>Right</span>
+                <TooltipContent data_position=TooltipPosition::Right>
+                    Tooltip on right
+                </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+                <span>Bottom</span>
+                <TooltipContent data_position=TooltipPosition::Bottom>
+                    Tooltip bottom
+                </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+                <span>Left</span>
+                <TooltipContent data_position=TooltipPosition::Left>Tooltip left</TooltipContent>
+            </Tooltip>
 
-            <div
-                data-name="Tooltip"
-                data-position="Right"
-                class="inline-block relative mx-0 whitespace-nowrap transition-all duration-300 ease-in-out group my-[5px]"
-            >
+            <Tooltip>
                 <a href="https://rust-ui.com">Rust/UI</a>
                 <TooltipContent data_position=TooltipPosition::Right>
                     Tooltip on right
                 </TooltipContent>
-            </div>
+            </Tooltip>
         </div>
 
         <script>
