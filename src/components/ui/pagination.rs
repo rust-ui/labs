@@ -1,6 +1,6 @@
 use icons::{ChevronLeft, ChevronRight, Ellipsis};
 use leptos::prelude::*;
-use leptos_ui::{a, clx};
+use leptos_ui::clx;
 use tw_merge::*;
 
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
@@ -16,13 +16,13 @@ mod components {
 
     // TODO. Merge common classes first.
 
-    a! {PaginationLink, COMMON_CLASSES, "gap-2  size-9 dark:hover:bg-accent/50"}
+    clx! {PaginationLink, a, COMMON_CLASSES, "gap-2  size-9 dark:hover:bg-accent/50"}
 
-    a! {PaginationActive, COMMON_CLASSES, "gap-2 border  bg-background shadow-xs size-9 dark:bg-input/30 dark:border-input dark:hover:bg-input/50"}
+    clx! {PaginationActive, a, COMMON_CLASSES, "gap-2 border  bg-background shadow-xs size-9 dark:bg-input/30 dark:border-input dark:hover:bg-input/50"}
 
-    a! {RootPrevious, COMMON_CLASSES,  "py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
+    clx! {RootPrevious, a, COMMON_CLASSES,  "py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
 
-    a! {RootNext, COMMON_CLASSES, "h-9  has-[>svg]:px-3 dark:hover:bg-accent/50"}
+    clx! {RootNext, a, COMMON_CLASSES, "h-9  has-[>svg]:px-3 dark:hover:bg-accent/50"}
 }
 
 pub use components::*;
@@ -34,7 +34,11 @@ pub use components::*;
 #[component]
 pub fn PaginationNext(href: &'static str) -> impl IntoView {
     view! {
-        <RootNext class="gap-1 py-2 px-2.5 sm:pr-2.5" aria_label="Go to next page" href=href>
+        <RootNext
+            class="gap-1 py-2 px-2.5 sm:pr-2.5"
+            attr:aria-label="Go to next page"
+            attr:href=href
+        >
             <span class="hidden sm:block">Next</span>
             <ChevronRight />
         </RootNext>
@@ -44,7 +48,11 @@ pub fn PaginationNext(href: &'static str) -> impl IntoView {
 #[component]
 pub fn PaginationPrevious(href: &'static str) -> impl IntoView {
     view! {
-        <RootPrevious class="gap-1 px-2.5 h-9 sm:pl-2.5" aria_label="Go to previous page" href=href>
+        <RootPrevious
+            class="gap-1 px-2.5 h-9 sm:pl-2.5"
+            attr:aria-label="Go to previous page"
+            attr:href=href
+        >
             <ChevronLeft />
             <span class="hidden sm:block">Previous</span>
         </RootPrevious>
@@ -54,7 +62,7 @@ pub fn PaginationPrevious(href: &'static str) -> impl IntoView {
 #[component]
 pub fn PaginationEllipsis() -> impl IntoView {
     view! {
-        <EllipsisRoot aria_hidden="true">
+        <EllipsisRoot attr:aria-hidden="true">
             <Ellipsis class="size-4" />
             <span class="sr-only">More pages</span>
         </EllipsisRoot>

@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_ui::{clx, img};
+use leptos_ui::clx;
 
 #[component]
 pub fn GsapIntroPage() -> impl IntoView {
@@ -23,8 +23,8 @@ pub fn GsapIntroPage() -> impl IntoView {
             <FixedContent>
                 <ImageHolder>
                     <Image
-                        src="https://images.unsplash.com/photo-1700403322391-f1cd144394cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt=""
+                        attr:src="https://images.unsplash.com/photo-1700403322391-f1cd144394cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        attr:alt=""
                     />
                 </ImageHolder>
 
@@ -55,6 +55,8 @@ pub fn GsapIntroPage() -> impl IntoView {
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 mod components {
+    use leptos_ui::void;
+
     use super::*;
     clx! {GsapIntro, div, "h-full overscroll-none font-inte"}
     clx! {HeaderScroll, div, "header__scroll", "fixed flex flex-row w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-2"}
@@ -64,7 +66,7 @@ mod components {
     clx! {ImageHolder, div, "img__holder", "relative w-full h-[100vh] top-0 bg-white rotate-[30deg]"}
     clx! {ContentHolder, div, "content__holder", "relative bg-muted/60 p-1 -w-full min-h-[100vh]"}
 
-    img! {Image, "object-cover w-full h-full relative scale-[2]"}
+    void! {Image, img, "object-cover w-full h-full relative scale-[2]"}
 }
 
 pub use components::*;

@@ -20,10 +20,15 @@ pub fn AllDemosPage() -> impl IntoView {
                     .map(|demo| {
                         view! {
                             // href=format!("?demo={}", demo). // Force the reload of the page
-                            <SidenavLink onclick=format!(
-                                "window.location.href='?demo={}'; return false;",
-                                demo,
-                            )>{demo}</SidenavLink>
+                            <a
+                                class="py-2 px-4 hover:bg-neutral-600"
+                                onclick=format!(
+                                    "window.location.href='?demo={}'; return false;",
+                                    demo,
+                                )
+                            >
+                                {demo}
+                            </a>
                         }
                     })
                     .collect_view()}

@@ -1,13 +1,10 @@
 use leptos::prelude::*;
-use leptos_ui::div;
 
 const TIMEOUT_MS: u64 = 100;
 
 #[component]
 pub fn ReactiveIndicator() -> impl IntoView {
     let is_reactive = RwSignal::new(false);
-
-    div! {Indicator, "size-3 rounded-full transition-colors duration-300 ease-in-out"}
 
     let class = Signal::derive(move || {
         if is_reactive.get() {
@@ -28,3 +25,13 @@ pub fn ReactiveIndicator() -> impl IntoView {
 
     view! { <Indicator class=class /> }
 }
+
+mod components {
+    use leptos_ui::void;
+
+    use super::*;
+
+    void! {Indicator, div, "size-3 rounded-full transition-colors duration-300 ease-in-out"}
+}
+
+pub use components::*;
