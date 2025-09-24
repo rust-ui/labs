@@ -16,11 +16,14 @@ pub fn TooltipContent(
     #[prop(default = TooltipPosition::default())] data_position: TooltipPosition,
     children: Children,
 ) -> impl IntoView {
+    const SHARED_TRANSITION_CLASSES: &str = "absolute opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000]";
+
     let tooltip_class = tw_merge!(
-        "absolute py-2 px-2.5 text-xs whitespace-nowrap shadow-lg opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 text-background z-[1000000] bg-foreground/90",
+        SHARED_TRANSITION_CLASSES,
+        "py-2 px-2.5 text-xs whitespace-nowrap shadow-lg text-background bg-foreground/90",
         class(),
         match data_position {
-            TooltipPosition::Top => "left-1/2 bottom-full -mb-3 -ml-2.5",
+            TooltipPosition::Top => "left-1/2 bottom-full mb-1 -ml-2.5",
             TooltipPosition::Right => "bottom-1/2 left-full ml-2.5 -mb-3.5",
             TooltipPosition::Bottom => "left-1/2 top-full mt-1 -ml-2.5",
             TooltipPosition::Left => "bottom-1/2 right-full mr-2.5 -mb-3.5",
@@ -28,9 +31,10 @@ pub fn TooltipContent(
     );
 
     let arrow_class = tw_merge!(
-        "absolute bg-transparent border-transparent opacity-0 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 z-[1000000] border-6",
+        SHARED_TRANSITION_CLASSES,
+        "bg-transparent border-transparent border-6",
         match data_position {
-            TooltipPosition::Top => "left-1/2 bottom-full -mb-6 border-t-foreground/90",
+            TooltipPosition::Top => "left-1/2 bottom-full -mb-2 border-t-foreground/90",
             TooltipPosition::Right => "bottom-1/2 left-full -mr-0.5 -mb-1 border-r-foreground/90",
             TooltipPosition::Bottom => "left-1/2 top-full -mt-2 border-b-foreground/90",
             TooltipPosition::Left => "bottom-1/2 right-full -mb-1 -ml-0.5 border-l-foreground/90",
