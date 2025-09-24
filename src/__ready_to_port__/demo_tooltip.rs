@@ -9,6 +9,8 @@ mod components {
 
 pub use components::*;
 
+use crate::components::ui::button::{Button, ButtonVariant};
+
 /* ========================================================== */
 /*                     ✨ FUNCTIONS ✨                        */
 /* ========================================================== */
@@ -103,7 +105,9 @@ pub fn DemoTooltip() -> impl IntoView {
             </Tooltip>
 
             <Tooltip>
-                <a href="https://rust-ui.com">Rust/UI</a>
+                <Button variant=ButtonVariant::Secondary href="https://rust-ui.com">
+                    Rust/UI
+                </Button>
                 <TooltipContent data_position=TooltipPosition::Right>
                     Tooltip on right
                 </TooltipContent>
