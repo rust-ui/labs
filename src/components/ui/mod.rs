@@ -5,3 +5,5 @@ pub mod label;
 pub mod pagination;
 pub mod pagination_button;
 pub mod separator;
+pub mod breadcrumb;
+pub mod accordion;
