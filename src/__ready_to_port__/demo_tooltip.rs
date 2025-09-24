@@ -1,3 +1,4 @@
+use icons::{ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Link};
 use leptos::prelude::*;
 use leptos_ui::clx;
 use tw_merge::tw_merge;
@@ -112,34 +113,38 @@ pub fn DemoTooltip() -> impl IntoView {
     view! {
         <TooltipProvider />
 
-        <div class="flex flex-col gap-4 mt-20 h-full text-center text-[18px]">
+        <div class="flex flex-col gap-4">
             <Tooltip>
-                <span>Top</span>
-                <TooltipContent data_position=TooltipPosition::Top>Tooltip on top</TooltipContent>
+                <Button variant=ButtonVariant::Secondary>
+                    <ArrowUp />
+                </Button>
+                <TooltipContent data_position=TooltipPosition::Top>"TOP"</TooltipContent>
             </Tooltip>
             <Tooltip>
-                <span>Right</span>
-                <TooltipContent data_position=TooltipPosition::Right>
-                    Tooltip on right
-                </TooltipContent>
+                <Button variant=ButtonVariant::Secondary>
+                    <ArrowLeft />
+                </Button>
+                <TooltipContent data_position=TooltipPosition::Left>"LEFT"</TooltipContent>
             </Tooltip>
             <Tooltip>
-                <span>Bottom</span>
-                <TooltipContent data_position=TooltipPosition::Bottom>
-                    Tooltip bottom
-                </TooltipContent>
+                <Button variant=ButtonVariant::Secondary>
+                    <ArrowRight />
+                </Button>
+                <TooltipContent data_position=TooltipPosition::Right>"RIGHT"</TooltipContent>
             </Tooltip>
             <Tooltip>
-                <span>Left</span>
-                <TooltipContent data_position=TooltipPosition::Left>Tooltip left</TooltipContent>
+                <Button variant=ButtonVariant::Secondary>
+                    <ArrowDown />
+                </Button>
+                <TooltipContent data_position=TooltipPosition::Bottom>"BOTTOM"</TooltipContent>
             </Tooltip>
 
             <Tooltip>
                 <Button variant=ButtonVariant::Secondary href="https://rust-ui.com">
-                    Rust/UI
+                    <Link />
                 </Button>
                 <TooltipContent data_position=TooltipPosition::Right>
-                    Tooltip on right
+                    "Link to Rust/UI"
                 </TooltipContent>
             </Tooltip>
         </div>
