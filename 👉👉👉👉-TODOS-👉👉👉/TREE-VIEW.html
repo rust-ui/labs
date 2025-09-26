@@ -14,10 +14,21 @@
 
 
   <style>
+    /* Chevron rotation animation */
+    .chevron {
+      transition: transform 0.2s ease-in-out;
+      transform-origin: center;
+    }
 
+    /* Closed state: chevron points right (default) */
+    [data-state="Closed"] .chevron {
+      transform: rotate(0deg);
+    }
 
-
-
+    /* Open state: chevron points down (90 degrees) */
+    [data-state="Open"] .chevron {
+      transform: rotate(90deg);
+    }
   </style>
 
 
@@ -26,6 +37,9 @@
    <div data-name="Folder" data-state="Open" class="flex flex-col">
       <input id="app-folder" type="checkbox" class="sr-only peer" checked />
       <label for="app-folder" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 w-full cursor-pointer" tabindex="0">
+         <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"></path>
+         </svg>
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <title>Icon</title>
             <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
@@ -34,7 +48,7 @@
       </label>
       <div data-name="FolderContent" class="grid overflow-hidden transition-all duration-300 grid-rows-[0fr] peer-checked:grid-rows-[1fr]">
          <div class="min-h-[0]">
-            <ul data-name="FileList" class="flex flex-col pl-2 ml-2 border-l border-input">
+            <ul data-name="FileList" class="flex flex-col pl-2 ml-6 border-l border-input">
                <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                      <title>Icon</title>
@@ -66,6 +80,9 @@
    <div data-name="Folder" data-state="Closed" class="flex flex-col">
       <input id="components-folder" type="checkbox" class="sr-only peer" />
       <label for="components-folder" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 w-full cursor-pointer" tabindex="0">
+         <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"></path>
+         </svg>
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <title>Icon</title>
             <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
@@ -74,7 +91,7 @@
       </label>
       <div data-name="FolderContent" class="grid overflow-hidden transition-all duration-300 grid-rows-[0fr] peer-checked:grid-rows-[1fr]">
          <div class="min-h-[0]">
-            <ul data-name="FileList" class="flex flex-col pl-2 ml-2 border-l border-input">
+            <ul data-name="FileList" class="flex flex-col pl-2 ml-6 border-l border-input">
                <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                      <title>Icon</title>
