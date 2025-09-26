@@ -22,7 +22,7 @@
 
 
 <div data-name="Tree" class="not-prose">
-   <div data-name="Folder" class="flex flex-col">
+   <div data-name="Folder" data-state="Open" class="flex flex-col">
       <input id="app-folder" type="checkbox" class="sr-only peer" checked />
       <label for="app-folder" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 w-full cursor-pointer" tabindex="0">
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -62,7 +62,7 @@
          </div>
       </div>
    </div>
-   <div data-name="Folder" class="flex flex-col">
+   <div data-name="Folder" data-state="Closed" class="flex flex-col">
       <input id="components-folder" type="checkbox" class="sr-only peer" />
       <label for="components-folder" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 w-full cursor-pointer" tabindex="0">
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
