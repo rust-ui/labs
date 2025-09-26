@@ -3,20 +3,11 @@ use leptos::prelude::*;
 #[component]
 pub fn DemoTreeView() -> impl IntoView {
     view! {
-        <style>
-            {"
-            /* Only CSS that Tailwind can't handle: details[open] state selector */
-            details[open] summary .chevron {
-                transform: rotate(90deg);
-            }
-            "}
-        </style>
-
         <div class="p-10">
             <div data-name="Tree" class="not-prose bg-neutral-50 w-[240px] rounded-md border border-neutral-200">
-                <details data-name="Folder" data-state="Open" class="flex flex-col" open=true>
+                <details data-name="Folder" data-state="Open" class="flex flex-col group/tree-folder" open=true>
                     <summary data-name="FolderContent" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 w-full cursor-pointer">
-                        <svg class="chevron transition-transform duration-200 ease-in-out origin-center rotate-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="chevron transition-transform duration-200 ease-in-out origin-center group-open/tree-folder:rotate-90" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 18l6-6-6-6"></path>
                         </svg>
                         <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -61,9 +52,9 @@ pub fn DemoTreeView() -> impl IntoView {
                         </li>
                     </ul>
                 </details>
-                <details data-name="Folder" data-state="Closed" class="flex flex-col">
+                <details data-name="Folder" data-state="Closed" class="flex flex-col group/tree-folder">
                     <summary data-name="FolderContent" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 w-full cursor-pointer">
-                        <svg class="chevron transition-transform duration-200 ease-in-out origin-center rotate-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="chevron transition-transform duration-200 ease-in-out origin-center group-open/tree-folder:rotate-90" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 18l6-6-6-6"></path>
                         </svg>
                         <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
