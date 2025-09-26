@@ -9,7 +9,12 @@ argument-hint: ["demo_file", "registry_type"]
 ## Input
 
 1. *$demo_file*: Demo from `__ready_to_port__/` directory.
-2. *$registry_type*: Directory target. Either [`components`, `extensions`].
+2. *$registry_type*: Directory target. Either [`ui`, `extensions`].
+
+
+**IMPORTANT**: Make sure to have the variable names. Ask user if not.
+**IMPORTANT**: Import each Component individually , not with *.
+
 
 
 ## Workflow
