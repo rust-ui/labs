@@ -53,7 +53,7 @@ pub fn Folder(
     view! {
         <details
             data-name="Folder"
-            class="flex flex-col open:[&>summary>svg:first-child]:rotate-90"
+            class="flex flex-col open:[&>summary>svg:first-child]:rotate-90 [&:has(>ul>li>input:checked)]:[&>summary]:font-semibold"
             prop:open=open
         >
             <FolderTrigger>
