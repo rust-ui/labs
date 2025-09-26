@@ -19,29 +19,33 @@ pub fn DemoTreeViewShow() -> impl IntoView {
     view! {
         <div class="flex gap-4 w-full max-w-4xl">
             <Tree>
-                <Folder name="app" open=true>
-                    <File name="layout.tsx" content="React Layout Component" checked=true />
-                    <File name="page.tsx" content="Home Page Component" />
-                    <File name="globals.css" content="Global Styles" />
-                    <Folder name="dashboard">
-                        <File name="page.tsx" content="Dashboard Page" />
-                        <File name="layout.tsx" content="Dashboard Layout" />
+                <Folder name="src" open=true>
+                    <File name="main.rs" content="Main application entry point" checked=true />
+                    <File name="lib.rs" content="Library root module" />
+                    <Folder name="components" open=true>
+                        <Folder name="ui">
+                            <File name="button.rs" content=BUTTON_RS />
+                            <File name="card.rs" content=CARD_RS />
+                            <File name="input.rs" content=INPUT_RS />
+                            <File name="accordion.rs" content=ACCORDION_RS />
+                        </Folder>
+                        <File name="mod.rs" content="Components module exports" />
+                    </Folder>
+                    <Folder name="utils">
+                        <File name="hooks.rs" content=HOOKS_RS />
+                        <File name="mod.rs" content="Utils module exports" />
                     </Folder>
                 </Folder>
 
-                <Folder name="components">
-                    <File name="button.tsx" content="Button Component" />
-                    <File name="input.tsx" content="Input Component" />
-                </Folder>
-
-                <File name="package.json" content="Package Configuration" />
+                <File name="Cargo.toml" content="Rust package configuration" />
+                <File name="README.md" content="Project documentation" />
             </Tree>
 
             <div class="flex-1 p-4 rounded-md border bg-card border-border">
                 <div id="content-display">
                     <div>
-                        <h3 class="mb-2 font-semibold">layout.tsx</h3>
-                        <p class="text-sm text-muted-foreground">React Layout Component</p>
+                        <h3 class="mb-2 font-semibold">main.rs</h3>
+                        <p class="text-sm text-muted-foreground">Main application entry point</p>
                     </div>
                 </div>
             </div>
@@ -129,3 +133,14 @@ pub fn File(
         </li>
     }
 }
+
+
+/* ========================================================== */
+/*                     ✨ CONSTANTS ✨                        */
+/* ========================================================== */
+
+const BUTTON_RS: &str = include_str!("../components/ui/button.rs");
+const CARD_RS: &str = include_str!("../components/ui/card.rs");
+const INPUT_RS: &str = include_str!("../components/ui/input.rs");
+const ACCORDION_RS: &str = include_str!("../components/ui/accordion.rs");
+const HOOKS_RS: &str = include_str!("../utils/hooks/use_random.rs");
