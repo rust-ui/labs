@@ -79,3 +79,49 @@ pub fn File(
     }
 }
 
+#[component]
+pub fn FileRenderer(
+    #[prop(into)] name: &'static str,
+    #[prop(into)] content: String,
+    #[prop(default = false)] checked: bool,
+) -> impl IntoView {
+    let target_id = use_random_id();
+
+    view! {
+        <li data-name="File" class="flex flex-row -ml-4">
+            <input
+                id=target_id.clone()
+                type="radio"
+                name="file-selection"
+                class="sr-only peer"
+                checked=checked
+                on:change=move |_| {
+                    if let Some(content_div) = web_sys::window()
+                        .unwrap()
+                        .document()
+                        .unwrap()
+                        .get_element_by_id("content-display")
+                    {
+                        content_div
+                            .set_inner_html(
+                                &format!(
+                                    "<div><h3 class='font-semibold mb-2'>{}</h3><pre class='text-sm bg-muted p-4 rounded-md overflow-x-auto'><code>{}</code></pre></div>",
+                                    name,
+                                    content,
+                                ),
+                            );
+                    }
+                }
+            />
+            <label
+                for=target_id
+                class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-accent peer-checked:font-medium hover:peer-checked:bg-accent hover:bg-accent hover:text-accent-foreground"
+                tabindex="0"
+            >
+                <FileIcon class="size-4" />
+                <span>{name}</span>
+            </label>
+        </li>
+    }
+}
+
