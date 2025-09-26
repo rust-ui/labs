@@ -1,4 +1,4 @@
-use icons::{ChevronRight, Folder};
+use icons::{ChevronRight, Folder, File};
 use leptos::prelude::*;
 
 #[component]
@@ -35,22 +35,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <svg
-                                    class="size-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <title>"Icon"</title>
-                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                </svg>
+                                <File class="size-4"/>
                                 <span>"layout.tsx"</span>
                             </label>
                         </li>
@@ -69,22 +54,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <svg
-                                    class="size-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <title>"Icon"</title>
-                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                </svg>
+                                <File class="size-4"/>
                                 <span>"page.tsx"</span>
                             </label>
                         </li>
@@ -103,22 +73,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <svg
-                                    class="size-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <title>"Icon"</title>
-                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                </svg>
+                               <File class="size-4"/>
                                 <span>"global.css"</span>
                             </label>
                         </li>
@@ -180,22 +135,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <svg
-                                    class="size-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <title>"Icon"</title>
-                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                </svg>
+                                 <File class="size-4"/>
                                 <span>"button.tsx"</span>
                             </label>
                         </li>
@@ -214,22 +154,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <svg
-                                    class="size-4"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <title>"Icon"</title>
-                                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                                </svg>
+                                 <File class="size-4"/>
                                 <span>"input.tsx"</span>
                             </label>
                         </li>
@@ -247,22 +172,7 @@ pub fn DemoTreeView() -> impl IntoView {
                         class="flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                         tabindex="0"
                     >
-                        <svg
-                            class="size-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <title>"Icon"</title>
-                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                        </svg>
+                        <File class="size-4"/>
                         <span>"package.json"</span>
                     </label>
                 </div>
