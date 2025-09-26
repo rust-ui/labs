@@ -7,7 +7,8 @@ mod components {
     use super::*;
     clx! {Tree, div, "rounded-md border not-prose bg-card w-[240px] border-border"}
     clx! {FolderTrigger, summary, "flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"}
-    clx! {FileList, ul, "flex flex-col pl-2 ml-6 relative before:content-[''] before:absolute before:-left-2 before:top-0 before:bottom-0 before:border-l before:border-muted-foreground/30"}
+    clx! {FolderContent, div, "grid overflow-hidden transition-all duration-500 grid-rows-[0fr] open:grid-rows-[1fr]"}
+    clx! {FileList, ul, "flex flex-col pl-2 ml-6 relative before:content-[''] before:absolute before:-left-2 before:top-0 before:bottom-0 before:border-l before:border-muted-foreground/30 min-h-[0]"}
 }
 
 pub use components::*;
@@ -53,7 +54,7 @@ pub fn Folder(
     view! {
         <details
             data-name="Folder"
-            class="flex flex-col open:[&>summary>svg:first-child]:rotate-90 [&:has(>ul>li>input:checked)]:[&>summary]:font-semibold"
+            class="flex flex-col open:[&>summary>svg:first-child]:rotate-90 [&:has(>div>ul>li>input:checked)]:[&>summary]:font-semibold"
             prop:open=open
         >
             <FolderTrigger>
@@ -62,7 +63,9 @@ pub fn Folder(
                 <span>{name}</span>
             </FolderTrigger>
 
-            <FileList>{children()}</FileList>
+            <FolderContent>
+                <FileList>{children()}</FileList>
+            </FolderContent>
         </details>
     }
 }
