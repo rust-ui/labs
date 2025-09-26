@@ -5,9 +5,9 @@ use crate::utils::hooks::use_random::use_random_id;
 
 mod components {
     use super::*;
-    clx! {Tree, div, "rounded-md border not-prose bg-neutral-50 w-[240px] border-neutral-200"}
+    clx! {Tree, div, "rounded-md border not-prose bg-card w-[240px] border-border"}
     clx! {FolderTrigger, summary, "flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"}
-    clx! {FileList, ul, "flex flex-col pl-2 ml-6 relative before:content-[''] before:absolute before:-left-2 before:top-0 before:bottom-0 before:border-l before:border-neutral-300"}
+    clx! {FileList, ul, "flex flex-col pl-2 ml-6 relative before:content-[''] before:absolute before:-left-2 before:top-0 before:bottom-0 before:border-l before:border-muted-foreground/30"}
 }
 
 pub use components::*;
@@ -85,7 +85,7 @@ pub fn File(
             />
             <label
                 for=target_id
-                class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:peer-checked:bg-neutral-200 hover:bg-accent hover:text-accent-foreground"
+                class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-accent peer-checked:font-medium hover:peer-checked:bg-accent hover:bg-accent hover:text-accent-foreground"
                 tabindex="0"
             >
                 <FileIcon class="size-4" />
