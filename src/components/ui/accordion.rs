@@ -36,7 +36,8 @@ pub fn AccordionTrigger(
 
     view! {
         <TriggerRoot class=class>
-            {children()} <ChevronDown class="block transition-all duration-300 group-open:rotate-180" />
+            {children()}
+            <ChevronDown class="block transition-all duration-300 group-open:rotate-180" />
         </TriggerRoot>
     }
 }

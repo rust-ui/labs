@@ -43,7 +43,11 @@ pub fn BreadcrumbPage(#[prop(into, optional)] class: Signal<String>, children: C
 pub fn BreadcrumbEllipsis(#[prop(into, optional)] class: Signal<String>) -> impl IntoView {
     // TODO. data_state
     view! {
-        <RootEllipsisBtn attr:aria-haspopup="menu" attr:aria-expanded="false" attr:data-state="closed">
+        <RootEllipsisBtn
+            attr:aria-haspopup="menu"
+            attr:aria-expanded="false"
+            attr:data-state="closed"
+        >
             <RootEllipsis attr:role="presentation" attr:aria-hidden="true">
                 <Ellipsis class=class />
                 <span class="sr-only">More</span>
