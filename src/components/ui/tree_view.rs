@@ -2,6 +2,7 @@ use icons::{ChevronRight, Folder as FolderIcon, File as FileIcon};
 use leptos::prelude::*;
 use leptos_ui::clx;
 use crate::utils::hooks::use_random::use_random_id;
+use html_escape;
 
 mod components {
     use super::*;
@@ -88,7 +89,7 @@ pub fn FileRenderer(
     let target_id = use_random_id();
 
     view! {
-        <li data-name="File" class="flex flex-row -ml-4">
+        <li data-name="FileRenderer" class="flex flex-row -ml-4">
             <input
                 id=target_id.clone()
                 type="radio"
@@ -96,18 +97,17 @@ pub fn FileRenderer(
                 class="sr-only peer"
                 checked=checked
                 on:change=move |_| {
-                    if let Some(content_div) = web_sys::window()
-                        .unwrap()
+                    if let Some(content_div) = window()
                         .document()
-                        .unwrap()
-                        .get_element_by_id("content-display")
+                        .and_then(|doc| doc.get_element_by_id("content-display"))
                     {
+                        let escaped_content = html_escape::encode_text(&content);
                         content_div
                             .set_inner_html(
                                 &format!(
                                     "<div><h3 class='font-semibold mb-2'>{}</h3><pre class='text-sm bg-muted p-4 rounded-md overflow-x-auto'><code>{}</code></pre></div>",
                                     name,
-                                    content,
+                                    escaped_content,
                                 ),
                             );
                     }
