@@ -14,7 +14,6 @@ pub use components::*;
 #[component]
 pub fn DemoTreeView() -> impl IntoView {
     view! {
-        <div class="p-10">
             <Tree>
                 <Folder name="app" open=true>
                     <File name="layout.tsx" checked=true />
@@ -27,24 +26,8 @@ pub fn DemoTreeView() -> impl IntoView {
                     <File name="input.tsx" />
                 </Folder>
 
-                <div data-name="File" class="flex flex-row">
-                    <input
-                        id="file-package"
-                        type="radio"
-                        name="file-selection"
-                        class="sr-only peer"
-                    />
-                    <label
-                        for="file-package"
-                        class="flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
-                        tabindex="0"
-                    >
-                        <FileIcon class="size-4" />
-                        <span>"package.json"</span>
-                    </label>
-                </div>
+                 <File name="package.json" />
             </Tree>
-        </div>
     }
 }
 
@@ -87,7 +70,7 @@ pub fn File(
     let target_id = use_random_id();
 
     view! {
-        <li data-name="File" class="flex flex-row -ml-4 border-l border-neutral-300">
+        <li data-name="File" class="flex flex-row [details_&]:-ml-4 [details_&]:border-l [details_&]:border-neutral-300">
             <input id=target_id.clone() type="radio" name="file-selection" class="sr-only peer" checked=checked />
             <label
                 for=target_id
