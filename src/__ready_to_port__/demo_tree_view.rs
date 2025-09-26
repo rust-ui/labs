@@ -19,6 +19,10 @@ pub fn DemoTreeView() -> impl IntoView {
                     <File name="layout.tsx" checked=true />
                     <File name="page.tsx" />
                     <File name="globals.css" />
+                    <Folder name="dashboard">
+                        <File name="page.tsx" />
+                        <File name="layout.tsx" />
+                    </Folder>
                 </Folder>
 
                 <Folder name="components">
@@ -45,17 +49,17 @@ pub fn Folder(
     children: Children,
 ) -> impl IntoView {
     view! {
-        <details data-name="Folder" class="flex flex-col group/tree-folder" open=open>
+        <details data-name="Folder" class="flex flex-col open:[&>summary>svg:first-child]:rotate-90" prop:open=open>
             <summary
                 data-name="FolderTrigger"
                 class="flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"
             >
-                <ChevronRight class="transition-transform duration-200 ease-in-out origin-center group-open/tree-folder:rotate-90" />
+                <ChevronRight class="transition-transform duration-200 ease-in-out origin-center" />
                 <FolderIcon />
                 <span>{name}</span>
             </summary>
 
-            <ul data-name="FileList" class="flex flex-col pl-2 ml-6">
+            <ul data-name="FileList" class="flex flex-col pl-2 ml-6 relative before:content-[''] before:absolute before:-left-2 before:top-0 before:bottom-0 before:border-l before:border-neutral-300">
                 {children()}
             </ul>
         </details>
@@ -70,7 +74,7 @@ pub fn File(
     let target_id = use_random_id();
 
     view! {
-        <li data-name="File" class="flex flex-row [details_&]:-ml-4 [details_&]:border-l [details_&]:border-neutral-300">
+        <li data-name="File" class="flex flex-row [details_&]:-ml-4">
             <input id=target_id.clone() type="radio" name="file-selection" class="sr-only peer" checked=checked />
             <label
                 for=target_id
