@@ -17,7 +17,8 @@ pub use components::*;
 #[component]
 pub fn DemoTreeView() -> impl IntoView {
     view! {
-        <Tree>
+        <div class="flex flex-col items-start justify-start h-full mt-10">
+            <Tree>
             <Folder name="app" open=true>
                 <File name="layout.tsx" checked=true />
                 <File name="page.tsx" />
@@ -34,7 +35,8 @@ pub fn DemoTreeView() -> impl IntoView {
             </Folder>
 
             <File name="package.json" />
-        </Tree>
+            </Tree>
+        </div>
     }
 }
 
