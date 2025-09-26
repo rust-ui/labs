@@ -20,13 +20,13 @@
       transform-origin: center;
     }
 
-    /* Closed state: chevron points right (default) */
-    [data-state="Closed"] .chevron {
+    /* Default: chevron points right (folder closed) */
+    .chevron {
       transform: rotate(0deg);
     }
 
-    /* Open state: chevron points down (90 degrees) */
-    [data-state="Open"] .chevron {
+    /* When checkbox is checked: chevron points down (folder open) */
+    input:checked + label .chevron {
       transform: rotate(90deg);
     }
   </style>
