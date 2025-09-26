@@ -29,6 +29,12 @@
     input:checked + label .chevron {
       transform: rotate(90deg);
     }
+
+    /* File selection styling */
+    input[type="radio"][name="file-selection"]:checked + label {
+      background-color: rgb(229 229 229) !important; /* bg-neutral-200 */
+      font-weight: 500 !important; /* font-medium */
+    }
   </style>
 
 
@@ -49,29 +55,38 @@
       <div data-name="FolderContent" class="grid overflow-hidden transition-all duration-300 grid-rows-[0fr] peer-checked:grid-rows-[1fr]">
          <div class="min-h-[0]">
             <ul data-name="FileList" class="flex flex-col pl-2 ml-6">
-               <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none aria-[current=page]:bg-neutral-200 aria-[current=page]:font-medium" tabindex="0" aria-current="page">
-                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <title>Icon</title>
-                     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
-                  <span>layout.tsx</span>
+               <li data-name="File" class="flex flex-row">
+                  <input id="file-layout" type="radio" name="file-selection" class="sr-only" checked />
+                  <label for="file-layout" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none w-full" tabindex="0">
+                     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Icon</title>
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                     </svg>
+                     <span>layout.tsx</span>
+                  </label>
                </li>
-               <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none aria-[current=page]:bg-neutral-200 aria-[current=page]:font-medium" tabindex="0">
-                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <title>Icon</title>
-                     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
-                  <span>page.tsx</span>
+               <li data-name="File" class="flex flex-row">
+                  <input id="file-page" type="radio" name="file-selection" class="sr-only" />
+                  <label for="file-page" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none w-full" tabindex="0">
+                     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Icon</title>
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                     </svg>
+                     <span>page.tsx</span>
+                  </label>
                </li>
-               <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none aria-[current=page]:bg-neutral-200 aria-[current=page]:font-medium" tabindex="0">
-                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <title>Icon</title>
-                     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
-                  <span>global.css</span>
+               <li data-name="File" class="flex flex-row">
+                  <input id="file-global" type="radio" name="file-selection" class="sr-only" />
+                  <label for="file-global" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none w-full" tabindex="0">
+                     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Icon</title>
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                     </svg>
+                     <span>global.css</span>
+                  </label>
                </li>
             </ul>
          </div>
@@ -92,33 +107,42 @@
       <div data-name="FolderContent" class="grid overflow-hidden transition-all duration-300 grid-rows-[0fr] peer-checked:grid-rows-[1fr]">
          <div class="min-h-[0]">
             <ul data-name="FileList" class="flex flex-col pl-2 ml-6">
-               <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none aria-[current=page]:bg-neutral-200 aria-[current=page]:font-medium" tabindex="0">
-                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <title>Icon</title>
-                     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
-                  <span>button.tsx</span>
+               <li data-name="File" class="flex flex-row">
+                  <input id="file-button" type="radio" name="file-selection" class="sr-only" />
+                  <label for="file-button" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none w-full" tabindex="0">
+                     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Icon</title>
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                     </svg>
+                     <span>button.tsx</span>
+                  </label>
                </li>
-               <li data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none aria-[current=page]:bg-neutral-200 aria-[current=page]:font-medium" tabindex="0">
-                  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                     <title>Icon</title>
-                     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                  </svg>
-                  <span>input.tsx</span>
+               <li data-name="File" class="flex flex-row">
+                  <input id="file-input" type="radio" name="file-selection" class="sr-only" />
+                  <label for="file-input" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none w-full" tabindex="0">
+                     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <title>Icon</title>
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                     </svg>
+                     <span>input.tsx</span>
+                  </label>
                </li>
             </ul>
          </div>
       </div>
    </div>
-   <div data-name="File" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none aria-[current=page]:bg-neutral-200 aria-[current=page]:font-medium" tabindex="0">
-      <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-         <title>Icon</title>
-         <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-         <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-      </svg>
-      <span>package.json</span>
+   <div data-name="File" class="flex flex-row">
+      <input id="file-package" type="radio" name="file-selection" class="sr-only" />
+      <label for="file-package" class="flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground [>_svg]:size-4 cursor-pointer focus:outline-none w-full" tabindex="0">
+         <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <title>Icon</title>
+            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+            <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+         </svg>
+         <span>package.json</span>
+      </label>
    </div>
 </div>
 </div>
