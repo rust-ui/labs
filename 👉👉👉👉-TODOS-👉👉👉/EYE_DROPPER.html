@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeDropper API Demo</title>
+    <style>
+        /* Reset Styles */
+        :root {
+            --background-color: #181824;
+            --text-color: #fff;
+            --scrollbar-thumb-color: #fff;
+            --scrollbar-track-color: #0d0d18;
+            --scrollbar-width: 15px;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            height: 100%;
+            font-family: system-ui, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            background-color: var(--background-color);
+            background-image: radial-gradient(
+                #b1b1b154 1px,
+                transparent 0
+            );
+            background-size: 20px 20px;
+            cursor: default;
+            line-height: 30px;
+        }
+
+        input {
+            color: var(--text-color);
+        }
+
+        /* Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: var(--scrollbar-width);
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: var(--scrollbar-track-color);
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--scrollbar-thumb-color);
+            background-clip: content-box;
+            border: 5px solid transparent;
+            border-radius: 100px;
+        }
+
+        /* Tutorial Styles */
+        .picker {
+            text-align: center;
+        }
+
+        .color-circles {
+            display: flex;
+            justify-content: center;
+            gap: 0.625rem;
+        }
+
+        .color-circle {
+            width: 1.875rem;
+            height: 1.875rem;
+            border: 0.125rem solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #colorPicker-button {
+            width: 9.375rem;
+            padding: 0.625rem 1.5rem;
+            color: #fff;
+            font-size: 1rem;
+            background-color: #dd08c4;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #colorPicker-button:hover {
+            background-color: #b504a0;
+        }
+
+        #colorPicker-result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 9.375rem;
+            height: 9.375rem;
+            margin: 0.7rem auto;
+            color: #fff;
+            border: 0.125rem solid #fff;
+            border-radius: 1rem;
+        }
+
+        #colorPicker-hex {
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="picker">
+        <!-- Color Circles -->
+        <div class="color-circles" style="margin-bottom: 15px">
+            <div class="color-circle" style="background-color: #aa8d00"></div>
+            <div class="color-circle" style="background-color: #fd0a5b"></div>
+            <div class="color-circle" style="background-color: #328f00"></div>
+            <div class="color-circle" style="background-color: #004da5"></div>
+        </div>
+
+        <!-- Color Picker -->
+        <button id="colorPicker-button">Pick a Color</button>
+        <div id="colorPicker-result"></div>
+        <span id="colorPicker-hex">transparent</span>
+    </div>
+
+    <script>
+        // Get DOM elements
+        const button = document.getElementById("colorPicker-button");
+        const result = document.getElementById("colorPicker-result");
+        const hexCode = document.getElementById("colorPicker-hex");
+
+        // EyeDropper functionality
+        if (typeof EyeDropper !== "undefined") {
+            button.addEventListener("click", async () => {
+                try {
+                    // Create a new EyeDropper instance
+                    const eyeDropper = new EyeDropper();
+
+                    // Open the EyeDropper
+                    const selectedColor = await eyeDropper.open();
+
+                    // Set the background color
+                    result.style.backgroundColor = selectedColor.sRGBHex;
+
+                    // Display the selected hex color
+                    hexCode.textContent = selectedColor.sRGBHex;
+                } catch (error) {
+                    console.error(error);
+                }
+            });
+        } else {
+            console.error("EyeDropper API is not supported in this browser.");
+            button.textContent = "Not Supported";
+            button.disabled = true;
+        }
+    </script>
+</body>
+</html>

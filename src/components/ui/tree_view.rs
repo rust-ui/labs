@@ -1,8 +1,9 @@
-use icons::{ChevronRight, Folder as FolderIcon, File as FileIcon};
+use icons::{ChevronRight, File as FileIcon, Folder as FolderIcon};
 use leptos::prelude::*;
 use leptos_ui::clx;
+
 use crate::utils::hooks::use_random::use_random_id;
-use html_escape;
+use crate::utils::syntax_highlighting_syntect::highlight_code;
 
 mod components {
     use super::*;
@@ -14,12 +15,9 @@ mod components {
 
 pub use components::*;
 
-
-
 /* ========================================================== */
 /*                     ✨ FUNCTIONS ✨                        */
 /* ========================================================== */
-
 
 #[component]
 pub fn Folder(
@@ -80,11 +78,20 @@ pub fn File(
     }
 }
 
+
+
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
+
+
+
 #[component]
 pub fn FileRenderer(
     #[prop(into)] name: &'static str,
     #[prop(into)] content: String,
     #[prop(default = false)] checked: bool,
+    #[prop(optional)] language: Option<&'static str>,
 ) -> impl IntoView {
     let target_id = use_random_id();
 
@@ -96,20 +103,22 @@ pub fn FileRenderer(
                 name="file-selection"
                 class="sr-only peer"
                 checked=checked
-                on:change=move |_| {
-                    if let Some(content_div) = window()
-                        .document()
-                        .and_then(|doc| doc.get_element_by_id("content-display"))
-                    {
-                        let escaped_content = html_escape::encode_text(&content);
-                        content_div
-                            .set_inner_html(
-                                &format!(
-                                    "<div><h3 class='font-semibold mb-2'>{}</h3><pre class='text-sm bg-muted p-4 rounded-md overflow-x-auto'><code>{}</code></pre></div>",
-                                    name,
-                                    escaped_content,
-                                ),
-                            );
+                on:change={
+                    let content = content.clone();
+                    move |_| {
+                        if let Some(content_div) = window()
+                            .document()
+                            .and_then(|doc| doc.get_element_by_id("content-display"))
+                        {
+                            content_div
+                                .set_inner_html(
+                                    &format!(
+                                        "<div><h3 class='font-semibold mb-2'>{}</h3><pre class='text-sm bg-muted p-4 rounded-md overflow-x-auto'><code>{}</code></pre></div>",
+                                        name,
+                                        content,
+                                    ),
+                                );
+                        }
                     }
                 }
             />
@@ -125,3 +134,57 @@ pub fn FileRenderer(
     }
 }
 
+
+
+#[component]
+pub fn FileRendererHighlight(
+    #[prop(into)] name: &'static str,
+    #[prop(into)] content: String,
+    #[prop(default = false)] checked: bool,
+    #[prop(optional)] language: Option<&'static str>,
+) -> impl IntoView {
+    let target_id = use_random_id();
+
+    view! {
+        <li data-name="FileRendererHighlight" class="flex flex-row -ml-4">
+            <input
+                id=target_id.clone()
+                type="radio"
+                name="file-selection"
+                class="sr-only peer"
+                checked=checked
+                on:change={
+                    let content = content.clone();
+                    move |_| {
+                        if let Some(content_div) = window()
+                            .document()
+                            .and_then(|doc| doc.get_element_by_id("content-display"))
+                        {
+                            let highlighted_content = highlight_code(
+                                &content,
+                                language,
+                                Some(name),
+                            );
+                            content_div
+                                .set_inner_html(
+                                    &format!(
+                                        "<div><h3 class='font-semibold mb-2'>{}</h3><pre class='text-sm bg-muted p-4 rounded-md overflow-x-auto syntax-highlighted'><code>{}</code></pre></div>",
+                                        name,
+                                        highlighted_content,
+                                    ),
+                                );
+                        }
+                    }
+                }
+            />
+            <label
+                for=target_id
+                class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-accent peer-checked:font-medium hover:peer-checked:bg-accent hover:bg-accent hover:text-accent-foreground"
+                tabindex="0"
+            >
+                <FileIcon class="size-4" />
+                <span>{name}</span>
+            </label>
+        </li>
+    }
+}

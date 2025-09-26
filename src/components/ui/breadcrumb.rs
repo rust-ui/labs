@@ -30,7 +30,10 @@ pub fn BreadcrumbSeparator(#[prop(into, optional)] class: Signal<String>) -> imp
 }
 
 #[component]
-pub fn BreadcrumbPage(#[prop(into, optional)] class: Signal<String>, children: Children) -> impl IntoView {
+pub fn BreadcrumbPage(
+    #[prop(into, optional)] class: Signal<String>,
+    children: Children,
+) -> impl IntoView {
     // TODO. aria_disabled
     view! {
         <RootPage class=class attr:role="link" attr:aria-disabled="true" attr:aria-current="page">
