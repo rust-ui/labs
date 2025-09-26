@@ -2,23 +2,22 @@
 name: Unified Rust/UI Porter
 description: Complete workflow from HTML component to Rust/UI registry
 # allowed-tools:
-argument-hint: ["html_file", "component_name", "registry_type"]
+argument-hint: ["html_location"]
 ---
 
 
 ## Input
 
-1. *$html_file*: HTML file with component to port
-2. *$component_name*: Name for the Leptos component (PascalCase)
-3. *$registry_type*: Directory target. Either [`components`, `extensions`]
+1. *$html_location*: HTML file with component to port (component name will be inferred from filename)
 
 
 ## Workflow
 
 ### Phase 1: HTML to Leptos Port
 
-1. Make sure you have *$html_file* and *$component_name*. If not, ask explicitly to user.
-2. Create `Demo$component_name` in `__ready_to_port__/`.
+1. Make sure you have *$html_location*. If not, ask explicitly to user.
+2. Infer component name from *$html_location* (e.g., TREE-VIEW.html → DemoTreeView).
+3. Create `Demo$component_name` in `__ready_to_port__/`.
 3. Import in `all_demos.rs`.
 4. Follow [*## Leptos Instructions*] and make sure it compiles with `cargo check`.
 5. Launch server with `LEPTOS_SITE_ADDR="127.0.0.1:4002" LEPTOS_RELOAD_PORT="4003" cargo leptos watch`.
@@ -46,7 +45,7 @@ argument-hint: ["html_file", "component_name", "registry_type"]
 - **IMPORTANT**: For CSS `<style>`, **ALWAYS** wrap in `<style> {" "} </style>`.
 - **IMPORTANT**: For JS `<script>`, **ALWAYS** wrap in `<script> {" "} </script>`.
 - **IMPORTANT**: Make sure to **ALWAYS** use proper self-closing tags (ex: `<img />`, `<input />`, ...).
-- **IMPORTANT**: Wrap symbols with quotes (ex: `<p>"▼"</p>`).
+- **IMPORTANT**: Wrap text content with quotes (ex: `<p>"▼"</p>`, `<span>"Text content"</span>`).
 
 
 ## Example
