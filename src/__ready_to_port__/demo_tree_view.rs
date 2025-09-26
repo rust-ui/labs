@@ -1,10 +1,11 @@
-use icons::{ChevronRight, Folder, File};
+use icons::{ChevronRight, Folder as FolderIcon, File};
 use leptos::prelude::*;
 use leptos_ui::clx;
 
 mod components {
     use super::*;
     clx! {Tree, div, "rounded-md border not-prose bg-neutral-50 w-[240px] border-neutral-200"}
+    clx! {Folder, details, "flex flex-col group/tree-folder"}
 }
 
 pub use components::*;
@@ -15,12 +16,7 @@ pub fn DemoTreeView() -> impl IntoView {
     view! {
         <div class="p-10">
             <Tree>
-                <details
-                    data-name="Folder"
-                    data-state="Open"
-                    class="flex flex-col group/tree-folder"
-                    open=true
-                >
+                <Folder attr:open=true>
                     <FolderTrigger>
                         <span>"app"</span>
                     </FolderTrigger>
@@ -41,7 +37,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <File class="size-4"/>
+                                <File class="size-4" />
                                 <span>"layout.tsx"</span>
                             </label>
                         </li>
@@ -60,7 +56,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                <File class="size-4"/>
+                                <File class="size-4" />
                                 <span>"page.tsx"</span>
                             </label>
                         </li>
@@ -79,12 +75,12 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                               <File class="size-4"/>
+                                <File class="size-4" />
                                 <span>"global.css"</span>
                             </label>
                         </li>
                     </ul>
-                </details>
+                </Folder>
                 <details
                     data-name="Folder"
                     data-state="Closed"
@@ -141,7 +137,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                 <File class="size-4"/>
+                                <File class="size-4" />
                                 <span>"button.tsx"</span>
                             </label>
                         </li>
@@ -160,7 +156,7 @@ pub fn DemoTreeView() -> impl IntoView {
                                 class="flex flex-row gap-2 items-center py-1.5 px-2 ml-3 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                                 tabindex="0"
                             >
-                                 <File class="size-4"/>
+                                <File class="size-4" />
                                 <span>"input.tsx"</span>
                             </label>
                         </li>
@@ -178,7 +174,7 @@ pub fn DemoTreeView() -> impl IntoView {
                         class="flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer focus:outline-none [>_svg]:size-4 peer-checked:bg-neutral-200 peer-checked:font-medium hover:bg-accent hover:text-accent-foreground"
                         tabindex="0"
                     >
-                        <File class="size-4"/>
+                        <File class="size-4" />
                         <span>"package.json"</span>
                     </label>
                 </div>
@@ -201,7 +197,7 @@ pub fn FolderTrigger(children: Children) -> impl IntoView {
             class="flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"
         >
             <ChevronRight class="transition-transform duration-200 ease-in-out origin-center group-open/tree-folder:rotate-90" />
-            <Folder />
+            <FolderIcon />
             {children()}
         </summary>
     }
