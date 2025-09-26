@@ -6,8 +6,8 @@ use crate::utils::hooks::use_random::use_random_id;
 mod components {
     use super::*;
     clx! {Tree, div, "rounded-md border not-prose bg-card w-[240px] border-border"}
-    clx! {FolderTrigger, summary, "flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"}
-    clx! {FolderContent, div, "grid overflow-hidden transition-all duration-500 grid-rows-[0fr] open:grid-rows-[1fr]"}
+    clx! {FolderTrigger, label, "flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"}
+    clx! {FolderContent, div, "grid overflow-hidden transition-all duration-400 grid-rows-[0fr] peer-checked:grid-rows-[1fr]"}
     clx! {FileList, ul, "flex flex-col pl-2 ml-6 relative before:content-[''] before:absolute before:-left-2 before:top-0 before:bottom-0 before:border-l before:border-muted-foreground/30 min-h-[0]"}
 }
 
@@ -51,22 +51,28 @@ pub fn Folder(
     #[prop(default = false)] open: bool,
     children: Children,
 ) -> impl IntoView {
+    let folder_id = use_random_id();
+
     view! {
-        <details
+        <div
             data-name="Folder"
-            class="flex flex-col open:[&>summary>svg:first-child]:rotate-90 [&:has(>div>ul>li>input:checked)]:[&>summary]:font-semibold"
-            prop:open=open
+            class="flex flex-col [&:has(>input:checked)>label>svg:first-child]:rotate-90"
         >
-            <FolderTrigger>
+            <input id=folder_id.clone() type="checkbox" class="sr-only peer" checked=open />
+
+            <label
+                for=folder_id
+                class="flex flex-row gap-2 items-center py-1.5 px-2 w-full text-sm rounded-md cursor-pointer [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground"
+            >
                 <ChevronRight class="transition-transform duration-200 ease-in-out origin-center" />
                 <FolderIcon />
                 <span>{name}</span>
-            </FolderTrigger>
+            </label>
 
             <FolderContent>
                 <FileList>{children()}</FileList>
             </FolderContent>
-        </details>
+        </div>
     }
 }
 
@@ -78,7 +84,7 @@ pub fn File(
     let target_id = use_random_id();
 
     view! {
-        <li data-name="File" class="flex flex-row [details_&]:-ml-4">
+        <li data-name="File" class="flex flex-row -ml-4">
             <input
                 id=target_id.clone()
                 type="radio"
