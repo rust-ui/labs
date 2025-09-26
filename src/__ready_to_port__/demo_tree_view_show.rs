@@ -45,7 +45,7 @@ pub fn DemoTreeViewShow() -> impl IntoView {
                 <div id="content-display">
                     <div>
                         <h3 class="mb-2 font-semibold">main.rs</h3>
-                        <p class="text-sm text-muted-foreground">Main application entry point</p>
+                        <pre class="text-sm bg-muted p-4 rounded-md overflow-x-auto"><code>Main application entry point</code></pre>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ pub fn File(
                         content_div
                             .set_inner_html(
                                 &format!(
-                                    "<div><h3 class='font-semibold mb-2'>{}</h3><p class='text-sm text-muted-foreground'>{}</p></div>",
+                                    "<div><h3 class='font-semibold mb-2'>{}</h3><pre class='text-sm bg-muted p-4 rounded-md overflow-x-auto'><code>{}</code></pre></div>",
                                     name,
                                     content,
                                 ),
@@ -139,8 +139,50 @@ pub fn File(
 /*                     ✨ CONSTANTS ✨                        */
 /* ========================================================== */
 
-const BUTTON_RS: &str = include_str!("../components/ui/button.rs");
-const CARD_RS: &str = include_str!("../components/ui/card.rs");
-const INPUT_RS: &str = include_str!("../components/ui/input.rs");
-const ACCORDION_RS: &str = include_str!("../components/ui/accordion.rs");
-const HOOKS_RS: &str = include_str!("../utils/hooks/use_random.rs");
+const BUTTON_RS: &str = r#"use leptos::prelude::*;
+use leptos_ui::clx;
+
+clx! {Button, button, "inline-flex items-center justify-center"}
+
+#[component]
+pub fn Button() -> impl IntoView {
+    view! { <button>Click me</button> }
+}"#;
+
+const CARD_RS: &str = r#"use leptos::prelude::*;
+use leptos_ui::clx;
+
+clx! {Card, div, "rounded-lg border bg-card"}
+
+#[component]
+pub fn Card() -> impl IntoView {
+    view! { <div class="card">Content</div> }
+}"#;
+
+const INPUT_RS: &str = r#"use leptos::prelude::*;
+use leptos_ui::clx;
+
+clx! {Input, input, "flex h-10 rounded-md border"}
+
+#[component]
+pub fn Input() -> impl IntoView {
+    view! { <input type="text" /> }
+}"#;
+
+const ACCORDION_RS: &str = r#"use leptos::prelude::*;
+use leptos_ui::clx;
+
+clx! {Accordion, div, "w-full"}
+
+#[component]
+pub fn Accordion() -> impl IntoView {
+    view! { <div>Accordion content</div> }
+}"#;
+
+const HOOKS_RS: &str = r#"use leptos::prelude::*;
+
+pub fn use_random_id() -> String {
+    format!("id_{}", js_sys::Math::random())
+}
+
+// Random hook utilities"#;
