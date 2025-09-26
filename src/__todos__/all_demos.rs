@@ -1,10 +1,10 @@
 use leptos::prelude::*;
 
-use crate::__ready_to_port__::demo_tree_view_show_complex::DemoTreeViewShowComplex;
 use crate::__TODOS__::demo_css_carousel::DemoCssCarousel;
 use crate::__TODOS__::demo_pagination::DemoPagination;
 use crate::__ready_to_port__::demo_tree_view::DemoTreeView;
-use crate::__ready_to_port__::demo_tree_view_show::DemoTreeViewShow;
+use crate::__ready_to_port__::demo_tree_view_renderer::DemoTreeViewShow;
+use crate::__ready_to_port__::demo_tree_view_highlight::DemoTreeViewHighlight;
 
 #[derive(Clone)]
 pub struct DemoItem {
@@ -26,8 +26,8 @@ pub const ALL_DEMOS: &[DemoItem] = &[
         render_fn: || view! { <DemoTreeViewShow /> }.into_any(),
     },
     DemoItem {
-        name: "✅ Tree View Show Complex",
-        render_fn: || view! { <DemoTreeViewShowComplex /> }.into_any(),
+        name: "✅ Tree View Highlight",
+        render_fn: || view! { <DemoTreeViewHighlight /> }.into_any(),
     },
     DemoItem {
         name: "👉 TODO: Pagination",

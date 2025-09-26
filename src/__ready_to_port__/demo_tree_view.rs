@@ -1,32 +1,30 @@
 use leptos::prelude::*;
 
-use crate::components::ui::tree_view::{Tree, File, Folder};
-
+use crate::components::ui::tree_view::{File, Folder, Tree};
 
 #[component]
 pub fn DemoTreeView() -> impl IntoView {
     view! {
-        <div class="flex flex-col items-start justify-start h-full mt-10">
+        <div class="flex flex-col justify-start items-start mt-10 h-full">
             <Tree>
-            <Folder name="src" open=true>
-                <File name="main.rs" checked=true />
-                <File name="lib.rs" />
-                <Folder name="components" open=true>
-                    <Folder name="ui">
-                        <File name="button.rs" />
-                        <File name="card.rs" />
-                        <File name="input.rs" />
-                        <File name="accordion.rs" />
+                <Folder name="src" open=true>
+                    <File name="main.rs" checked=true />
+                    <File name="lib.rs" />
+                    <Folder name="components" open=true>
+                        <Folder name="ui">
+                            <File name="button.rs" />
+                            <File name="card.rs" />
+                            <File name="input.rs" />
+                            <File name="accordion.rs" />
+                        </Folder>
+                        <File name="mod.rs" />
                     </Folder>
-                    <File name="mod.rs" />
+                    <Folder name="utils">
+                        <File name="hooks.rs" />
+                        <File name="mod.rs" />
+                    </Folder>
                 </Folder>
-                <Folder name="utils">
-                    <File name="hooks.rs" />
-                    <File name="mod.rs" />
-                </Folder>
-            </Folder>
             </Tree>
         </div>
     }
 }
-

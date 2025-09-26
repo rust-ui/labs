@@ -44,7 +44,10 @@ pub fn AccordionTrigger(
 
 // TODO.
 #[component]
-pub fn AccordionTriggerSidenav(children: Children, #[prop(into, optional)] class: Signal<String>) -> impl IntoView {
+pub fn AccordionTriggerSidenav(
+    children: Children,
+    #[prop(into, optional)] class: Signal<String>,
+) -> impl IntoView {
     let class = Memo::new(move |_| {
         tw_merge!(
             "w-full flex gap-2 justify-between items-center p-2 font-medium hover:cursor-pointer marker:content-none [&_svg:not([class*='size-'])]:size-4  h-8 text-sm",

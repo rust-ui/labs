@@ -1,14 +1,19 @@
 use leptos::prelude::*;
-use crate::components::ui::tree_view::{Tree, Folder, FileRenderer};
+
 use crate::components::ui::card::{Card, CardContent};
+use crate::components::ui::tree_view::{FileRenderer, Folder, Tree};
 
 #[component]
-pub fn DemoTreeViewShowComplex() -> impl IntoView {
+pub fn DemoTreeViewShow() -> impl IntoView {
     view! {
         <div class="flex gap-4 w-full max-w-4xl">
             <Tree>
                 <Folder name="src" open=true>
-                    <FileRenderer name="main.rs" content="Main application entry point" checked=true />
+                    <FileRenderer
+                        name="main.rs"
+                        content="Main application entry point"
+                        checked=true
+                    />
                     <FileRenderer name="lib.rs" content="Library root module" />
                     <Folder name="components" open=true>
                         <Folder name="ui">
@@ -34,7 +39,9 @@ pub fn DemoTreeViewShowComplex() -> impl IntoView {
                     <div id="content-display">
                         <div>
                             <h3 class="mb-2 font-semibold">main.rs</h3>
-                            <pre class="text-sm bg-muted p-4 rounded-md overflow-x-auto"><code>Main application entry point</code></pre>
+                            <pre class="overflow-x-auto p-4 text-sm rounded-md bg-muted">
+                                <code>Main application entry point</code>
+                            </pre>
                         </div>
                     </div>
                 </CardContent>
@@ -46,9 +53,6 @@ pub fn DemoTreeViewShowComplex() -> impl IntoView {
 /* ========================================================== */
 /*                     ✨ FUNCTIONS ✨                        */
 /* ========================================================== */
-
-
-
 
 /* ========================================================== */
 /*                     ✨ CONSTANTS ✨                        */

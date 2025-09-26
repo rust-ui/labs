@@ -1,3 +1,5 @@
+pub mod accordion;
+pub mod breadcrumb;
 pub mod button;
 pub mod card;
 pub mod input;
@@ -5,6 +7,4 @@ pub mod label;
 pub mod pagination;
 pub mod pagination_button;
 pub mod separator;
-pub mod breadcrumb;
-pub mod accordion;
 pub mod tree_view;

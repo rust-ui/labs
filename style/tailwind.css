@@ -179,3 +179,72 @@
 @utility border-grid {
   @apply border-border/50 dark:border-border;
 }
+
+/* Syntax Highlighting Theme - Tree-sitter Enhanced */
+.syntax-highlighted {
+  @apply font-mono text-sm leading-relaxed;
+}
+
+.syntax-highlighted .syntax-keyword {
+  @apply text-purple-600 dark:text-purple-400 font-bold;
+}
+
+.syntax-highlighted .syntax-string {
+  @apply text-emerald-600 dark:text-emerald-400;
+}
+
+.syntax-highlighted .syntax-comment {
+  @apply text-slate-500 dark:text-slate-400 italic;
+}
+
+.syntax-highlighted .syntax-number {
+  @apply text-orange-500 dark:text-orange-400;
+}
+
+.syntax-highlighted .syntax-function {
+  @apply text-amber-600 dark:text-amber-400 font-semibold;
+}
+
+.syntax-highlighted .syntax-type {
+  @apply text-sky-600 dark:text-sky-400 font-medium;
+}
+
+.syntax-highlighted .syntax-variable {
+  @apply text-blue-700 dark:text-blue-300;
+}
+
+.syntax-highlighted .syntax-property {
+  @apply text-teal-600 dark:text-teal-400;
+}
+
+.syntax-highlighted .syntax-operator {
+  @apply text-pink-600 dark:text-pink-400 font-medium;
+}
+
+.syntax-highlighted .syntax-punctuation {
+  @apply text-gray-600 dark:text-gray-400;
+}
+
+.syntax-highlighted .syntax-attribute {
+  @apply text-violet-600 dark:text-violet-400 font-medium;
+}
+
+.syntax-highlighted .syntax-constant {
+  @apply text-red-600 dark:text-red-400 font-semibold;
+}
+
+.syntax-highlighted .syntax-tag {
+  @apply text-indigo-600 dark:text-indigo-400 font-medium;
+}
+
+.syntax-highlighted .syntax-bold {
+  @apply font-bold;
+}
+
+.syntax-highlighted .syntax-italic {
+  @apply italic;
+}
+
+.syntax-highlighted .syntax-underline {
+  @apply underline;
+}
