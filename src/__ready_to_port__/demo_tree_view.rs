@@ -1,14 +1,20 @@
 use icons::{ChevronRight, Folder, File};
 use leptos::prelude::*;
+use leptos_ui::clx;
+
+mod components {
+    use super::*;
+    clx! {Tree, div, "rounded-md border not-prose bg-neutral-50 w-[240px] border-neutral-200"}
+}
+
+pub use components::*;
+
 
 #[component]
 pub fn DemoTreeView() -> impl IntoView {
     view! {
         <div class="p-10">
-            <div
-                data-name="Tree"
-                class="rounded-md border not-prose bg-neutral-50 w-[240px] border-neutral-200"
-            >
+            <Tree>
                 <details
                     data-name="Folder"
                     data-state="Open"
@@ -176,7 +182,7 @@ pub fn DemoTreeView() -> impl IntoView {
                         <span>"package.json"</span>
                     </label>
                 </div>
-            </div>
+            </Tree>
         </div>
     }
 }
