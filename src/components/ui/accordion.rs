@@ -6,11 +6,13 @@ use tw_merge::*;
 mod components {
     use super::*;
     clx! {Accordion, div, "divide-y divide-input w-full"}
+    clx! {AccordionItem, details, "group w-full"}
     clx! {AccordionTitle, h4, "text-sm font-medium"}
-    clx! {TriggerRoot, summary, "flex justify-between items-center py-4 list-none cursor-pointer [&_svg:not([class*='size-'])]:size-4"}
+    clx! {TriggerRoot, summary, "flex justify-between items-center p-3 list-none cursor-pointer [&_svg:not([class*='size-'])]:size-4"}
     clx! {AccordionHeader, div, "flex gap-2 items-center [&_svg:not([class*='size-'])]:size-4"}
-    clx! {AccordionContent, article, "pb-4"}
-    clx! {AccordionDescription, p, "text-muted-foreground"}
+    clx! {AccordionContent, article, "p-2"}
+    clx! {AccordionDescription, p, "text-muted-foreground text-sm"}
+    clx! {AccordionLink, a, "grid gap-2.5 items-center p-2 grid-cols-[auto_1fr] [&_svg:not([class*='size-'])]:size-4 hover:bg-muted"}
 }
 
 pub use components::*;
@@ -60,20 +62,5 @@ pub fn AccordionTriggerSidenav(
             {children()}
             <ChevronRight class="transition group-open:rotate-90" />
         </summary>
-    }
-}
-
-#[component]
-pub fn AccordionItem(
-    children: Children,
-    #[prop(into, optional)] open: bool,
-    #[prop(into, optional)] class: Signal<String>,
-) -> impl IntoView {
-    let class = Memo::new(move |_| tw_merge!("group w-full", class()));
-
-    view! {
-        <details class=class open=open>
-            {children()}
-        </details>
     }
 }
