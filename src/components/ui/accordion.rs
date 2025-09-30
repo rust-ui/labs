@@ -1,4 +1,4 @@
-use icons::{ChevronDown, ChevronRight};
+use icons::ChevronDown;
 use leptos::prelude::*;
 use leptos_ui::clx;
 use tw_merge::*;
@@ -6,16 +6,38 @@ use tw_merge::*;
 mod components {
     use super::*;
     clx! {Accordion, div, "divide-y divide-input w-full"}
-    clx! {AccordionItem, details, "group w-full"}
+    clx! {AccordionItem, div, "w-full [&:has(>input:checked)>label>svg:last-child]:rotate-180"}
     clx! {AccordionTitle, h4, "text-sm font-medium"}
-    clx! {TriggerRoot, summary, "flex justify-between items-center p-3 list-none cursor-pointer [&_svg:not([class*='size-'])]:size-4"}
     clx! {AccordionHeader, div, "flex gap-2 items-center [&_svg:not([class*='size-'])]:size-4"}
-    clx! {AccordionContent, article, "p-2"}
+    clx! {RootContent, article, "grid overflow-hidden transition-all duration-400 grid-rows-[0fr] peer-checked:grid-rows-[1fr]"}
     clx! {AccordionDescription, p, "text-muted-foreground text-sm"}
     clx! {AccordionLink, a, "grid gap-2.5 items-center p-2 grid-cols-[auto_1fr] [&_svg:not([class*='size-'])]:size-4 hover:bg-muted"}
 }
 
 pub use components::*;
+
+use crate::utils::hooks::use_random::use_random_id;
+
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
+
+#[component]
+pub fn AccordionContent(
+    #[prop(into, optional)] class: Signal<String>,
+    children: Children,
+) -> impl IntoView {
+    let merged_class = tw_merge!("p-3 pt-0", class());
+
+    view! {
+        <RootContent>
+            // * Used for the animation using grid CSS trick.
+            <div data-name="__AccordionContentInner" class="min-h-[0]">
+                <div class=merged_class>{children()}</div>
+            </div>
+        </RootContent>
+    }
+}
 
 /* ========================================================== */
 /*                     ✨ FUNCTIONS ✨                        */
@@ -31,36 +53,31 @@ pub enum AccordionTriggerIcon {
 #[component]
 pub fn AccordionTrigger(
     #[prop(into, optional)] class: Signal<String>,
+    #[prop(default = false)] open: bool,
     // TODO. AccrodionTriggerIcon
     children: Children,
 ) -> impl IntoView {
-    let class = Memo::new(move |_| tw_merge!("", class()));
-
-    view! {
-        <TriggerRoot class=class>
-            {children()}
-            <ChevronDown class="block transition-all duration-300 group-open:rotate-180" />
-        </TriggerRoot>
-    }
-}
-
-// TODO.
-#[component]
-pub fn AccordionTriggerSidenav(
-    children: Children,
-    #[prop(into, optional)] class: Signal<String>,
-) -> impl IntoView {
-    let class = Memo::new(move |_| {
+    let accordion_id = use_random_id();
+    let label_class = Memo::new(move |_| {
         tw_merge!(
-            "w-full flex gap-2 justify-between items-center p-2 font-medium hover:cursor-pointer marker:content-none [&_svg:not([class*='size-'])]:size-4  h-8 text-sm",
+            "flex justify-between items-center p-3 list-none cursor-pointer [&_svg:not([class*='size-'])]:size-4 peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2",
             class()
         )
     });
 
     view! {
-        <summary data-name="AccordionTriggerSidenav" class=class>
-            {children()}
-            <ChevronRight class="transition group-open:rotate-90" />
-        </summary>
+        <>
+            <input
+                id=accordion_id.clone()
+                type="checkbox"
+                class="overflow-hidden absolute p-0 -m-px w-px h-px whitespace-nowrap border-0 peer"
+                style="clip: rect(0, 0, 0, 0)"
+                checked=open
+            />
+            <label for=accordion_id class=label_class>
+                {children()}
+                <ChevronDown class="transition-all duration-300" />
+            </label>
+        </>
     }
 }

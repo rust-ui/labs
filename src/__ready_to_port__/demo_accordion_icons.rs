@@ -9,8 +9,8 @@ use crate::components::ui::accordion::{
 pub fn DemoAccordionIcons() -> impl IntoView {
     view! {
         <Accordion class="overflow-hidden rounded-lg border bg-background max-w-[200px]">
-            <AccordionItem attr:open=true>
-                <AccordionTrigger class="group-open:bg-accent hover:bg-accent">
+            <AccordionItem>
+                <AccordionTrigger open=true class="peer-checked:bg-accent hover:bg-accent">
                     <AccordionTitle>Registry</AccordionTitle>
                 </AccordionTrigger>
                 <AccordionContent class="p-0">
@@ -43,7 +43,7 @@ pub fn DemoAccordionIcons() -> impl IntoView {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem>
-                <AccordionTrigger class="group-open:bg-accent hover:bg-accent">
+                <AccordionTrigger class="peer-checked:bg-accent hover:bg-accent">
                     <AccordionTitle>Blocks</AccordionTitle>
                 </AccordionTrigger>
                 <AccordionContent class="p-0">
