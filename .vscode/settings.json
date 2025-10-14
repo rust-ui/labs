@@ -4,7 +4,6 @@
 		"editor.defaultFormatter": "rust-lang.rust-analyzer",
 		"editor.formatOnSave": true
 	},
-
 	"rust-analyzer": {
 		"rustfmt": {
 			"overrideCommand": ["leptosfmt", "--stdin", "--rustfmt"]
@@ -12,18 +11,29 @@
 	},
 	"rust-analyzer.check.command": "clippy",
 
-	"tailwindCSS.includeLanguages": {
+	"emmet.includeLanguages": {
+		"rust": "html",
+		"*.rs": "html"
+	},
+	"files.associations": {
+		"*.rs": "rust"
+	},
+
+	"css.validate": false,
+
+	"tailwindCSS.emmetCompletions": true,
+		"tailwindCSS.includeLanguages": {
 		"rust": "html"
 	},
-	"tailwindCSS.emmetCompletions": true,
-
 	"tailwindCSS.experimental.classRegex": [
-		["tw_merge!\\(([^)]*)\\)"],
-		["#[tw\\\\([^\\]]*class\\s*=\\s*\"([^\"]*)\"\\)]", "\"([^\"]*)\""]
+		["clx!\\s*\\{[^,]*,\\s*[^,]*,\\s*\"([^\"]*)\""],
+		["void!\\s*\\{[^,]*,\\s*[^,]*,\\s*\"([^\"]*)\""],
+		["tw_merge!\\(([^)]*)\\)"]
 	],
 
 	"[javascript]": {
 		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true,
 		"editor.codeActionsOnSave": {
 			"source.fixAll": "explicit",
 			"source.fixAll.biome": "explicit"
@@ -31,5 +41,72 @@
 	},
 	"biome.enable": true,
 	"biome.lint.enable": true,
-	"liveServer.settings.port": 5502
+	"postman.settings.dotenv-detection-notification-visibility": false,
+
+	"window.commandCenter": true,
+	"editor.wordWrap": "on",
+	"editor.cursorStyle": "line",
+	"editor.cursorWidth": 8,
+	"editor.cursorBlinking": "solid",
+	"workbench.colorCustomizations": {
+		"editorCursor.foreground": "#b1b1b1"
+	},
+
+	"git.enableSmartCommit": true,
+	"warmUp.changeCount": "15",
+	"explorer.confirmDragAndDrop": false,
+
+	"database-client.autoSync": true,
+	"opa.dependency_paths.opa": "/home/maxime.montfort/opa",
+
+	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "?",
+			"color": "#B087F6",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "//",
+			"color": "#474747",
+			"strikethrough": true,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "todo",
+			"color": "#FF8C00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "*",
+			"color": "#98C379",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		}
+	],
+
+	"git.openRepositoryInParentFolders": "never",
+	"liveServer.settings.donotShowInfoMsg": true
 }
