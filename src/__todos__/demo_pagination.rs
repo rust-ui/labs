@@ -1,8 +1,8 @@
 use leptos::prelude::*;
 
 use crate::components::ui::pagination::{
-    Pagination, PaginationEllipsis, PaginationItem, PaginationLink, PaginationList, PaginationNext,
-    PaginationPrevious,
+    Pagination, PaginationDirection, PaginationEllipsis, PaginationItem, PaginationLink,
+    PaginationList, PaginationNavButton,
 };
 
 #[component]
@@ -11,7 +11,7 @@ pub fn DemoPagination() -> impl IntoView {
         <Pagination query_key="page" max_pages=10u32>
             <PaginationList>
                 <PaginationItem>
-                    <PaginationPrevious />
+                    <PaginationNavButton direction=PaginationDirection::Previous />
                 </PaginationItem>
                 <PaginationItem>
                     <PaginationLink page=1>1</PaginationLink>
@@ -35,7 +35,7 @@ pub fn DemoPagination() -> impl IntoView {
                     <PaginationLink page=10>10</PaginationLink>
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationNext />
+                    <PaginationNavButton direction=PaginationDirection::Next />
                 </PaginationItem>
             </PaginationList>
         </Pagination>
