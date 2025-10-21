@@ -29,7 +29,7 @@ pub use components::*;
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
 #[component]
-pub fn PaginationNext(href: &'static str) -> impl IntoView {
+pub fn PaginationNext(#[prop(into)] href: Signal<String>) -> impl IntoView {
     view! {
         <RootNext class="sm:pr-2.5" attr:aria-label="Go to next page" attr:href=href>
             <ChevronRight />
@@ -38,7 +38,7 @@ pub fn PaginationNext(href: &'static str) -> impl IntoView {
 }
 
 #[component]
-pub fn PaginationPrevious(href: &'static str) -> impl IntoView {
+pub fn PaginationPrevious(#[prop(into)] href: Signal<String>) -> impl IntoView {
     view! {
         <RootPrevious class="sm:pl-2.5" attr:aria-label="Go to previous page" attr:href=href>
             <ChevronLeft />
