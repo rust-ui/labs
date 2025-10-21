@@ -7,19 +7,12 @@ use tw_merge::*;
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
 use crate::utils::query::QueryUtils;
 
-const COMMON_CLASSES: &str = "inline-flex justify-center items-center text-sm font-medium whitespace-nowrap rounded-md outline-none  hover:bg-accent hover:text-accent-foreground transition-all  disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none  [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0  aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40  focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]";
-
 mod components {
     use super::*;
     clx! {PaginationNav, nav, "flex justify-center mx-auto w-full"}
     clx! {PaginationList, ul, "flex flex-row gap-1 items-center"}
     clx! {PaginationItem, li, ""}
     clx! {EllipsisRoot, span, "flex justify-center items-center size-9"}
-
-    // TODO. Merge common classes first.
-
-    clx! {RootPrevious, a, COMMON_CLASSES,  "gap-1 px-2.5  h-9 py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
-    clx! {RootNext, a, COMMON_CLASSES, "gap-1 px-2.5  h-9 py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
 }
 
 pub use components::*;
@@ -83,12 +76,6 @@ pub fn PaginationLink(
     children: Children,
     #[prop(into, optional)] class: String,
 ) -> impl IntoView {
-    let merged_class = tw_merge!(
-        COMMON_CLASSES,
-        "gap-2  size-9 dark:hover:bg-accent/50 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground aria-[current=page]:shadow-xs aria-[current=page]:hover:bg-primary/90",
-        class
-    );
-
     let ctx = use_context::<PaginationContext>();
 
     let href = if let Some(ctx) = ctx.clone() {
@@ -109,8 +96,18 @@ pub fn PaginationLink(
         Signal::derive(|| "")
     };
 
+    let button_class = ButtonClass {
+        variant: ButtonVariant::Ghost,
+        size: ButtonSize::Icon,
+    };
+
+    let merged_class = button_class.with_class(tw_merge!(
+        "aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground aria-[current=page]:hover:bg-primary/90",
+        class
+    ));
+
     view! {
-        <a data-name="PaginationLink" href=href aria-current=aria_current class=merged_class>
+        <a href=href aria-current=aria_current class=merged_class>
             {children()}
         </a>
     }
@@ -135,16 +132,21 @@ pub fn PaginationNext() -> impl IntoView {
         (Signal::derive(|| "#".to_string()), Signal::derive(|| true))
     };
 
+    let button_class = ButtonClass {
+        variant: ButtonVariant::Ghost,
+        size: ButtonSize::Default,
+    };
+
     view! {
-        <RootNext
-            class="sm:pr-2.5"
+        <a
+            href=href
+            class=button_class.with_class("sm:pr-2.5")
             class:opacity-0=is_disabled
             class:pointer-events-none=is_disabled
-            attr:aria-label="Go to next page"
-            attr:href=href
+            aria-label="Go to next page"
         >
             <ChevronRight />
-        </RootNext>
+        </a>
     }
 }
 
@@ -167,16 +169,21 @@ pub fn PaginationPrevious() -> impl IntoView {
         (Signal::derive(|| "#".to_string()), Signal::derive(|| true))
     };
 
+    let button_class = ButtonClass {
+        variant: ButtonVariant::Ghost,
+        size: ButtonSize::Default,
+    };
+
     view! {
-        <RootPrevious
-            class="sm:pl-2.5"
+        <a
+            href=href
+            class=button_class.with_class("sm:pl-2.5")
             class:opacity-0=is_disabled
             class:pointer-events-none=is_disabled
-            attr:aria-label="Go to previous page"
-            attr:href=href
+            aria-label="Go to previous page"
         >
             <ChevronLeft />
-        </RootPrevious>
+        </a>
     }
 }
 
@@ -187,35 +194,5 @@ pub fn PaginationEllipsis() -> impl IntoView {
             <Ellipsis class="size-4" />
             <span class="sr-only">More pages</span>
         </EllipsisRoot>
-    }
-}
-
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                     ✨ FUNCTIONS ✨                        */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-// TODO. Merge properly with Button
-#[component]
-pub fn PaginationLinkWithButton(
-    #[prop(into, optional)] variant: Signal<ButtonVariant>,
-    #[prop(into, optional)] size: Signal<ButtonSize>,
-    #[prop(into, optional)] class: Signal<String>,
-    // TODO _is_active.
-    #[prop(into, optional)] _is_active: Option<bool>,
-    #[prop(into)] href: &'static str,
-    children: Children,
-) -> impl IntoView {
-    // TODO. should be ButtonVariant::Ghost OR ButtonVariant::Outline if is_active
-    let class = Memo::new(move |_| {
-        let variant = variant.get();
-        let size = size.get();
-        let button = ButtonClass { variant, size };
-        button.with_class(class.get())
-    });
-
-    view! {
-        <a class=class href=href>
-            {children()}
-        </a>
     }
 }
