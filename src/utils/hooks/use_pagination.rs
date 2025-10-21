@@ -17,11 +17,16 @@ pub fn use_pagination() -> PaginationContext {
 
     let page_href = Callback::new(move |page: u32| {
         location.query.with(|q| {
-            let demo_param = q
-                .get("demo")
-                .map(|d| format!("demo={}&", d))
-                .unwrap_or_default();
-            format!("?{}{}={}", demo_param, QUERY::PAGE, page)
+            let mut params: Vec<String> = q
+                .clone()
+                .into_iter()
+                .filter(|(key, _)| key != QUERY::PAGE)
+                .map(|(key, value)| format!("{}={}", key, value))
+                .collect();
+
+            params.push(format!("{}={}", QUERY::PAGE, page));
+
+            format!("?{}", params.join("&"))
         })
     });
 

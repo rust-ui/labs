@@ -10,7 +10,7 @@ use crate::utils::query::QUERY;
 mod components {
     use super::*;
     clx! {PaginationNav, nav, "flex justify-center mx-auto w-full"}
-    clx! {PaginationList, ul, "flex flex-row gap-1 items-center"}
+    clx! {PaginationList, ul, "flex flex-row gap-1 items-center [&_li:nth-last-child(2):has(a[aria-current=page])~li:last-child]:opacity-0 [&_li:nth-last-child(2):has(a[aria-current=page])~li:last-child]:pointer-events-none"}
     clx! {PaginationItem, li, ""}
     clx! {EllipsisRoot, span, "flex justify-center items-center size-9"}
 }
