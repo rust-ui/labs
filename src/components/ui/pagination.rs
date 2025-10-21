@@ -18,7 +18,7 @@ mod components {
 pub use components::*;
 
 /* ========================================================== */
-/*                     ✨ FUNCTIONS ✨                        */
+/*                    ✨ COMPONENTS ✨                        */
 /* ========================================================== */
 
 #[component]
@@ -29,10 +29,6 @@ pub fn Pagination(children: Children) -> impl IntoView {
     view! { <PaginationNav>{children()}</PaginationNav> }
 }
 
-/* ========================================================== */
-/*                     ✨ FUNCTIONS ✨                        */
-/* ========================================================== */
-
 pub enum PageDirection {
     Previous,
     Next,
@@ -40,34 +36,21 @@ pub enum PageDirection {
 
 #[component]
 pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
-    let ctx = use_context::<PaginationContext>();
-
+    let ctx = use_context::<PaginationContext>().expect("PaginationContext not found");
     let is_previous = matches!(direction, PageDirection::Previous);
 
-    let (href, is_disabled) = if let Some(ctx) = ctx {
-        let href = Signal::derive(move || {
-            let current = ctx.current_page.get();
-            if is_previous {
-                if current > 1 {
-                    ctx.page_href.run(current - 1)
-                } else {
-                    "#".to_string()
-                }
-            } else {
-                ctx.page_href.run(current + 1)
-            }
-        });
-        let is_disabled = Signal::derive(move || {
-            if is_previous {
-                ctx.current_page.get() <= 1
-            } else {
-                false
-            }
-        });
-        (href, is_disabled)
-    } else {
-        (Signal::derive(|| "#".to_string()), Signal::derive(|| true))
-    };
+    let href = Signal::derive(move || {
+        let current = ctx.current_page.get();
+        if is_previous && current > 1 {
+            ctx.page_href.run(current - 1)
+        } else if !is_previous {
+            ctx.page_href.run(current + 1)
+        } else {
+            "#".to_string()
+        }
+    });
+
+    let is_disabled = Signal::derive(move || is_previous && ctx.current_page.get() <= 1);
 
     let button_class = ButtonClass {
         variant: ButtonVariant::Ghost,
@@ -88,21 +71,15 @@ pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
             class:pointer-events-none=is_disabled
             aria-label=aria_label
         >
-            {move || {
-                if is_previous {
-                    view! { <ChevronLeft /> }.into_any()
-                } else {
-                    view! { <ChevronRight /> }.into_any()
-                }
+            {if is_previous {
+                view! { <ChevronLeft /> }.into_any()
+            } else {
+                view! { <ChevronRight /> }.into_any()
             }}
 
         </a>
     }
 }
-
-/* ========================================================== */
-/*                     ✨ FUNCTIONS ✨                        */
-/* ========================================================== */
 
 #[component]
 pub fn PaginationLink(
@@ -110,25 +87,16 @@ pub fn PaginationLink(
     children: Children,
     #[prop(into, optional)] class: String,
 ) -> impl IntoView {
-    let ctx = use_context::<PaginationContext>();
+    let ctx = use_context::<PaginationContext>().expect("PaginationContext not found");
 
-    let href = if let Some(ctx) = ctx.clone() {
-        Signal::derive(move || ctx.page_href.run(page))
-    } else {
-        Signal::derive(|| "#".to_string())
-    };
-
-    let aria_current = if let Some(ctx) = ctx {
-        Signal::derive(move || {
-            if ctx.current_page.get() == page {
-                QUERY::PAGE
-            } else {
-                ""
-            }
-        })
-    } else {
-        Signal::derive(|| "")
-    };
+    let href = Signal::derive(move || ctx.page_href.run(page));
+    let aria_current = Signal::derive(move || {
+        if ctx.current_page.get() == page {
+            QUERY::PAGE
+        } else {
+            ""
+        }
+    });
 
     let button_class = ButtonClass {
         variant: ButtonVariant::Ghost,
