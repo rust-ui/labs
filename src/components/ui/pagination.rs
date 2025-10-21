@@ -5,6 +5,7 @@ use tw_merge::*;
 
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
 use crate::utils::hooks::use_pagination::{PaginationContext, use_pagination};
+use crate::utils::query::QUERY;
 
 mod components {
     use super::*;
@@ -16,38 +17,32 @@ mod components {
 
 pub use components::*;
 
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                    ✨ COMPONENTS ✨                         */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
 
 #[component]
-pub fn Pagination(
-    #[prop(into, optional)] query_key: String,
-    #[prop(into, optional)] max_pages: u32,
-    children: Children,
-) -> impl IntoView {
-    if !query_key.is_empty() {
-        let ctx = use_pagination(query_key, max_pages);
-        provide_context(ctx);
-    }
+pub fn Pagination(children: Children) -> impl IntoView {
+    let ctx = use_pagination();
+    provide_context(ctx);
 
     view! { <PaginationNav>{children()}</PaginationNav> }
 }
 
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                      ✨ HELPERS ✨                         */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
 
-pub enum PaginationDirection {
+pub enum PageDirection {
     Previous,
     Next,
 }
 
 #[component]
-pub fn PaginationNavButton(direction: PaginationDirection) -> impl IntoView {
+pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
     let ctx = use_context::<PaginationContext>();
 
-    let is_previous = matches!(direction, PaginationDirection::Previous);
+    let is_previous = matches!(direction, PageDirection::Previous);
 
     let (href, is_disabled) = if let Some(ctx) = ctx {
         let href = Signal::derive(move || {
@@ -58,17 +53,15 @@ pub fn PaginationNavButton(direction: PaginationDirection) -> impl IntoView {
                 } else {
                     "#".to_string()
                 }
-            } else if current < ctx.max_pages {
-                ctx.page_href.run(current + 1)
             } else {
-                "#".to_string()
+                ctx.page_href.run(current + 1)
             }
         });
         let is_disabled = Signal::derive(move || {
             if is_previous {
                 ctx.current_page.get() <= 1
             } else {
-                ctx.current_page.get() >= ctx.max_pages
+                false
             }
         });
         (href, is_disabled)
@@ -107,9 +100,9 @@ pub fn PaginationNavButton(direction: PaginationDirection) -> impl IntoView {
     }
 }
 
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
+/* ========================================================== */
 /*                     ✨ FUNCTIONS ✨                        */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+/* ========================================================== */
 
 #[component]
 pub fn PaginationLink(
@@ -128,7 +121,7 @@ pub fn PaginationLink(
     let aria_current = if let Some(ctx) = ctx {
         Signal::derive(move || {
             if ctx.current_page.get() == page {
-                "page"
+                QUERY::PAGE
             } else {
                 ""
             }

@@ -5,6 +5,7 @@ pub struct QUERY;
 
 impl QUERY {
     pub const DEMO: &str = "demo";
+    pub const PAGE: &str = "page";
 }
 
 /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
