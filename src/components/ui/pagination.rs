@@ -8,7 +8,7 @@ use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
 mod components {
     use super::*;
     clx! {Pagination, nav, "flex justify-center mx-auto w-full"}
-    clx! {PaginationContent, ul, "flex flex-row gap-1 items-center"}
+    clx! {PaginationList, ul, "flex flex-row gap-1 items-center"}
     clx! {PaginationItem, li, ""}
     clx! {EllipsisRoot, span, "flex justify-center items-center size-9"}
 
@@ -16,13 +16,10 @@ mod components {
 
     // TODO. Merge common classes first.
 
-    clx! {PaginationLink, a, COMMON_CLASSES, "gap-2  size-9 dark:hover:bg-accent/50"}
+    clx! {PaginationLink, a, COMMON_CLASSES, "gap-2  size-9 dark:hover:bg-accent/50 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground aria-[current=page]:shadow-xs aria-[current=page]:hover:bg-primary/90"}
 
-    clx! {PaginationActive, a, COMMON_CLASSES, "gap-2 bg-primary text-primary-foreground shadow-xs size-9 hover:bg-primary/90"}
-
-    clx! {RootPrevious, a, COMMON_CLASSES,  "py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
-
-    clx! {RootNext, a, COMMON_CLASSES, "h-9  has-[>svg]:px-3 dark:hover:bg-accent/50"}
+    clx! {RootPrevious, a, COMMON_CLASSES,  "gap-1 px-2.5  h-9 py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
+    clx! {RootNext, a, COMMON_CLASSES, "gap-1 px-2.5  h-9 py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
 }
 
 pub use components::*;
@@ -34,11 +31,7 @@ pub use components::*;
 #[component]
 pub fn PaginationNext(href: &'static str) -> impl IntoView {
     view! {
-        <RootNext
-            class="gap-1 py-2 px-2.5 sm:pr-2.5"
-            attr:aria-label="Go to next page"
-            attr:href=href
-        >
+        <RootNext class="sm:pr-2.5" attr:aria-label="Go to next page" attr:href=href>
             <ChevronRight />
         </RootNext>
     }
@@ -47,11 +40,7 @@ pub fn PaginationNext(href: &'static str) -> impl IntoView {
 #[component]
 pub fn PaginationPrevious(href: &'static str) -> impl IntoView {
     view! {
-        <RootPrevious
-            class="gap-1 px-2.5 h-9 sm:pl-2.5"
-            attr:aria-label="Go to previous page"
-            attr:href=href
-        >
+        <RootPrevious class="sm:pl-2.5" attr:aria-label="Go to previous page" attr:href=href>
             <ChevronLeft />
         </RootPrevious>
     }

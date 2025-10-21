@@ -17,7 +17,7 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
     />
   )
 }
-function PaginationContent({
+function PaginationList({
   className,
   ...props
 }: React.ComponentProps<"ul">) {
@@ -108,7 +108,7 @@ function PaginationEllipsis({
 }
 export {
   Pagination,
-  PaginationContent,
+  PaginationList,
   PaginationLink,
   PaginationItem,
   PaginationPrevious,

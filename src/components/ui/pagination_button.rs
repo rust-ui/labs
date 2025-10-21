@@ -5,7 +5,7 @@ use leptos_ui::clx;
 mod components {
     use super::*;
     clx! {Pagination, nav, "flex justify-center mx-auto w-full"}
-    clx! {PaginationContent, ul, "flex flex-row gap-1 items-center"}
+    clx! {PaginationList, ul, "flex flex-row gap-1 items-center"}
     clx! {PaginationItem, li, ""}
     clx! {EllipsisRoot, span, "flex justify-center items-center size-9"}
 
