@@ -6,14 +6,6 @@ const TIMEOUT_MS: u64 = 100;
 pub fn ReactiveIndicator() -> impl IntoView {
     let is_reactive = RwSignal::new(false);
 
-    let class = Signal::derive(move || {
-        if is_reactive.get() {
-            "bg-green-500".to_string()
-        } else {
-            "bg-orange-500".to_string()
-        }
-    });
-
     Effect::new(move |_| {
         set_timeout(
             move || {
@@ -23,7 +15,15 @@ pub fn ReactiveIndicator() -> impl IntoView {
         );
     });
 
-    view! { <Indicator class=class /> }
+    let class = move || {
+        if is_reactive.get() {
+            "bg-green-500".to_string()
+        } else {
+            "bg-orange-500".to_string()
+        }
+    };
+
+    view! { <Indicator class=class() /> }
 }
 
 mod components {
