@@ -76,11 +76,7 @@ pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
 }
 
 #[component]
-pub fn PaginationLink(
-    page: u32,
-    children: Children,
-    #[prop(into, optional)] class: String,
-) -> impl IntoView {
+pub fn PaginationLink(page: u32, #[prop(into, optional)] class: String) -> impl IntoView {
     let ctx = use_context::<PaginationContext>().expect("PaginationContext not found");
 
     let href = Signal::derive(move || ctx.page_href.run(page));
@@ -98,7 +94,7 @@ pub fn PaginationLink(
 
     view! {
         <a href=href aria-current=aria_current class=merged_class>
-            {children()}
+            {page}
         </a>
     }
 }

@@ -13,19 +13,19 @@ pub fn DemoPagination() -> impl IntoView {
                     <PaginationNavButton direction=PageDirection::Previous />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink page=1>1</PaginationLink>
+                    <PaginationLink page=1 />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink page=2>2</PaginationLink>
+                    <PaginationLink page=2 />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink page=3>3</PaginationLink>
+                    <PaginationLink page=3 />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink page=4>4</PaginationLink>
+                    <PaginationLink page=4 />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink page=5>5</PaginationLink>
+                    <PaginationLink page=5 />
                 </PaginationItem>
                 <PaginationItem>
                     <PaginationNavButton direction=PageDirection::Next />
