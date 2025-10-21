@@ -4,8 +4,8 @@ use leptos_ui::clx;
 use strum::Display;
 use tw_merge::*;
 
+use crate::components::hooks::use_pagination::{PaginationContext, use_pagination};
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
-use crate::utils::hooks::use_pagination::{PaginationContext, use_pagination};
 
 mod components {
     use super::*;

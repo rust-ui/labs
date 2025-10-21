@@ -3,6 +3,8 @@ use leptos::prelude::*;
 use leptos_ui::clx;
 use tw_merge::*;
 
+use crate::components::hooks::use_random::use_random_id;
+
 mod components {
     use super::*;
     clx! {Accordion, div, "divide-y divide-input w-full"}
@@ -15,8 +17,6 @@ mod components {
 }
 
 pub use components::*;
-
-use crate::utils::hooks::use_random::use_random_id;
 
 /* ========================================================== */
 /*                     ✨ FUNCTIONS ✨                        */
