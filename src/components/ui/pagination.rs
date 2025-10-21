@@ -120,21 +120,29 @@ pub fn PaginationLink(
 pub fn PaginationNext() -> impl IntoView {
     let ctx = use_context::<PaginationContext>();
 
-    let href = if let Some(ctx) = ctx {
-        Signal::derive(move || {
+    let (href, is_disabled) = if let Some(ctx) = ctx {
+        let href = Signal::derive(move || {
             let current = ctx.current_page.get();
             if current < ctx.max_pages {
                 ctx.page_href.run(current + 1)
             } else {
                 "#".to_string()
             }
-        })
+        });
+        let is_disabled = Signal::derive(move || ctx.current_page.get() >= ctx.max_pages);
+        (href, is_disabled)
     } else {
-        Signal::derive(|| "#".to_string())
+        (Signal::derive(|| "#".to_string()), Signal::derive(|| true))
     };
 
     view! {
-        <RootNext class="sm:pr-2.5" attr:aria-label="Go to next page" attr:href=href>
+        <RootNext
+            class="sm:pr-2.5"
+            class:opacity-0=is_disabled
+            class:pointer-events-none=is_disabled
+            attr:aria-label="Go to next page"
+            attr:href=href
+        >
             <ChevronRight />
         </RootNext>
     }
@@ -144,21 +152,29 @@ pub fn PaginationNext() -> impl IntoView {
 pub fn PaginationPrevious() -> impl IntoView {
     let ctx = use_context::<PaginationContext>();
 
-    let href = if let Some(ctx) = ctx {
-        Signal::derive(move || {
+    let (href, is_disabled) = if let Some(ctx) = ctx {
+        let href = Signal::derive(move || {
             let current = ctx.current_page.get();
             if current > 1 {
                 ctx.page_href.run(current - 1)
             } else {
                 "#".to_string()
             }
-        })
+        });
+        let is_disabled = Signal::derive(move || ctx.current_page.get() <= 1);
+        (href, is_disabled)
     } else {
-        Signal::derive(|| "#".to_string())
+        (Signal::derive(|| "#".to_string()), Signal::derive(|| true))
     };
 
     view! {
-        <RootPrevious class="sm:pl-2.5" attr:aria-label="Go to previous page" attr:href=href>
+        <RootPrevious
+            class="sm:pl-2.5"
+            class:opacity-0=is_disabled
+            class:pointer-events-none=is_disabled
+            attr:aria-label="Go to previous page"
+            attr:href=href
+        >
             <ChevronLeft />
         </RootPrevious>
     }
