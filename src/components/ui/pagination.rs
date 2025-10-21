@@ -39,18 +39,16 @@ pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
     let ctx = use_context::<PaginationContext>().expect("PaginationContext not found");
     let is_previous = matches!(direction, PageDirection::Previous);
 
-    let href = Signal::derive(move || {
-        let current = ctx.current_page.get();
-        if is_previous && current > 1 {
-            ctx.page_href.run(current - 1)
-        } else if !is_previous {
-            ctx.page_href.run(current + 1)
-        } else {
-            "#".to_string()
-        }
-    });
-
-    let is_disabled = Signal::derive(move || is_previous && ctx.current_page.get() <= 1);
+    let href = if is_previous {
+        ctx.prev_href
+    } else {
+        ctx.next_href
+    };
+    let is_disabled = if is_previous {
+        ctx.is_first_page
+    } else {
+        Signal::derive(|| false)
+    };
 
     let button_class = ButtonClass {
         variant: ButtonVariant::Ghost,

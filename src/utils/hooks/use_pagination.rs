@@ -7,6 +7,9 @@ use crate::utils::query::{QUERY, QueryUtils};
 pub struct PaginationContext {
     pub current_page: Memo<u32>,
     pub page_href: Callback<u32, String>,
+    pub prev_href: Signal<String>,
+    pub next_href: Signal<String>,
+    pub is_first_page: Signal<bool>,
 }
 
 pub fn use_pagination() -> PaginationContext {
@@ -30,8 +33,27 @@ pub fn use_pagination() -> PaginationContext {
         })
     });
 
+    let prev_href = Signal::derive(move || {
+        let current = current_page.get();
+        if current > 1 {
+            page_href.run(current - 1)
+        } else {
+            "#".to_string()
+        }
+    });
+
+    let next_href = Signal::derive(move || {
+        let current = current_page.get();
+        page_href.run(current + 1)
+    });
+
+    let is_first_page = Signal::derive(move || current_page.get() <= 1);
+
     PaginationContext {
         current_page,
         page_href,
+        prev_href,
+        next_href,
+        is_first_page,
     }
 }
