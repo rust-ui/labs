@@ -1,11 +1,10 @@
 use icons::{ChevronLeft, ChevronRight, Ellipsis};
 use leptos::prelude::*;
-use leptos_router::hooks::use_location;
 use leptos_ui::clx;
 use tw_merge::*;
 
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
-use crate::utils::query::QueryUtils;
+use crate::utils::hooks::use_pagination::{PaginationContext, use_pagination};
 
 mod components {
     use super::*;
@@ -18,17 +17,6 @@ mod components {
 pub use components::*;
 
 /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
-/*                       ✨ CONTEXT ✨                         */
-/*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
-
-#[derive(Clone)]
-struct PaginationContext {
-    current_page: Memo<u32>,
-    page_href: Callback<u32, String>,
-    max_pages: u32,
-}
-
-/*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 /*                    ✨ COMPONENTS ✨                         */
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
@@ -39,27 +27,7 @@ pub fn Pagination(
     children: Children,
 ) -> impl IntoView {
     if !query_key.is_empty() {
-        let location = use_location();
-        let current_page_str = QueryUtils::extract(query_key.clone());
-
-        let current_page = Memo::new(move |_| current_page_str().parse::<u32>().unwrap_or(1));
-
-        let page_href = Callback::new(move |page: u32| {
-            location.query.with(|q| {
-                let demo_param = q
-                    .get("demo")
-                    .map(|d| format!("demo={}&", d))
-                    .unwrap_or_default();
-                format!("?{}{}={}", demo_param, query_key, page)
-            })
-        });
-
-        let ctx = PaginationContext {
-            current_page,
-            page_href,
-            max_pages,
-        };
-
+        let ctx = use_pagination(query_key, max_pages);
         provide_context(ctx);
     }
 
