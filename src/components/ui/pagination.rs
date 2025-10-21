@@ -18,7 +18,7 @@ mod components {
 
     clx! {PaginationLink, a, COMMON_CLASSES, "gap-2  size-9 dark:hover:bg-accent/50"}
 
-    clx! {PaginationActive, a, COMMON_CLASSES, "gap-2 border  bg-background shadow-xs size-9 dark:bg-input/30 dark:border-input dark:hover:bg-input/50"}
+    clx! {PaginationActive, a, COMMON_CLASSES, "gap-2 bg-primary text-primary-foreground shadow-xs size-9 hover:bg-primary/90"}
 
     clx! {RootPrevious, a, COMMON_CLASSES,  "py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
 
@@ -39,7 +39,6 @@ pub fn PaginationNext(href: &'static str) -> impl IntoView {
             attr:aria-label="Go to next page"
             attr:href=href
         >
-            <span class="hidden sm:block">Next</span>
             <ChevronRight />
         </RootNext>
     }
@@ -54,7 +53,6 @@ pub fn PaginationPrevious(href: &'static str) -> impl IntoView {
             attr:href=href
         >
             <ChevronLeft />
-            <span class="hidden sm:block">Previous</span>
         </RootPrevious>
     }
 }
