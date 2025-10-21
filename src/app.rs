@@ -18,7 +18,7 @@ pub fn App() -> impl IntoView {
 
         <Router>
             <Navbar />
-            <div class="min-h-screen">
+            <main class="min-h-screen">
                 <Routes fallback=|| "Page not found.".into_view()>
                     <Route path=StaticSegment("/test") view=TestPage />
                     <Route
@@ -29,7 +29,7 @@ pub fn App() -> impl IntoView {
                     />
                     <Route path=StaticSegment("/gsap-intro") view=GsapIntroPage />
                 </Routes>
-            </div>
+            </main>
         </Router>
     }
 }
