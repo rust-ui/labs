@@ -1,11 +1,11 @@
 use icons::{ChevronLeft, ChevronRight, Ellipsis};
 use leptos::prelude::*;
 use leptos_ui::clx;
+use strum::Display;
 use tw_merge::*;
 
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
 use crate::utils::hooks::use_pagination::{PaginationContext, use_pagination};
-use crate::utils::query::QUERY;
 
 mod components {
     use super::*;
@@ -29,6 +29,12 @@ pub fn Pagination(children: Children) -> impl IntoView {
     view! { <PaginationNav>{children()}</PaginationNav> }
 }
 
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
+
+#[derive(Display)]
+#[strum(serialize_all = "lowercase")]
 pub enum PageDirection {
     Previous,
     Next,
@@ -37,17 +43,18 @@ pub enum PageDirection {
 #[component]
 pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
     let ctx = use_context::<PaginationContext>().expect("PaginationContext not found");
-    let is_previous = matches!(direction, PageDirection::Previous);
 
-    let href = if is_previous {
-        ctx.prev_href
-    } else {
-        ctx.next_href
-    };
-    let is_disabled = if is_previous {
-        ctx.is_first_page
-    } else {
-        Signal::derive(|| false)
+    let (href, is_disabled, icon) = match direction {
+        PageDirection::Previous => (
+            ctx.prev_href,
+            ctx.is_first_page,
+            view! { <ChevronLeft /> }.into_any(),
+        ),
+        PageDirection::Next => (
+            ctx.next_href,
+            Signal::derive(|| false),
+            view! { <ChevronRight /> }.into_any(),
+        ),
     };
 
     let button_class = ButtonClass {
@@ -55,26 +62,15 @@ pub fn PaginationNavButton(direction: PageDirection) -> impl IntoView {
         size: ButtonSize::Default,
     };
 
-    let (aria_label, extra_class) = if is_previous {
-        ("Go to previous page", "sm:pl-2.5")
-    } else {
-        ("Go to next page", "sm:pr-2.5")
-    };
-
     view! {
         <a
             href=href
-            class=button_class.with_class(extra_class)
+            class=button_class.with_class("")
             class:opacity-0=is_disabled
             class:pointer-events-none=is_disabled
-            aria-label=aria_label
+            aria-label=format!("Go to {} page", direction)
         >
-            {if is_previous {
-                view! { <ChevronLeft /> }.into_any()
-            } else {
-                view! { <ChevronRight /> }.into_any()
-            }}
-
+            {icon}
         </a>
     }
 }
@@ -88,13 +84,7 @@ pub fn PaginationLink(
     let ctx = use_context::<PaginationContext>().expect("PaginationContext not found");
 
     let href = Signal::derive(move || ctx.page_href.run(page));
-    let aria_current = Signal::derive(move || {
-        if ctx.current_page.get() == page {
-            QUERY::PAGE
-        } else {
-            ""
-        }
-    });
+    let aria_current = move || ctx.aria_current.run(page);
 
     let button_class = ButtonClass {
         variant: ButtonVariant::Ghost,

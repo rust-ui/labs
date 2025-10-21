@@ -10,6 +10,7 @@ pub struct PaginationContext {
     pub prev_href: Signal<String>,
     pub next_href: Signal<String>,
     pub is_first_page: Signal<bool>,
+    pub aria_current: Callback<u32, &'static str>,
 }
 
 pub fn use_pagination() -> PaginationContext {
@@ -49,11 +50,20 @@ pub fn use_pagination() -> PaginationContext {
 
     let is_first_page = Signal::derive(move || current_page.get() <= 1);
 
+    let aria_current = Callback::new(move |page: u32| {
+        if current_page.get() == page {
+            QUERY::PAGE
+        } else {
+            ""
+        }
+    });
+
     PaginationContext {
         current_page,
         page_href,
         prev_href,
         next_href,
         is_first_page,
+        aria_current,
     }
 }
