@@ -5,6 +5,8 @@ use tw_merge::*;
 
 use crate::components::ui::button::{ButtonClass, ButtonSize, ButtonVariant};
 
+const COMMON_CLASSES: &str = "inline-flex justify-center items-center text-sm font-medium whitespace-nowrap rounded-md outline-none  hover:bg-accent hover:text-accent-foreground transition-all  disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none  [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0  aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40  focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]";
+
 mod components {
     use super::*;
     clx! {Pagination, nav, "flex justify-center mx-auto w-full"}
@@ -12,11 +14,7 @@ mod components {
     clx! {PaginationItem, li, ""}
     clx! {EllipsisRoot, span, "flex justify-center items-center size-9"}
 
-    const COMMON_CLASSES: &str = "inline-flex justify-center items-center text-sm font-medium whitespace-nowrap rounded-md outline-none  hover:bg-accent hover:text-accent-foreground transition-all  disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none  [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0  aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40  focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]";
-
     // TODO. Merge common classes first.
-
-    clx! {PaginationLink, a, COMMON_CLASSES, "gap-2  size-9 dark:hover:bg-accent/50 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground aria-[current=page]:shadow-xs aria-[current=page]:hover:bg-primary/90"}
 
     clx! {RootPrevious, a, COMMON_CLASSES,  "gap-1 px-2.5  h-9 py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
     clx! {RootNext, a, COMMON_CLASSES, "gap-1 px-2.5  h-9 py-2 has-[>svg]:px-3 dark:hover:bg-accent/50"}
@@ -27,6 +25,21 @@ pub use components::*;
 /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
 /*                     ✨ FUNCTIONS ✨                        */
 /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
+
+#[component]
+pub fn PaginationLink(children: Children, #[prop(into, optional)] class: String) -> impl IntoView {
+    let merged_class = tw_merge!(
+        COMMON_CLASSES,
+        "gap-2  size-9 dark:hover:bg-accent/50 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground aria-[current=page]:hover:bg-primary/90",
+        class
+    );
+
+    view! {
+        <a data-name="PaginationLink" href="" class=merged_class>
+            {children()}
+        </a>
+    }
+}
 
 #[component]
 pub fn PaginationNext(#[prop(into)] href: Signal<String>) -> impl IntoView {
