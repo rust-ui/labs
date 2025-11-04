@@ -22,13 +22,13 @@ pub fn TestPage() -> impl IntoView {
 
             </div>
 
-            <EmailNewComponents />
+            <NewsletterSignup />
         </div>
     }
 }
 
 #[component]
-pub fn EmailNewComponents() -> impl IntoView {
+pub fn NewsletterSignup() -> impl IntoView {
     view! {
         <div class="overflow-hidden relative py-14 px-4 rounded-xl sm:px-8 bg-zinc-900 dark">
             <DecorativeGlowSvg
