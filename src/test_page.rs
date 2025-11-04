@@ -56,6 +56,10 @@ pub fn EmailNewComponents() -> impl IntoView {
                                     attr:aria-label="Subscribe to the newsletter"
                                     attr:required=true
                                     attr:r#type="email"
+                                    attr:data-bwignore="true"
+                                    attr:data-1p-ignore="true"
+                                    attr:data-lpignore="true"
+                                    attr:autocomplete="off"
                                 />
                             </InputGroup>
                             <Button
