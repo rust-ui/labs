@@ -31,10 +31,13 @@ pub fn TestPage() -> impl IntoView {
 pub fn EmailNewComponents() -> impl IntoView {
     view! {
         <div class="overflow-hidden relative py-14 px-4 rounded-xl sm:px-8 bg-zinc-900 dark">
-            <DecorativeGlowSvg filter_id="_r_55_a" class="absolute top-0 left-0 -translate-x-1/2" />
+            <DecorativeGlowSvg
+                filter_id="_r_55_a"
+                class="absolute top-0 left-0 -translate-x-1/2 pointer-events-none"
+            />
             <DecorativeGlowSvg
                 filter_id="_r_56_a"
-                class="absolute right-0 bottom-0 translate-x-1/4"
+                class="absolute right-0 bottom-0 translate-x-1/4 pointer-events-none"
             />
             <div class="flex flex-col gap-6 justify-between items-center lg:flex-row">
                 <h2 class="font-heading text-2xl/[1.1] text-foreground md:text-3xl/[1.1]">
