@@ -3,7 +3,7 @@ use leptos::prelude::*;
 use leptos_ui::clx;
 
 use crate::components::ui::button::Button;
-use crate::components::ui::input::Input;
+use crate::components::ui::input_group::{InputGroup, InputGroupAddon, InputGroupInput};
 
 #[component]
 pub fn TestPage() -> impl IntoView {
@@ -43,18 +43,18 @@ pub fn EmailNewComponents() -> impl IntoView {
                 <form class="space-y-4">
                     <div class="space-y-2">
                         <div class="inline-flex gap-2">
-                            <div class="relative">
-                                <div class="flex absolute inset-y-0 justify-center items-center pointer-events-none start-0 ps-3 text-muted-foreground peer-disabled:opacity-50">
-                                    <Send class="size-4" />
-                                </div>
-                                <Input
-                                    class="h-10 rounded-full ps-9 border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff] [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s] md:min-w-64"
+                            <InputGroup class="h-10 rounded-full border-zinc-600/65 bg-zinc-700/30 md:min-w-64">
+                                <InputGroupAddon>
+                                    <Send />
+                                </InputGroupAddon>
+                                <InputGroupInput
+                                    class="text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff] [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s]"
                                     attr:placeholder="Enter your email..."
                                     attr:aria-label="Subscribe to the newsletter"
                                     attr:required=true
                                     attr:r#type="email"
                                 />
-                            </div>
+                            </InputGroup>
                             <Button
                                 class="h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
                                 attr:r#type="submit"

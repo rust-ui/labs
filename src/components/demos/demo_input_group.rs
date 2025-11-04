@@ -1,7 +1,9 @@
 use icons::{Check, CreditCard, Info, Mail, Search, Star};
 use leptos::prelude::*;
 
-use crate::components::ui::input_group::{InputGroup, InputGroupAddon, InputGroupAddonAlign, InputGroupInput};
+use crate::components::ui::input_group::{
+    InputGroup, InputGroupAddon, InputGroupAddonAlign, InputGroupInput,
+};
 
 #[component]
 pub fn DemoInputGroup() -> impl IntoView {
