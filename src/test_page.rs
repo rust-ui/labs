@@ -1,7 +1,9 @@
-use crate::components::ui::{Button, Input};
 use icons::{HeartAnimate, PlusAnimate, Send};
 use leptos::prelude::*;
 use leptos_ui::clx;
+
+use crate::components::ui::button::Button;
+use crate::components::ui::input::Input;
 
 #[component]
 pub fn TestPage() -> impl IntoView {
@@ -45,27 +47,20 @@ pub fn EmailNewComponents() -> impl IntoView {
                                 <div class="flex absolute inset-y-0 justify-center items-center pointer-events-none start-0 ps-3 text-muted-foreground peer-disabled:opacity-50">
                                     <Send class="size-4" />
                                 </div>
-                                <input
-                                    data-slot="input"
-                                    class="flex flex-1 py-1 px-3 w-full min-w-0 h-10 text-sm rounded-full border outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none shadow-xs transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground aria-invalid:border-destructive aria-invalid:ring-destructive/20 border-zinc-600/65 bg-zinc-700/30 ps-9 text-zinc-100 placeholder:text-zinc-500 [&amp;:-webkit-autofill]:bg-zinc-700/30 [&amp;:-webkit-autofill]:[-webkit-text-fill-color:#fff] [&amp;:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s] md:min-w-64 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
-                                    id="_r_57_"
-                                    placeholder="Enter your email..."
-                                    aria-label="Subscribe to the newsletter"
-                                    required=""
-                                    type="email"
-                                    value=""
+                                <Input
+                                    class="h-10 rounded-full ps-9 border-zinc-600/65 bg-zinc-700/30 text-zinc-100 placeholder:text-zinc-500 [&:-webkit-autofill]:bg-zinc-700/30 [&:-webkit-autofill]:[-webkit-text-fill-color:#fff] [&:-webkit-autofill]:[transition:background-color_5000000s_ease-in-out_0s] md:min-w-64"
+                                    attr:placeholder="Enter your email..."
+                                    attr:aria-label="Subscribe to the newsletter"
+                                    attr:required=true
+                                    attr:r#type="email"
                                 />
                             </div>
-                            <button
-                                data-slot="button"
-                                class="inline-flex relative gap-2 justify-center items-center py-2 px-4 h-10 text-sm font-medium whitespace-nowrap rounded-full shadow-sm outline-none disabled:opacity-50 disabled:pointer-events-none transition-[color,box-shadow] [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground group hover:bg-primary/90 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
-                                type="submit"
-                                data-loading="false"
+                            <Button
+                                class="h-10 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+                                attr:r#type="submit"
                             >
-                                <span class="group-data-[loading=true]:text-transparent">
-                                    Subscribe
-                                </span>
-                            </button>
+                                Subscribe
+                            </Button>
                         </div>
                     </div>
                 </form>
