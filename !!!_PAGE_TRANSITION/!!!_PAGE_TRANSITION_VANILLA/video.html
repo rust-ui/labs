@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Detail - View Transition Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-button">← Back</a>
+    <h1>📹 Video Detail</h1>
+  </header>
+
+  <main class="video-view">
+    <div class="video-detail">
+      <div class="embed-container">
+        <img id="video-image" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Video">
+        <div class="play-button">▶</div>
+      </div>
+
+      <div class="video-metadata">
+        <h1 id="video-title">Understanding View Transitions</h1>
+        <time id="video-date">2024-01-15</time>
+        <div id="video-description">
+          <p>The View Transition API allows you to create smooth, animated transitions between different states of your application. In this video, we explore how to use this powerful API to create seamless morphing animations.</p>
+          <p>Topics covered:</p>
+          <ul>
+            <li>View transition names</li>
+            <li>Capturing element positions</li>
+            <li>Custom transform animations</li>
+            <li>Navigation API integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside class="related-videos">
+      <h3>More Videos</h3>
+      <div class="related-grid">
+        <a href="video.html?id=2" class="related-thumb">
+          <img src="https://i.ytimg.com/vi/OFRjZtYs3wY/mqdefault.jpg" alt="Video 2">
+          <span>CSS Animations</span>
+        </a>
+        <a href="video.html?id=3" class="related-thumb">
+          <img src="https://i.ytimg.com/vi/mVjYG9TSN88/mqdefault.jpg" alt="Video 3">
+          <span>Modern JavaScript</span>
+        </a>
+        <a href="video.html?id=4" class="related-thumb">
+          <img src="https://i.ytimg.com/vi/airT-m9LcoY/mqdefault.jpg" alt="Video 4">
+          <span>Web Performance</span>
+        </a>
+      </div>
+    </aside>
+  </main>
+
+  <script src="transition.js"></script>
+  <script>
+    // Populate video content based on ID
+    const params = new URLSearchParams(window.location.search);
+    const videoId = params.get('id') || '1';
+
+    const videos = {
+      '1': {
+        title: 'Understanding View Transitions',
+        date: '2024-01-15',
+        image: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg'
+      },
+      '2': {
+        title: 'CSS Animations Deep Dive',
+        date: '2024-02-10',
+        image: 'https://i.ytimg.com/vi/OFRjZtYs3wY/maxresdefault.jpg'
+      },
+      '3': {
+        title: 'Modern JavaScript Features',
+        date: '2024-03-05',
+        image: 'https://i.ytimg.com/vi/mVjYG9TSN88/maxresdefault.jpg'
+      },
+      '4': {
+        title: 'Web Performance Tips',
+        date: '2024-04-20',
+        image: 'https://i.ytimg.com/vi/airT-m9LcoY/maxresdefault.jpg'
+      }
+    };
+
+    const video = videos[videoId];
+    if (video) {
+      document.getElementById('video-title').textContent = video.title;
+      document.getElementById('video-date').textContent = video.date;
+      document.getElementById('video-image').src = video.image;
+      document.title = video.title + ' - View Transition Demo';
+    }
+  </script>
+</body>
+</html>

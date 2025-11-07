@@ -1,0 +1,34 @@
+.cohost-switch-wrapper {
+  padding: 0 var(--content-padding);
+}
+
+.cohost-switch {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: var(--content-padding);
+  background: var(--white);
+  padding: 0.3rem 0.4rem;
+  width: fit-content;
+  border-radius: 19px;
+
+  & > * {
+    display: block;
+  }
+
+  & a {
+    color: var(--primary-color);
+    display: block;
+    padding: 0.1rem 0.9rem;
+    border-radius: 1000px;
+  }
+}
+
+.current-cohost {
+  & a {
+    background: var(--primary-color);
+    color: #fff;
+  }
+}

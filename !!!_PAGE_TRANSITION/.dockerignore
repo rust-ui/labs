@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+.tmp
+*.md
+.DS_Store
+.eslintrc.cjs
+.prettierignore
+.prettierrc.json

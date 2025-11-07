@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background: #1a1a1a;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* Prevent header from participating in root transition */
+  view-transition-name: site-header;
+  contain: paint;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.back-button {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Thumbs View */
+.thumbs-view {
+  padding: 2rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.video-link:hover {
+  transform: translateY(-4px);
+}
+
+.video-thumb {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumb img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.video-info {
+  padding: 1rem;
+}
+
+.video-info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Video Detail View */
+.video-view {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .video-view {
+    grid-template-columns: 1fr 250px;
+  }
+}
+
+.video-detail {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.embed-container {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+  display: grid;
+  place-items: center;
+  /* This is the magic - it creates a named transition target */
+  view-transition-name: embed-container;
+}
+
+/* Remove transition name when going between video pages */
+.from-video.to-video .embed-container {
+  view-transition-name: none;
+}
+
+.embed-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  font-size: 4rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.video-metadata {
+  padding: 2rem;
+}
+
+.video-metadata h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-metadata time {
+  color: #666;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.video-metadata p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.video-metadata ul {
+  margin-left: 2rem;
+  line-height: 1.6;
+}
+
+/* Related Videos */
+.related-videos {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.related-videos h3 {
+  margin-bottom: 1rem;
+}
+
+.related-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.related-thumb {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-thumb img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.related-thumb span {
+  font-size: 0.9rem;
+  display: block;
+}
+
+/* View Transition Animations */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(embed-container),
+::view-transition-new(embed-container) {
+  /* Let the JavaScript handle the animation */
+  animation: none;
+}
+
+/* Keep header static during transitions */
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* Fallback for browsers without View Transition API */
+@supports not (view-transition-name: none) {
+  .video-link:active {
+    transform: scale(0.98);
+  }
+}
