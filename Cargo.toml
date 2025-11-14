@@ -7,7 +7,7 @@ edition = "2024"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-icons = { version = "0.14", features = ["leptos", "leptos_animated"] }
+icons = { version = "0.17", features = ["leptos", "leptos_animated"] }
 leptos_ui = "0.3"
 tw_merge = { version = "0.1", features = ["variant", "debug"] }
 
