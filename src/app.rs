@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use leptos_meta::{Stylesheet, Title, provide_meta_context};
+use leptos_meta::{Meta, Stylesheet, Title, provide_meta_context};
 use leptos_router::StaticSegment;
 use leptos_router::components::{Route, Router, Routes};
 
@@ -16,10 +16,11 @@ pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="/pkg/rust_ui_labs.css" />
         <Title text="Rust/UI Labs" />
+        <Meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
         <Router>
             <Navbar />
-            <main class="pb-20 min-h-screen">
+            <main class="pb-[calc(4rem+env(safe-area-inset-bottom))] min-h-dvh">
                 <Routes fallback=|| "Page not found.".into_view()>
                     <Route path=StaticSegment("/test") view=TestPage />
                     <Route

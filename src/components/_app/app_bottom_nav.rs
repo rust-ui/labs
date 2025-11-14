@@ -21,8 +21,8 @@ pub fn AppBottomNav() -> impl IntoView {
     };
 
     view! {
-        <BottomNav class="fixed right-0 bottom-0 left-0 z-50 sm:hidden">
-            <BottomNavGrid>
+        <BottomNav class="fixed right-0 bottom-0 left-0 z-50 sm:hidden !h-[calc(4rem+env(safe-area-inset-bottom))] bg-background">
+            <BottomNavGrid class="!h-full !pb-[env(safe-area-inset-bottom)]">
                 {NavPage::iter()
                     .map(|page| {
                         let path = page.path();
@@ -55,7 +55,7 @@ enum NavPage {
     #[default]
     Home,
     Test,
-    #[strum(serialize = "Gsap Intro")]
+    #[strum(serialize = "Gsap")]
     GsapIntro,
     Settings,
 }

@@ -154,6 +154,13 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* iOS safe area and dynamic viewport height support */
+  html,
+  body {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
   /* Hide scrollbar on xs screens only */
   @media (max-width: 639px) {
     html,

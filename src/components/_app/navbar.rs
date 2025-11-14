@@ -6,7 +6,7 @@ use super::theme_toggle::ThemeToggle;
 #[component]
 pub fn Navbar() -> impl IntoView {
     view! {
-        <div class="flex sticky top-0 z-50 justify-between p-4 bg-background">
+        <div class="flex sticky top-0 z-50 justify-between p-4 pt-[calc(1rem+env(safe-area-inset-top))] bg-background">
             <div class="flex gap-2">
                 <a href="/">"HOME 🧪"</a>
                 <a href="/test">"Test"</a>
