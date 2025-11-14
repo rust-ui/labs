@@ -4,6 +4,7 @@ use leptos_router::StaticSegment;
 use leptos_router::components::{Route, Router, Routes};
 
 use crate::__TODOS__::all_demos_page::AllDemosPage;
+use crate::components::_app::app_bottom_nav::AppBottomNav;
 use crate::components::_app::navbar::Navbar;
 use crate::gsap_intro_page::GsapIntroPage;
 use crate::test_page::TestPage;
@@ -18,7 +19,7 @@ pub fn App() -> impl IntoView {
 
         <Router>
             <Navbar />
-            <main class="min-h-screen">
+            <main class="pb-20 min-h-screen">
                 <Routes fallback=|| "Page not found.".into_view()>
                     <Route path=StaticSegment("/test") view=TestPage />
                     <Route
@@ -30,6 +31,7 @@ pub fn App() -> impl IntoView {
                     <Route path=StaticSegment("/gsap-intro") view=GsapIntroPage />
                 </Routes>
             </main>
+            <AppBottomNav />
         </Router>
     }
 }

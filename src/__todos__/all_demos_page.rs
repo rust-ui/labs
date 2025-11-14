@@ -48,7 +48,7 @@ pub fn RenderDemoFromQuery(demos: Vec<DemoItem>) -> impl IntoView {
     let demo_query = QueryUtils::extract(QUERY::DEMO.to_string());
 
     // "relative" to make sure there is no issue in the DemoComponents.
-    clx! {Preview, div, "relative", "w-[800px] min-h-[400px] border border-input rounded-md flex items-center justify-center mx-auto"}
+    clx! {Preview, div, "relative", "w-full max-w-[800px] min-h-[400px] border border-input rounded-md flex items-center justify-center mx-auto"}
 
     view! {
         <div class="flex flex-col gap-4 w-full">
