@@ -1,0 +1,20 @@
+[package]
+name = "rust_ui_labs_tauri"
+version = "0.1.0"
+description = "A Desktop wrapper for Rust/UI"
+edition = "2024"
+
+[features]
+default = []
+tauri = []
+
+[lib]
+name = "rust_ui_labs_tauri"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.3.1", features = [] }
+
+[dependencies]
+tauri = { version = "2.7.0", features = ["devtools"] }
+tauri-plugin-opener = "2.2.6"

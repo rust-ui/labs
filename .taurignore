@@ -1,0 +1,8 @@
+# Tauri ignore file - exclude from bundling
+target/
+node_modules/
+!!!*/
+X__*/
+👉*/
+.git/
+.DS_Store

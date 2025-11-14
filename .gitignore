@@ -21,3 +21,7 @@ pnpm-lock.yaml
 
 # MCP
 .playwright-mcp
+
+# Tauri
+src-tauri/target/
+src-tauri/gen/
