@@ -3,7 +3,7 @@ use leptos::prelude::*;
 use strum::{Display, EnumIter, IntoEnumIterator};
 
 use crate::__ready_to_port__::bottom_nav::{
-    BottomNav, BottomNavGrid, BottomNavLabel, BottomNavLink,
+    BottomNav, BottomNavButton, BottomNavGrid, BottomNavLabel,
 };
 
 // * See enum below.
@@ -21,7 +21,7 @@ pub fn DemoBottomNav() -> impl IntoView {
                     {NavPage::iter()
                         .map(|page| {
                             view! {
-                                <BottomNavLink
+                                <BottomNavButton
                                     on:click=move |_| active_page_signal.set(page)
                                     attr:aria-current=move || {
                                         if active_page_signal.get() == page { "page" } else { "" }
@@ -30,7 +30,7 @@ pub fn DemoBottomNav() -> impl IntoView {
 
                                     {page.icon()}
                                     <BottomNavLabel>{page.to_string()}</BottomNavLabel>
-                                </BottomNavLink>
+                                </BottomNavButton>
                             }
                         })
                         .collect_view()}

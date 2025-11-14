@@ -5,7 +5,7 @@ mod components {
     use super::*;
     clx! {BottomNav, nav, "mx-auto w-full max-w-lg h-16 bg-card border-t border-border"}
     clx! {BottomNavGrid, div, "grid grid-cols-4 h-full font-medium"}
-    clx! {BottomNavLink, button, "inline-flex flex-col justify-center items-center px-5 group [&_svg]:mb-2 [&_svg]:text-muted-foreground aria-[current=page]:[&_svg]:text-primary"}
+    clx! {BottomNavButton, button, "inline-flex flex-col justify-center items-center px-5 group [&_svg]:mb-2 [&_svg]:text-muted-foreground aria-[current=page]:[&_svg]:text-primary"}
     clx! {BottomNavLabel, span, "text-sm text-muted-foreground group-aria-[current=page]:text-primary"}
 }
 
