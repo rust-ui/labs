@@ -1,55 +1,70 @@
 use icons::{CircleUser, House, SlidersHorizontal, Wallet};
 use leptos::prelude::*;
+use leptos_ui::clx;
+use strum::{Display, EnumIter, IntoEnumIterator};
+
+mod components {
+    use super::*;
+    clx! {BottomNav, nav, "mx-auto w-full max-w-lg h-16 bg-card border-t border-border"}
+    clx! {BottomNavGrid, div, "grid grid-cols-4 h-full font-medium"}
+    clx! {BottomNavLink, button, "inline-flex flex-col justify-center items-center px-5 group [&_svg]:mb-2 [&_svg]:text-muted-foreground aria-[current=page]:[&_svg]:text-primary"}
+    clx! {BottomNavLabel, span, "text-sm text-muted-foreground group-aria-[current=page]:text-primary"}
+}
+
+pub use components::*;
+
+/* ========================================================== */
+/*                     ✨ FUNCTIONS ✨                        */
+/* ========================================================== */
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Display, EnumIter, Default)]
+enum NavPage {
+    Home,
+    #[default]
+    Wallet,
+    Settings,
+    Profile,
+}
+
+impl NavPage {
+    fn icon(self) -> impl IntoView {
+        match self {
+            NavPage::Home => view! { <House class="size-5" /> }.into_any(),
+            NavPage::Wallet => view! { <Wallet class="size-5" /> }.into_any(),
+            NavPage::Settings => view! { <SlidersHorizontal class="size-5" /> }.into_any(),
+            NavPage::Profile => view! { <CircleUser class="size-5" /> }.into_any(),
+        }
+    }
+}
 
 #[component]
 pub fn DemoBottomNav() -> impl IntoView {
+    let active_page_signal = RwSignal::new(NavPage::Wallet);
+
     view! {
         <div class="flex flex-col my-10 rounded-t-2xl border h-[300px] w-[400px]">
             <div class="flex-1 bg-gray-200 rounded-t-2xl"></div>
 
-            <nav class="mx-auto w-full max-w-lg h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
-                <div class="grid grid-cols-4 h-full font-medium">
-                    <button
-                        type="button"
-                        class="inline-flex flex-col justify-center items-center px-5 hover:bg-gray-50 group dark:hover:bg-gray-800"
-                    >
-                        <House class="mb-2 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-                        <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-                            "Home"
-                        </span>
-                    </button>
+            <BottomNav>
+                <BottomNavGrid>
+                    {NavPage::iter()
+                        .map(|page| {
+                            view! {
+                                <BottomNavLink
+                                    on:click=move |_| active_page_signal.set(page)
+                                    attr:aria-current=move || {
+                                        if active_page_signal.get() == page { "page" } else { "" }
+                                    }
+                                >
 
-                    <button
-                        type="button"
-                        class="inline-flex flex-col justify-center items-center px-5 hover:bg-gray-50 group dark:hover:bg-gray-800"
-                    >
-                        <Wallet class="mb-2 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-                        <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-                            "Wallet"
-                        </span>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="inline-flex flex-col justify-center items-center px-5 hover:bg-gray-50 group dark:hover:bg-gray-800"
-                    >
-                        <SlidersHorizontal class="mb-2 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-                        <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-                            "Settings"
-                        </span>
-                    </button>
-
-                    <button
-                        type="button"
-                        class="inline-flex flex-col justify-center items-center px-5 hover:bg-gray-50 group dark:hover:bg-gray-800"
-                    >
-                        <CircleUser class="mb-2 w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-                        <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-                            "Profile"
-                        </span>
-                    </button>
-                </div>
-            </nav>
+                                    {page.icon()}
+                                    <BottomNavLabel>{page.to_string()}</BottomNavLabel>
+                                </BottomNavLink>
+                            }
+                        })
+                        .collect_view()}
+                </BottomNavGrid>
+            </BottomNav>
         </div>
     }
 }
