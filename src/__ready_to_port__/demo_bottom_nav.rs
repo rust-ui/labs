@@ -4,8 +4,10 @@ use leptos::prelude::*;
 #[component]
 pub fn DemoBottomNav() -> impl IntoView {
     view! {
-        <div class="mx-auto w-full max-w-lg">
-            <div class="w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+        <div class="flex flex-col my-10 rounded-t-2xl border h-[300px] w-[400px]">
+            <div class="flex-1 bg-gray-200 rounded-t-2xl"></div>
+
+            <nav class="mx-auto w-full max-w-lg h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
                 <div class="grid grid-cols-4 h-full font-medium">
                     <button
                         type="button"
@@ -47,7 +49,7 @@ pub fn DemoBottomNav() -> impl IntoView {
                         </span>
                     </button>
                 </div>
-            </div>
+            </nav>
         </div>
     }
 }
