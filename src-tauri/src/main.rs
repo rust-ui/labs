@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    airbnb_clone_tauri::run()
+    rust_ui_labs::run()
 }

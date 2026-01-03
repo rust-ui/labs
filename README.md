@@ -7,7 +7,7 @@ This repository is designed to be a collaborative working space for creating com
 It's only a temporary repository to test and develop components. Once they are ready, they are integrated directly into [Rust UI](https://rust-ui.com/).
 
 
-![Process to follow](./public/assets/process_to_follow.png)
+<video src="./public/assets/rust-ui-stack.mp4" autoplay muted loop width="600"></video>
 
 
 
@@ -38,8 +38,28 @@ Don't forget to :
 
 ## Run the project
 
+### Web
+
 ```bash
+pnpm i
 cargo leptos watch
+```
+
+
+### Desktop
+
+```bash
+pnpm i
+cargo tauri dev
+```
+
+
+### iOS
+
+```bash
+pnpm i
+cargo tauri ios init
+./run_ios.sh
 ```
 
 

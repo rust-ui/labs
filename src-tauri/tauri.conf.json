@@ -2,7 +2,7 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Rust UI Labs",
   "version": "0.1.0",
-  "identifier": "com.rust-ui-labs",
+  "identifier": "com.rust-ui.labs",
   "build": {
     "beforeDevCommand": "cargo leptos watch",
     "devUrl": "http://localhost:3000",
@@ -12,7 +12,18 @@
     "withGlobalTauri": true,
     "security": {
       "csp": null
-    }
+    },
+    "windows": [
+      {
+        "label": "main",
+        "url": "http://localhost:3000",
+        "title": "Todo App",
+        "width": 1200,
+        "height": 800,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true
+      }
+    ]
   },
   "bundle": {
     "active": true,
