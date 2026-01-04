@@ -3,7 +3,7 @@ use leptos::prelude::*;
 use leptos_router::hooks::{use_location, use_navigate};
 use strum::{Display, EnumIter, IntoEnumIterator};
 
-use crate::__ready_to_port__::bottom_nav::{
+use crate::components::ui::bottom_nav::{
     BottomNav, BottomNavButton, BottomNavGrid, BottomNavLabel,
 };
 

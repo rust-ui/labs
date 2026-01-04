@@ -1,4 +1,5 @@
 pub mod accordion;
+pub mod bottom_nav;
 pub mod breadcrumb;
 pub mod button;
 pub mod card;
